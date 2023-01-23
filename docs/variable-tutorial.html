@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+    <meta name="description"
+        content="Skript is a Bukkit plugin which allows server admins to customize their server easily, but without the hassle of programming a plugin or asking/paying someone to program a plugin for them. - SkriptLang/Skript">
+    <link rel="icon" type="image/png" href="./assets/icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Skript Documentation">
+    <meta property="og:site_name" content="Skript Documentation">
+    <meta property="og:description"
+        content="Skript is a Bukkit plugin which allows server admins to customize their server easily, but without the hassle of programming a plugin or asking/paying someone to program a plugin for them.">
+    <meta property="og:image" content="https://skriptlang.github.io/Skript/assets/icon.png">
+    <meta property="og:url" content="https://skriptlang.github.io/Skript/">
+    <meta name="theme-color" content="#ff9800">
+    <title>Skript Documentation - 2.6.4</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body> <!-- loaded inside body without defer to fix theme flicker -->
+    <script src="./js/theme-switcher.js"></script>
+    <ul id="global-navigation">
+        <li><a href="index.html">Home</a></li>
+        <div class="menu-tab">
+            <li><a class="menu-tab-item" href="docs.html">Docs <i class="fas fa-caret-down"></i></a></li>
+            <div class="menu-subtabs"> <a href="events.html">Events</a> <a href="conditions.html">Conditions</a> <a
+                    href="sections.html">Sections</a> <a href="effects.html">Effects</a> <a
+                    href="expressions.html">Expressions</a> <a href="classes.html">Types</a> <a
+                    href="functions.html">Functions</a> </div>
+        </div>
+        <li><a href="docs.html?isNew" class="new-tab">New</a></li>
+        <div class="menu-tab">
+            <li><a class="menu-tab-item" href="tutorials.html">Tutorials <i class="fas fa-caret-down"></i></a></li>
+            <div class="menu-subtabs"> <a href="text.html">Text</a> </div>
+        </div>
+        <div class="menu-tab">
+            <li><a class="menu-tab-item" href="#">Dev Tools <i class="fas fa-caret-down"></i></a></li>
+            <div class="menu-subtabs"> <a href="javadocs/" target="_blank">Javadocs</a> </div>
+        </div>
+        <li><a href="https://github.com/SkriptLang/Skript/" target="_blank" style="font-weight: bold;">GitHub</a></li>
+        <li style="margin-left: auto;"><a style="font-weight: bold; color: #ff9800"
+                href="https://github.com/SkriptLang/Skript/releases/tag/2.6.4" target="_blank">v2.6.4</a></li>
+    </ul>
+    <h1 id="nav-title">Variables</h1>
+    <div id="content-no-docs" class="no-left-panel" style="padding-top: 32px;">
+        <h1 class="title">Variables</h1>
+        <p class="subtitle"> Skript's events, commands, and effects are rather useful on their own, but you need
+            variables to really
+            get the most out of Skript. They allow you to store data, move data around, make code readable, and much
+            more.</p>
+        <p class="subtitle"> At their core, variables are a label for information. If you've taken algebra in math
+            class, you probably understand the concept. Instead of using an actual number, you use x or y as a stand-in
+            for an unknown or changing number. This is the same concept as variables in programming. Variables are
+            representations, or stand-ins, of unknown or changing data. You could also think of them as a little
+            labelled box that you can put things into.</p>
+        <h2 class="title">Using Variables in Skript</h2>
+        <p class="subtitle"> In Skript, variables are represented by a variable name contained within two curly braces,
+            like so:</p>
+        <div class="box skript-code-block left-margin">
+            set {variable} to 1<br>
+            set {_variable} to 2<br>
+            set {hey, what's going on} to "not much, what about you?"
+        </div>
+        <p class="subtitle"> Variables can be have nearly any name you'd like. They have have spaces, dashes, symbols,
+            whatever. The only exception is the asterisk, <code>*</code>, which is used as the list wildcard and will be
+            explained later. There are also different types of variables which depend on how you write the variable's
+            name, but that will be explained in a moment as well.</p>
+        <p class="subtitle"> First, an example. Here's a quick and dirty /home script, with a major flaw. See if you can
+            spot it.</p>
+        <div class="box skript-code-block left-margin">
+            command /sethome:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {home} to player's location<br>
+            <br>
+            command /home:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teleport player to {home}
+        </div>
+        <p class="subtitle"> Before we get into the flaw, notice the usefulness of the variable. We can communicate
+            information from one command to another, and it doesn't matter how long of an interval is between to the two
+            commands. The data is stored in the variable and all we need to do to use it is look inside.</p>
+        <p class="subtitle"> Now, the flaw. What happens if a player uses the <code>/sethome</code> command, but then a
+            second player uses the <code>/home</code> command? The second player will be teleported to the first
+            player's home. This is because the variable is <b>global</b>.</p>
+
+        <h1 class="title">Variable Types</h1>
+        <p class="subtitle"> There are two main types of variables in Skript: global vars and local vars. The main
+            differences between the two can be summarized in the following table, but a more detailed explanation will
+            follow.</p>
+        <table class="colors-table">
+            <tr>
+                <td> </td>
+                <td>Global Variables</td>
+                <td>Local Variables</td>
+            </tr>
+            <tr>
+                <td>Scope</td>
+                <td>Can be accessed from any trigger, in any script, at any time.</td>
+                <td>Can only be accessed from the trigger it was created in, and only for that instance of the trigger.
+                </td>
+            </tr>
+            <tr>
+                <td>Persistence</td>
+                <td>Data is saved permanently, including through server restarts.</td>
+                <td>Data is saved temporarily, disappearing when the trigger is finished.</td>
+            </tr>
+            <tr>
+                <td>Uniqueness</td>
+                <td>Since the variable can be accessed anywhere, it must be given a unique name manually to avoid
+                    collisions.</td>
+                <td>Each variable is tied to its own trigger, and will not conflict with any other variables of the same
+                    name.</td>
+            </tr>
+            <tr>
+                <td>Main Use</td>
+                <td>Storing data that needs to be accessed from multiple triggers, or for storing data that needs to
+                    persist over time. For example: warps, player statistics. </td>
+                <td>Storing data that is only needed temporarily and only in one location. For example: creating an item
+                    to give a player, keeping track of a loop's iterations.</td>
+            </tr>
+        </table>
+        <h2 class="title">Global Variables</h2>
+        <p class="subtitle"> Global variables are variables that can be used anywhere in any of your scripts. If you set
+            it to 1 is one place, it'll be 1 the next time you look at it, no matter what's doing the looking. This
+            makes them ideal for storing long-term data, like player stats, or for communicating between different parts
+            of your scripts.</p>
+        <div class="box skript-code-block left-margin">
+            command /stop-loop:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {stop-loop} to true<br>
+            <br>
+            # running the /stop-loop command can stop this loop, despite being a different trigger.<br>
+            on load:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;while {stop-loop} is not set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "ping"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait 1 second
+        </div>
+        <p class="subtitle"> See how the variable is used in two different triggers? That's the power of global
+            variables. Global vars are also stored to your server's hard drive, so they'll stick around if you restart.
+            You can find them in <code>variables.csv</code>, but it's recommended to not mess with that file in case
+            things get messed up.</p>
+        <p class="subtitle"> However, as powerful as global variables are, they have a big shortcoming. Back when we
+            introduced that <code>/home</code> script, we mentioned that the homes weren't unique to each player, it was
+            just one home that anyone could set and anyone could teleport to. To fix this, we can make the variable
+            specific to the player by including the player's uuid in the name:</p>
+        <div class="box skript-code-block left-margin">
+            command /sethome:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {home::%uuid of player%} to player's location<br>
+            <br>
+            command /home:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teleport player to {home::%uuid of player%}
+        </div>
+        <p class="subtitle"> Now, each player has their own home and they can't teleport to anyone else's. We're using
+            <code>::</code> as a separator to make it a list, which will be explained later. Suffice to say, it gives us
+            a little more control over the variable in the future. You should, in general, use <code>::</code> over
+            other separators like <code>.</code>.
+        </p>
+        <h2 class="title">Local Variables</h2>
+        <p class="subtitle"> Local variables are variables that can only be accessed from the trigger they were created
+            in. They're not stored to the hard drive like global vars are, so they'll disappear when the trigger is
+            finished. This makes them
+            ideal for storing temporary data. For example, let's look at this particle command:</p>
+        <div class="box skript-code-block left-margin">
+            command /particles:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {location} to player's location<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop 20 times:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show lava at {location}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait 5 ticks
+        </div>
+        <p class="subtitle"> This command is supposed to show some lava particles at the place the command was executed.
+            However, if the command is executed again while the loop is still running, all the particles will move to
+            the new location. It's the same problem as with the <code>/home</code> command, but now we can't really use
+            player uuids to make the names unique. Furthermore, we don't even want to save this info! It's not useful
+            once the command is finished.</p>
+        <p class="subtitle"> To fix this, we can use a local variable. Local variables are created by putting a
+            <code>_</code> character at the start of a variable's name. These have slightly different properties. They
+            only stick around in the same trigger that they were created in. If you make one in <code>/sethome</code>,
+            it won't be accessible in <code>/home</code>. However, since they won't ever collide with any other variable
+            of the same name, they're great for information that doesn't need to leave the trigger.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /particles:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {_location} to player's location<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop 20 times:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show lava at {_location}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait 5 ticks
+        </div>
+        <p class="subtitle"> Now, we can execute <code>/particles</code> as many times as we want and each location will
+            be separate from the last. Each instance of running the command creates a new version of our location
+            variable, which doesn't conflict with any of the others.</p>
+        <h1 class="title">Lists</h1>
+        <p class="subtitle"> Lists are a feature of variables that allow them to store multiple values. They're created
+            by using <code>::</code> as a separator. For example, we can create a list of all the players on the server
+            with:</p>
+        <div class="box skript-code-block left-margin">
+            set {players::*} to all players
+        </div>
+        <p class="subtitle"> This will create a list of all the players on the server. We can then access the list all
+            at once with <code>{players::*}</code>, or individually, like getting the first player in the list:
+            <code>{players::1}</code>.
+        </p>
+        <p class="subtitle"> List variables can be added to, removed from, or deleted all at once. Most expressions and
+            effects support lists as well, so you can kill a whole list of entities all at once, with a single line.</p>
+        <div class="box skript-code-block left-margin">
+            set {list::*} to 1, 2, 3, 4, and 5<br>
+            add 6 to {list::*}<br>
+            remove 2 from {list::*}<br>
+            broadcast {list::*} # broadcasts "1, 3, 4, 5, and 6"<br>
+            delete {list::*}
+        </div>
+        <p class="subtitle"> When you put something into a list by using <code>add</code>, or setting the whole list at
+            once, it's put under a number like <code>{players::1}</code>, where 1 means the first element. This is
+            called the index, while the thing itself is called the value.</p>
+        <div class="box skript-code-block left-margin">
+            set {variable name::index} to "value"
+        </div>
+        <p class="subtitle"> As you can see above, you can set specific indices to specific values. This is actually
+            something we already saw with the <code>/home</code> command! There, we created a list called
+            <code>home</code> and used the player's uuid as the index. We stored the location as the value.
+        </p>
+        <p class="subtitle"> This means we can use all the abilities that lists provide on the list of homes! We could
+            loop all the homes, we could delete them all at once, we could broadcast them all, whatever we want! </p>
+        <div class="box skript-code-block left-margin">
+            command /home-list:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop {home::*}:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "%loop-index parsed as
+            offlineplayer%'s home is at %loop-value%"
+        </div>
+        <p class="subtitle"> This command will broadcast the location of every home on the server. You can see how we
+            get the player from their uuid by using <code>loop-index</code>, and the location by using
+            <code>loop-value</code>.
+        </p>
+        <h1 class="title">Options and the Variables Section</h1>
+        <h1 class="title">Options</h2>
+        <p class="subtitle"> Options are a special tool. They're literally replaced before the script gets parsed,
+            so unlike variables it's like literally typing out whatever the option is. This makes them very useful
+            for things like little configs, or some bit of code you have to type out a ton. They follow the
+            following pattern:</p>
+        <div class="box skript-code-block left-margin">
+            options:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;option name: value<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;example: 6 + 7 / 2<br>
+            <br>
+            on load:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;broadcast "{@option name}" # broadcasts "value"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;broadcast "{@example}" # broadcasts "6 + 7 / 2"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;broadcast {@example} # broadcasts "9.5"
+        </div>
+        <p class="subtitle"> As you can see, options can be very powerful since they can represent any amount of
+            code. However, over-using options is a great way to cause hard-to-find bugs and severely impact your
+            parsing times. Remeber, even if it looks shorter to you, it's the same length when Skript goes to parse
+            it. </p>
+        <p class="subtitle"> Options are best used as a small config file to make key values easier to change. If
+            you're using it to reduce the amount of code you need to write, consider instead a global variable set
+            in an on load event, or even a function.</p>
+        <h1 class="title">The Variables Section</h1>
+        <p class="subtitle"> The variables section is a special section that allows you to give variables default
+            values. There are two main things it can do. One, set a variable if it isn't already set <b>when the
+                script is loaded</b>. This works the same as setting a variable in an on load event, but it will
+            only set it when the variable isn't already set.</p>
+        <div class="box skript-code-block left-margin">
+            variables:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;{variable name} = "value"
+        </div>
+        <p class="subtitle"> The other main thing is it can give a variable a default value. This can be extremely
+            useful for things like lists, but be careful, it can be finicky.</p>
+        <div class="box skript-code-block left-margin">
+            variables:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;{variable name::%player%} = "value"
+        </div>
+        <p class="subtitle"> Now, whenever you ask for <code>{variable name::%some player%}</code>, no matter what
+            player, it'll give you "value". Again, it won't override any values that are already set, so don't try
+            to change existing lists using this feature, it's for, as the name suggests, default values.</p>
+        <p style="padding-bottom: 20px"> Guide written by <a href="https://github.com/sovdeeth">sovde</a>. </p>
+        <div style="padding-top: 32px;"></div> <!-- Space -->
+    </div>
+</body>
+
+</html>
