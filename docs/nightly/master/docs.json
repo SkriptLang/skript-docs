@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-9faafc9",
+  "skriptVersion" : "2.7.0-dev-nightly-87ce031",
 
   "classes" : [
     {
@@ -389,7 +389,7 @@
 },
 {
   "id" : "itemstack",
-  "name" : "Item / Material",
+  "name" : "Item",
   "patterns" : [
     "<code>[&lt;number&gt; [of]] &lt;alias&gt; [of &lt;enchantment&gt; &lt;level&gt;]</code>, Where &lt;alias&gt; must be an alias that represents exactly one item (i.e cannot be a general alias like 'sword' or 'plant')",
 
@@ -2154,12 +2154,14 @@ You can add a tool, which will spawn items based on how that tool would break th
   "patterns" : [
     "equip [%<a href='./classes.html#livingentity'>living entities</a>%] with %<a href='./classes.html#itemtype'>item types</a>%",
 "make %<a href='./classes.html#livingentity'>living entities</a>% wear %<a href='./classes.html#itemtype'>item types</a>%",
+"unequip %<a href='./classes.html#itemtype'>item types</a>% [from %<a href='./classes.html#livingentity'>living entities</a>%]",
+"unequip %<a href='./classes.html#livingentity'>living entities</a>%'[s] (armor|equipment)",
 
     "pattern_end"
   ],
-  "since" : "1.0, INSERT VERSION (multiple entities)",
-  "description" : "Equips an entity with some given armor. This will replace any armor that the entity is wearing.",
-  "examples" : "equip player with diamond helmet\\nequip player with all diamond armor"
+  "since" : "1.0, INSERT VERSION (multiple entities, unequip)",
+  "description" : "Equips or unequips an entity with some given armor. This will replace any armor that the entity is wearing.",
+  "examples" : "equip player with diamond helmet\\nequip player with all diamond armor\\nunequip diamond chestplate from player\\nunequip all armor from player\\nunequip player's armor"
 },
 {
   "id" : "EffExit",
@@ -3184,7 +3186,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "1.4.1",
-  "description" : "Called whenever a player chats. Use <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format, use <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
+  "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
   "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&lt;red&gt;[player]&lt;light gray&gt;: &lt;light red&gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&lt;light red&gt;[player]&lt;light gray&gt;: &lt;orange&gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&lt;orange&gt;[player]&lt;light gray&gt;: &lt;white&gt;[message]\""
 },
 {
@@ -3468,7 +3470,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "2.0",
-  "description" : "Called whenever experience is about to spawn. This is a helper event for easily being able to stop xp from spawning, as all you can currently do is cancel the event.\\nPlease note that it's impossible to detect xp orbs spawned by plugins (including Skript) with Bukkit, thus make sure that you have no such plugins if you don't want any xp orbs to spawn. (Many plugins that only <i>change</i> the experience dropped by blocks or entities will be detected without problems though)",
+  "description" : "Called whenever experience is about to spawn.\\nPlease note that this event will not fire for xp orbs spawned by plugins (including Skript) with Bukkit.",
   "examples" : "on xp spawn:\\n    world is \"minigame_world\"\\n    cancel event"
 },
 {
@@ -3898,6 +3900,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on lightning:\\n    spawn a zombie at location of event-entity"
 },
 {
+  "id" : "loot_generate",
+  "name" : "On Loot Generate",
+  "patterns" : [
+    "[on] loot generat(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a loot table of an inventory is generated in the world.\\nFor example, when opening a shipwreck chest.",
+  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
+},
+{
   "id" : "move",
   "name" : "On Move",
   "patterns" : [
@@ -3918,7 +3932,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "2.0",
-  "description" : "Called when a player moves onto a certain type of block. Please note that using this event can cause lag if there are many players online.",
+  "description" : "Called when a player moves onto a certain type of block.\\nPlease note that using this event can cause lag if there are many players online.",
   "examples" : "on walking on dirt or grass:\\non stepping on stone:"
 },
 {
@@ -5896,7 +5910,7 @@ Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for 
   ],
   "since" : "2.2-dev31, INSERT VERSION (support variables in format)",
   "description" : "Converts date to human-readable text format. By default, 'yyyy-MM-dd HH:mm:ss z' (e.g. '2018-03-30 16:03:12 +01') will be used. For reference, see this <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">Wikipedia article</a>.",
-  "examples" : "command /date:\\n    trigger:\\n        send \"Full date: %now formatted human-readable%\" to sender\\n        send \"Short date: %now formatted as \"\"yyyy-MM-dd\"\"%\" to sender"
+  "examples" : "command /date:\\n    trigger:\\n        send \"Full date: %now formatted human-readable%\" to sender\\n        send \"Short date: %now formatted as \"yyyy-MM-dd\"%\" to sender"
 },
 {
   "id" : "ExprTimeState",
@@ -6674,6 +6688,18 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "since" : "1.0",
   "description" : "The currently looped value.",
   "examples" : "# countdown:\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n# generate a 10x10 floor made of randomly colored wool below the player:\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool"
+},
+{
+  "id" : "ExprLoot",
+  "name" : "Loot",
+  "patterns" : [
+    "[the] loot",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The loot that will be generated in a 'loot generate' event.",
+  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
 },
 {
   "id" : "ExprLore",
@@ -7564,6 +7590,19 @@ Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 t
   "examples" : "send \"The sea level in your world is %sea level in player's world%\""
 },
 {
+  "id" : "ExprSeaPickles",
+  "name" : "Sea Pickles",
+  "patterns" : [
+    "[the] [(min|max)[imum]] [sea] pickle(s| (count|amount)) of %<a href='./classes.html#block'>blocks</a>%",
+"%<a href='./classes.html#block'>blocks</a>%'[s] [(min|max)[imum]] [sea] pickle(s| (count|amount))",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "An expression to obtain or modify data relating to the pickles of a sea pickle block.",
+  "examples" : "on block break:\\n    type of block is sea pickle\\n    send \"Wow! This stack of sea pickles contained %event-block's sea pickle count% pickles!\"\\n    send \"It could've contained a maximum of %event-block's maximum sea pickle count% pickles!\"\\n    send \"It had to have contained at least %event-block's minimum sea pickle count% pickles!\"\\n    cancel event\\n    set event-block's sea pickle count to event-block's maximum sea pickle count\\n    send \"This bad boy is going to hold so many pickles now!!\""
+},
+{
   "id" : "ExprServerIcon",
   "name" : "Server Icon",
   "patterns" : [
@@ -7656,6 +7695,18 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "description" : "Sorts given list in natural order. All objects in list must be comparable;
 if they're not, this expression will return nothing.",
   "examples" : "set {_sorted::*} to sorted {_players::*}"
+},
+{
+  "id" : "ExprSourceBlock",
+  "name" : "Source Block",
+  "patterns" : [
+    "[the] source block",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The source block in a spread event.",
+  "examples" : "on spread:\\n    if the source block is a grass block:\\n        set the source block to a dirt block"
 },
 {
   "id" : "ExprSpawn",
