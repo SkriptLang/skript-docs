@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-4923c62",
+  "skriptVersion" : "2.7.0-dev-nightly-3b9c157",
 
   "classes" : [
     {
@@ -1490,6 +1490,21 @@ When checking if a plugin is disabled, this will return true if the plugin is on
   "since" : "1.4.4",
   "description" : "Checks whether an entity is poisoned.",
   "examples" : "player is poisoned:\\n    cure the player from poison\\n    message \"You have been cured!\""
+},
+{
+  "id" : "CondIsPreferredTool",
+  "name" : "Is Preferred Tool",
+  "patterns" : [
+    "%<a href='./classes.html#itemtype'>item types</a>% (is|are) %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#blockdata'>block datas</a>%'s preferred tool[s]",
+"%<a href='./classes.html#itemtype'>item types</a>% (is|are) [the|a] preferred tool[s] (for|of) %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#blockdata'>block datas</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>% (is|are)(n't| not) %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#blockdata'>block datas</a>%'s preferred tool[s]",
+"%<a href='./classes.html#itemtype'>item types</a>% (is|are)(n't| not) [the|a] preferred tool[s] (for|of) %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#blockdata'>block datas</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether an item is the preferred tool for a block. A preferred tool is one that will drop the block's item when used. For example, a wooden pickaxe is a preferred tool for grass and stone blocks, but not for iron ore.",
+  "examples" : "on left click:\\n    event-block is set\\n    if player's tool is the preferred tool for event-block:\\n        break event-block naturally using player's tool\\n    else:\\n        cancel event"
 },
 {
   "id" : "CondIsRiding",
