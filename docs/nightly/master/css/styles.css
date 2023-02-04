@@ -356,7 +356,7 @@ div.active-syntax .item-examples p {
     border-left: solid 3px #ff9800;
     text-decoration: none;
     background-color: #353535;
-    font-size: 1.5vw;
+    font-size: 30px;
     font-weight: bold;
     color: #ff9800;
     height: 35px;
@@ -365,6 +365,7 @@ div.active-syntax .item-examples p {
     z-index: 50;
     transition: color 0.2s;
     width: 100%;
+    line-height: 1.2;
 }
 
 /* #nav-title {
