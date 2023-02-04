@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-4d0a5cf",
+  "skriptVersion" : "2.7.0-dev-nightly-10ef98d",
 
   "classes" : [
     {
@@ -1624,6 +1624,19 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "since" : "1.4.4",
   "description" : "Checks whether a player is sprinting.",
   "examples" : "player is not sprinting"
+},
+{
+  "id" : "CondIsStackable",
+  "name" : "Is Stackable",
+  "patterns" : [
+    "%<a href='./classes.html#itemstack'>item stacks</a>% (is|are) stackable",
+"%<a href='./classes.html#itemstack'>item stacks</a>% (isn't|is not|aren't|are not) stackable",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether an item is stackable.",
+  "examples" : "diamond axe is stackable\\nbirch wood is stackable\\ntorch is stackable"
 },
 {
   "id" : "CondIsSwimming",
