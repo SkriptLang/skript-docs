@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-3b9c157",
+  "skriptVersion" : "2.7.0-dev-nightly-4d0a5cf",
 
   "classes" : [
     {
@@ -1807,6 +1807,18 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "since" : "2.5.2",
   "description" : "Checks whether the defined strings match the input regexes (Regular expressions).",
   "examples" : "on chat:\\n    if message partially matches \"\\d\":\\n        send \"Message contains a digit!\"\\n    if message doesn't match \"[A-Za-z]+\":\\n        send \"Message doesn't only contain letters!\""
+},
+{
+  "id" : "CondMethodExists",
+  "name" : "Method Exists",
+  "patterns" : [
+    "method[s] %<a href='./classes.html#string'>texts</a>% [do(esn't|n't)] exist[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks if a method exists",
+  "examples" : "if method \"org.bukkit.Bukkit#getPluginCommand(java.lang.String)"
 },
 {
   "id" : "CondProjectileCanBounce",
