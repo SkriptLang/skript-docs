@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-97b4466",
+  "skriptVersion" : "2.7.0-dev-nightly-e8b6d39",
 
   "classes" : [
     {
@@ -6442,6 +6442,21 @@ If multiple strings are passed, each of them will be a separate line in the lore
   "examples" : "set {_test} to stone with lore \"line 1\" and \"line 2\"\\ngive {_test} to player"
 },
 {
+  "id" : "ExprItems",
+  "name" : "Items",
+  "patterns" : [
+    "[all [[of] the]|the] block[[ ]type]s",
+"every block[[ ]type]",
+"[all [[of] the]|the|every] block[s] of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
+"[all [[of] the]|the|every] item[s] of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "1.0 pre-5",
+  "description" : "Items or blocks of a specific type, useful for looping.",
+  "examples" : "loop items of type ore and log:\\n    block contains loop-item\\n    message \"Theres at least one %loop-item% in this block\"\\ndrop all blocks at the player # drops one of every block at the player"
+},
+{
   "id" : "ExprItemsIn",
   "name" : "Items In",
   "patterns" : [
@@ -7661,17 +7676,13 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "id" : "ExprSets",
   "name" : "Sets",
   "patterns" : [
-    "[(all [[of] the]|the|every)] item(s|[ ]types)",
-"[(all [[of] the]|the)] items of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
-"[(all [[of] the]|the|every)] block(s|[ ]types)",
-"[(all [[of] the]|the)] blocks of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
-"([all [[of] the]] colo[u]rs|(the|every) colo[u]r)",
+    "[all [[of] the]|the|every] %*<a href='./classes.html#classinfo'>type</a>%",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 1.4.2), INSERT VERSION (colors)",
-  "description" : "Collection sets of items or blocks of a specific type or colours, useful for looping.",
-  "examples" : "loop items of type ore and log:\\n    block contains loop-item\\n    message \"Theres at least one %loop-item% in this block\"\\ndrop all blocks at the player # drops one of every block at the player"
+  "since" : "INSERT VERSION",
+  "description" : "Returns a list of all the values of a type; useful for looping.",
+  "examples" : "loop all attribute types:\\n    set loop-value attribute of player to 10\\n    message \"Set attribute %loop-value% to 10!\""
 },
 {
   "id" : "ExprShooter",
