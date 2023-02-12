@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-e8b6d39",
+  "skriptVersion" : "2.7.0-dev-nightly-7f74c54",
 
   "classes" : [
     {
@@ -5034,6 +5034,19 @@ Can optionally include a direction as well, e.g. 'block above' or 'block in fron
   "description" : "The block involved in the event, e.g. the clicked block or the placed block.
 Can optionally include a direction as well, e.g. 'block above' or 'block in front of the player'.",
   "examples" : "block is ore\\nset block below to air\\nspawn a creeper above the block\\nloop blocks in radius 4:\\n    loop-block is obsidian\\n    set loop-block to water\\nblock is a chest:\\n    clear the inventory of the block"
+},
+{
+  "id" : "ExprBreakSpeed",
+  "name" : "Block Break Speed",
+  "patterns" : [
+    "[the] break speed[s] [of %<a href='./classes.html#block'>blocks</a>%] [for %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#block'>block</a>%'[s] break speed[s] [for %<a href='./classes.html#player'>players</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Gets the speed at which the given player would break this block, taking into account tools, potion effects, whether or not the player is in water, enchantments, etc. The returned value is the amount of progress made in breaking the block each tick. When the total breaking progress reaches 1.0, the block is broken. Note that the break speed can change in the course of breaking a block, e.g. if a potion effect is applied or expires, or the player jumps/enters water.",
+  "examples" : "on left click using diamond pickaxe:\\n    event-block is set\\n    send \"Break Speed: %break speed for player%\" to player"
 },
 {
   "id" : "ExprBlockData",
