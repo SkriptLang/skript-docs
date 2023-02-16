@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-fce8119",
+  "skriptVersion" : "2.7.0-dev-nightly-2f283d4",
 
   "classes" : [
     {
@@ -2352,6 +2352,18 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "description" : "Kills an entity.
 Note: This effect does not set the entity's health to 0 (which causes issues), but damages the entity by 100 times its maximum health.",
   "examples" : "kill the player\\nkill all creepers in the player's world\\nkill all endermen, witches and bats"
+},
+{
+  "id" : "EffKnockback",
+  "name" : "Knockback",
+  "patterns" : [
+    "(apply knockback to|knock[back]) %<a href='./classes.html#livingentity'>living entities</a>% [%<a href='./classes.html#direction'>direction</a>%] [with (strength|force) %<a href='./classes.html#number'>number</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Apply the same velocity as a knockback to living entities in a direction. Mechanics such as knockback resistance will be factored in.",
+  "examples" : "knockback player north\\nknock victim (vector from attacker to victim) with strength 10"
 },
 {
   "id" : "EffFireworkLaunch",
