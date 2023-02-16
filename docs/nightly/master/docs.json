@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-58ba163",
+  "skriptVersion" : "2.7.0-dev-nightly-ec70cf0",
 
   "classes" : [
     {
@@ -8090,6 +8090,18 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev31",
   "description" : "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970.",
   "examples" : "unix timestamp of now"
+},
+{
+  "id" : "ExprValueWithin",
+  "name" : "Value Within",
+  "patterns" : [
+    "[the] (%*<a href='./classes.html#classinfo'>type</a>%|value[s]) (within|in) %~<a href='./classes.html#object'>objects</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Gets the value within objects. Usually used with variables to get the value they store rather than the variable itself, or with lists to get the values of a type.",
+  "examples" : "set {_entity} to a random entity out of all entities\\ndelete entity within {_entity} # This deletes the entity itself and not the value stored in the variable\\n\\nset {_list::*} to \"something\", 10, \"test\" and a zombie\\nbroadcast the strings within {_list::*} # \"something\", \"test\""
 },
 {
   "id" : "ExprVectorAngleBetween",
