@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-e636c03",
+  "skriptVersion" : "2.7.0-dev-nightly-6cfb45d",
 
   "classes" : [
     {
@@ -4070,6 +4070,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0, 2.6 (BlockData support)",
   "description" : "Called when a player places a block.",
   "examples" : "on place:\\non place of a furnace, workbench or chest:\\non break of chest[type=right] or chest[type=left]"
+},
+{
+  "id" : "player_deep_sleep",
+  "name" : "On Player Deep Sleep",
+  "patterns" : [
+    "[on] [player] deep sleep[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player has slept long enough to count as passing the night/storm.\\nCancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed.",
+  "examples" : "on player deep sleeping:\\n    send \"Zzzz..\" to player"
 },
 {
   "id" : "player_trade",
