@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-6cfb45d",
+  "skriptVersion" : "2.7.0-dev-nightly-be0c831",
 
   "classes" : [
     {
@@ -4070,6 +4070,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0, 2.6 (BlockData support)",
   "description" : "Called when a player places a block.",
   "examples" : "on place:\\non place of a furnace, workbench or chest:\\non break of chest[type=right] or chest[type=left]"
+},
+{
+  "id" : "player_chunk_enters",
+  "name" : "On Player Chunk Enters",
+  "patterns" : [
+    "[on] player (enter[s] [a] chunk|chunk enter[ing]) [with priority (lowest|low|normal|high|highest|monitor)]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -> %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
