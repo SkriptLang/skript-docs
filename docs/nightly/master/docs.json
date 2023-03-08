@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-9ead35e",
+  "skriptVersion" : "2.7.0-dev-nightly-e7ea29f",
 
   "classes" : [
     {
@@ -1730,18 +1730,20 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "examples" : "if server is whitelisted:\\nif player is whitelisted"
 },
 {
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
+  "id" : "CondIsWithin",
+  "name" : "Is Within",
   "patterns" : [
     "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
 "%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
+"%<a href='./classes.html#location'>locations</a>% (is|are) (within|in[side [of]]) %<a href='./classes.html#entity'>entity</a>/<a href='./classes.html#chunk'>chunk</a>/<a href='./classes.html#world'>world</a>/<a href='./classes.html#block'>block</a>%",
+"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) (within|in[side [of]]) %<a href='./classes.html#entity'>entity</a>/<a href='./classes.html#chunk'>chunk</a>/<a href='./classes.html#world'>world</a>/<a href='./classes.html#block'>block</a>%",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
+  "description" : "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.
+Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations.",
+  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
 },
 {
   "id" : "CondWithinRadius",
@@ -1768,19 +1770,6 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "since" : "2.6",
   "description" : "Checks whether a command/string is a custom Skript command.",
   "examples" : "# Example 1\\non command:\\n    command is a skript command\\n\\n# Example 2\\n\"sometext\" is a skript command"
-},
-{
-  "id" : "CondIsInWorld",
-  "name" : "Is in World",
-  "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) in [[the] world[s]] %<a href='./classes.html#world'>worlds</a>%",
-"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) in [[the] world[s]] %<a href='./classes.html#world'>worlds</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "1.4",
-  "description" : "Checks whether an entity is in a specific world.",
-  "examples" : "player is in \"world\"\\nargument isn't in world \"world_nether\"\\nthe player is in the world of the victim"
 },
 {
   "id" : "CondIsOfType",
