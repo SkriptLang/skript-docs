@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-e7ea29f",
+  "skriptVersion" : "2.7.0-dev-nightly-2334e0a",
 
   "classes" : [
     {
@@ -1915,18 +1915,6 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "since" : "2.3",
   "description" : "Sends an action bar message to the given player(s).",
   "examples" : "send action bar \"Hello player!\" to player"
-},
-{
-  "id" : "EffAssert",
-  "name" : "Assert",
-  "patterns" : [
-    "assert &lt;.+&gt; [to fail] with %<a href='./classes.html#string'>text</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Assert that condition is true. Test fails when it is not.",
-  "examples" : "Missing examples."
 },
 {
   "id" : "EffBan",
