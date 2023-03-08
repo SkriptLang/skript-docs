@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-dev-nightly-86b7e85",
+  "skriptVersion" : "2.7.0-dev-nightly-9ead35e",
 
   "classes" : [
     {
@@ -3513,6 +3513,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on entity portal:\\n    broadcast \"A %type of event-entity% has entered a portal!"
 },
 {
+  "id" : "experience_change",
+  "name" : "On Experience Change",
+  "patterns" : [
+    "[on] [player] (level progress|[e]xp|experience) (change|update|increase|decrease) [with priority (lowest|low|normal|high|highest|monitor)]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player's experience changes.",
+  "examples" : "on level progress change:\\n    set {_xp} to event-experience\\n    broadcast \"%{_xp}%\""
+},
+{
   "id" : "experience_spawn",
   "name" : "On Experience Spawn",
   "patterns" : [
@@ -5826,7 +5838,7 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.1, 2.5.3 (block break event)",
+  "since" : "2.1, 2.5.3 (block break event), INSERT VERSION (experience change event)",
   "description" : "How much experience was spawned in an experience spawn or block break event. Can be changed.",
   "examples" : "on experience spawn:\\n    add 5 to the spawned experience\\non break of coal ore:\\n    clear dropped experience\\non break of diamond ore:\\n    if tool of player = diamond pickaxe:\\n        add 100 to dropped experience"
 },
