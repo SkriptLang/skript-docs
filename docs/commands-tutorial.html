@@ -1,0 +1,268 @@
+<head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0"> <meta name="description" content="Skript is a Bukkit plugin which allows server admins to customize their server easily, but without the hassle of programming a plugin or asking/paying someone to program a plugin for them. - SkriptLang/Skript"> <link rel="icon" type="image/png" href="./assets/icon.png"> <meta property="og:type" content="website"> <meta property="og:title" content="Skript Documentation"> <meta property="og:description" content="Skript is a Bukkit plugin which allows server admins to customize their server easily, but without the hassle of programming a plugin or asking/paying someone to program a plugin for them."> <meta property="og:image" content="https://skriptlang.github.io/Skript/assets/icon.png"> <meta property="og:url" content="https://skriptlang.github.io/Skript/"> <title>Skript Documentation - 2.6</title> <link href="css/styles.css" rel="stylesheet"> <link rel="stylesheet" href="css/highlightjs.min.css"> <script src="./js/highlight.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&amp;display=swap" rel="stylesheet"> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"> </head>
+<body>
+    <h1 id="nav-title">Custom Commands</h1>
+
+    <div id="content-no-docs" class="no-left-panel" style="padding-top: 32px;">
+        <h2 class="title">Custom Commands in Skript</h2>
+        <p class="subtitle">
+            Skript allows you to easily create custom commands in your scripts, like the following:
+        </p>
+        <div class="box skript-code-block left-margin">
+            # A simple "broadcast" command for broadcasting the text argument.<br>
+            # This is accessible only to users with the "skript.example.broadcast" permission.<br>
+            <br>
+            command /broadcast &lt;text&gt;: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission: skript.example.broadcast <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;description: Broadcasts a message to everyone including console. <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast arg-text <br>
+        </div>
+        <p class="subtitle">
+            That's a simple example, but you can do much more complex things with custom commands! 
+            That "/broadcast" command only shows a few of the options you have available when creating a custom command.
+        </p>
+        
+        <h2 class="title">Command Pattern</h2>
+        <p class="subtitle">
+            Here's the full list of features that you can use in your commands. They're all optional, except for the trigger section. We'll explain each one individually below.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /&lt;command name&gt; &lt;arguments&gt;:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;aliases: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# alternate command names <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      # players or console <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;usage: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# the message that explains how to use the command <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;description: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# the command's description <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# the permission needed to use the command <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission message:
+            &nbsp;# the message sent to users without the correct permissions <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown: 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# a timespan, during which the command can't be used again <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown message: 
+            &nbsp;&nbsp;&nbsp;# the message sent when the command is used before the cooldown is over <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown bypass: 
+            &nbsp;&nbsp;&nbsp;&nbsp;# the permission necessary to bypass the cooldown <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown storage: 
+            &nbsp;&nbsp;&nbsp;# what variable to store the cooldown in <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# The code to run goes here.
+        </div><br>
+        
+        <h2 class="title">Command Name</h2>
+        <p class="subtitle">
+            The command name is what comes immediately after <code>command</code>. It can consist of any characters you want, except for whitespace characters. Additionally, the forward slash (<code>/</code>) in front of the command is optional. This means
+            <code>command /broadcast</code> and <code>command broadcast</code> are the same. Here are a few examples:
+        </p>
+        <div class="box skript-code-block left-margin">
+        command /test-command:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "Command: /test-command"<br>
+        <br>
+        command nickname:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "Command: /nickname"<br>
+        <br>
+        command //set!:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "Command: //set!"<br>
+        </div>
+        
+        <h2 class="title">Arguments</h2>
+        <p class="subtitle">
+            <a href="/expressions.html#ExprArgument">Arguments</a> follow the command name, and are separated by spaces.<br>You can make arguments optional by surrounding them with square brackets <code>[]</code>, like this: <code>command /kill [all entities]</code>.
+            <br>However, the real power in arguments comes from type arguments. These allow a command to take in a <a href="/classes.html">type</a>, like <code>command /kill &lt;player&gt;</code>. Type arguments must be surrounded by angle brackets <code>&lt;&gt;</code> and can also be made optional by surrounding them with square brackets: <code>[&lt;player&gt;]</code>.
+            <br> The argument can then be referenced in the trigger section by <code>arg-1</code> or <code>argument 1</code> or a <a href="/expressions.html#ExprArgument">number of other ways</a>. You can also name type variables like so: <code>&lt;name:type&gt;</code>, which can then be refenced as a local variable: <code>{_name}</code>. Here's the full pattern for arguments:
+        </p> 
+        <div class="box skript-code-block left-margin">
+            &lt;name:type=%default value%&gt;
+        </div>
+        <p class="subtitle">
+            Arguments can be used in a lot of different ways, so I'll provide some examples ranging from the simplest possible to more complex uses.
+       </p>
+       <div class="box skript-code-block left-margin">
+            # this command can be run by "/test" or by "/test command".<br>
+            command /test [command]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast "Command: /test or /test command"<br>
+            <br>
+            # broadcasts the name of the given player. "of" is optional.<br>
+            command /name [of] &lt;player&gt;:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "Player's name: %arg-1%, %argument 1%, or %player-argument%" to player # here 'player' refers to the player executing the command<br>
+            <br>
+            # heals the player in the argument. If no player is given, it will heal the sender.<br>
+            command /heal [&lt;player=%player%&gt;]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heal argument 1<br> 
+            <br>
+            
+            # this can be used like /kill zombies, /kill creepers and animals in radius 100 or /kill monsters in the radius 6. <br> # the radius will default to 20 if isn't entered.<br>
+            command /kill &lt;entity types&gt; [in [the] radius &lt;number = 20&gt;]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players # this will be explained later on<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop entities in radius arg-2 of player:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if loop-entity is arg-1:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kill loop-entity<br>
+            <br>
+            # sends the text given in the command. If no text is given, it will broadcast the default value of "default text". <br>
+            # note that the text is referenced as {_text input}, rather than arg-1 or similar.<br>
+            command /broadcast [&lt;text input:text="default text"&gt;]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;broadcast {_text input}<br>
+            <br>
+            # Using optional commands as flags that don't have to all be used<br>
+            # eg: <br>
+            # /give-item stone sword with name Sword in the Stone and with lore Haha, get it?<br>
+            # or<br>
+            # /give-item heart of the sea with lore &bA murky blue orb.<br>
+            command /give-item <item> [with name <text>] [[and] with lore <text>]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {_item} to arg-1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# set name<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arg-2 is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set name of {_item} to formatted arg-2<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# set lore<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arg-3 is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set lore of {_item} to formatted arg-3<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# give item<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;give player {_item}<br>
+        </div>
+        
+        <h2 class="title">Executable By</h2>
+        <p class="subtitle">
+            Who can execute this command. The options are <code>players</code>, <code>console</code>, or <code>players and console</code>.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /shutdown:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: console<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shutdown the server<br>
+        </div>
+        
+        <h2 class="title">Aliases</h2>
+        <p class="subtitle">
+            Aliases are alternate names for your command. For example, the command <code>/teleport</code> could have an alias <code>/tp</code>. Like in the command name, the forward slash (<code>/</code>) is optional.
+        </p>
+        <div class="box skript-code-block left-margin">
+            # this command can be run by "/teleport" or by "/tp".<br>
+            command /teleport &lt;number&gt; &lt;number&gt; &lt;number&gt;:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;aliases: tp<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teleport player to location(arg-1, arg-2, arg-3)<br>
+        </div>
+        
+        <h2 class="title">Description</h2>
+        <p class="subtitle">
+            The description of the command. Other plugins can get/show this like /help or /help teleport.
+        </p>
+        
+        <h2 class="title">Permissions</h2>
+        <p class="subtitle">
+            The permissions required to execute this command. The message sent to players without the proper permissions can be customized with the <code>permission message:</code> field.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /shutdown:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission: server.admin<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission message: Only admins can shut down the server!<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shutdown the server<br>
+        </div>
+        
+        <h2 class="title">Cooldowns</h2>
+        <p class="subtitle">
+            This field takes a timespan that the player must wait out before executing the command again. The cooldown can be canceled with <code>cancel the cooldown</code> (<a href="/effects.html#EffCancelCooldown">documentation here</a>).
+            Like with the permissions, you can change the default cooldown message with the <code>cooldown message:</code> field. Additionally, you can store the cooldown in a variable with <code>cooldown storage:</code>, in order to store the cooldown even when the server restarts.
+            You can also set up a permission that allows players to bypass the cooldown with <code>bypass cooldown permission:</code>.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /vote:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown: 1 day<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown message: You can only vote once a day!<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown storage: {vote::cooldown::%uuid of player%}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown bypass: vote.cooldown.bypass<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add 1 to {vote::players::%uuid of player%}<br>
+        </div>
+        <p class="subtitle">
+            There are also a number of expressions you can use to interact with the cooldowns of commands. You can get the remaining time with <code>remaining time</code>, the elapsed time with <code>elapsed time</code>, and the total time with <code>cooldown time</code>. You can also get the bypass permission with <code>bypass permission</code>.<br>
+            If you've enabled <code>keep command last usage dates</code> in your <code>config.sk</code> file, you can get the last time the player used the command with <code>last usage date</code>.<br>
+            You can see the full syntax for these expressions <a href="https://docs.skriptlang.org/expressions.html#ExprCmdCooldownInfo">here</a>.
+        </p>
+        <div class="box skript-code-block left-margin">
+            # The same vote command but with an improved cooldown message.<br>
+            command /vote:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown: 1 day<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown message: You can only vote once a day! You last voted at %last usage%, and it's only been %elapsed time%. Please wait another %remaining time%.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown storage: {vote::cooldown::%uuid of player%}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown bypass: vote.cooldown.bypass<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add 1 to {vote::players::%uuid of player%}<br>
+        </div>
+        
+        <h2 class="title">The Trigger Section</h2>
+        <p class="subtitle">
+            This section is where all the code the command should run is located. I'm sure you're familiar with how it works from the previous examples, but in case you're still unsure, some more examples of commands will be displayed here. You can see these example commands and more in the <code>/plugins/Skript/scripts/-examples/commands.sk</code> file in your server.
+        </p>
+        <div class="box skript-code-block left-margin">
+            command /item &lt;items&gt;:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;description: Give yourself some items.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;usage: /item <items...><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;aliases: /i<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission: skript.example.item<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown: 30 seconds<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown message: You need to wait %remaining time% to use this command again.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cooldown bypass: skript.example.cooldown.bypass<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if player has permission "skript.example.item.all":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;give arguments to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop arguments:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (TNT, bedrock, obsidian, mob spawner, lava, lava bucket) does not contain loop-item:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;give loop-item to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "<red>%loop-item%<reset> is blacklisted and cannot be spawned." to player
+        </div>
+        <br>
+        <div class="box skript-code-block left-margin">
+            command /home &lt;text&gt; [&lt;text&gt;]:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;description: Set, delete or teleport to your home.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;usage: /home set/remove &lt;name&gt;, /home &lt;name&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;permission: skript.example.home<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;executable by: players<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;trigger:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arg-1 is "set":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arg-2 is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set {homes::%uuid of player%::%arg-2%} to player's location<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "Set your home &lt;green&gt;%arg-2%&lt;reset&gt; to &lt;grey&gt;%location of player%&lt;reset&gt;" to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "You must specify a name for this home." to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if arg-1 is "remove":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arg-2 is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete {homes::%uuid of player%::%arg-2%}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "Deleted your home &lt;green&gt;%arg-2%&lt;reset&gt;" to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "You must specify the name of this home." to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if arg-2 is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "Correct usage: /home set/remove &lt;name&gt;" to player<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if {homes::%uuid of player%::%arg-1%} is set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teleport player to {homes::%uuid of player%::%arg-1%}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;send "You have no home named &lt;green&gt;%arg-1%&lt;reset&gt;." to player
+        </div>
+        
+        <p style="padding-bottom: 20px">
+            Guide written by <a href="https://github.com/sovdeeth">sovde</a>, with parts used with permission from <a href="https://skripthub.net/tutorials/10">blueyescat's tutorial</a> on <a href="https://skripthub.net/">SkriptHub</a>.
+        </p>
+      <div style="padding-top: 32px;"></div> <!-- Space -->
+    </div>
+
+
+</body>
