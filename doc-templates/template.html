@@ -35,17 +35,20 @@
 
 </head>
 <body>
-  <!-- loaded inside body without defer to fix theme flicker -->
-  <script src="./js/theme-switcher.js"></script>
+  <div id="docs-body">
+    <!-- loaded inside body without defer to fix theme flicker -->
+    <script src="./js/theme-switcher.js"></script>
 
-  ${include navbar.html}
-  <nav id="side-nav">
-    <div id="nav-contents">
-      ${generate ${pagename} desc_nav.html}
-    </div>
-  </nav>
+    ${include navbar.html}
+    <nav id="side-nav">
+      <div id="nav-contents">
+        ${generate ${pagename} desc_nav.html}
+      </div>
+    </nav>
 
-  ${content}
+    ${content}
   
+
+  </div>
 </body>
 </html>
