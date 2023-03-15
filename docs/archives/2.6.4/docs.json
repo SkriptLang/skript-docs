@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta1",
+  "skriptVersion" : "2.6.4",
 
   "classes" : [
     {
@@ -389,7 +389,7 @@
 },
 {
   "id" : "itemstack",
-  "name" : "Item",
+  "name" : "Item / Material",
   "patterns" : [
     "<code>[&lt;number&gt; [of]] &lt;alias&gt; [of &lt;enchantment&gt; &lt;level&gt;]</code>, Where &lt;alias&gt; must be an alias that represents exactly one item (i.e cannot be a general alias like 'sword' or 'plant')",
 
@@ -467,7 +467,7 @@
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Represents the phase of a moon.",
   "examples" : "Missing examples."
 },
@@ -762,7 +762,7 @@
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Represents the environment of a world.",
   "examples" : "Missing examples."
 },
@@ -923,7 +923,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether or not respawn anchors work in a world.",
   "examples" : "respawn anchors work in world \"world_nether\""
 },
@@ -935,7 +935,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Whether the egg will hatch in a Player Egg Throw event.",
   "examples" : "on player egg throw:\\n    if an entity won't hatch:\\n        send \"Better luck next time!\" to the player"
 },
@@ -1065,7 +1065,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "1.4, 2.7 (multiple players)",
+  "since" : "1.4, INSERT VERSION (multiple players)",
   "description" : "Checks whether a player has played on this server before. You can also use <a href='events.html#first_join'>on first join</a> if you want to make triggers for new players.",
   "examples" : "player has played on this server before\\nplayer hasn't played before"
 },
@@ -1158,7 +1158,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks what the respawn location of a player in the respawn event is.",
   "examples" : "on respawn:\\n    the respawn location is a bed\\n    broadcast \"%player% is respawning in their bed! So cozy!\""
 },
@@ -1303,7 +1303,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether an entity is frozen.",
   "examples" : "if player is frozen:\\n    kill player"
 },
@@ -1329,7 +1329,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether a living entity is gliding.",
   "examples" : "if player is gliding"
 },
@@ -1388,7 +1388,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether a living entity is invisible.",
   "examples" : "target entity is invisible"
 },
@@ -1494,7 +1494,7 @@ This condition requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether a player is a server operator.",
   "examples" : "player is an operator"
 },
@@ -1542,21 +1542,6 @@ When checking if a plugin is disabled, this will return true if the plugin is on
   "since" : "1.4.4",
   "description" : "Checks whether an entity is poisoned.",
   "examples" : "player is poisoned:\\n    cure the player from poison\\n    message \"You have been cured!\""
-},
-{
-  "id" : "CondIsPreferredTool",
-  "name" : "Is Preferred Tool",
-  "patterns" : [
-    "%<a href='./classes.html#itemtype'>item types</a>% (is|are) %<a href='./classes.html#block'>blocks</a>%'s preferred tool[s]",
-"%<a href='./classes.html#itemtype'>item types</a>% (is|are) [the|a] preferred tool[s] (for|of) %<a href='./classes.html#block'>blocks</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>% (is|are)(n't| not) %<a href='./classes.html#block'>blocks</a>%'s preferred tool[s]",
-"%<a href='./classes.html#itemtype'>item types</a>% (is|are)(n't| not) [the|a] preferred tool[s] (for|of) %<a href='./classes.html#block'>blocks</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Checks whether an item is the preferred tool for a block. A preferred tool is one that will drop the block's item when used. For example, a wooden pickaxe is a preferred tool for grass and stone blocks, but not for iron ore.",
-  "examples" : "on left click:\\n    event-block is set\\n    if player's tool is the preferred tool for event-block:\\n        break event-block naturally using player's tool\\n    else:\\n        cancel event"
 },
 {
   "id" : "CondIsRiding",
@@ -1678,19 +1663,6 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "examples" : "player is not sprinting"
 },
 {
-  "id" : "CondIsStackable",
-  "name" : "Is Stackable",
-  "patterns" : [
-    "%<a href='./classes.html#itemstack'>item stacks</a>% (is|are) stackable",
-"%<a href='./classes.html#itemstack'>item stacks</a>% (isn't|is not|aren't|are not) stackable",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Checks whether an item is stackable.",
-  "examples" : "diamond axe is stackable\\nbirch wood is stackable\\ntorch is stackable"
-},
-{
   "id" : "CondIsSwimming",
   "name" : "Is Swimming",
   "patterns" : [
@@ -1751,7 +1723,7 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether an entity has died or been despawned for some other reason.",
   "examples" : "if event-entity is valid"
 },
@@ -1782,22 +1754,6 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "examples" : "if server is whitelisted:\\nif player is whitelisted"
 },
 {
-  "id" : "CondIsWithin",
-  "name" : "Is Within",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (is|are) (within|in[side [of]]) %<a href='./classes.html#entity'>entity</a>/<a href='./classes.html#chunk'>chunk</a>/<a href='./classes.html#world'>world</a>/<a href='./classes.html#block'>block</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) (within|in[side [of]]) %<a href='./classes.html#entity'>entity</a>/<a href='./classes.html#chunk'>chunk</a>/<a href='./classes.html#world'>world</a>/<a href='./classes.html#block'>block</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.
-Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
-},
-{
   "id" : "CondIsWithinLocation",
   "name" : "Is Within Location",
   "patterns" : [
@@ -1806,7 +1762,7 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Whether a location is within two other locations forming a cuboid.
 Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
@@ -1820,7 +1776,7 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Checks whether a location is within a certain radius of another location.",
   "examples" : "on damage:\\n    if attacker's location is within 10 blocks around {_spawn}:\\n        cancel event\\n        send \"You can't PVP in spawn.\""
 },
@@ -1836,6 +1792,19 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "since" : "2.6",
   "description" : "Checks whether a command/string is a custom Skript command.",
   "examples" : "# Example 1\\non command:\\n    command is a skript command\\n\\n# Example 2\\n\"sometext\" is a skript command"
+},
+{
+  "id" : "CondIsInWorld",
+  "name" : "Is in World",
+  "patterns" : [
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) in [[the] world[s]] %<a href='./classes.html#world'>worlds</a>%",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) in [[the] world[s]] %<a href='./classes.html#world'>worlds</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "1.4",
+  "description" : "Checks whether an entity is in a specific world.",
+  "examples" : "player is in \"world\"\\nargument isn't in world \"world_nether\"\\nthe player is in the world of the victim"
 },
 {
   "id" : "CondIsOfType",
@@ -2144,7 +2113,7 @@ You can add a tool, which will spawn items based on how that tool would break th
 
     "pattern_end"
   ],
-  "since" : "2.2-dev37, 2.7 (while loops)",
+  "since" : "2.2-dev37, INSERT VERSION (while loops)",
   "description" : "Skips the value currently being looped, moving on to the next value if it exists.",
   "examples" : "loop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast"
 },
@@ -2229,14 +2198,12 @@ You can add a tool, which will spawn items based on how that tool would break th
   "patterns" : [
     "equip [%<a href='./classes.html#livingentity'>living entities</a>%] with %<a href='./classes.html#itemtype'>item types</a>%",
 "make %<a href='./classes.html#livingentity'>living entities</a>% wear %<a href='./classes.html#itemtype'>item types</a>%",
-"unequip %<a href='./classes.html#itemtype'>item types</a>% [from %<a href='./classes.html#livingentity'>living entities</a>%]",
-"unequip %<a href='./classes.html#livingentity'>living entities</a>%'[s] (armor|equipment)",
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.7 (multiple entities, unequip)",
-  "description" : "Equips or unequips an entity with some given armor. This will replace any armor that the entity is wearing.",
-  "examples" : "equip player with diamond helmet\\nequip player with all diamond armor\\nunequip diamond chestplate from player\\nunequip all armor from player\\nunequip player's armor"
+  "since" : "1.0, INSERT VERSION (multiple entities)",
+  "description" : "Equips an entity with some given armor. This will replace any armor that the entity is wearing.",
+  "examples" : "equip player with diamond helmet\\nequip player with all diamond armor"
 },
 {
   "id" : "EffExit",
@@ -2473,7 +2440,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Forces the mob(s) or player(s) to look at an entity, vector or location. Vanilla max head pitches range from 10 to 50.",
   "examples" : "force the head of the player to look towards event-entity's feet\\n\\non entity explosion:\\n    set {_player} to the nearest player\\n    {_player} is set\\n    distance between {_player} and the event-location is less than 15\\n    make {_player} look towards vector from the {_player} to location of the event-entity\\n\\nforce {_enderman} to face the block 3 meters above {_location} at head rotation speed 100.5 and max head pitch -40"
 },
@@ -2485,7 +2452,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Makes the egg hatch in a Player Egg Throw event.",
   "examples" : "on player egg throw:\\n    # EGGS FOR DAYZ!\\n    make the egg hatch"
 },
@@ -2526,7 +2493,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Makes a living entity visible/invisible. This is not a potion and therefore does not have features such as a time limit or particles.
 When setting an entity to invisible while using an invisibility potion on it, the potion will be overridden and when it runs out the entity keeps its invisibility.",
   "examples" : "make target entity invisible"
@@ -2609,7 +2576,7 @@ Please note that currently 'show' and 'open' have the same effect, but 'show' wi
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Make an entity pathfind towards a location or another entity. Not all entities can pathfind. If the pathfinding target is another entity, the entities may or may not continuously follow the target.",
   "examples" : "make all creepers pathfind towards player\\nmake all cows stop pathfinding\\nmake event-entity pathfind towards player at speed 1"
 },
@@ -2850,16 +2817,16 @@ status of the sent resource pack request.",
   "id" : "EffStopSound",
   "name" : "Stop Sound",
   "patterns" : [
-    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
+    "stop sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
 "stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
-  "since" : "2.4, 2.7 (stop all sounds)",
-  "description" : "Stops specific or all sounds from playing to a group of players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
+  "since" : "2.4",
+  "description" : "Stops a sound from playing to the specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sound for all players\\nstop sound in record category"
+  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player"
 },
 {
   "id" : "EffSwingHand",
@@ -3051,7 +3018,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Called when an anvil is damaged/broken from being used to repair/rename items.\\nNote: this does not include anvil damage from falling.",
   "examples" : "on anvil damage:\\n    cancel the event"
 },
@@ -3063,7 +3030,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Called when an item is put in a slot for repair by an anvil. Please note that this event is called multiple times in a single item slot move.",
   "examples" : "on anvil prepare:\\n    event-item is set # result item\\n    chance of 5%:\\n        set repair cost to repair cost * 50%\\n        send \"You're LUCKY! You got 50% discount.\" to player"
 },
@@ -3260,7 +3227,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "1.4.1",
-  "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
+  "description" : "Called whenever a player chats. Use <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format, use <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
   "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&lt;red&gt;[player]&lt;light gray&gt;: &lt;light red&gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&lt;light red&gt;[player]&lt;light gray&gt;: &lt;orange&gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&lt;orange&gt;[player]&lt;light gray&gt;: &lt;white&gt;[message]\""
 },
 {
@@ -3392,7 +3359,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.7 (by entity)",
+  "since" : "1.0, INSERT VERSION (by entity)",
   "description" : "Called when an entity receives damage, e.g. by an attack from another entity, lava, fire, drowning, fall, suffocation, etc.",
   "examples" : "on damage:\\non damage of a player:\\non damage of player by zombie:"
 },
@@ -3428,7 +3395,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 2.1), 2.7 (entity)",
+  "since" : "<i>unknown</i> (before 2.1), INSERT VERSION (entity)",
   "description" : "Called when a player drops an item from their inventory, or an entity drops an item, such as a chicken laying an egg.",
   "examples" : "on drop:\\n    if event-item is compass:\\n        cancel event\\n\\non entity drop of an egg:\\n    if event-entity is a chicken:\\n        set item of event-dropped item to a diamond"
 },
@@ -3506,7 +3473,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Called when an entity jumps.",
   "examples" : "on entity jump:\\n    if entity is a wither skeleton:\\n        cancel event"
 },
@@ -3535,18 +3502,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on entity portal:\\n    broadcast \"A %type of event-entity% has entered a portal!"
 },
 {
-  "id" : "experience_change",
-  "name" : "On Experience Change",
-  "patterns" : [
-    "[on] [player] (level progress|[e]xp|experience) (change|update|increase|decrease) [with priority (lowest|low|normal|high|highest|monitor)]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Called when a player's experience changes.",
-  "examples" : "on level progress change:\\n    set {_xp} to event-experience\\n    broadcast \"%{_xp}%\""
-},
-{
   "id" : "experience_spawn",
   "name" : "On Experience Spawn",
   "patterns" : [
@@ -3556,7 +3511,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "2.0",
-  "description" : "Called whenever experience is about to spawn.\\nPlease note that this event will not fire for xp orbs spawned by plugins (including Skript) with Bukkit.",
+  "description" : "Called whenever experience is about to spawn. This is a helper event for easily being able to stop xp from spawning, as all you can currently do is cancel the event.\\nPlease note that it's impossible to detect xp orbs spawned by plugins (including Skript) with Bukkit, thus make sure that you have no such plugins if you don't want any xp orbs to spawn. (Many plugins that only <i>change</i> the experience dropped by blocks or entities will be detected without problems though)",
   "examples" : "on xp spawn:\\n    world is \"minigame_world\"\\n    cancel event"
 },
 {
@@ -3986,18 +3941,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on lightning:\\n    spawn a zombie at location of event-entity"
 },
 {
-  "id" : "loot_generate",
-  "name" : "On Loot Generate",
-  "patterns" : [
-    "[on] loot generat(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Called when a loot table of an inventory is generated in the world.\\nFor example, when opening a shipwreck chest.",
-  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
-},
-{
   "id" : "move",
   "name" : "On Move",
   "patterns" : [
@@ -4018,7 +3961,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "2.0",
-  "description" : "Called when a player moves onto a certain type of block.\\nPlease note that using this event can cause lag if there are many players online.",
+  "description" : "Called when a player moves onto a certain type of block. Please note that using this event can cause lag if there are many players online.",
   "examples" : "on walking on dirt or grass:\\non stepping on stone:"
 },
 {
@@ -4094,30 +4037,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on place:\\non place of a furnace, workbench or chest:\\non break of chest[type=right] or chest[type=left]"
 },
 {
-  "id" : "player_chunk_enters",
-  "name" : "On Player Chunk Enters",
-  "patterns" : [
-    "[on] player (enter[s] [a] chunk|chunk enter[ing]) [with priority (lowest|low|normal|high|highest|monitor)]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -> %event-chunk%!\" to player"
-},
-{
-  "id" : "player_deep_sleep",
-  "name" : "On Player Deep Sleep",
-  "patterns" : [
-    "[on] [player] deep sleep[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Called when a player has slept long enough to count as passing the night/storm.\\nCancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed.",
-  "examples" : "on player deep sleeping:\\n    send \"Zzzz..\" to player"
-},
-{
   "id" : "player_trade",
   "name" : "On Player Trade",
   "patterns" : [
@@ -4125,7 +4044,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Called when a player has traded with a villager.",
   "examples" : "on player trade:\\n    chance of 50%:\\n        cancel event\\n        send \"The trade was somehow denied!\" to player"
 },
@@ -4460,7 +4379,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Called with a player starts, stops or swaps spectating an entity.",
   "examples" : "on player start spectating of a zombie:"
 },
@@ -4762,7 +4681,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Returns the age or maximum age of blocks and age for entities (there in no maximum age for entities).
 For blocks, 'Age' represents the different growth stages that a crop-like block can go through. A value of 0 indicates that the crop was freshly planted, whilst a value equal to 'maximum age' indicates that the crop is ripe and ready to be harvested.
 For entities, 'Age' represents the time left for them to become adults and it's in minus increasing to be 0 which means they're adults, e.g. A baby cow needs 20 minutes to become an adult which equals to 24,000 ticks so their age will be -24000 once spawned.",
@@ -4776,7 +4695,7 @@ For entities, 'Age' represents the time left for them to become adults and it's 
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Obtains the list of all banned players or IP addresses.",
   "examples" : "command /banlist:\\n    trigger:\\n        send all the banned players"
 },
@@ -4800,7 +4719,7 @@ For entities, 'Age' represents the time left for them to become adults and it's 
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The list of operators on the server.",
   "examples" : "set {_ops::*} to all operators"
 },
@@ -4918,7 +4837,7 @@ Please note that getting a list's recursive size can cause lag if the list is la
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "An expression to get the name to be applied to an item in an anvil inventory.",
   "examples" : "on inventory click:\\n    type of event-inventory is anvil inventory\\n    if the anvil input text of the event-inventory is \"FREE OP\":\\n        ban player"
 },
@@ -4948,7 +4867,7 @@ Please note that getting a list's recursive size can cause lag if the list is la
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.7 (support for command events)",
+  "since" : "1.0, INSERT VERSION (support for command events)",
   "description" : "Usable in script commands and command events. Holds the value of an argument given to the command, e.g. if the command \"/tell &lt;player&gt; &lt;text&gt;\" is used like \"/tell Njol Hello Njol!\" argument 1 is the player named \"Njol\" and argument 2 is \"Hello Njol!\".
 One can also use the type of the argument instead of its index to address the argument, e.g. in the above example 'player-argument' is the same as 'argument 1'.
 Please note that specifying the argument type is only supported in script commands.",
@@ -5071,7 +4990,7 @@ Please note that the attacker can also be a block, e.g. a cactus or lava, but th
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.7 (offlineplayers, safe bed)",
+  "since" : "2.0, INSERT VERSION (offlineplayers, safe bed)",
   "description" : "Returns the bed location of a player, i.e. the spawn point of a player if they ever slept in a bed and the bed still exists and is unobstructed however, you can set the unsafe bed location of players and they will respawn there even if it has been obstructed or doesn't exist anymore and that's the default behavior of this expression otherwise you will need to be specific i.e. <code>safe bed location</code>.
 
 NOTE: Offline players can not have their bed location changed, only online players.",
@@ -5117,19 +5036,6 @@ Can optionally include a direction as well, e.g. 'block above' or 'block in fron
   "description" : "The block involved in the event, e.g. the clicked block or the placed block.
 Can optionally include a direction as well, e.g. 'block above' or 'block in front of the player'.",
   "examples" : "block is ore\\nset block below to air\\nspawn a creeper above the block\\nloop blocks in radius 4:\\n    loop-block is obsidian\\n    set loop-block to water\\nblock is a chest:\\n    clear the inventory of the block"
-},
-{
-  "id" : "ExprBreakSpeed",
-  "name" : "Block Break Speed",
-  "patterns" : [
-    "[the] break speed[s] [of %<a href='./classes.html#block'>blocks</a>%] [for %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#block'>block</a>%'[s] break speed[s] [for %<a href='./classes.html#player'>players</a>%]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Gets the speed at which the given player would break this block, taking into account tools, potion effects, whether or not the player is in water, enchantments, etc. The returned value is the amount of progress made in breaking the block each tick. When the total breaking progress reaches 1.0, the block is broken. Note that the break speed can change in the course of breaking a block, e.g. if a potion effect is applied or expires, or the player jumps/enters water.",
-  "examples" : "on left click using diamond pickaxe:\\n    event-block is set\\n    send \"Break Speed: %break speed for player%\" to player"
 },
 {
   "id" : "ExprBlockData",
@@ -5225,7 +5131,7 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev31, 2.7 (changers)",
+  "since" : "2.2-dev31, INSERT VERSION (changers)",
   "description" : "The pages of a book.",
   "examples" : "on book sign:\\n    message \"Book Pages: %pages of event-item%\"\\n    message \"Book Page 1: %page 1 of event-item%\"\\nset page 1 of player's held item to \"Book writing\""
 },
@@ -5369,7 +5275,7 @@ the <a href=effects.html#EffSend>send effect</a>.",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.7 (support for script commands)",
+  "since" : "2.0, INSERT VERSION (support for script commands)",
   "description" : "The command that caused an 'on command' event (excluding the leading slash and all arguments)",
   "examples" : "# prevent any commands except for the /exit command during some game\\non command:\\n    if {game::%player%::playing} is true:\\n        if the command is not \"exit\":\\n            message \"You're not allowed to use commands during the game\"\\n            cancel the event"
 },
@@ -5683,7 +5589,7 @@ but this expression can e.g. be used to \"add 1 to data of &lt;item&gt;\", e.g. 
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.7 (relative to last element)",
+  "since" : "2.0, INSERT VERSION (relative to last element)",
   "description" : "The first, last or a random element of a set, e.g. a list variable.
 See also: <a href='#ExprRandom'>random</a>",
   "examples" : "give a random element out of {free items::*} to the player"
@@ -5836,7 +5742,7 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "How much time an entity will be burning for.",
   "examples" : "send \"You will stop burning in %fire time of player%\""
 },
@@ -5874,7 +5780,7 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.1, 2.5.3 (block break event), 2.7 (experience change event)",
+  "since" : "2.1, 2.5.3 (block break event)",
   "description" : "How much experience was spawned in an experience spawn or block break event. Can be changed.",
   "examples" : "on experience spawn:\\n    add 5 to the spawned experience\\non break of coal ore:\\n    clear dropped experience\\non break of diamond ore:\\n    if tool of player = diamond pickaxe:\\n        add 100 to dropped experience"
 },
@@ -6057,9 +5963,9 @@ Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for 
 
     "pattern_end"
   ],
-  "since" : "2.2-dev31, 2.7 (support variables in format)",
+  "since" : "2.2-dev31, INSERT VERSION (support variables in format)",
   "description" : "Converts date to human-readable text format. By default, 'yyyy-MM-dd HH:mm:ss z' (e.g. '2018-03-30 16:03:12 +01') will be used. For reference, see this <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">Wikipedia article</a>.",
-  "examples" : "command /date:\\n    trigger:\\n        send \"Full date: %now formatted human-readable%\" to sender\\n        send \"Short date: %now formatted as \"yyyy-MM-dd\"%\" to sender"
+  "examples" : "command /date:\\n    trigger:\\n        send \"Full date: %now formatted human-readable%\" to sender\\n        send \"Short date: %now formatted as \"\"yyyy-MM-dd\"\"%\" to sender"
 },
 {
   "id" : "ExprTimeState",
@@ -6087,7 +5993,7 @@ Note 2: If you don't specify whether to use the past or future state of an expre
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "How much time an entity has been in powdered snow for.",
   "examples" : "player's freeze time is less than 3 seconds:\\n    send \"you're about to freeze!\" to the player"
 },
@@ -6220,7 +6126,7 @@ When hashing data, you <strong>must</strong> specify algorithms that will be use
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The type of the entity that will be hatched in a Player Egg Throw event.",
   "examples" : "on player egg throw:\\n    set the hatching entity type to a primed tnt"
 },
@@ -6232,7 +6138,7 @@ When hashing data, you <strong>must</strong> specify algorithms that will be use
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The number of entities that will be hatched in a Player Egg Throw event.
 Please note that no more than 127 entities can be hatched at once.",
   "examples" : "on player egg throw:\\n    set the hatching number to 10"
@@ -6564,21 +6470,6 @@ If multiple strings are passed, each of them will be a separate line in the lore
   "examples" : "set {_test} to stone with lore \"line 1\" and \"line 2\"\\ngive {_test} to player"
 },
 {
-  "id" : "ExprItems",
-  "name" : "Items",
-  "patterns" : [
-    "[all [[of] the]|the] block[[ ]type]s",
-"every block[[ ]type]",
-"[all [[of] the]|the|every] block[s] of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
-"[all [[of] the]|the|every] item[s] of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "1.0 pre-5",
-  "description" : "Items or blocks of a specific type, useful for looping.",
-  "examples" : "loop items of type ore and log:\\n    block contains loop-item\\n    message \"Theres at least one %loop-item% in this block\"\\ndrop all blocks at the player # drops one of every block at the player"
-},
-{
   "id" : "ExprItemsIn",
   "name" : "Items In",
   "patterns" : [
@@ -6603,7 +6494,7 @@ Please note that the positions of the items in the inventory are not saved, only
 
     "pattern_end"
   ],
-  "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity)",
+  "since" : "2.1, 2.5.2 (regex support), INSERT VERSION (case sensitivity)",
   "description" : "Joins several texts with a common delimiter (e.g. \", \"), or splits a text into multiple texts at a given delimiter.",
   "examples" : "message \"Online players: %join all players with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
 },
@@ -6709,7 +6600,7 @@ The vanilla Minecraft client will use lowercase language / country pairs separat
 
     "pattern_end"
   ],
-  "since" : "1.3 (spawned entity), 2.0 (shot entity), 2.2-dev26 (dropped item), 2.7 (struck lightning, firework)",
+  "since" : "1.3 (spawned entity), 2.0 (shot entity), 2.2-dev26 (dropped item), INSERT VERSION (struck lightning, firework)",
   "description" : "Holds the entity that was spawned most recently with the spawn effect (section), dropped with the <a href='../effects/#EffDrop'>drop effect</a>, shot with the <a href='../effects/#EffShoot'>shoot effect</a> or created with the <a href='../effects/#EffLightning'>lightning effect</a>. Please note that even though you can spawn multiple mobs simultaneously (e.g. with 'spawn 5 creepers'), only the last spawned mob is saved and can be used. If you spawn an entity, shoot a projectile and drop an item you can however access all them together.",
   "examples" : "spawn a priest\\nset {healer::%spawned priest%} to true\\nshoot an arrow from the last spawned entity\\nignite the shot projectile\\ndrop a diamond sword\\npush last dropped item upwards\\nteleport player to last struck lightning\\ndelete last launched firework"
 },
@@ -6800,7 +6691,7 @@ It can be separated into sunlight (15 = direct sunlight, 1-14 = indirect) and bl
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "An expression to obtain a list of the names of the server's loaded plugins.",
   "examples" : "if the loaded plugins contains \"Vault\":\\n    broadcast \"This server uses Vault plugin!\"\\n\\nsend \"Plugins (%size of loaded plugins%): %plugins%\" to player"
 },
@@ -6865,18 +6756,6 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "since" : "1.0",
   "description" : "The currently looped value.",
   "examples" : "# countdown:\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n# generate a 10x10 floor made of randomly colored wool below the player:\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool"
-},
-{
-  "id" : "ExprLoot",
-  "name" : "Loot",
-  "patterns" : [
-    "[the] loot",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "The loot that will be generated in a 'loot generate' event.",
-  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
 },
 {
   "id" : "ExprLore",
@@ -6956,7 +6835,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "2.3, 2.7 (modify max real players)",
+  "since" : "2.3, INSERT VERSION (modify max real players)",
   "description" : "The count of max players. This can be changed in a <a href='events.html#server_list_ping'>server list ping</a> event only.
 'real max players' returns the real count of max players of the server and can be modified on Paper 1.16 or later.",
   "examples" : "on server list ping:\\n    set the max players count to (online players count + 1)"
@@ -6970,7 +6849,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The maximum amount of time an entity can spend in powdered snow before taking damage.",
   "examples" : "difference between player's freeze time and player's max freeze time is less than 1 second:\\n    send \"you're about to freeze!\" to the player"
 },
@@ -7089,7 +6968,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The current moon phase of a world.",
   "examples" : "if moon phase of player's world is full moon:\\n    send \"Watch for the wolves!\""
 },
@@ -7114,7 +6993,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
+  "since" : "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), INSERT VERSION (worlds)",
   "description" : "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.
 
 <ul>
@@ -7162,7 +7041,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
+  "since" : "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), INSERT VERSION (worlds)",
   "description" : "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.
 
 <ul>
@@ -7222,7 +7101,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Gets the entity nearest to a location or another entity.",
   "examples" : "kill the nearest pig and cow relative to player\\nteleport player to the nearest cow relative to player\\nteleport player to the nearest entity relative to player\\n\\non click:\\n    kill nearest pig"
 },
@@ -7389,7 +7268,7 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Returns the mathematical constant pi. (approx. 3.1415926535)",
   "examples" : "set {_tau} to pi * 2"
 },
@@ -7402,7 +7281,7 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The amount of time before a dropped item can be picked up by an entity.",
   "examples" : "drop diamond sword at {_location} without velocity\\nset pickup delay of last dropped item to 5 seconds"
 },
@@ -7518,7 +7397,7 @@ to tipped arrows/lingering potions, Minecraft reduces the timespan.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "An expression to obtain the amplifier of a potion effect applied to an entity.",
   "examples" : "if the amplifier of haste of player >= 3:"
 },
@@ -7655,7 +7534,7 @@ Please note that the order of the numbers doesn't matter, i.e. <code>random numb
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "Returns the string without formatting (colors etc.) and without stripping them from it, e.g. <code>raw \"&aHello There!\"</code> would output <code>&aHello There!</code>",
   "examples" : "send raw \"&aThis text is unformatted!\" to all players"
 },
@@ -7734,7 +7613,7 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The charges of a respawn anchor.",
   "examples" : "set the charges of event-block to 3"
 },
@@ -7833,19 +7712,6 @@ Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 t
   "examples" : "send \"The sea level in your world is %sea level in player's world%\""
 },
 {
-  "id" : "ExprSeaPickles",
-  "name" : "Sea Pickles",
-  "patterns" : [
-    "[the] [(min|max)[imum]] [sea] pickle(s| (count|amount)) of %<a href='./classes.html#block'>blocks</a>%",
-"%<a href='./classes.html#block'>blocks</a>%'[s] [(min|max)[imum]] [sea] pickle(s| (count|amount))",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "An expression to obtain or modify data relating to the pickles of a sea pickle block.",
-  "examples" : "on block break:\\n    type of block is sea pickle\\n    send \"Wow! This stack of sea pickles contained %event-block's sea pickle count% pickles!\"\\n    send \"It could've contained a maximum of %event-block's maximum sea pickle count% pickles!\"\\n    send \"It had to have contained at least %event-block's minimum sea pickle count% pickles!\"\\n    cancel event\\n    set event-block's sea pickle count to event-block's maximum sea pickle count\\n    send \"This bad boy is going to hold so many pickles now!!\""
-},
-{
   "id" : "ExprServerIcon",
   "name" : "Server Icon",
   "patterns" : [
@@ -7864,13 +7730,17 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "id" : "ExprSets",
   "name" : "Sets",
   "patterns" : [
-    "[all [[of] the]|the|every] %*<a href='./classes.html#classinfo'>type</a>%",
+    "[(all [[of] the]|the|every)] item(s|[ ]types)",
+"[(all [[of] the]|the)] items of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
+"[(all [[of] the]|the|every)] block(s|[ ]types)",
+"[(all [[of] the]|the)] blocks of type[s] %<a href='./classes.html#itemtype'>item types</a>%",
+"([all [[of] the]] colo[u]rs|(the|every) colo[u]r)",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 1.4.2), 2.7 (colors)",
-  "description" : "Returns a list of all the values of a type; useful for looping.",
-  "examples" : "loop all attribute types:\\n    set loop-value attribute of player to 10\\n    message \"Set attribute %loop-value% to 10!\""
+  "since" : "<i>unknown</i> (before 1.4.2), INSERT VERSION (colors)",
+  "description" : "Collection sets of items or blocks of a specific type or colours, useful for looping.",
+  "examples" : "loop items of type ore and log:\\n    block contains loop-item\\n    message \"Theres at least one %loop-item% in this block\"\\ndrop all blocks at the player # drops one of every block at the player"
 },
 {
   "id" : "ExprShooter",
@@ -7936,18 +7806,6 @@ if they're not, this expression will return nothing.",
   "examples" : "set {_sorted::*} to sorted {_players::*}"
 },
 {
-  "id" : "ExprSourceBlock",
-  "name" : "Source Block",
-  "patterns" : [
-    "[the] source block",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "The source block in a spread event.",
-  "examples" : "on spread:\\n    if the source block is a grass block:\\n        set the source block to a dirt block"
-},
-{
   "id" : "ExprSpawn",
   "name" : "Spawn",
   "patterns" : [
@@ -8007,7 +7865,7 @@ if they're not, this expression will return nothing.",
 
     "pattern_end"
   ],
-  "since" : "2.4-alpha4, 2.7 (Paper Spectator Event)",
+  "since" : "2.4-alpha4, INSERT VERSION (Paper Spectator Event)",
   "description" : "Grabs the spectator target entity of the players.",
   "examples" : "on player start spectating of player:\\n    message \"&c%spectator target% currently has %{game::kills::%spectator target%}% kills!\" to the player\\n\\non player stop spectating:\\n    past spectator target was a zombie\\n    set spectator target to the nearest skeleton"
 },
@@ -8140,7 +7998,7 @@ Please note that changing a player's speed will change their FOV just like potio
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The egg thrown in a Player Egg Throw event.",
   "examples" : "spawn an egg at the egg"
 },
@@ -8166,7 +8024,7 @@ Please note that changing a player's speed will change their FOV just like potio
 
     "pattern_end"
   ],
-  "since" : "2.5, 2.7 (offline players)",
+  "since" : "2.5, INSERT VERSION (offline players)",
   "description" : "The amount of time a player has played for on the server. This info is stored in the player's statistics in the main world's data folder. Changing this will also change the player's stats which can be views in the client's statistics menu.
 Using this expression on offline players on Minecraft 1.14 and below will return nothing <code>&lt;none&gt;</code>.",
   "examples" : "set {_t} to time played of player\\nif player's time played is greater than 10 minutes:\\n    give player a diamond sword\\n\\nset player's time played to 0 seconds"
@@ -8205,7 +8063,7 @@ Using this expression on offline players on Minecraft 1.14 and below will return
 
     "pattern_end"
   ],
-  "since" : "1.4, 2.5.2 (potion effect), 2.7 (block datas)",
+  "since" : "1.4, 2.5.2 (potion effect), INSERT VERSION (block datas)",
   "description" : "Type of a block, item, entity, inventory or potion effect.
 Types of items, blocks and block datas are item types similar to them but have amounts
 of one, no display names and, on Minecraft 1.13 and newer versions, are undamaged.
@@ -8265,18 +8123,6 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev31",
   "description" : "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970.",
   "examples" : "unix timestamp of now"
-},
-{
-  "id" : "ExprValueWithin",
-  "name" : "Value Within",
-  "patterns" : [
-    "[the] (%*<a href='./classes.html#classinfo'>type</a>%|value[s]) (within|in) %~<a href='./classes.html#object'>objects</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Gets the value within objects. Usually used with variables to get the value they store rather than the variable itself, or with lists to get the values of a type.",
-  "examples" : "set {_entity} to a random entity out of all entities\\ndelete entity within {_entity} # This deletes the entity itself and not the value stored in the variable\\n\\nset {_list::*} to \"something\", 10, \"test\" and a zombie\\nbroadcast the strings within {_list::*} # \"something\", \"test\""
 },
 {
   "id" : "ExprVectorAngleBetween",
@@ -8400,7 +8246,7 @@ In the future there will be an option to use a player's UUID instead of the name
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.7 (signed components)",
+  "since" : "2.2-dev28, INSERT VERSION (signed components)",
   "description" : "Creates a random vector.",
   "examples" : "set {_v} to a random vector"
 },
@@ -8532,23 +8378,6 @@ This can only be set in a <a href='events.html#server_list_ping'>server list pin
   "examples" : "on server list ping:\\n    set the protocol version to 0 # 13w41a (1.7), so it will show the version string always\\n    set the version string to \"&lt;light green&gt;Version: &lt;orange&gt;%minecraft version%\""
 },
 {
-  "id" : "ExprPlayerViewDistance",
-  "name" : "View Distance",
-  "patterns" : [
-    "[the] view distance[s] of %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>%'[s] view distance[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.4",
-  "description" : "The view distance of a player as set by the server. Can be changed.
-NOTE: This is the view distance sent by the server to the player.
-This has nothing to do with client side view distance settings
-NOTE: This may not work on some versions (such as MC 1.14.x).
-The return value in this case will be the view distance set in system.properties.",
-  "examples" : "set view distance of player to 10\\nset {_view} to view distance of player\\nreset view distance of all players\\nadd 2 to view distance of player"
-},
-{
   "id" : "ExprClientViewDistance",
   "name" : "View Distance of Client",
   "patterns" : [
@@ -8608,7 +8437,7 @@ The return value in this case will be the view distance set in system.properties
 
     "pattern_end"
   ],
-  "since" : "2.7",
+  "since" : "INSERT VERSION",
   "description" : "The environment of a world",
   "examples" : "if environment of player's world is nether:\\n    apply fire resistance to player for 10 minutes"
 },
@@ -8937,12 +8766,12 @@ The return value in this case will be the view distance set in system.properties
   "id" : "round",
   "name" : "round",
   "patterns" : [
-    "round(n: number, d: number = [[integer:0]])",
+    "round(n: number)",
 
     "pattern_end"
   ],
-  "since" : "2.2, 2.7 (decimal placement)",
-  "description" : "Rounds a number, i.e. returns the closest integer to the argument. Place a second argument to define the decimal placement.",
+  "since" : "2.2",
+  "description" : "Rounds a number, i.e. returns the closest integer to the argument.",
   "examples" : "round(2.34) = 2\\nround(2) = 2\\nround(2.99) = 3\\nround(2.5) = 3"
 },
 {
