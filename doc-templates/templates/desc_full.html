@@ -14,6 +14,19 @@
         </td>
       </tr>
 
+      ${if structure-required-entrydata}
+      <tr class="item-details">
+        <td class="item-table-label">Required Entries:</td>
+        <td>${element.structure-required-entrydata}</td>
+      </tr>
+
+      ${end} ${if structure-optional-entrydata}
+      <tr class="item-details">
+        <td class="item-table-label">Optional Entries:</td>
+        <td>${element.structure-optional-entrydata}</td>
+      </tr>
+
+      ${end}
       <tr class="item-details">
         <td class="item-table-label">Since:</td>
         <td>${element.since}</td>
