@@ -90,7 +90,7 @@ document.querySelectorAll(".new-element").forEach((e) => {
 // <> Search Bar
 const versionComparePattern = /.*?(\d\.\d(?:\.\d|))(\+|-|).*/gi;
 const versionPattern = / ?v(?:ersion|):(\d\.\d(?:\.\d|-(?:beta|alpha|dev)\d*|))(\+|-|)/gi;
-const typePattern = / ?t(?:ype|):(condition|expression|type|effect|event|section|effectsection|function)/gi;
+const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
