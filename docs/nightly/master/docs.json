@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta1-nightly-157b896",
+  "skriptVersion" : "2.7.0-beta1-nightly-f858c4a",
 
   "classes" : [
     {
@@ -6445,8 +6445,8 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "id" : "ExprItemAmount",
   "name" : "Item Amount",
   "patterns" : [
-    "[the] item[[ ]stack] (amount|size|number) of %<a href='./classes.html#slot'>slots</a>/<a href='./classes.html#itemtype'>item types</a>%",
-"%<a href='./classes.html#slot'>slots</a>/<a href='./classes.html#itemtype'>item types</a>%'[s] item[[ ]stack] (amount|size|number)",
+    "[the] item[[ ]stack] (amount|size|number) of %<a href='./classes.html#slot'>slots</a>/<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#slot'>slots</a>/<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%'[s] item[[ ]stack] (amount|size|number)",
 
     "pattern_end"
   ],
