@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta1-nightly-f858c4a",
+  "skriptVersion" : "2.7.0-beta1-nightly-f8f0437",
 
   "classes" : [
     {
@@ -3004,7 +3004,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "at_time",
   "name" : "At Time",
   "patterns" : [
-    "[on] at %<a href='./classes.html#time'>time</a>% [in %<a href='./classes.html#world'>worlds</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] at %<a href='./classes.html#time'>time</a>% [in %<a href='./classes.html#world'>worlds</a>%]",
 
     "pattern_end"
   ],
@@ -3016,7 +3016,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "anvil_damage",
   "name" : "On Anvil Damage",
   "patterns" : [
-    "[on] anvil damag(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] anvil damag(e|ing)",
 
     "pattern_end"
   ],
@@ -3028,7 +3028,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "anvil_prepare",
   "name" : "On Anvil Prepare",
   "patterns" : [
-    "[on] anvil prepar(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] anvil prepar(e|ing)",
 
     "pattern_end"
   ],
@@ -3040,7 +3040,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "aoe_cloud_effect",
   "name" : "On AoE Cloud Effect",
   "patterns" : [
-    "[on] (area|AoE) [cloud] effect [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (area|AoE) [cloud] effect",
 
     "pattern_end"
   ],
@@ -3052,7 +3052,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "arm_swing",
   "name" : "On Arm Swing",
   "patterns" : [
-    "[on] [player] arm swing [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] arm swing",
 
     "pattern_end"
   ],
@@ -3064,7 +3064,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "armor_change",
   "name" : "On Armor Change",
   "patterns" : [
-    "[on] [player] armor change[d] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] armor change[d]",
 
     "pattern_end"
   ],
@@ -3076,8 +3076,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "bed_enter",
   "name" : "On Bed Enter",
   "patterns" : [
-    "[on] bed enter[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] enter[ing] [a] bed [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] bed enter[ing]",
+"[on] [player] enter[ing] [a] bed",
 
     "pattern_end"
   ],
@@ -3089,8 +3089,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "bed_leave",
   "name" : "On Bed Leave",
   "patterns" : [
-    "[on] bed leav(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] leav(e|ing) [a] bed [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] bed leav(e|ing)",
+"[on] [player] leav(e|ing) [a] bed",
 
     "pattern_end"
   ],
@@ -3102,7 +3102,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "block_damage",
   "name" : "On Block Damage",
   "patterns" : [
-    "[on] block damag(ing|e) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] block damag(ing|e)",
 
     "pattern_end"
   ],
@@ -3114,7 +3114,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "block_fertilize",
   "name" : "On Block Fertilize",
   "patterns" : [
-    "[on] [block] fertilize [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] fertilize",
 
     "pattern_end"
   ],
@@ -3126,7 +3126,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "block_growth",
   "name" : "On Block Growth",
   "patterns" : [
-    "[on] (plant|crop|block) grow[(th|ing)] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (plant|crop|block) grow[(th|ing)] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3138,7 +3138,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "book_edit",
   "name" : "On Book Edit",
   "patterns" : [
-    "[on] book (edit|change|write) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] book (edit|change|write)",
 
     "pattern_end"
   ],
@@ -3150,7 +3150,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "book_sign",
   "name" : "On Book Sign",
   "patterns" : [
-    "[on] book sign[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] book sign[ing]",
 
     "pattern_end"
   ],
@@ -3162,7 +3162,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "break_mine",
   "name" : "On Break / Mine",
   "patterns" : [
-    "[on] [block] (break[ing]|min(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] (break[ing]|min(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
     "pattern_end"
   ],
@@ -3174,8 +3174,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "bucket_empty",
   "name" : "On Bucket Empty",
   "patterns" : [
-    "[on] bucket empty[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] empty[ing] [a] bucket [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] bucket empty[ing]",
+"[on] [player] empty[ing] [a] bucket",
 
     "pattern_end"
   ],
@@ -3187,8 +3187,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "bucket_fill",
   "name" : "On Bucket fill",
   "patterns" : [
-    "[on] bucket fill[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] fill[ing] [a] bucket [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] bucket fill[ing]",
+"[on] [player] fill[ing] [a] bucket",
 
     "pattern_end"
   ],
@@ -3200,7 +3200,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "burn",
   "name" : "On Burn",
   "patterns" : [
-    "[on] [block] burn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] burn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
     "pattern_end"
   ],
@@ -3212,7 +3212,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "can_build_check",
   "name" : "On Can Build Check",
   "patterns" : [
-    "[on] [block] can build check [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] can build check",
 
     "pattern_end"
   ],
@@ -3224,7 +3224,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "chat",
   "name" : "On Chat",
   "patterns" : [
-    "[on] chat [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] chat",
 
     "pattern_end"
   ],
@@ -3236,7 +3236,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "chunk_generate",
   "name" : "On Chunk Generate",
   "patterns" : [
-    "[on] chunk (generat|populat)(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] chunk (generat|populat)(e|ing)",
 
     "pattern_end"
   ],
@@ -3248,7 +3248,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "chunk_load",
   "name" : "On Chunk Load",
   "patterns" : [
-    "[on] chunk load[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] chunk load[ing]",
 
     "pattern_end"
   ],
@@ -3260,7 +3260,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "chunk_unload",
   "name" : "On Chunk Unload",
   "patterns" : [
-    "[on] chunk unload[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] chunk unload[ing]",
 
     "pattern_end"
   ],
@@ -3272,8 +3272,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "click",
   "name" : "On Click",
   "patterns" : [
-    "[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] [on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>%] [(with|using|holding) %<a href='./classes.html#itemtype'>item type</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] (with|using|holding) %<a href='./classes.html#itemtype'>item type</a>% on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>% [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] [on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>%] [(with|using|holding) %<a href='./classes.html#itemtype'>item type</a>%]",
+"[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] (with|using|holding) %<a href='./classes.html#itemtype'>item type</a>% on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>%",
 
     "pattern_end"
   ],
@@ -3285,7 +3285,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "combust",
   "name" : "On Combust",
   "patterns" : [
-    "[on] combust[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] combust[ing]",
 
     "pattern_end"
   ],
@@ -3297,7 +3297,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "command",
   "name" : "On Command",
   "patterns" : [
-    "[on] command [%<a href='./classes.html#string'>text</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] command [%<a href='./classes.html#string'>text</a>%]",
 
     "pattern_end"
   ],
@@ -3309,7 +3309,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "connect",
   "name" : "On Connect",
   "patterns" : [
-    "[on] [player] connect[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] connect[ing]",
 
     "pattern_end"
   ],
@@ -3321,7 +3321,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "consume",
   "name" : "On Consume",
   "patterns" : [
-    "[on] [player] ((eat|drink)[ing]|consum(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] ((eat|drink)[ing]|consum(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3333,7 +3333,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "craft",
   "name" : "On Craft",
   "patterns" : [
-    "[on] [player] craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3345,7 +3345,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "creeper_power",
   "name" : "On Creeper Power",
   "patterns" : [
-    "[on] creeper power [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] creeper power",
 
     "pattern_end"
   ],
@@ -3357,7 +3357,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "damage",
   "name" : "On Damage",
   "patterns" : [
-    "[on] damag(e|ing) [of %<a href='./classes.html#entitydata'>entity type</a>%] [by %<a href='./classes.html#entitydata'>entity type</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] damag(e|ing) [of %<a href='./classes.html#entitydata'>entity type</a>%] [by %<a href='./classes.html#entitydata'>entity type</a>%]",
 
     "pattern_end"
   ],
@@ -3369,7 +3369,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "death",
   "name" : "On Death",
   "patterns" : [
-    "[on] death [of %<a href='./classes.html#entitydata'>entity types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] death [of %<a href='./classes.html#entitydata'>entity types</a>%]",
 
     "pattern_end"
   ],
@@ -3381,7 +3381,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "dispense",
   "name" : "On Dispense",
   "patterns" : [
-    "[on] dispens(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] dispens(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3393,7 +3393,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "drop",
   "name" : "On Drop",
   "patterns" : [
-    "[on] [player|entity] drop[ping] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player|entity] drop[ping] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3405,8 +3405,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "egg_throw",
   "name" : "On Egg Throw",
   "patterns" : [
-    "[on] throw[ing] [of] [an] egg [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] egg throw [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] throw[ing] [of] [an] egg",
+"[on] [player] egg throw",
 
     "pattern_end"
   ],
@@ -3418,7 +3418,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "enchant",
   "name" : "On Enchant",
   "patterns" : [
-    "[on] [item] enchant [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [item] enchant",
 
     "pattern_end"
   ],
@@ -3430,7 +3430,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "enchant_prepare",
   "name" : "On Enchant Prepare",
   "patterns" : [
-    "[on] [item] enchant prepare [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [item] enchant prepare",
 
     "pattern_end"
   ],
@@ -3442,12 +3442,12 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "endermansheepsilverfishfalling_block",
   "name" : "On Enderman/Sheep/Silverfish/Falling Block",
   "patterns" : [
-    "[on] enderman place [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] enderman pickup [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] sheep eat [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] silverfish enter [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] silverfish exit [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] falling block land[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] enderman place",
+"[on] enderman pickup",
+"[on] sheep eat",
+"[on] silverfish enter",
+"[on] silverfish exit",
+"[on] falling block land[ing]",
 
     "pattern_end"
   ],
@@ -3459,7 +3459,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "entity_dismount",
   "name" : "On Entity Dismount",
   "patterns" : [
-    "[on] dismount[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] dismount[ing]",
 
     "pattern_end"
   ],
@@ -3471,7 +3471,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "entity_jump",
   "name" : "On Entity Jump",
   "patterns" : [
-    "[on] entity jump[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] entity jump[ing]",
 
     "pattern_end"
   ],
@@ -3483,7 +3483,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "entity_mount",
   "name" : "On Entity Mount",
   "patterns" : [
-    "[on] mount[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] mount[ing]",
 
     "pattern_end"
   ],
@@ -3495,7 +3495,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "entity_portal",
   "name" : "On Entity Portal",
   "patterns" : [
-    "[on] entity portal [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] entity portal",
 
     "pattern_end"
   ],
@@ -3507,7 +3507,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "experience_change",
   "name" : "On Experience Change",
   "patterns" : [
-    "[on] [player] (level progress|[e]xp|experience) (change|update|increase|decrease) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] (level progress|[e]xp|experience) (change|update|increase|decrease)",
 
     "pattern_end"
   ],
@@ -3519,8 +3519,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "experience_spawn",
   "name" : "On Experience Spawn",
   "patterns" : [
-    "[on] [e]xp[erience] [orb] spawn [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] spawn of [a[n]] [e]xp[erience] [orb] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [e]xp[erience] [orb] spawn",
+"[on] spawn of [a[n]] [e]xp[erience] [orb]",
 
     "pattern_end"
   ],
@@ -3532,7 +3532,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "explode",
   "name" : "On Explode",
   "patterns" : [
-    "[on] explo(d(e|ing)|sion) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] explo(d(e|ing)|sion)",
 
     "pattern_end"
   ],
@@ -3544,7 +3544,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "explosion_prime",
   "name" : "On Explosion Prime",
   "patterns" : [
-    "[on] explosion prime [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] explosion prime",
 
     "pattern_end"
   ],
@@ -3556,7 +3556,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "fade",
   "name" : "On Fade",
   "patterns" : [
-    "[on] [block] fad(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] fad(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
     "pattern_end"
   ],
@@ -3568,7 +3568,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "firework_explode",
   "name" : "On Firework Explode",
   "patterns" : [
-    "[on] [a] firework explo(d(e|ing)|sion) [colo[u]red %<a href='./classes.html#color'>colors</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [a] firework explo(d(e|ing)|sion) [colo[u]red %<a href='./classes.html#color'>colors</a>%]",
 
     "pattern_end"
   ],
@@ -3580,7 +3580,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "first_join",
   "name" : "On First Join",
   "patterns" : [
-    "[on] first (join|login) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] first (join|login)",
 
     "pattern_end"
   ],
@@ -3592,7 +3592,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "fishing",
   "name" : "On Fishing",
   "patterns" : [
-    "[on] [player] fish[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] fish[ing]",
 
     "pattern_end"
   ],
@@ -3604,8 +3604,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "flight_toggle",
   "name" : "On Flight Toggle",
   "patterns" : [
-    "[on] [player] flight toggl(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] toggl(e|ing) flight [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] flight toggl(e|ing)",
+"[on] [player] toggl(e|ing) flight",
 
     "pattern_end"
   ],
@@ -3617,8 +3617,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "flow",
   "name" : "On Flow",
   "patterns" : [
-    "[on] [block] flow[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] block mov(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] flow[ing]",
+"[on] block mov(e|ing)",
 
     "pattern_end"
   ],
@@ -3630,7 +3630,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "form",
   "name" : "On Form",
   "patterns" : [
-    "[on] [block] form[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] form[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
     "pattern_end"
   ],
@@ -3642,7 +3642,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "fuel_burn",
   "name" : "On Fuel Burn",
   "patterns" : [
-    "[on] fuel burn[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] fuel burn[ing]",
 
     "pattern_end"
   ],
@@ -3654,7 +3654,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "gamemode_change",
   "name" : "On Gamemode Change",
   "patterns" : [
-    "[on] game[ ]mode change [to %<a href='./classes.html#gamemode'>gamemode</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] game[ ]mode change [to %<a href='./classes.html#gamemode'>gamemode</a>%]",
 
     "pattern_end"
   ],
@@ -3666,7 +3666,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "gliding_state_change",
   "name" : "On Gliding State Change",
   "patterns" : [
-    "[on] (gliding state change|toggl(e|ing) gliding) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (gliding state change|toggl(e|ing) gliding)",
 
     "pattern_end"
   ],
@@ -3678,7 +3678,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "grow",
   "name" : "On Grow",
   "patterns" : [
-    "[on] grow [of (%<a href='./classes.html#structuretype'>tree type</a>%|%<a href='./classes.html#itemtype'>item type</a>%)] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] grow [of (%<a href='./classes.html#structuretype'>tree type</a>%|%<a href='./classes.html#itemtype'>item type</a>%)]",
 
     "pattern_end"
   ],
@@ -3690,7 +3690,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "hand_item_swap",
   "name" : "On Hand Item Swap",
   "patterns" : [
-    "[on] swap[ping of] [(hand|held)] item[s] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] swap[ping of] [(hand|held)] item[s]",
 
     "pattern_end"
   ],
@@ -3702,7 +3702,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "heal",
   "name" : "On Heal",
   "patterns" : [
-    "[on] heal[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] heal[ing]",
 
     "pattern_end"
   ],
@@ -3714,7 +3714,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "horse_jump",
   "name" : "On Horse Jump",
   "patterns" : [
-    "[on] horse jump [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] horse jump",
 
     "pattern_end"
   ],
@@ -3726,7 +3726,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "hunger_meter_change",
   "name" : "On Hunger Meter Change",
   "patterns" : [
-    "[on] (food|hunger) (level|met(er|re)|bar) chang(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (food|hunger) (level|met(er|re)|bar) chang(e|ing)",
 
     "pattern_end"
   ],
@@ -3738,7 +3738,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "ignition",
   "name" : "On Ignition",
   "patterns" : [
-    "[on] [block] ignit(e|ion) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] ignit(e|ion)",
 
     "pattern_end"
   ],
@@ -3750,7 +3750,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "inventory_click",
   "name" : "On Inventory Click",
   "patterns" : [
-    "[on] [player] inventory(-| )click[ing] [[at] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] inventory(-| )click[ing] [[at] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3762,7 +3762,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "inventory_close",
   "name" : "On Inventory Close",
   "patterns" : [
-    "[on] inventory clos(ing|e[d]) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] inventory clos(ing|e[d])",
 
     "pattern_end"
   ],
@@ -3774,7 +3774,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "inventory_open",
   "name" : "On Inventory Open",
   "patterns" : [
-    "[on] inventory open[ed] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] inventory open[ed]",
 
     "pattern_end"
   ],
@@ -3786,7 +3786,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "inventory_pickup",
   "name" : "On Inventory Pickup",
   "patterns" : [
-    "[on] inventory pick[ ]up [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] inventory pick[ ]up",
 
     "pattern_end"
   ],
@@ -3798,7 +3798,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "inventory_slot_change",
   "name" : "On Inventory Slot Change",
   "patterns" : [
-    "[on] [player] inventory slot chang(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] inventory slot chang(e|ing)",
 
     "pattern_end"
   ],
@@ -3810,8 +3810,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_break",
   "name" : "On Item Break",
   "patterns" : [
-    "[on] [player] tool break[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] break[ing] [(a|the)] tool [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] tool break[ing]",
+"[on] [player] break[ing] [(a|the)] tool",
 
     "pattern_end"
   ],
@@ -3823,7 +3823,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_damage",
   "name" : "On Item Damage",
   "patterns" : [
-    "[on] item damag(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] item damag(e|ing)",
 
     "pattern_end"
   ],
@@ -3835,8 +3835,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_despawn",
   "name" : "On Item Despawn",
   "patterns" : [
-    "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) despawn[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [item[ ][stack]] despawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) despawn[ing]",
+"[on] [item[ ][stack]] despawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3848,7 +3848,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_mend",
   "name" : "On Item Mend",
   "patterns" : [
-    "[on] item mend[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] item mend[ing]",
 
     "pattern_end"
   ],
@@ -3860,8 +3860,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_merge",
   "name" : "On Item Merge",
   "patterns" : [
-    "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) merg(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] item[ ][stack] merg(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) merg(e|ing)",
+"[on] item[ ][stack] merg(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3873,7 +3873,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "item_spawn",
   "name" : "On Item Spawn",
   "patterns" : [
-    "[on] item spawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] item spawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -3885,7 +3885,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "join",
   "name" : "On Join",
   "patterns" : [
-    "[on] [player] (login|logging in|join[ing]) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] (login|logging in|join[ing])",
 
     "pattern_end"
   ],
@@ -3897,7 +3897,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "jump",
   "name" : "On Jump",
   "patterns" : [
-    "[on] [player] jump[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] jump[ing]",
 
     "pattern_end"
   ],
@@ -3909,7 +3909,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "kick",
   "name" : "On Kick",
   "patterns" : [
-    "[on] [player] (kick|being kicked) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] (kick|being kicked)",
 
     "pattern_end"
   ],
@@ -3921,8 +3921,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "language_change",
   "name" : "On Language Change",
   "patterns" : [
-    "[on] [player] (language|locale) chang(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] chang(e|ing) (language|locale) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] (language|locale) chang(e|ing)",
+"[on] [player] chang(e|ing) (language|locale)",
 
     "pattern_end"
   ],
@@ -3934,7 +3934,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "leaves_decay",
   "name" : "On Leaves Decay",
   "patterns" : [
-    "[on] leaves decay[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] leaves decay[ing]",
 
     "pattern_end"
   ],
@@ -3946,7 +3946,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "level_change",
   "name" : "On Level Change",
   "patterns" : [
-    "[on] [player] level (change|up|down) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] level (change|up|down)",
 
     "pattern_end"
   ],
@@ -3958,7 +3958,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "lightning_strike",
   "name" : "On Lightning Strike",
   "patterns" : [
-    "[on] lightning [strike] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] lightning [strike]",
 
     "pattern_end"
   ],
@@ -3970,7 +3970,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "loot_generate",
   "name" : "On Loot Generate",
   "patterns" : [
-    "[on] loot generat(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] loot generat(e|ing)",
 
     "pattern_end"
   ],
@@ -3982,7 +3982,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "move",
   "name" : "On Move",
   "patterns" : [
-    "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step)",
 
     "pattern_end"
   ],
@@ -3994,7 +3994,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "move_on",
   "name" : "On Move On",
   "patterns" : [
-    "[on] (step|walk)[ing] (on|over) %*<a href='./classes.html#itemtype'>item types</a>% [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (step|walk)[ing] (on|over) %*<a href='./classes.html#itemtype'>item types</a>%",
 
     "pattern_end"
   ],
@@ -4006,7 +4006,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "physics",
   "name" : "On Physics",
   "patterns" : [
-    "[on] [block] physics [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] physics",
 
     "pattern_end"
   ],
@@ -4018,7 +4018,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "pick_up",
   "name" : "On Pick Up",
   "patterns" : [
-    "[on] [(player|entity)] (pick[ ]up|picking up) [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [(player|entity)] (pick[ ]up|picking up) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -4030,7 +4030,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "pig_zap",
   "name" : "On Pig Zap",
   "patterns" : [
-    "[on] pig[ ]zap [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] pig[ ]zap",
 
     "pattern_end"
   ],
@@ -4042,7 +4042,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "piston_extend",
   "name" : "On Piston Extend",
   "patterns" : [
-    "[on] piston extend[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] piston extend[ing]",
 
     "pattern_end"
   ],
@@ -4054,7 +4054,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "piston_retract",
   "name" : "On Piston Retract",
   "patterns" : [
-    "[on] piston retract[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] piston retract[ing]",
 
     "pattern_end"
   ],
@@ -4066,7 +4066,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "place",
   "name" : "On Place",
   "patterns" : [
-    "[on] [block] (plac(e|ing)|build[ing]) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [block] (plac(e|ing)|build[ing]) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
     "pattern_end"
   ],
@@ -4078,7 +4078,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "player_chunk_enters",
   "name" : "On Player Chunk Enters",
   "patterns" : [
-    "[on] player (enter[s] [a] chunk|chunk enter[ing]) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] player (enter[s] [a] chunk|chunk enter[ing])",
 
     "pattern_end"
   ],
@@ -4090,7 +4090,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "player_deep_sleep",
   "name" : "On Player Deep Sleep",
   "patterns" : [
-    "[on] [player] deep sleep[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] deep sleep[ing]",
 
     "pattern_end"
   ],
@@ -4102,7 +4102,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "player_trade",
   "name" : "On Player Trade",
   "patterns" : [
-    "[on] player trad(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] player trad(e|ing)",
 
     "pattern_end"
   ],
@@ -4114,7 +4114,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "player_world_change",
   "name" : "On Player World Change",
   "patterns" : [
-    "[on] [player] world chang(ing|e[d]) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] world chang(ing|e[d])",
 
     "pattern_end"
   ],
@@ -4126,7 +4126,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "portal",
   "name" : "On Portal",
   "patterns" : [
-    "[on] [player] portal [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] portal",
 
     "pattern_end"
   ],
@@ -4138,7 +4138,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "portal_create",
   "name" : "On Portal Create",
   "patterns" : [
-    "[on] portal creat(e|ion) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] portal creat(e|ion)",
 
     "pattern_end"
   ],
@@ -4150,8 +4150,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "portal_enter",
   "name" : "On Portal Enter",
   "patterns" : [
-    "[on] portal enter[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] entering [a] portal [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] portal enter[ing]",
+"[on] entering [a] portal",
 
     "pattern_end"
   ],
@@ -4163,7 +4163,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "prepare_craft",
   "name" : "On Prepare Craft",
   "patterns" : [
-    "[on] [player] (preparing|beginning) craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] (preparing|beginning) craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
     "pattern_end"
   ],
@@ -4175,8 +4175,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "pressure_plate_trip",
   "name" : "On Pressure Plate / Trip",
   "patterns" : [
-    "[on] [step[ping] on] [a] [pressure] plate [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] (trip|[step[ping] on] [a] tripwire) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [step[ping] on] [a] [pressure] plate",
+"[on] (trip|[step[ping] on] [a] tripwire)",
 
     "pattern_end"
   ],
@@ -4188,7 +4188,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "projectile_collide",
   "name" : "On Projectile Collide",
   "patterns" : [
-    "[on] projectile collide [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] projectile collide",
 
     "pattern_end"
   ],
@@ -4200,7 +4200,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "projectile_hit",
   "name" : "On Projectile Hit",
   "patterns" : [
-    "[on] projectile hit [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] projectile hit",
 
     "pattern_end"
   ],
@@ -4212,7 +4212,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "quit",
   "name" : "On Quit",
   "patterns" : [
-    "[on] (quit[ting]|disconnect[ing]|log[ ]out|logging out|leav(e|ing)) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (quit[ting]|disconnect[ing]|log[ ]out|logging out|leav(e|ing))",
 
     "pattern_end"
   ],
@@ -4224,7 +4224,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "redstone",
   "name" : "On Redstone",
   "patterns" : [
-    "[on] redstone [current] [chang(e|ing)] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] redstone [current] [chang(e|ing)]",
 
     "pattern_end"
   ],
@@ -4236,8 +4236,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "resource_pack_request_response",
   "name" : "On Resource Pack Request Response",
   "patterns" : [
-    "[on] resource pack [request] response [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] resource pack [request] %<a href='./classes.html#resourcepackstate'>resource pack states</a>% [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] resource pack [request] response",
+"[on] resource pack [request] %<a href='./classes.html#resourcepackstate'>resource pack states</a>%",
 
     "pattern_end"
   ],
@@ -4249,7 +4249,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "respawn",
   "name" : "On Respawn",
   "patterns" : [
-    "[on] [player] respawn[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] respawn[ing]",
 
     "pattern_end"
   ],
@@ -4261,7 +4261,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "resurrect_attempt",
   "name" : "On Resurrect Attempt",
   "patterns" : [
-    "[on] [entity] resurrect[ion] [attempt] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [entity] resurrect[ion] [attempt]",
 
     "pattern_end"
   ],
@@ -4273,7 +4273,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "riptide",
   "name" : "On Riptide",
   "patterns" : [
-    "[on] [use of] riptide [enchant[ment]] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [use of] riptide [enchant[ment]]",
 
     "pattern_end"
   ],
@@ -4285,8 +4285,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "script_loadunload",
   "name" : "On Script Load/Unload",
   "patterns" : [
-    "[on] [async] [script] (load|init|enable) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [async] [script] (unload|stop|disable) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [async] [script] (load|init|enable)",
+"[on] [async] [script] (unload|stop|disable)",
 
     "pattern_end"
   ],
@@ -4298,7 +4298,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "server_list_ping",
   "name" : "On Server List Ping",
   "patterns" : [
-    "[on] server [list] ping [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] server [list] ping",
 
     "pattern_end"
   ],
@@ -4310,8 +4310,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "server_startstop",
   "name" : "On Server Start/Stop",
   "patterns" : [
-    "[on] (server|skript) (start|load|enable) [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] (server|skript) (stop|unload|disable) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] (server|skript) (start|load|enable)",
+"[on] (server|skript) (stop|unload|disable)",
 
     "pattern_end"
   ],
@@ -4323,7 +4323,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "sheep_regrow_wool",
   "name" : "On Sheep Regrow Wool",
   "patterns" : [
-    "[on] sheep [re]grow[ing] wool [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] sheep [re]grow[ing] wool",
 
     "pattern_end"
   ],
@@ -4335,7 +4335,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "shoot",
   "name" : "On Shoot",
   "patterns" : [
-    "[on] [projectile] shoot [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [projectile] shoot",
 
     "pattern_end"
   ],
@@ -4347,8 +4347,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "sign_change",
   "name" : "On Sign Change",
   "patterns" : [
-    "[on] sign (chang[e]|edit)[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] (chang[e]|edit)[ing] [a] sign [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] sign (chang[e]|edit)[ing]",
+"[on] [player] (chang[e]|edit)[ing] [a] sign",
 
     "pattern_end"
   ],
@@ -4360,7 +4360,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "slime_split",
   "name" : "On Slime Split",
   "patterns" : [
-    "[on] slime split[ting] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] slime split[ting]",
 
     "pattern_end"
   ],
@@ -4372,8 +4372,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "smelt",
   "name" : "On Smelt",
   "patterns" : [
-    "[on] [ore] smelt[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] smelt[ing] of ore [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [ore] smelt[ing]",
+"[on] smelt[ing] of ore",
 
     "pattern_end"
   ],
@@ -4385,8 +4385,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "sneak_toggle",
   "name" : "On Sneak Toggle",
   "patterns" : [
-    "[on] [player] toggl(e|ing) sneak [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] sneak toggl(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] toggl(e|ing) sneak",
+"[on] [player] sneak toggl(e|ing)",
 
     "pattern_end"
   ],
@@ -4398,7 +4398,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "spawn",
   "name" : "On Spawn",
   "patterns" : [
-    "[on] spawn[ing] [of %<a href='./classes.html#entitydata'>entity types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] spawn[ing] [of %<a href='./classes.html#entitydata'>entity types</a>%]",
 
     "pattern_end"
   ],
@@ -4410,7 +4410,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "spawn_change",
   "name" : "On Spawn Change",
   "patterns" : [
-    "[on] [world] spawn change [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [world] spawn change",
 
     "pattern_end"
   ],
@@ -4422,9 +4422,9 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "spectate",
   "name" : "On Spectate",
   "patterns" : [
-    "[on] [player] stop spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] (swap|switch) spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] start spectating [of %*<a href='./classes.html#entitydata'>entity types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] stop spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%]",
+"[on] [player] (swap|switch) spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%]",
+"[on] [player] start spectating [of %*<a href='./classes.html#entitydata'>entity types</a>%]",
 
     "pattern_end"
   ],
@@ -4436,7 +4436,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "sponge_absorb",
   "name" : "On Sponge Absorb",
   "patterns" : [
-    "[on] sponge absorb [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] sponge absorb",
 
     "pattern_end"
   ],
@@ -4448,7 +4448,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "spread",
   "name" : "On Spread",
   "patterns" : [
-    "[on] spread[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] spread[ing]",
 
     "pattern_end"
   ],
@@ -4460,8 +4460,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "sprint_toggle",
   "name" : "On Sprint Toggle",
   "patterns" : [
-    "[on] [player] toggl(e|ing) sprint [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [player] sprint toggl(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] toggl(e|ing) sprint",
+"[on] [player] sprint toggl(e|ing)",
 
     "pattern_end"
   ],
@@ -4473,8 +4473,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "swim_toggle",
   "name" : "On Swim Toggle",
   "patterns" : [
-    "[on] [entity] toggl(e|ing) swim [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [entity] swim toggl(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [entity] toggl(e|ing) swim",
+"[on] [entity] swim toggl(e|ing)",
 
     "pattern_end"
   ],
@@ -4486,7 +4486,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "tame",
   "name" : "On Tame",
   "patterns" : [
-    "[on] [entity] tam(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [entity] tam(e|ing)",
 
     "pattern_end"
   ],
@@ -4498,8 +4498,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "target",
   "name" : "On Target",
   "patterns" : [
-    "[on] [entity] target [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] [entity] un[-]target [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [entity] target",
+"[on] [entity] un[-]target",
 
     "pattern_end"
   ],
@@ -4511,7 +4511,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "teleport",
   "name" : "On Teleport",
   "patterns" : [
-    "[on] [player] teleport[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player] teleport[ing]",
 
     "pattern_end"
   ],
@@ -4523,7 +4523,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "test_case",
   "name" : "On Test Case",
   "patterns" : [
-    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;]",
 
     "pattern_end"
   ],
@@ -4535,7 +4535,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "tool_change",
   "name" : "On Tool Change",
   "patterns" : [
-    "[on] [player['s]] (tool|item held|held item) chang(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] [player['s]] (tool|item held|held item) chang(e|ing)",
 
     "pattern_end"
   ],
@@ -4547,8 +4547,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "vehicle_create",
   "name" : "On Vehicle Create",
   "patterns" : [
-    "[on] vehicle create [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] creat(e|ing|ion of) [a] vehicle [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] vehicle create",
+"[on] creat(e|ing|ion of) [a] vehicle",
 
     "pattern_end"
   ],
@@ -4560,8 +4560,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "vehicle_damage",
   "name" : "On Vehicle Damage",
   "patterns" : [
-    "[on] vehicle damage [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] damag(e|ing) [a] vehicle [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] vehicle damage",
+"[on] damag(e|ing) [a] vehicle",
 
     "pattern_end"
   ],
@@ -4573,8 +4573,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "vehicle_destroy",
   "name" : "On Vehicle Destroy",
   "patterns" : [
-    "[on] vehicle destroy [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] destr(oy[ing]|uction of) [a] vehicle [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] vehicle destroy",
+"[on] destr(oy[ing]|uction of) [a] vehicle",
 
     "pattern_end"
   ],
@@ -4586,8 +4586,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "vehicle_enter",
   "name" : "On Vehicle Enter",
   "patterns" : [
-    "[on] vehicle enter [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] enter[ing] [a] vehicle [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] vehicle enter",
+"[on] enter[ing] [a] vehicle",
 
     "pattern_end"
   ],
@@ -4599,8 +4599,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "vehicle_exit",
   "name" : "On Vehicle Exit",
   "patterns" : [
-    "[on] vehicle exit [with priority (lowest|low|normal|high|highest|monitor)]",
-"[on] exit[ing] [a] vehicle [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] vehicle exit",
+"[on] exit[ing] [a] vehicle",
 
     "pattern_end"
   ],
@@ -4612,7 +4612,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "weather_change",
   "name" : "On Weather Change",
   "patterns" : [
-    "[on] weather change [to %<a href='./classes.html#weathertype'>weather types</a>%] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] weather change [to %<a href='./classes.html#weathertype'>weather types</a>%]",
 
     "pattern_end"
   ],
@@ -4624,7 +4624,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "world_init",
   "name" : "On World Init",
   "patterns" : [
-    "[on] world init[ialization] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] world init[ialization]",
 
     "pattern_end"
   ],
@@ -4636,7 +4636,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "world_load",
   "name" : "On World Load",
   "patterns" : [
-    "[on] world load[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] world load[ing]",
 
     "pattern_end"
   ],
@@ -4648,7 +4648,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "world_save",
   "name" : "On World Save",
   "patterns" : [
-    "[on] world sav(e|ing) [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] world sav(e|ing)",
 
     "pattern_end"
   ],
@@ -4660,7 +4660,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "world_unload",
   "name" : "On World Unload",
   "patterns" : [
-    "[on] world unload[ing] [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] world unload[ing]",
 
     "pattern_end"
   ],
@@ -4672,7 +4672,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "zombie_break_door",
   "name" : "On Zombie Break Door",
   "patterns" : [
-    "[on] zombie break[ing] [a] [wood[en]] door [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] zombie break[ing] [a] [wood[en]] door",
 
     "pattern_end"
   ],
@@ -4684,7 +4684,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "periodical",
   "name" : "Periodical",
   "patterns" : [
-    "[on] every %<a href='./classes.html#timespan'>time span</a>% [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] every %<a href='./classes.html#timespan'>time span</a>%",
 
     "pattern_end"
   ],
@@ -4696,7 +4696,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "eventperiodical",
   "name" : "Periodical",
   "patterns" : [
-    "[on] every %<a href='./classes.html#timespan'>time span</a>% in [world[s]] %<a href='./classes.html#world'>worlds</a>% [with priority (lowest|low|normal|high|highest|monitor)]",
+    "[on] every %<a href='./classes.html#timespan'>time span</a>% in [world[s]] %<a href='./classes.html#world'>worlds</a>%",
 
     "pattern_end"
   ],
