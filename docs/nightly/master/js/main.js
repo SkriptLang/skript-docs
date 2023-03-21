@@ -90,7 +90,7 @@ document.querySelectorAll(".new-element").forEach((e) => {
 // <> Search Bar
 const versionComparePattern = /.*?(\d\.\d(?:\.\d|))(\+|-|).*/gi;
 const versionPattern = / ?v(?:ersion|):(\d\.\d(?:\.\d|-(?:beta|alpha|dev)\d*|))(\+|-|)/gi;
-const typePattern = / ?t(?:ype|):(condition|expression|type|effect|event|section|effectsection|function)/gi;
+const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
@@ -241,7 +241,7 @@ function searchNow(value = "") {
       let regex = new RegExp(searchValue, "gi")
       let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
       let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
-	  let keywords = e.getAttribute("data-keywords")
+      let keywords = e.getAttribute("data-keywords")
       let id = e.id // Syntax ID
       let filtersFound = false;
 
@@ -285,7 +285,7 @@ function searchNow(value = "") {
         filtersFound = true
 
       if ((regex.test(pattern.textContent.replaceAll("[ ]", " ")) || regex.test(name) ||
-           regex.test(desc) || regex.test(keywords) || "#" + id == searchValue || searchValue == "") && filtersFound) { // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
+           regex.test(desc) || regex.test(keywords) || "#" + id.toLowerCase() == searchValue.toLowerCase() || searchValue == "") && filtersFound) { // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
         pass = true
         break; // Performance
       }
@@ -390,7 +390,7 @@ if (examples) {
 
 // <> Cookies Accecpt
 if (!isCookiesAccepted) {
-  content.insertAdjacentHTML('beforeend', `<div id="cookies-bar"> <p> We use cookies and local storage to enhance your browsing experience and store github related statistics. By clicking "Accept", you consent to our use of cookies and local storage. </p><div style="padding: 10px; white-space: nowrap;"> <button id="cookies-accept">Accept</button> <button id="cookies-deny">Deny</button> </div></div>`);
+  document.body.insertAdjacentHTML('beforeend', `<div id="cookies-bar"> <p> We use cookies and local storage to enhance your browsing experience and store github related statistics. By clicking "Accept", you consent to our use of cookies and local storage. </p><div style="padding: 10px; white-space: nowrap;"> <button id="cookies-accept">Accept</button> <button id="cookies-deny">Deny</button> </div></div>`);
 }
 
 let cookiesBar = document.querySelector("#cookies-bar");;
