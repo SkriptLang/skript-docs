@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta1-nightly-6374841",
+  "skriptVersion" : "2.7.0-beta1-nightly-4cd9133",
 
   "classes" : [
     {
@@ -8071,6 +8071,20 @@ Using this expression on offline players on Minecraft 1.14 and below will return
   "since" : "1.0",
   "description" : "The item an entity is holding in their main or off hand.",
   "examples" : "player's tool is a pickaxe\\nplayer's off hand tool is a shield\\nset tool of all players to a diamond sword\\nset offhand tool of target entity to a bow"
+},
+{
+  "id" : "ExprTotalExperience",
+  "name" : "Total Experience",
+  "patterns" : [
+    "[the] [total] experience of %<a href='./classes.html#entity'>entities</a>%",
+"%<a href='./classes.html#entity'>entities</a>%'[s] [total] experience",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The total experience, in points, of players or experience orbs.
+Adding to a player's experience will trigger Mending, but setting their experience will not.",
+  "examples" : "set total experience of player to 100\\n\\nadd 100 to player's experience\\n\\nif player's total experience is greater than 100:\\n    set player's total experience to 0\\n    give player 1 diamond"
 },
 {
   "id" : "ExprTypeOf",
