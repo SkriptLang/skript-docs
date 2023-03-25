@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta1-nightly-7275988",
+  "skriptVersion" : "2.7.0-beta2-nightly-1fd5265",
 
   "classes" : [
     {
@@ -8081,7 +8081,7 @@ Using this expression on offline players on Minecraft 1.14 and below will return
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.7",
   "description" : "The total experience, in points, of players or experience orbs.
 Adding to a player's experience will trigger Mending, but setting their experience will not.",
   "examples" : "set total experience of player to 100\\n\\nadd 100 to player's experience\\n\\nif player's total experience is greater than 100:\\n    set player's total experience to 0\\n    give player 1 diamond"
