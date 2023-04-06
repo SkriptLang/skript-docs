@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-0d44f00",
+  "skriptVersion" : "2.7.0-beta2-nightly-c4e2720",
 
   "classes" : [
     {
@@ -6333,19 +6333,6 @@ And note that, for example if there are 5 online players (includes <a href='#Exp
   "since" : "1.4, 2.2-dev26 (when used in connect event), 2.3 (when used in server list ping event)",
   "description" : "The IP address of a player, or the connected player in a <a href='events.html#connect'>connect</a> event, or the pinger in a <a href='events.html#server_list_ping'>server list ping</a> event.",
   "examples" : "ban the IP address of the player\\nbroadcast \"Banned the IP %IP of player%\"\\n\\non connect:\\n    log \"[%now%] %player% (%ip%) is connected to the server.\"\\n\\non server list ping:\\n    send \"%IP-address%\" to the console"
-},
-{
-  "id" : "ExprIdOf",
-  "name" : "Id",
-  "patterns" : [
-    "[the] id[(s)] of %<a href='./classes.html#itemtype'>item type</a>%",
-"%<a href='./classes.html#itemtype'>item type</a>%'[s] id[(s)]",
-
-    "pattern_end"
-  ],
-  "since" : "1.0",
-  "description" : "The id of a specific item. You usually don't need this expression as you can likely do everything with aliases.",
-  "examples" : "message \"the ID of %type of the clicked block% is %id of the clicked block%.\""
 },
 {
   "id" : "ExprIndexOf",
