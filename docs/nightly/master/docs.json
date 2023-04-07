@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-c4e2720",
+  "skriptVersion" : "2.7.0-beta2-nightly-ca1b51c",
 
   "classes" : [
     {
@@ -4078,7 +4078,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "player_chunk_enters",
   "name" : "On Player Chunk Enters",
   "patterns" : [
-    "[on] player (enter[s] [a] chunk|chunk enter[ing])",
+    "[on] [player] (enter[s] [a] chunk|chunk enter[ing])",
 
     "pattern_end"
   ],
