@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-b1fc462",
+  "skriptVersion" : "2.7.0-beta2-nightly-ad60611",
 
   "classes" : [
     {
@@ -5500,6 +5500,19 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   "examples" : "damage cause is lava, fire or burning"
 },
 {
+  "id" : "ExprDurability",
+  "name" : "Damage Value/Durability",
+  "patterns" : [
+    "[the] (damage[s] [value[s]]|durabilit(y|ies)) of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#slot'>slots</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#slot'>slots</a>%'[s] (damage[s] [value[s]]|durabilit(y|ies))",
+
+    "pattern_end"
+  ],
+  "since" : "1.2, INSERT VERSION (durability reversed)",
+  "description" : "The damage value/durability of an item.",
+  "examples" : "set damage value of player's tool to 10\\nreset the durability of {_item}\\nset durability of player's held item to 0"
+},
+{
   "id" : "ExprDamagedItem",
   "name" : "Damaged Item",
   "patterns" : [
@@ -5511,21 +5524,6 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   "since" : "2.4",
   "description" : "Directly damages an item. In MC versions 1.12.2 and lower, this can be used to apply data values to items/blocks",
   "examples" : "give player diamond sword with damage value 100\\nset player's tool to diamond hoe damaged by 250\\ngive player diamond sword with damage 700 named \"BROKEN SWORD\"\\nset {_item} to diamond hoe with damage value 50 named \"SAD HOE\"\\nset target block of player to wool with data value 1\\nset target block of player to potato plant with data value 7"
-},
-{
-  "id" : "ExprDurability",
-  "name" : "Data/Damage Value",
-  "patterns" : [
-    "[the] ((data|damage)[s] [value[s]]|durabilit(y|ies)) of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#slot'>slots</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#slot'>slots</a>%'[s] ((data|damage)[s] [value[s]]|durabilit(y|ies))",
-
-    "pattern_end"
-  ],
-  "since" : "1.2",
-  "description" : "The data/damage value of an item/block. Data values of blocks are only supported on 1.12.2 and below.
-You usually don't need this expression as you can check and set items with aliases easily, 
-but this expression can e.g. be used to \"add 1 to data of &lt;item&gt;\", e.g. for cycling through all wool colors.",
-  "examples" : "set damage value of player's tool to 10\\nset data value of target block of player to 3\\nadd 1 to the data value of the clicked block\\nreset data value of block at player"
 },
 {
   "id" : "ExprDateAgoLater",
