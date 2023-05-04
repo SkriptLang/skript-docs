@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-47cf6d6",
+  "skriptVersion" : "2.7.0-beta2-nightly-b1fc462",
 
   "classes" : [
     {
@@ -3452,8 +3452,8 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "<i>unknown</i>, 2.5.2 (falling block)",
-  "description" : "Called when an enderman places or picks up a block, a sheep eats grass, \\na silverfish boops into/out of a block or a falling block lands and turns into a block respectively.",
-  "examples" : "on sheep eat:\\n    kill entity\\n    broadcast \"A sheep stole some grass!\"\\non falling block land:\\n    if event-entity is a falling dirt:\\n        cancel event"
+  "description" : "Called when an enderman places or picks up a block, a sheep eats grass, a silverfish boops into/out of a block or a falling block lands and turns into a block respectively.",
+  "examples" : "on sheep eat:\\n    kill event-entity\\n    broadcast \"A sheep stole some grass!\"\\n\\non falling block land:\\n    event-entity is a falling dirt\\n    cancel event"
 },
 {
   "id" : "entity_dismount",
