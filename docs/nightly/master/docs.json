@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-d211a20",
+  "skriptVersion" : "2.7.0-beta2-nightly-56cfb2d",
 
   "classes" : [
     {
@@ -5453,8 +5453,8 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   "id" : "ExprChestInventory",
   "name" : "Custom Chest Inventory",
   "patterns" : [
-    "[a [new]] chest inventory (named|with name) %<a href='./classes.html#string'>text</a>% [with %<a href='./classes.html#number'>number</a>% row[s]]",
-"[a [new]] chest inventory with %<a href='./classes.html#number'>number</a>% row[s] [(named|with name) %<a href='./classes.html#string'>text</a>%]",
+    "[a] [new] chest inventory (named|with name) %<a href='./classes.html#string'>text</a>% [with %<a href='./classes.html#number'>number</a>% row[s]]",
+"[a] [new] chest inventory with %<a href='./classes.html#number'>number</a>% row[s] [(named|with name) %<a href='./classes.html#string'>text</a>%]",
 
     "pattern_end"
   ],
