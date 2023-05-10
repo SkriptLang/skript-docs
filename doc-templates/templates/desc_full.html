@@ -6,7 +6,7 @@
   <div class="item-content">
     <table>
       <tr class="item-details">
-        <td class="item-table-label">Patterns:</td>
+        <td class="item-table-label">Patterns</td>
         <td class="noleftpad">
           <ul>
             ${generate element.patterns pattern_element.html}
@@ -16,42 +16,49 @@
 
       ${if structure-required-entrydata}
       <tr class="item-details">
-        <td class="item-table-label">Required Entries:</td>
+        <td class="item-table-label">Required Entries</td>
         <td>${element.structure-required-entrydata}</td>
       </tr>
 
       ${end} ${if structure-optional-entrydata}
       <tr class="item-details">
-        <td class="item-table-label">Optional Entries:</td>
+        <td class="item-table-label">Optional Entries</td>
         <td>${element.structure-optional-entrydata}</td>
       </tr>
 
       ${end}
       <tr class="item-details">
-        <td class="item-table-label">Since:</td>
+        <td class="item-table-label">Since</td>
         <td>${element.since}</td>
       </tr>
 
       ${if events}
       <tr class="item-details">
-        <td class="item-table-label">Usable in events:</td>
+        <td class="item-table-label">Usable in events</td>
         <td>${element.events}</td>
       </tr>
 
       ${end} ${if required-plugins}
       <tr class="item-details">
-        <td class="item-table-label">Requirements:</td>
+        <td class="item-table-label">Requirements</td>
         <td>${element.required-plugins}</td>
+      </tr>
+
+      ${end} ${if accepted-change-modes}
+      <tr class="item-details">
+        <td class="item-table-label">Change Modes</td>
+        <td>${element.accepted-change-modes}</td>
       </tr>
 
       ${end} ${if by-addon}
       <tr class="item-details">
-        <td class="item-table-label">By Addon:</td>
+        <td class="item-table-label">By Addon</td>
         <td>${element.by-addon}</td>
       </tr>
+
       ${end} ${if return-type}
       <tr class="item-details">
-        <td class="item-table-label">Return Type:</td>
+        <td class="item-table-label">Return Type</td>
         <td><a href="classes.html#${element.return-type-linkcheck}">${element.return-type}</a></td>
       </tr>
       ${end}
@@ -62,7 +69,7 @@
     </div>
 
     <div class="item-examples">
-      <p class="example-details-closed">Examples:</p>
+      <p class="example-details-closed">Examples</p>
 
       <div class="skript-code-block">
         ${element.examples}
