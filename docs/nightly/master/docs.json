@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-51d612b",
+  "skriptVersion" : "2.7.0-beta2-nightly-5d15b5e",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a <%color of tool%>%color of tool%<reset> wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,7 +121,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&lt;player&gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -799,7 +799,7 @@
   ],
   "since" : "2.3",
   "description" : "Checks whether the given players can see another players.",
-  "examples" : "if the player can't see the player-argument:\\n    message \"&lt;light red&gt;The player %player-argument% is not online!\""
+  "examples" : "if the player can't see the player-argument:\\n    message \"&amp;lt;light red&amp;gt;The player %player-argument% is not online!\""
 },
 {
   "id" : "CondChance",
@@ -1569,7 +1569,7 @@ When checking if a plugin is disabled, this will return true if the plugin is on
   ],
   "since" : "1.4.4",
   "description" : "Checks whether a player is sleeping.",
-  "examples" : "# cut your enemies' throats in their sleep >=)\\non attack:\\n    attacker is holding a sword\\n    victim is sleeping\\n    increase the damage by 1000"
+  "examples" : "# cut your enemies' throats in their sleep &gt;=)\\non attack:\\n    attacker is holding a sword\\n    victim is sleeping\\n    increase the damage by 1000"
 },
 {
   "id" : "CondIsSlimeChunk",
@@ -1991,7 +1991,7 @@ You can add a tool, which will spawn items based on how that tool would break th
   ],
   "since" : "2.2-dev34",
   "description" : "Only usable in commands. Makes it so the current command usage isn't counted towards the cooldown.",
-  "examples" : "command /nick &lt;text&gt;:\\n    executable by: players\\n    cooldown: 10 seconds\\n    trigger:\\n        if length of arg-1 is more than 16:\\n            # Makes it so that invalid arguments don't make you wait for the cooldown again\\n            cancel the cooldown\\n            send \"Your nickname may be at most 16 characters.\"\\n            stop\\n        set the player's display name to arg-1"
+  "examples" : "command /nick &amp;lt;text&amp;gt;:\\n    executable by: players\\n    cooldown: 10 seconds\\n    trigger:\\n        if length of arg-1 is more than 16:\\n            # Makes it so that invalid arguments don't make you wait for the cooldown again\\n            cancel the cooldown\\n            send \"Your nickname may be at most 16 characters.\"\\n            stop\\n        set the player's display name to arg-1"
 },
 {
   "id" : "EffCancelDrops",
@@ -2004,7 +2004,7 @@ You can add a tool, which will spawn items based on how that tool would break th
   ],
   "since" : "2.4",
   "description" : "Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect.",
-  "examples" : "on death of a zombie:\\n    if name of the entity is \"&cSpecial\":\\n        cancel drops of items\\n\\non break of a coal ore:\\n    cancel the experience drops"
+  "examples" : "on death of a zombie:\\n    if name of the entity is \"&amp;cSpecial\":\\n        cancel drops of items\\n\\non break of a coal ore:\\n    cancel the experience drops"
 },
 {
   "id" : "EffCancelEvent",
@@ -2037,7 +2037,7 @@ You can add a tool, which will spawn items based on how that tool would break th
   ],
   "since" : "1.0 (set, add, remove, delete), 2.0 (remove all)",
   "description" : "A very general effect that can change many <a href='./expressions'>expressions</a>. Many expressions can only be set and/or deleted, while some can have things added to or removed from them.",
-  "examples" : "# set:\\nSet the player's display name to \"&lt;red&gt;%name of player%\"\\nset the block above the victim to lava\\n# add:\\nadd 2 to the player's health # preferably use '<a href='#EffHealth'>heal</a>' for this\\nadd argument to {blacklist::*}\\ngive a diamond pickaxe of efficiency 5 to the player\\nincrease the data value of the clicked block by 1\\n# remove:\\nremove 2 pickaxes from the victim\\nsubtract 2.5 from {points::%uuid of player%}\\n# remove all:\\nremove every iron tool from the player\\nremove all minecarts from {entitylist::*}\\n# delete:\\ndelete the block below the player\\nclear drops\\ndelete {variable}\\n# reset:\\nreset walk speed of player\\nreset chunk at the targeted block"
+  "examples" : "# set:\\nSet the player's display name to \"&amp;lt;red&amp;gt;%name of player%\"\\nset the block above the victim to lava\\n# add:\\nadd 2 to the player's health # preferably use '&lt;a href='#EffHealth'&gt;heal&lt;/a&gt;' for this\\nadd argument to {blacklist::*}\\ngive a diamond pickaxe of efficiency 5 to the player\\nincrease the data value of the clicked block by 1\\n# remove:\\nremove 2 pickaxes from the victim\\nsubtract 2.5 from {points::%uuid of player%}\\n# remove all:\\nremove every iron tool from the player\\nremove all minecarts from {entitylist::*}\\n# delete:\\ndelete the block below the player\\nclear drops\\ndelete {variable}\\n# reset:\\nreset walk speed of player\\nreset chunk at the targeted block"
 },
 {
   "id" : "EffChargeCreeper",
@@ -2540,7 +2540,7 @@ in given string or in <a href=expressions.html#ExprColored>formatted expressions
 Adding an optional sender allows the messages to be sent as if a specific player sent them.
 This is useful with Minecraft 1.16.4's new chat ignore system, in which players can choose to ignore other players,
 but for this to work, the message needs to be sent from a player.",
-  "examples" : "message \"A wild %player% appeared!\"\\nmessage \"This message is a distraction. Mwahaha!\"\\nsend \"Your kill streak is %{kill streak::%uuid of player%}%.\" to player\\nif the targeted entity exists:\\n    message \"You're currently looking at a %type of the targeted entity%!\"\\non chat:\\n    cancel event\\n    send \"[%player%] >> %message%\" to all players from player"
+  "examples" : "message \"A wild %player% appeared!\"\\nmessage \"This message is a distraction. Mwahaha!\"\\nsend \"Your kill streak is %{kill streak::%uuid of player%}%.\" to player\\nif the targeted entity exists:\\n    message \"You're currently looking at a %type of the targeted entity%!\"\\non chat:\\n    cancel event\\n    send \"[%player%] &gt;&gt; %message%\" to all players from player"
 },
 {
   "id" : "EffOpenBook",
@@ -2713,7 +2713,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   ],
   "since" : "2.0, 2.2-dev24 (replace in multiple strings and replace items in inventory), 2.5 (replace first, case sensitivity)",
   "description" : "Replaces all occurrences of a given text with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='./expressions.html#ExprMessage'>message</a> or a line of a sign.",
-  "examples" : "replace \"<item>\" in {textvar} with \"%item%\"\\nreplace every \"&\" with \"§\" in line 1\\n# The following acts as a simple chat censor, but it will e.g. censor mass, hassle, assassin, etc. as well:\\non chat:\\n    replace all \"kys\", \"idiot\" and \"noob\" with \"****\" in the message\\n \\nreplace all stone and dirt in player's inventory and player's top inventory with diamond"
+  "examples" : "replace \"&lt;item&gt;\" in {textvar} with \"%item%\"\\nreplace every \"&amp;\" with \"§\" in line 1\\n# The following acts as a simple chat censor, but it will e.g. censor mass, hassle, assassin, etc. as well:\\non chat:\\n    replace all \"kys\", \"idiot\" and \"noob\" with \"****\" in the message\\n \\nreplace all stone and dirt in player's inventory and player's top inventory with diamond"
 },
 {
   "id" : "EffReturn",
@@ -3230,7 +3230,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&lt;red&gt;[player]&lt;light gray&gt;: &lt;light red&gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&lt;light red&gt;[player]&lt;light gray&gt;: &lt;orange&gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&lt;orange&gt;[player]&lt;light gray&gt;: &lt;white&gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -3447,6 +3447,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 "[on] sheep eat",
 "[on] silverfish enter",
 "[on] silverfish exit",
+"[on] falling block fall[ing]",
 "[on] falling block land[ing]",
 
     "pattern_end"
@@ -4084,7 +4085,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -> %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4354,7 +4355,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&lt;red&gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -5003,7 +5004,7 @@ Please note that specifying the argument type is only supported in script comman
   "since" : "2.6.1",
   "description" : "Returns the current cooldown for a player's attack. This is used to calculate damage, with 1.0 representing a fully charged attack and 0.0 representing a non-charged attack.
 NOTE: Currently this can not be set to anything.",
-  "examples" : "on damage:\\n    if attack cooldown of attacker < 1:\\n        set damage to 0\\n        send \"Your hit was too weak! wait until your weapon is fully charged next time.\" to attacker"
+  "examples" : "on damage:\\n    if attack cooldown of attacker &lt; 1:\\n        set damage to 0\\n        send \"Your hit was too weak! wait until your weapon is fully charged next time.\" to attacker"
 },
 {
   "id" : "ExprAttacked",
@@ -5123,7 +5124,7 @@ Can optionally include a direction as well, e.g. 'block above' or 'block in fron
   ],
   "since" : "2.6",
   "description" : "Obtains the block's hardness level (also known as \"strength\"). This number is used to calculate the time required to break each block.",
-  "examples" : "set {_hard} to block hardness of target block\\nif block hardness of target block > 5:"
+  "examples" : "set {_hard} to block hardness of target block\\nif block hardness of target block &gt; 5:"
 },
 {
   "id" : "ExprBlockSphere",
@@ -5246,7 +5247,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
   ],
   "since" : "2.2-dev31",
   "description" : "Can be used to get/retrieve the chat format. The sender of a message is represented by [player] or [sender], and the message by [message] or [msg].",
-  "examples" : "set the chat format to \"&lt;yellow&gt;[player]&lt;light gray&gt;: &lt;green&gt;[message]\""
+  "examples" : "set the chat format to \"&amp;lt;yellow&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;green&amp;gt;[message]\""
 },
 {
   "id" : "ExprChatRecipients",
@@ -5296,7 +5297,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
   ],
   "since" : "1.2",
   "description" : "The <a href='./classes.html#color'>color</a> of an item, can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
-  "examples" : "on click on wool:\\n    message \"This wool block is <%color of block%>%color of block%<reset>!\"\\n    set the color of the block to black"
+  "examples" : "on click on wool:\\n    message \"This wool block is &lt;%color of block%&gt;%color of block%&lt;reset&gt;!\"\\n    set the color of the block to black"
 },
 {
   "id" : "ExprColoured",
@@ -5313,7 +5314,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
 any colors <i>and</i> chat styles from the message. Parsing all
 chat styles requires this expression to be used in same line with
 the <a href=effects.html#EffSend>send effect</a>.",
-  "examples" : "on chat:\\n    set message to colored message # Safe; only colors get parsed\\ncommand /fade &lt;player&gt;:\\n    trigger:\\n        set display name of the player-argument to uncolored display name of the player-argument\\ncommand /format &lt;text&gt;:\\n    trigger:\\n        message formatted text-argument # Safe, because we're sending to whoever used this command"
+  "examples" : "on chat:\\n    set message to colored message # Safe; only colors get parsed\\ncommand /fade &amp;lt;player&amp;gt;:\\n    trigger:\\n        set display name of the player-argument to uncolored display name of the player-argument\\ncommand /format &amp;lt;text&amp;gt;:\\n    trigger:\\n        message formatted text-argument # Safe, because we're sending to whoever used this command"
 },
 {
   "id" : "ExprCommand",
@@ -6150,7 +6151,7 @@ SHA-256 is more secure, and can used to hash somewhat confidental data like IP a
 It is not <i>that</i> secure out of the box, so please consider using salt when dealing with passwords! 
 When hashing data, you <strong>must</strong> specify algorithms that will be used for security reasons! 
 <p>Please note that a hash cannot be reversed under normal circumstanses. You will not be able to get original value from a hash with Skript.",
-  "examples" : "command /setpass &lt;text&gt;:\\n    trigger:\\n        set {password::%uuid of player%} to text-argument hashed with SHA-256\\ncommand /login &lt;text&gt;:\\n    trigger:\\n        if text-argument hashed with SHA-256 is {password::%uuid of player%}:\\n            message \"Login successful.\"\\n        else:\\n            message \"Wrong password!\""
+  "examples" : "command /setpass &amp;lt;text&amp;gt;:\\n    trigger:\\n        set {password::%uuid of player%} to text-argument hashed with SHA-256\\ncommand /login &amp;lt;text&amp;gt;:\\n    trigger:\\n        if text-argument hashed with SHA-256 is {password::%uuid of player%}:\\n            message \"Login successful.\"\\n        else:\\n            message \"Wrong password!\""
 },
 {
   "id" : "ExprHatchingType",
@@ -6239,7 +6240,7 @@ Please note that this location is only accurate for entities whose head is exact
   ],
   "since" : "2.3",
   "description" : "The players hidden from a player that were hidden using the <a href='effects.html#EffPlayerVisibility'>player visibility</a> effect.",
-  "examples" : "message \"&lt;light red&gt;You are currently hiding: &lt;light gray&gt;%hidden players of the player%\""
+  "examples" : "message \"&amp;lt;light red&amp;gt;You are currently hiding: &amp;lt;light gray&amp;gt;%hidden players of the player%\""
 },
 {
   "id" : "ExprHighestSolidBlock",
@@ -6303,7 +6304,7 @@ Please note that this location is only accurate for entities whose head is exact
   "description" : "The list when you hover on the player counts of the server in the server list.
 This can be changed using texts or players in a <a href='events.html#server_list_ping'>server list ping</a> event only. Adding players to the list means adding the name of the players.
 And note that, for example if there are 5 online players (includes <a href='#ExprOnlinePlayersCount'>fake online count</a>) in the server and the hover list is set to 3 values, Minecraft will show \"... and 2 more ...\" at end of the list.",
-  "examples" : "on server list ping:\\n    clear the hover list\\n    add \"&aWelcome to the &6Minecraft &aserver!\" to the hover list\\n    add \"\" to the hover list # A blank line\\n    add \"&cThere are &6%online players count% &conline players!\" to the hover list"
+  "examples" : "on server list ping:\\n    clear the hover list\\n    add \"&amp;aWelcome to the &amp;6Minecraft &amp;aserver!\" to the hover list\\n    add \"\" to the hover list # A blank line\\n    add \"&amp;cThere are &amp;6%online players count% &amp;conline players!\" to the hover list"
 },
 {
   "id" : "ExprHumidity",
@@ -6572,7 +6573,7 @@ The vanilla Minecraft client will use lowercase language / country pairs separat
   ],
   "since" : "2.6",
   "description" : "The colors used at the end of a string. The colors of the returned string will be formatted with their symbols.",
-  "examples" : "set {_color} to the last colors of \"<red>hey<blue>yo\""
+  "examples" : "set {_color} to the last colors of \"&lt;red&gt;hey&lt;blue&gt;yo\""
 },
 {
   "id" : "ExprLastDamage",
@@ -6820,7 +6821,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "2.1",
   "description" : "An item's lore.",
-  "examples" : "set the 1st line of the item's lore to \"&lt;orange&gt;Excalibur 2.0\""
+  "examples" : "set the 1st line of the item's lore to \"&amp;lt;orange&amp;gt;Excalibur 2.0\""
 },
 {
   "id" : "ExprMOTD",
@@ -6953,7 +6954,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message)",
   "description" : "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed.",
-  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
+  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
 },
 {
   "id" : "ExprMetadata",
@@ -7065,7 +7066,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
         </ul>
     </li>
 </ul>",
-  "examples" : "on join:\\n    player has permission \"name.red\"\\n    set the player's display name to \"&lt;red&gt;[admin] &lt;gold&gt;%name of player%\"\\n    set the player's tab list name to \"&lt;green&gt;%player's name%\"\\nset the name of the player's tool to \"Legendary Sword of Awesomeness\""
+  "examples" : "on join:\\n    player has permission \"name.red\"\\n    set the player's display name to \"&amp;lt;red&amp;gt;[admin] &amp;lt;gold&amp;gt;%name of player%\"\\n    set the player's tab list name to \"&amp;lt;green&amp;gt;%player's name%\"\\nset the name of the player's tool to \"Legendary Sword of Awesomeness\""
 },
 {
   "id" : "ExprName",
@@ -7113,7 +7114,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
         </ul>
     </li>
 </ul>",
-  "examples" : "on join:\\n    player has permission \"name.red\"\\n    set the player's display name to \"&lt;red&gt;[admin] &lt;gold&gt;%name of player%\"\\n    set the player's tab list name to \"&lt;green&gt;%player's name%\"\\nset the name of the player's tool to \"Legendary Sword of Awesomeness\""
+  "examples" : "on join:\\n    player has permission \"name.red\"\\n    set the player's display name to \"&amp;lt;red&amp;gt;[admin] &amp;lt;gold&amp;gt;%name of player%\"\\n    set the player's tab list name to \"&amp;lt;green&amp;gt;%player's name%\"\\nset the name of the player's tool to \"Legendary Sword of Awesomeness\""
 },
 {
   "id" : "ExprNamed",
@@ -7125,7 +7126,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "2.0, 2.2-dev34 (inventories)",
   "description" : "Directly names an item/inventory, useful for defining a named item/inventory in a script. If you want to (re)name existing items/inventories you can either use this expression or use <code>set <a href='#ExprName'>name of &lt;item/inventory&gt;</a> to &lt;text&gt;</code>.",
-  "examples" : "give a diamond sword of sharpness 100 named \"&lt;gold&gt;Excalibur\" to the player\\nset tool of player to the player's tool named \"&lt;gold&gt;Wand\"\\nset the name of the player's tool to \"&lt;gold&gt;Wand\"\\nopen hopper inventory named \"Magic Hopper\" to player"
+  "examples" : "give a diamond sword of sharpness 100 named \"&amp;lt;gold&amp;gt;Excalibur\" to the player\\nset tool of player to the player's tool named \"&amp;lt;gold&amp;gt;Wand\"\\nset the name of the player's tool to \"&amp;lt;gold&amp;gt;Wand\"\\nopen hopper inventory named \"Magic Hopper\" to player"
 },
 {
   "id" : "ExprNearestEntity",
@@ -7190,7 +7191,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "2.5",
   "description" : "The number of uppercase, lowercase, or digit characters in a string.",
-  "examples" : "#Simple Chat Filter\\non chat:\\n    if number of uppercase chars in message / length of message > 0.5\\n        cancel event\\n        send \"&lt;red&gt;Your message has to many caps!\" to player"
+  "examples" : "#Simple Chat Filter\\non chat:\\n    if number of uppercase chars in message / length of message &gt; 0.5\\n        cancel event\\n        send \"&amp;lt;red&amp;gt;Your message has to many caps!\" to player"
 },
 {
   "id" : "ExprNumbers",
@@ -7254,7 +7255,7 @@ If no inventory is open, it returns the own player's crafting inventory.",
   "id" : "ExprParse",
   "name" : "Parse",
   "patterns" : [
-    "%<a href='./classes.html#string'>text</a>% parsed as (%*<a href='./classes.html#classinfo'>type</a>%|&quot;&lt;.*&gt;&quot;)",
+    "%<a href='./classes.html#string'>text</a>% parsed as (%*<a href='./classes.html#classinfo'>type</a>%|"&lt;.*&gt;")",
 
     "pattern_end"
   ],
@@ -7278,7 +7279,7 @@ Some notes about parsing with a pattern:
   ],
   "since" : "2.0",
   "description" : "The error which caused the last <a href='#ExprParse'>parse operation</a> to fail, which might not be set if a pattern was used and the pattern didn't match the provided text at all.",
-  "examples" : "set {var} to line 1 parsed as integer\\nif {var} is not set:\\n    parse error is set:\\n        message \"&lt;red&gt;Line 1 is invalid: %last parse error%\"\\n    else:\\n        message \"&lt;red&gt;Please put an integer on line 1!\""
+  "examples" : "set {var} to line 1 parsed as integer\\nif {var} is not set:\\n    parse error is set:\\n        message \"&amp;lt;red&amp;gt;Line 1 is invalid: %last parse error%\"\\n    else:\\n        message \"&amp;lt;red&amp;gt;Please put an integer on line 1!\""
 },
 {
   "id" : "ExprPassenger",
@@ -7331,7 +7332,7 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   ],
   "since" : "2.2-dev36",
   "description" : "Pings of players, as Minecraft server knows them. Note that they will almost certainly be different from the ones you'd get from using ICMP echo requests. This expression is only supported on some server software (PaperSpigot).",
-  "examples" : "command /ping <player=%player%>:\\n    trigger:\\n        send \"%arg-1%'s ping is %arg-1's ping%\""
+  "examples" : "command /ping &lt;player=%player%&gt;:\\n    trigger:\\n        send \"%arg-1%'s ping is %arg-1's ping%\""
 },
 {
   "id" : "ExprPlain",
@@ -7369,7 +7370,7 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   ],
   "since" : "2.6.2",
   "description" : "Player's protocol version. For more information and list of protocol versions <a href='https://wiki.vg/Protocol_version_numbers'>visit wiki.vg</a>.",
-  "examples" : "command /protocolversion &ltplayer&gt:\\n    trigger:\\n        send \"Protocol version of %arg-1%: %protocol version of arg-1%\""
+  "examples" : "command /protocolversion &amp;ltplayer&amp;gt:\\n    trigger:\\n        send \"Protocol version of %arg-1%: %protocol version of arg-1%\""
 },
 {
   "id" : "ExprSkull",
@@ -7434,7 +7435,7 @@ to tipped arrows/lingering potions, Minecraft reduces the timespan.",
   ],
   "since" : "2.7",
   "description" : "An expression to obtain the amplifier of a potion effect applied to an entity.",
-  "examples" : "if the amplifier of haste of player >= 3:"
+  "examples" : "if the amplifier of haste of player &gt;= 3:"
 },
 {
   "id" : "ExprPotionEffects",
@@ -7497,7 +7498,7 @@ Also if the protocol version of the player is higher than protocol version of th
 
 This can be set in a <a href='events.html#server_list_ping'>server list ping</a> event only
 (increase and decrease effects cannot be used because that wouldn't make sense).",
-  "examples" : "on server list ping:\\n    set the version string to \"&lt;light green&gt;Version: &lt;orange&gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
+  "examples" : "on server list ping:\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
 },
 {
   "id" : "ExprRandom",
@@ -7558,7 +7559,7 @@ Please note that the order of the numbers doesn't matter, i.e. <code>random numb
   ],
   "since" : "2.7",
   "description" : "Returns the string without formatting (colors etc.) and without stripping them from it, e.g. <code>raw \"&aHello There!\"</code> would output <code>&aHello There!</code>",
-  "examples" : "send raw \"&aThis text is unformatted!\" to all players"
+  "examples" : "send raw \"&amp;aThis text is unformatted!\" to all players"
 },
 {
   "id" : "ExprRedstoneBlockPower",
@@ -7870,7 +7871,7 @@ if they're not, this expression will return nothing.",
   ],
   "since" : "2.4-alpha4, 2.7 (Paper Spectator Event)",
   "description" : "Grabs the spectator target entity of the players.",
-  "examples" : "on player start spectating of player:\\n    message \"&c%spectator target% currently has %{game::kills::%spectator target%}% kills!\" to the player\\n\\non player stop spectating:\\n    past spectator target was a zombie\\n    set spectator target to the nearest skeleton"
+  "examples" : "on player start spectating of player:\\n    message \"&amp;c%spectator target% currently has %{game::kills::%spectator target%}% kills!\" to the player\\n\\non player stop spectating:\\n    past spectator target was a zombie\\n    set spectator target to the nearest skeleton"
 },
 {
   "id" : "ExprSpeed",
@@ -7955,7 +7956,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "1.0",
   "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.",
-  "examples" : "# A command to set the block a player looks at to a specific type:\\ncommand /setblock &lt;material&gt;:\\n    trigger:\\n        set targeted block to argument"
+  "examples" : "# A command to set the block a player looks at to a specific type:\\ncommand /setblock &amp;lt;material&amp;gt;:\\n    trigger:\\n        set targeted block to argument"
 },
 {
   "id" : "ExprTeleportCause",
@@ -8405,7 +8406,7 @@ See also: <a href='#ExprPassenger'>passenger</a>",
   "since" : "2.3",
   "description" : "The text to show if the protocol version of the server doesn't match with protocol version of the client. You can check the <a href='#ExprProtocolVersion'>protocol version</a> expression for more information about this.
 This can only be set in a <a href='events.html#server_list_ping'>server list ping</a> event.",
-  "examples" : "on server list ping:\\n    set the protocol version to 0 # 13w41a (1.7), so it will show the version string always\\n    set the version string to \"&lt;light green&gt;Version: &lt;orange&gt;%minecraft version%\""
+  "examples" : "on server list ping:\\n    set the protocol version to 0 # 13w41a (1.7), so it will show the version string always\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\""
 },
 {
   "id" : "ExprPlayerViewDistance",
