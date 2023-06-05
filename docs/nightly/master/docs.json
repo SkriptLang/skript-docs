@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta2-nightly-baf5bdd",
+  "skriptVersion" : "2.7.0-beta3-nightly-ce81e58",
 
   "classes" : [
     {
@@ -5615,7 +5615,7 @@ You can use the specific type of the entity that's involved in the event, e.g. i
 
     "pattern_end"
   ],
-  "since" : "1.2, INSERT VERSION (durability reversed)",
+  "since" : "1.2, 2.7 (durability reversed)",
   "description" : "The damage value/durability of an item.",
   "examples" : "set damage value of player's tool to 10\\nreset the durability of {_item}\\nset durability of player's held item to 0"
 },
@@ -8123,7 +8123,7 @@ Please note that changing a player's speed will change their FOV just like potio
 
     "pattern_end"
   ],
-  "since" : "1.4.2, INSERT VERSION (Reset)",
+  "since" : "1.4.2, 2.7 (Reset)",
   "description" : "For players this is the entity at the crosshair.
 For mobs and experience orbs this is the entity they are attacking/following (if any).",
   "examples" : "on entity target:\\n    if entity's target is a player:\\n        send \"You're being followed by an %entity%!\" to target of entity\\n\\nreset target of entity # Makes the entity target-less\\ndelete targeted entity of player # for players it will delete the target\\ndelete target of last spawned zombie # for entities it will make them target-less"
