@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-aeaee7a",
+  "skriptVersion" : "2.7.0-beta3-nightly-b91b3a8",
 
   "classes" : [
     {
@@ -8515,6 +8515,18 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Creates a vector between two locations.",
   "examples" : "set {_v} to vector between {_loc1} and {_loc2}"
+},
+{
+  "id" : "ExprVectorProjection",
+  "name" : "Vectors - Vector Projection",
+  "patterns" : [
+    "[vector] projection [of] %<a href='./classes.html#vector'>vector</a>% on[to] %<a href='./classes.html#vector'>vector</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "An expression to get the vector projection of two vectors.",
+  "examples" : "set {_projection} to vector projection of vector(1, 2, 3) onto vector(4, 4, 4)"
 },
 {
   "id" : "ExprVectorOfLocation",
