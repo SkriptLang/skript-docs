@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-b91b3a8",
+  "skriptVersion" : "2.7.0-beta3-nightly-97caf93",
 
   "classes" : [
     {
@@ -1417,6 +1417,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Checks whether an entity is invulnerable.",
   "examples" : "target entity is invulnerable"
+},
+{
+  "id" : "CondIsJumping",
+  "name" : "Is Jumping",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) jumping",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) jumping",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a living entity is jumping. This condition does not work on players.",
+  "examples" : "on spawn of zombie:\\n    while event-entity is not jumping:\\n        wait 5 ticks\\n    push event-entity upwards"
 },
 {
   "id" : "CondLeashed",
