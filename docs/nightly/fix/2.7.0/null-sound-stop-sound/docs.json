@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-8faeb81",
+  "skriptVersion" : "2.7.0-nightly-af2441e",
 
   "classes" : [
     {
@@ -127,7 +127,7 @@
   "id" : "damagecause",
   "name" : "Damage Cause",
   "patterns" : [
-    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
+    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, flying into a wall, cramming, poison, sonic boom, suffocate, custom, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
 
     "pattern_end"
   ],
@@ -722,7 +722,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, dripping cherry leaves, falling cherry leaves, landing cherry leaves",
 
     "pattern_end"
   ],
@@ -1230,19 +1230,6 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "if the last spawned creeper is charged:\\n    broadcast \"A charged creeper is at %location of last spawned creeper%\""
 },
 {
-  "id" : "CondIsClimbing",
-  "name" : "Is Climbing",
-  "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) climbing",
-"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) climbing",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Whether a living entity is climbing, such as a spider up a wall or a player on a ladder.",
-  "examples" : "spawn a spider at location of spawn\\nwait a second\\nif the last spawned spider is climbing:\\n    message\"The spider is now climbing!\""
-},
-{
   "id" : "CondIsEdible",
   "name" : "Is Edible",
   "patterns" : [
@@ -1417,19 +1404,6 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Checks whether an entity is invulnerable.",
   "examples" : "target entity is invulnerable"
-},
-{
-  "id" : "CondIsJumping",
-  "name" : "Is Jumping",
-  "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) jumping",
-"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) jumping",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Checks whether a living entity is jumping. This condition does not work on players.",
-  "examples" : "on spawn of zombie:\\n    while event-entity is not jumping:\\n        wait 5 ticks\\n    push event-entity upwards"
 },
 {
   "id" : "CondLeashed",
@@ -3864,18 +3838,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.2-dev21",
   "description" : "Called when player's currently viewed inventory is closed.",
   "examples" : "on inventory close:\\n    if player's location is {location}:\\n        send \"You exited the shop!\""
-},
-{
-  "id" : "inventory_drag",
-  "name" : "On Inventory Drag",
-  "patterns" : [
-    "[on] inventory drag[ging]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Called when a player drags an item in their cursor across the inventory.",
-  "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
 {
   "id" : "inventory_open",
@@ -8540,18 +8502,6 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Creates a vector between two locations.",
   "examples" : "set {_v} to vector between {_loc1} and {_loc2}"
-},
-{
-  "id" : "ExprVectorProjection",
-  "name" : "Vectors - Vector Projection",
-  "patterns" : [
-    "[vector] projection [of] %<a href='./classes.html#vector'>vector</a>% on[to] %<a href='./classes.html#vector'>vector</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "An expression to get the vector projection of two vectors.",
-  "examples" : "set {_projection} to vector projection of vector(1, 2, 3) onto vector(4, 4, 4)"
 },
 {
   "id" : "ExprVectorOfLocation",
