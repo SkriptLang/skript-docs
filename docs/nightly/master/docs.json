@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-a5f0f4f",
+  "skriptVersion" : "2.7.0-beta3-nightly-1949a23",
 
   "classes" : [
     {
@@ -5034,6 +5034,20 @@ Please note that getting a list's recursive size can cause lag if the list is la
   "since" : "2.0",
   "description" : "Counts how many of a particular <a href='./classes.html#itemtype'>item type</a> are in a given inventory.",
   "examples" : "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
+},
+{
+  "id" : "ExprAnvilRepairCost",
+  "name" : "Anvil Repair Cost",
+  "patterns" : [
+    "[the] [anvil] [item] [max[imum]] repair cost [of %<a href='./classes.html#inventory'>inventories</a>%]",
+"%<a href='./classes.html#inventory'>inventories</a>%'[s] [anvil] [item] [max[imum]] repair cost",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the experience cost (in levels) to complete the current repair or the maximum experience cost (in levels) to be allowed by the current repair.
+The default value of max cost set by vanilla Minecraft is 40.",
+  "examples" : "on inventory click:\\n    if {AnvilRepairSaleActive} = true:\\n        wait a tick # recommended, to avoid client bugs\\n        set anvil repair cost to anvil repair cost * 50%\\n        send \"Anvil repair sale is ON!\" to player\\n\\non inventory click:\\n    player have permission \"anvil.repair.max.bypass\"\\n    set max repair cost of event-inventory to 99999"
 },
 {
   "id" : "ExprAnvilText",
