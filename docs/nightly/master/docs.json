@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-1949a23",
+  "skriptVersion" : "2.7.0-beta3-nightly-302f8f9",
 
   "classes" : [
     {
@@ -8952,6 +8952,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2",
   "description" : "Alias of <a href='#ceil'>ceil</a>.",
   "examples" : "ceiling(2.34) = 3\\nceiling(2) = 2\\nceiling(2.99) = 3"
+},
+{
+  "id" : "clamp",
+  "name" : "clamp",
+  "patterns" : [
+    "clamp(values: numbers, min: number, max: number)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Clamps one or more values between two numbers.",
+  "examples" : "clamp(5, 0, 10) = 5\\nclamp(5.5, 0, 5) = 5\\nclamp(0.25, 0, 0.5) = 0.25\\nclamp(5, 7, 10) = 7\\nclamp((5, 0, 10, 9, 13), 7, 10) = (7, 7, 10, 9, 10)\\nset {_clamped::*} to clamp({_values::*}, 0, 10)"
 },
 {
   "id" : "cos",
