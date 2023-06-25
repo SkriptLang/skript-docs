@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-720fe07",
+  "skriptVersion" : "2.7.0-beta3-nightly-a17bf56",
 
   "classes" : [
     {
@@ -835,6 +835,19 @@ This condition requires a supported <a href='./classes.html#region'>regions</a> 
   "since" : "1.0",
   "description" : "Tests whether a player or a chest can hold the given item.",
   "examples" : "block can hold 200 cobblestone\\nplayer has enough space for 64 feathers"
+},
+{
+  "id" : "CondCanPickUpItems",
+  "name" : "Can Pick Up Items",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% can pick([ ]up items| items up)",
+"%<a href='./classes.html#livingentity'>living entities</a>% (can't|cannot|can not) pick([ ]up items| items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Whether living entities are able to pick up items off the ground or not.",
+  "examples" : "if player can pick items up:\\n    send \"You can pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        send \"Be careful, you won't be able to pick that up!\" to player"
 },
 {
   "id" : "CondCanSee",
@@ -3022,6 +3035,19 @@ Note: if no input is given for the times, it will keep the ones from the last ti
   "examples" : "allow flight to event-player"
 },
 {
+  "id" : "EffToggleCanPickUpItems",
+  "name" : "Toggle Picking Up Items",
+  "patterns" : [
+    "allow %<a href='./classes.html#livingentity'>living entities</a>% to pick([ ]up items| items up)",
+"(forbid|disallow) %<a href='./classes.html#livingentity'>living entities</a>% (from|to) pick([ing | ]up items|[ing] items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Determines whether living entities are able to pick up items or not",
+  "examples" : "forbid player from picking up items\\nsend \"You can no longer pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        allow player to pick up items"
+},
+{
   "id" : "EffTree",
   "name" : "Tree",
   "patterns" : [
@@ -5020,6 +5046,20 @@ Please note that getting a list's recursive size can cause lag if the list is la
   "since" : "2.0",
   "description" : "Counts how many of a particular <a href='./classes.html#itemtype'>item type</a> are in a given inventory.",
   "examples" : "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
+},
+{
+  "id" : "ExprAnvilRepairCost",
+  "name" : "Anvil Repair Cost",
+  "patterns" : [
+    "[the] [anvil] [item] [max[imum]] repair cost [of %<a href='./classes.html#inventory'>inventories</a>%]",
+"%<a href='./classes.html#inventory'>inventories</a>%'[s] [anvil] [item] [max[imum]] repair cost",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the experience cost (in levels) to complete the current repair or the maximum experience cost (in levels) to be allowed by the current repair.
+The default value of max cost set by vanilla Minecraft is 40.",
+  "examples" : "on inventory click:\\n    if {AnvilRepairSaleActive} = true:\\n        wait a tick # recommended, to avoid client bugs\\n        set anvil repair cost to anvil repair cost * 50%\\n        send \"Anvil repair sale is ON!\" to player\\n\\non inventory click:\\n    player have permission \"anvil.repair.max.bypass\"\\n    set max repair cost of event-inventory to 99999"
 },
 {
   "id" : "ExprAnvilText",
