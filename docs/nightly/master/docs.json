@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-ce1888c",
+  "skriptVersion" : "2.7.0-beta3-nightly-9d06f02",
 
   "classes" : [
     {
@@ -2220,8 +2220,8 @@ You can add a tool, which will spawn items based on how that tool would break th
     "pattern_end"
   ],
   "since" : "2.2-dev37, 2.7 (while loops)",
-  "description" : "Skips the value currently being looped, moving on to the next value if it exists.",
-  "examples" : "loop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast"
+  "description" : "Immediately moves the (while) loop on to the next iteration.",
+  "examples" : "# Broadcast online moderators\\nloop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast\\n \\n# Game starting counter\\nset {_counter} to 11\\nwhile {_counter} &gt; 0:\\n    remove 1 from {_counter}\\n    wait a second\\n    if {_counter} != 1, 2, 3, 5 or 10:\\n        continue # only print when counter is 1, 2, 3, 5 or 10\\n    broadcast \"Game starting in %{_counter}% second(s)\""
 },
 {
   "id" : "EffHealth",
@@ -6992,6 +6992,18 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "examples" : "set {_loc} to the location at arg-1, arg-2, arg-3 of the world arg-4\\ndistance between the player and the location (0, 0, 0) is less than 200"
 },
 {
+  "id" : "ExprLoopIteration",
+  "name" : "Loop Iteration",
+  "patterns" : [
+    "[the] loop(-| )(counter|iteration)[-%*<a href='./classes.html#number'>number</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the loop's current iteration count (for both normal and while loops).",
+  "examples" : "while player is online:\\n    give player 1 stone\\n    wait 5 ticks\\n    if loop-counter &gt; 30:\\n        stop loop\\n\\nloop {top-balances::*}:\\n    if loop-iteration &lt;= 10:\\n        broadcast \"##%loop-iteration% %loop-index% has $%loop-value%\""
+},
+{
   "id" : "ExprLoopValue",
   "name" : "Loop value",
   "patterns" : [
@@ -6999,9 +7011,9 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "The currently looped value.",
-  "examples" : "# countdown:\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n# generate a 10x10 floor made of randomly colored wool below the player:\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool"
+  "since" : "1.0, INSERT VERSION (loop-counter)",
+  "description" : "Returns the currently looped value.",
+  "examples" : "# Countdown\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n\\n# Generate a 10x10 floor made of randomly colored wool below the player\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool\\n\\nloop {top-balances::*}:\\n    loop-iteration &lt;= 10\\n    send \"##%loop-iteration% %loop-index% has $%loop-value%\""
 },
 {
   "id" : "ExprLoot",
