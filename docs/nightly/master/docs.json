@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-9d06f02",
+  "skriptVersion" : "2.7.0-beta3-nightly-e08ec47",
 
   "classes" : [
     {
@@ -1915,6 +1915,20 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "examples" : "player is not on ground"
 },
 {
+  "id" : "CondIsLeftHanded",
+  "name" : "Left Handed",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (left|right)( |-)handed",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks if living entities or players are left or right-handed. Armor stands are neither right nor left-handed.
+Paper 1.17.1+ is required for non-player entities.",
+  "examples" : "on damage of player:\\n    if victim is left handed:\\n        cancel event"
+},
+{
   "id" : "CondMatches",
   "name" : "Matches",
   "patterns" : [
@@ -2397,6 +2411,18 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "since" : "2.2-dev21",
   "description" : "Forces player(s) to respawn if they are dead. If this is called without delay from death event, one tick is waited before respawn attempt.",
   "examples" : "on death of player:\\n    force event-player to respawn"
+},
+{
+  "id" : "EffHandedness",
+  "name" : "Handedness",
+  "patterns" : [
+    "make %<a href='./classes.html#livingentity'>living entities</a>% (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Make mobs left or right-handed. This does not affect players.",
+  "examples" : "spawn skeleton at spawn of world \"world\":\\n    make entity left handed\\n\\nmake all zombies in radius 10 of player right handed"
 },
 {
   "id" : "EffHidePlayerFromServerList",
