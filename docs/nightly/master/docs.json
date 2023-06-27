@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-e08ec47",
+  "skriptVersion" : "2.7.0-beta3-nightly-59b4bb5",
 
   "classes" : [
     {
@@ -4268,6 +4268,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.7",
   "description" : "Called when a player has slept long enough to count as passing the night/storm.\\nCancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed.",
   "examples" : "on player deep sleeping:\\n    send \"Zzzz..\" to player"
+},
+{
+  "id" : "player_pickup_arrow",
+  "name" : "On Player Pickup Arrow",
+  "patterns" : [
+    "[on] [player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player picks up an arrow from the ground.",
+  "examples" : "on arrow pickup:\\n    cancel the event\\n    teleport event-projectile to block 5 above event-projectile"
 },
 {
   "id" : "player_trade",
