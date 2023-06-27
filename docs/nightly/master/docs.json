@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-59b4bb5",
+  "skriptVersion" : "2.7.0-beta3-nightly-bb87694",
 
   "classes" : [
     {
@@ -6529,14 +6529,16 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHotbarSlot",
   "name" : "Hotbar Slot",
   "patterns" : [
-    "[the] [([currently] selected|current)] hotbar slot of %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>%'[s] [([currently] selected|current)] hotbar slot",
+    "[the] [the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#player'>players</a>%'[s] [the] [([currently] selected|current)] hotbar slot[s]",
 
     "pattern_end"
   ],
   "since" : "2.2-dev36",
-  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>. To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.",
-  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left"
+  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>.
+To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.
+Use future and past tense to grab the previous slot in an item change event, see example.",
+  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\n\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left\\n\\non item held change:\\n    if the selected hotbar slot was a diamond:\\n        set the currently selected hotbar slot to slot 5 of player"
 },
 {
   "id" : "ExprHoverList",
