@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-nightly-ed38ed5",
+  "skriptVersion" : "2.7.0-nightly-77811a6",
 
   "classes" : [
     {
@@ -3838,6 +3838,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.2-dev21",
   "description" : "Called when player's currently viewed inventory is closed.",
   "examples" : "on inventory close:\\n    if player's location is {location}:\\n        send \"You exited the shop!\""
+},
+{
+  "id" : "inventory_drag",
+  "name" : "On Inventory Drag",
+  "patterns" : [
+    "[on] inventory drag[ging]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player drags an item in their cursor across the inventory.",
+  "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
 {
   "id" : "inventory_open",
