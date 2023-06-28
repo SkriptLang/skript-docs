@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-bb87694",
+  "skriptVersion" : "2.7.0-beta3-nightly-f6e4ccf",
 
   "classes" : [
     {
@@ -8520,6 +8520,20 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} ++ 5\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} -- 5\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} ** 5\\nset {_v} to {_v} // {_v}\\nset {_v} to {_v} // 5"
+},
+{
+  "id" : "ExprVectorFromDirection",
+  "name" : "Vectors - Create from Direction",
+  "patterns" : [
+    "vector[s] [from] %<a href='./classes.html#direction'>directions</a>%",
+"%<a href='./classes.html#direction'>directions</a>% vector[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Creates vectors from given directions.
+Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector from the direction 'forwards' is (0, 0, 1).",
+  "examples" : "set {_v} to vector from direction upwards\\nset {_v} to vector in direction of player\\nset {_v} to vector in horizontal direction of player\\nset {_v} to vector from facing of player\\nset {_v::*} to vectors from north, south, east, and west"
 },
 {
   "id" : "ExprVectorFromXYZ",
