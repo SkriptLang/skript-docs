@@ -24,11 +24,11 @@ Table of contents:
 
 So to begin this tutorial, It's excepted that you have some sort of basic Java understanding. You can google "Java 101" or look at some of these links provided:
 
-https://www.javaworld.com/category/learn-java/
-https://www.oracle.com/java/index.html or https://docs.oracle.com/javase/tutorial/java/index.html (Valid source)
-https://www.codecademy.com/learn/learn-java/
-http://www.tutorialspoint.com/java/
-https://netbeans.org/kb/articles/learn-java.html
+- https://www.javaworld.com/category/learn-java/
+- https://www.oracle.com/java/index.html or https://docs.oracle.com/javase/tutorial/java/index.html (Valid source)
+- https://www.codecademy.com/learn/learn-java/
+- http://www.tutorialspoint.com/java/
+- https://netbeans.org/kb/articles/learn-java.html
 
 And a well understanding of the Spigot API https://hub.spigotmc.org/
 
