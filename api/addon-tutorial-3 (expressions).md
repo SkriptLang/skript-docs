@@ -1,5 +1,7 @@
 # Creating an Expression
 
+### SimpleExpression
+
 Let's start with a SimpleExpression this is a class of Skript which represents the base expression.
 
 A simple expression typically returns one or many values, and it also typically doesn't include any expressions in the pattern like `example %something%`
@@ -112,3 +114,19 @@ Lastly is the toString, this method is mainly only used for debugging and is pri
 
 In our example here we're just gonna return our pattern, it's best to return the pattern in this toString so you can understand the syntax when it errors. More about this will be explained below with other types of expressions.
 This is called after the init method, so you'll be able to use private fields.
+
+### PropertyExpression
+
+Now we have property expressions. These are patterns in the format of
+
+```
+active potion effects of %livingentities%
+%livingentities%'[s] active potion effects
+```
+
+Keep in mind that active potion effects already exists in Skript, this is just an example.
+
+This happens quite often. So PropertyExpression is a utility class for exactly these patterns. Lets go over the differences between a property expression and simple expression, here is our final class:
+
+```java
+```
