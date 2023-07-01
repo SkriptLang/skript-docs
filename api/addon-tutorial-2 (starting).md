@@ -1,5 +1,7 @@
 # Starting our addon (Main class)
 
+Class named AddonTutorial.java;
+
 ```java
 package me.example.addontutorial;
 
@@ -82,3 +84,31 @@ The `.setLanguageFileDirectory("lang");` method is as formentioned, it'll search
 We'll go over this file in the future with classinfos, but for now it's best to create a blank `default.lang` file inside this folder. You can insert `version: @version@` as mentioned before this will be replaced with your version.
 
 The metrics is bStats API, you can read up on their documentation for more information on this, but we're essentially registering the plugin with it's bStats ID which is given on their site (bstats.org). Metrics is totally optional.
+
+`getInstance` is the only static methods as we only need `AddonTutorial#getInstance()` to be static, so we can grab this instance else where, and our config with `AddonTutorial#getInstance()#getConfig()` or any other details from inside this class.
+The less static the better off your addon will be. Static is a very common issue for security which is why for example Kotlin trys to eliminate it from the language, for critical security and crashing potential applications like Android.
+
+Now to point our plugin.yml to this main class
+
+```yaml
+name: AddonTutorial
+authors: [SkriptLang, Njol]
+description: An example Skript addon.
+api-version: 1.13
+version: @version@
+main: me.example.addontutorial.AddonTutorial
+depend: [Skript]
+
+```
+Ensure you have the depend tag in there. Also line break at the end, as GitHub doesn't like no line break at the end. (It's an old programming standard to signify the end of the file, but modern programming languages know the end of the file now).
+
+Also inside our config.yml is just; (You can add your own nodes if you need a config.yml otherwise you don't need all the config code in this main class example.)
+```
+version: @version@
+
+```
+
+Now that's it, our addon is now registered to Skript and we can start making syntaxes in the next tutorial section.
+
+
+
