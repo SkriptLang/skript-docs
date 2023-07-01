@@ -248,7 +248,7 @@ The Nullable library does not matter, the IDE only looks for the `@Nullable` str
 
 `By default Gradle resolves all transitive dependencies specified by the dependency metadata. Sometimes this behavior may not be desirable e.g. if the metadata is incorrect or defines a large graph of transitive dependencies. You can tell Gradle to disable transitive dependency management for a dependency by setting transitive = false` This comes from Gradle's documentation, we do not want Skript to include all it's metadata, as there is a large amount of libraries we don't want.
 
-And lastly we're gonna shadow bstats into our project, keep in mind that we need to relocate that package, and only bstats for shadowing, as bstats doesn't operate on it's default domain `org.bstats` as multiple plugins could use bstats.
+And lastly we're gonna shadow bstats into our project, keep in mind that we need to relocate that package, and only bstats for shadowing, as bstats doesn't operate on it's default domain `org.bstats` as multiple plugins could use bstats. Metrics is totally optional.
 
 The following;
 
