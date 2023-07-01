@@ -284,3 +284,7 @@ shadowJar {
 
 Is how we configure the shadowJar to work. We need to include the bstats libraries, and relocate as stated above, we need to tell it to grab the `shadow` configurations which is part of the shadow plugin, set the archiveVersion to our version, this makes the jar `AddonTutorial-VERSION.jar`.
 And lastly the minimize will remove libraries our addon doesn't use, to minimize the jar size as a large jar is not pleasent.
+
+Inside settings.gradle should be only `rootProject.name = 'AddonTutorial'`
+
+Now you're all setup and we can start making our addon like a normal Spigot plugin.
