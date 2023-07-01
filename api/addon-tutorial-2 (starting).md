@@ -26,13 +26,13 @@ public class AddonTutorial extends JavaPlugin {
 //			return;
 //		}
 		instance = this;
-    try {
-      addon = Skript.registerAddon(this)
-          .loadClasses("me.example.addontutorial", "elements")
-          .setLanguageFileDirectory("lang");
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+		try {
+			addon = Skript.registerAddon(this)
+					.loadClasses("me.example.addontutorial", "elements")
+					.setLanguageFileDirectory("lang");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		// Saves the raw contents of the default config.yml file to the locationretrievable by getConfig(). 
 		saveDefaultConfig();
