@@ -46,7 +46,8 @@ import ch.njol.util.coll.CollectionUtils;
 @Description("An example simple expression.")
 @Examples({
 	"# This is a multiple line example",
-	"set {_variable} to our example"
+	"if balance of player is greater than 10:",
+		"\tset {_variable} to our example" // Use \t in examples and tab it over for readability.
 })
 //@RequiredPlugins({"Paper 1.17+", "ProtocolLib"})
 //@RequiredPlugins("Spigot 1.13+")
