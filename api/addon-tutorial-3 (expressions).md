@@ -129,4 +129,5 @@ Keep in mind that active potion effects already exists in Skript, this is just a
 This happens quite often. So PropertyExpression is a utility class for exactly these patterns. Lets go over the differences between a property expression and simple expression, here is our final class:
 
 ```java
+WIP
 ```
