@@ -1,4 +1,4 @@
-# Starting our addon (Main class)
+# Registering your Addon (Main class)
 
 Class named AddonTutorial.java;
 
