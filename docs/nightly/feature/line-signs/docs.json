@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-2f87ec8",
+  "skriptVersion" : "2.7.0-beta3-nightly-22e30f8",
 
   "classes" : [
     {
@@ -601,6 +601,18 @@
   ],
   "since" : "2.3",
   "description" : "A server icon that was loaded using the <a href='effects.html#EffLoadServerIcon'>load server icon</a> effect.",
+  "examples" : "Missing examples."
+},
+{
+  "id" : "signside",
+  "name" : "Sign Sides",
+  "patterns" : [
+    "back, front",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a side of a sign.",
   "examples" : "Missing examples."
 },
 {
