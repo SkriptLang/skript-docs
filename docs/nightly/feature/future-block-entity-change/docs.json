@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-ada9120",
+  "skriptVersion" : "2.7.0-beta3-nightly-91496fd",
 
   "classes" : [
     {
@@ -3607,7 +3607,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 "[on] silverfish exit",
 "[on] falling block fall[ing]",
 "[on] falling block land[ing]",
-"[on] entity change block[s]",
+"[on] (entity|%*<a href='./classes.html#entitydata'>entity types</a>%) change block[s]",
 
     "pattern_end"
   ],
