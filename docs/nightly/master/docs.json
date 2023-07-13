@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-82749a5",
+  "skriptVersion" : "2.7.0-beta3-nightly-5a44852",
 
   "classes" : [
     {
@@ -4147,7 +4147,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a loot table of an inventory is generated in the world.\\nFor example, when opening a shipwreck chest.",
-  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
+  "examples" : "on loot generate:\\n    chance of 10%\\n    add 64 diamonds to the loot\\n    send \"You hit the jackpot at %event-location%!\""
 },
 {
   "id" : "move",
