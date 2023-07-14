@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-5a44852",
+  "skriptVersion" : "2.7.0-beta3-nightly-5c50a3f",
 
   "classes" : [
     {
@@ -7684,6 +7684,21 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   "since" : "2.4",
   "description" : "The blocks associated with a portal in the portal creation event.",
   "examples" : "on portal creation:\\n    loop portal blocks:\\n        broadcast \"%loop-block% is part of a portal!\""
+},
+{
+  "id" : "ExprPortalCooldown",
+  "name" : "Portal Cooldown",
+  "patterns" : [
+    "[the] portal cooldown of %<a href='./classes.html#entity'>entities</a>%",
+"%<a href='./classes.html#entity'>entities</a>%'[s] portal cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The amount of time before an entity can use a portal. By default, it is 15 seconds after exiting a nether portal or end gateway.
+Players in survival/adventure get a cooldown of 0.5 seconds, while those in creative get no cooldown.
+Resetting will set the cooldown back to the default 15 seconds for non-player entities and 0.5 seconds for players.",
+  "examples" : "on portal:\\n    wait 1 tick\\n    set portal cooldown of event-entity to 5 seconds"
 },
 {
   "id" : "ExprPotionEffect",
