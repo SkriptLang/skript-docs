@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-8faeb81",
+  "skriptVersion" : "2.7.0-beta3-nightly-183291d",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,7 +121,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -556,6 +556,18 @@
   "examples" : "projectile is a snowball\\nshoot an arrow at speed 5 from the player"
 },
 {
+  "id" : "quitreason",
+  "name" : "Quit Reason",
+  "patterns" : [
+    "disconnected, erroneous state, kicked, quit, timed out, erroneous",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a quit reason from a player quit server event.",
+  "examples" : "Missing examples."
+},
+{
   "id" : "region",
   "name" : "Region",
   "patterns" : [
@@ -823,6 +835,19 @@ This condition requires a supported <a href='./classes.html#region'>regions</a> 
   "since" : "1.0",
   "description" : "Tests whether a player or a chest can hold the given item.",
   "examples" : "block can hold 200 cobblestone\\nplayer has enough space for 64 feathers"
+},
+{
+  "id" : "CondCanPickUpItems",
+  "name" : "Can Pick Up Items",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% can pick([ ]up items| items up)",
+"%<a href='./classes.html#livingentity'>living entities</a>% (can't|cannot|can not) pick([ ]up items| items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Whether living entities are able to pick up items off the ground or not.",
+  "examples" : "if player can pick items up:\\n    send \"You can pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        send \"Be careful, you won't be able to pick that up!\" to player"
 },
 {
   "id" : "CondCanSee",
@@ -1890,6 +1915,20 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "examples" : "player is not on ground"
 },
 {
+  "id" : "CondIsLeftHanded",
+  "name" : "Left Handed",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (left|right)( |-)handed",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks if living entities or players are left or right-handed. Armor stands are neither right nor left-handed.
+Paper 1.17.1+ is required for non-player entities.",
+  "examples" : "on damage of player:\\n    if victim is left handed:\\n        cancel event"
+},
+{
   "id" : "CondMatches",
   "name" : "Matches",
   "patterns" : [
@@ -2195,8 +2234,8 @@ You can add a tool, which will spawn items based on how that tool would break th
     "pattern_end"
   ],
   "since" : "2.2-dev37, 2.7 (while loops)",
-  "description" : "Skips the value currently being looped, moving on to the next value if it exists.",
-  "examples" : "loop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast"
+  "description" : "Immediately moves the (while) loop on to the next iteration.",
+  "examples" : "# Broadcast online moderators\\nloop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast\\n \\n# Game starting counter\\nset {_counter} to 11\\nwhile {_counter} &gt; 0:\\n    remove 1 from {_counter}\\n    wait a second\\n    if {_counter} != 1, 2, 3, 5 or 10:\\n        continue # only print when counter is 1, 2, 3, 5 or 10\\n    broadcast \"Game starting in %{_counter}% second(s)\""
 },
 {
   "id" : "EffHealth",
@@ -2372,6 +2411,18 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "since" : "2.2-dev21",
   "description" : "Forces player(s) to respawn if they are dead. If this is called without delay from death event, one tick is waited before respawn attempt.",
   "examples" : "on death of player:\\n    force event-player to respawn"
+},
+{
+  "id" : "EffHandedness",
+  "name" : "Handedness",
+  "patterns" : [
+    "make %<a href='./classes.html#livingentity'>living entities</a>% (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Make mobs left or right-handed. This does not affect players.",
+  "examples" : "spawn skeleton at spawn of world \"world\":\\n    make entity left handed\\n\\nmake all zombies in radius 10 of player right handed"
 },
 {
   "id" : "EffHidePlayerFromServerList",
@@ -3010,6 +3061,19 @@ Note: if no input is given for the times, it will keep the ones from the last ti
   "examples" : "allow flight to event-player"
 },
 {
+  "id" : "EffToggleCanPickUpItems",
+  "name" : "Toggle Picking Up Items",
+  "patterns" : [
+    "allow %<a href='./classes.html#livingentity'>living entities</a>% to pick([ ]up items| items up)",
+"(forbid|disallow) %<a href='./classes.html#livingentity'>living entities</a>% (from|to) pick([ing | ]up items|[ing] items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Determines whether living entities are able to pick up items or not",
+  "examples" : "forbid player from picking up items\\nsend \"You can no longer pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        allow player to pick up items"
+},
+{
   "id" : "EffTree",
   "name" : "Tree",
   "patterns" : [
@@ -3324,7 +3388,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -4191,7 +4255,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4204,6 +4268,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.7",
   "description" : "Called when a player has slept long enough to count as passing the night/storm.\\nCancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed.",
   "examples" : "on player deep sleeping:\\n    send \"Zzzz..\" to player"
+},
+{
+  "id" : "player_pickup_arrow",
+  "name" : "On Player Pickup Arrow",
+  "patterns" : [
+    "[on] [player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player picks up an arrow from the ground.",
+  "examples" : "on arrow pickup:\\n    cancel the event\\n    teleport event-projectile to block 5 above event-projectile"
 },
 {
   "id" : "player_trade",
@@ -4474,7 +4550,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -5008,6 +5084,20 @@ Please note that getting a list's recursive size can cause lag if the list is la
   "since" : "2.0",
   "description" : "Counts how many of a particular <a href='./classes.html#itemtype'>item type</a> are in a given inventory.",
   "examples" : "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
+},
+{
+  "id" : "ExprAnvilRepairCost",
+  "name" : "Anvil Repair Cost",
+  "patterns" : [
+    "[the] [anvil] [item] [max[imum]] repair cost [of %<a href='./classes.html#inventory'>inventories</a>%]",
+"%<a href='./classes.html#inventory'>inventories</a>%'[s] [anvil] [item] [max[imum]] repair cost",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the experience cost (in levels) to complete the current repair or the maximum experience cost (in levels) to be allowed by the current repair.
+The default value of max cost set by vanilla Minecraft is 40.",
+  "examples" : "on inventory click:\\n    if {AnvilRepairSaleActive} = true:\\n        wait a tick # recommended, to avoid client bugs\\n        set anvil repair cost to anvil repair cost * 50%\\n        send \"Anvil repair sale is ON!\" to player\\n\\non inventory click:\\n    player have permission \"anvil.repair.max.bypass\"\\n    set max repair cost of event-inventory to 99999"
 },
 {
   "id" : "ExprAnvilText",
@@ -6439,14 +6529,16 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHotbarSlot",
   "name" : "Hotbar Slot",
   "patterns" : [
-    "[the] [([currently] selected|current)] hotbar slot of %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>%'[s] [([currently] selected|current)] hotbar slot",
+    "[the] [the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#player'>players</a>%'[s] [the] [([currently] selected|current)] hotbar slot[s]",
 
     "pattern_end"
   ],
   "since" : "2.2-dev36",
-  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>. To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.",
-  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left"
+  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>.
+To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.
+Use future and past tense to grab the previous slot in an item change event, see example.",
+  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\n\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left\\n\\non item held change:\\n    if the selected hotbar slot was a diamond:\\n        set the currently selected hotbar slot to slot 5 of player"
 },
 {
   "id" : "ExprHoverList",
@@ -6940,6 +7032,18 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "examples" : "set {_loc} to the location at arg-1, arg-2, arg-3 of the world arg-4\\ndistance between the player and the location (0, 0, 0) is less than 200"
 },
 {
+  "id" : "ExprLoopIteration",
+  "name" : "Loop Iteration",
+  "patterns" : [
+    "[the] loop(-| )(counter|iteration)[-%*<a href='./classes.html#number'>number</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the loop's current iteration count (for both normal and while loops).",
+  "examples" : "while player is online:\\n    give player 1 stone\\n    wait 5 ticks\\n    if loop-counter &gt; 30:\\n        stop loop\\n\\nloop {top-balances::*}:\\n    if loop-iteration &lt;= 10:\\n        broadcast \"##%loop-iteration% %loop-index% has $%loop-value%\""
+},
+{
   "id" : "ExprLoopValue",
   "name" : "Loop value",
   "patterns" : [
@@ -6947,9 +7051,9 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "The currently looped value.",
-  "examples" : "# countdown:\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n# generate a 10x10 floor made of randomly colored wool below the player:\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool"
+  "since" : "1.0, INSERT VERSION (loop-counter)",
+  "description" : "Returns the currently looped value.",
+  "examples" : "# Countdown\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n\\n# Generate a 10x10 floor made of randomly colored wool below the player\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool\\n\\nloop {top-balances::*}:\\n    loop-iteration &lt;= 10\\n    send \"##%loop-iteration% %loop-index% has $%loop-value%\""
 },
 {
   "id" : "ExprLoot",
@@ -7684,6 +7788,18 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "examples" : "on server list ping:\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
 },
 {
+  "id" : "ExprQuitReason",
+  "name" : "Quit Reason",
+  "patterns" : [
+    "[the] (quit|disconnect) (cause|reason)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The <a href='classes.html#quitreason'>quit reason</a> as to why a player disconnected in a <a href='events.html#quit'>quit</a> event.",
+  "examples" : "on quit:\\n    quit reason was kicked\\n    player is banned\\n    clear {server::player::%uuid of player%::*}"
+},
+{
   "id" : "ExprRandom",
   "name" : "Random",
   "patterns" : [
@@ -8406,6 +8522,20 @@ In the future there will be an option to use a player's UUID instead of the name
   "examples" : "set {_v} to vector 1, 2, 3 // 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} ++ 5\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} -- 5\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} ** 5\\nset {_v} to {_v} // {_v}\\nset {_v} to {_v} // 5"
 },
 {
+  "id" : "ExprVectorFromDirection",
+  "name" : "Vectors - Create from Direction",
+  "patterns" : [
+    "vector[s] [from] %<a href='./classes.html#direction'>directions</a>%",
+"%<a href='./classes.html#direction'>directions</a>% vector[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Creates vectors from given directions.
+Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector from the direction 'forwards' is (0, 0, 1).",
+  "examples" : "set {_v} to vector from direction upwards\\nset {_v} to vector in direction of player\\nset {_v} to vector in horizontal direction of player\\nset {_v} to vector from facing of player\\nset {_v::*} to vectors from north, south, east, and west"
+},
+{
   "id" : "ExprVectorFromXYZ",
   "name" : "Vectors - Create from XYZ",
   "patterns" : [
@@ -8912,6 +9042,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2",
   "description" : "Alias of <a href='#ceil'>ceil</a>.",
   "examples" : "ceiling(2.34) = 3\\nceiling(2) = 2\\nceiling(2.99) = 3"
+},
+{
+  "id" : "clamp",
+  "name" : "clamp",
+  "patterns" : [
+    "clamp(values: numbers, min: number, max: number)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Clamps one or more values between two numbers.",
+  "examples" : "clamp(5, 0, 10) = 5\\nclamp(5.5, 0, 5) = 5\\nclamp(0.25, 0, 0.5) = 0.25\\nclamp(5, 7, 10) = 7\\nclamp((5, 0, 10, 9, 13), 7, 10) = (7, 7, 10, 9, 10)\\nset {_clamped::*} to clamp({_values::*}, 0, 10)"
 },
 {
   "id" : "cos",
