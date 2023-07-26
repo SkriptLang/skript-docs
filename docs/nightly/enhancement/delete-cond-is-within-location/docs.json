@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-2349a44",
+  "skriptVersion" : "2.7.0-beta3-nightly-edc81b3",
 
   "classes" : [
     {
@@ -2041,7 +2041,7 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffActionBar",
   "name" : "Action Bar",
   "patterns" : [
-    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% to %<a href='./classes.html#player'>players</a>%",
+    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2854,9 +2854,9 @@ Note: if a player was hidden and relogs, this player will be visible again.",
 
     "pattern_end"
   ],
-  "since" : "2.2",
+  "since" : "2.2, INSERT VERSION (returns aliases)",
   "description" : "Makes a function return a value",
-  "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}"
+  "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
   "id" : "EffSendBlockChange",
@@ -4133,7 +4133,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a loot table of an inventory is generated in the world.\\nFor example, when opening a shipwreck chest.",
-  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
+  "examples" : "on loot generate:\\n    chance of 10%\\n    add 64 diamonds to the loot\\n    send \"You hit the jackpot at %event-location%!\""
 },
 {
   "id" : "move",
@@ -7670,6 +7670,21 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   "since" : "2.4",
   "description" : "The blocks associated with a portal in the portal creation event.",
   "examples" : "on portal creation:\\n    loop portal blocks:\\n        broadcast \"%loop-block% is part of a portal!\""
+},
+{
+  "id" : "ExprPortalCooldown",
+  "name" : "Portal Cooldown",
+  "patterns" : [
+    "[the] portal cooldown of %<a href='./classes.html#entity'>entities</a>%",
+"%<a href='./classes.html#entity'>entities</a>%'[s] portal cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The amount of time before an entity can use a portal. By default, it is 15 seconds after exiting a nether portal or end gateway.
+Players in survival/adventure get a cooldown of 0.5 seconds, while those in creative get no cooldown.
+Resetting will set the cooldown back to the default 15 seconds for non-player entities and 0.5 seconds for players.",
+  "examples" : "on portal:\\n    wait 1 tick\\n    set portal cooldown of event-entity to 5 seconds"
 },
 {
   "id" : "ExprPotionEffect",
