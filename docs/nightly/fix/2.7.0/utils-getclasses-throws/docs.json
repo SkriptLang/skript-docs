@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-nightly-202600d",
+  "skriptVersion" : "2.7.0-nightly-1c84877",
 
   "classes" : [
     {
@@ -1990,7 +1990,7 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffActionBar",
   "name" : "Action Bar",
   "patterns" : [
-    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% to %<a href='./classes.html#player'>players</a>%",
+    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2887,8 +2887,8 @@ status of the sent resource pack request.",
   "id" : "EffStopSound",
   "name" : "Stop Sound",
   "patterns" : [
-    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
-"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
+    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
+"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2896,7 +2896,7 @@ status of the sent resource pack request.",
   "description" : "Stops specific or all sounds from playing to a group of players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sound for all players\\nstop sound in record category"
+  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sounds for all players\\nstop sound in the record category"
 },
 {
   "id" : "EffSwingHand",
