@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-nightly-cebad6e",
+  "skriptVersion" : "2.7.0-nightly-dc700d5",
 
   "classes" : [
     {
@@ -1976,7 +1976,7 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffActionBar",
   "name" : "Action Bar",
   "patterns" : [
-    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% to %<a href='./classes.html#player'>players</a>%",
+    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
