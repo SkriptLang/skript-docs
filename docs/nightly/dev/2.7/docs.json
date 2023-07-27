@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-nightly-bdfde15",
+  "skriptVersion" : "2.7.0-nightly-755f59c",
 
   "classes" : [
     {
@@ -1796,20 +1796,6 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "description" : "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.
 Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations.",
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
-},
-{
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
 },
 {
   "id" : "CondWithinRadius",
