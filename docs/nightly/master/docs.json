@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-1bd8229",
+  "skriptVersion" : "2.7.0-beta3-nightly-e7ec6c9",
 
   "classes" : [
     {
@@ -8308,7 +8308,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "2.2-dev35",
   "description" : "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event.",
-  "examples" : "on teleport\\n    teleport cause is nether portal, end portal or end gateway"
+  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway"
 },
 {
   "id" : "ExprTemperature",
