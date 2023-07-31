@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-47a9fbb",
+  "skriptVersion" : "2.7.0-beta3-nightly-5c3755d",
 
   "classes" : [
     {
@@ -1117,6 +1117,21 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "player's tool has custom model data"
 },
 {
+  "id" : "CondHasItemCooldown",
+  "name" : "Has Item Cooldown",
+  "patterns" : [
+    "%<a href='./classes.html#player'>players</a>% (has|have) [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (has|have) %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check whether a cooldown is active on the specified material for a specific player.",
+  "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
+},
+{
   "id" : "CondHasMetadata",
   "name" : "Has Metadata",
   "patterns" : [
@@ -1908,20 +1923,6 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "description" : "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.
 Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations.",
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
-},
-{
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
 },
 {
   "id" : "CondWithinRadius",
@@ -6897,6 +6898,19 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "examples" : "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
 },
 {
+  "id" : "ExprItemCooldown",
+  "name" : "Item Cooldown",
+  "patterns" : [
+    "[the] [item] cooldown of %<a href='./classes.html#itemtype'>item types</a>% for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>%'[s] [item] cooldown for %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>.",
+  "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
+},
+{
   "id" : "ExprItemOfItemDisplay",
   "name" : "Item Display Item",
   "patterns" : [
@@ -8569,7 +8583,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "2.2-dev35",
   "description" : "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event.",
-  "examples" : "on teleport\\n    teleport cause is nether portal, end portal or end gateway"
+  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway"
 },
 {
   "id" : "ExprTemperature",
