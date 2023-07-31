@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-e7ec6c9",
+  "skriptVersion" : "2.7.0-beta3-nightly-4d6f42a",
 
   "classes" : [
     {
@@ -1054,6 +1054,21 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Check if an item has a custom model data tag",
   "examples" : "player's tool has custom model data"
+},
+{
+  "id" : "CondHasItemCooldown",
+  "name" : "Has Item Cooldown",
+  "patterns" : [
+    "%<a href='./classes.html#player'>players</a>% (has|have) [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (has|have) %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check whether a cooldown is active on the specified material for a specific player.",
+  "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
 },
 {
   "id" : "CondHasMetadata",
@@ -6674,6 +6689,19 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.2-dev24",
   "description" : "The amount of an <a href='classes.html#itemstack'>item stack</a>.",
   "examples" : "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
+},
+{
+  "id" : "ExprItemCooldown",
+  "name" : "Item Cooldown",
+  "patterns" : [
+    "[the] [item] cooldown of %<a href='./classes.html#itemtype'>item types</a>% for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>%'[s] [item] cooldown for %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>.",
+  "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
 },
 {
   "id" : "ExprEnchantments",
