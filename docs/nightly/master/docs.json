@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-21d2420",
+  "skriptVersion" : "2.7.0-beta3-nightly-996b57e",
 
   "classes" : [
     {
@@ -5514,14 +5514,15 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "id" : "ExprChunk",
   "name" : "Chunk",
   "patterns" : [
-    "[the] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
+    "[(all [[of] the]|the)] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
 "%<a href='./classes.html#location'>locations</a>%'[s] chunk[s]",
+"[(all [[of] the]|the)] loaded chunks (of|in) %<a href='./classes.html#world'>worlds</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "The <a href='./classes.html#chunk'>chunk</a> a block, location or entity is in.",
-  "examples" : "add the chunk at the player to {protected chunks::*}"
+  "since" : "2.0, INSERT VERSION (loaded chunks)",
+  "description" : "Returns the <a href='./classes.html#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world.",
+  "examples" : "add the chunk at the player to {protected chunks::*}\\nset {_chunks::*} to the loaded chunks of the player's world"
 },
 {
   "id" : "ExprClicked",
