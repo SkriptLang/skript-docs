@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-4d6f42a",
+  "skriptVersion" : "2.7.0-beta3-nightly-21d2420",
 
   "classes" : [
     {
@@ -1069,6 +1069,20 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "INSERT VERSION",
   "description" : "Check whether a cooldown is active on the specified material for a specific player.",
   "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
+},
+{
+  "id" : "CondHasLineOfSight",
+  "name" : "Has Line of Sight",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% does(n't| not) have [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% (has|have) no [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether living entities have an unobstructed line of sight to other entities or locations.",
+  "examples" : "player has direct line of sight to location 5 blocks to the right of player\\nvictim has line of sight to attacker\\nplayer has no line of sight to location 100 blocks in front of player"
 },
 {
   "id" : "CondHasMetadata",
