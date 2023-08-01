@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-996b57e",
+  "skriptVersion" : "2.7.0-beta3-nightly-a580caf",
 
   "classes" : [
     {
@@ -3957,6 +3957,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
 {
+  "id" : "inventory_item_move",
+  "name" : "On Inventory Item Move",
+  "patterns" : [
+    "[on] inventory item (move|transport)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an entity or block (e.g. hopper) tries to move items directly from one inventory to another.\\nWhen this event is called, the initiator may have already removed the item from the source inventory and is ready to move it into the destination inventory.\\nIf this event is cancelled, the items will be returned to the source inventory.",
+  "examples" : "on inventory item move:\\n    broadcast \"%holder of past event-inventory% is transporting %event-item% to %holder of event-inventory%!\""
+},
+{
   "id" : "inventory_open",
   "name" : "On Inventory Open",
   "patterns" : [
@@ -6626,6 +6638,18 @@ And note that, for example if there are 5 online players (includes <a href='#Exp
 To sort the indices, all objects in the list must be comparable;
 Otherwise, this expression will just return the unsorted indices.",
   "examples" : "set {l::*} to \"some\", \"cool\" and \"values\"\\nbroadcast \"%indices of {l::*}%\" # result is 1, 2 and 3\\n\\nset {_leader-board::first} to 17\\nset {_leader-board::third} to 30\\nset {_leader-board::second} to 25\\nset {_leader-board::fourth} to 42\\nset {_ascending-indices::*} to sorted indices of {_leader-board::*} in ascending order\\nbroadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth\\nset {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order\\nbroadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
+},
+{
+  "id" : "ExprEvtInitiator",
+  "name" : "Initiator Inventory",
+  "patterns" : [
+    "[the] [event-]initiator[( |-)inventory]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
+  "examples" : "on inventory item move:\\n    if holder of event-initiator-inventory is a chest:\\nbroadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
 },
 {
   "id" : "ExprInventory",
