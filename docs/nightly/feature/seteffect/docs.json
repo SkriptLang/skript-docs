@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-0ed206a",
+  "skriptVersion" : "2.7.0-beta3-nightly-a5c9631",
 
   "classes" : [
     {
@@ -1056,6 +1056,35 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "player's tool has custom model data"
 },
 {
+  "id" : "CondHasItemCooldown",
+  "name" : "Has Item Cooldown",
+  "patterns" : [
+    "%<a href='./classes.html#player'>players</a>% (has|have) [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (has|have) %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check whether a cooldown is active on the specified material for a specific player.",
+  "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
+},
+{
+  "id" : "CondHasLineOfSight",
+  "name" : "Has Line of Sight",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% does(n't| not) have [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% (has|have) no [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether living entities have an unobstructed line of sight to other entities or locations.",
+  "examples" : "player has direct line of sight to location 5 blocks to the right of player\\nvictim has line of sight to attacker\\nplayer has no line of sight to location 100 blocks in front of player"
+},
+{
   "id" : "CondHasMetadata",
   "name" : "Has Metadata",
   "patterns" : [
@@ -1847,20 +1876,6 @@ For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunk
   "description" : "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.
 Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations.",
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
-},
-{
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
 },
 {
   "id" : "CondWithinRadius",
@@ -3942,6 +3957,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
 {
+  "id" : "inventory_item_move",
+  "name" : "On Inventory Item Move",
+  "patterns" : [
+    "[on] inventory item (move|transport)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an entity or block (e.g. hopper) tries to move items directly from one inventory to another.\\nWhen this event is called, the initiator may have already removed the item from the source inventory and is ready to move it into the destination inventory.\\nIf this event is cancelled, the items will be returned to the source inventory.",
+  "examples" : "on inventory item move:\\n    broadcast \"%holder of past event-inventory% is transporting %event-item% to %holder of event-inventory%!\""
+},
+{
   "id" : "inventory_open",
   "name" : "On Inventory Open",
   "patterns" : [
@@ -5499,14 +5526,15 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "id" : "ExprChunk",
   "name" : "Chunk",
   "patterns" : [
-    "[the] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
+    "[(all [[of] the]|the)] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
 "%<a href='./classes.html#location'>locations</a>%'[s] chunk[s]",
+"[(all [[of] the]|the)] loaded chunks (of|in) %<a href='./classes.html#world'>worlds</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "The <a href='./classes.html#chunk'>chunk</a> a block, location or entity is in.",
-  "examples" : "add the chunk at the player to {protected chunks::*}"
+  "since" : "2.0, INSERT VERSION (loaded chunks)",
+  "description" : "Returns the <a href='./classes.html#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world.",
+  "examples" : "add the chunk at the player to {protected chunks::*}\\nset {_chunks::*} to the loaded chunks of the player's world"
 },
 {
   "id" : "ExprClicked",
@@ -6612,6 +6640,18 @@ Otherwise, this expression will just return the unsorted indices.",
   "examples" : "set {l::*} to \"some\", \"cool\" and \"values\"\\nbroadcast \"%indices of {l::*}%\" # result is 1, 2 and 3\\n\\nset {_leader-board::first} to 17\\nset {_leader-board::third} to 30\\nset {_leader-board::second} to 25\\nset {_leader-board::fourth} to 42\\nset {_ascending-indices::*} to sorted indices of {_leader-board::*} in ascending order\\nbroadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth\\nset {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order\\nbroadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
 },
 {
+  "id" : "ExprEvtInitiator",
+  "name" : "Initiator Inventory",
+  "patterns" : [
+    "[the] [event-]initiator[( |-)inventory]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
+  "examples" : "on inventory item move:\\n    if holder of event-initiator-inventory is a chest:\\nbroadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
+},
+{
   "id" : "ExprInventory",
   "name" : "Inventory",
   "patterns" : [
@@ -6688,6 +6728,19 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.2-dev24",
   "description" : "The amount of an <a href='classes.html#itemstack'>item stack</a>.",
   "examples" : "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
+},
+{
+  "id" : "ExprItemCooldown",
+  "name" : "Item Cooldown",
+  "patterns" : [
+    "[the] [item] cooldown of %<a href='./classes.html#itemtype'>item types</a>% for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>%'[s] [item] cooldown for %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>.",
+  "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
 },
 {
   "id" : "ExprEnchantments",
@@ -8322,7 +8375,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "2.2-dev35",
   "description" : "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event.",
-  "examples" : "on teleport\\n    teleport cause is nether portal, end portal or end gateway"
+  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway"
 },
 {
   "id" : "ExprTemperature",
