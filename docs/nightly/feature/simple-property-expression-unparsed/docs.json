@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-6d0f006",
+  "skriptVersion" : "2.7.0-beta3-nightly-3a82259",
 
   "classes" : [
     {
@@ -5214,6 +5214,19 @@ Please note that specifying the argument type is only supported in script comman
   "since" : "1.0",
   "description" : "A part of a player's armour, i.e. the boots, leggings, chestplate or helmet.",
   "examples" : "set chestplate of the player to a diamond chestplate\\nhelmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
+},
+{
+  "id" : "ExprAttachedBlock",
+  "name" : "Arrow Attached Block",
+  "patterns" : [
+    "[the] (attached|hit) block of %<a href='./classes.html#projectile'>projectiles</a>%",
+"%<a href='./classes.html#projectile'>projectiles</a>%'[s] (attached|hit) block",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the attached block of an arrow.",
+  "examples" : "set hit block of last shot arrow to diamond block"
 },
 {
   "id" : "ExprArrowKnockbackStrength",
