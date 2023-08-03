@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3-nightly-aba5711",
+  "skriptVersion" : "2.8.0-dev-nightly-7632dd8",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,13 +121,13 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
   "name" : "Damage Cause",
   "patterns" : [
-    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, flying into a wall, cramming, poison, sonic boom, suffocate, custom, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
+    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
 
     "pattern_end"
   ],
@@ -556,6 +556,18 @@
   "examples" : "projectile is a snowball\\nshoot an arrow at speed 5 from the player"
 },
 {
+  "id" : "quitreason",
+  "name" : "Quit Reason",
+  "patterns" : [
+    "disconnected, erroneous state, kicked, quit, timed out, erroneous",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a quit reason from a player quit server event.",
+  "examples" : "Missing examples."
+},
+{
   "id" : "region",
   "name" : "Region",
   "patterns" : [
@@ -722,7 +734,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, dripping cherry leaves, falling cherry leaves, landing cherry leaves",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
 
     "pattern_end"
   ],
@@ -823,6 +835,19 @@ This condition requires a supported <a href='./classes.html#region'>regions</a> 
   "since" : "1.0",
   "description" : "Tests whether a player or a chest can hold the given item.",
   "examples" : "block can hold 200 cobblestone\\nplayer has enough space for 64 feathers"
+},
+{
+  "id" : "CondCanPickUpItems",
+  "name" : "Can Pick Up Items",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% can pick([ ]up items| items up)",
+"%<a href='./classes.html#livingentity'>living entities</a>% (can't|cannot|can not) pick([ ]up items| items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Whether living entities are able to pick up items off the ground or not.",
+  "examples" : "if player can pick items up:\\n    send \"You can pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        send \"Be careful, you won't be able to pick that up!\" to player"
 },
 {
   "id" : "CondCanSee",
@@ -1029,6 +1054,35 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Check if an item has a custom model data tag",
   "examples" : "player's tool has custom model data"
+},
+{
+  "id" : "CondHasItemCooldown",
+  "name" : "Has Item Cooldown",
+  "patterns" : [
+    "%<a href='./classes.html#player'>players</a>% (has|have) [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (has|have) %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have [([an] item|a)] cooldown (on|for) %<a href='./classes.html#itemtype'>item types</a>%",
+"%<a href='./classes.html#player'>players</a>% (doesn't|does not|do not|don't) have %<a href='./classes.html#itemtype'>item types</a>% on [(item|a)] cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check whether a cooldown is active on the specified material for a specific player.",
+  "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
+},
+{
+  "id" : "CondHasLineOfSight",
+  "name" : "Has Line of Sight",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% does(n't| not) have [a] [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% (has|have) no [direct] line of sight to %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether living entities have an unobstructed line of sight to other entities or locations.",
+  "examples" : "player has direct line of sight to location 5 blocks to the right of player\\nvictim has line of sight to attacker\\nplayer has no line of sight to location 100 blocks in front of player"
 },
 {
   "id" : "CondHasMetadata",
@@ -1417,6 +1471,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Checks whether an entity is invulnerable.",
   "examples" : "target entity is invulnerable"
+},
+{
+  "id" : "CondIsJumping",
+  "name" : "Is Jumping",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) jumping",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) jumping",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a living entity is jumping. This condition does not work on players.",
+  "examples" : "on spawn of zombie:\\n    while event-entity is not jumping:\\n        wait 5 ticks\\n    push event-entity upwards"
 },
 {
   "id" : "CondLeashed",
@@ -1811,20 +1878,6 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
 },
 {
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
-},
-{
   "id" : "CondWithinRadius",
   "name" : "Is Within Radius",
   "patterns" : [
@@ -1875,6 +1928,20 @@ Using the <a href='conditions.html#CondCompare'>is between</a> condition will re
   "since" : "2.2-dev26",
   "description" : "Checks whether an entity is on ground.",
   "examples" : "player is not on ground"
+},
+{
+  "id" : "CondIsLeftHanded",
+  "name" : "Left Handed",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (left|right)( |-)handed",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks if living entities or players are left or right-handed. Armor stands are neither right nor left-handed.
+Paper 1.17.1+ is required for non-player entities.",
+  "examples" : "on damage of player:\\n    if victim is left handed:\\n        cancel event"
 },
 {
   "id" : "CondMatches",
@@ -2003,7 +2070,7 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffActionBar",
   "name" : "Action Bar",
   "patterns" : [
-    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% to %<a href='./classes.html#player'>players</a>%",
+    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2182,8 +2249,8 @@ You can add a tool, which will spawn items based on how that tool would break th
     "pattern_end"
   ],
   "since" : "2.2-dev37, 2.7 (while loops)",
-  "description" : "Skips the value currently being looped, moving on to the next value if it exists.",
-  "examples" : "loop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast"
+  "description" : "Immediately moves the (while) loop on to the next iteration.",
+  "examples" : "# Broadcast online moderators\\nloop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast\\n \\n# Game starting counter\\nset {_counter} to 11\\nwhile {_counter} &gt; 0:\\n    remove 1 from {_counter}\\n    wait a second\\n    if {_counter} != 1, 2, 3, 5 or 10:\\n        continue # only print when counter is 1, 2, 3, 5 or 10\\n    broadcast \"Game starting in %{_counter}% second(s)\""
 },
 {
   "id" : "EffHealth",
@@ -2359,6 +2426,18 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "since" : "2.2-dev21",
   "description" : "Forces player(s) to respawn if they are dead. If this is called without delay from death event, one tick is waited before respawn attempt.",
   "examples" : "on death of player:\\n    force event-player to respawn"
+},
+{
+  "id" : "EffHandedness",
+  "name" : "Handedness",
+  "patterns" : [
+    "make %<a href='./classes.html#livingentity'>living entities</a>% (left|right)( |-)handed",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Make mobs left or right-handed. This does not affect players.",
+  "examples" : "spawn skeleton at spawn of world \"world\":\\n    make entity left handed\\n\\nmake all zombies in radius 10 of player right handed"
 },
 {
   "id" : "EffHidePlayerFromServerList",
@@ -2804,9 +2883,9 @@ Note: if a player was hidden and relogs, this player will be visible again.",
 
     "pattern_end"
   ],
-  "since" : "2.2",
+  "since" : "2.2, INSERT VERSION (returns aliases)",
   "description" : "Makes a function return a value",
-  "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}"
+  "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
   "id" : "EffSendBlockChange",
@@ -2995,6 +3074,19 @@ Note: if no input is given for the times, it will keep the ones from the last ti
   "since" : "2.3",
   "description" : "Toggle the <a href='expressions.html#ExprFlightMode'>flight mode</a> of a player.",
   "examples" : "allow flight to event-player"
+},
+{
+  "id" : "EffToggleCanPickUpItems",
+  "name" : "Toggle Picking Up Items",
+  "patterns" : [
+    "allow %<a href='./classes.html#livingentity'>living entities</a>% to pick([ ]up items| items up)",
+"(forbid|disallow) %<a href='./classes.html#livingentity'>living entities</a>% (from|to) pick([ing | ]up items|[ing] items up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Determines whether living entities are able to pick up items or not",
+  "examples" : "forbid player from picking up items\\nsend \"You can no longer pick up items!\" to player\\n\\non drop:\\n    if player can't pick    up items:\\n        allow player to pick up items"
 },
 {
   "id" : "EffTree",
@@ -3311,7 +3403,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -3853,6 +3945,30 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on inventory close:\\n    if player's location is {location}:\\n        send \"You exited the shop!\""
 },
 {
+  "id" : "inventory_drag",
+  "name" : "On Inventory Drag",
+  "patterns" : [
+    "[on] inventory drag[ging]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player drags an item in their cursor across the inventory.",
+  "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
+},
+{
+  "id" : "inventory_item_move",
+  "name" : "On Inventory Item Move",
+  "patterns" : [
+    "[on] inventory item (move|transport)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an entity or block (e.g. hopper) tries to move items directly from one inventory to another.\\nWhen this event is called, the initiator may have already removed the item from the source inventory and is ready to move it into the destination inventory.\\nIf this event is cancelled, the items will be returned to the source inventory.",
+  "examples" : "on inventory item move:\\n    broadcast \"%holder of past event-inventory% is transporting %event-item% to %holder of event-inventory%!\""
+},
+{
   "id" : "inventory_open",
   "name" : "On Inventory Open",
   "patterns" : [
@@ -4058,7 +4174,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a loot table of an inventory is generated in the world.\\nFor example, when opening a shipwreck chest.",
-  "examples" : "on loot generate:\\n    chance of %10\\n    add 64 diamonds\\n    send \"You hit the jackpot!!\""
+  "examples" : "on loot generate:\\n    chance of 10%\\n    add 64 diamonds to the loot\\n    send \"You hit the jackpot at %event-location%!\""
 },
 {
   "id" : "move",
@@ -4166,7 +4282,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4179,6 +4295,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.7",
   "description" : "Called when a player has slept long enough to count as passing the night/storm.\\nCancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed.",
   "examples" : "on player deep sleeping:\\n    send \"Zzzz..\" to player"
+},
+{
+  "id" : "player_pickup_arrow",
+  "name" : "On Player Pickup Arrow",
+  "patterns" : [
+    "[on] [player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player picks up an arrow from the ground.",
+  "examples" : "on arrow pickup:\\n    cancel the event\\n    teleport event-projectile to block 5 above event-projectile"
 },
 {
   "id" : "player_trade",
@@ -4449,7 +4577,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -4985,6 +5113,20 @@ Please note that getting a list's recursive size can cause lag if the list is la
   "examples" : "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
 },
 {
+  "id" : "ExprAnvilRepairCost",
+  "name" : "Anvil Repair Cost",
+  "patterns" : [
+    "[the] [anvil] [item] [max[imum]] repair cost [of %<a href='./classes.html#inventory'>inventories</a>%]",
+"%<a href='./classes.html#inventory'>inventories</a>%'[s] [anvil] [item] [max[imum]] repair cost",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the experience cost (in levels) to complete the current repair or the maximum experience cost (in levels) to be allowed by the current repair.
+The default value of max cost set by vanilla Minecraft is 40.",
+  "examples" : "on inventory click:\\n    if {AnvilRepairSaleActive} = true:\\n        wait a tick # recommended, to avoid client bugs\\n        set anvil repair cost to anvil repair cost * 50%\\n        send \"Anvil repair sale is ON!\" to player\\n\\non inventory click:\\n    player have permission \"anvil.repair.max.bypass\"\\n    set max repair cost of event-inventory to 99999"
+},
+{
   "id" : "ExprAnvilText",
   "name" : "Anvil Text Input",
   "patterns" : [
@@ -5072,6 +5214,19 @@ Please note that specifying the argument type is only supported in script comman
   "since" : "1.0",
   "description" : "A part of a player's armour, i.e. the boots, leggings, chestplate or helmet.",
   "examples" : "set chestplate of the player to a diamond chestplate\\nhelmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
+},
+{
+  "id" : "ExprAttachedBlock",
+  "name" : "Arrow Attached Block",
+  "patterns" : [
+    "[the] (attached|hit) block of %<a href='./classes.html#projectile'>projectiles</a>%",
+"%<a href='./classes.html#projectile'>projectiles</a>%'[s] (attached|hit) block",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the attached block of an arrow.",
+  "examples" : "set hit block of last shot arrow to diamond block"
 },
 {
   "id" : "ExprArrowKnockbackStrength",
@@ -5384,14 +5539,15 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "id" : "ExprChunk",
   "name" : "Chunk",
   "patterns" : [
-    "[the] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
+    "[(all [[of] the]|the)] chunk[s] (of|%<a href='./classes.html#direction'>directions</a>%) %<a href='./classes.html#location'>locations</a>%",
 "%<a href='./classes.html#location'>locations</a>%'[s] chunk[s]",
+"[(all [[of] the]|the)] loaded chunks (of|in) %<a href='./classes.html#world'>worlds</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "The <a href='./classes.html#chunk'>chunk</a> a block, location or entity is in.",
-  "examples" : "add the chunk at the player to {protected chunks::*}"
+  "since" : "2.0, INSERT VERSION (loaded chunks)",
+  "description" : "Returns the <a href='./classes.html#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world.",
+  "examples" : "add the chunk at the player to {protected chunks::*}\\nset {_chunks::*} to the loaded chunks of the player's world"
 },
 {
   "id" : "ExprClicked",
@@ -6414,14 +6570,16 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHotbarSlot",
   "name" : "Hotbar Slot",
   "patterns" : [
-    "[the] [([currently] selected|current)] hotbar slot of %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>%'[s] [([currently] selected|current)] hotbar slot",
+    "[the] [the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#player'>players</a>%'[s] [the] [([currently] selected|current)] hotbar slot[s]",
 
     "pattern_end"
   ],
   "since" : "2.2-dev36",
-  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>. To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.",
-  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left"
+  "description" : "The currently selected hotbar <a href='./classes.html#slot'>slot</a>.
+To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.
+Use future and past tense to grab the previous slot in an item change event, see example.",
+  "examples" : "message \"%player's current hotbar slot%\"\\nset player's selected hotbar slot to slot 4 of player\\n\\nsend \"index of player's current hotbar slot = 1\" # second slot from the left\\n\\non item held change:\\n    if the selected hotbar slot was a diamond:\\n        set the currently selected hotbar slot to slot 5 of player"
 },
 {
   "id" : "ExprHoverList",
@@ -6493,6 +6651,18 @@ And note that, for example if there are 5 online players (includes <a href='#Exp
 To sort the indices, all objects in the list must be comparable;
 Otherwise, this expression will just return the unsorted indices.",
   "examples" : "set {l::*} to \"some\", \"cool\" and \"values\"\\nbroadcast \"%indices of {l::*}%\" # result is 1, 2 and 3\\n\\nset {_leader-board::first} to 17\\nset {_leader-board::third} to 30\\nset {_leader-board::second} to 25\\nset {_leader-board::fourth} to 42\\nset {_ascending-indices::*} to sorted indices of {_leader-board::*} in ascending order\\nbroadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth\\nset {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order\\nbroadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
+},
+{
+  "id" : "ExprEvtInitiator",
+  "name" : "Initiator Inventory",
+  "patterns" : [
+    "[the] [event-]initiator[( |-)inventory]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
+  "examples" : "on inventory item move:\\n    if holder of event-initiator-inventory is a chest:\\nbroadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
 },
 {
   "id" : "ExprInventory",
@@ -6571,6 +6741,19 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.2-dev24",
   "description" : "The amount of an <a href='classes.html#itemstack'>item stack</a>.",
   "examples" : "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
+},
+{
+  "id" : "ExprItemCooldown",
+  "name" : "Item Cooldown",
+  "patterns" : [
+    "[the] [item] cooldown of %<a href='./classes.html#itemtype'>item types</a>% for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>%'[s] [item] cooldown for %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>.",
+  "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
 },
 {
   "id" : "ExprEnchantments",
@@ -6915,6 +7098,18 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "examples" : "set {_loc} to the location at arg-1, arg-2, arg-3 of the world arg-4\\ndistance between the player and the location (0, 0, 0) is less than 200"
 },
 {
+  "id" : "ExprLoopIteration",
+  "name" : "Loop Iteration",
+  "patterns" : [
+    "[the] loop(-| )(counter|iteration)[-%*<a href='./classes.html#number'>number</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the loop's current iteration count (for both normal and while loops).",
+  "examples" : "while player is online:\\n    give player 1 stone\\n    wait 5 ticks\\n    if loop-counter &gt; 30:\\n        stop loop\\n\\nloop {top-balances::*}:\\n    if loop-iteration &lt;= 10:\\n        broadcast \"##%loop-iteration% %loop-index% has $%loop-value%\""
+},
+{
   "id" : "ExprLoopValue",
   "name" : "Loop value",
   "patterns" : [
@@ -6922,9 +7117,9 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "The currently looped value.",
-  "examples" : "# countdown:\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n# generate a 10x10 floor made of randomly colored wool below the player:\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool"
+  "since" : "1.0, INSERT VERSION (loop-counter)",
+  "description" : "Returns the currently looped value.",
+  "examples" : "# Countdown\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n\\n# Generate a 10x10 floor made of randomly colored wool below the player\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool\\n\\nloop {top-balances::*}:\\n    loop-iteration &lt;= 10\\n    send \"##%loop-iteration% %loop-index% has $%loop-value%\""
 },
 {
   "id" : "ExprLoot",
@@ -7557,6 +7752,21 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   "examples" : "on portal creation:\\n    loop portal blocks:\\n        broadcast \"%loop-block% is part of a portal!\""
 },
 {
+  "id" : "ExprPortalCooldown",
+  "name" : "Portal Cooldown",
+  "patterns" : [
+    "[the] portal cooldown of %<a href='./classes.html#entity'>entities</a>%",
+"%<a href='./classes.html#entity'>entities</a>%'[s] portal cooldown",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The amount of time before an entity can use a portal. By default, it is 15 seconds after exiting a nether portal or end gateway.
+Players in survival/adventure get a cooldown of 0.5 seconds, while those in creative get no cooldown.
+Resetting will set the cooldown back to the default 15 seconds for non-player entities and 0.5 seconds for players.",
+  "examples" : "on portal:\\n    wait 1 tick\\n    set portal cooldown of event-entity to 5 seconds"
+},
+{
   "id" : "ExprPotionEffect",
   "name" : "Potion Effect",
   "patterns" : [
@@ -7657,6 +7867,18 @@ Also if the protocol version of the player is higher than protocol version of th
 This can be set in a <a href='events.html#server_list_ping'>server list ping</a> event only
 (increase and decrease effects cannot be used because that wouldn't make sense).",
   "examples" : "on server list ping:\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
+},
+{
+  "id" : "ExprQuitReason",
+  "name" : "Quit Reason",
+  "patterns" : [
+    "[the] (quit|disconnect) (cause|reason)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The <a href='classes.html#quitreason'>quit reason</a> as to why a player disconnected in a <a href='events.html#quit'>quit</a> event.",
+  "examples" : "on quit:\\n    quit reason was kicked\\n    player is banned\\n    clear {server::player::%uuid of player%::*}"
 },
 {
   "id" : "ExprRandom",
@@ -8166,7 +8388,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "2.2-dev35",
   "description" : "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event.",
-  "examples" : "on teleport\\n    teleport cause is nether portal, end portal or end gateway"
+  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway"
 },
 {
   "id" : "ExprTemperature",
@@ -8379,6 +8601,20 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} ++ 5\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} -- 5\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} ** 5\\nset {_v} to {_v} // {_v}\\nset {_v} to {_v} // 5"
+},
+{
+  "id" : "ExprVectorFromDirection",
+  "name" : "Vectors - Create from Direction",
+  "patterns" : [
+    "vector[s] [from] %<a href='./classes.html#direction'>directions</a>%",
+"%<a href='./classes.html#direction'>directions</a>% vector[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Creates vectors from given directions.
+Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector from the direction 'forwards' is (0, 0, 1).",
+  "examples" : "set {_v} to vector from direction upwards\\nset {_v} to vector in direction of player\\nset {_v} to vector in horizontal direction of player\\nset {_v} to vector from facing of player\\nset {_v::*} to vectors from north, south, east, and west"
 },
 {
   "id" : "ExprVectorFromXYZ",
@@ -8887,6 +9123,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2",
   "description" : "Alias of <a href='#ceil'>ceil</a>.",
   "examples" : "ceiling(2.34) = 3\\nceiling(2) = 2\\nceiling(2.99) = 3"
+},
+{
+  "id" : "clamp",
+  "name" : "clamp",
+  "patterns" : [
+    "clamp(values: numbers, min: number, max: number)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Clamps one or more values between two numbers.",
+  "examples" : "clamp(5, 0, 10) = 5\\nclamp(5.5, 0, 5) = 5\\nclamp(0.25, 0, 0.5) = 0.25\\nclamp(5, 7, 10) = 7\\nclamp((5, 0, 10, 9, 13), 7, 10) = (7, 7, 10, 9, 10)\\nset {_clamped::*} to clamp({_values::*}, 0, 10)"
 },
 {
   "id" : "cos",
