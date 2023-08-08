@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-743f399",
+  "skriptVersion" : "2.8.0-dev-nightly-dd0ad79",
 
   "classes" : [
     {
@@ -5629,7 +5629,7 @@ the <a href=effects.html#EffSend>send effect</a>.",
   ],
   "since" : "2.6",
   "description" : "Get information about a command.",
-  "examples" : "main name of command \"skript\"\\ndescription of command \"help\"\\nlabel of command \"pl\"\\nusage of command \"help\"\\naliases of command \"bukkit:help\"\\npermission of command \"/op\"\\ncommand \"op\"'s permission message\\ncommand \"sk\"'s plugin owner"
+  "examples" : "main name of command \"skript\"\\ndescription of command \"help\"\\nlabel of command \"pl\"\\nusage of command \"help\"\\naliases of command \"bukkit:help\"\\npermission of command \"/op\"\\ncommand \"op\"'s permission message\\ncommand \"sk\"'s plugin owner\\n\\ncommand /greet &lt;player&gt;:\\n    usage: /greet &lt;target&gt;\\n    trigger:\\n        if arg-1 is sender:\\n            send \"&amp;cYou can't greet yourself! Usage: %the usage%\"\\n            stop\\n        send \"%sender% greets you!\" to arg-1\\n        send \"You greeted %arg-1%!\""
 },
 {
   "id" : "ExprCommandSender",
