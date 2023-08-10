@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-nightly-235bcda",
+  "skriptVersion" : "2.7.0-nightly-3b517b4",
 
   "classes" : [
     {
@@ -619,7 +619,7 @@
   "id" : "teleportcause",
   "name" : "Teleport Cause",
   "patterns" : [
-    "nether portal, ender gateway, chorus fruit, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, chorus, gateway, dismount, end portal",
+    "bed exit, nether portal, ender gateway, exiting bed, chorus fruit, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, chorus, exit bed, gateway, dismount, end portal",
 
     "pattern_end"
   ],
