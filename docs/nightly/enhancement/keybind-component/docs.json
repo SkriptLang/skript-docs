@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-5dceb14",
+  "skriptVersion" : "2.8.0-dev-nightly-745f2a6",
 
   "classes" : [
     {
@@ -5448,16 +5448,18 @@ This expression requires a supported regions plugin to be installed.",
   "id" : "ExprBookPages",
   "name" : "Book Pages",
   "patterns" : [
-    "[all [[of] the]|the] [book] (pages|content) of %<a href='./classes.html#itemtype'>item types</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>%'[s] [book] (pages|content)",
-"[book] page %<a href='./classes.html#number'>number</a>% of %<a href='./classes.html#itemtype'>item types</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>%'[s] [book] page %<a href='./classes.html#number'>number</a>%",
+    "[all [[of] the]|the] [book] (pages|content) of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%'[s] [book] (pages|content)",
+"[book] page %<a href='./classes.html#number'>number</a>% of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%'[s] [book] page %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
   "since" : "2.2-dev31, 2.7 (changers)",
-  "description" : "The pages of a book.",
-  "examples" : "on book sign:\\n    message \"Book Pages: %pages of event-item%\"\\n    message \"Book Page 1: %page 1 of event-item%\"\\nset page 1 of player's held item to \"Book writing\""
+  "description" : "The pages of a book (Supports Skript's chat format)
+Note: In order to modify the pages of a new written book, you must have the title and author
+of the book set. Skript will do this for you, but if you want your own, please set those values.",
+  "examples" : "on book sign:\\n    message \"Book Pages: %pages of event-item%\"\\n    message \"Book Page 1: %page 1 of event-item%\"\\n\\nset page 1 of player's held item to \"Book writing\""
 },
 {
   "id" : "ExprBookTitle",
