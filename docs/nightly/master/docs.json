@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-370893e",
+  "skriptVersion" : "2.8.0-dev-nightly-cdfbb91",
 
   "classes" : [
     {
@@ -6411,7 +6411,8 @@ Remember to use '<a href='#ExprBlock'>block</a>' and not 'furnace', as 'furnace'
     "pattern_end"
   ],
   "since" : "2.2-dev35",
-  "description" : "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.",
+  "description" : "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.
+If you have LuckPerms, ensure you have vault integration enabled in the luck perms configurations.",
   "examples" : "on join:\\n    broadcast \"%group of player%\" # this is the player's primary group\\n    broadcast \"%groups of player%\" # this is all of the player's groups"
 },
 {
