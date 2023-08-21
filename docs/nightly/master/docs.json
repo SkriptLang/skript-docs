@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-aa9f7bf",
+  "skriptVersion" : "2.8.0-dev-nightly-7b0bfce",
 
   "classes" : [
     {
@@ -9258,6 +9258,30 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2",
   "description" : "Returns the modulo of the given arguments, i.e. the remainder of the division <code>d/m</code>, where d and m are the arguments of this function.\\nThe returned value is always positive. Returns NaN (not a number) if the second argument is zero.",
   "examples" : "mod(3, 2) = 1\\nmod(256436, 100) = 36\\nmod(-1, 10) = 9"
+},
+{
+  "id" : "offlineplayer",
+  "name" : "offlineplayer",
+  "patterns" : [
+    "offlineplayer(nameoruuid: string)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns a offline player from their name or UUID. This function will still return the player if they're online.",
+  "examples" : "set {_p} to offlineplayer(\"Notch\")\\nset {_p} to offlineplayer(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")"
+},
+{
+  "id" : "player",
+  "name" : "player",
+  "patterns" : [
+    "player(nameoruuid: string, getexactplayer: boolean = [[boolean:false]])",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;amp;amp;lt;none&amp;amp;amp;amp;gt; if player is offline"
 },
 {
   "id" : "product",
