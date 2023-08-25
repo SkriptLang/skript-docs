@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-ac9c633",
+  "skriptVersion" : "2.8.0-dev-nightly-e6a94ed",
 
   "classes" : [
     {
@@ -364,6 +364,18 @@
   "examples" : "Missing examples."
 },
 {
+  "id" : "inventoryclosereason",
+  "name" : "Inventory Close Reasons",
+  "patterns" : [
+    "disconnect, death, teleport, cannot use, new opened, unknown, can't use, unloaded, disconnected, plugin, can not use, open new, player",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The inventory close reason in an <a href='/events.html#inventory_close'>inventory close event</a>.",
+  "examples" : "Missing examples."
+},
+{
   "id" : "slot",
   "name" : "Inventory Slot",
   "patterns" : [
@@ -564,7 +576,7 @@
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Represents a quit reason from a player quit server event.",
+  "description" : "Represents a quit reason from a <a href='/events.html#quit'>player quit server event</a>.",
   "examples" : "Missing examples."
 },
 {
@@ -6692,6 +6704,18 @@ Otherwise, this expression will just return the unsorted indices.",
   "since" : "2.2-dev16",
   "description" : "The <a href='./classes.html#inventoryaction'>inventory action</a> of an inventory event. Please click on the link for more information.",
   "examples" : "inventory action is pickup all"
+},
+{
+  "id" : "ExprInventoryCloseReason",
+  "name" : "Inventory Close Reason",
+  "patterns" : [
+    "[the] inventory clos(e|ing) (reason|cause)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The <a href='/classes.html#inventoryclosereason'>inventory close reason</a> of an <a href='/events.html#inventory_close'>inventory close event</a>.",
+  "examples" : "on inventory close:\\n    inventory close reason is teleport\\n    send \"Your inventory closed due to teleporting!\" to player"
 },
 {
   "id" : "ExprInventoryInfo",
