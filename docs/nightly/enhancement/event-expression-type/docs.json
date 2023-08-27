@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-afd8aa3",
+  "skriptVersion" : "2.8.0-dev-nightly-01d9247",
 
   "classes" : [
     {
@@ -5645,7 +5645,7 @@ the <a href=effects.html#EffSend>send effect</a>.",
   "since" : "2.0",
   "description" : "The player or the console who sent a command. Mostly useful in <a href='commands'>commands</a> and <a href='events.html#command'>command events</a>.
 If the command sender is a command block, its location can be retrieved by using %block's location%",
-  "examples" : "make the command sender execute \"/say hi!\"\\non command:\\n    log \"%executor% used command /%command% %arguments%\" to \"commands.log\""
+  "examples" : "make the command sender execute \"/say hi!\"\\n\\non command:\\n    log \"%executor% used command /%command% %arguments%\" to \"commands.log\""
 },
 {
   "id" : "ExprCompassTarget",
@@ -6666,7 +6666,7 @@ Otherwise, this expression will just return the unsorted indices.",
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
-  "examples" : "on inventory item move:\\n    if holder of event-initiator-inventory is a chest:\\nbroadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
+  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
 },
 {
   "id" : "ExprInventory",
@@ -8256,7 +8256,7 @@ if they're not, this expression will return nothing.",
   ],
   "since" : "2.3",
   "description" : "The <a href='classes.html#spawnreason'>spawn reason</a> in a <a href='events.html#spawn'>spawn</a> event.",
-  "examples" : "on spawn:\\n    spawn reason is reinforcements or breeding"
+  "examples" : "on spawn:\\n    spawn reason is reinforcements or breeding\\n    cancel event"
 },
 {
   "id" : "ExprSpawnerType",
@@ -8392,7 +8392,7 @@ For mobs and experience orbs this is the entity they are attacking/following (if
   ],
   "since" : "2.2-dev35",
   "description" : "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event.",
-  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway"
+  "examples" : "on teleport:\\n    teleport cause is nether portal, end portal or end gateway\\n    cancel event"
 },
 {
   "id" : "ExprTemperature",
