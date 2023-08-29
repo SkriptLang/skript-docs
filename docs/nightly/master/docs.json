@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-91a6e9f",
+  "skriptVersion" : "2.8.0-dev-nightly-8ea6714",
 
   "classes" : [
     {
@@ -4298,8 +4298,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on place:\\non place of a furnace, workbench or chest:\\non break of chest[type=right] or chest[type=left]"
 },
 {
-  "id" : "player_chunk_enters",
-  "name" : "On Player Chunk Enters",
+  "id" : "player_chunk_enter",
+  "name" : "On Player Chunk Enter",
   "patterns" : [
     "[on] [player] (enter[s] [a] chunk|chunk enter[ing])",
 
