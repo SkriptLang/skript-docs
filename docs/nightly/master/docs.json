@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-34a36cc",
+  "skriptVersion" : "2.8.0-dev-nightly-2147b8b",
 
   "classes" : [
     {
@@ -2089,6 +2089,18 @@ This condition requires a supported regions plugin to be installed.",
   "since" : "2.3",
   "description" : "Sends an action bar message to the given player(s).",
   "examples" : "send action bar \"Hello player!\" to player"
+},
+{
+  "id" : "EffApplyBoneMeal",
+  "name" : "Apply Bone Meal",
+  "patterns" : [
+    "apply [%<a href='./classes.html#number'>number</a>%] bone[ ]meal[s] [to %<a href='./classes.html#block'>blocks</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Applies bone meal to a crop, sapling, or composter",
+  "examples" : "apply 3 bone meal to event-block"
 },
 {
   "id" : "EffBan",
