@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-e50abb8",
+  "skriptVersion" : "2.8.0-dev-nightly-906825b",
 
   "classes" : [
     {
@@ -7663,6 +7663,18 @@ Some notes about parsing with a pattern:
 For 1.11.2 and above, it returns a list of passengers and you can use all changers in it.
 See also: <a href='#ExprVehicle'>vehicle</a>",
   "examples" : "#for 1.11 and lower\\npassenger of the minecart is a creeper or a cow\\nthe saddled pig's passenger is a player\\n#for 1.11.2+\\npassengers of the minecart contains a creeper or a cow\\nthe boat's passenger contains a pig\\nadd a cow and a zombie to passengers of last spawned boat\\nset passengers of player's vehicle to a pig and a horse\\nremove all pigs from player's vehicle\\nclear passengers of boat"
+},
+{
+  "id" : "ExprPercent",
+  "name" : "Percent of",
+  "patterns" : [
+    "%<a href='./classes.html#number'>number</a>%(\\%| percent) of %<a href='./classes.html#number'>numbers</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns a percentage of one or more numbers.",
+  "examples" : "set damage to 10% of victim's health\\nset damage to 125 percent of damage\\nset {_result} to {_percent} percent of 999\\nset {_result::*} to 10% of {_numbers::*}\\nset experience to 50% of player's total experience"
 },
 {
   "id" : "LitPi",
