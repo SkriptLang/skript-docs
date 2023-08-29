@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-906825b",
+  "skriptVersion" : "2.8.0-dev-nightly-b6c29d5",
 
   "classes" : [
     {
@@ -2089,6 +2089,18 @@ This condition requires a supported regions plugin to be installed.",
   "since" : "2.3",
   "description" : "Sends an action bar message to the given player(s).",
   "examples" : "send action bar \"Hello player!\" to player"
+},
+{
+  "id" : "EffApplyBoneMeal",
+  "name" : "Apply Bone Meal",
+  "patterns" : [
+    "apply [%<a href='./classes.html#number'>number</a>%] bone[ ]meal[s] [to %<a href='./classes.html#block'>blocks</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Applies bone meal to a crop, sapling, or composter",
+  "examples" : "apply 3 bone meal to event-block"
 },
 {
   "id" : "EffBan",
@@ -6323,6 +6335,18 @@ Note 2: If you don't specify whether to use the past or future state of an expre
   "examples" : "on teleport:\\n    former world was \"world_nether\" # or 'world was'\\n    world will be \"world\" # or 'world after the event is'\\non tool change:\\n    past tool is an axe\\n    the tool after the event will be air\\non weather change:\\n    set {weather::%world%::old} to past weather\\n    set {weather::%world%::current} to the new weather"
 },
 {
+  "id" : "ExprMemory",
+  "name" : "Free / Max / Total Memory",
+  "patterns" : [
+    "[the] [server] (free|max[imum]|total) (memory|ram)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The free, max or total memory of the server in Megabytes.",
+  "examples" : "while player is online:\\n    send action bar \"Memory left: %free memory%/%max memory%MB\" to player\\n    wait 5 ticks"
+},
+{
   "id" : "ExprFreezeTicks",
   "name" : "Freeze Time",
   "patterns" : [
@@ -8235,14 +8259,16 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "id" : "ExprSlotIndex",
   "name" : "Slot Index",
   "patterns" : [
-    "[the] index of %<a href='./classes.html#slot'>slots</a>%",
-"%<a href='./classes.html#slot'>slots</a>%'[s] index",
+    "[the] [(raw|unique)] index of %<a href='./classes.html#slot'>slots</a>%",
+"%<a href='./classes.html#slot'>slots</a>%'[s] [(raw|unique)] index",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev35",
-  "description" : "Index of an an inventory slot. Other types of slots may or may not have indices. Note that comparing slots with numbers is also possible; if index of slot is same as the number, comparisonsucceeds. This expression is mainly for the cases where you must for some reason save the slot numbers.",
-  "examples" : "if index of event-slot is 10:\\n    send \"You bought a pie!\""
+  "since" : "2.2-dev35, INSERT VERSION (raw index)",
+  "description" : "Index of an an inventory slot. Other types of slots may or may not have indices. Note that comparing slots with numbers is also possible; if index of slot is same as the number, comparisonsucceeds. This expression is mainly for the cases where you must for some reason save the slot numbers.
+
+Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventory\">Minecraft Wiki</a>",
+  "examples" : "if index of event-slot is 10:\\n    send \"You bought a pie!\"\\n\\nif display name of player's top inventory is \"Custom Menu\": # 3 rows inventory\\n    if raw index of event-slot &gt; 27: # outside custom inventory\\n        cancel event"
 },
 {
   "id" : "ExprSortedList",
