@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-d54e4b5",
+  "skriptVersion" : "2.8.0-dev-nightly-1081e78",
 
   "classes" : [
     {
@@ -8169,13 +8169,13 @@ Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 t
   "id" : "ExprOptions",
   "name" : "Script Options",
   "patterns" : [
-    "[the] [s(c|k)ript] option[s] %<a href='./classes.html#string'>texts</a>% [(from|in) [s(k|c)ript] %<a href='./classes.html#string'>texts</a>%]",
+    "[the] [s(c|k)ript] option[s] %<a href='./classes.html#string'>texts</a>% [(from|in) [script[s]] %<a href='./classes.html#string'>texts</a>%]",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns one or more options from any script. If no script is provided, it will be the current script of the syntax.",
-  "examples" : "options:\\n    test: Hello World\\n\\ncommand /test:\\n    trigger:\\n        send \"The option is %script option \"test\"%\""
+  "examples" : "# example.sk\\noptions:\\n    example: Hello World\\n\\ncommand /example &lt;string=%script option \"test\"%&gt;:\\n    trigger:\\n        send \"The option is %script option \"example\"%\"\\n\\n# this.sk\\noptions:\\n    example 2: 1337\\ncommand /anotherFile:\\n    trigger:\\n        send \"The option is %script option \"example 2\" and \"example\" from scripts \"this.sk\" and \"example 2\"%\""
 },
 {
   "id" : "ExprSeaLevel",
