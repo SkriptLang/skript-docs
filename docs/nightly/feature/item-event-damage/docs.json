@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-80ffc2b",
+  "skriptVersion" : "2.8.0-dev-nightly-ef97813",
 
   "classes" : [
     {
@@ -5770,13 +5770,16 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   "id" : "ExprDamage",
   "name" : "Damage",
   "patterns" : [
-    "[the] damage",
+    "[the] [original] damage",
 
     "pattern_end"
   ],
   "since" : "1.3.5, INSERT VERSION (item damage event)",
   "description" : "How much damage is done in a damage event, possibly ignoring armour, criticals and/or enchantments.
-Can be changed (remember that in Skript '1' is one full heart, not half a heart).",
+Can be changed (remember that in Skript '1' is one full heart, not half a heart).
+
+This event also supports item damage. The item damage event event gets called even with unbreaking.
+You can use 'original damage' if using Paper 1.18+ to find the original damage before unbreaking was taken into consideration.",
   "examples" : "on damage of player:\\n    damage cause was lightning\\n    victim is wearing a leather helmet\\n    subtract 2.5 from the damage\\n    message \"The smite was lessened by your leather helmet!\" to the victim"
 },
 {
