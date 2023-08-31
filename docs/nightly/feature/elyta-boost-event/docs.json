@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-fee096b",
+  "skriptVersion" : "2.8.0-dev-nightly-e524be6",
 
   "classes" : [
     {
@@ -6333,8 +6333,8 @@ Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for 
   "id" : "ExprFireworkFlownTime",
   "name" : "Firework Flown Time",
   "patterns" : [
-    "[the] firework ([max[imum]] life[time]|flown time|time until detonat(e|ion)) [of %<a href='./classes.html#firework'>fireworks</a>%]",
-"%<a href='./classes.html#firework'>fireworks</a>%'[s] firework ([max[imum]] life[time]|flown time|time until detonat(e|ion))",
+    "[the] [firework] ([max[imum]] life[time]|flown time|time until detonat(e|ion)) [of %<a href='./classes.html#firework'>fireworks</a>%]",
+"%<a href='./classes.html#firework'>fireworks</a>%'[s] [firework] ([max[imum]] life[time]|flown time|time until detonat(e|ion))",
 
     "pattern_end"
   ],
