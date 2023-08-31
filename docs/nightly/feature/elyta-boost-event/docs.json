@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-e524be6",
+  "skriptVersion" : "2.8.0-dev-nightly-c340ba5",
 
   "classes" : [
     {
@@ -6307,7 +6307,7 @@ Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for 
   "id" : "ExprAttachedTo",
   "name" : "Firework Attached To",
   "patterns" : [
-    "[the] (attached [to]|boost(ing|ed)) entity of %<a href='./classes.html#firework'>fireworks</a>%",
+    "[the] (attached [to]|boost(ing|ed)) entity [of %<a href='./classes.html#firework'>fireworks</a>%]",
 "%<a href='./classes.html#firework'>fireworks</a>%'[s] (attached [to]|boost(ing|ed)) entity",
 
     "pattern_end"
