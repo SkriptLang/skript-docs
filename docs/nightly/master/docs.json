@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-76db944",
+  "skriptVersion" : "2.8.0-dev-nightly-a069103",
 
   "classes" : [
     {
@@ -2214,7 +2214,7 @@ You can add a tool, which will spawn items based on how that tool would break th
 "set %~<a href='./classes.html#object'>objects</a>% to %<a href='./classes.html#object'>objects</a>%",
 "remove (all|every) %<a href='./classes.html#object'>objects</a>% from %~<a href='./classes.html#object'>objects</a>%",
 "(remove|subtract) %<a href='./classes.html#object'>objects</a>% from %~<a href='./classes.html#object'>objects</a>%",
-"reduce %~<a href='./classes.html#object'>objects</a>% by %<a href='./classes.html#object'>objects</a>%",
+"(reduce|decrease) %~<a href='./classes.html#object'>objects</a>% by %<a href='./classes.html#object'>objects</a>%",
 "(delete|clear) %~<a href='./classes.html#object'>objects</a>%",
 "reset %~<a href='./classes.html#object'>objects</a>%",
 
