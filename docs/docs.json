@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.0-beta3",
+  "skriptVersion" : "2.7.0",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,13 +121,13 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
   "name" : "Damage Cause",
   "patterns" : [
-    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, flying into a wall, cramming, poison, sonic boom, suffocate, custom, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
+    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
 
     "pattern_end"
   ],
@@ -619,7 +619,7 @@
   "id" : "teleportcause",
   "name" : "Teleport Cause",
   "patterns" : [
-    "nether portal, ender gateway, chorus fruit, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, chorus, gateway, dismount, end portal",
+    "bed exit, nether portal, ender gateway, exiting bed, chorus fruit, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, chorus, exit bed, gateway, dismount, end portal",
 
     "pattern_end"
   ],
@@ -722,7 +722,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, dripping cherry leaves, falling cherry leaves, landing cherry leaves",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
 
     "pattern_end"
   ],
@@ -1367,6 +1367,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "on explosion prime:\\n    if the explosion is fiery:\\n        broadcast \"A fiery explosive has been ignited!\""
 },
 {
+  "id" : "CondIsInfinite",
+  "name" : "Is Infinite",
+  "patterns" : [
+    "%<a href='./classes.html#potioneffect'>potion effects</a>% (is|are) infinite",
+"%<a href='./classes.html#potioneffect'>potion effects</a>% (isn't|is not|aren't|are not) infinite",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether potion effects are infinite.",
+  "examples" : "all of the active potion effects of the player are infinite"
+},
+{
   "id" : "CondIsInteractable",
   "name" : "Is Interactable",
   "patterns" : [
@@ -1798,20 +1811,6 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player\\n\\nif player is in world(\"world\"):\\n    send \"You are in the overworld!\" to player\\n\\nif attacker's location is inside of victim:\\n    cancel event\\n    send \"Back up!\" to attacker and victim"
 },
 {
-  "id" : "CondIsWithinLocation",
-  "name" : "Is Within Location",
-  "patterns" : [
-    "%<a href='./classes.html#location'>locations</a>% (is|are) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-"%<a href='./classes.html#location'>locations</a>% (isn't|is not|aren't|are not) within %<a href='./classes.html#location'>location</a>% and %<a href='./classes.html#location'>location</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Whether a location is within two other locations forming a cuboid.
-Using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations.",
-  "examples" : "if player's location is within {_loc1} and {_loc2}:\\n    send \"You are in a PvP zone!\" to player"
-},
-{
   "id" : "CondWithinRadius",
   "name" : "Is Within Radius",
   "patterns" : [
@@ -1990,7 +1989,7 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffActionBar",
   "name" : "Action Bar",
   "patterns" : [
-    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% to %<a href='./classes.html#player'>players</a>%",
+    "send [the] action[ ]bar [with text] %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2731,15 +2730,14 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   "name" : "Potion Effects",
   "patterns" : [
     "apply %<a href='./classes.html#potioneffect'>potion effects</a>% to %<a href='./classes.html#livingentity'>living entities</a>%",
-"apply [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [(replacing [the] existing effect)]",
-"apply ambient [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [(replacing [the] existing effect)]",
-"apply [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] without [any] particles to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [(replacing [the] existing effect)]",
+"apply infinite [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [replacing [the] existing effect]",
+"apply [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [replacing [the] existing effect]",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects)",
+  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), INSERT VERSION (icon and infinite)",
   "description" : "Apply or remove potion effects to/from entities.",
-  "examples" : "apply swiftness 2 to the player\\nremove haste from the victim\\non join:\\n    apply potion of strength of tier {strength.%player%} to the player for 999 days\\napply potion effects of player's tool to player"
+  "examples" : "apply ambient swiftness 2 to the player\\nremove haste from the victim\\n\\non join:\\n    apply infinite potion of strength of tier {strength::%uuid of player%} to the player\\n    apply potion of strength of tier {strength::%uuid of player%} to the player for 999 days # Before 1.19.4\\n\\napply potion effects of player's tool to player\\napply haste potion of tier 3 without any particles to the player whilst hiding the potion icon # Hide potions"
 },
 {
   "id" : "EffPush",
@@ -2887,8 +2885,8 @@ status of the sent resource pack request.",
   "id" : "EffStopSound",
   "name" : "Stop Sound",
   "patterns" : [
-    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
-"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
+    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
+"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -2896,7 +2894,7 @@ status of the sent resource pack request.",
   "description" : "Stops specific or all sounds from playing to a group of players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sound for all players\\nstop sound in record category"
+  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sounds for all players\\nstop sound in the record category"
 },
 {
   "id" : "EffSwingHand",
@@ -3298,7 +3296,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;light red&amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;lt;light red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;orange&amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;lt;orange&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;white&amp;amp;amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -3840,6 +3838,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on inventory close:\\n    if player's location is {location}:\\n        send \"You exited the shop!\""
 },
 {
+  "id" : "inventory_drag",
+  "name" : "On Inventory Drag",
+  "patterns" : [
+    "[on] inventory drag[ging]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player drags an item in their cursor across the inventory.",
+  "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
+},
+{
   "id" : "inventory_open",
   "name" : "On Inventory Open",
   "patterns" : [
@@ -4153,7 +4163,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4436,7 +4446,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -5280,16 +5290,18 @@ This expression requires a supported regions plugin to be installed.",
   "id" : "ExprBookPages",
   "name" : "Book Pages",
   "patterns" : [
-    "[all [[of] the]|the] [book] (pages|content) of %<a href='./classes.html#itemtype'>item types</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>%'[s] [book] (pages|content)",
-"[book] page %<a href='./classes.html#number'>number</a>% of %<a href='./classes.html#itemtype'>item types</a>%",
-"%<a href='./classes.html#itemtype'>item types</a>%'[s] [book] page %<a href='./classes.html#number'>number</a>%",
+    "[all [[of] the]|the] [book] (pages|content) of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%'[s] [book] (pages|content)",
+"[book] page %<a href='./classes.html#number'>number</a>% of %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#itemstack'>item stacks</a>%'[s] [book] page %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
   "since" : "2.2-dev31, 2.7 (changers)",
-  "description" : "The pages of a book.",
-  "examples" : "on book sign:\\n    message \"Book Pages: %pages of event-item%\"\\n    message \"Book Page 1: %page 1 of event-item%\"\\nset page 1 of player's held item to \"Book writing\""
+  "description" : "The pages of a book (Supports Skript's chat format)
+Note: In order to modify the pages of a new written book, you must have the title and author
+of the book set. Skript will do this for you, but if you want your own, please set those values.",
+  "examples" : "on book sign:\\n    message \"Book Pages: %pages of event-item%\"\\n    message \"Book Page 1: %page 1 of event-item%\"\\n\\nset page 1 of player's held item to \"Book writing\""
 },
 {
   "id" : "ExprBookTitle",
