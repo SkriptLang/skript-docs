@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-0ea98d4",
+  "skriptVersion" : "2.8.0-dev-nightly-b722cc3",
 
   "classes" : [
     {
@@ -376,18 +376,6 @@
   "examples" : "Missing examples."
 },
 {
-  "id" : "slot",
-  "name" : "Inventory Slot",
-  "patterns" : [
-    "Missing patterns.",
-
-    "pattern_end"
-  ],
-  "since" : "Unknown",
-  "description" : "Represents a single slot of an <a href='#inventory'>inventory</a>. Notable slots are the <a href='./expressions.html#ExprArmorSlot'>armour slots</a> and <a href='./expressions/#ExprFurnaceSlot'>furnace slots</a>. \\nThe most important property that distinguishes a slot from an <a href='#itemstack'>item</a> is its ability to be changed, e.g. it can be set, deleted, enchanted, etc. (Some item expressions can be changed as well, e.g. items stored in variables. For that matter: slots are never saved to variables, only the items they represent at the time when the variable is set).\\nPlease note that <a href='./expressions.html#ExprTool'>tool</a> can be regarded a slot, but it can actually change it's position, i.e. doesn't represent always the same slot.",
-  "examples" : "set tool of player to dirt\\ndelete helmet of the victim\\nset the color of the player's tool to green\\nenchant the player's chestplate with projectile protection 5"
-},
-{
   "id" : "inventorytype",
   "name" : "Inventory Type",
   "patterns" : [
@@ -614,6 +602,18 @@
   "since" : "2.3",
   "description" : "A server icon that was loaded using the <a href='effects.html#EffLoadServerIcon'>load server icon</a> effect.",
   "examples" : "Missing examples."
+},
+{
+  "id" : "slot",
+  "name" : "Slot",
+  "patterns" : [
+    "Missing patterns.",
+
+    "pattern_end"
+  ],
+  "since" : "Unknown",
+  "description" : "Represents a single slot of an <a href='#inventory'>inventory</a>. Notable slots are the <a href='./expressions.html#ExprArmorSlot'>armour slots</a> and <a href='./expressions/#ExprFurnaceSlot'>furnace slots</a>. \\nThe most important property that distinguishes a slot from an <a href='#itemstack'>item</a> is its ability to be changed, e.g. it can be set, deleted, enchanted, etc. (Some item expressions can be changed as well, e.g. items stored in variables. For that matter: slots are never saved to variables, only the items they represent at the time when the variable is set).\\nPlease note that <a href='./expressions.html#ExprTool'>tool</a> can be regarded a slot, but it can actually change it's position, i.e. doesn't represent always the same slot.",
+  "examples" : "set tool of player to dirt\\ndelete helmet of the victim\\nset the color of the player's tool to green\\nenchant the player's chestplate with projectile protection 5"
 },
 {
   "id" : "soundcategory",
