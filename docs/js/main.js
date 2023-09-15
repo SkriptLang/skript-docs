@@ -257,12 +257,10 @@ function searchNow(value = "") {
 
     // Version check
     let versions = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent);
-    if (e.id == "ExprSets") {
-    }
 
     let versionFound;
     if (version != "") {
-      versionFound = versions.includes(0); // check for equal
+      versionFound = versions.includes(0); // check for equals
       if (versionAndUp || versionAndDown) {
         for (const v in versions) { 
           if (versionAndUp && v == 1) { // check for above
