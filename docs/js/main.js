@@ -94,19 +94,32 @@ const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
+/**
+ * @param {string} base the version being checked
+ * @param {string} target the requested version
+ * @returns a list of (-1, 0, 1)s for each version checked in sequence
+ */
 function versionCompare(base, target) { // Return -1, 0, 1
-  base = base.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
   target = target.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
-
-  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
   target = parseInt(target) < 100 ? parseInt(target) * 10 : parseInt(target);
 
-  if (target > base)
-    return 1
-  if (target == base)
-    return 0
-  if (target < base)
-    return -1
+  results = [];
+
+  // split on ',' without space in case some version didn't have space and versionCompare will handle it
+  base = base.split(",");
+  for (version in base) {
+    version = version.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+    version = parseInt(version) < 100 ? parseInt(version) * 10 : parseInt(version); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
+
+    if (target > version)
+      results.add(1);
+    if (target == version)
+      results.add(0);
+    if (target < version)
+      results.add(-1);
+  }
+
+  return results;
 }
 
 var searchBar;
@@ -235,59 +248,62 @@ function searchNow(value = "") {
   searchValue = searchValue.replaceAll(/[^a-zA-Z0-9 #_-]/gi, ""); // Filter none alphabet and digits to avoid regex errors (#_-) used for hash/id searching
 
   allElements.forEach((e) => {
-    let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
-    for (let i = 0; i < patterns.length; i++) { // Search in the patterns for better results
-      let pattern = patterns[i];
-      let regex = new RegExp(searchValue, "gi")
-      let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
-      let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
-      let keywords = e.getAttribute("data-keywords")
-      let id = e.id // Syntax ID
-      let filtersFound = false;
+    let regex = new RegExp(searchValue, "gi")
+    let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
+    let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
+    let keywords = e.getAttribute("data-keywords")
+    let id = e.id // Syntax ID
+    let filtersFound = false;
 
-      // Version check
-      let versionFound;
-      if (version != "") {
-        versionFound = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent) == 0;
-
-        if (versionAndUp || versionAndDown) {
-          let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
-          for (const v in versions) { // split on ',' without space in case some version didn't have space and versionCompare will handle it
-            if (versionAndUp) {
-              if (versionCompare(version, versions[v]) == 1) {
-                versionFound = true;
-                break; // Performance
-              }
-            } else if (versionAndDown) {
-              if (versionCompare(version, versions[v]) == -1) {
-                versionFound = true;
-                break; // Performance
-              }
-            }
+    // Version check
+    let versions = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent);
+    let versionFound;
+    if (version != "") {
+      versionFound = versions.contains(0); // check for equal
+      if (versionAndUp || versionAndDown) {
+        for (const v in versions) { 
+          if (versionAndUp && v == 1) { // check for above
+              versionFound = true;
+              break; // Performance
+          } else if (versionAndDown && v == -1) { // check for below
+              versionFound = true;
+              break; // Performance
           }
         }
-      } else {
-        versionFound = true;
       }
+    } else {
+      versionFound = true;
+    }
 
-      let filterNewFound = true;
-      if (filterNew) {
-        filterNewFound = document.querySelector(`#${e.id} .item-title .new-element`) != null
-      }
+    let filterNewFound = true;
+    if (filterNew) {
+      filterNewFound = document.querySelector(`#${e.id} .item-title .new-element`) != null
+    }
 
-      let filterTypeFound = true;
-      let filterTypeEl = document.querySelector(`#${e.id} .item-title .item-type`);
-      if (filterType) {
-        filterTypeFound = filterType.toLowerCase() === filterTypeEl.textContent.toLowerCase()
-      }
+    let filterTypeFound = true;
+    let filterTypeEl = document.querySelector(`#${e.id} .item-title .item-type`);
+    if (filterType) {
+      filterTypeFound = filterType.toLowerCase() === filterTypeEl.textContent.toLowerCase()
+    }
 
-      if (filterNewFound && versionFound && filterTypeFound)
-        filtersFound = true
+    if (filterNewFound && versionFound && filterTypeFound)
+      filtersFound = true
 
-      if ((regex.test(pattern.textContent.replaceAll("[ ]", " ")) || regex.test(name) ||
-           regex.test(desc) || regex.test(keywords) || "#" + id.toLowerCase() == searchValue.toLowerCase() || searchValue == "") && filtersFound) { // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
-        pass = true
-        break; // Performance
+    let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
+    for (pattern in patterns) { // Search in the patterns for better results
+      if (
+        (
+          regex.test(pattern.textContent.replaceAll("[ ]", " ")) || // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
+          regex.test(name) || // check name
+          regex.test(desc) || // check description
+          regex.test(keywords) || // check keywords
+          "#" + id.toLowerCase() == searchValue.toLowerCase() || // check ID search
+          searchValue == "" // no search value -- show all
+        )
+        && filtersFound // check other filters such as version, isNew or type
+        ) { 
+          pass = true
+          break; // Performance
       }
     }
 
