@@ -95,28 +95,28 @@ const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
 /**
- * @param {string} base the version being checked
- * @param {string} target the requested version
+ * @param {string} base the requested version
+ * @param {string} target the version being checked
  * @returns a list of (-1, 0, 1)s for each version checked in sequence
  */
 function versionCompare(base, target) { // Return -1, 0, 1
-  target = target.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
-  target = parseInt(target) < 100 ? parseInt(target) * 10 : parseInt(target);
+  base = base.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base);
 
   results = [];
 
   // split on ',' without space in case some version didn't have space and versionCompare will handle it
-  base = base.split(",");
-  for (version in base) {
+  target = target.split(",");
+  for (version of target) {
     version = version.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
     version = parseInt(version) < 100 ? parseInt(version) * 10 : parseInt(version); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
 
-    if (target > version)
-      results.add(1);
-    if (target == version)
-      results.add(0);
-    if (target < version)
-      results.add(-1);
+    if (base > version)
+      results.push(1);
+    if (base == version)
+      results.push(0);
+    if (base < version)
+      results.push(-1);
   }
 
   return results;
@@ -257,9 +257,12 @@ function searchNow(value = "") {
 
     // Version check
     let versions = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent);
+    if (e.id == "ExprSets") {
+    }
+
     let versionFound;
     if (version != "") {
-      versionFound = versions.contains(0); // check for equal
+      versionFound = versions.includes(0); // check for equal
       if (versionAndUp || versionAndDown) {
         for (const v in versions) { 
           if (versionAndUp && v == 1) { // check for above
@@ -290,14 +293,15 @@ function searchNow(value = "") {
       filtersFound = true
 
     let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
-    for (pattern in patterns) { // Search in the patterns for better results
+    let lowerSearchValue = searchValue.toLowerCase();
+    for (pattern of patterns) { // Search in the patterns for better results
       if (
         (
           regex.test(pattern.textContent.replaceAll("[ ]", " ")) || // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
           regex.test(name) || // check name
           regex.test(desc) || // check description
           regex.test(keywords) || // check keywords
-          "#" + id.toLowerCase() == searchValue.toLowerCase() || // check ID search
+          "#" + id.toLowerCase() == lowerSearchValue || // check ID search
           searchValue == "" // no search value -- show all
         )
         && filtersFound // check other filters such as version, isNew or type
@@ -404,7 +408,7 @@ if (examples) {
 }
 // Example Collapse </>
 
-// <> Cookies Accecpt
+// <> Cookies Accept
 if (!isCookiesAccepted) {
   document.body.insertAdjacentHTML('beforeend', `<div id="cookies-bar"> <p> We use cookies and local storage to enhance your browsing experience and store github related statistics. By clicking "Accept", you consent to our use of cookies and local storage. </p><div style="padding: 10px; white-space: nowrap;"> <button id="cookies-accept">Accept</button> <button id="cookies-deny">Deny</button> </div></div>`);
 }
@@ -421,4 +425,4 @@ if (cookiesAccept && cookiesDeny) {
     cookiesBar.remove();
   });
 }
-// Cookies Accecpt </>
+// Cookies Accept </>
