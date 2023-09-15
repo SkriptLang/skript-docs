@@ -43,6 +43,12 @@
         <td class="item-table-label">Requirements:</td>
         <td>${element.required-plugins}</td>
       </tr>
+      
+      ${end} ${if cancellable}
+      <tr class="item-details">
+        <td class="item-table-label">Cancellable</td>
+        <td>${element.cancellable}</td>
+      </tr>
 
       ${end} ${if by-addon}
       <tr class="item-details">
