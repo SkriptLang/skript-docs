@@ -94,19 +94,32 @@ const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
+/**
+ * @param {string} base the requested version
+ * @param {string} target the version being checked
+ * @returns a list of (-1, 0, 1)s for each version checked in sequence
+ */
 function versionCompare(base, target) { // Return -1, 0, 1
   base = base.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
-  target = target.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base);
 
-  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
-  target = parseInt(target) < 100 ? parseInt(target) * 10 : parseInt(target);
+  results = [];
 
-  if (target > base)
-    return 1
-  if (target == base)
-    return 0
-  if (target < base)
-    return -1
+  // split on ',' without space in case some version didn't have space and versionCompare will handle it
+  target = target.split(",");
+  for (version of target) {
+    version = version.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+    version = parseInt(version) < 100 ? parseInt(version) * 10 : parseInt(version); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
+
+    if (version > base)
+      results.push(1);
+    if (version == base)
+      results.push(0);
+    if (version < base)
+      results.push(-1);
+  }
+
+  return results;
 }
 
 var searchBar;
@@ -201,7 +214,8 @@ function searchNow(value = "") {
   let allElements = document.querySelectorAll(".item-wrapper");
   let searchValue = searchBar.value;
   let count = 0; // Check if any matches found
-  let pass;
+  let pass = false;
+  let isUsingFilter = false; // Indicator that any kind of filter is used (version/type/new)
 
   // version
   let version = "";
@@ -215,6 +229,7 @@ function searchNow(value = "") {
       versionAndDown = verExec[2] == "-" == true;
     }
     searchValue = searchValue.replaceAll(versionPattern, "") // Don't include filters in the search
+    isUsingFilter = true;
   }
 
   // Type
@@ -222,6 +237,7 @@ function searchNow(value = "") {
   if (searchValue.match(typePattern)) {
     filterType = typePattern.exec(searchValue)[1];
     searchValue = searchValue.replaceAll(typePattern, "")
+    isUsingFilter = true;
   }
 
   // News
@@ -229,78 +245,82 @@ function searchNow(value = "") {
   if (searchValue.match(newPattern)) {
     filterNew = newPattern.exec(searchValue)[1] == "new";
     searchValue = searchValue.replaceAll(newPattern, "")
+    isUsingFilter = true;
   }
 
   searchValue = searchValue.replaceAll(/( ){2,}/gi, " ") // Filter duplicate spaces
   searchValue = searchValue.replaceAll(/[^a-zA-Z0-9 #_-]/gi, ""); // Filter none alphabet and digits to avoid regex errors (#_-) used for hash/id searching
 
+  let regex = searchValue != "" ? new RegExp(searchValue, "gi") : null; // null errors is easier to be found
   allElements.forEach((e) => {
-    let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
-    for (let i = 0; i < patterns.length; i++) { // Search in the patterns for better results
-      let pattern = patterns[i];
-      let regex = new RegExp(searchValue, "gi")
-      let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
-      let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
-      let keywords = e.getAttribute("data-keywords")
-      let id = e.id // Syntax ID
-      let filtersFound = false;
+    let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
+    let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
+    let keywords = e.getAttribute("data-keywords")
+    let id = e.id // Syntax ID
+    let filtersFound = false;
 
-      // Version check
-      let versionFound;
-      if (version != "") {
-        versionFound = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent) == 0;
-
-        if (versionAndUp || versionAndDown) {
-          let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
-          for (const v in versions) { // split on ',' without space in case some version didn't have space and versionCompare will handle it
-            if (versionAndUp) {
-              if (versionCompare(version, versions[v]) == 1) {
-                versionFound = true;
-                break; // Performance
-              }
-            } else if (versionAndDown) {
-              if (versionCompare(version, versions[v]) == -1) {
-                versionFound = true;
-                break; // Performance
-              }
-            }
-          }
-        }
-      } else {
+    // Version check
+    let versions = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent);
+    let versionFound = false;
+    if (version != "") {
+      if (versionAndUp && versions.includes(1)) {
         versionFound = true;
+      } else if (versionAndDown && versions.includes(-1)) {
+        versionFound = true;
+      } else {
+        versionFound = versions.includes(0); // check for equals
       }
+    }
 
-      let filterNewFound = true;
-      if (filterNew) {
-        filterNewFound = document.querySelector(`#${e.id} .item-title .new-element`) != null
-      }
+    // Is new element check
+    let filterNewFound = false;
+    if (filterNew) {
+      filterNewFound = document.querySelector(`#${e.id} .item-title .new-element`) != null
+    }
 
-      let filterTypeFound = true;
-      let filterTypeEl = document.querySelector(`#${e.id} .item-title .item-type`);
-      if (filterType) {
-        filterTypeFound = filterType.toLowerCase() === filterTypeEl.textContent.toLowerCase()
-      }
+    // Element type check
+    let filterTypeFound = false;
+    let filterTypeEl = document.querySelector(`#${e.id} .item-title .item-type`);
+    if (filterType) {
+      filterTypeFound = filterType.toLowerCase() === filterTypeEl.textContent.toLowerCase()
+    }
 
-      if (filterNewFound && versionFound && filterTypeFound)
-        filtersFound = true
+    if (filterNewFound || versionFound || filterTypeFound)
+      filtersFound = true
 
-      if ((regex.test(pattern.textContent.replaceAll("[ ]", " ")) || regex.test(name) ||
-           regex.test(desc) || regex.test(keywords) || "#" + id.toLowerCase() == searchValue.toLowerCase() || searchValue == "") && filtersFound) { // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
-        pass = true
-        break; // Performance
+    // Patterns check
+    let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
+    let lowerSearchValue = searchValue.toLowerCase();
+    for (let pattern of patterns) { // Search in the patterns for better results
+      if (
+        (
+          regex != null && 
+          (
+            regex.test(pattern.textContent.replaceAll("[ ]", " ")) || // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
+            regex.test(name) || // check name
+            regex.test(desc) || // check description
+            regex.test(keywords) // check keywords
+          ) ||
+          "#" + id.toLowerCase() == lowerSearchValue || // check ID search
+          searchValue == "" && !isUsingFilter // no search value and not using search filters (because each filter gets excluded from searchValue) -- show all
+        )
+        || filtersFound // check other filters such as version, isNew or type
+        ) { 
+          pass = true
+          break; // Performance
       }
     }
 
     // Filter
     let sideNavItem = document.querySelectorAll(`#nav-contents a[href="#${e.id}"]`); // Since we have new addition filter we need to loop this
-    if (pass) {
-      e.style.display = null;
+    if (pass) { // show
+      e.style.display = null; // reset
       if (sideNavItem)
         sideNavItem.forEach(e => {
           e.style.display = null;
         })
       count++;
-    } else {
+    } else { // hide
       e.style.display = "none";
       if (sideNavItem)
         sideNavItem.forEach(e => {
@@ -308,7 +328,7 @@ function searchNow(value = "") {
         })
     }
 
-    pass = false; // Reset
+    pass = false; // Reset for next loop item
   })
 
   searchResultBox = document.getElementById("search-bar-after");
@@ -388,7 +408,7 @@ if (examples) {
 }
 // Example Collapse </>
 
-// <> Cookies Accecpt
+// <> Cookies Accept
 if (!isCookiesAccepted) {
   document.body.insertAdjacentHTML('beforeend', `<div id="cookies-bar"> <p> We use cookies and local storage to enhance your browsing experience and store github related statistics. By clicking "Accept", you consent to our use of cookies and local storage. </p><div style="padding: 10px; white-space: nowrap;"> <button id="cookies-accept">Accept</button> <button id="cookies-deny">Deny</button> </div></div>`);
 }
@@ -405,4 +425,4 @@ if (cookiesAccept && cookiesDeny) {
     cookiesBar.remove();
   });
 }
-// Cookies Accecpt </>
+// Cookies Accept </>
