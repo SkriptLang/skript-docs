@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-f2d2ed9",
+  "skriptVersion" : "2.8.0-dev-nightly-4b5628c",
 
   "classes" : [
     {
@@ -3048,7 +3048,7 @@ which may cause lag spikes or server crashes when using this effect to teleport 
   "id" : "EffSendTitle",
   "name" : "Title - Send",
   "patterns" : [
-    "send title %<a href='./classes.html#string'>text</a>% [with subtitle %<a href='./classes.html#string'>text</a>%] [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [(and|with) fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
+    "send title %<a href='./classes.html#string'>text</a>% [with subtitle %<a href='./classes.html#string'>text</a>%] [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [[and] [with] fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
 "send subtitle %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [[and] [with] fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
 
     "pattern_end"
