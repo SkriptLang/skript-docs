@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-f70d005",
+  "skriptVersion" : "2.8.0-dev-nightly-cd731f1",
 
   "classes" : [
     {
@@ -1982,18 +1982,6 @@ Paper 1.17.1+ is required for non-player entities.",
   "examples" : "on chat:\\n    if message partially matches \"\\d\":\\n        send \"Message contains a digit!\"\\n    if message doesn't match \"[A-Za-z]+\":\\n        send \"Message doesn't only contain letters!\""
 },
 {
-  "id" : "CondMethodExists",
-  "name" : "Method Exists",
-  "patterns" : [
-    "method[s] %<a href='./classes.html#string'>texts</a>% [do(esn't|n't)] exist[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Checks if a method exists",
-  "examples" : "if method \"org.bukkit.Bukkit#getPluginCommand(java.lang.String)"
-},
-{
   "id" : "CondProjectileCanBounce",
   "name" : "Projectile Can Bounce",
   "patterns" : [
@@ -2047,18 +2035,6 @@ This condition requires a supported regions plugin to be installed.",
   "since" : "2.4",
   "description" : "Checks state of the resource pack in a <a href='events.html#resource_pack_request_action'>resource pack request response</a> event.",
   "examples" : "on resource pack response:\\n    if the resource pack wasn't accepted:\\n        kick the player due to \"You have to install the resource pack to play in this server!\""
-},
-{
-  "id" : "CondMinecraftVersion",
-  "name" : "Running Minecraft",
-  "patterns" : [
-    "running [below] minecraft %<a href='./classes.html#string'>text</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Checks if current Minecraft version is given version or newer.",
-  "examples" : "running minecraft \"1.14\""
 },
 {
   "id" : "CondStartsEndsWith",
@@ -4778,18 +4754,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0",
   "description" : "Called whenever a player is teleported, either by a nether/end portal or other means (e.g. by plugins).",
   "examples" : "on teleport:"
-},
-{
-  "id" : "test_case",
-  "name" : "On Test Case",
-  "patterns" : [
-    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;]",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Contents represent one test case.",
-  "examples" : "Missing examples."
 },
 {
   "id" : "tool_change",
