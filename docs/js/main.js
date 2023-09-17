@@ -111,11 +111,11 @@ function versionCompare(base, target) { // Return -1, 0, 1
     version = version.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
     version = parseInt(version) < 100 ? parseInt(version) * 10 : parseInt(version); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
 
-    if (base > version)
+    if (version > base)
       results.push(1);
-    if (base == version)
+    if (version == base)
       results.push(0);
-    if (base < version)
+    if (version < base)
       results.push(-1);
   }
 
@@ -214,7 +214,8 @@ function searchNow(value = "") {
   let allElements = document.querySelectorAll(".item-wrapper");
   let searchValue = searchBar.value;
   let count = 0; // Check if any matches found
-  let pass;
+  let pass = false;
+  let isUsingFilter = false; // Indicator that any kind of filter is used (version/type/new)
 
   // version
   let version = "";
@@ -228,6 +229,7 @@ function searchNow(value = "") {
       versionAndDown = verExec[2] == "-" == true;
     }
     searchValue = searchValue.replaceAll(versionPattern, "") // Don't include filters in the search
+    isUsingFilter = true;
   }
 
   // Type
@@ -235,6 +237,7 @@ function searchNow(value = "") {
   if (searchValue.match(typePattern)) {
     filterType = typePattern.exec(searchValue)[1];
     searchValue = searchValue.replaceAll(typePattern, "")
+    isUsingFilter = true;
   }
 
   // News
@@ -242,13 +245,14 @@ function searchNow(value = "") {
   if (searchValue.match(newPattern)) {
     filterNew = newPattern.exec(searchValue)[1] == "new";
     searchValue = searchValue.replaceAll(newPattern, "")
+    isUsingFilter = true;
   }
 
   searchValue = searchValue.replaceAll(/( ){2,}/gi, " ") // Filter duplicate spaces
   searchValue = searchValue.replaceAll(/[^a-zA-Z0-9 #_-]/gi, ""); // Filter none alphabet and digits to avoid regex errors (#_-) used for hash/id searching
 
+  let regex = searchValue != "" ? new RegExp(searchValue, "gi") : null; // null errors is easier to be found
   allElements.forEach((e) => {
-    let regex = new RegExp(searchValue, "gi")
     let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
     let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
     let keywords = e.getAttribute("data-keywords")
@@ -257,52 +261,50 @@ function searchNow(value = "") {
 
     // Version check
     let versions = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent);
-
-    let versionFound;
+    let versionFound = false;
     if (version != "") {
-      versionFound = versions.includes(0); // check for equals
-      if (versionAndUp || versionAndDown) {
-        for (const v in versions) { 
-          if (versionAndUp && v == 1) { // check for above
-              versionFound = true;
-              break; // Performance
-          } else if (versionAndDown && v == -1) { // check for below
-              versionFound = true;
-              break; // Performance
-          }
-        }
+      if (versionAndUp && versions.includes(1)) {
+        versionFound = true;
+      } else if (versionAndDown && versions.includes(-1)) {
+        versionFound = true;
+      } else {
+        versionFound = versions.includes(0); // check for equals
       }
-    } else {
-      versionFound = true;
     }
 
-    let filterNewFound = true;
+    // Is new element check
+    let filterNewFound = false;
     if (filterNew) {
       filterNewFound = document.querySelector(`#${e.id} .item-title .new-element`) != null
     }
 
-    let filterTypeFound = true;
+    // Element type check
+    let filterTypeFound = false;
     let filterTypeEl = document.querySelector(`#${e.id} .item-title .item-type`);
     if (filterType) {
       filterTypeFound = filterType.toLowerCase() === filterTypeEl.textContent.toLowerCase()
     }
 
-    if (filterNewFound && versionFound && filterTypeFound)
+    if (filterNewFound || versionFound || filterTypeFound)
       filtersFound = true
 
+    // Patterns check
     let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
     let lowerSearchValue = searchValue.toLowerCase();
-    for (pattern of patterns) { // Search in the patterns for better results
+    for (let pattern of patterns) { // Search in the patterns for better results
       if (
         (
-          regex.test(pattern.textContent.replaceAll("[ ]", " ")) || // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
-          regex.test(name) || // check name
-          regex.test(desc) || // check description
-          regex.test(keywords) || // check keywords
+          regex != null && 
+          (
+            regex.test(pattern.textContent.replaceAll("[ ]", " ")) || // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
+            regex.test(name) || // check name
+            regex.test(desc) || // check description
+            regex.test(keywords) // check keywords
+          ) ||
           "#" + id.toLowerCase() == lowerSearchValue || // check ID search
-          searchValue == "" // no search value -- show all
+          searchValue == "" && !isUsingFilter // no search value and not using search filters (because each filter gets excluded from searchValue) -- show all
         )
-        && filtersFound // check other filters such as version, isNew or type
+        || filtersFound // check other filters such as version, isNew or type
         ) { 
           pass = true
           break; // Performance
@@ -311,14 +313,14 @@ function searchNow(value = "") {
 
     // Filter
     let sideNavItem = document.querySelectorAll(`#nav-contents a[href="#${e.id}"]`); // Since we have new addition filter we need to loop this
-    if (pass) {
-      e.style.display = null;
+    if (pass) { // show
+      e.style.display = null; // reset
       if (sideNavItem)
         sideNavItem.forEach(e => {
           e.style.display = null;
         })
       count++;
-    } else {
+    } else { // hide
       e.style.display = "none";
       if (sideNavItem)
         sideNavItem.forEach(e => {
@@ -326,7 +328,7 @@ function searchNow(value = "") {
         })
     }
 
-    pass = false; // Reset
+    pass = false; // Reset for next loop item
   })
 
   searchResultBox = document.getElementById("search-bar-after");
