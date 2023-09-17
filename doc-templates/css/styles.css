@@ -906,7 +906,7 @@ ol.custom-list li::before {
     font-weight: bold;
 }
 
-code {
+code, .event-value {
     font-family: "Source Code Pro", monospace;
     background-color: var(--inline-code-bg-color);
     padding: 0px 5px;
