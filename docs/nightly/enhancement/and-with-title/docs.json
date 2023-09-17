@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-526c62b",
+  "skriptVersion" : "2.8.0-dev-nightly-f2d2ed9",
 
   "classes" : [
     {
@@ -1982,18 +1982,6 @@ Paper 1.17.1+ is required for non-player entities.",
   "examples" : "on chat:\\n    if message partially matches \"\\d\":\\n        send \"Message contains a digit!\"\\n    if message doesn't match \"[A-Za-z]+\":\\n        send \"Message doesn't only contain letters!\""
 },
 {
-  "id" : "CondMethodExists",
-  "name" : "Method Exists",
-  "patterns" : [
-    "method[s] %<a href='./classes.html#string'>texts</a>% [do(esn't|n't)] exist[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Checks if a method exists",
-  "examples" : "if method \"org.bukkit.Bukkit#getPluginCommand(java.lang.String)"
-},
-{
   "id" : "CondProjectileCanBounce",
   "name" : "Projectile Can Bounce",
   "patterns" : [
@@ -2047,18 +2035,6 @@ This condition requires a supported regions plugin to be installed.",
   "since" : "2.4",
   "description" : "Checks state of the resource pack in a <a href='events.html#resource_pack_request_action'>resource pack request response</a> event.",
   "examples" : "on resource pack response:\\n    if the resource pack wasn't accepted:\\n        kick the player due to \"You have to install the resource pack to play in this server!\""
-},
-{
-  "id" : "CondMinecraftVersion",
-  "name" : "Running Minecraft",
-  "patterns" : [
-    "running [below] minecraft %<a href='./classes.html#string'>text</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Checks if current Minecraft version is given version or newer.",
-  "examples" : "running minecraft \"1.14\""
 },
 {
   "id" : "CondStartsEndsWith",
@@ -3016,8 +2992,8 @@ status of the sent resource pack request.",
   "id" : "EffStopSound",
   "name" : "Stop Sound",
   "patterns" : [
-    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
-"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
+    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
+"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -3025,7 +3001,7 @@ status of the sent resource pack request.",
   "description" : "Stops specific or all sounds from playing to a group of players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sound for all players\\nstop sound in record category"
+  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sounds for all players\\nstop sound in the record category"
 },
 {
   "id" : "EffSwingHand",
@@ -4778,18 +4754,6 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0",
   "description" : "Called whenever a player is teleported, either by a nether/end portal or other means (e.g. by plugins).",
   "examples" : "on teleport:"
-},
-{
-  "id" : "test_case",
-  "name" : "On Test Case",
-  "patterns" : [
-    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;]",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Contents represent one test case.",
-  "examples" : "Missing examples."
 },
 {
   "id" : "tool_change",
