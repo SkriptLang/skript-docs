@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-a11a16e",
+  "skriptVersion" : "2.8.0-dev-nightly-8f557ab",
 
   "classes" : [
     {
@@ -2258,7 +2258,8 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "id" : "EffContinue",
   "name" : "Continue",
   "patterns" : [
-    "continue [[this|[the] (%*integer%(st|nd|rd|th)|current)] loop]",
+    "continue [this loop|[the] [current] loop]",
+"continue [the] %*integer%(st|nd|rd|th) loop",
 
     "pattern_end"
   ],
