@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-4b5579c",
+  "skriptVersion" : "2.8.0-dev-nightly-38bfa0a",
 
   "classes" : [
     {
@@ -975,6 +975,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.7",
   "description" : "Whether the egg will hatch in a Player Egg Throw event.",
   "examples" : "on player egg throw:\\n    if an entity won't hatch:\\n        send \"Better luck next time!\" to the player"
+},
+{
+  "id" : "CondIsSheared",
+  "name" : "Entity Is Sheared",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (sheared|shorn)",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (sheared|shorn)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether entities are sheared. This condition only works on cows, sheep and snowmen for versions below 1.19.4.",
+  "examples" : "if targeted entity of player is sheared:\\n    send \"This entity has nothing left to shear!\" to player"
 },
 {
   "id" : "CondEntityIsWet",
@@ -2938,14 +2951,20 @@ status of the sent resource pack request.",
   "id" : "EffShear",
   "name" : "Shear",
   "patterns" : [
-    "shear %<a href='./classes.html#livingentity'>living entities</a>%",
+    "[force] shear %<a href='./classes.html#livingentity'>living entities</a>%",
 "un[-]shear %<a href='./classes.html#livingentity'>living entities</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "Shears or 'un-shears' a sheep. Please note that no wool is dropped, this only sets the 'sheared' state of the sheep.",
-  "examples" : "on rightclick on a sheep holding a sword:\\n    shear the clicked sheep"
+  "since" : "2.0 (cows, sheep & snowmen), INSERT VERSION (all shearable entities)",
+  "description" : "Shears or un-shears a shearable entity with drops by shearing and a 'sheared' sound. Using with 'force' will force this effect despite the entity's 'shear state'.
+
+Please note that..:
+
+- If your server is not running with Paper 1.19.4 or higher, this effect will only change its 'shear state', and the 'force' effect is unavailable
+
+- Force-shearing or un-shearing on a sheared mushroom cow is not possible",
+  "examples" : "on rightclick on a sheep holding a sword:\\n    shear the clicked sheep\\n    chance of 10%\\n    force shear the clicked sheep"
 },
 {
   "id" : "EffShoot",
