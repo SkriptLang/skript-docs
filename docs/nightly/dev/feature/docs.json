@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-38bfa0a",
+  "skriptVersion" : "2.8.0-dev-nightly-41349d1",
 
   "classes" : [
     {
@@ -2271,12 +2271,13 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "id" : "EffContinue",
   "name" : "Continue",
   "patterns" : [
-    "continue [loop]",
+    "continue [this loop|[the] [current] loop]",
+"continue [the] %*integer%(st|nd|rd|th) loop",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev37, 2.7 (while loops)",
-  "description" : "Immediately moves the (while) loop on to the next iteration.",
+  "since" : "2.2-dev37, 2.7 (while loops), INSERT VERSION (outer loops)",
+  "description" : "Moves the loop to the next iteration. You may also continue an outer loop from an inner one. The loops are labelled from 1 until the current loop, starting with the outermost one.",
   "examples" : "# Broadcast online moderators\\nloop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast\\n \\n# Game starting counter\\nset {_counter} to 11\\nwhile {_counter} &gt; 0:\\n    remove 1 from {_counter}\\n    wait a second\\n    if {_counter} != 1, 2, 3, 5 or 10:\\n        continue # only print when counter is 1, 2, 3, 5 or 10\\n    broadcast \"Game starting in %{_counter}% second(s)\""
 },
 {
