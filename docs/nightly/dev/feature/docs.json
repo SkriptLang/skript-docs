@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-3dfc252",
+  "skriptVersion" : "2.8.0-dev-nightly-4b5579c",
 
   "classes" : [
     {
@@ -5207,13 +5207,13 @@ Please note that specifying the argument type is only supported in script comman
   "id" : "ExprArmorSlot",
   "name" : "Armour Slot",
   "patterns" : [
-    "[the] (boot[s]|shoe[s]|leg[ging][s]|chestplate[s]|helm[et][s]) [(item|slot)] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (boot[s]|shoe[s]|leg[ging][s]|chestplate[s]|helm[et][s]) [(item|slot)]",
+    "[the] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]) of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s])",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "A part of a player's armour, i.e. the boots, leggings, chestplate or helmet.",
+  "since" : "1.0, INSERT VERSION (Armour)",
+  "description" : "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet.",
   "examples" : "set chestplate of the player to a diamond chestplate\\nhelmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
 },
 {
