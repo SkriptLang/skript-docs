@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.1-nightly-9e429f2",
+  "skriptVersion" : "2.7.1-nightly-5711da9",
 
   "classes" : [
     {
@@ -5897,7 +5897,7 @@ To change the number of levels removed, use the enchant event.",
   "description" : "The numerical value of an entity's particular attribute.
 Note that the movement speed attribute cannot be reliably used for players. For that purpose, use the speed expression instead.
 Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
-  "examples" : "on damage of player:\\n    send \"You are wounded!\"\\n    set victim's attack speed attribute to 2"
+  "examples" : "on damage of player:\\n    send \"You are wounded!\" to victim\\n    set victim's attack speed attribute to 2"
 },
 {
   "id" : "ExprFireTicks",
