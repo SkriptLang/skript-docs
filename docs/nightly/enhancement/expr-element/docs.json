@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-3d6c4a9",
+  "skriptVersion" : "2.8.0-dev-nightly-fa31bbf",
 
   "classes" : [
     {
@@ -5932,10 +5932,10 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   "name" : "Elements",
   "patterns" : [
     "[the] (first|last) element [out] of %<a href='./classes.html#object'>objects</a>%",
-"[the] (first|last) %<a href='./classes.html#number'>number</a>% elements [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] (first|last) %integer% elements [out] of %<a href='./classes.html#object'>objects</a>%",
 "[a] random element [out] of %<a href='./classes.html#object'>objects</a>%",
-"[the] %<a href='./classes.html#number'>number</a>%(st|nd|rd|th) [[to] last] element [out] of %<a href='./classes.html#object'>objects</a>%",
-"[the] elements (from|between) %<a href='./classes.html#number'>number</a>% (to|and) %<a href='./classes.html#number'>number</a>% [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] %integer%(st|nd|rd|th) [[to] last] element [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] elements (from|between) %integer% (to|and) %integer% [out] of %<a href='./classes.html#object'>objects</a>%",
 
     "pattern_end"
   ],
