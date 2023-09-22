@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.1-nightly-9c7ab8c",
+  "skriptVersion" : "2.7.1-nightly-604fd72",
 
   "classes" : [
     {
@@ -4612,6 +4612,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on teleport:"
 },
 {
+  "id" : "test_case",
+  "name" : "On Test Case",
+  "patterns" : [
+    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;]",
+
+    "pattern_end"
+  ],
+  "since" : "2.5",
+  "description" : "Contents represent one test case.",
+  "examples" : "Missing examples."
+},
+{
   "id" : "tool_change",
   "name" : "On Tool Change",
   "patterns" : [
@@ -8826,6 +8838,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2-dev32",
   "description" : "Calculates the total amount of experience needed to achieve given level from scratch in Minecraft.",
   "examples" : "Missing examples."
+},
+{
+  "id" : "caseEquals",
+  "name" : "caseEquals",
+  "patterns" : [
+    "caseEquals(strs: strings)",
+
+    "pattern_end"
+  ],
+  "since" : "2.5",
+  "description" : "Checks if the contents of a list of strings are strictly equal with case sensitivity.",
+  "examples" : "caseEquals(\"hi\", \"Hi\") = false\\ncaseEquals(\"text\", \"text\", \"text\") = true\\ncaseEquals({some list variable::*})"
 },
 {
   "id" : "ceil",
