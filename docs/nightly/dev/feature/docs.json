@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-27c6275",
+  "skriptVersion" : "2.8.0-dev-nightly-31e24ad",
 
   "classes" : [
     {
@@ -1467,7 +1467,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.7",
   "description" : "Checks whether potion effects are infinite.",
   "examples" : "all of the active potion effects of the player are infinite"
 },
@@ -2856,7 +2856,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), INSERT VERSION (icon and infinite)",
+  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), 2.7 (icon and infinite)",
   "description" : "Apply or remove potion effects to/from entities.",
   "examples" : "apply ambient swiftness 2 to the player\\nremove haste from the victim\\n\\non join:\\n    apply infinite potion of strength of tier {strength::%uuid of player%} to the player\\n    apply potion of strength of tier {strength::%uuid of player%} to the player for 999 days # Before 1.19.4\\n\\napply potion effects of player's tool to player\\napply haste potion of tier 3 without any particles to the player whilst hiding the potion icon # Hide potions"
 },
@@ -3985,7 +3985,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.7",
   "description" : "Called when a player drags an item in their cursor across the inventory.",
   "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
