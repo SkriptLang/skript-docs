@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-3b50595",
+  "skriptVersion" : "2.8.0-dev-nightly-8cc5cf9",
 
   "classes" : [
     {
@@ -1038,6 +1038,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "on player egg throw:\\n    if an entity won't hatch:\\n        send \"Better luck next time!\" to the player"
 },
 {
+  "id" : "CondIsSheared",
+  "name" : "Entity Is Sheared",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (sheared|shorn)",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (sheared|shorn)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether entities are sheared. This condition only works on cows, sheep and snowmen for versions below 1.19.4.",
+  "examples" : "if targeted entity of player is sheared:\\n    send \"This entity has nothing left to shear!\" to player"
+},
+{
   "id" : "CondEntityIsWet",
   "name" : "Entity is Wet",
   "patterns" : [
@@ -1515,7 +1528,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.7",
   "description" : "Checks whether potion effects are infinite.",
   "examples" : "all of the active potion effects of the player are infinite"
 },
@@ -2043,18 +2056,6 @@ Paper 1.17.1+ is required for non-player entities.",
   "examples" : "on chat:\\n    if message partially matches \"\\d\":\\n        send \"Message contains a digit!\"\\n    if message doesn't match \"[A-Za-z]+\":\\n        send \"Message doesn't only contain letters!\""
 },
 {
-  "id" : "CondMethodExists",
-  "name" : "Method Exists",
-  "patterns" : [
-    "method[s] %<a href='./classes.html#string'>texts</a>% [do(esn't|n't)] exist[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.7",
-  "description" : "Checks if a method exists",
-  "examples" : "if method \"org.bukkit.Bukkit#getPluginCommand(java.lang.String)"
-},
-{
   "id" : "CondProjectileCanBounce",
   "name" : "Projectile Can Bounce",
   "patterns" : [
@@ -2108,18 +2109,6 @@ This condition requires a supported regions plugin to be installed.",
   "since" : "2.4",
   "description" : "Checks state of the resource pack in a <a href='events.html#resource_pack_request_action'>resource pack request response</a> event.",
   "examples" : "on resource pack response:\\n    if the resource pack wasn't accepted:\\n        kick the player due to \"You have to install the resource pack to play in this server!\""
-},
-{
-  "id" : "CondMinecraftVersion",
-  "name" : "Running Minecraft",
-  "patterns" : [
-    "running [below] minecraft %<a href='./classes.html#string'>text</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Checks if current Minecraft version is given version or newer.",
-  "examples" : "running minecraft \"1.14\""
 },
 {
   "id" : "CondStartsEndsWith",
@@ -2343,12 +2332,13 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "id" : "EffContinue",
   "name" : "Continue",
   "patterns" : [
-    "continue [loop]",
+    "continue [this loop|[the] [current] loop]",
+"continue [the] %*integer%(st|nd|rd|th) loop",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev37, 2.7 (while loops)",
-  "description" : "Immediately moves the (while) loop on to the next iteration.",
+  "since" : "2.2-dev37, 2.7 (while loops), INSERT VERSION (outer loops)",
+  "description" : "Moves the loop to the next iteration. You may also continue an outer loop from an inner one. The loops are labelled from 1 until the current loop, starting with the outermost one.",
   "examples" : "# Broadcast online moderators\\nloop all players:\\n    if loop-value does not have permission \"moderator\":\\n        continue # filter out non moderators\\n    broadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast\\n \\n# Game starting counter\\nset {_counter} to 11\\nwhile {_counter} &gt; 0:\\n    remove 1 from {_counter}\\n    wait a second\\n    if {_counter} != 1, 2, 3, 5 or 10:\\n        continue # only print when counter is 1, 2, 3, 5 or 10\\n    broadcast \"Game starting in %{_counter}% second(s)\""
 },
 {
@@ -2941,7 +2931,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), INSERT VERSION (icon and infinite)",
+  "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), 2.7 (icon and infinite)",
   "description" : "Apply or remove potion effects to/from entities.",
   "examples" : "apply ambient swiftness 2 to the player\\nremove haste from the victim\\n\\non join:\\n    apply infinite potion of strength of tier {strength::%uuid of player%} to the player\\n    apply potion of strength of tier {strength::%uuid of player%} to the player for 999 days # Before 1.19.4\\n\\napply potion effects of player's tool to player\\napply haste potion of tier 3 without any particles to the player whilst hiding the potion icon # Hide potions"
 },
@@ -3037,14 +3027,20 @@ status of the sent resource pack request.",
   "id" : "EffShear",
   "name" : "Shear",
   "patterns" : [
-    "shear %<a href='./classes.html#livingentity'>living entities</a>%",
+    "[force] shear %<a href='./classes.html#livingentity'>living entities</a>%",
 "un[-]shear %<a href='./classes.html#livingentity'>living entities</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "Shears or 'un-shears' a sheep. Please note that no wool is dropped, this only sets the 'sheared' state of the sheep.",
-  "examples" : "on rightclick on a sheep holding a sword:\\n    shear the clicked sheep"
+  "since" : "2.0 (cows, sheep & snowmen), INSERT VERSION (all shearable entities)",
+  "description" : "Shears or un-shears a shearable entity with drops by shearing and a 'sheared' sound. Using with 'force' will force this effect despite the entity's 'shear state'.
+
+Please note that..:
+
+- If your server is not running with Paper 1.19.4 or higher, this effect will only change its 'shear state', and the 'force' effect is unavailable
+
+- Force-shearing or un-shearing on a sheared mushroom cow is not possible",
+  "examples" : "on rightclick on a sheep holding a sword:\\n    shear the clicked sheep\\n    chance of 10%\\n    force shear the clicked sheep"
 },
 {
   "id" : "EffShoot",
@@ -3091,8 +3087,8 @@ status of the sent resource pack request.",
   "id" : "EffStopSound",
   "name" : "Stop Sound",
   "patterns" : [
-    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
-"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
+    "stop (all sound[s]|sound[s] %<a href='./classes.html#string'>texts</a>%) [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(from playing to|for) %<a href='./classes.html#player'>players</a>%]",
+"stop playing sound[s] %<a href='./classes.html#string'>texts</a>% [(in [the]|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%]",
 
     "pattern_end"
   ],
@@ -3100,7 +3096,7 @@ status of the sent resource pack request.",
   "description" : "Stops specific or all sounds from playing to a group of players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Resource pack sounds are supported too. The sound category is 'master' by default. A sound can't be stopped from a different category. 
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sound for all players\\nstop sound in record category"
+  "examples" : "stop sound \"block.chest.open\" for the player\\nstop playing sounds \"ambient.underwater.loop\" and \"ambient.underwater.loop.additions\" to the player\\nstop all sounds for all players\\nstop sound in the record category"
 },
 {
   "id" : "EffSwingHand",
@@ -3147,8 +3143,8 @@ which may cause lag spikes or server crashes when using this effect to teleport 
   "id" : "EffSendTitle",
   "name" : "Title - Send",
   "patterns" : [
-    "send title %<a href='./classes.html#string'>text</a>% [with subtitle %<a href='./classes.html#string'>text</a>%] [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [(and|with) fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
-"send subtitle %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [(and|with) fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
+    "send title %<a href='./classes.html#string'>text</a>% [with subtitle %<a href='./classes.html#string'>text</a>%] [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [[and] [with] fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
+"send subtitle %<a href='./classes.html#string'>text</a>% [to %<a href='./classes.html#player'>players</a>%] [for %<a href='./classes.html#timespan'>time span</a>%] [with fade[(-| )]in %<a href='./classes.html#timespan'>time span</a>%] [[and] [with] fade[(-| )]out %<a href='./classes.html#timespan'>time span</a>%]",
 
     "pattern_end"
   ],
@@ -4067,7 +4063,7 @@ If you're spawning a display and want it to be empty on initialization, like not
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.7",
   "description" : "Called when a player drags an item in their cursor across the inventory.",
   "examples" : "on inventory drag:\\n    if player's current inventory is {_gui}:\\n        send \"You can't drag your items here!\" to player\\n        cancel event"
 },
@@ -4858,18 +4854,6 @@ If you're spawning a display and want it to be empty on initialization, like not
   "examples" : "on teleport:"
 },
 {
-  "id" : "test_case",
-  "name" : "On Test Case",
-  "patterns" : [
-    "[on] test %<a href='./classes.html#string'>text</a>% [when &lt;.+&gt;]",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "Contents represent one test case.",
-  "examples" : "Missing examples."
-},
-{
   "id" : "tool_change",
   "name" : "On Tool Change",
   "patterns" : [
@@ -5321,13 +5305,13 @@ Please note that specifying the argument type is only supported in script comman
   "id" : "ExprArmorSlot",
   "name" : "Armour Slot",
   "patterns" : [
-    "[the] (boot[s]|shoe[s]|leg[ging][s]|chestplate[s]|helm[et][s]) [(item|slot)] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (boot[s]|shoe[s]|leg[ging][s]|chestplate[s]|helm[et][s]) [(item|slot)]",
+    "[the] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]) of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s])",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "A part of a player's armour, i.e. the boots, leggings, chestplate or helmet.",
+  "since" : "1.0, INSERT VERSION (Armour)",
+  "description" : "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet.",
   "examples" : "set chestplate of the player to a diamond chestplate\\nhelmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
 },
 {
@@ -6300,7 +6284,7 @@ To change the number of levels removed, use the enchant event.",
   "description" : "The numerical value of an entity's particular attribute.
 Note that the movement speed attribute cannot be reliably used for players. For that purpose, use the speed expression instead.
 Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
-  "examples" : "on damage of player:\\n    send \"You are wounded!\"\\n    set victim's attack speed attribute to 2"
+  "examples" : "on damage of player:\\n    send \"You are wounded!\" to victim\\n    set victim's attack speed attribute to 2"
 },
 {
   "id" : "ExprFireTicks",
