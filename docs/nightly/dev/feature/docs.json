@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-9814e79",
+  "skriptVersion" : "2.8.0-dev-nightly-7152d75",
 
   "classes" : [
     {
@@ -4725,6 +4725,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0",
   "description" : "Called when a player starts or stops sprinting. Use <a href='conditions.html#CondIsSprinting'>is sprinting</a> to get whether the player was sprinting before the event was called.",
   "examples" : "on sprint toggle:\\n    player is not sprinting\\n    send \"Run!\""
+},
+{
+  "id" : "stonecutter_recipe_select",
+  "name" : "On Stonecutter Recipe Select",
+  "patterns" : [
+    "[on] stonecutting [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player selects a recipe in a stonecutter.",
+  "examples" : "on stonecutting stone slabs\\n    cancel the event\\n\\non stonecutting:\\n    broadcast \"%player% is using stonecutter to craft %event-item%!\""
 },
 {
   "id" : "swim_toggle",
