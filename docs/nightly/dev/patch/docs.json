@@ -1,12 +1,12 @@
 {
-  "skriptVersion" : "2.7.1-nightly-762100f",
+  "skriptVersion" : "2.7.1-nightly-8603b2b",
 
   "classes" : [
     {
   "id" : "attributetype",
   "name" : "Attribute Type",
   "patterns" : [
-    "generic attack speed, luck, max health, generic movement speed, flying speed, attack damage, horse jump strength, generic attack damage, generic luck, generic armor, generic flying speed, follow range, generic knockback resistance, movement speed, generic follow range, zombie spawn reinforcements, armor, generic attack knockback, attack speed, armor toughness, knockback resistance, generic max health, attack knockback, generic armor toughness",
+    "luck, generic movement speed, horse jump strength, generic luck, generic max absorption, follow range, movement speed, max absorption, generic follow range, zombie spawn reinforcements, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic flying speed, generic knockback resistance, armor, attack speed, armor toughness, generic max health",
 
     "pattern_end"
   ],
@@ -295,7 +295,7 @@
   "id" : "gamerule",
   "name" : "Gamerule",
   "patterns" : [
-    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
+    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
 
     "pattern_end"
   ],
