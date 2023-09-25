@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-231e1f2",
+  "skriptVersion" : "2.8.0-dev-nightly-6492dfa",
 
   "classes" : [
     {
@@ -3655,11 +3655,12 @@ Do note that other event values, such as 'player', won't work in this section.",
 "[on] silverfish exit",
 "[on] falling block fall[ing]",
 "[on] falling block land[ing]",
+"[on] (entity|%*-entitydatas%) chang(e|ing) block[s]",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i>, 2.5.2 (falling block)",
-  "description" : "Called when an enderman places or picks up a block, a sheep eats grass, a silverfish boops into/out of a block or a falling block lands and turns into a block respectively.",
+  "since" : "<i>unknown</i>, 2.5.2 (falling block), INSERT VERSION (any entity support)",
+  "description" : "Called when an enderman places or picks up a block, a sheep eats grass, a silverfish boops into/out of a block or a falling block lands and turns into a block respectively.\\nevent-block represents the old block and event-blockdata represents the new replacement that'll be applied to the block.",
   "examples" : "on sheep eat:\\n    kill event-entity\\n    broadcast \"A sheep stole some grass!\"\\n\\non falling block land:\\n    event-entity is a falling dirt\\n    cancel event"
 },
 {
@@ -5757,9 +5758,9 @@ You can use the specific type of the entity that's involved in the event, e.g. i
 
     "pattern_end"
   ],
-  "since" : "2.2-dev34",
+  "since" : "2.2-dev34, INSERT VERSION (chat format)",
   "description" : "Returns a chest inventory with the given amount of rows and the name. Use the <a href=effects.html#EffOpenInventory>open inventory</a> effect to open it.",
-  "examples" : "open chest inventory with 1 row named \"test\" to player\\nset {_inventory} to chest inventory with 1 row"
+  "examples" : "open chest inventory with 1 row named \"test\" to player\\n\\nset {_inventory} to a chest inventory with 1 row\\nset slot 4 of {_inventory} to a diamond named \"example\"\\nopen {_inventory} to player\\n\\nopen chest inventory named \"&lt;##00ff00&gt;hex coloured title!\" with 6 rows to player"
 },
 {
   "id" : "ExprCustomModelData",
