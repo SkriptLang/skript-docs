@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-7152d75",
+  "skriptVersion" : "2.8.0-dev-nightly-5941679",
 
   "classes" : [
     {
@@ -5795,9 +5795,11 @@ You can use the specific type of the entity that's involved in the event, e.g. i
 
     "pattern_end"
   ],
-  "since" : "1.3.5",
-  "description" : "How much damage is done in a damage event, possibly ignoring armour, criticals and/or enchantments. Can be changed (remember that in Skript '1' is one full heart, not half a heart).",
-  "examples" : "increase the damage by 2"
+  "since" : "1.3.5, INSERT VERSION (item damage event)",
+  "description" : "How much damage is done in a entity/vehicle/item damage events.
+For entity damage events, possibly ignoring armour, criticals and/or enchantments (remember that in Skript '1' is one full heart, not half a heart).
+For items, it's the amount of durability damage the item will be taking.",
+  "examples" : "on item damage:\\n    event-item is any tool\\n    clear damage # unbreakable tools as the damage will be 0\\non damage:\\n    increase the damage by 2"
 },
 {
   "id" : "ExprDamageCause",
