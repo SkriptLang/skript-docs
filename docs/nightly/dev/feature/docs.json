@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-5941679",
+  "skriptVersion" : "2.8.0-dev-nightly-040cb85",
 
   "classes" : [
     {
@@ -1126,8 +1126,8 @@ Note: This is the only element where not all patterns are shown. It has actually
   "id" : "CondPermission",
   "name" : "Has Permission",
   "patterns" : [
-    "%<a href='./classes.html#commandsender'>players/console</a>% (has|have) [the] permission[s] %<a href='./classes.html#string'>texts</a>%",
-"%<a href='./classes.html#commandsender'>players/console</a>% (doesn't|does not|do not|don't) have [the] permission[s] %<a href='./classes.html#string'>texts</a>%",
+    "%<a href='./classes.html#commandsender'>command senders</a>% (has|have) [the] permission[s] %<a href='./classes.html#string'>texts</a>%",
+"%<a href='./classes.html#commandsender'>command senders</a>% (doesn't|does not|do not|don't) have [the] permission[s] %<a href='./classes.html#string'>texts</a>%",
 
     "pattern_end"
   ],
@@ -2243,9 +2243,9 @@ You can add a tool, which will spawn items based on how that tool would break th
   "id" : "EffCommand",
   "name" : "Command",
   "patterns" : [
-    "[execute] [the] [bungee[cord]] command %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>players/console</a>%]",
-"[execute] [the] %<a href='./classes.html#commandsender'>players/console</a>% [bungee[cord]] command %<a href='./classes.html#string'>texts</a>%",
-"(let|make) %<a href='./classes.html#commandsender'>players/console</a>% execute [[the] [bungee[cord]] command] %<a href='./classes.html#string'>texts</a>%",
+    "[execute] [the] [bungee[cord]] command %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>command senders</a>%]",
+"[execute] [the] %<a href='./classes.html#commandsender'>command senders</a>% [bungee[cord]] command %<a href='./classes.html#string'>texts</a>%",
+"(let|make) %<a href='./classes.html#commandsender'>command senders</a>% execute [[the] [bungee[cord]] command] %<a href='./classes.html#string'>texts</a>%",
 
     "pattern_end"
   ],
@@ -2718,7 +2718,7 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "id" : "EffMessage",
   "name" : "Message",
   "patterns" : [
-    "(message|send [message[s]]) %<a href='./classes.html#object'>objects</a>% [to %<a href='./classes.html#commandsender'>players/console</a>%] [from %<a href='./classes.html#player'>player</a>%]",
+    "(message|send [message[s]]) %<a href='./classes.html#object'>objects</a>% [to %<a href='./classes.html#commandsender'>command senders</a>%] [from %<a href='./classes.html#player'>player</a>%]",
 
     "pattern_end"
   ],
