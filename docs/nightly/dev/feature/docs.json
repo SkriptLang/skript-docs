@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-040cb85",
+  "skriptVersion" : "2.8.0-dev-nightly-fd23bc0",
 
   "classes" : [
     {
@@ -5758,7 +5758,7 @@ You can use the specific type of the entity that's involved in the event, e.g. i
     "pattern_end"
   ],
   "since" : "2.2-dev17",
-  "description" : "The item which the player has on their cursor. This slot is always empty if player has no inventories open.",
+  "description" : "The item which the player has on their inventory cursor. This slot is always empty if player has no inventory open.",
   "examples" : "cursor slot of player is dirt\\nset cursor slot of player to 64 diamonds"
 },
 {
