@@ -1,17 +1,17 @@
 {
-  "skriptVersion" : "2.7.1-nightly-e4f3745",
+  "skriptVersion" : "2.7.1-nightly-a98247d",
 
   "classes" : [
     {
   "id" : "attributetype",
   "name" : "Attribute Type",
   "patterns" : [
-    "generic attack speed, luck, max health, generic movement speed, flying speed, attack damage, horse jump strength, generic attack damage, generic luck, generic armor, generic flying speed, follow range, generic knockback resistance, movement speed, generic follow range, zombie spawn reinforcements, armor, generic attack knockback, attack speed, armor toughness, knockback resistance, generic max health, attack knockback, generic armor toughness",
+    "luck, generic movement speed, horse jump strength, generic luck, generic max absorption, follow range, movement speed, max absorption, generic follow range, zombie spawn reinforcements, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic flying speed, generic knockback resistance, armor, attack speed, armor toughness, generic max health",
 
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.gamepedia.com/Attribute#Attributes'>attribute types</a> for more info.",
+  "description" : "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.",
   "examples" : "Missing examples."
 },
 {
@@ -295,7 +295,7 @@
   "id" : "gamerule",
   "name" : "Gamerule",
   "patterns" : [
-    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
+    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
 
     "pattern_end"
   ],
@@ -324,7 +324,7 @@
     "pattern_end"
   ],
   "since" : "2.4",
-  "description" : "Represents a Panda's main or hidden gene. See <a href='https://minecraft.gamepedia.com/Panda#Genetics'>genetics</a> for more info.",
+  "description" : "Represents a Panda's main or hidden gene. See <a href='https://minecraft.wiki/w/Panda#Genetics'>genetics</a> for more info.",
   "examples" : "Missing examples."
 },
 {
@@ -1648,7 +1648,7 @@ When checking if a plugin is disabled, this will return true if the plugin is on
   "since" : "2.3",
   "description" : "Tests whether a chunk is a so-called slime chunk.
 Slimes can generally spawn in the swamp biome and in slime chunks.
-For more info, see <a href='https://minecraft.gamepedia.com/Slime#.22Slime_chunks.22'>the Minecraft wiki</a>.",
+For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>the Minecraft wiki</a>.",
   "examples" : "command /slimey:\\n    trigger:\\n        if chunk at player is a slime chunk:\\n            send \"Yeah, it is!\"\\n        else:\\n            send \"Nope, it isn't\""
 },
 {
@@ -2304,7 +2304,7 @@ You can add a tool, which will spawn items based on how that tool would break th
     "pattern_end"
   ],
   "since" : "1.0",
-  "description" : "Creates an explosion of a given force. The Minecraft Wiki has an <a href='https://www.minecraftwiki.net/wiki/Explosion'>article on explosions</a> which lists the explosion forces of TNT, creepers, etc.
+  "description" : "Creates an explosion of a given force. The Minecraft Wiki has an <a href='https://www.minecraft.wiki/w/Explosion'>article on explosions</a> which lists the explosion forces of TNT, creepers, etc.
 Hint: use a force of 0 to create a fake explosion that does no damage whatsoever, or use the explosion effect introduced in Skript 2.0.
 Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will damage entities but won't destroy any blocks.",
   "examples" : "create an explosion of force 10 at the player\\ncreate an explosion of force 0 at the victim"
@@ -3004,7 +3004,7 @@ This may require that there is enough space above the given location and that th
     "pattern_end"
   ],
   "since" : "2.2-dev28",
-  "description" : "Rotates a vector around another vector",
+  "description" : "Rotates one or more vectors around another vector",
   "examples" : "rotate {_v} around vector 1, 0, 0 by 90"
 },
 {
@@ -3016,7 +3016,7 @@ This may require that there is enough space above the given location and that th
     "pattern_end"
   ],
   "since" : "2.2-dev28",
-  "description" : "Rotates a vector around x, y, or z axis by some degrees",
+  "description" : "Rotates one or more vectors around the x, y, or z axis by some amount of degrees",
   "examples" : "rotate {_v} around x-axis by 90\\nrotate {_v} around y-axis by 90\\nrotate {_v} around z-axis by 90 degrees"
 },
 {
@@ -5989,7 +5989,7 @@ Attempting to change the yield to a value less than 0 will have no effect.",
   "since" : "2.5",
   "description" : "The yield of the explosion in an explosion prime event. This is how big the explosion is.
  When changing the yield, values less than 0 will be ignored.
- Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for more information",
+ Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information",
   "examples" : "on explosion prime:\\n    set the yield of the explosion to 10"
 },
 {
@@ -6003,7 +6003,7 @@ Attempting to change the yield to a value less than 0 will have no effect.",
   ],
   "since" : "2.5",
   "description" : "The yield of an explosive (creeper, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.
-Read <a href='https://minecraft.gamepedia.com/Explosion'>this wiki page</a> for more information",
+Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information",
   "examples" : "on spawn of a creeper:\\n    set the explosive yield of the event-entity to 10"
 },
 {
@@ -6213,7 +6213,7 @@ Remember to use '<a href='#ExprBlock'>block</a>' and not 'furnace', as 'furnace'
     "pattern_end"
   ],
   "since" : "2.2-dev21",
-  "description" : "Sets of gets gliding state of player. It allows you to set gliding state of entity even if they do not have an <a href=\"https://minecraft.gamepedia.com/Elytra\">Elytra</a> equipped.",
+  "description" : "Sets of gets gliding state of player. It allows you to set gliding state of entity even if they do not have an <a href=\"https://minecraft.wiki/w/Elytra\">Elytra</a> equipped.",
   "examples" : "set gliding of player to off"
 },
 {
@@ -7374,12 +7374,9 @@ You may want to use the 'times' expression instead, for instance 'loop 5 times:'
     "pattern_end"
   ],
   "since" : "2.3",
-  "description" : "The amount of online players. This can be changed in a
-<a href='events.html#server_list_ping'>server list ping</a> event only to show fake online player amount.
-'real online player count' always returns the real count of online players and can't be changed.
-
-Fake online player count requires PaperSpigot 1.12.2+.",
-  "examples" : "on server list ping:\\n    # This will make the max players count 5 if there are 4 players online.\\n    set the fake max players count to (online players count + 1)"
+  "description" : "The amount of online players. This can be changed in a <a href='events.html#server_list_ping'>server list ping</a> event only to show fake online player amount.
+<code>real online player count</code> always return the real count of online players and can't be changed.",
+  "examples" : "on server list ping:\\n    # This will make the max players count 5 if there are 4 players online.\\n    set the fake max players count to (online player count + 1)"
 },
 {
   "id" : "ExprOpenedInventory",
@@ -7859,7 +7856,7 @@ This expression requires a supported regions plugin to be installed.",
   ],
   "since" : "2.3",
   "description" : "Scoreboard tags are simple list of texts stored directly in the data of an <a href='classes.html#entity'>entity</a>.
-So this is a Minecraft related thing, not Bukkit, so the tags will not get removed when the server stops. You can visit <a href='https://minecraft.gamepedia.com/Scoreboard#Tags'>visit Minecraft Wiki</a> for more info.
+So this is a Minecraft related thing, not Bukkit, so the tags will not get removed when the server stops. You can visit <a href='https://minecraft.wiki/w/Scoreboard#Tags'>visit Minecraft Wiki</a> for more info.
 This is changeable and valid for any type of entity. Also you can use use the <a href='conditions.html#CondHasScoreboardTag'>Has Scoreboard Tag</a> condition to check whether an entity has the given tags.
 
 Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 to Spigot).",
@@ -8375,9 +8372,9 @@ In the future there will be an option to use a player's UUID instead of the name
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28",
+  "since" : "2.2-desecond8",
   "description" : "Arithmetic expressions for vectors.",
-  "examples" : "set {_v} to vector 1, 2, 3 // 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} ++ 5\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} -- 5\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} ** 5\\nset {_v} to {_v} // {_v}\\nset {_v} to {_v} // 5"
+  "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
 },
 {
   "id" : "ExprVectorFromXYZ",
@@ -8425,7 +8422,7 @@ In the future there will be an option to use a player's UUID instead of the name
   ],
   "since" : "2.2-dev28",
   "description" : "Gets the dot product between two vectors.",
-  "examples" : "set {_v} to {_v2} dot {_v3}"
+  "examples" : "set {_dot} to {_v1} dot {_v2}"
 },
 {
   "id" : "ExprVectorLength",
@@ -8564,7 +8561,7 @@ In the future there will be an option to use a player's UUID instead of the name
   ],
   "since" : "2.2-dev28",
   "description" : "Gets or changes the x, y or z component of a vector.",
-  "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v} to 1\\nset y component of {_v} to 2\\nset z component of {_v} to 3\\nsend \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
+  "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v::*} to 1\\nset y component of {_v::*} to 2\\nset z component of {_v::*} to 3\\nsend \"%x component of {_v::*}%, %y component of {_v::*}%, %z component of {_v::*}%\""
 },
 {
   "id" : "ExprVehicle",
