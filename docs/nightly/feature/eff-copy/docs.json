@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-ea5fc23",
+  "skriptVersion" : "2.8.0-dev-nightly-a7cbe77",
 
   "classes" : [
     {
@@ -2290,7 +2290,7 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   ],
   "since" : "INSERT VERSION",
   "description" : "Copies objects into a variable. When copying a list over to another list, the source list and its sublists are also copied over.",
-  "examples" : "Missing examples."
+  "examples" : "set {_foo::bar} to 1\\nset {_foo::sublist::foobar} to \"hey\"\\ncopy {_foo::*} to {_copy::*}\\nbroadcast indices of {_copy::*} # bar, sublist\\nbroadcast {_copy::bar} # 1\\nbroadcast {_copy::sublist::foobar} # \"hey!\""
 },
 {
   "id" : "EffHealth",
