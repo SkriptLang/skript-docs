@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-47b0469",
+  "skriptVersion" : "2.8.0-dev-nightly-c3419de",
 
   "classes" : [
     {
@@ -5644,28 +5644,28 @@ the <a href=effects.html#EffSend>send effect</a>.",
   "id" : "ExprCommandInfo",
   "name" : "Command Info",
   "patterns" : [
-    "[the] main command [label] of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] main command [name]",
-"[the] description of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] description",
-"[the] label of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] label",
-"[the] usage of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] usage",
-"[(all|the|all [of] the)] aliases of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] aliases",
-"[the] permission of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] permission",
-"[the] permission message of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] permission message",
-"[the] plugin [owner] of command %<a href='./classes.html#string'>texts</a>%",
-"command %<a href='./classes.html#string'>texts</a>%'[s] plugin [owner]",
+    "[the] main command [label|name] [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] main command [label|name]",
+"[the] description [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] description",
+"[the] label [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] label",
+"[the] usage [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] usage",
+"[(all|the|all [of] the)] aliases [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] aliases",
+"[the] permission [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] permission",
+"[the] permission message [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] permission message",
+"[the] plugin [owner] [of [[the] command[s] %<a href='./classes.html#string'>texts</a>%]]",
+"command[s] %<a href='./classes.html#string'>texts</a>%'[s] plugin [owner]",
 
     "pattern_end"
   ],
   "since" : "2.6",
   "description" : "Get information about a command.",
-  "examples" : "main name of command \"skript\"\\ndescription of command \"help\"\\nlabel of command \"pl\"\\nusage of command \"help\"\\naliases of command \"bukkit:help\"\\npermission of command \"/op\"\\ncommand \"op\"'s permission message\\ncommand \"sk\"'s plugin owner"
+  "examples" : "main command label of command \"skript\"\\ndescription of command \"help\"\\nlabel of command \"pl\"\\nusage of command \"help\"\\naliases of command \"bukkit:help\"\\npermission of command \"/op\"\\ncommand \"op\"'s permission message\\ncommand \"sk\"'s plugin owner\\n\\ncommand /greet &lt;player&gt;:\\n    usage: /greet &lt;target&gt;\\n    trigger:\\n        if arg-1 is sender:\\n            send \"&amp;cYou can't greet yourself! Usage: %the usage%\"\\n            stop\\n        send \"%sender% greets you!\" to arg-1\\n        send \"You greeted %arg-1%!\""
 },
 {
   "id" : "ExprCommandSender",
