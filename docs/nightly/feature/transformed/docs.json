@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-fe99fc4",
+  "skriptVersion" : "2.8.0-dev-nightly-4950fcc",
 
   "classes" : [
     {
@@ -3733,7 +3733,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "INSERT VERSION",
   "description" : "Called when an entity is about to be replaced by another entity.\\nExamples when it's called include; when a zombie gets cured and a villager spawns, an entity drowns in water like a zombie that turns to a drown, an entity that gets frozen in powder snow, a mooshrom cow that when sheared, spawns a new cow.",
-  "examples" : "on a zombie transforming due to curing:\\non mooshroom transforming:\\non zombie, skeleton or slime transform:"
+  "examples" : "on a zombie transforming due to curing:\\non mooshroom cow transforming:\\non zombie, skeleton or slime transform:"
 },
 {
   "id" : "experience_change",
