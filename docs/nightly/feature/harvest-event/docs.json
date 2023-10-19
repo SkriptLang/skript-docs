@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-7def697",
+  "skriptVersion" : "2.8.0-dev-nightly-4b480bd",
 
   "classes" : [
     {
@@ -3915,7 +3915,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "This event is called whenever a player harvests a block.\\nA 'harvest' is when a block drops an item (usually some sort of crop) and changes state, but is not broken in order to drop the item.",
+  "description" : "This event is called whenever a player harvests a block.\\nA 'harvest' is when a block drops an item (usually some sort of crop) and changes state, but is not broken in order to drop the item. You cannot modify the event-block unless cancelled, as it's not going to be present as it's being harvested.",
   "examples" : "on player harvesting:\\n    message \"You harvested %block% which drops %event-items%, using your %event-slot%!\""
 },
 {
