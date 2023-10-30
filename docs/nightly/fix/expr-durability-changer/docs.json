@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.1-nightly-3993358",
+  "skriptVersion" : "2.7.1-nightly-97c3bac",
 
   "classes" : [
     {
@@ -7987,8 +7987,7 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
     "pattern_end"
   ],
   "since" : "2.2-dev19",
-  "description" : "Sorts given list in natural order. All objects in list must be comparable;
-if they're not, this expression will return nothing.",
+  "description" : "Sorts given list in natural order. All objects in list must be comparable; if they're not, this expression will return nothing.",
   "examples" : "set {_sorted::*} to sorted {_players::*}"
 },
 {
