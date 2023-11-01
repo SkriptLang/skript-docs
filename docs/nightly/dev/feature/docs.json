@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-d1fd453",
+  "skriptVersion" : "2.8.0-dev-nightly-8efc550",
 
   "classes" : [
     {
@@ -3886,13 +3886,16 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "grow",
   "name" : "On Grow",
   "patterns" : [
-    "[on] grow [of (%<a href='./classes.html#structuretype'>tree type</a>%|%<a href='./classes.html#itemtype'>item type</a>%)]",
+    "[on] grow[th] [of (%<a href='./classes.html#structuretype'>tree types</a>%|%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%)]",
+"[on] grow[th] from %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%",
+"[on] grow[th] [in]to (%<a href='./classes.html#structuretype'>tree types</a>%|%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%)",
+"[on] grow[th] from %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>% [in]to (%<a href='./classes.html#structuretype'>tree types</a>%|%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%)",
 
     "pattern_end"
   ],
-  "since" : "1.0 (2.2-dev20 for plants)",
-  "description" : "Called when a tree, giant mushroom or plant grows to next stage.",
-  "examples" : "on grow:\\non grow of a tree:\\non grow of a huge jungle tree:"
+  "since" : "1.0, 2.2-dev20 (plants), INSERT VERSION (from, into, blockdata)",
+  "description" : "Called when a tree, giant mushroom or plant grows to next stage.\\n\"of\" matches any grow event, \"from\" matches only the old state, \"into\" matches only the new state,and \"from into\" requires matching both the old and new states.\\nUsing \"and\" lists in this event is equivalent to using \"or\" lists. The event will trigger if any one of the elements is what grew.",
+  "examples" : "on grow:\\non grow of tree:\\non grow of wheat[age=7]:\\non grow from a sapling:\\non grow into tree:\\non grow from a sapling into tree:\\non grow of wheat, carrots, or potatoes:\\non grow into tree, giant mushroom, cactus:\\non grow from wheat[age=0] to wheat[age=1] or wheat[age=2]:"
 },
 {
   "id" : "hand_item_swap",
