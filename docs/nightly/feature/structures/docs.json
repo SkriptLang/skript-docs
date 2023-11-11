@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-cbb8445",
+  "skriptVersion" : "2.8.0-dev-nightly-4b5a234",
 
   "classes" : [
     {
@@ -8467,8 +8467,8 @@ Please note that changing a player's speed will change their FOV just like potio
   "id" : "ExprStructureInfo",
   "name" : "Structure Info",
   "patterns" : [
-    "[the] (blocks|entities|(size|[lowest] [block] vector)) of %<a href='./classes.html#structure'>structures</a>%",
-"%<a href='./classes.html#structure'>structures</a>%'[s] (blocks|entities|(size|[lowest] [block] vector))",
+    "[the] [structure] (blocks|entities|(size|[lowest] [block] vector)) of %<a href='./classes.html#structure'>structures</a>%",
+"%<a href='./classes.html#structure'>structures</a>%'[s] [structure] (blocks|entities|(size|[lowest] [block] vector))",
 
     "pattern_end"
   ],
