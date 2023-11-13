@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-76b6396",
+  "skriptVersion" : "2.8.0-dev-nightly-f06b07c",
 
   "classes" : [
     {
@@ -8441,7 +8441,7 @@ Please note that changing a player's speed will change their FOV just like potio
   "since" : "1.4.2, 2.7 (Reset), INSERT VERSION (ignore blocks)",
   "description" : "For players this is the entity at the crosshair.
 For mobs and experience orbs this is the entity they are attacking/following (if any).
-If using PaperSpigot, you'll have a more accurate ray trace to the target entity.
+Display entities have a hit box of 0, so you should use 'target display' to collect Display entities
 May grab entities in unloaded chunks.",
   "examples" : "on entity target:\\n    if entity's target is a player:\\n        send \"You're being followed by an %entity%!\" to target of entity\\n\\nreset target of entity # Makes the entity target-less\\ndelete targeted entity of player # for players it will delete the target\\ndelete target of last spawned zombie # for entities it will make them target-less"
 },
