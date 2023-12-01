@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.7.2-nightly-f30f023",
+  "skriptVersion" : "2.7.2-nightly-e5c4d4a",
 
   "classes" : [
     {
@@ -7924,8 +7924,8 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 1.4.2), 2.7 (colors)",
-  "description" : "Returns a list of all the values of a type; useful for looping.",
+  "since" : "1.0 pre-5, 2.7 (classinfo)",
+  "description" : "Returns a list of all the values of a type. Useful for looping.",
   "examples" : "loop all attribute types:\\n    set loop-value attribute of player to 10\\n    message \"Set attribute %loop-value% to 10!\""
 },
 {
