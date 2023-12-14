@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-71e4e5f",
+  "skriptVersion" : "2.8.0-dev-nightly-2d3f249",
 
   "classes" : [
     {
@@ -3077,7 +3077,7 @@ Please note that sound names can get changed in any Minecraft or Spigot version,
   "name" : "Structure Save/Unregister",
   "patterns" : [
     "(unregister|delete) structure[s] [with name|named] %<a href='./classes.html#string'>texts</a>%",
-"save structure %<a href='./classes.html#structure'>structure</a>% [with name|named] %<a href='./classes.html#string'>text</a>%",
+"save [structure] %<a href='./classes.html#structure'>structure</a>% [with name|named] %<a href='./classes.html#string'>text</a>%",
 
     "pattern_end"
   ],
