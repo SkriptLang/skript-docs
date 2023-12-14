@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-1ecec64",
+  "skriptVersion" : "2.8.0-dev-nightly-ae6947a",
 
   "classes" : [
     {
@@ -8466,7 +8466,7 @@ Please note that changing a player's speed will change their FOV just like potio
 },
 {
   "id" : "ExprStructure",
-  "name" : "Structure Between/Named",
+  "name" : "Structure Between/Name",
   "patterns" : [
     "structure[s] [named] %<a href='./classes.html#string'>texts</a>% [and register]",
 "[a] [new] structure between %<a href='./classes.html#location'>location</a>% (and|to) %<a href='./classes.html#location'>location</a>% [(including|with) entities]",
