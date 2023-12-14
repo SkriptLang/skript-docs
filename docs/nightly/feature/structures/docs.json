@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-7c1dd93",
+  "skriptVersion" : "2.8.0-dev-nightly-71e4e5f",
 
   "classes" : [
     {
@@ -8478,6 +8478,21 @@ Please note that changing a player's speed will change their FOV just like potio
   "examples" : "loop all entities of structure {_structure}:\\n    if loop-entity is a diamond:\\n        message \"Race to the diamond at %loop-entity's location%\" to {_players::*}\\n        stop\\nif the length of {_structure}'s vector is greater than 100:\\n    message \"&amp;a+50 coins will be granted for winning on this larger map!\""
 },
 {
+  "id" : "ExprStructure",
+  "name" : "Structure Named",
+  "patterns" : [
+    "structure[s] [named] %<a href='./classes.html#string'>texts</a>%",
+"[a] [new] structure between %<a href='./classes.html#location'>location</a>% (and|to) %<a href='./classes.html#location'>location</a>% [(including|with) entities] named %<a href='./classes.html#string'>text</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "A structure is a utility that allows you to save a cuboid of blocks and entities.
+This syntax will return an existing structure from memory/datapacks or you can also create a structure between two locations.
+If the name contains a collon, it'll grab from the Minecraft structure space (Data packs included for namespaces).",
+  "examples" : "set {_structure} to a new structure between {location1} and {location2} named \"Example\"\\nset {_structure} to structure \"Example\"\\nset {_structure} to structure \"minecraft:end_city\""
+},
+{
   "id" : "ExprStructureSectionInfo",
   "name" : "Structure Place Settings",
   "patterns" : [
@@ -8501,19 +8516,16 @@ Note that some Minecraft structures have conditions that Mojang has defined, suc
   "examples" : "place structure \"Example\" at {_location}\\nplace structure \"minecraft:ancient_city\" at {_location} without entities # Places near bedrock level\\nplace structure \"minecraft:end_city\" at player's location:\\n    set pallet to -1 # Will pick a random variation\\nplace structure \"minecraft:end_city\" at player's location:\\n    set includes entities to false\\n    set integrity to 0.9\\n    set pallet to 2\\n    set rotation to clockwise 90\\n    set mirror to left to right"
 },
 {
-  "id" : "ExprStructure",
+  "id" : "ExprStructures",
   "name" : "Structures",
   "patterns" : [
-    "structure[s] [named] %<a href='./classes.html#string'>texts</a>%",
-"[a] [new] structure between %<a href='./classes.html#location'>location</a>% (and|to) %<a href='./classes.html#location'>location</a>% [(including|with) entities] named %<a href='./classes.html#string'>text</a>%",
+    "[(all [[of] the]|the)] [registered] structures",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "A structure is a utility that allows you to save a cuboid of blocks and entities.
-This syntax will return an existing structure from memory/datapacks or you can also create a structure between two locations.
-If the name contains a collon, it'll grab from the Minecraft structure space (Data packs included for namespaces).",
-  "examples" : "set {_structure} to a new structure between {location1} and {location2} named \"Example\"\\nset {_structure} to structure \"Example\"\\nset {_structure} to structure \"minecraft:end_city\""
+  "description" : "Returns all of the structures registered.",
+  "examples" : "set {_structures::*} to all of the structures"
 },
 {
   "id" : "ExprSubstring",
