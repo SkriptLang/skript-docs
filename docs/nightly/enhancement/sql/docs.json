@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-8f60b01",
+  "skriptVersion" : "2.8.0-dev-nightly-18670ac",
 
   "classes" : [
     {
@@ -2858,7 +2858,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   ],
   "since" : "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), 2.7 (icon and infinite)",
   "description" : "Apply or remove potion effects to/from entities.",
-  "examples" : "apply ambient swiftness 2 to the player\\nremove haste from the victim\\n\\non join:\\n    apply infinite potion of strength of tier {strength::%uuid of player%} to the player\\n    apply potion of strength of tier {strength::%uuid of player%} to the player for 999 days # Before 1.19.4\\n\\napply potion effects of player's tool to player\\napply haste potion of tier 3 without any particles to the player whilst hiding the potion icon # Hide potions"
+  "examples" : "apply ambient swiftness 2 to the player\\nremove haste from the victim\\n\\non join:\\n    apply infinite potion of strength of tier {strength::%uuid of player%} to the player\\n    apply potion of strength of tier {strength::%uuid of player%} to the player for 999 days # Before 1.19.4\\n\\napply potion effects of player's tool to player\\napply haste potion of tier 3 without any particles whilst hiding the potion icon to the player # Hide potions"
 },
 {
   "id" : "EffPush",
@@ -4214,16 +4214,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on loot generate:\\n    chance of 10%\\n    add 64 diamonds to the loot\\n    send \"You hit the jackpot at %event-location%!\""
 },
 {
-  "id" : "move",
-  "name" : "On Move",
+  "id" : "move_rotate",
+  "name" : "On Move / Rotate",
   "patterns" : [
-    "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step)",
+    "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step|(turn[ing] around|rotate))",
+"[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step) or (turn[ing] around|rotate)",
+"[on] %<a href='./classes.html#entitydata'>entity type</a>% (turn[ing] around|rotate) or (move|walk|step)",
 
     "pattern_end"
   ],
-  "since" : "2.6",
-  "description" : "Called when a player or entity moves.\\nNOTE: Move event will only be called when the entity/player moves position, not orientation (ie: looking around).\\nNOTE: These events can be performance heavy as they are called quite often.\\nIf you use these events, and later remove them, a server restart is recommended to clear registered events from Skript.",
-  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity"
+  "since" : "2.6, INSERT VERSION (turn around)",
+  "description" : "Called when a player or entity moves or rotates their head.\\nNOTE: Move event will only be called when the entity/player moves position, keyword 'turn around' is for orientation (ie: looking around), and the combined syntax listens for both.\\nNOTE: These events can be performance heavy as they are called quite often.",
+  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity\\non player turning around:\\nsend action bar \"You are currently turning your head around!\" to player"
 },
 {
   "id" : "move_on",
@@ -8358,7 +8360,7 @@ if they're not, this expression will return nothing.",
   ],
   "since" : "2.2-dev32d",
   "description" : "Special number values, namely NaN, Infinity and -Infinity",
-  "examples" : "if {_number} is NaN value:"
+  "examples" : "if {_number} is infinity value:"
 },
 {
   "id" : "ExprSpectatorTarget",
@@ -9263,6 +9265,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.2",
   "description" : "Rounds a number down, i.e. returns the closest integer smaller than or equal to the argument.",
   "examples" : "floor(2.34) = 2\\nfloor(2) = 2\\nfloor(2.99) = 2"
+},
+{
+  "id" : "isNaN",
+  "name" : "isNaN",
+  "patterns" : [
+    "isNaN(n: number)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns true if the input is NaN (not a number).",
+  "examples" : "isNaN(0) # false\\nisNaN(0/0) # true\\nisNaN(sqrt(-1)) # true"
 },
 {
   "id" : "ln",
