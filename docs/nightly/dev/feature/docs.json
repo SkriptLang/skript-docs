@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-09e8527",
+  "skriptVersion" : "2.8.0-dev-nightly-23a58f3",
 
   "classes" : [
     {
@@ -5565,6 +5565,20 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "examples" : "\"Oops!\" in lowercase # oops!\\n\"oops!\" in uppercase # OOPS!\\n\"hellO i'm steve!\" in proper case # HellO I'm Steve!\\n\"hellO i'm steve!\" in strict proper case # Hello I'm Steve!\\n\"spAwn neW boSs ()\" in camel case # spAwnNeWBoSs()\\n\"spAwn neW boSs ()\" in strict camel case # spawnNewBoss()\\n\"geneRate ranDom numBer ()\" in pascal case # GeneRateRanDomNumBer()\\n\"geneRate ranDom numBer ()\" in strict pascal case # GenerateRandomNumber()\\n\"Hello Player!\" in snake case # Hello_Player!\\n\"Hello Player!\" in lower snake case # hello_player!\\n\"Hello Player!\" in upper snake case # HELLO_PLAYER!\\n\"What is your name?\" in kebab case # What-is-your-name?\\n\"What is your name?\" in lower kebab case # what-is-your-name?\\n\"What is your name?\" in upper kebab case # WHAT-IS-YOUR-NAME?"
 },
 {
+  "id" : "ExprCharacters",
+  "name" : "Characters Between",
+  "patterns" : [
+    "[(all [[of] the]|the)] [alphanumeric] characters (between|from) %<a href='./classes.html#string'>text</a>% (and|to) %<a href='./classes.html#string'>text</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "All characters between two given characters, useful for generating random strings. This expression uses the Unicode numerical code of a character to determine which characters are between the two given characters. The <a href=\"https://www.asciitable.com/\">ASCII table linked here</a> shows this ordering for the first 256 characters.
+If you would like only alphanumeric characters you can use the 'alphanumeric' option in the expression.
+If strings of more than one character are given, only the first character of each is used.",
+  "examples" : "loop characters from \"a\" to \"f\":\\n    broadcast \"%loop-value%\"\\n\\n# 0123456789:;&lt;=&gt;?@ABC... ...uvwxyz\\nsend characters between \"0\" and \"z\"\\n\\n# 0123456789ABC... ...uvwxyz\\nsend alphanumeric characters between \"0\" and \"z\""
+},
+{
   "id" : "ExprChatFormat",
   "name" : "Chat Format",
   "patterns" : [
@@ -7980,6 +7994,20 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "since" : "1.4.9",
   "description" : "Gets a random item out of a set, e.g. a random player out of all players online.",
   "examples" : "give a diamond to a random player out of all players\\ngive a random item out of all items to the player"
+},
+{
+  "id" : "ExprRandomCharacter",
+  "name" : "Random Character",
+  "patterns" : [
+    "[a|%<a href='./classes.html#number'>number</a>%] random [alphanumeric] character[s] (from|between) %<a href='./classes.html#string'>text</a>% (to|and) %<a href='./classes.html#string'>text</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "One or more random characters between two given characters. Use 'alphanumeric' if you want only alphanumeric characters.
+This expression uses the Unicode numerical code of a character to determine which characters are between the two given characters.
+If strings of more than one character are given, only the first character of each is used.",
+  "examples" : "set {_captcha} to join (5 random characters between \"a\" and \"z\") with \"\"\\nsend 3 random alphanumeric characters between \"0\" and \"z\""
 },
 {
   "id" : "ExprRandomNumber",
