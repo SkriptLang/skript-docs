@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-23a58f3",
+  "skriptVersion" : "2.8.0-dev-nightly-4a3290f",
 
   "classes" : [
     {
@@ -1993,19 +1993,6 @@ Paper 1.17.1+ is required for non-player entities.",
   "since" : "2.5.2",
   "description" : "Checks whether the defined strings match the input regexes (Regular expressions).",
   "examples" : "on chat:\\n    if message partially matches \"\\d\":\\n        send \"Message contains a digit!\"\\n    if message doesn't match \"[A-Za-z]+\":\\n        send \"Message doesn't only contain letters!\""
-},
-{
-  "id" : "CondProjectileCanBounce",
-  "name" : "Projectile Can Bounce",
-  "patterns" : [
-    "%<a href='./classes.html#projectile'>projectiles</a>% can bounce",
-"%<a href='./classes.html#projectile'>projectiles</a>% (can't|cannot|can not) bounce",
-
-    "pattern_end"
-  ],
-  "since" : "2.5.1",
-  "description" : "Whether or not a projectile can bounce.",
-  "examples" : "on shoot:\\n    send \"Boing!\" to all players if projectile can bounce"
 },
 {
   "id" : "CondPvP",
@@ -7923,19 +7910,6 @@ When adding a potion effect type (rather than a potion effect), it will default 
   "since" : "2.0",
   "description" : "The prefix or suffix as defined in the server's chat plugin.",
   "examples" : "on chat:\\n    cancel event\\n    broadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world\\n\\nset the player's prefix to \"[&amp;lt;red&amp;gt;Admin&lt;reset&gt;] \""
-},
-{
-  "id" : "ExprProjectileBounceState",
-  "name" : "Projectile Bounce State",
-  "patterns" : [
-    "[the] projectile bounce (state|ability|mode) of %<a href='./classes.html#projectile'>projectiles</a>%",
-"%<a href='./classes.html#projectile'>projectiles</a>%'[s] projectile bounce (state|ability|mode)",
-
-    "pattern_end"
-  ],
-  "since" : "2.5.1",
-  "description" : "A projectile's bounce state.",
-  "examples" : "on projectile hit:\\n    set projectile bounce mode of event-projectile to true"
 },
 {
   "id" : "ExprProjectileCriticalState",
