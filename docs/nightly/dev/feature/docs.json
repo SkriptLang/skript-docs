@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-e1216bf",
+  "skriptVersion" : "2.8.0-dev-nightly-cc19ac0",
 
   "classes" : [
     {
@@ -1079,6 +1079,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.5",
   "description" : "Check if an item has a custom model data tag",
   "examples" : "player's tool has custom model data"
+},
+{
+  "id" : "CondGlowingText",
+  "name" : "Has Glowing Text",
+  "patterns" : [
+    "%<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#itemtype'>item types</a>% (has|have) glowing text",
+"%<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#itemtype'>item types</a>% (doesn't|does not|do not|don't) have glowing text",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a sign (either a block or an item) has glowing text",
+  "examples" : "if target block has glowing text"
 },
 {
   "id" : "CondHasItemCooldown",
@@ -2712,6 +2725,19 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "since" : "2.3",
   "description" : "Forces a player to send a message to the chat. If the message starts with a slash it will force the player to use command.",
   "examples" : "make the player say \"Hello.\"\\nforce all players to send the message \"I love this server\""
+},
+{
+  "id" : "EffGlowingText",
+  "name" : "Make Sign Glow",
+  "patterns" : [
+    "make %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#itemtype'>item types</a>% have glowing text",
+"make %<a href='./classes.html#block'>blocks</a>/<a href='./classes.html#itemtype'>item types</a>% have (normal|non[-| ]glowing) text",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Makes a sign (either a block or item) have glowing text or normal text",
+  "examples" : "make target block of player have glowing text"
 },
 {
   "id" : "EffMessage",
