@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-cc19ac0",
+  "skriptVersion" : "2.8.0-dev-nightly-2b6191b",
 
   "classes" : [
     {
@@ -1439,6 +1439,26 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "if player is gliding"
 },
 {
+  "id" : "CondIsHandRaised",
+  "name" : "Is Hand Raised",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>%'[s] [main] hand[s] (is|are) raised",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [main] hand[s] (isn't|is not|aren't|are not) raised",
+"[main] hand[s] of %<a href='./classes.html#livingentity'>living entities</a>% (is|are) raised",
+"[main] hand[s] of %<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) raised",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] off[ |-]hand[s] (is|are) raised",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] off[ |-]hand[s] (isn't|is not|aren't|are not) raised",
+"off[ |-]hand[s] of %<a href='./classes.html#livingentity'>living entities</a>% (is|are) raised",
+"off[ |-]hand[s] of %<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) raised",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether an entity has one or both of their hands raised.
+Hands are raised when an entity is using an item (eg: blocking, drawing a bow, eating).",
+  "examples" : "on damage of player:\\n    if victim's main hand is raised:\\n        drop player's tool at player\\n        set player's tool to air"
+},
+{
   "id" : "CondItemInHand",
   "name" : "Is Holding",
   "patterns" : [
@@ -2165,6 +2185,19 @@ You can add a tool, which will spawn items based on how that tool would break th
   "since" : "1.0, 2.6 (broadcasting objects), 2.6.1 (using advanced formatting)",
   "description" : "Broadcasts a message to the server.",
   "examples" : "broadcast \"Welcome %player% to the server!\"\\nbroadcast \"Woah! It's a message!\""
+},
+{
+  "id" : "EffCancelItemUse",
+  "name" : "Cancel Active Item",
+  "patterns" : [
+    "(cancel|interrupt) [the] us[ag]e of %<a href='./classes.html#livingentity'>living entities</a>%'[s] [active|current] item",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Interrupts the action entities may be trying to complete.
+For example, interrupting eating, or drawing back a bow.",
+  "examples" : "on damage of player:\\n    if the victim's active tool is a bow:\\n        interrupt the usage of the player's active item"
 },
 {
   "id" : "EffCancelCooldown",
@@ -4495,6 +4528,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on quit:\\non disconnect:"
 },
 {
+  "id" : "ready_arrow",
+  "name" : "On Ready Arrow",
+  "patterns" : [
+    "[on] [player] ((ready|choose|draw|load) arrow|arrow (choose|draw|load))",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player is firing a bow and the server is choosing an arrow to use.\\nCancelling this event will skip the current arrow item and fire a new event for the next arrow item.\\nThe arrow and bow in the event can be accessed with the Readied Arrow/Bow expression.",
+  "examples" : "on player ready arrow:\\n    selected bow's name is \"Spectral Bow\"\\n    if selected arrow is not a spectral arrow:\\n        cancel event"
+},
+{
   "id" : "redstone",
   "name" : "On Redstone",
   "patterns" : [
@@ -4769,6 +4814,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on stonecutting stone slabs\\n    cancel the event\\n\\non stonecutting:\\n    broadcast \"%player% is using stonecutter to craft %event-item%!\""
 },
 {
+  "id" : "stop_using_item",
+  "name" : "On Stop Using Item",
+  "patterns" : [
+    "[on] [player] (stop|end) (using item|item use)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a player stops using an item. For example, when the player releases the interact button when holding a bow, an edible item, or a spyglass.\\nNote that event-timespan will return the time the item was used for.",
+  "examples" : "on player stop using item:\\n    broadcast \"%player% used %event-item% for %event-timespan%.\""
+},
+{
   "id" : "swim_toggle",
   "name" : "On Swim Toggle",
   "patterns" : [
@@ -5007,6 +5064,33 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.5",
   "description" : "The blocks absorbed by a sponge block.",
   "examples" : "the absorbed blocks"
+},
+{
+  "id" : "ExprActiveItem",
+  "name" : "Active Item",
+  "patterns" : [
+    "[the] (raised|active) (tool|item|weapon) of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (raised|active) (tool|item|weapon)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the item the entities are currently using (ie: the food they're eating, the bow they're drawing back, etc.). This cannot be changed. If an entity is not using any item, this will return null.",
+  "examples" : "on damage of player:\\n    if victim's active tool is a bow:\\n        interrupt player's active item use"
+},
+{
+  "id" : "ExprEntityItemUseTime",
+  "name" : "Active Item Use Time",
+  "patterns" : [
+    "[the] [elapsed|remaining] (item|tool) us[ag]e time of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [elapsed|remaining] (item|tool) us[ag]e time",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the time that the entities have either spent using an item, or the time left for them to finish using an item.
+If an entity is not using any item, this will return 0 seconds.",
+  "examples" : "on right click:\\n    broadcast player's remaining item use time\\n    wait 1 second\\n    broadcast player's item use time"
 },
 {
   "id" : "ExprAffectedEntities",
@@ -7297,6 +7381,20 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "examples" : "on join:\\n    set the maximum health of the player to 100\\nspawn a giant\\nset the last spawned entity's max health to 1000"
 },
 {
+  "id" : "ExprMaxItemUseTime",
+  "name" : "Max Item Use Time",
+  "patterns" : [
+    "[the] max[imum] [item] us(e|age) (time|duration) of %<a href='./classes.html#itemstack'>item stacks</a>%",
+"%<a href='./classes.html#itemstack'>item stacks</a>%'[s] max[imum] [item] us(e|age) (time|duration)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the max duration an item can be used for before the action completes. E.g. it takes 1.6 seconds to drink a potion, or 1.4 seconds to load an unenchanted crossbow.
+Some items, like bows and shields, do not have a limit to their use. They will return 1 hour.",
+  "examples" : "on right click:\\n    broadcast max usage duration of player's tool"
+},
+{
   "id" : "ExprMaxMinecartSpeed",
   "name" : "Max Minecart Speed",
   "patterns" : [
@@ -8057,6 +8155,18 @@ Please note that the order of the numbers doesn't matter, i.e. <code>random numb
   "since" : "2.7",
   "description" : "Returns the string without formatting (colors etc.) and without stripping them from it, e.g. <code>raw \"&aHello There!\"</code> would output <code>&aHello There!</code>",
   "examples" : "send raw \"&amp;aThis text is unformatted!\" to all players"
+},
+{
+  "id" : "ExprReadiedArrow",
+  "name" : "Readied Arrow/Bow",
+  "patterns" : [
+    "[the] (readied|selected|drawn) (arrow|bow)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The bow or arrow in a <a href='events.html#ready_arrow'>Ready Arrow event</a>.",
+  "examples" : "on player ready arrow:\\n    selected bow's name is \"Spectral Bow\"\\n    if selected arrow is not a spectral arrow:\\n        cancel event"
 },
 {
   "id" : "ExprRedstoneBlockPower",
