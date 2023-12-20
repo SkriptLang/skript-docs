@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-2b6191b",
+  "skriptVersion" : "2.8.0-dev-nightly-f96267f",
 
   "classes" : [
     {
@@ -6847,8 +6847,8 @@ Otherwise, this expression will just return the unsorted indices.",
   "id" : "ExprInventory",
   "name" : "Inventory",
   "patterns" : [
-    "[the] inventor(y|ies) of %inventoryholders%",
-"%inventoryholders%'[s] inventor(y|ies)",
+    "[the] inventor(y|ies) of %inventoryholders/<a href='./classes.html#itemtype'>item types</a>%",
+"%inventoryholders/<a href='./classes.html#itemtype'>item types</a>%'[s] inventor(y|ies)",
 
     "pattern_end"
   ],
