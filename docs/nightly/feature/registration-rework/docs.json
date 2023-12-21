@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-1b9587e",
+  "skriptVersion" : "2.8.0-dev-nightly-5870190",
 
   "classes" : [
     {
@@ -3266,7 +3266,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "events" : [
     {
   "id" : "at_time",
-  "name" : "On At Time",
+  "name" : "At Time",
   "patterns" : [
     "[on] at %<a href='./classes.html#time'>time</a>% [in %<a href='./classes.html#world'>worlds</a>%]",
 
@@ -3277,8 +3277,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_anvil_damage",
-  "name" : "On On Anvil Damage",
+  "id" : "anvil_damage",
+  "name" : "On Anvil Damage",
   "patterns" : [
     "[on] anvil damag(e|ing)",
 
@@ -3289,8 +3289,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_anvil_prepare",
-  "name" : "On On Anvil Prepare",
+  "id" : "anvil_prepare",
+  "name" : "On Anvil Prepare",
   "patterns" : [
     "[on] anvil prepar(e|ing)",
 
@@ -3301,8 +3301,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_aoe_cloud_effect",
-  "name" : "On On AoE Cloud Effect",
+  "id" : "aoe_cloud_effect",
+  "name" : "On AoE Cloud Effect",
   "patterns" : [
     "[on] (area|AoE) [cloud] effect",
 
@@ -3313,8 +3313,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_arm_swing",
-  "name" : "On On Arm Swing",
+  "id" : "arm_swing",
+  "name" : "On Arm Swing",
   "patterns" : [
     "[on] [player] arm swing",
 
@@ -3325,8 +3325,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_armor_change",
-  "name" : "On On Armor Change",
+  "id" : "armor_change",
+  "name" : "On Armor Change",
   "patterns" : [
     "[on] [player] armor change[d]",
 
@@ -3337,8 +3337,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_bed_enter",
-  "name" : "On On Bed Enter",
+  "id" : "bed_enter",
+  "name" : "On Bed Enter",
   "patterns" : [
     "[on] bed enter[ing]",
 "[on] [player] enter[ing] [a] bed",
@@ -3350,8 +3350,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_bed_leave",
-  "name" : "On On Bed Leave",
+  "id" : "bed_leave",
+  "name" : "On Bed Leave",
   "patterns" : [
     "[on] bed leav(e|ing)",
 "[on] [player] leav(e|ing) [a] bed",
@@ -3363,8 +3363,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_block_damage",
-  "name" : "On On Block Damage",
+  "id" : "block_damage",
+  "name" : "On Block Damage",
   "patterns" : [
     "[on] block damag(ing|e)",
 
@@ -3375,8 +3375,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_block_fertilize",
-  "name" : "On On Block Fertilize",
+  "id" : "block_fertilize",
+  "name" : "On Block Fertilize",
   "patterns" : [
     "[on] [block] fertilize",
 
@@ -3387,8 +3387,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_block_growth",
-  "name" : "On On Block Growth",
+  "id" : "block_growth",
+  "name" : "On Block Growth",
   "patterns" : [
     "[on] (plant|crop|block) grow[(th|ing)] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -3399,8 +3399,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_book_edit",
-  "name" : "On On Book Edit",
+  "id" : "book_edit",
+  "name" : "On Book Edit",
   "patterns" : [
     "[on] book (edit|change|write)",
 
@@ -3411,8 +3411,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_book_sign",
-  "name" : "On On Book Sign",
+  "id" : "book_sign",
+  "name" : "On Book Sign",
   "patterns" : [
     "[on] book sign[ing]",
 
@@ -3423,8 +3423,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_break_mine",
-  "name" : "On On Break / Mine",
+  "id" : "break_mine",
+  "name" : "On Break / Mine",
   "patterns" : [
     "[on] [block] (break[ing]|min(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
@@ -3435,8 +3435,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_bucket_empty",
-  "name" : "On On Bucket Empty",
+  "id" : "bucket_empty",
+  "name" : "On Bucket Empty",
   "patterns" : [
     "[on] bucket empty[ing]",
 "[on] [player] empty[ing] [a] bucket",
@@ -3448,8 +3448,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_bucket_fill",
-  "name" : "On On Bucket fill",
+  "id" : "bucket_fill",
+  "name" : "On Bucket fill",
   "patterns" : [
     "[on] bucket fill[ing]",
 "[on] [player] fill[ing] [a] bucket",
@@ -3461,8 +3461,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_burn",
-  "name" : "On On Burn",
+  "id" : "burn",
+  "name" : "On Burn",
   "patterns" : [
     "[on] [block] burn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
@@ -3473,8 +3473,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_can_build_check",
-  "name" : "On On Can Build Check",
+  "id" : "can_build_check",
+  "name" : "On Can Build Check",
   "patterns" : [
     "[on] [block] can build check",
 
@@ -3485,8 +3485,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_chat",
-  "name" : "On On Chat",
+  "id" : "chat",
+  "name" : "On Chat",
   "patterns" : [
     "[on] chat",
 
@@ -3497,8 +3497,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_chunk_generate",
-  "name" : "On On Chunk Generate",
+  "id" : "chunk_generate",
+  "name" : "On Chunk Generate",
   "patterns" : [
     "[on] chunk (generat|populat)(e|ing)",
 
@@ -3509,8 +3509,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_chunk_load",
-  "name" : "On On Chunk Load",
+  "id" : "chunk_load",
+  "name" : "On Chunk Load",
   "patterns" : [
     "[on] chunk load[ing]",
 
@@ -3521,8 +3521,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_chunk_unload",
-  "name" : "On On Chunk Unload",
+  "id" : "chunk_unload",
+  "name" : "On Chunk Unload",
   "patterns" : [
     "[on] chunk unload[ing]",
 
@@ -3533,8 +3533,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_click",
-  "name" : "On On Click",
+  "id" : "click",
+  "name" : "On Click",
   "patterns" : [
     "[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] [on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>%] [(with|using|holding) %<a href='./classes.html#itemtype'>item type</a>%]",
 "[on] [(right|left)[( |-)]][mouse[( |-)]]click[ing] (with|using|holding) %<a href='./classes.html#itemtype'>item type</a>% on %<a href='./classes.html#entitydata'>entity type</a>/<a href='./classes.html#itemtype'>item type</a>%",
@@ -3546,8 +3546,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_combust",
-  "name" : "On On Combust",
+  "id" : "combust",
+  "name" : "On Combust",
   "patterns" : [
     "[on] combust[ing]",
 
@@ -3558,8 +3558,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_command",
-  "name" : "On On Command",
+  "id" : "command",
+  "name" : "On Command",
   "patterns" : [
     "[on] command [%<a href='./classes.html#string'>text</a>%]",
 
@@ -3570,8 +3570,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_connect",
-  "name" : "On On Connect",
+  "id" : "connect",
+  "name" : "On Connect",
   "patterns" : [
     "[on] [player] connect[ing]",
 
@@ -3582,8 +3582,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_consume",
-  "name" : "On On Consume",
+  "id" : "consume",
+  "name" : "On Consume",
   "patterns" : [
     "[on] [player] ((eat|drink)[ing]|consum(e|ing)) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -3594,8 +3594,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_craft",
-  "name" : "On On Craft",
+  "id" : "craft",
+  "name" : "On Craft",
   "patterns" : [
     "[on] [player] craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -3606,8 +3606,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_creeper_power",
-  "name" : "On On Creeper Power",
+  "id" : "creeper_power",
+  "name" : "On Creeper Power",
   "patterns" : [
     "[on] creeper power",
 
@@ -3618,8 +3618,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_damage",
-  "name" : "On On Damage",
+  "id" : "damage",
+  "name" : "On Damage",
   "patterns" : [
     "[on] damag(e|ing) [of %<a href='./classes.html#entitydata'>entity type</a>%] [by %<a href='./classes.html#entitydata'>entity type</a>%]",
 
@@ -3630,8 +3630,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_death",
-  "name" : "On On Death",
+  "id" : "death",
+  "name" : "On Death",
   "patterns" : [
     "[on] death [of %<a href='./classes.html#entitydata'>entity types</a>%]",
 
@@ -3642,8 +3642,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_dispense",
-  "name" : "On On Dispense",
+  "id" : "dispense",
+  "name" : "On Dispense",
   "patterns" : [
     "[on] dispens(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -3654,8 +3654,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_drop",
-  "name" : "On On Drop",
+  "id" : "drop",
+  "name" : "On Drop",
   "patterns" : [
     "[on] [player|entity] drop[ping] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -3666,8 +3666,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_egg_throw",
-  "name" : "On On Egg Throw",
+  "id" : "egg_throw",
+  "name" : "On Egg Throw",
   "patterns" : [
     "[on] throw[ing] [of] [an] egg",
 "[on] [player] egg throw",
@@ -3679,8 +3679,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_enchant",
-  "name" : "On On Enchant",
+  "id" : "enchant",
+  "name" : "On Enchant",
   "patterns" : [
     "[on] [item] enchant",
 
@@ -3691,8 +3691,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_enchant_prepare",
-  "name" : "On On Enchant Prepare",
+  "id" : "enchant_prepare",
+  "name" : "On Enchant Prepare",
   "patterns" : [
     "[on] [item] enchant prepare",
 
@@ -3703,8 +3703,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_endermansheepsilverfishfalling_block",
-  "name" : "On On Enderman/Sheep/Silverfish/Falling Block",
+  "id" : "endermansheepsilverfishfalling_block",
+  "name" : "On Enderman/Sheep/Silverfish/Falling Block",
   "patterns" : [
     "[on] enderman place",
 "[on] enderman pickup",
@@ -3722,8 +3722,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_entity_dismount",
-  "name" : "On On Entity Dismount",
+  "id" : "entity_dismount",
+  "name" : "On Entity Dismount",
   "patterns" : [
     "[on] dismount[ing]",
 
@@ -3734,8 +3734,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_entity_jump",
-  "name" : "On On Entity Jump",
+  "id" : "entity_jump",
+  "name" : "On Entity Jump",
   "patterns" : [
     "[on] entity jump[ing]",
 
@@ -3746,8 +3746,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_entity_mount",
-  "name" : "On On Entity Mount",
+  "id" : "entity_mount",
+  "name" : "On Entity Mount",
   "patterns" : [
     "[on] mount[ing]",
 
@@ -3758,8 +3758,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_entity_portal",
-  "name" : "On On Entity Portal",
+  "id" : "entity_portal",
+  "name" : "On Entity Portal",
   "patterns" : [
     "[on] entity portal",
 
@@ -3770,8 +3770,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_experience_change",
-  "name" : "On On Experience Change",
+  "id" : "experience_change",
+  "name" : "On Experience Change",
   "patterns" : [
     "[on] [player] (level progress|[e]xp|experience) (change|update|increase|decrease)",
 
@@ -3782,8 +3782,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_experience_spawn",
-  "name" : "On On Experience Spawn",
+  "id" : "experience_spawn",
+  "name" : "On Experience Spawn",
   "patterns" : [
     "[on] [e]xp[erience] [orb] spawn",
 "[on] spawn of [a[n]] [e]xp[erience] [orb]",
@@ -3795,8 +3795,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_explode",
-  "name" : "On On Explode",
+  "id" : "explode",
+  "name" : "On Explode",
   "patterns" : [
     "[on] explo(d(e|ing)|sion)",
 
@@ -3807,8 +3807,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_explosion_prime",
-  "name" : "On On Explosion Prime",
+  "id" : "explosion_prime",
+  "name" : "On Explosion Prime",
   "patterns" : [
     "[on] explosion prime",
 
@@ -3819,8 +3819,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_fade",
-  "name" : "On On Fade",
+  "id" : "fade",
+  "name" : "On Fade",
   "patterns" : [
     "[on] [block] fad(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
@@ -3831,8 +3831,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_firework_explode",
-  "name" : "On On Firework Explode",
+  "id" : "firework_explode",
+  "name" : "On Firework Explode",
   "patterns" : [
     "[on] [a] firework explo(d(e|ing)|sion) [colo[u]red %<a href='./classes.html#color'>colors</a>%]",
 
@@ -3843,8 +3843,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_first_join",
-  "name" : "On On First Join",
+  "id" : "first_join",
+  "name" : "On First Join",
   "patterns" : [
     "[on] first (join|login)",
 
@@ -3855,8 +3855,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_fishing",
-  "name" : "On On Fishing",
+  "id" : "fishing",
+  "name" : "On Fishing",
   "patterns" : [
     "[on] [player] fish[ing]",
 
@@ -3867,8 +3867,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_flight_toggle",
-  "name" : "On On Flight Toggle",
+  "id" : "flight_toggle",
+  "name" : "On Flight Toggle",
   "patterns" : [
     "[on] [player] flight toggl(e|ing)",
 "[on] [player] toggl(e|ing) flight",
@@ -3880,8 +3880,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_flow",
-  "name" : "On On Flow",
+  "id" : "flow",
+  "name" : "On Flow",
   "patterns" : [
     "[on] [block] flow[ing]",
 "[on] block mov(e|ing)",
@@ -3893,8 +3893,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_form",
-  "name" : "On On Form",
+  "id" : "form",
+  "name" : "On Form",
   "patterns" : [
     "[on] [block] form[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
@@ -3905,8 +3905,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_fuel_burn",
-  "name" : "On On Fuel Burn",
+  "id" : "fuel_burn",
+  "name" : "On Fuel Burn",
   "patterns" : [
     "[on] fuel burn[ing]",
 
@@ -3917,8 +3917,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_gamemode_change",
-  "name" : "On On Gamemode Change",
+  "id" : "gamemode_change",
+  "name" : "On Gamemode Change",
   "patterns" : [
     "[on] game[ ]mode change [to %<a href='./classes.html#gamemode'>gamemode</a>%]",
 
@@ -3929,8 +3929,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_gliding_state_change",
-  "name" : "On On Gliding State Change",
+  "id" : "gliding_state_change",
+  "name" : "On Gliding State Change",
   "patterns" : [
     "[on] (gliding state change|toggl(e|ing) gliding)",
 
@@ -3941,8 +3941,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_grow",
-  "name" : "On On Grow",
+  "id" : "grow",
+  "name" : "On Grow",
   "patterns" : [
     "[on] grow[th] [of (%<a href='./classes.html#structuretype'>tree types</a>%|%<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%)]",
 "[on] grow[th] from %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%",
@@ -3956,8 +3956,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_hand_item_swap",
-  "name" : "On On Hand Item Swap",
+  "id" : "hand_item_swap",
+  "name" : "On Hand Item Swap",
   "patterns" : [
     "[on] swap[ping of] [(hand|held)] item[s]",
 
@@ -3968,8 +3968,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_heal",
-  "name" : "On On Heal",
+  "id" : "heal",
+  "name" : "On Heal",
   "patterns" : [
     "[on] heal[ing]",
 
@@ -3980,8 +3980,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_horse_jump",
-  "name" : "On On Horse Jump",
+  "id" : "horse_jump",
+  "name" : "On Horse Jump",
   "patterns" : [
     "[on] horse jump",
 
@@ -3992,8 +3992,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_hunger_meter_change",
-  "name" : "On On Hunger Meter Change",
+  "id" : "hunger_meter_change",
+  "name" : "On Hunger Meter Change",
   "patterns" : [
     "[on] (food|hunger) (level|met(er|re)|bar) chang(e|ing)",
 
@@ -4004,8 +4004,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_ignition",
-  "name" : "On On Ignition",
+  "id" : "ignition",
+  "name" : "On Ignition",
   "patterns" : [
     "[on] [block] ignit(e|ion)",
 
@@ -4016,8 +4016,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_click",
-  "name" : "On On Inventory Click",
+  "id" : "inventory_click",
+  "name" : "On Inventory Click",
   "patterns" : [
     "[on] [player] inventory(-| )click[ing] [[at] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -4028,8 +4028,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_close",
-  "name" : "On On Inventory Close",
+  "id" : "inventory_close",
+  "name" : "On Inventory Close",
   "patterns" : [
     "[on] inventory clos(ing|e[d])",
 
@@ -4040,8 +4040,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_drag",
-  "name" : "On On Inventory Drag",
+  "id" : "inventory_drag",
+  "name" : "On Inventory Drag",
   "patterns" : [
     "[on] inventory drag[ging]",
 
@@ -4052,8 +4052,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_item_move",
-  "name" : "On On Inventory Item Move",
+  "id" : "inventory_item_move",
+  "name" : "On Inventory Item Move",
   "patterns" : [
     "[on] inventory item (move|transport)",
 
@@ -4064,8 +4064,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_open",
-  "name" : "On On Inventory Open",
+  "id" : "inventory_open",
+  "name" : "On Inventory Open",
   "patterns" : [
     "[on] inventory open[ed]",
 
@@ -4076,8 +4076,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_pickup",
-  "name" : "On On Inventory Pickup",
+  "id" : "inventory_pickup",
+  "name" : "On Inventory Pickup",
   "patterns" : [
     "[on] inventory pick[ ]up",
 
@@ -4088,8 +4088,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_inventory_slot_change",
-  "name" : "On On Inventory Slot Change",
+  "id" : "inventory_slot_change",
+  "name" : "On Inventory Slot Change",
   "patterns" : [
     "[on] [player] inventory slot chang(e|ing)",
 
@@ -4100,8 +4100,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_break",
-  "name" : "On On Item Break",
+  "id" : "item_break",
+  "name" : "On Item Break",
   "patterns" : [
     "[on] [player] tool break[ing]",
 "[on] [player] break[ing] [(a|the)] tool",
@@ -4113,8 +4113,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_damage",
-  "name" : "On On Item Damage",
+  "id" : "item_damage",
+  "name" : "On Item Damage",
   "patterns" : [
     "[on] item damag(e|ing)",
 
@@ -4125,8 +4125,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_despawn",
-  "name" : "On On Item Despawn",
+  "id" : "item_despawn",
+  "name" : "On Item Despawn",
   "patterns" : [
     "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) despawn[ing]",
 "[on] [item[ ][stack]] despawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
@@ -4138,8 +4138,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_mend",
-  "name" : "On On Item Mend",
+  "id" : "item_mend",
+  "name" : "On Item Mend",
   "patterns" : [
     "[on] item mend[ing]",
 
@@ -4150,8 +4150,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_merge",
-  "name" : "On On Item Merge",
+  "id" : "item_merge",
+  "name" : "On Item Merge",
   "patterns" : [
     "[on] (item[ ][stack]|[item] %<a href='./classes.html#itemtype'>item types</a>%) merg(e|ing)",
 "[on] item[ ][stack] merg(e|ing) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
@@ -4163,8 +4163,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_item_spawn",
-  "name" : "On On Item Spawn",
+  "id" : "item_spawn",
+  "name" : "On Item Spawn",
   "patterns" : [
     "[on] item spawn[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -4175,8 +4175,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_join",
-  "name" : "On On Join",
+  "id" : "join",
+  "name" : "On Join",
   "patterns" : [
     "[on] [player] (login|logging in|join[ing])",
 
@@ -4187,8 +4187,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_jump",
-  "name" : "On On Jump",
+  "id" : "jump",
+  "name" : "On Jump",
   "patterns" : [
     "[on] [player] jump[ing]",
 
@@ -4199,8 +4199,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_kick",
-  "name" : "On On Kick",
+  "id" : "kick",
+  "name" : "On Kick",
   "patterns" : [
     "[on] [player] (kick|being kicked)",
 
@@ -4211,8 +4211,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_language_change",
-  "name" : "On On Language Change",
+  "id" : "language_change",
+  "name" : "On Language Change",
   "patterns" : [
     "[on] [player] (language|locale) chang(e|ing)",
 "[on] [player] chang(e|ing) (language|locale)",
@@ -4224,8 +4224,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_leaves_decay",
-  "name" : "On On Leaves Decay",
+  "id" : "leaves_decay",
+  "name" : "On Leaves Decay",
   "patterns" : [
     "[on] leaves decay[ing]",
 
@@ -4236,8 +4236,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_level_change",
-  "name" : "On On Level Change",
+  "id" : "level_change",
+  "name" : "On Level Change",
   "patterns" : [
     "[on] [player] level (change|up|down)",
 
@@ -4248,8 +4248,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_lightning_strike",
-  "name" : "On On Lightning Strike",
+  "id" : "lightning_strike",
+  "name" : "On Lightning Strike",
   "patterns" : [
     "[on] lightning [strike]",
 
@@ -4260,8 +4260,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_loot_generate",
-  "name" : "On On Loot Generate",
+  "id" : "loot_generate",
+  "name" : "On Loot Generate",
   "patterns" : [
     "[on] loot generat(e|ing)",
 
@@ -4272,8 +4272,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_move_rotate",
-  "name" : "On On Move / Rotate",
+  "id" : "move_rotate",
+  "name" : "On Move / Rotate",
   "patterns" : [
     "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step|(turn[ing] around|rotate))",
 "[on] %<a href='./classes.html#entitydata'>entity type</a>% (move|walk|step) or (turn[ing] around|rotate)",
@@ -4286,8 +4286,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_move_on",
-  "name" : "On On Move On",
+  "id" : "move_on",
+  "name" : "On Move On",
   "patterns" : [
     "[on] (step|walk)[ing] (on|over) %*<a href='./classes.html#itemtype'>item types</a>%",
 
@@ -4298,8 +4298,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_physics",
-  "name" : "On On Physics",
+  "id" : "physics",
+  "name" : "On Physics",
   "patterns" : [
     "[on] [block] physics",
 
@@ -4310,8 +4310,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_pick_up",
-  "name" : "On On Pick Up",
+  "id" : "pick_up",
+  "name" : "On Pick Up",
   "patterns" : [
     "[on] [(player|entity)] (pick[ ]up|picking up) [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -4322,8 +4322,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_pig_zap",
-  "name" : "On On Pig Zap",
+  "id" : "pig_zap",
+  "name" : "On Pig Zap",
   "patterns" : [
     "[on] pig[ ]zap",
 
@@ -4334,8 +4334,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_piston_extend",
-  "name" : "On On Piston Extend",
+  "id" : "piston_extend",
+  "name" : "On Piston Extend",
   "patterns" : [
     "[on] piston extend[ing]",
 
@@ -4346,8 +4346,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_piston_retract",
-  "name" : "On On Piston Retract",
+  "id" : "piston_retract",
+  "name" : "On Piston Retract",
   "patterns" : [
     "[on] piston retract[ing]",
 
@@ -4358,8 +4358,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_place",
-  "name" : "On On Place",
+  "id" : "place",
+  "name" : "On Place",
   "patterns" : [
     "[on] [block] (plac(e|ing)|build[ing]) [[of] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#blockdata'>block datas</a>%]",
 
@@ -4370,8 +4370,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_player_chunk_enter",
-  "name" : "On On Player Chunk Enter",
+  "id" : "player_chunk_enter",
+  "name" : "On Player Chunk Enter",
   "patterns" : [
     "[on] [player] (enter[s] [a] chunk|chunk enter[ing])",
 
@@ -4382,8 +4382,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_player_deep_sleep",
-  "name" : "On On Player Deep Sleep",
+  "id" : "player_deep_sleep",
+  "name" : "On Player Deep Sleep",
   "patterns" : [
     "[on] [player] deep sleep[ing]",
 
@@ -4394,8 +4394,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_player_pickup_arrow",
-  "name" : "On On Player Pickup Arrow",
+  "id" : "player_pickup_arrow",
+  "name" : "On Player Pickup Arrow",
   "patterns" : [
     "[on] [player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)",
 
@@ -4406,8 +4406,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_player_trade",
-  "name" : "On On Player Trade",
+  "id" : "player_trade",
+  "name" : "On Player Trade",
   "patterns" : [
     "[on] player trad(e|ing)",
 
@@ -4418,8 +4418,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_player_world_change",
-  "name" : "On On Player World Change",
+  "id" : "player_world_change",
+  "name" : "On Player World Change",
   "patterns" : [
     "[on] [player] world chang(ing|e[d])",
 
@@ -4430,8 +4430,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_portal",
-  "name" : "On On Portal",
+  "id" : "portal",
+  "name" : "On Portal",
   "patterns" : [
     "[on] [player] portal",
 
@@ -4442,8 +4442,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_portal_create",
-  "name" : "On On Portal Create",
+  "id" : "portal_create",
+  "name" : "On Portal Create",
   "patterns" : [
     "[on] portal creat(e|ion)",
 
@@ -4454,8 +4454,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_portal_enter",
-  "name" : "On On Portal Enter",
+  "id" : "portal_enter",
+  "name" : "On Portal Enter",
   "patterns" : [
     "[on] portal enter[ing]",
 "[on] entering [a] portal",
@@ -4467,8 +4467,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_prepare_craft",
-  "name" : "On On Prepare Craft",
+  "id" : "prepare_craft",
+  "name" : "On Prepare Craft",
   "patterns" : [
     "[on] [player] (preparing|beginning) craft[ing] [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -4479,8 +4479,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_pressure_plate_trip",
-  "name" : "On On Pressure Plate / Trip",
+  "id" : "pressure_plate_trip",
+  "name" : "On Pressure Plate / Trip",
   "patterns" : [
     "[on] [step[ping] on] [a] [pressure] plate",
 "[on] (trip|[step[ping] on] [a] tripwire)",
@@ -4492,8 +4492,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_projectile_collide",
-  "name" : "On On Projectile Collide",
+  "id" : "projectile_collide",
+  "name" : "On Projectile Collide",
   "patterns" : [
     "[on] projectile collide",
 
@@ -4504,8 +4504,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_projectile_hit",
-  "name" : "On On Projectile Hit",
+  "id" : "projectile_hit",
+  "name" : "On Projectile Hit",
   "patterns" : [
     "[on] projectile hit",
 
@@ -4516,8 +4516,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_quit",
-  "name" : "On On Quit",
+  "id" : "quit",
+  "name" : "On Quit",
   "patterns" : [
     "[on] (quit[ting]|disconnect[ing]|log[ ]out|logging out|leav(e|ing))",
 
@@ -4528,8 +4528,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_ready_arrow",
-  "name" : "On On Ready Arrow",
+  "id" : "ready_arrow",
+  "name" : "On Ready Arrow",
   "patterns" : [
     "[on] [player] ((ready|choose|draw|load) arrow|arrow (choose|draw|load))",
 
@@ -4540,8 +4540,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_redstone",
-  "name" : "On On Redstone",
+  "id" : "redstone",
+  "name" : "On Redstone",
   "patterns" : [
     "[on] redstone [current] [chang(e|ing)]",
 
@@ -4552,8 +4552,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_region_enterleave",
-  "name" : "On On Region Enter/Leave",
+  "id" : "region_enterleave",
+  "name" : "On Region Enter/Leave",
   "patterns" : [
     "[on] (enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %<a href='./classes.html#region'>regions</a>%)",
 "[on] region (enter[ing]|leav(e|ing)|exit[ing])",
@@ -4565,8 +4565,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_resource_pack_request_response",
-  "name" : "On On Resource Pack Request Response",
+  "id" : "resource_pack_request_response",
+  "name" : "On Resource Pack Request Response",
   "patterns" : [
     "[on] resource pack [request] response",
 "[on] resource pack [request] %<a href='./classes.html#resourcepackstate'>resource pack states</a>%",
@@ -4578,8 +4578,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_respawn",
-  "name" : "On On Respawn",
+  "id" : "respawn",
+  "name" : "On Respawn",
   "patterns" : [
     "[on] [player] respawn[ing]",
 
@@ -4590,8 +4590,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_resurrect_attempt",
-  "name" : "On On Resurrect Attempt",
+  "id" : "resurrect_attempt",
+  "name" : "On Resurrect Attempt",
   "patterns" : [
     "[on] [entity] resurrect[ion] [attempt]",
 
@@ -4602,8 +4602,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_riptide",
-  "name" : "On On Riptide",
+  "id" : "riptide",
+  "name" : "On Riptide",
   "patterns" : [
     "[on] [use of] riptide [enchant[ment]]",
 
@@ -4614,8 +4614,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_script_loadunload",
-  "name" : "On On Script Load/Unload",
+  "id" : "script_loadunload",
+  "name" : "On Script Load/Unload",
   "patterns" : [
     "[on] [async] [script] (load|init|enable)",
 "[on] [async] [script] (unload|stop|disable)",
@@ -4627,8 +4627,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_server_list_ping",
-  "name" : "On On Server List Ping",
+  "id" : "server_list_ping",
+  "name" : "On Server List Ping",
   "patterns" : [
     "[on] server [list] ping",
 
@@ -4639,8 +4639,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_server_startstop",
-  "name" : "On On Server Start/Stop",
+  "id" : "server_startstop",
+  "name" : "On Server Start/Stop",
   "patterns" : [
     "[on] (server|skript) (start|load|enable)",
 "[on] (server|skript) (stop|unload|disable)",
@@ -4652,8 +4652,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_sheep_regrow_wool",
-  "name" : "On On Sheep Regrow Wool",
+  "id" : "sheep_regrow_wool",
+  "name" : "On Sheep Regrow Wool",
   "patterns" : [
     "[on] sheep [re]grow[ing] wool",
 
@@ -4664,8 +4664,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_shoot",
-  "name" : "On On Shoot",
+  "id" : "shoot",
+  "name" : "On Shoot",
   "patterns" : [
     "[on] [projectile] shoot",
 
@@ -4676,8 +4676,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_sign_change",
-  "name" : "On On Sign Change",
+  "id" : "sign_change",
+  "name" : "On Sign Change",
   "patterns" : [
     "[on] sign (chang[e]|edit)[ing]",
 "[on] [player] (chang[e]|edit)[ing] [a] sign",
@@ -4689,8 +4689,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_slime_split",
-  "name" : "On On Slime Split",
+  "id" : "slime_split",
+  "name" : "On Slime Split",
   "patterns" : [
     "[on] slime split[ting]",
 
@@ -4701,8 +4701,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_smelt",
-  "name" : "On On Smelt",
+  "id" : "smelt",
+  "name" : "On Smelt",
   "patterns" : [
     "[on] [ore] smelt[ing]",
 "[on] smelt[ing] of ore",
@@ -4714,8 +4714,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_sneak_toggle",
-  "name" : "On On Sneak Toggle",
+  "id" : "sneak_toggle",
+  "name" : "On Sneak Toggle",
   "patterns" : [
     "[on] [player] toggl(e|ing) sneak",
 "[on] [player] sneak toggl(e|ing)",
@@ -4727,8 +4727,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_spawn",
-  "name" : "On On Spawn",
+  "id" : "spawn",
+  "name" : "On Spawn",
   "patterns" : [
     "[on] spawn[ing] [of %<a href='./classes.html#entitydata'>entity types</a>%]",
 
@@ -4739,8 +4739,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_spawn_change",
-  "name" : "On On Spawn Change",
+  "id" : "spawn_change",
+  "name" : "On Spawn Change",
   "patterns" : [
     "[on] [world] spawn change",
 
@@ -4751,8 +4751,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_spectate",
-  "name" : "On On Spectate",
+  "id" : "spectate",
+  "name" : "On Spectate",
   "patterns" : [
     "[on] [player] stop spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%]",
 "[on] [player] (swap|switch) spectating [(of|from) %*<a href='./classes.html#entitydata'>entity types</a>%]",
@@ -4765,8 +4765,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_sponge_absorb",
-  "name" : "On On Sponge Absorb",
+  "id" : "sponge_absorb",
+  "name" : "On Sponge Absorb",
   "patterns" : [
     "[on] sponge absorb",
 
@@ -4777,8 +4777,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_spread",
-  "name" : "On On Spread",
+  "id" : "spread",
+  "name" : "On Spread",
   "patterns" : [
     "[on] spread[ing]",
 
@@ -4789,8 +4789,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_sprint_toggle",
-  "name" : "On On Sprint Toggle",
+  "id" : "sprint_toggle",
+  "name" : "On Sprint Toggle",
   "patterns" : [
     "[on] [player] toggl(e|ing) sprint",
 "[on] [player] sprint toggl(e|ing)",
@@ -4802,8 +4802,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_stonecutter_recipe_select",
-  "name" : "On On Stonecutter Recipe Select",
+  "id" : "stonecutter_recipe_select",
+  "name" : "On Stonecutter Recipe Select",
   "patterns" : [
     "[on] stonecutting [[of] %<a href='./classes.html#itemtype'>item types</a>%]",
 
@@ -4814,8 +4814,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_stop_using_item",
-  "name" : "On On Stop Using Item",
+  "id" : "stop_using_item",
+  "name" : "On Stop Using Item",
   "patterns" : [
     "[on] [player] (stop|end) (using item|item use)",
 
@@ -4826,8 +4826,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_swim_toggle",
-  "name" : "On On Swim Toggle",
+  "id" : "swim_toggle",
+  "name" : "On Swim Toggle",
   "patterns" : [
     "[on] [entity] toggl(e|ing) swim",
 "[on] [entity] swim toggl(e|ing)",
@@ -4839,8 +4839,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_tame",
-  "name" : "On On Tame",
+  "id" : "tame",
+  "name" : "On Tame",
   "patterns" : [
     "[on] [entity] tam(e|ing)",
 
@@ -4851,8 +4851,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_target",
-  "name" : "On On Target",
+  "id" : "target",
+  "name" : "On Target",
   "patterns" : [
     "[on] [entity] target",
 "[on] [entity] un[-]target",
@@ -4864,8 +4864,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_teleport",
-  "name" : "On On Teleport",
+  "id" : "teleport",
+  "name" : "On Teleport",
   "patterns" : [
     "[on] [player] teleport[ing]",
 
@@ -4876,8 +4876,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_tool_change",
-  "name" : "On On Tool Change",
+  "id" : "tool_change",
+  "name" : "On Tool Change",
   "patterns" : [
     "[on] [player['s]] (tool|item held|held item) chang(e|ing)",
 
@@ -4888,8 +4888,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_vehicle_create",
-  "name" : "On On Vehicle Create",
+  "id" : "vehicle_create",
+  "name" : "On Vehicle Create",
   "patterns" : [
     "[on] vehicle create",
 "[on] creat(e|ing|ion of) [a] vehicle",
@@ -4901,8 +4901,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_vehicle_damage",
-  "name" : "On On Vehicle Damage",
+  "id" : "vehicle_damage",
+  "name" : "On Vehicle Damage",
   "patterns" : [
     "[on] vehicle damage",
 "[on] damag(e|ing) [a] vehicle",
@@ -4914,8 +4914,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_vehicle_destroy",
-  "name" : "On On Vehicle Destroy",
+  "id" : "vehicle_destroy",
+  "name" : "On Vehicle Destroy",
   "patterns" : [
     "[on] vehicle destroy",
 "[on] destr(oy[ing]|uction of) [a] vehicle",
@@ -4927,8 +4927,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_vehicle_enter",
-  "name" : "On On Vehicle Enter",
+  "id" : "vehicle_enter",
+  "name" : "On Vehicle Enter",
   "patterns" : [
     "[on] vehicle enter",
 "[on] enter[ing] [a] vehicle",
@@ -4940,8 +4940,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_vehicle_exit",
-  "name" : "On On Vehicle Exit",
+  "id" : "vehicle_exit",
+  "name" : "On Vehicle Exit",
   "patterns" : [
     "[on] vehicle exit",
 "[on] exit[ing] [a] vehicle",
@@ -4953,8 +4953,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_weather_change",
-  "name" : "On On Weather Change",
+  "id" : "weather_change",
+  "name" : "On Weather Change",
   "patterns" : [
     "[on] weather change [to %<a href='./classes.html#weathertype'>weather types</a>%]",
 
@@ -4965,8 +4965,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_world_init",
-  "name" : "On On World Init",
+  "id" : "world_init",
+  "name" : "On World Init",
   "patterns" : [
     "[on] world init[ialization]",
 
@@ -4977,8 +4977,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_world_load",
-  "name" : "On On World Load",
+  "id" : "world_load",
+  "name" : "On World Load",
   "patterns" : [
     "[on] world load[ing]",
 
@@ -4989,8 +4989,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_world_save",
-  "name" : "On On World Save",
+  "id" : "world_save",
+  "name" : "On World Save",
   "patterns" : [
     "[on] world sav(e|ing)",
 
@@ -5001,8 +5001,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_world_unload",
-  "name" : "On On World Unload",
+  "id" : "world_unload",
+  "name" : "On World Unload",
   "patterns" : [
     "[on] world unload[ing]",
 
@@ -5013,8 +5013,8 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "Missing examples."
 },
 {
-  "id" : "on_zombie_break_door",
-  "name" : "On On Zombie Break Door",
+  "id" : "zombie_break_door",
+  "name" : "On Zombie Break Door",
   "patterns" : [
     "[on] zombie break[ing] [a] [wood[en]] door",
 
@@ -5026,7 +5026,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 },
 {
   "id" : "periodical",
-  "name" : "On Periodical",
+  "name" : "Periodical",
   "patterns" : [
     "[on] every %<a href='./classes.html#timespan'>time span</a>%",
 
@@ -5038,7 +5038,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 },
 {
   "id" : "periodical",
-  "name" : "On Periodical",
+  "name" : "Periodical",
   "patterns" : [
     "[on] every %<a href='./classes.html#timespan'>time span</a>% in [world[s]] %<a href='./classes.html#world'>worlds</a>%",
 
