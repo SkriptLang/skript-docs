@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-8a760d8",
+  "skriptVersion" : "2.8.0-dev-nightly-7134ccb",
 
   "classes" : [
     {
@@ -7016,7 +7016,8 @@ If multiple strings are passed, each of them will be a separate line in the lore
   "id" : "ExprItemsIn",
   "name" : "Items In",
   "patterns" : [
-    "[all [[of] the]|the] (items|%<a href='./classes.html#itemtype'>item types</a>%) ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
+    "[all [[of] the]|the] (items|%*<a href='./classes.html#itemtype'>item types</a>%) ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
+"all [[of] the|the] %<a href='./classes.html#itemtype'>item types</a>% ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
 
     "pattern_end"
   ],
