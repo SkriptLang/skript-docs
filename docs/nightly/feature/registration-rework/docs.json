@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-bab67ee",
+  "skriptVersion" : "2.8.0-dev-nightly-f376b7b",
 
   "classes" : [
     {
@@ -6847,8 +6847,8 @@ Otherwise, this expression will just return the unsorted indices.",
   "id" : "ExprInventory",
   "name" : "Inventory",
   "patterns" : [
-    "[the] inventor(y|ies) of %inventoryholders%",
-"%inventoryholders%'[s] inventor(y|ies)",
+    "[the] inventor(y|ies) of %inventoryholders/<a href='./classes.html#itemtype'>item types</a>%",
+"%inventoryholders/<a href='./classes.html#itemtype'>item types</a>%'[s] inventor(y|ies)",
 
     "pattern_end"
   ],
@@ -7016,12 +7016,13 @@ If multiple strings are passed, each of them will be a separate line in the lore
   "id" : "ExprItemsIn",
   "name" : "Items In",
   "patterns" : [
-    "[(all [[of] the]|the)] items ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
+    "[all [[of] the]] items ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
+"all [[of] the] %<a href='./classes.html#itemtype'>item types</a>% ([with]in|of|contained in|out of) [inventor(y|ies)] %<a href='./classes.html#inventory'>inventories</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0",
-  "description" : "All items in an inventory. Useful for looping or storing in a list variable.
+  "since" : "2.0, INSERT VERSION (specific types of items)",
+  "description" : "All items or specific type(s) of items in an inventory. Useful for looping or storing in a list variable.
 Please note that the positions of the items in the inventory are not saved, only their order is preserved.",
   "examples" : "loop all items in the player's inventory:\\n    loop-item is enchanted\\n    remove loop-item from the player\\nset {inventory::%uuid of player%::*} to items in the player's inventory"
 },
