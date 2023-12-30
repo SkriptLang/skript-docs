@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-884e5c5",
+  "skriptVersion" : "2.8.0-dev-nightly-e6dad97",
 
   "classes" : [
     {
@@ -2288,9 +2288,9 @@ For example, interrupting eating, or drawing back a bow.",
   "id" : "EffCommand",
   "name" : "Command",
   "patterns" : [
-    "[execute] [the] [bungee[cord]] command %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>command senders</a>%]",
-"[execute] [the] %<a href='./classes.html#commandsender'>command senders</a>% [bungee[cord]] command %<a href='./classes.html#string'>texts</a>%",
-"(let|make) %<a href='./classes.html#commandsender'>command senders</a>% execute [[the] [bungee[cord]] command] %<a href='./classes.html#string'>texts</a>%",
+    "[execute] [the] [bungee[cord]] command[s] %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>command senders</a>%]",
+"[execute] [the] %<a href='./classes.html#commandsender'>command senders</a>% [bungee[cord]] command[s] %<a href='./classes.html#string'>texts</a>%",
+"(let|make) %<a href='./classes.html#commandsender'>command senders</a>% execute [[the] [bungee[cord]] command[s]] %<a href='./classes.html#string'>texts</a>%",
 
     "pattern_end"
   ],
