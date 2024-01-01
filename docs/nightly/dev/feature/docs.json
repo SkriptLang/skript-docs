@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-16e217d",
+  "skriptVersion" : "2.8.0-dev-nightly-c1047c2",
 
   "classes" : [
     {
@@ -6568,15 +6568,19 @@ Note 2: If you don't specify whether to use the past or future state of an expre
   "id" : "ExprFurnaceSlot",
   "name" : "Furnace Slot",
   "patterns" : [
-    "(fuel|result) [slot]",
-"(ore|fuel|result)[s] [slot[s]] of %<a href='./classes.html#block'>blocks</a>%",
-"%<a href='./classes.html#block'>blocks</a>%'[s] (ore|fuel|result)[s] [slot[s]]",
+    "[the] (ore slot|fuel slot|result [slot])",
+"[the] (ore|fuel|result) slot[s] of %<a href='./classes.html#block'>blocks</a>%",
+"%<a href='./classes.html#block'>blocks</a>%'[s] (ore|fuel|result) slot[s]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
+  "since" : "1.0, INSERT VERSION (syntax rework)",
   "description" : "A slot of a furnace, i.e. either the ore, fuel or result slot.
-Remember to use '<a href='#ExprBlock'>block</a>' and not 'furnace', as 'furnace' is not an existing expression.",
+Remember to use '<a href='#ExprBlock'>block</a>' and not <code>furnace</code>, as <code>furnace</code> is not an existing expression.
+Note that <code>the result</code> and <code>the result slot</code> refer to separate things. <code>the result</code> is the product in a smelt event and <code>the result slot</code> is the output slot of a furnace (where <code>the result</code> will end up).
+Note that if the result in a smelt event is changed to an item that differs in type from the items currently in the result slot, the smelting will fail to complete (the item will attempt to smelt itself again).
+Note that if values other than <code>the result</code> are changed, event values may not accurately reflect the actual items in a furnace.
+Thus you may wish to use the event block in this case (e.g. <code>the fuel slot of the event-block</code>) to get accurate values if needed.",
   "examples" : "set the fuel slot of the clicked block to a lava bucket\\nset the block's ore slot to 64 iron ore\\ngive the result of the block to the player\\nclear the result slot of the block"
 },
 {
