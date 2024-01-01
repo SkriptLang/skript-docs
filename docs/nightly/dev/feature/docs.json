@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-7d2a5b5",
+  "skriptVersion" : "2.8.0-dev-nightly-b6b63e6",
 
   "classes" : [
     {
@@ -4651,6 +4651,19 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on load:\\n    set {running::%script%} to true\\non unload:\\n    set {running::%script%} to false"
 },
 {
+  "id" : "send_command_list",
+  "name" : "On Send Command List",
+  "patterns" : [
+    "[on] send[ing] [of [the]] [server] command[s] list",
+"[on] [server] command list send",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when the server sends a list of commands to the player. This usually happens on join. The sent commands can be modified via the <a href='expressions.html#ExprSentCommands'>sent commands expression</a>.\\nModifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.\\nAdding new commands to the list is illegal behavior and will be ignored.",
+  "examples" : "on send command list:\\n    set command list to command list where [input does not contain \":\"]\\n    remove \"help\" from command list"
+},
+{
   "id" : "server_list_ping",
   "name" : "On Server List Ping",
   "patterns" : [
@@ -8379,6 +8392,20 @@ Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 t
   "since" : "2.7",
   "description" : "An expression to obtain or modify data relating to the pickles of a sea pickle block.",
   "examples" : "on block break:\\n    type of block is sea pickle\\n    send \"Wow! This stack of sea pickles contained %event-block's sea pickle count% pickles!\"\\n    send \"It could've contained a maximum of %event-block's maximum sea pickle count% pickles!\"\\n    send \"It had to have contained at least %event-block's minimum sea pickle count% pickles!\"\\n    cancel event\\n    set event-block's sea pickle count to event-block's maximum sea pickle count\\n    send \"This bad boy is going to hold so many pickles now!!\""
+},
+{
+  "id" : "ExprSentCommands",
+  "name" : "Sent Command List",
+  "patterns" : [
+    "[the] [sent] [server] command[s] list",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The commands that will be sent to the player in a <a href='events.html#send_command_list'>send commands to player event</a>.
+Modifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.
+Adding new commands to the list is illegal behavior and will be ignored.",
+  "examples" : "on send command list:\\n    set command list to command list where [input does not contain \":\"]\\n    remove \"help\" from command list"
 },
 {
   "id" : "ExprServerIcon",
