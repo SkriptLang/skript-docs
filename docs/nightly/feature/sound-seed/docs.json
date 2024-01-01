@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-8b3aaf4",
+  "skriptVersion" : "2.8.0-dev-nightly-7a1b872",
 
   "classes" : [
     {
@@ -2862,7 +2862,7 @@ If using Paper 1.19.4+ or Adventure API 4.12.0+ you can utilize sound seeds. Min
 that will randomly play, to counter this, you can directly state which seed to use.
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player"
+  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
 },
 {
   "id" : "EffPlayerInfoVisibility",
