@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-973907e",
+  "skriptVersion" : "2.8.0-dev-nightly-4b413b0",
 
   "classes" : [
     {
@@ -175,7 +175,7 @@
   "id" : "enchantment",
   "name" : "Enchantment",
   "patterns" : [
-    "Efficiency, Looting, Soul Speed, Silk Touch, Quick Charge, Flame, Fortune, Aqua Affinity, Multishot, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Unbreaking, Swift Sneak, Feather Falling, Lure, Smite, Fire Aspect, Knockback, Depth Strider, Sweeping Edge, Infinity, Curse of Vanishing, Blast Protection, Bane of Arthropods, Thorns",
+    "Efficiency, Looting, Silk Touch, Quick Charge, Soul Speed, Flame, Fortune, Multishot, Aqua Affinity, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Swift Sneak, Feather Falling, Unbreaking, Smite, Lure, Fire Aspect, Knockback, Depth Strider, Sweeping Edge, Infinity, Curse of Vanishing, Bane of Arthropods, Blast Protection, Thorns",
 
     "pattern_end"
   ],
@@ -295,7 +295,7 @@
   "id" : "gamerule",
   "name" : "Gamerule",
   "patterns" : [
-    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
+    "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount",
 
     "pattern_end"
   ],
@@ -379,7 +379,7 @@
   "id" : "inventorytype",
   "name" : "Inventory Type",
   "patterns" : [
-    "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, a workbench inventory, hopper inventory, a merchant inventory, a hopper inventory, chiseled bookshelf, an ender chest inventory, new smithing table, bookshelf, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, grindstone inventory, a crafting table inventory, a player inventory, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a lectern inventory, merchant inventory, cartography table inventory, a chiseled bookshelf, a new smithing table, a furnace inventory, anvil inventory, a dispenser inventory, a grindstone inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, a bookshelf, creative inventory, crafting table inventory, an anvil inventory",
+    "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, a workbench inventory, hopper inventory, a merchant inventory, a hopper inventory, chiseled bookshelf, an ender chest inventory, new smithing table, bookshelf, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, grindstone inventory, a crafter inventory, a crafting table inventory, a player inventory, decorated pot, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a decorated pot, a lectern inventory, merchant inventory, cartography table inventory, a chiseled bookshelf, a new smithing table, a furnace inventory, anvil inventory, a dispenser inventory, a grindstone inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, a bookshelf, crafter inventory, creative inventory, crafting table inventory, an anvil inventory",
 
     "pattern_end"
   ],
@@ -583,7 +583,7 @@
   "id" : "resourcepackstate",
   "name" : "Resource Pack State",
   "patterns" : [
-    "refused, rejected, accepted, failed, failed to download, successfully loaded, accept, fail, successfully load, refuse, declined, successfully install, success, reject, decline, successfully installed, download fail",
+    "discarded, refused, rejected, failed reload, accepted, failed, failed to reload, failed to download, downloaded, successfully loaded, accept, fail, successfully load, refuse, declined, successfully install, success, reject, decline, successfully installed, download fail, invalid url",
 
     "pattern_end"
   ],
@@ -8582,14 +8582,16 @@ Please note that changing a player's speed will change their FOV just like potio
   "id" : "ExprTarget",
   "name" : "Target",
   "patterns" : [
-    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%]",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%]",
+    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.4.2, 2.7 (Reset)",
+  "since" : "1.4.2, 2.7 (Reset), INSERT VERSION (ignore blocks)",
   "description" : "For players this is the entity at the crosshair.
-For mobs and experience orbs this is the entity they are attacking/following (if any).",
+For mobs and experience orbs this is the entity they are attacking/following (if any).
+Display entities have a hit box of 0, so you should use 'target display' to collect Display entities
+May grab entities in unloaded chunks.",
   "examples" : "on entity target:\\n    if entity's target is a player:\\n        send \"You're being followed by an %entity%!\" to target of entity\\n\\nreset target of entity # Makes the entity target-less\\ndelete targeted entity of player # for players it will delete the target\\ndelete target of last spawned zombie # for entities it will make them target-less"
 },
 {
@@ -8830,6 +8832,21 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
+},
+{
+  "id" : "ExprLocationFromVector",
+  "name" : "Vectors - Create Location from Vector",
+  "patterns" : [
+    "%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>%",
+"%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "2.2-dev28",
+  "description" : "Creates a location from a vector in a world.",
+  "examples" : "set {_loc} to {_v} to location in world \"world\"\\nset {_loc} to {_v} to location in world \"world\" with yaw 45 and pitch 90\\nset {_loc} to location of {_v} in \"world\" with yaw 45 and pitch 90"
 },
 {
   "id" : "ExprVectorFromDirection",
