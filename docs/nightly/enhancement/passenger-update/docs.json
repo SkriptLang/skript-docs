@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-7a61bf7",
+  "skriptVersion" : "2.8.0-dev-nightly-f8ea080",
 
   "classes" : [
     {
@@ -7854,21 +7854,6 @@ See also: <a href='#ExprVehicle'>vehicle</a>",
   "examples" : "passengers of the minecart contains a creeper or a cow\\nthe boat's passenger contains a pig\\nadd a cow and a zombie to passengers of last spawned boat\\nset passengers of player's vehicle to a pig and a horse\\nremove all pigs from player's vehicle\\nclear passengers of boat"
 },
 {
-  "id" : "ExprPassengers",
-  "name" : "Passengers",
-  "patterns" : [
-    "[the] vehicle[s] [of %<a href='./classes.html#entity'>entities</a>%]",
-"%<a href='./classes.html#entity'>entities</a>%'[s] vehicle[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.0, 2.2-dev26 (multiple passengers)",
-  "description" : "The passengers of a vehicle, or the riders of a mob.
-You can use all changers in it.
-See also: <a href='#ExprVehicle'>vehicle</a>",
-  "examples" : "passengers of the minecart contains a creeper or a cow\\nthe boat's passenger contains a pig\\nadd a cow and a zombie to passengers of last spawned boat\\nset passengers of player's vehicle to a pig and a horse\\nremove all pigs from player's vehicle\\nclear passengers of boat"
-},
-{
   "id" : "ExprPercent",
   "name" : "Percent of",
   "patterns" : [
@@ -9072,6 +9057,20 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "since" : "2.2-dev28",
   "description" : "Gets or changes the x, y or z component of a vector.",
   "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v::*} to 1\\nset y component of {_v::*} to 2\\nset z component of {_v::*} to 3\\nsend \"%x component of {_v::*}%, %y component of {_v::*}%, %z component of {_v::*}%\""
+},
+{
+  "id" : "ExprVehicle",
+  "name" : "Vehicle",
+  "patterns" : [
+    "[the] vehicle[s] [of %<a href='./classes.html#entity'>entities</a>%]",
+"%<a href='./classes.html#entity'>entities</a>%'[s] vehicle[s]",
+
+    "pattern_end"
+  ],
+  "since" : "2.0, 2.2-dev14 (entity mount)",
+  "description" : "The vehicle an entity is in, if any. This can actually be any entity, e.g. spider jockeys are skeletons that ride on a spider, so the spider is the 'vehicle' of the skeleton.
+See also: <a href='#ExprPassengers'>passengers</a>",
+  "examples" : "vehicle of the player is a minecart\\n\\non vehicle exit:\\n    vehicle was a minecart\\n    teleport the passenger to spawn of the passenger's world"
 },
 {
   "id" : "ExprVersion",
