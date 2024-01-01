@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-a9e9a78",
+  "skriptVersion" : "2.8.0-dev-nightly-59948b5",
 
   "classes" : [
     {
@@ -5360,26 +5360,26 @@ Please note that specifying the argument type is only supported in script comman
   "id" : "ExprArithmetic",
   "name" : "Arithmetic",
   "patterns" : [
-    "\\(%<a href='./classes.html#number'>number</a>%\\)[ ]+[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]+[ ]%<a href='./classes.html#number'>number</a>%",
-"%<a href='./classes.html#number'>number</a>%[ ]+[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"%<a href='./classes.html#number'>number</a>%[ ]+[ ]%<a href='./classes.html#number'>number</a>%",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]-[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]-[ ]%<a href='./classes.html#number'>number</a>%",
-"%<a href='./classes.html#number'>number</a>%[ ]-[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"%<a href='./classes.html#number'>number</a>%[ ]-[ ]%<a href='./classes.html#number'>number</a>%",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]*[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]*[ ]%<a href='./classes.html#number'>number</a>%",
-"%<a href='./classes.html#number'>number</a>%[ ]*[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"%<a href='./classes.html#number'>number</a>%[ ]*[ ]%<a href='./classes.html#number'>number</a>%",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]/[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]/[ ]%<a href='./classes.html#number'>number</a>%",
-"%<a href='./classes.html#number'>number</a>%[ ]/[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"%<a href='./classes.html#number'>number</a>%[ ]/[ ]%<a href='./classes.html#number'>number</a>%",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]^[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"\\(%<a href='./classes.html#number'>number</a>%\\)[ ]^[ ]%<a href='./classes.html#number'>number</a>%",
-"%<a href='./classes.html#number'>number</a>%[ ]^[ ]\\(%<a href='./classes.html#number'>number</a>%\\)",
-"%<a href='./classes.html#number'>number</a>%[ ]^[ ]%<a href='./classes.html#number'>number</a>%",
+    "\\(%<a href='./classes.html#object'>object</a>%\\)[ ]+[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]+[ ]%<a href='./classes.html#object'>object</a>%",
+"%<a href='./classes.html#object'>object</a>%[ ]+[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"%<a href='./classes.html#object'>object</a>%[ ]+[ ]%<a href='./classes.html#object'>object</a>%",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]-[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]-[ ]%<a href='./classes.html#object'>object</a>%",
+"%<a href='./classes.html#object'>object</a>%[ ]-[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"%<a href='./classes.html#object'>object</a>%[ ]-[ ]%<a href='./classes.html#object'>object</a>%",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]*[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]*[ ]%<a href='./classes.html#object'>object</a>%",
+"%<a href='./classes.html#object'>object</a>%[ ]*[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"%<a href='./classes.html#object'>object</a>%[ ]*[ ]%<a href='./classes.html#object'>object</a>%",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]/[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]/[ ]%<a href='./classes.html#object'>object</a>%",
+"%<a href='./classes.html#object'>object</a>%[ ]/[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"%<a href='./classes.html#object'>object</a>%[ ]/[ ]%<a href='./classes.html#object'>object</a>%",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]^[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"\\(%<a href='./classes.html#object'>object</a>%\\)[ ]^[ ]%<a href='./classes.html#object'>object</a>%",
+"%<a href='./classes.html#object'>object</a>%[ ]^[ ]\\(%<a href='./classes.html#object'>object</a>%\\)",
+"%<a href='./classes.html#object'>object</a>%[ ]^[ ]%<a href='./classes.html#object'>object</a>%",
 
     "pattern_end"
   ],
@@ -8905,7 +8905,7 @@ In the future there will be an option to use a player's UUID instead of the name
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28",
+  "since" : "2.2-dev28, INSERT VERSION (deprecation)",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
 },
