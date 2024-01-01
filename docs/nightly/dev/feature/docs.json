@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-293727f",
+  "skriptVersion" : "2.8.0-dev-nightly-4291e5b",
 
   "classes" : [
     {
@@ -704,6 +704,18 @@
   "since" : "1.0, 2.6.1 (weeks, months, years)",
   "description" : "A timespan is a difference of two different dates or times, e.g '10 minutes'. Timespans are always displayed as real life time, but can be defined as minecraft time, e.g. '5 minecraft days and 12 hours'.\\nNOTE: Months always have the value of 30 days, and years of 365 days.\\nSee <a href='#date'>date</a> and <a href='#time'>time</a> for the other time types of Skript.",
   "examples" : "every 5 minecraft days:\\n    wait a minecraft second and 5 ticks\\nevery 10 mc days and 12 hours:\\n    halt for 12.7 irl minutes, 12 hours and 120.5 seconds"
+},
+{
+  "id" : "transformreason",
+  "name" : "Transform Reason",
+  "patterns" : [
+    "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a transform reason of an <a href='events.html#entity transform'>entity transform event</a>.",
+  "examples" : "Missing examples."
 },
 {
   "id" : "structuretype",
@@ -3768,6 +3780,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.5.3",
   "description" : "Called when an entity uses a nether or end portal. <a href='effects.html#EffCancelEvent'>Cancel the event</a> to prevent the entity from teleporting.",
   "examples" : "on entity portal:\\n    broadcast \"A %type of event-entity% has entered a portal!"
+},
+{
+  "id" : "entity_transform",
+  "name" : "On Entity Transform",
+  "patterns" : [
+    "[on] (entit(y|ies)|%*-entitydatas%) transform[ing] [due to %<a href='./classes.html#transformreason'>transform reasons</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an entity is about to be replaced by another entity.\\nExamples when it's called include; when a zombie gets cured and a villager spawns, an entity drowns in water like a zombie that turns to a drown, an entity that gets frozen in powder snow, a mooshroom that when sheared, spawns a new cow.",
+  "examples" : "on a zombie transforming due to curing:\\non mooshroom transforming:\\non zombie, skeleton or slime transform:"
 },
 {
   "id" : "experience_change",
@@ -8723,6 +8747,18 @@ Using this expression on offline players on Minecraft 1.14 and below will return
   "description" : "The total experience, in points, of players or experience orbs.
 Adding to a player's experience will trigger Mending, but setting their experience will not.",
   "examples" : "set total experience of player to 100\\n\\nadd 100 to player's experience\\n\\nif player's total experience is greater than 100:\\n    set player's total experience to 0\\n    give player 1 diamond"
+},
+{
+  "id" : "ExprTransformReason",
+  "name" : "Transform Reason",
+  "patterns" : [
+    "[the] transform[ing] (cause|reason|type)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The <a href='classes.html#transformreason'>transform reason</a> within an entity <a href='events.html#entity transform'>entity transform</a> event.",
+  "examples" : "on entity transform:\\n    transform reason is infection, drowned or frozen"
 },
 {
   "id" : "ExprTypeOf",
