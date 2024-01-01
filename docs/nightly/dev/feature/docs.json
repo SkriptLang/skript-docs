@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-27d1a30",
+  "skriptVersion" : "2.8.0-dev-nightly-3b3ebb2",
 
   "classes" : [
     {
@@ -8582,14 +8582,16 @@ Please note that changing a player's speed will change their FOV just like potio
   "id" : "ExprTarget",
   "name" : "Target",
   "patterns" : [
-    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%]",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%]",
+    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.4.2, 2.7 (Reset)",
+  "since" : "1.4.2, 2.7 (Reset), INSERT VERSION (ignore blocks)",
   "description" : "For players this is the entity at the crosshair.
-For mobs and experience orbs this is the entity they are attacking/following (if any).",
+For mobs and experience orbs this is the entity they are attacking/following (if any).
+Display entities have a hit box of 0, so you should use 'target display' to collect Display entities
+May grab entities in unloaded chunks.",
   "examples" : "on entity target:\\n    if entity's target is a player:\\n        send \"You're being followed by an %entity%!\" to target of entity\\n\\nreset target of entity # Makes the entity target-less\\ndelete targeted entity of player # for players it will delete the target\\ndelete target of last spawned zombie # for entities it will make them target-less"
 },
 {
