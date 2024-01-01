@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-58ca469",
+  "skriptVersion" : "2.8.0-dev-nightly-27d1a30",
 
   "classes" : [
     {
@@ -8830,6 +8830,21 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
+},
+{
+  "id" : "ExprLocationFromVector",
+  "name" : "Vectors - Create Location from Vector",
+  "patterns" : [
+    "%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>%",
+"%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "2.2-dev28",
+  "description" : "Creates a location from a vector in a world.",
+  "examples" : "set {_loc} to {_v} to location in world \"world\"\\nset {_loc} to {_v} to location in world \"world\" with yaw 45 and pitch 90\\nset {_loc} to location of {_v} in \"world\" with yaw 45 and pitch 90"
 },
 {
   "id" : "ExprVectorFromDirection",
