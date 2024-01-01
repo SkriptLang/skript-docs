@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-ae6bab5",
+  "skriptVersion" : "2.8.0-dev-nightly-35343e8",
 
   "classes" : [
     {
@@ -175,7 +175,7 @@
   "id" : "enchantment",
   "name" : "Enchantment",
   "patterns" : [
-    "Efficiency, Looting, Soul Speed, Silk Touch, Quick Charge, Flame, Fortune, Aqua Affinity, Multishot, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Unbreaking, Swift Sneak, Feather Falling, Lure, Smite, Fire Aspect, Knockback, Depth Strider, Sweeping Edge, Infinity, Curse of Vanishing, Blast Protection, Bane of Arthropods, Thorns",
+    "Efficiency, Looting, Silk Touch, Quick Charge, Soul Speed, Flame, Fortune, Multishot, Aqua Affinity, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Swift Sneak, Feather Falling, Unbreaking, Smite, Lure, Fire Aspect, Knockback, Depth Strider, Sweeping Edge, Infinity, Curse of Vanishing, Bane of Arthropods, Blast Protection, Thorns",
 
     "pattern_end"
   ],
@@ -295,7 +295,7 @@
   "id" : "gamerule",
   "name" : "Gamerule",
   "patterns" : [
-    "doWardenSpawning, tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, fireDamage, reducedDebugInfo, waterSourceConversion, disableElytraMovementCheck, lavaSourceConversion, announceAdvancements, drowningDamage, commandBlockOutput, forgiveDeadPlayers, doMobSpawning, maxEntityCramming, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doInsomnia, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, keepInventory, doEntityDrops, doLimitedCrafting, mobGriefing, randomTickSpeed, spawnRadius, freezeDamage, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, sendCommandFeedback, doPatrolSpawning",
+    "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount",
 
     "pattern_end"
   ],
@@ -379,7 +379,7 @@
   "id" : "inventorytype",
   "name" : "Inventory Type",
   "patterns" : [
-    "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, a workbench inventory, hopper inventory, a merchant inventory, a hopper inventory, chiseled bookshelf, an ender chest inventory, new smithing table, bookshelf, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, grindstone inventory, a crafting table inventory, a player inventory, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a lectern inventory, merchant inventory, cartography table inventory, a chiseled bookshelf, a new smithing table, a furnace inventory, anvil inventory, a dispenser inventory, a grindstone inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, a bookshelf, creative inventory, crafting table inventory, an anvil inventory",
+    "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, a workbench inventory, hopper inventory, a merchant inventory, a hopper inventory, chiseled bookshelf, an ender chest inventory, new smithing table, bookshelf, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, grindstone inventory, a crafter inventory, a crafting table inventory, a player inventory, decorated pot, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a decorated pot, a lectern inventory, merchant inventory, cartography table inventory, a chiseled bookshelf, a new smithing table, a furnace inventory, anvil inventory, a dispenser inventory, a grindstone inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, a bookshelf, crafter inventory, creative inventory, crafting table inventory, an anvil inventory",
 
     "pattern_end"
   ],
@@ -499,25 +499,25 @@
   "id" : "offlineplayer",
   "name" : "Offline Player",
   "patterns" : [
-    "Missing patterns.",
+    "Parsing an offline player as a player (online) will return nothing (none), for that case you would need to parse as offlineplayer which only returns nothing (none) if player doesn't exist in Minecraft databases (name not taken) otherwise it will return the player regardless of their online status.",
 
     "pattern_end"
   ],
-  "since" : "Unknown",
+  "since" : "2.0 beta 8",
   "description" : "A player that is possibly offline. See <a href='#player'>player</a> for more information. Please note that while all effects and conditions that require a player can be used with an offline player as well, they will not work if the player is not actually online.",
-  "examples" : "Missing examples."
+  "examples" : "set {_p} to \"Notch\" parsed as an offlineplayer # returns Notch even if they're offline"
 },
 {
   "id" : "player",
   "name" : "Player",
   "patterns" : [
-    "Missing patterns.",
+    "Parsing an offline player as a player (online) will return nothing (none), for that case you would need to parse as offlineplayer which only returns nothing (none) if player doesn't exist in Minecraft databases (name not taken) otherwise it will return the player regardless of their online status.",
 
     "pattern_end"
   ],
   "since" : "1.0",
   "description" : "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.\\nYou have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly.",
-  "examples" : "Missing examples."
+  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
 },
 {
   "id" : "potioneffect",
@@ -583,7 +583,7 @@
   "id" : "resourcepackstate",
   "name" : "Resource Pack State",
   "patterns" : [
-    "refused, rejected, accepted, failed, failed to download, successfully loaded, accept, fail, successfully load, refuse, declined, successfully install, success, reject, decline, successfully installed, download fail",
+    "discarded, refused, rejected, failed reload, accepted, failed, failed to reload, failed to download, downloaded, successfully loaded, accept, fail, successfully load, refuse, declined, successfully install, success, reject, decline, successfully installed, download fail, invalid url",
 
     "pattern_end"
   ],
@@ -704,6 +704,18 @@
   "since" : "1.0, 2.6.1 (weeks, months, years)",
   "description" : "A timespan is a difference of two different dates or times, e.g '10 minutes'. Timespans are always displayed as real life time, but can be defined as minecraft time, e.g. '5 minecraft days and 12 hours'.\\nNOTE: Months always have the value of 30 days, and years of 365 days.\\nSee <a href='#date'>date</a> and <a href='#time'>time</a> for the other time types of Skript.",
   "examples" : "every 5 minecraft days:\\n    wait a minecraft second and 5 ticks\\nevery 10 mc days and 12 hours:\\n    halt for 12.7 irl minutes, 12 hours and 120.5 seconds"
+},
+{
+  "id" : "transformreason",
+  "name" : "Transform Reason",
+  "patterns" : [
+    "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a transform reason of an <a href='events.html#entity transform'>entity transform event</a>.",
+  "examples" : "Missing examples."
 },
 {
   "id" : "structuretype",
@@ -2288,9 +2300,9 @@ For example, interrupting eating, or drawing back a bow.",
   "id" : "EffCommand",
   "name" : "Command",
   "patterns" : [
-    "[execute] [the] [bungee[cord]] command %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>command senders</a>%]",
-"[execute] [the] %<a href='./classes.html#commandsender'>command senders</a>% [bungee[cord]] command %<a href='./classes.html#string'>texts</a>%",
-"(let|make) %<a href='./classes.html#commandsender'>command senders</a>% execute [[the] [bungee[cord]] command] %<a href='./classes.html#string'>texts</a>%",
+    "[execute] [the] [bungee[cord]] command[s] %<a href='./classes.html#string'>texts</a>% [by %<a href='./classes.html#commandsender'>command senders</a>%]",
+"[execute] [the] %<a href='./classes.html#commandsender'>command senders</a>% [bungee[cord]] command[s] %<a href='./classes.html#string'>texts</a>%",
+"(let|make) %<a href='./classes.html#commandsender'>command senders</a>% execute [[the] [bungee[cord]] command[s]] %<a href='./classes.html#string'>texts</a>%",
 
     "pattern_end"
   ],
@@ -3770,6 +3782,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "examples" : "on entity portal:\\n    broadcast \"A %type of event-entity% has entered a portal!"
 },
 {
+  "id" : "entity_transform",
+  "name" : "On Entity Transform",
+  "patterns" : [
+    "[on] (entit(y|ies)|%*-entitydatas%) transform[ing] [due to %<a href='./classes.html#transformreason'>transform reasons</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an entity is about to be replaced by another entity.\\nExamples when it's called include; when a zombie gets cured and a villager spawns, an entity drowns in water like a zombie that turns to a drown, an entity that gets frozen in powder snow, a mooshroom that when sheared, spawns a new cow.",
+  "examples" : "on a zombie transforming due to curing:\\non mooshroom transforming:\\non zombie, skeleton or slime transform:"
+},
+{
   "id" : "experience_change",
   "name" : "On Experience Change",
   "patterns" : [
@@ -4625,6 +4649,19 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.0",
   "description" : "Called directly after the trigger is loaded, or directly before the whole script is unloaded.\\nThe keyword 'async' indicates the trigger can be ran asynchronously, ",
   "examples" : "on load:\\n    set {running::%script%} to true\\non unload:\\n    set {running::%script%} to false"
+},
+{
+  "id" : "send_command_list",
+  "name" : "On Send Command List",
+  "patterns" : [
+    "[on] send[ing] [of [the]] [server] command[s] list",
+"[on] [server] command list send",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when the server sends a list of commands to the player. This usually happens on join. The sent commands can be modified via the <a href='expressions.html#ExprSentCommands'>sent commands expression</a>.\\nModifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.\\nAdding new commands to the list is illegal behavior and will be ignored.",
+  "examples" : "on send command list:\\n    set command list to command list where [input does not contain \":\"]\\n    remove \"help\" from command list"
 },
 {
   "id" : "server_list_ping",
@@ -6001,7 +6038,8 @@ For items, it's the amount of durability damage the item will be taking.",
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "The difference between two values, e.g. <a href='./classes.html#number'>numbers</a>, <a href='./classes/#date'>dates</a> or <a href='./classes/#time'>times</a>.",
+  "description" : "The difference between two values
+Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./classes/#date'>dates</a> and <a href='./classes/#time'>times</a>.",
   "examples" : "if difference between {command::%player%::lastuse} and now is smaller than a minute:\\n    message \"You have to wait a minute before using this command again!\""
 },
 {
@@ -8240,6 +8278,18 @@ This expression requires a supported regions plugin to be installed.",
   "examples" : "player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
 },
 {
+  "id" : "ExprRepeat",
+  "name" : "Repeat String",
+  "patterns" : [
+    "%<a href='./classes.html#string'>texts</a>% repeated %integer% time[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Repeats inputted strings a given amount of times.",
+  "examples" : "broadcast nl and nl repeated 200 times\\nbroadcast \"Hello World \" repeated 5 times\\nif \"aa\" repeated 2 times is \"aaaa\":\\n    broadcast \"Ahhhh\" repeated 100 times"
+},
+{
   "id" : "ExprCharges",
   "name" : "Respawn Anchor Charges",
   "patterns" : [
@@ -8358,6 +8408,20 @@ Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 t
   "since" : "2.7",
   "description" : "An expression to obtain or modify data relating to the pickles of a sea pickle block.",
   "examples" : "on block break:\\n    type of block is sea pickle\\n    send \"Wow! This stack of sea pickles contained %event-block's sea pickle count% pickles!\"\\n    send \"It could've contained a maximum of %event-block's maximum sea pickle count% pickles!\"\\n    send \"It had to have contained at least %event-block's minimum sea pickle count% pickles!\"\\n    cancel event\\n    set event-block's sea pickle count to event-block's maximum sea pickle count\\n    send \"This bad boy is going to hold so many pickles now!!\""
+},
+{
+  "id" : "ExprSentCommands",
+  "name" : "Sent Command List",
+  "patterns" : [
+    "[the] [sent] [server] command[s] list",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The commands that will be sent to the player in a <a href='events.html#send_command_list'>send commands to player event</a>.
+Modifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.
+Adding new commands to the list is illegal behavior and will be ignored.",
+  "examples" : "on send command list:\\n    set command list to command list where [input does not contain \":\"]\\n    remove \"help\" from command list"
 },
 {
   "id" : "ExprServerIcon",
@@ -8586,14 +8650,16 @@ Please note that changing a player's speed will change their FOV just like potio
   "id" : "ExprTarget",
   "name" : "Target",
   "patterns" : [
-    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%]",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%]",
+    "[the] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [of %<a href='./classes.html#livingentity'>living entities</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] target[[ed] %*<a href='./classes.html#entitydata'>entity type</a>%] [ignoring blocks] [[with|at] ray[ ]size %<a href='./classes.html#number'>number</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.4.2, 2.7 (Reset)",
+  "since" : "1.4.2, 2.7 (Reset), INSERT VERSION (ignore blocks)",
   "description" : "For players this is the entity at the crosshair.
-For mobs and experience orbs this is the entity they are attacking/following (if any).",
+For mobs and experience orbs this is the entity they are attacking/following (if any).
+Display entities have a hit box of 0, so you should use 'target display' to collect Display entities
+May grab entities in unloaded chunks.",
   "examples" : "on entity target:\\n    if entity's target is a player:\\n        send \"You're being followed by an %entity%!\" to target of entity\\n\\nreset target of entity # Makes the entity target-less\\ndelete targeted entity of player # for players it will delete the target\\ndelete target of last spawned zombie # for entities it will make them target-less"
 },
 {
@@ -8727,6 +8793,18 @@ Adding to a player's experience will trigger Mending, but setting their experien
   "examples" : "set total experience of player to 100\\n\\nadd 100 to player's experience\\n\\nif player's total experience is greater than 100:\\n    set player's total experience to 0\\n    give player 1 diamond"
 },
 {
+  "id" : "ExprTransformReason",
+  "name" : "Transform Reason",
+  "patterns" : [
+    "[the] transform[ing] (cause|reason|type)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The <a href='classes.html#transformreason'>transform reason</a> within an entity <a href='events.html#entity transform'>entity transform</a> event.",
+  "examples" : "on entity transform:\\n    transform reason is infection, drowned or frozen"
+},
+{
   "id" : "ExprTypeOf",
   "name" : "Type of",
   "patterns" : [
@@ -8834,6 +8912,21 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Arithmetic expressions for vectors.",
   "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
+},
+{
+  "id" : "ExprLocationFromVector",
+  "name" : "Vectors - Create Location from Vector",
+  "patterns" : [
+    "%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>%",
+"%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+"location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "2.2-dev28",
+  "description" : "Creates a location from a vector in a world.",
+  "examples" : "set {_loc} to {_v} to location in world \"world\"\\nset {_loc} to {_v} to location in world \"world\" with yaw 45 and pitch 90\\nset {_loc} to location of {_v} in \"world\" with yaw 45 and pitch 90"
 },
 {
   "id" : "ExprVectorFromDirection",
