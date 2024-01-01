@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-b6b63e6",
+  "skriptVersion" : "2.8.0-dev-nightly-a9e9a78",
 
   "classes" : [
     {
@@ -8272,6 +8272,18 @@ This expression requires a supported regions plugin to be installed.",
   "since" : "<i>unknown</i> (before 2.1)",
   "description" : "How much time a player has left underwater before starting to drown.",
   "examples" : "player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
+},
+{
+  "id" : "ExprRepeat",
+  "name" : "Repeat String",
+  "patterns" : [
+    "%<a href='./classes.html#string'>texts</a>% repeated %integer% time[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Repeats inputted strings a given amount of times.",
+  "examples" : "broadcast nl and nl repeated 200 times\\nbroadcast \"Hello World \" repeated 5 times\\nif \"aa\" repeated 2 times is \"aaaa\":\\n    broadcast \"Ahhhh\" repeated 100 times"
 },
 {
   "id" : "ExprCharges",
