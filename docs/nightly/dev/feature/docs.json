@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-59948b5",
+  "skriptVersion" : "2.8.0-dev-nightly-16e217d",
 
   "classes" : [
     {
@@ -2654,6 +2654,21 @@ Please note that the image must be 64x64 and the file path starts from the serve
   "examples" : "on load:\\n    clear {server-icons::*}\\n    loop 5 times:\\n        load server icon from file \"icons/%loop-number%.png\"\\n        add the last loaded server icon to {server-icons::*}\\n\\non server list ping:\\n    set the icon to a random server icon out of {server-icons::*}"
 },
 {
+  "id" : "EffWorldLoad",
+  "name" : "Load World",
+  "patterns" : [
+    "load [[the] world[s]] %<a href='./classes.html#string'>texts</a>% [with environment %<a href='./classes.html#environment'>environment</a>%]",
+"unload [[the] world[s]] %<a href='./classes.html#world'>worlds</a>% [without saving]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Load your worlds or unload your worlds
+The load effect will create a new world if world doesn't already exist.
+When attempting to load a normal vanilla world you must define it's environment i.e \"world_nether\" must be loaded with nether environment",
+  "examples" : "load world \"world_nether\" with environment nether\\nload the world \"myCustomWorld\"\\nunload \"world_nether\"\\nunload \"world_the_end\" without saving\\nunload all worlds"
+},
+{
   "id" : "EffSuppressWarnings",
   "name" : "Locally Suppress Warning",
   "patterns" : [
@@ -2983,6 +2998,19 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   "since" : "2.2, INSERT VERSION (returns aliases)",
   "description" : "Makes a function return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
+},
+{
+  "id" : "EffWorldSave",
+  "name" : "Save World",
+  "patterns" : [
+    "save [[the] world[s]] %<a href='./classes.html#world'>worlds</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Save all worlds or a given world manually.
+Note: saving many worlds at once may possibly cause the server to freeze.",
+  "examples" : "save \"world_nether\"\\nsave all worlds"
 },
 {
   "id" : "EffSendBlockChange",
@@ -5005,49 +5033,49 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "world_init",
   "name" : "On World Init",
   "patterns" : [
-    "[on] world init[ialization]",
+    "[on] world init[ialization] [of %<a href='./classes.html#world'>worlds</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "Called when a world is initialised. As all default worlds are initialised before any scripts are loaded, this event is only called for newly created worlds.\\nWorld management plugins might change the behaviour of this event though.",
-  "examples" : "on world init:"
+  "since" : "1.0, INSERT VERSION (defining worlds)",
+  "description" : "Called when a world is initialized. As all default worlds are initialized before\\nany scripts are loaded, this event is only called for newly created worlds.\\nWorld management plugins might change the behaviour of this event though.",
+  "examples" : "on world init of \"world_the_end\":"
 },
 {
   "id" : "world_load",
   "name" : "On World Load",
   "patterns" : [
-    "[on] world load[ing]",
+    "[on] world load[ing] [of %<a href='./classes.html#world'>worlds</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
+  "since" : "1.0, INSERT VERSION (defining worlds)",
   "description" : "Called when a world is loaded. As with the world init event, this event will not be called for the server's default world(s).",
-  "examples" : "on world load:\\n    send \"World is loading...\" to console"
+  "examples" : "on world load of \"world_nether\":\\n    broadcast \"The world %event-world% has been loaded!\""
 },
 {
   "id" : "world_save",
   "name" : "On World Save",
   "patterns" : [
-    "[on] world sav(e|ing)",
+    "[on] world sav(e|ing) [of %<a href='./classes.html#world'>worlds</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
+  "since" : "1.0, INSERT VERSION (defining worlds)",
   "description" : "Called when a world is saved to disk. Usually all worlds are saved simultaneously, but world management plugins could change this.",
-  "examples" : "on world saving:\\n    broadcast \"World has been saved!\""
+  "examples" : "on world save of \"world\":\\n    broadcast \"The world %event-world% has been saved\""
 },
 {
   "id" : "world_unload",
   "name" : "On World Unload",
   "patterns" : [
-    "[on] world unload[ing]",
+    "[on] world unload[ing] [of %<a href='./classes.html#world'>worlds</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "Called when a world is unloaded. This event might never be called if you don't have a world management plugin.",
-  "examples" : "on world unload:\\n    cancel event"
+  "since" : "1.0, INSERT VERSION (defining worlds)",
+  "description" : "Called when a world is unloaded. This event will never be called if you don't have a world management plugin.",
+  "examples" : "on world unload:\\n    broadcast \"the %event-world% has been unloaded!\""
 },
 {
   "id" : "zombie_break_door",
