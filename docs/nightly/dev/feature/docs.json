@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-4291e5b",
+  "skriptVersion" : "2.8.0-dev-nightly-7d2a5b5",
 
   "classes" : [
     {
@@ -6025,7 +6025,8 @@ For items, it's the amount of durability damage the item will be taking.",
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "The difference between two values, e.g. <a href='./classes.html#number'>numbers</a>, <a href='./classes/#date'>dates</a> or <a href='./classes/#time'>times</a>.",
+  "description" : "The difference between two values
+Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./classes/#date'>dates</a> and <a href='./classes/#time'>times</a>.",
   "examples" : "if difference between {command::%player%::lastuse} and now is smaller than a minute:\\n    message \"You have to wait a minute before using this command again!\""
 },
 {
