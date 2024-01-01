@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-f14816e",
+  "skriptVersion" : "2.8.0-dev-nightly-669ee87",
 
   "classes" : [
     {
@@ -6151,16 +6151,20 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
 },
 {
   "id" : "ExprElement",
-  "name" : "Element of",
+  "name" : "Elements",
   "patterns" : [
-    "([the] first|[the] last|[a] random|[the] %<a href='./classes.html#number'>number</a>%(st|nd|rd|th)|[the] %<a href='./classes.html#number'>number</a>%(st|nd|rd|th) [to] last) element [out] of %<a href='./classes.html#object'>objects</a>%",
+    "[the] (first|last) element [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] (first|last) %integer% elements [out] of %<a href='./classes.html#object'>objects</a>%",
+"[a] random element [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] %integer%(st|nd|rd|th) [[to] last] element [out] of %<a href='./classes.html#object'>objects</a>%",
+"[the] elements (from|between) %integer% (to|and) %integer% [out] of %<a href='./classes.html#object'>objects</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.7 (relative to last element)",
-  "description" : "The first, last or a random element of a set, e.g. a list variable.
-See also: <a href='#ExprRandom'>random</a>",
-  "examples" : "give a random element out of {free items::*} to the player"
+  "since" : "2.0, 2.7 (relative to last element), INSERT VERSION (range of elements)",
+  "description" : "The first, last, range or a random element of a set, e.g. a list variable.
+See also: <a href='#ExprRandom'>random expression</a>",
+  "examples" : "broadcast the first 3 elements of {top players::*}"
 },
 {
   "id" : "ExprEnchantItem",
