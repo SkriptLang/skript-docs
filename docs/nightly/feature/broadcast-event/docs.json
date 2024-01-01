@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-dev-nightly-fe4c87c",
+  "skriptVersion" : "2.8.0-dev-nightly-a6e8e61",
 
   "classes" : [
     {
@@ -4635,7 +4635,7 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "2.7",
-  "description" : "Called when the server broadcasts messages.",
+  "description" : "Called when the server broadcasts messages. Does not get called when using Skript's <a href='effects.html#EffBroadcast'>broadcast</a> effect.",
   "examples" : "on server broadcast:\\n    broadcast-message contains \"example\"\\n    cancel event"
 },
 {
