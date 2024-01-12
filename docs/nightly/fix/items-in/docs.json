@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-pre1-nightly-f46bd8c",
+  "skriptVersion" : "2.8.0-pre2-nightly-00958a8",
 
   "classes" : [
     {
@@ -5432,8 +5432,8 @@ Please note that specifying the argument type is only supported in script comman
   "id" : "ExprArmorSlot",
   "name" : "Armour Slot",
   "patterns" : [
-    "[the] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]) of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] ((boots|shoes|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s])",
+    "[the] (((boots|shoes)|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]) of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (((boots|shoes)|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s])",
 
     "pattern_end"
   ],
@@ -8962,7 +8962,7 @@ In the future there will be an option to use a player's UUID instead of the name
   "id" : "ExprLocationFromVector",
   "name" : "Vectors - Create Location from Vector",
   "patterns" : [
-    "%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>%",
+    "%<a href='./classes.html#vector'>vector</a>% to location in %<a href='./classes.html#world'>world</a>%",
 "location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>%",
 "%<a href='./classes.html#vector'>vector</a>% [to location] in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
 "location (from|of) %<a href='./classes.html#vector'>vector</a>% in %<a href='./classes.html#world'>world</a>% with yaw %<a href='./classes.html#number'>number</a>% and pitch %<a href='./classes.html#number'>number</a>%",
