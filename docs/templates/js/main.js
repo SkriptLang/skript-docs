@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     highlightAll();
   }, 100);
 });
-document.addEventListener("SelectedTutorialChange", function (event) {
+document.addEventListener("UpdateCodeHighlighting", function (event) {
   highlightAll();
 });
 // Syntax Highlighting </>

@@ -11,6 +11,7 @@
   const markdownDisplay = document.getElementById("tutorial-markdown-display");
   let lastTutorialElement = null;
   async function updateTutorial() {
+    const updateHighlighting = document.readyState === "complete";
     let tutorial = window.location.hash;
     if (tutorial === "") { /* fallback to welcome page */
       tutorial = "#welcome";
@@ -45,8 +46,8 @@
      * only fire this event if we are switching the selected tutorial
      * right now, this event is currently only used to process code highlighting
      */
-    if (document.readyState === "complete") {
-      document.dispatchEvent(new Event("SelectedTutorialChange"))
+    if (updateHighlighting) {
+      document.dispatchEvent(new Event("UpdateCodeHighlighting"))
     }
   }
 
