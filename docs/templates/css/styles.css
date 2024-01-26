@@ -444,6 +444,11 @@ div.active-syntax .item-examples p {
     overflow-y: scroll;
 }
 
+#content.no-search { /* align height with left panel */
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+}
+
 #content.no-left-panel {
     grid-column-start: 1;
     grid-column-end: none;
@@ -861,34 +866,6 @@ p, h1, h2, h3, h4, h5 {
 
 .left-margin {
     margin-left: 20px !important;
-}
-
-.colors-table {
-    width: 75%;
-    margin: 32px auto;
-    border-collapse: collapse;
-    font-size: 0.9em;
-    font-family: "Poppins", sans-serif;
-    box-shadow: var(--table-shadow);
-    color: var(--font-color);
-    /*border-radius: 5px;*/
-}
-
-.colors-table th,
-.colors-table td {
-    padding: 12px 15px;
-}
-
-.colors-table tbody tr {
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-}
-
-.colors-table tbody tr:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-.colors-table tbody tr:last-of-type {
-    border-bottom: 2px solid #ff9800;
 }
 
 ol.custom-list {

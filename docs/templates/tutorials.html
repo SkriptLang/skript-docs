@@ -1,16 +1,55 @@
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link href="css/tutorials.css" rel="stylesheet">
+
 <h1 id="nav-title">Tutorials</h1>
-<div id="content-no-docs" class="no-left-panel" style="margin-top: 40px">
-  <p class="box-title-red">Note:</p>
-  <div class="box-red" style="height: max-content">
-    <strong>Skript Tutorials are coming soon.</strong>
-    <br><br>
-    <ol class="custom-list">
-      <li>Loops</li>
-      <li>Commands</li>
-      <li>Functions</li>
-      <li>Variables</li>
-      <li>Visual effects</li>
-    </ol>
-    <br>
-  </div>
+<div id="content" class="no-search">
+  <!-- extra bottom padding to make end of files easier to read -->
+  <div id="tutorial-markdown-display" style="padding-bottom: 25px;"></div>
 </div>
+
+<script>
+  const markdownDisplay = document.getElementById("tutorial-markdown-display");
+  let lastTutorialElement = null;
+  async function updateTutorial() {
+    let tutorial = window.location.hash;
+    if (tutorial === "") { /* fallback to welcome page */
+      tutorial = "#welcome";
+    }
+
+    /* fetch new tutorial */
+    let response = await fetch(`tutorials/${tutorial.substring(1)}.md`);
+    if (!response.ok) { /* fallback to welcome page */
+      response = await fetch("tutorials/welcome.md");
+    }
+
+    /* update active item */
+    if (lastTutorialElement != null) {
+      lastTutorialElement.classList.remove("active-item");
+    }
+    lastTutorialElement = document.querySelector(`#nav-contents a[href="${tutorial}"]`);
+    if (lastTutorialElement != null) {
+      lastTutorialElement.classList.add("active-item");
+    }
+
+    /* apply markdown */
+    markdownDisplay.innerHTML = marked.parse(await response.text());
+    markdownDisplay.querySelectorAll("pre").forEach((e) => {
+      if (e.querySelector("code")) { /* ensure we have a code block */
+        /* manually apply code box styling */
+        e.classList.add("box", "code");
+        e.style.setProperty("overflow", "auto");
+      }
+    });
+
+    /*
+     * only fire this event if we are switching the selected tutorial
+     * right now, this event is currently only used to process code highlighting
+     */
+    if (document.readyState === "complete") {
+      document.dispatchEvent(new Event("SelectedTutorialChange"))
+    }
+  }
+
+  updateTutorial();
+  window.onhashchange = function() { updateTutorial() };
+</script>

@@ -8,7 +8,7 @@ const contents = document.querySelector("#content");
 lastActiveSideElement = null;
 navContents = document.getElementById("nav-contents");
 
-if (contents) {
+if (contents && !contents.classList.contains("no-search")) {
   setTimeout(() => {
     contents.addEventListener('scroll', (e) => {
       links.forEach((ha) => {
@@ -34,11 +34,13 @@ if (contents) {
   
 // Active Tab
 const pageLink = window.location.toString().replaceAll(/(.*)\/(.+?).html(.*)/gi, '$2');
-if (pageLink === "" || pageLink == window.location.toString()) // home page - when there is no `.+?.html` pageLink will = windown.location due to current regex
+if (pageLink === "" || pageLink == window.location.toString()) { // home page - when there is no `.+?.html` pageLink will = windown.location due to current regex
   document.querySelectorAll('#global-navigation a[href="index.html"]')[0].classList.add("active-tab");
-else
-  document.querySelectorAll(`#global-navigation a[href="${pageLink}.html"]`)[0].classList.add("active-tab");
-
+} else {
+  try {
+    document.querySelectorAll(`#global-navigation a[href="${pageLink}.html"]`)[0].classList.add("active-tab");
+  } catch (ignored) { }
+}
 
 // No Left Panel
 for (e in {"content-no-docs": 0, "content": 1}) {
@@ -112,24 +114,26 @@ function versionCompare(base, target) { // Return -1, 0, 1
 var searchBar;
 var searchIcon;
 
-// Load search link
-var linkParams = new URLSearchParams(window.location.href.replace("+", "%2B").split("?")[1]) // URLSearchParams decode '+' as space while encodeURI keeps + as is
-if (linkParams && linkParams.get("search")) {
-  setTimeout(() => {
-    searchNow(linkParams.get("search")) // anchor link sometimes appear after the search param so filter it
-  }, 20) // Until searchBar is loaded
-} else {
-  // Search the hash value if available
-  requestedElementID = window.location.hash;
-  if (requestedElementID != undefined && requestedElementID != "") {
-    setTimeout(() => {
-      searchNow(requestedElementID);
-    }, 20) // Until searchBar is loaded
-  }
-}
-
 var content = document.getElementById("content");
-if (content) {
+const noSearch = content && content.classList.contains("no-search");
+if (content && !noSearch) {
+
+  // Load search link
+  var linkParams = new URLSearchParams(window.location.href.replace("+", "%2B").split("?")[1]) // URLSearchParams decode '+' as space while encodeURI keeps + as is
+  if (linkParams && linkParams.get("search")) {
+    setTimeout(() => {
+      searchNow(linkParams.get("search")) // anchor link sometimes appear after the search param so filter it
+    }, 20) // Until searchBar is loaded
+  } else {
+    // Search the hash value if available
+    requestedElementID = window.location.hash;
+    if (requestedElementID != undefined && requestedElementID != "") {
+      setTimeout(() => {
+        searchNow(requestedElementID);
+      }, 20) // Until searchBar is loaded
+    }
+  }
+
   let isNewPage = linkParams.get("isNew") != null;
   content.insertAdjacentHTML('afterbegin', `<a id="search-icon" ${isNewPage ? 'class="search-icon-new"' : ""} title="Copy the search link."><img style="width: 28px;" src="./assets/search.svg"></a>`);
   content.insertAdjacentHTML('afterbegin', `<span><input id="search-bar" ${isNewPage ? 'class="search-bar-version"' : ""} type="text" placeholder="Search the docs 🔍" title="Available Filters:&#13;&#10;&#13;&#10;Version:   v:2.5.3 v:2.2+ v:2.4-&#13;&#10;Type:      t:expression t:condition etc.&#13;&#10;New:       is:new"><span id="search-bar-after" style="display: none;">0 ${resultsFoundText}</span></span>`);
@@ -172,7 +176,7 @@ if (content) {
     }, true)
       
   }
-} else {
+} else if (!noSearch) {
   content = document.getElementById("content-no-docs")
 }
 
@@ -349,18 +353,24 @@ document.querySelectorAll(".placeholder").forEach(e => {
 // Placeholders </>
 
 // <> Syntax Highlighting
+function highlightAll() {
+  document.querySelectorAll('.item-examples .skript-code-block').forEach(el => {
+    highlightElement(el);
+  });
+  document.querySelectorAll('pre code').forEach(el => {
+    highlightElement(el);
+  });
+  document.querySelectorAll('.box.skript-code-block').forEach(el => {
+    highlightElement(el);
+  });
+}
 document.addEventListener("DOMContentLoaded", function (event) {
   setTimeout(() => {
-    document.querySelectorAll('.item-examples .skript-code-block').forEach(el => {
-      highlightElement(el);
-    });
-    document.querySelectorAll('pre code').forEach(el => {
-      highlightElement(el);
-    });
-    document.querySelectorAll('.box.skript-code-block').forEach(el => {
-      highlightElement(el);
-    });
+    highlightAll();
   }, 100);
+});
+document.addEventListener("SelectedTutorialChange", function (event) {
+  highlightAll();
 });
 // Syntax Highlighting </>
 

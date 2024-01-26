@@ -1,0 +1,29 @@
+h1, h2, h3, h4, h5, h6 {
+    padding-top: 25px;
+}
+
+table {
+    width: 75%;
+    margin: 32px auto;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: "Poppins", sans-serif;
+    box-shadow: var(--table-shadow);
+    color: var(--font-color);
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #ff9800;
+}
