@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-pre2-nightly-0b08548",
+  "skriptVersion" : "2.8.0-nightly-66aeee5",
 
   "classes" : [
     {
@@ -663,7 +663,7 @@
     "pattern_end"
   ],
   "since" : "1.0",
-  "description" : "Text is simply text, i.e. a sequence of characters, which can optionally contain expressions which will be replaced with a meaningful representation (e.g. %player% will be replaced with the player's name).\\nBecause scripts are also text, you have to put text into double quotes to tell Skript which part of the line is an effect/expression and which part is the text.\\nPlease read the article on <a href='./strings/'>Texts and Variable Names</a> to learn more.",
+  "description" : "Text is simply text, i.e. a sequence of characters, which can optionally contain expressions which will be replaced with a meaningful representation (e.g. %player% will be replaced with the player's name).\\nBecause scripts are also text, you have to put text into double quotes to tell Skript which part of the line is an effect/expression and which part is the text.\\nPlease read the article on <a href='./text.html'>Texts and Variable Names</a> to learn more.",
   "examples" : "broadcast \"Hello World!\"\\nmessage \"Hello %player%\"\\nmessage \"The id of \"\"%type of tool%\"\" is %id of tool%.\""
 },
 {
@@ -3381,7 +3381,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "armor_change",
   "name" : "On Armor Change",
   "patterns" : [
-    "[on] [player] armor change[d]",
+    "[on] [player] armo[u]r change[d]",
 
     "pattern_end"
   ],
@@ -5250,9 +5250,9 @@ For entities, 'Age' represents the time left for them to become adults and it's 
   "id" : "ExprScripts",
   "name" : "All Scripts",
   "patterns" : [
-    "[all [of the]] scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (enabled|loaded) scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (disabled|unloaded) scripts [(without ([subdirectory] paths|parents))]",
+    "[all [of the]|the] scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (enabled|loaded) scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (disabled|unloaded) scripts [without ([subdirectory] paths|parents)]",
 
     "pattern_end"
   ],
