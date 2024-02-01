@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-nightly-3c5b45c",
+  "skriptVersion" : "2.8.0-nightly-555c76b",
 
   "classes" : [
     {
@@ -5250,9 +5250,9 @@ For entities, 'Age' represents the time left for them to become adults and it's 
   "id" : "ExprScripts",
   "name" : "All Scripts",
   "patterns" : [
-    "[all [of the]] scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (enabled|loaded) scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (disabled|unloaded) scripts [(without ([subdirectory] paths|parents))]",
+    "[all [of the]|the] scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (enabled|loaded) scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (disabled|unloaded) scripts [without ([subdirectory] paths|parents)]",
 
     "pattern_end"
   ],
