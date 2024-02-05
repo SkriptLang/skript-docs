@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-4552209",
+  "skriptVersion" : "2.8.2-nightly-787aace",
 
   "classes" : [
     {
@@ -7236,7 +7236,7 @@ The vanilla Minecraft client will use lowercase language / country pairs separat
   "id" : "ExprLastSpawnedEntity",
   "name" : "Last Spawned Entity",
   "patterns" : [
-    "[the] [last[ly]] (spawned|shot) %*<a href='./classes.html#entitydata'>entity type</a>%",
+    "[the] [last[ly]] (spawned|shot) %*<a href='./classes.html#entitydata'>entity type</a>% [item]",
 "[the] [last[ly]] dropped (item)",
 "[the] [last[ly]] (created|struck) (lightning)",
 "[the] [last[ly]] (launched|deployed) (firework)",
