@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-817b5a9",
+  "skriptVersion" : "2.8.2-nightly-7f61018",
 
   "classes" : [
     {
@@ -9643,7 +9643,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "offlineplayer",
   "name" : "offlineplayer",
   "patterns" : [
-    "offlineplayer(nameoruuid: string)",
+    "offlineplayer(nameOrUUID: string)",
 
     "pattern_end"
   ],
@@ -9655,7 +9655,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "player",
   "name" : "player",
   "patterns" : [
-    "player(nameoruuid: string, getexactplayer: boolean = [[boolean:false]])",
+    "player(nameOrUUID: string, getExactPlayer: boolean = [[boolean:false]])",
 
     "pattern_end"
   ],
