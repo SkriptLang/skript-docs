@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-f4d273e",
+  "skriptVersion" : "2.8.2-nightly-336c63c",
 
   "classes" : [
     {
@@ -1546,8 +1546,8 @@ Hands are raised when an entity is using an item (eg: blocking, drawing a bow, e
   "id" : "CondIsInvulnerable",
   "name" : "Is Invulnerable",
   "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) invulnerable",
-"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) invulnerable",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (invulnerable|invincible)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (invulnerable|invincible)",
 
     "pattern_end"
   ],
@@ -2777,8 +2777,8 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "id" : "EffInvulnerability",
   "name" : "Make Invulnerable",
   "patterns" : [
-    "make %<a href='./classes.html#entity'>entities</a>% invulnerable",
-"make %<a href='./classes.html#entity'>entities</a>% (not invulnerable|vulnerable)",
+    "make %<a href='./classes.html#entity'>entities</a>% (invulnerable|invincible)",
+"make %<a href='./classes.html#entity'>entities</a>% (not (invulnerable|invincible)|vulnerable|vincible)",
 
     "pattern_end"
   ],
@@ -7791,8 +7791,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "ExprNoDamageTicks",
   "name" : "No Damage Ticks",
   "patterns" : [
-    "[the] (invulnerability|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|no damage) tick[s]",
+    "[the] (invulnerability|invincibility|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|invincibility|no damage) tick[s]",
 
     "pattern_end"
   ],
