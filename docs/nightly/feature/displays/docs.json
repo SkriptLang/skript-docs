@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-22eda32",
+  "skriptVersion" : "2.8.2-nightly-8400310",
 
   "classes" : [
     {
@@ -12,6 +12,18 @@
   ],
   "since" : "2.5",
   "description" : "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.",
+  "examples" : "Missing examples."
+},
+{
+  "id" : "axisangle",
+  "name" : "Axis Angle",
+  "patterns" : [
+    "Missing patterns.",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Represents a 3D rotation of a given radians about an axis represented as an unit 3D vector.",
   "examples" : "Missing examples."
 },
 {
@@ -600,7 +612,7 @@
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Quaternions are used for representing four dimensions where all four numbers are real.",
+  "description" : "Quaternions are used for representing x y z while having w representing the scale. All four numbers are real.",
   "examples" : "Missing examples."
 },
 {
@@ -6306,7 +6318,7 @@ Higher values spread the movement over multiple ticks. Max of 59 ticks.",
   "since" : "INSERT VERSION",
   "description" : "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.
 The left rotation is applied first, with the right rotation then being applied based on the rotated axis.",
-  "examples" : "set left transformation rotation of last spawned block display to quaternionf(1, 0, 0, 0) # reset block display"
+  "examples" : "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
 },
 {
   "id" : "ExprDisplayTransformationScaleTranslation",
@@ -9255,16 +9267,16 @@ In the future there will be an option to use a player's UUID instead of the name
 },
 {
   "id" : "ExprXYZComponent",
-  "name" : "Vector/Quaternion - XYZ Component",
+  "name" : "Vector/Quaternion/AxisAngle - XYZ Component",
   "patterns" : [
-    "[the] [vector|quaternion] (w|x|y|z) [component[s]] of %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>%",
-"%<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>%'[s] [vector|quaternion] (w|x|y|z) [component[s]]",
+    "[the] [vector|quaternion] ((w|angle)|x|y|z) [component[s]] of %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#axisangle'>axisangle</a>%",
+"%<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#axisangle'>axisangle</a>%'[s] [vector|quaternion] ((w|angle)|x|y|z) [component[s]]",
 
     "pattern_end"
   ],
   "since" : "2.2-dev28, INSERT VERSION (Quaternions)",
-  "description" : "Gets or changes the x, y or z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.
-You cannot use w of vector. W is for quaternions only.",
+  "description" : "Gets or changes the x, y or z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>/<a href='classes.html#axisangle'>axis angles</a>.
+You cannot use w of vector. W/ANGLE is for quaternions/axis angles only.",
   "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v} to 1\\nset y component of {_v} to 2\\nset z component of {_v} to 3\\nsend \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
 },
 {
@@ -9771,6 +9783,18 @@ The return value in this case will be the view distance set in system.properties
   "examples" : "atan2(0, 1) = 0\\natan2(10, 0) = 90\\natan2(-10, 5) = -63.4349"
 },
 {
+  "id" : "axisAngle",
+  "name" : "axisAngle",
+  "patterns" : [
+    "axisAngle(angle: number, x: number, y: number, z: number)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns an axis angle from the given angle, x, y and z parameters.",
+  "examples" : "axisangle(90, 50.6, 20.0, 10.0)"
+},
+{
   "id" : "calcExperience",
   "name" : "calcExperience",
   "patterns" : [
@@ -9999,16 +10023,16 @@ The return value in this case will be the view distance set in system.properties
   "examples" : "product(1) = 1\\nproduct(2, 3, 4) = 24\\nproduct({some list variable::*})\\nproduct(2, {_v::*}, and the player's y-coordinate)"
 },
 {
-  "id" : "quaternionf",
-  "name" : "quaternionf",
+  "id" : "quaternion",
+  "name" : "quaternion",
   "patterns" : [
-    "quaternionf(w: number, x: number, y: number, z: number)",
+    "quaternion(w: number, x: number, y: number, z: number)",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns a quaternion from the given w, x, y and z parameters.",
-  "examples" : "quaternionf(1, 5.6, 45.21, 10)"
+  "examples" : "quaternion(1, 5.6, 45.21, 10)"
 },
 {
   "id" : "rgb",
