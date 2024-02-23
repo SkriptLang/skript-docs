@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.0-pre1-nightly-46202de",
+  "skriptVersion" : "2.8.2-nightly-22eda32",
 
   "classes" : [
     {
@@ -120,7 +120,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -133,7 +133,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -553,7 +553,7 @@
   ],
   "since" : "1.0",
   "description" : "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.\\nYou have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly.",
-  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
+  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;lt;none&amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
 },
 {
   "id" : "potioneffect",
@@ -711,14 +711,14 @@
     "pattern_end"
   ],
   "since" : "1.0",
-  "description" : "Text is simply text, i.e. a sequence of characters, which can optionally contain expressions which will be replaced with a meaningful representation (e.g. %player% will be replaced with the player's name).\\nBecause scripts are also text, you have to put text into double quotes to tell Skript which part of the line is an effect/expression and which part is the text.\\nPlease read the article on <a href='./strings/'>Texts and Variable Names</a> to learn more.",
+  "description" : "Text is simply text, i.e. a sequence of characters, which can optionally contain expressions which will be replaced with a meaningful representation (e.g. %player% will be replaced with the player's name).\\nBecause scripts are also text, you have to put text into double quotes to tell Skript which part of the line is an effect/expression and which part is the text.\\nPlease read the article on <a href='./text.html'>Texts and Variable Names</a> to learn more.",
   "examples" : "broadcast \"Hello World!\"\\nmessage \"Hello %player%\"\\nmessage \"The id of \"\"%type of tool%\"\" is %id of tool%.\""
 },
 {
   "id" : "textalignment",
   "name" : "Text Alignment",
   "patterns" : [
-    "middle, left, center, right",
+    "middle, centered, left, center, right aligned, right, center aligned, left aligned, centered text",
 
     "pattern_end"
   ],
@@ -1607,8 +1607,8 @@ Hands are raised when an entity is using an item (eg: blocking, drawing a bow, e
   "id" : "CondIsInvulnerable",
   "name" : "Is Invulnerable",
   "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) invulnerable",
-"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) invulnerable",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (invulnerable|invincible)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (invulnerable|invincible)",
 
     "pattern_end"
   ],
@@ -2852,8 +2852,8 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "id" : "EffInvulnerability",
   "name" : "Make Invulnerable",
   "patterns" : [
-    "make %<a href='./classes.html#entity'>entities</a>% invulnerable",
-"make %<a href='./classes.html#entity'>entities</a>% (not invulnerable|vulnerable)",
+    "make %<a href='./classes.html#entity'>entities</a>% (invulnerable|invincible)",
+"make %<a href='./classes.html#entity'>entities</a>% (not (invulnerable|invincible)|vulnerable|vincible)",
 
     "pattern_end"
   ],
@@ -3459,7 +3459,7 @@ If you're spawning a display and want it to be empty on initialization, like not
   "id" : "armor_change",
   "name" : "On Armor Change",
   "patterns" : [
-    "[on] [player] armor change[d]",
+    "[on] [player] armo[u]r change[d]",
 
     "pattern_end"
   ],
@@ -3625,7 +3625,7 @@ If you're spawning a display and want it to be empty on initialization, like not
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -4522,7 +4522,7 @@ If you're spawning a display and want it to be empty on initialization, like not
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4842,7 +4842,7 @@ If you're spawning a display and want it to be empty on initialization, like not
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -5328,9 +5328,9 @@ For entities, 'Age' represents the time left for them to become adults and it's 
   "id" : "ExprScripts",
   "name" : "All Scripts",
   "patterns" : [
-    "[all [of the]] scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (enabled|loaded) scripts [(without ([subdirectory] paths|parents))]",
-"[all [of the]] (disabled|unloaded) scripts [(without ([subdirectory] paths|parents))]",
+    "[all [of the]|the] scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (enabled|loaded) scripts [without ([subdirectory] paths|parents)]",
+"[all [of the]|the] (disabled|unloaded) scripts [without ([subdirectory] paths|parents)]",
 
     "pattern_end"
   ],
@@ -6279,11 +6279,27 @@ Setting to 0 seconds will make it immediate.",
   "examples" : "set shadow radius of the last spawned text display to 1.75"
 },
 {
+  "id" : "ExprDisplayTeleportDuration",
+  "name" : "Display Teleport Delay/Duration",
+  "patterns" : [
+    "[the] teleport duration[s] [of %<a href='./classes.html#display'>displays</a>%]",
+"%<a href='./classes.html#display'>displays</a>%'[s] teleport duration[s]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The teleport duration of displays is the amount of time it takes to get between locations.
+0 means that updates are applied immediately.
+1 means that the display entity will move from current position to the updated one over one tick.
+Higher values spread the movement over multiple ticks. Max of 59 ticks.",
+  "examples" : "set teleport delay of the last spawned text display to 2 ticks\\nwait 2 ticks\\nmessage \"display entity has arived at location\""
+},
+{
   "id" : "ExprDisplayTransformationRotation",
   "name" : "Display Transformation Rotation",
   "patterns" : [
-    "[the] (left|right) transformation rotation [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] (left|right) transformation rotation",
+    "[the] (left|right) [transformation] rotation [of %<a href='./classes.html#display'>displays</a>%]",
+"%<a href='./classes.html#display'>displays</a>%'[s] (left|right) [transformation] rotation",
 
     "pattern_end"
   ],
@@ -6296,8 +6312,8 @@ The left rotation is applied first, with the right rotation then being applied b
   "id" : "ExprDisplayTransformationScaleTranslation",
   "name" : "Display Transformation Scale/Translation",
   "patterns" : [
-    "[the] transformation (scale|translation) of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] transformation (scale|translation)",
+    "[the] [transformation] (scale|translation) of %<a href='./classes.html#display'>displays</a>%",
+"%<a href='./classes.html#display'>displays</a>%'[s] [transformation] (scale|translation)",
 
     "pattern_end"
   ],
@@ -6317,7 +6333,7 @@ The left rotation is applied first, with the right rotation then being applied b
   "since" : "INSERT VERSION",
   "description" : "Returns or changes the view range of <a href='classes.html#display'>displays</a>.
 Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
-  "examples" : "set view range of the last spawned text display to 2.7"
+  "examples" : "set view range of the last spawned text display to 2.9"
 },
 {
   "id" : "ExprDistance",
@@ -8028,8 +8044,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "ExprNoDamageTicks",
   "name" : "No Damage Ticks",
   "patterns" : [
-    "[the] (invulnerability|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|no damage) tick[s]",
+    "[the] (invulnerability|invincibility|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|invincibility|no damage) tick[s]",
 
     "pattern_end"
   ],
@@ -8610,17 +8626,18 @@ This expression requires a supported regions plugin to be installed.",
 },
 {
   "id" : "ExprRotateQuaternion",
-  "name" : "Rotate Quaternion",
+  "name" : "Rotate Quaternion/Vector",
   "patterns" : [
-    "%<a href='./classes.html#quaternion'>quaternions</a>% rotated (around|on) [the] (x|y|z)-axis by %<a href='./classes.html#number'>number</a>% [degrees|radians]",
+    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated (around|on) [the] (x|y|z)-axis by %<a href='./classes.html#number'>number</a>% [degrees|radians]",
 "%<a href='./classes.html#quaternion'>quaternions</a>% rotated by %<a href='./classes.html#vector'>vector</a>%",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Rotates a Quaternion around an axis or a vector and by a set amount of degrees.
-When you use a vector, the values will be used to rotate the x, y and z.",
-  "examples" : "rotate {_quaternion} around vector from 1, 0, 0 at player by 90 degrees"
+  "description" : "Rotates a Quaternion around an axis a set amount of degrees or rotated by a vector.
+When you use a vector, the values will be used to rotate the x, y and z.
+Vector numbers will get converted from a double down to a float.",
+  "examples" : "set {_new} to {_quaternion} rotated by vector(1, 0, 0)"
 },
 {
   "id" : "ExprRound",
@@ -9967,7 +9984,7 @@ The return value in this case will be the view distance set in system.properties
   ],
   "since" : "2.8.0",
   "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
-  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;amp;amp;lt;none&amp;amp;amp;amp;gt; if player is offline"
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;lt;none&amp;amp;gt; if player is offline"
 },
 {
   "id" : "product",
