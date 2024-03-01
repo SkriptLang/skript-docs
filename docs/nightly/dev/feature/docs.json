@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-336c63c",
+  "skriptVersion" : "2.8.3-nightly-9699415",
 
   "classes" : [
     {
@@ -4121,6 +4121,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "name" : "On Inventory Item Move",
   "patterns" : [
     "[on] inventory item (move|transport)",
+"[on] inventory (mov(e|ing)|transport[ing]) [an] item",
 
     "pattern_end"
   ],
@@ -6928,7 +6929,7 @@ Otherwise, this expression will just return the unsorted indices.",
   ],
   "since" : "2.8.0",
   "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
-  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
+  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport happening at %location at holder of event-initiator-inventory%!\""
 },
 {
   "id" : "ExprInventory",
@@ -9643,7 +9644,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "offlineplayer",
   "name" : "offlineplayer",
   "patterns" : [
-    "offlineplayer(nameoruuid: string)",
+    "offlineplayer(nameOrUUID: string)",
 
     "pattern_end"
   ],
@@ -9655,7 +9656,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "player",
   "name" : "player",
   "patterns" : [
-    "player(nameoruuid: string, getexactplayer: boolean = [[boolean:false]])",
+    "player(nameOrUUID: string, getExactPlayer: boolean = [[boolean:false]])",
 
     "pattern_end"
   ],
