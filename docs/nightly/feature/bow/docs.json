@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-0885d42",
+  "skriptVersion" : "2.8.3-nightly-f061d85",
 
   "classes" : [
     {
@@ -8518,7 +8518,11 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "id" : "ExprShootProperties",
   "name" : "Shoot Properties",
   "patterns" : [
-    "[the] (shooting bow|bow consumable|([shot] (arrow|projectile) force|force of the (arrow|projectile))|shooting hand|([should] [bow] consume item))",
+    "[the] bow consumable",
+"[the] shooting hand",
+"should [the bow] consume item",
+"[the] shooting bow",
+"[the] ([shot] (arrow|projectile) force|force of the (arrow|projectile))",
 
     "pattern_end"
   ],
