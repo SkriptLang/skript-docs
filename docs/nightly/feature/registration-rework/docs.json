@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-bce2323",
+  "skriptVersion" : "2.8.3-nightly-17937f2",
 
   "classes" : [
     {
@@ -1546,8 +1546,8 @@ Hands are raised when an entity is using an item (eg: blocking, drawing a bow, e
   "id" : "CondIsInvulnerable",
   "name" : "Is Invulnerable",
   "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) invulnerable",
-"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) invulnerable",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (invulnerable|invincible)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (invulnerable|invincible)",
 
     "pattern_end"
   ],
@@ -2777,8 +2777,8 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "id" : "EffInvulnerability",
   "name" : "Make Invulnerable",
   "patterns" : [
-    "make %<a href='./classes.html#entity'>entities</a>% invulnerable",
-"make %<a href='./classes.html#entity'>entities</a>% (not invulnerable|vulnerable)",
+    "make %<a href='./classes.html#entity'>entities</a>% (invulnerable|invincible)",
+"make %<a href='./classes.html#entity'>entities</a>% (not (invulnerable|invincible)|vulnerable|vincible)",
 
     "pattern_end"
   ],
@@ -4121,6 +4121,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "name" : "On Inventory Item Move",
   "patterns" : [
     "[on] inventory item (move|transport)",
+"[on] inventory (mov(e|ing)|transport[ing]) [an] item",
 
     "pattern_end"
   ],
@@ -6928,7 +6929,7 @@ Otherwise, this expression will just return the unsorted indices.",
   ],
   "since" : "2.8.0",
   "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
-  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
+  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport happening at %location at holder of event-initiator-inventory%!\""
 },
 {
   "id" : "ExprInventory",
@@ -7791,8 +7792,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "ExprNoDamageTicks",
   "name" : "No Damage Ticks",
   "patterns" : [
-    "[the] (invulnerability|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|no damage) tick[s]",
+    "[the] (invulnerability|invincibility|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|invincibility|no damage) tick[s]",
 
     "pattern_end"
   ],
@@ -9643,7 +9644,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "offlineplayer",
   "name" : "offlineplayer",
   "patterns" : [
-    "offlineplayer(nameoruuid: string)",
+    "offlineplayer(nameOrUUID: string)",
 
     "pattern_end"
   ],
@@ -9655,7 +9656,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "player",
   "name" : "player",
   "patterns" : [
-    "player(nameoruuid: string, getexactplayer: boolean = [[boolean:false]])",
+    "player(nameOrUUID: string, getExactPlayer: boolean = [[boolean:false]])",
 
     "pattern_end"
   ],
