@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-a44ed2f",
+  "skriptVersion" : "2.8.3-nightly-7a79d87",
 
   "classes" : [
     {
@@ -5364,7 +5364,7 @@ The default value of max cost set by vanilla Minecraft is 40.",
   ],
   "since" : "2.7",
   "description" : "An expression to get the name to be applied to an item in an anvil inventory.",
-  "examples" : "on inventory click:\\n    type of event-inventory is anvil inventory\\n    if the anvil input text of the event-inventory is \"FREE OP\":\\n        ban player"
+  "examples" : "on inventory click:\\n    type of event-inventory is anvil inventory\\n    if the anvil text input of the event-inventory is \"FREE OP\":\\n        ban player"
 },
 {
   "id" : "ExprAppliedEnchantments",
@@ -9590,7 +9590,7 @@ The return value in this case will be the view distance set in system.properties
   ],
   "since" : "2.2",
   "description" : "Creates a location from a world and 3 coordinates, with an optional yaw and pitch.\\nIf for whatever reason the world is not found, it will fallback to the server's main world.",
-  "examples" : "location(0, 128, 0)\\nlocation(player's x-coordinate, player's y-coordinate + 5, player's z-coordinate, player's world, 0, 90)\\nlocation(0, 64, 0, world \"world_nether\")\\nlocation(100, 110, -145, world(\"my_custom_world\"))"
+  "examples" : "# TELEPORTING\\nteleport player to location(1,1,1, world \"world\")\\nteleport player to location(1,1,1, world \"world\", 100, 0)\\nteleport player to location(1,1,1, world \"world\", yaw of player, pitch of player)\\nteleport player to location(1,1,1, world of player)\\nteleport player to location(1,1,1, world(\"world\"))\\nteleport player to location({_x}, {_y}, {_z}, {_w}, {_yaw}, {_pitch})\\n# SETTING BLOCKS\\nset block at location(1,1,1, world \"world\") to stone\\nset block at location(1,1,1, world \"world\", 100, 0) to stone\\nset block at location(1,1,1, world of player) to stone\\nset block at location(1,1,1, world(\"world\")) to stone\\nset block at location({_x}, {_y}, {_z}, {_w}) to stone\\n# USING VARIABLES\\nset {_l1} to location(1,1,1)\\nset {_l2} to location(10,10,10)\\nset blocks within {_l1} and {_l2} to stone\\nif player is within {_l1} and {_l2}:\\n# OTHER\\nkill all entities in radius 50 around location(1,65,1, world \"world\")\\ndelete all entities in radius 25 around location(50,50,50, world \"world_nether\")\\nignite all entities in radius 25 around location(1,1,1, world of player)"
 },
 {
   "id" : "log",
