@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-53f8618",
+  "skriptVersion" : "2.8.3-nightly-eda7ad3",
 
   "classes" : [
     {
@@ -8186,7 +8186,7 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "id" : "ExprRandomCharacter",
   "name" : "Random Character",
   "patterns" : [
-    "[a|%<a href='./classes.html#number'>number</a>%] random [alphanumeric] character[s] (from|between) %<a href='./classes.html#string'>text</a>% (to|and) %<a href='./classes.html#string'>text</a>%",
+    "[a|%integer%] random [alphanumeric] character[s] (from|between) %<a href='./classes.html#string'>text</a>% (to|and) %<a href='./classes.html#string'>text</a>%",
 
     "pattern_end"
   ],
