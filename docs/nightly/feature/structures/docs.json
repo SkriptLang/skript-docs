@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-d74a481",
+  "skriptVersion" : "2.8.3-nightly-b3ad9e7",
 
   "classes" : [
     {
@@ -1711,6 +1711,20 @@ This condition requires a supported regions plugin to be installed.",
 A block is passable if it has no colliding parts that would prevent players from moving through it.
 Blocks like tall grass, flowers, signs, etc. are passable, but open doors, fence gates, trap doors, etc. are not because they still have parts that can be collided with.",
   "examples" : "if player's targeted block is passable"
+},
+{
+  "id" : "CondIsPathfinding",
+  "name" : "Is Pathfinding",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) pathfinding [to[wards] %<a href='./classes.html#livingentity'>living entity</a>/<a href='./classes.html#location'>location</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) pathfinding [to[wards] %<a href='./classes.html#livingentity'>living entity</a>/<a href='./classes.html#location'>location</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether living entities are pathfinding.
+Can only be a living entity that is a Mob.",
+  "examples" : "make {_entity} pathfind to {_location} at speed 2\\nwhile {_entity} is pathfinding\\n    wait a second\\nlaunch flickering trailing burst firework colored red at location of {_entity}\\nsubtract 10 from {defence::tower::health}\\nclear entity within {_entity}"
 },
 {
   "id" : "CondIsPluginEnabled",
