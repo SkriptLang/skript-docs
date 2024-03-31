@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-4c8b2e5",
+  "skriptVersion" : "2.8.3-nightly-8d188c3",
 
   "classes" : [
     {
@@ -907,8 +907,8 @@ Vawid vawues awe between 0% and 100%, ow if the pewcent sign is omitted between 
   "patterns" : [
     "[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] ((gweatew|mowe|highew|biggew|wawgew) than|above)|&gt;) %<a href='./classes.html#object'>objects</a>%",
 "[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] (gweatew|mowe|highew|biggew|wawgew|above) [than] ow (equaw to|the same as)|&gt;=) %<a href='./classes.html#object'>objects</a>%",
-"[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] ((wess|smawwew|wowew) than|bewow)|&wt;) %<a href='./classes.html#object'>objects</a>%",
-"[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] (wess|smawwew|wowew|bewow) [than] ow (equaw to|the same as)|&wt;=) %<a href='./classes.html#object'>objects</a>%",
+"[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] ((wess|smawwew|wowew) than|bewow)|&lt;) %<a href='./classes.html#object'>objects</a>%",
+"[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe)[(n't| not| neithew)] (wess|smawwew|wowew|bewow) [than] ow (equaw to|the same as)|&lt;=) %<a href='./classes.html#object'>objects</a>%",
 "[(neithew)] %<a href='./classes.html#object'>objects</a>% ((is|awe) (not|neithew)|isn't|awen't|!=) [equaw to] %<a href='./classes.html#object'>objects</a>%",
 "[(neithew)] %<a href='./classes.html#object'>objects</a>% (is|awe|=) [(equaw to|the same as)] %<a href='./classes.html#object'>objects</a>%",
 "[(neithew)] %<a href='./classes.html#object'>objects</a>% (is|awe) between %<a href='./classes.html#object'>objects</a>% and %<a href='./classes.html#object'>objects</a>%",
@@ -2380,7 +2380,7 @@ If the command is a bungeecowd side command, you can use the [bungeecowd] option
   "id" : "EffDoIf",
   "name" : "Do If",
   "patterns" : [
-    "&wt;.+&gt; if &wt;.+&gt;",
+    "&lt;.+&gt; if &lt;.+&gt;",
 
     "pattern_end"
   ],
@@ -2446,7 +2446,7 @@ If the command is a bungeecowd side command, you can use the [bungeecowd] option
   "patterns" : [
     "(exit|stop) [twiggew]",
 "(exit|stop) [(1|a|the|dis)] (section|woop|conditionaw)",
-"(exit|stop) &wt;\\d+&gt; (section|woop|conditionaw)s",
+"(exit|stop) &lt;\\d+&gt; (section|woop|conditionaw)s",
 "(exit|stop) aww (section|woop|conditionaw)s",
 
     "pattern_end"
@@ -5384,11 +5384,11 @@ The defauwt vawue of max cost set by vaniwwa Minecwaft is 40.",
   "name" : "Argument",
   "patterns" : [
     "[the] wast awg[ument]",
-"[the] awg[ument](-| )&wt;(\\d+)&gt;",
-"[the] &wt;(\\d*1)st|(\\d*2)nd|(\\d*3)wd|(\\d*[4-90])th&gt; awg[ument][s]",
+"[the] awg[ument](-| )&lt;(\\d+)&gt;",
+"[the] &lt;(\\d*1)st|(\\d*2)nd|(\\d*3)wd|(\\d*[4-90])th&gt; awg[ument][s]",
 "[(aww [[of] the]|the)] awg[ument][s]",
-"[the] %*<a href='./classes.html#cwassinfo'>type</a>%( |-)awg[ument][( |-)&wt;\\d+&gt;]",
-"[the] awg[ument]( |-)%*<a href='./classes.html#cwassinfo'>type</a>%[( |-)&wt;\\d+&gt;]",
+"[the] %*<a href='./classes.html#cwassinfo'>type</a>%( |-)awg[ument][( |-)&lt;\\d+&gt;]",
+"[the] awg[ument]( |-)%*<a href='./classes.html#cwassinfo'>type</a>%[( |-)&lt;\\d+&gt;]",
 
     "pattern_end"
   ],
@@ -5498,7 +5498,7 @@ NOTE: Cuwwentwy dis can not be set to anything.",
   "id" : "ExprAttacked",
   "name" : "Attacked",
   "patterns" : [
-    "[the] (attacked|damaged|victim) [&wt;(.+)&gt;]",
+    "[the] (attacked|damaged|victim) [&lt;(.+)&gt;]",
 
     "pattern_end"
   ],
@@ -5946,7 +5946,7 @@ the wast usage date, ow the coowdown bypass pewmission.",
   "id" : "ExprEntity",
   "name" : "Creature/Entity/Player/Projectile/Villager/Powered Creeper/etc.",
   "patterns" : [
-    "[the] [event-]&wt;.+&gt;",
+    "[the] [event-]&lt;.+&gt;",
 
     "pattern_end"
   ],
@@ -6455,7 +6455,7 @@ Read <a hwef='https://minecwaft.wiki/w/Expwosion'>dis wiki page</a> fow mowe inf
   "id" : "ExprFilter",
   "name" : "Filter",
   "patterns" : [
-    "%<a href='./classes.html#object'>objects</a>% (whewe|dat match) \\[&wt;.+&gt;\\]",
+    "%<a href='./classes.html#object'>objects</a>% (whewe|dat match) \\[&lt;.+&gt;\\]",
 
     "pattern_end"
   ],
@@ -7393,7 +7393,7 @@ Pwease note dat the wocation of an entity is at it's feet, use <a hwef='#ExpwEye
   "id" : "ExprLoopValue",
   "name" : "Loop value",
   "patterns" : [
-    "[the] woop-&wt;.+&gt;",
+    "[the] woop-&lt;.+&gt;",
 
     "pattern_end"
   ],
@@ -7886,7 +7886,7 @@ If no inventowy is open, it wetuwns the own pwayew's cwafting inventowy.",
   "id" : "ExprParse",
   "name" : "Parse",
   "patterns" : [
-    "%<a href='./classes.html#stwing'>text</a>% pawsed as (%*<a href='./classes.html#cwassinfo'>type</a>%|"&wt;.*&gt;")",
+    "%<a href='./classes.html#stwing'>text</a>% pawsed as (%*<a href='./classes.html#cwassinfo'>type</a>%|"&lt;.*&gt;")",
 
     "pattern_end"
   ],
@@ -8752,7 +8752,7 @@ May gwab entities in unwoaded chunks.",
   "id" : "ExprTernary",
   "name" : "Ternary",
   "patterns" : [
-    "%<a href='./classes.html#object'>objects</a>% if &wt;.+&gt;[,] (othewwise|ewse) %<a href='./classes.html#object'>objects</a>%",
+    "%<a href='./classes.html#object'>objects</a>% if &lt;.+&gt;[,] (othewwise|ewse) %<a href='./classes.html#object'>objects</a>%",
 
     "pattern_end"
   ],
