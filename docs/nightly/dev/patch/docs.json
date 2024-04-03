@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.3-nightly-dfaa66f",
+  "skriptVersion" : "2.8.4-nightly-972dd38",
 
   "classes" : [
     {
@@ -6165,7 +6165,7 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
   "since" : "2.0, 2.7 (relative to last element), 2.8.0 (range of elements)",
   "description" : "The first, last, range or a random element of a set, e.g. a list variable.
 See also: <a href='#ExprRandom'>random expression</a>",
-  "examples" : "broadcast the first 3 elements of {top players::*}"
+  "examples" : "broadcast the first 3 elements of {top players::*}\\nset {_last} to last element of {top players::*}\\nset {_random player} to random element out of all players\\nsend 2nd last element of {top players::*} to player\\nset {page2::*} to elements from 11 to 20 of {top players::*}"
 },
 {
   "id" : "ExprEnchantItem",
