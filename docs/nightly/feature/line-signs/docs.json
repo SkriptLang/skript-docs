@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.2-nightly-19e570c",
+  "skriptVersion" : "2.8.4-nightly-ead4234",
 
   "classes" : [
     {
@@ -1558,8 +1558,8 @@ Hands are raised when an entity is using an item (eg: blocking, drawing a bow, e
   "id" : "CondIsInvulnerable",
   "name" : "Is Invulnerable",
   "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) invulnerable",
-"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) invulnerable",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (invulnerable|invincible)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (invulnerable|invincible)",
 
     "pattern_end"
   ],
@@ -1687,6 +1687,20 @@ This condition requires a supported regions plugin to be installed.",
 A block is passable if it has no colliding parts that would prevent players from moving through it.
 Blocks like tall grass, flowers, signs, etc. are passable, but open doors, fence gates, trap doors, etc. are not because they still have parts that can be collided with.",
   "examples" : "if player's targeted block is passable"
+},
+{
+  "id" : "CondIsPathfinding",
+  "name" : "Is Pathfinding",
+  "patterns" : [
+    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) pathfinding [to[wards] %<a href='./classes.html#livingentity'>living entity</a>/<a href='./classes.html#location'>location</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) pathfinding [to[wards] %<a href='./classes.html#livingentity'>living entity</a>/<a href='./classes.html#location'>location</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether living entities are pathfinding.
+Can only be a living entity that is a Mob.",
+  "examples" : "make {_entity} pathfind to {_location} at speed 2\\nwhile {_entity} is pathfinding\\n    wait a second\\nlaunch flickering trailing burst firework colored red at location of {_entity}\\nsubtract 10 from {defence::tower::health}\\nclear entity within {_entity}"
 },
 {
   "id" : "CondIsPluginEnabled",
@@ -2789,8 +2803,8 @@ When setting an entity to invisible while using an invisibility potion on it, th
   "id" : "EffInvulnerability",
   "name" : "Make Invulnerable",
   "patterns" : [
-    "make %<a href='./classes.html#entity'>entities</a>% invulnerable",
-"make %<a href='./classes.html#entity'>entities</a>% (not invulnerable|vulnerable)",
+    "make %<a href='./classes.html#entity'>entities</a>% (invulnerable|invincible)",
+"make %<a href='./classes.html#entity'>entities</a>% (not (invulnerable|invincible)|vulnerable|vincible)",
 
     "pattern_end"
   ],
@@ -4133,6 +4147,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   "name" : "On Inventory Item Move",
   "patterns" : [
     "[on] inventory item (move|transport)",
+"[on] inventory (mov(e|ing)|transport[ing]) [an] item",
 
     "pattern_end"
   ],
@@ -5375,7 +5390,7 @@ The default value of max cost set by vanilla Minecraft is 40.",
   ],
   "since" : "2.7",
   "description" : "An expression to get the name to be applied to an item in an anvil inventory.",
-  "examples" : "on inventory click:\\n    type of event-inventory is anvil inventory\\n    if the anvil input text of the event-inventory is \"FREE OP\":\\n        ban player"
+  "examples" : "on inventory click:\\n    type of event-inventory is anvil inventory\\n    if the anvil text input of the event-inventory is \"FREE OP\":\\n        ban player"
 },
 {
   "id" : "ExprAppliedEnchantments",
@@ -6940,7 +6955,7 @@ Otherwise, this expression will just return the unsorted indices.",
   ],
   "since" : "2.8.0",
   "description" : "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event.",
-  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport requested at %location at holder of event-initiator-inventory%...\""
+  "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport happening at %location at holder of event-initiator-inventory%!\""
 },
 {
   "id" : "ExprInventory",
@@ -7803,8 +7818,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "ExprNoDamageTicks",
   "name" : "No Damage Ticks",
   "patterns" : [
-    "[the] (invulnerability|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|no damage) tick[s]",
+    "[the] (invulnerability|invincibility|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|invincibility|no damage) tick[s]",
 
     "pattern_end"
   ],
@@ -8197,7 +8212,7 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "id" : "ExprRandomCharacter",
   "name" : "Random Character",
   "patterns" : [
-    "[a|%<a href='./classes.html#number'>number</a>%] random [alphanumeric] character[s] (from|between) %<a href='./classes.html#string'>text</a>% (to|and) %<a href='./classes.html#string'>text</a>%",
+    "[a|%integer%] random [alphanumeric] character[s] (from|between) %<a href='./classes.html#string'>text</a>% (to|and) %<a href='./classes.html#string'>text</a>%",
 
     "pattern_end"
   ],
@@ -8823,6 +8838,19 @@ Using this expression on offline players on Minecraft 1.14 and below will return
   "since" : "2.5",
   "description" : "The time that has passed since a date. If the given date is in the future, a value will not be returned.",
   "examples" : "send \"%time since 5 minecraft days ago% has passed since 5 minecraft days ago!\" to player"
+},
+{
+  "id" : "ExprTimespanDetails",
+  "name" : "Timespan Details",
+  "patterns" : [
+    "[the] ((tick|second|minute|hour|day|week|month|year))s of %<a href='./classes.html#timespan'>time spans</a>%",
+"%<a href='./classes.html#timespan'>time spans</a>%'[s] ((tick|second|minute|hour|day|week|month|year))s",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Retrieve specific information of a <a href=\"/classes.html#timespan\">timespan</a> such as hours/minutes/etc.",
+  "examples" : "set {_t} to difference between now and {Payouts::players::%uuid of player%::last-date}\\nsend \"It has been %days of {_t}% day(s) since last payout.\""
 },
 {
   "id" : "ExprTool",
@@ -9603,7 +9631,7 @@ The return value in this case will be the view distance set in system.properties
   ],
   "since" : "2.2",
   "description" : "Creates a location from a world and 3 coordinates, with an optional yaw and pitch.\\nIf for whatever reason the world is not found, it will fallback to the server's main world.",
-  "examples" : "location(0, 128, 0)\\nlocation(player's x-coordinate, player's y-coordinate + 5, player's z-coordinate, player's world, 0, 90)\\nlocation(0, 64, 0, world \"world_nether\")\\nlocation(100, 110, -145, world(\"my_custom_world\"))"
+  "examples" : "# TELEPORTING\\nteleport player to location(1,1,1, world \"world\")\\nteleport player to location(1,1,1, world \"world\", 100, 0)\\nteleport player to location(1,1,1, world \"world\", yaw of player, pitch of player)\\nteleport player to location(1,1,1, world of player)\\nteleport player to location(1,1,1, world(\"world\"))\\nteleport player to location({_x}, {_y}, {_z}, {_w}, {_yaw}, {_pitch})\\n# SETTING BLOCKS\\nset block at location(1,1,1, world \"world\") to stone\\nset block at location(1,1,1, world \"world\", 100, 0) to stone\\nset block at location(1,1,1, world of player) to stone\\nset block at location(1,1,1, world(\"world\")) to stone\\nset block at location({_x}, {_y}, {_z}, {_w}) to stone\\n# USING VARIABLES\\nset {_l1} to location(1,1,1)\\nset {_l2} to location(10,10,10)\\nset blocks within {_l1} and {_l2} to stone\\nif player is within {_l1} and {_l2}:\\n# OTHER\\nkill all entities in radius 50 around location(1,65,1, world \"world\")\\ndelete all entities in radius 25 around location(50,50,50, world \"world_nether\")\\nignite all entities in radius 25 around location(1,1,1, world of player)"
 },
 {
   "id" : "log",
@@ -9657,7 +9685,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "offlineplayer",
   "name" : "offlineplayer",
   "patterns" : [
-    "offlineplayer(nameoruuid: string)",
+    "offlineplayer(nameOrUUID: string)",
 
     "pattern_end"
   ],
@@ -9669,7 +9697,7 @@ The return value in this case will be the view distance set in system.properties
   "id" : "player",
   "name" : "player",
   "patterns" : [
-    "player(nameoruuid: string, getexactplayer: boolean = [[boolean:false]])",
+    "player(nameOrUUID: string, getExactPlayer: boolean = [[boolean:false]])",
 
     "pattern_end"
   ],
