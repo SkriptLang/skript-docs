@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-b1db6d1",
+  "skriptVersion" : "2.8.4-nightly-0bc7e21",
 
   "classes" : [
     {
@@ -2637,8 +2637,9 @@ Note: This effect does not set the entity's health to 0 (which causes issues), b
     "pattern_end"
   ],
   "since" : "2.3",
-  "description" : "Leash living entities to other entities.",
-  "examples" : "leash the player to the target entity"
+  "description" : "Leash living entities to other entities. When trying to leash an Ender Dragon, Wither, Player, or a Bat, this effect will not work.
+See <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/LivingEntity.html#setLeashHolder(org.bukkit.entity.Entity)\">Spigot's Javadocs for more info</a>.",
+  "examples" : "on right click:\\n    leash event-entity to player\\n    send \"&amp;aYou leashed &amp;2%event-entity%!\" to player"
 },
 {
   "id" : "EffLightning",
