@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-8c5f1d5",
+  "skriptVersion" : "2.8.4-nightly-b1db6d1",
 
   "classes" : [
     {
@@ -9016,7 +9016,7 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "id" : "ExprVectorCylindrical",
   "name" : "Vectors - Cylindrical Shape",
   "patterns" : [
-    "[a] [new] cylindrical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,| and) [height] %<a href='./classes.html#number'>number</a>%",
+    "[a] [new] cylindrical vector [from|with] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,[ and]| and) [height] %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
@@ -9091,7 +9091,7 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "id" : "ExprVectorSpherical",
   "name" : "Vectors - Spherical Shape",
   "patterns" : [
-    "[new] spherical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,| and) [pitch] %<a href='./classes.html#number'>number</a>%",
+    "[a] [new] spherical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,[ and]| and) [pitch] %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
