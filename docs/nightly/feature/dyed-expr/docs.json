@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-83a896c",
+  "skriptVersion" : "2.8.4-nightly-e96f91d",
 
   "classes" : [
     {
@@ -819,6 +819,33 @@
   "since" : "2.4",
   "description" : "Checks if the given string is alphanumeric.",
   "examples" : "if the argument is not alphanumeric:\\n    send \"Invalid name!\""
+},
+{
+  "id" : "CondIsResonating",
+  "name" : "Bell Is Resonating",
+  "patterns" : [
+    "%<a href='./classes.html#block'>blocks</a>% (is|are) resonating",
+"%<a href='./classes.html#block'>blocks</a>% (isn't|is not|aren't|are not) resonating",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks to see if a bell is currently resonating.
+A bell will start resonating five game ticks after being rung, and will continue to resonate for 40 game ticks.",
+  "examples" : "target block is resonating"
+},
+{
+  "id" : "CondIsRinging",
+  "name" : "Bell Is Ringing",
+  "patterns" : [
+    "%<a href='./classes.html#block'>blocks</a>% (is|are) ringing",
+"%<a href='./classes.html#block'>blocks</a>% (isn't|is not|aren't|are not) ringing",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks to see if a bell is currently ringing. A bell typically rings for 50 game ticks.",
+  "examples" : "target block is ringing"
 },
 {
   "id" : "CondCanBuild",
@@ -3027,6 +3054,22 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
+  "id" : "EffRing",
+  "name" : "Ring Bell",
+  "patterns" : [
+    "ring %<a href='./classes.html#block'>blocks</a>% [from [the]] [%<a href='./classes.html#direction'>direction</a>%]",
+"(make|let) %<a href='./classes.html#entity'>entity</a>% ring %<a href='./classes.html#block'>blocks</a>% [from [the]] [%<a href='./classes.html#direction'>direction</a>%]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Causes a bell to ring.
+Optionally, the entity that rang the bell and the direction the bell should ring can be specified.
+A bell can only ring in two directions, and the direction is determined by which way the bell is facing.
+By default, the bell will ring in the direction it is facing.",
+  "examples" : "make player ring target-block"
+},
+{
   "id" : "EffWorldSave",
   "name" : "Save World",
   "patterns" : [
@@ -3428,6 +3471,30 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "1.0",
   "description" : "Called when a player leaves a bed.",
   "examples" : "on player leaving a bed:"
+},
+{
+  "id" : "bell_resonate",
+  "name" : "On Bell Resonate",
+  "patterns" : [
+    "[on] bell resonat(e|ing)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a bell resonates, highlighting nearby raiders.",
+  "examples" : "on bell resonate:\\n    send \"&lt;red&gt;Raiders are nearby!\" to all players in radius 32 around event-block"
+},
+{
+  "id" : "bell_ring",
+  "name" : "On Bell Ring",
+  "patterns" : [
+    "[on] bell ring[ing]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a bell is rung.",
+  "examples" : "on bell ring:\\n    send \"&lt;gold&gt;Ding-dong!&lt;reset&gt;\" to all players in radius 10 of event-block"
 },
 {
   "id" : "block_damage",
@@ -8362,6 +8429,20 @@ This expression requires a supported regions plugin to be installed.",
   "examples" : "broadcast nl and nl repeated 200 times\\nbroadcast \"Hello World \" repeated 5 times\\nif \"aa\" repeated 2 times is \"aaaa\":\\n    broadcast \"Ahhhh\" repeated 100 times"
 },
 {
+  "id" : "ExprResonatingTime",
+  "name" : "Resonating Time",
+  "patterns" : [
+    "[the] resonat(e|ing) time of %<a href='./classes.html#block'>block</a>%",
+"%<a href='./classes.html#block'>block</a>%'[s] resonat(e|ing) time",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the resonating time of a bell.
+A bell will start resonating five game ticks after being rung, and will continue to resonate for 40 game ticks.",
+  "examples" : "broadcast \"The bell has been resonating for %resonating time of target block%\""
+},
+{
   "id" : "ExprCharges",
   "name" : "Respawn Anchor Charges",
   "patterns" : [
@@ -8397,6 +8478,20 @@ This expression requires a supported regions plugin to be installed.",
   "since" : "2.4",
   "description" : "Reverses given list.",
   "examples" : "set {_list::*} to reversed {_list::*}"
+},
+{
+  "id" : "ExprRingingTime",
+  "name" : "Ringing Time",
+  "patterns" : [
+    "[the] ring[ing] time of %<a href='./classes.html#block'>block</a>%",
+"%<a href='./classes.html#block'>block</a>%'[s] ring[ing] time",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the ringing time of a bell.
+A bell typically rings for 50 game ticks.",
+  "examples" : "broadcast \"The bell has been ringing for %ringing time of target block%\""
 },
 {
   "id" : "ExprRound",
