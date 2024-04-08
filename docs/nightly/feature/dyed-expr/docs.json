@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-b382d48",
+  "skriptVersion" : "2.8.4-nightly-e66ad6f",
 
   "classes" : [
     {
@@ -6173,8 +6173,8 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "An expression to return items/entities with a color.",
-  "examples" : "give player leather chestplate dyed red\\ngive player potion of invisibility dyed rgb 200, 70, 88\\ngive player filled map with color rgb(20, 60, 70)"
+  "description" : "An expression to return colored items.",
+  "examples" : "give player leather chestplate dyed red\\ngive player potion of invisibility dyed rgb 200, 70, 88\\ngive player filled map colored rgb(20, 60, 70)\\ngive player wool painted red"
 },
 {
   "id" : "ExprElement",
