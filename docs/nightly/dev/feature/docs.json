@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-7759802",
+  "skriptVersion" : "2.8.4-nightly-9bba481",
 
   "classes" : [
     {
@@ -1666,14 +1666,14 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "CondIsOnline",
   "name" : "Is Online",
   "patterns" : [
-    "%<a href='./classes.html#offlineplayer'>offline players</a>% (is|are) (online|offline)",
-"%<a href='./classes.html#offlineplayer'>offline players</a>% (isn't|is not|aren't|are not) (online|offline)",
+    "%<a href='./classes.html#offlineplayer'>offline players</a>% (is|are) (online|offline|connected)",
+"%<a href='./classes.html#offlineplayer'>offline players</a>% (isn't|is not|aren't|are not) (online|offline|connected)",
 
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "Checks whether a player is online.",
-  "examples" : "player is online\\nplayer-argument is offline"
+  "description" : "Checks whether a player is online. The 'connected' pattern will return false once this player leaves the server, even if they rejoin. Be aware that using the 'connected' pattern with a variable will not have this special behavior. Use the direct event-player or other non-variable expression for best results.",
+  "examples" : "player is online\\nplayer-argument is offline\\nwhile player is connected:\\n    wait 60 seconds\\n    send \"hello!\" to player\\n\\n# The following will act like `{_player} is online`.\\n# Using variables with `is connected` will not behave the same as with non-variables.\\nwhile {_player} is connected:\\n    broadcast \"online!\"\\n    wait 1 tick"
 },
 {
   "id" : "CondIsOp",
