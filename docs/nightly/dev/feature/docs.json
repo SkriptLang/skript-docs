@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-772328b",
+  "skriptVersion" : "2.8.4-nightly-9bd817b",
 
   "classes" : [
     {
@@ -2678,8 +2678,9 @@ Note: This effect does not set the entity's health to 0 (which causes issues), b
     "pattern_end"
   ],
   "since" : "2.3",
-  "description" : "Leash living entities to other entities.",
-  "examples" : "leash the player to the target entity"
+  "description" : "Leash living entities to other entities. When trying to leash an Ender Dragon, Wither, Player, or a Bat, this effect will not work.
+See <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/LivingEntity.html#setLeashHolder(org.bukkit.entity.Entity)\">Spigot's Javadocs for more info</a>.",
+  "examples" : "on right click:\\n    leash event-entity to player\\n    send \"&amp;aYou leashed &amp;2%event-entity%!\" to player"
 },
 {
   "id" : "EffLightning",
@@ -4430,7 +4431,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.6, 2.8.0 (turn around)",
   "description" : "Called when a player or entity moves or rotates their head.\\nNOTE: Move event will only be called when the entity/player moves position, keyword 'turn around' is for orientation (ie: looking around), and the combined syntax listens for both.\\nNOTE: These events can be performance heavy as they are called quite often.",
-  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity\\non player turning around:\\nsend action bar \"You are currently turning your head around!\" to player"
+  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity\\non player turning around:\\n    send action bar \"You are currently turning your head around!\" to player"
 },
 {
   "id" : "move_on",
@@ -6246,7 +6247,7 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
   "since" : "2.0, 2.7 (relative to last element), 2.8.0 (range of elements)",
   "description" : "The first, last, range or a random element of a set, e.g. a list variable.
 See also: <a href='#ExprRandom'>random expression</a>",
-  "examples" : "broadcast the first 3 elements of {top players::*}"
+  "examples" : "broadcast the first 3 elements of {top players::*}\\nset {_last} to last element of {top players::*}\\nset {_random player} to random element out of all players\\nsend 2nd last element of {top players::*} to player\\nset {page2::*} to elements from 11 to 20 of {top players::*}"
 },
 {
   "id" : "ExprEnchantItem",
@@ -6918,8 +6919,8 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHotbarSlot",
   "name" : "Hotbar Slot",
   "patterns" : [
-    "[the] [the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] [the] [([currently] selected|current)] hotbar slot[s]",
+    "[the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#player'>players</a>%'[s] [([currently] selected|current)] hotbar slot[s]",
 
     "pattern_end"
   ],
@@ -9138,7 +9139,7 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "id" : "ExprVectorCylindrical",
   "name" : "Vectors - Cylindrical Shape",
   "patterns" : [
-    "[a] [new] cylindrical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,| and) [height] %<a href='./classes.html#number'>number</a>%",
+    "[a] [new] cylindrical vector [from|with] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,[ and]| and) [height] %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
@@ -9213,7 +9214,7 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "id" : "ExprVectorSpherical",
   "name" : "Vectors - Spherical Shape",
   "patterns" : [
-    "[new] spherical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,| and) [pitch] %<a href='./classes.html#number'>number</a>%",
+    "[a] [new] spherical vector [(from|with)] [radius] %<a href='./classes.html#number'>number</a>%, [yaw] %<a href='./classes.html#number'>number</a>%(,[ and]| and) [pitch] %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
