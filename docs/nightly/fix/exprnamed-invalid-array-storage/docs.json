@@ -1,12 +1,12 @@
 {
-  "skriptVersion" : "2.8.4-nightly-3588298",
+  "skriptVersion" : "2.8.4-nightly-5593daf",
 
   "classes" : [
     {
   "id" : "attributetype",
   "name" : "Attribute Type",
   "patterns" : [
-    "luck, generic movement speed, horse jump strength, generic luck, generic max absorption, follow range, movement speed, max absorption, generic follow range, zombie spawn reinforcements, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic flying speed, generic knockback resistance, armor, attack speed, armor toughness, generic max health",
+    "entity interaction range, luck, generic movement speed, generic luck, block interaction range, generic max absorption, generic scale, scale, generic step height, follow range, player block interaction range, movement speed, generic jump strength, max absorption, generic follow range, zombie spawn reinforcements, player entity interaction range, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic safe fall distance, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic fall damage multiplier, generic flying speed, generic knockback resistance, safe fall distance, fall damage multiplier, block break speed, generic gravity, armor, jump strength, attack speed, gravity, armor toughness, generic max health, step height, player block break speed",
 
     "pattern_end"
   ],
@@ -175,7 +175,7 @@
   "id" : "enchantment",
   "name" : "Enchantment",
   "patterns" : [
-    "Efficiency, Looting, Silk Touch, Quick Charge, Soul Speed, Flame, Fortune, Multishot, Aqua Affinity, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Swift Sneak, Feather Falling, Unbreaking, Smite, Lure, Fire Aspect, Knockback, Depth Strider, Sweeping Edge, Infinity, Curse of Vanishing, Bane of Arthropods, Blast Protection, Thorns",
+    "Efficiency, Sweeping Edge, Looting, Silk Touch, Quick Charge, Soul Speed, Density, Breach, Flame, Fortune, Multishot, Aqua Affinity, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Swift Sneak, Feather Falling, Unbreaking, Smite, Lure, Fire Aspect, Knockback, Depth Strider, Wind Burst, Infinity, Curse of Vanishing, Bane of Arthropods, Blast Protection, Thorns",
 
     "pattern_end"
   ],
@@ -295,7 +295,7 @@
   "id" : "gamerule",
   "name" : "Gamerule",
   "patterns" : [
-    "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount",
+    "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount",
 
     "pattern_end"
   ],
@@ -535,7 +535,7 @@
   "id" : "potioneffecttype",
   "name" : "Potion Effect Type",
   "patterns" : [
-    "null, speed, slowness, haste, mining fatigue, strength, instant health, instant damage, jump boost, nausea, regeneration, resistance, fire resistance, water breathing, invisibility, blindness, night vision, hunger, weakness, poison, wither, health boost, absorption, saturation, glowing, levitation, luck, bad luck, slow falling, conduit power, dolphins grace, bad omen, hero of the village, darkness",
+    "null, speed, slowness, haste, mining fatigue, strength, instant health, instant damage, jump boost, nausea, regeneration, resistance, fire resistance, water breathing, invisibility, blindness, night vision, hunger, weakness, poison, wither, health boost, absorption, saturation, glowing, levitation, luck, bad luck, slow falling, conduit power, dolphins grace, bad omen, hero of the village, darkness, trial omen, bad omen, wind charged, weaving, oozing, infested",
 
     "pattern_end"
   ],
@@ -758,7 +758,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, explosion, large explosion, huge explosion, firework's spark, water bubble, water splash, water wake, suspended, void fog, critical hit, magical critical hit, smoke particle, large smoke, spell, spell, potion swirl, transparent potion swirl, witch spell, water drip, lava drip, angry villager, happy villager, small smoke, note, portal, flying glyph, flame, lava pop, cloud, coloured dust, snowball break, snow shovel, slime, heart, item crack, block break, block dust, water drop, mob appearance, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, critical hit, note, portal, flame, lava pop, cloud, heart, dragon breath, end rod, damage indicator, sweep attack, falling dust, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
 
     "pattern_end"
   ],
@@ -3548,7 +3548,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;lt;red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;light red&amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;lt;light red&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;orange&amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;lt;orange&amp;gt;[player]&amp;lt;light gray&amp;gt;: &amp;lt;white&amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;light red&amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;lt;light red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;orange&amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;lt;orange&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;white&amp;amp;amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -4350,7 +4350,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.6, 2.8.0 (turn around)",
   "description" : "Called when a player or entity moves or rotates their head.\\nNOTE: Move event will only be called when the entity/player moves position, keyword 'turn around' is for orientation (ie: looking around), and the combined syntax listens for both.\\nNOTE: These events can be performance heavy as they are called quite often.",
-  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity\\non player turning around:\\nsend action bar \"You are currently turning your head around!\" to player"
+  "examples" : "on player move:\\n    if player does not have permission \"player.can.move\":\\n        cancel event\\non skeleton move:\\n    if event-entity is not in world \"world\":\\n        kill event-entity\\non player turning around:\\n    send action bar \"You are currently turning your head around!\" to player"
 },
 {
   "id" : "move_on",
@@ -4446,7 +4446,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4766,7 +4766,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;lt;red&amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -6838,8 +6838,8 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHotbarSlot",
   "name" : "Hotbar Slot",
   "patterns" : [
-    "[the] [the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] [the] [([currently] selected|current)] hotbar slot[s]",
+    "[the] [([currently] selected|current)] hotbar slot[s] [of %<a href='./classes.html#player'>players</a>%]",
+"%<a href='./classes.html#player'>players</a>%'[s] [([currently] selected|current)] hotbar slot[s]",
 
     "pattern_end"
   ],
@@ -9664,7 +9664,7 @@ The return value in this case will be the view distance set in system.properties
   ],
   "since" : "2.8.0",
   "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
-  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;lt;none&amp;amp;gt; if player is offline"
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &lt;none&gt; if player is offline"
 },
 {
   "id" : "product",
