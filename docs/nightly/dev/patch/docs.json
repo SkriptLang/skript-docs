@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.4-nightly-0832cbb",
+  "skriptVersion" : "2.8.4-nightly-cf199c0",
 
   "classes" : [
     {
@@ -2354,9 +2354,9 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "id" : "EffHealth",
   "name" : "Damage/Heal/Repair",
   "patterns" : [
-    "damage %<a href='./classes.html#livingentity'>living entities</a>/<a href='./classes.html#itemtype'>item types</a>% by %<a href='./classes.html#number'>number</a>% [heart[s]] [with fake cause %<a href='./classes.html#damagecause'>damage cause</a>%]",
+    "damage %<a href='./classes.html#livingentity'>living entities</a>/<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#slot'>slots</a>% by %<a href='./classes.html#number'>number</a>% [heart[s]] [with fake cause %<a href='./classes.html#damagecause'>damage cause</a>%]",
 "heal %<a href='./classes.html#livingentity'>living entities</a>% [by %<a href='./classes.html#number'>number</a>% [heart[s]]]",
-"repair %<a href='./classes.html#itemtype'>item types</a>% [by %<a href='./classes.html#number'>number</a>%]",
+"repair %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#slot'>slots</a>% [by %<a href='./classes.html#number'>number</a>%]",
 
     "pattern_end"
   ],
