@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-ee07af3",
+  "skriptVersion" : "2.8.5-nightly-002908f",
 
   "classes" : [
     {
@@ -5839,7 +5839,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "id" : "ExprCharacterFromCodepoint",
   "name" : "Character from Codepoint",
   "patterns" : [
-    "character [from|at] code([ ]point|position) %integer%",
+    "character (from|at|with) code([ ]point| position) %integer%",
 
     "pattern_end"
   ],
