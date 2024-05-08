@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-616a5e4",
+  "skriptVersion" : "2.8.5-nightly-380d044",
 
   "classes" : [
     {
@@ -8861,16 +8861,15 @@ May grab entities in unloaded chunks.",
   "id" : "ExprTargetedBlock",
   "name" : "Targeted Block",
   "patterns" : [
-    "[the] target[ed] block[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] target[ed] block[s]",
-"[the] actual[ly] target[ed] block[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] actual[ly] target[ed] block[s]",
+    "[the] [(actual[ly]|exact)] target[ed] block[s] [of %<a href='./classes.html#livingentity'>living entities</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [(actual[ly]|exact)] target[ed] block[s]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.",
-  "examples" : "# A command to set the block a player looks at to a specific type:\\ncommand /setblock &amp;lt;material&amp;gt;:\\n    trigger:\\n        set targeted block to argument"
+  "since" : "1.0, INSERT VERSION (actual/exact)",
+  "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.
+The actual target block will regard the actual hit box of the block.",
+  "examples" : "set target block of player to stone\\nset target block of player to oak_stairs[waterlogged=true]\\nbreak target block of player using player's tool\\ngive player 1 of type of target block\\nteleport player to location above target block\\nkill all entities in radius 3 around target block of player\\nset {_block} to actual target block of player\\nbreak actual target block of player"
 },
 {
   "id" : "ExprTeleportCause",
