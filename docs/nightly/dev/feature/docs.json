@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-fd833ac",
+  "skriptVersion" : "2.8.5-nightly-616a5e4",
 
   "classes" : [
     {
@@ -9105,21 +9105,6 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Gets the angle between two vectors.",
   "examples" : "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
-},
-{
-  "id" : "ExprVectorArithmetic",
-  "name" : "Vectors - Arithmetic",
-  "patterns" : [
-    "%<a href='./classes.html#vector'>vector</a>%[ ]++[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]--[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]**[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]//[ ]%<a href='./classes.html#vector'>vector</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev28, 2.8.0 (deprecation)",
-  "description" : "Arithmetic expressions for vectors.",
-  "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
 },
 {
   "id" : "ExprLocationFromVector",
