@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-b2d3c8f",
+  "skriptVersion" : "2.8.5-nightly-ebbf61b",
 
   "classes" : [
     {
@@ -1937,14 +1937,14 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "id" : "CondIsUnbreakable",
   "name" : "Is Unbreakable",
   "patterns" : [
-    "%<a href='./classes.html#itemtype'>item types</a>% (is|are) unbreakable",
-"%<a href='./classes.html#itemtype'>item types</a>% (isn't|is not|aren't|are not) unbreakable",
+    "%<a href='./classes.html#itemtype'>item types</a>% (is|are) [un]breakable",
+"%<a href='./classes.html#itemtype'>item types</a>% (isn't|is not|aren't|are not) [un]breakable",
 
     "pattern_end"
   ],
-  "since" : "2.5.1",
+  "since" : "2.5.1, INSERT VERSION (breakable)",
   "description" : "Checks whether an item is unbreakable.",
-  "examples" : "if event-item is unbreakable"
+  "examples" : "if event-item is unbreakable:\\n    send \"This item is unbreakable!\" to player\\nif tool of {_p} is breakable:\\n    send \"Your tool is breakable!\" to {_p}"
 },
 {
   "id" : "CondIsValid",
@@ -1976,14 +1976,15 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "id" : "CondIsWhitelisted",
   "name" : "Is Whitelisted",
   "patterns" : [
-    "[the] server (is|is(n't| not)) white[ ]listed",
-"%<a href='./classes.html#player'>players</a>% (is|are)[(n't| not)] white[ ]listed",
+    "[the] server (is|(isn't|is not)) (in white[ ]list mode|white[ ]listed)",
+"%<a href='./classes.html#offlineplayer'>offline players</a>% (is|are|(isn't|is not|aren't|are not)) white[ ]listed",
+"[the] server white[ ]list (is|(isn't|is not)) enforced",
 
     "pattern_end"
   ],
-  "since" : "2.5.2",
-  "description" : "Whether or not the server or a player is whitelisted.",
-  "examples" : "if server is whitelisted:\\nif player is whitelisted"
+  "since" : "2.5.2, INSERT VERSION (enforce, offline players)",
+  "description" : "Whether or not the server or a player is whitelisted, or the server is whitelist enforced.",
+  "examples" : "if the player is whitelisted:\\nif the server is whitelisted:\\nif the server whitelist is enforced:"
 },
 {
   "id" : "CondIsWithin",
@@ -2467,6 +2468,19 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "examples" : "enchant the player's tool with sharpness 5\\ndisenchant the player's tool"
 },
 {
+  "id" : "EffEnforceWhitelist",
+  "name" : "Enforce Whitelist",
+  "patterns" : [
+    "[un]enforce [the] [server] white[ ]list",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Enforces or un-enforce a server's whitelist.
+All non-whitelisted players will be kicked upon enforcing the whitelist.",
+  "examples" : "enforce the whitelist\\nunenforce the whitelist"
+},
+{
   "id" : "EffEquip",
   "name" : "Equip",
   "patterns" : [
@@ -2727,7 +2741,7 @@ When attempting to load a normal vanilla world you must define it's environment 
   "id" : "EffSuppressWarnings",
   "name" : "Locally Suppress Warning",
   "patterns" : [
-    "[local[ly]] suppress [the] (conflict|variable save|[missing] conjunction[s]|starting [with] expression[s]) warning[s]",
+    "[local[ly]] suppress [the] (conflict|variable save|[missing] conjunction[s]|starting [with] expression[s]|deprecated syntax) warning[s]",
 
     "pattern_end"
   ],
@@ -5823,6 +5837,31 @@ Can also be used to change the burn/cook time of a placed furnace.",
   "examples" : "\"Oops!\" in lowercase # oops!\\n\"oops!\" in uppercase # OOPS!\\n\"hellO i'm steve!\" in proper case # HellO I'm Steve!\\n\"hellO i'm steve!\" in strict proper case # Hello I'm Steve!\\n\"spAwn neW boSs ()\" in camel case # spAwnNeWBoSs()\\n\"spAwn neW boSs ()\" in strict camel case # spawnNewBoss()\\n\"geneRate ranDom numBer ()\" in pascal case # GeneRateRanDomNumBer()\\n\"geneRate ranDom numBer ()\" in strict pascal case # GenerateRandomNumber()\\n\"Hello Player!\" in snake case # Hello_Player!\\n\"Hello Player!\" in lower snake case # hello_player!\\n\"Hello Player!\" in upper snake case # HELLO_PLAYER!\\n\"What is your name?\" in kebab case # What-is-your-name?\\n\"What is your name?\" in lower kebab case # what-is-your-name?\\n\"What is your name?\" in upper kebab case # WHAT-IS-YOUR-NAME?"
 },
 {
+  "id" : "ExprCodepoint",
+  "name" : "Character Codepoint",
+  "patterns" : [
+    "[the] [unicode|character] code([ ]point| position) of %<a href='./classes.html#string'>texts</a>%",
+"%<a href='./classes.html#string'>texts</a>%'[s] [unicode|character] code([ ]point| position)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the Unicode codepoint of a character",
+  "examples" : "function is_in_order(letters: strings) :: boolean:\\n    loop {_letters::*}:\\n        set {_codepoint} to codepoint of lowercase loop-value\\n\\n        return false if {_codepoint} is not set # 'loop-value is not a single character'\\n\\n        if:\\n            {_previous-codepoint} is set\\n            # if the codepoint of the current character is not\\n            #  1 more than the codepoint of the previous character\\n            #  then the letters are not in order\\n            {_codepoint} - {_previous-codepoint} is not 1\\n        then:\\n            return false\\n\\n        set {_previous-codepoint} to {_codepoint}\\n    return true"
+},
+{
+  "id" : "ExprCharacterFromCodepoint",
+  "name" : "Character from Codepoint",
+  "patterns" : [
+    "character (from|at|with) code([ ]point| position) %integer%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the character at the specified codepoint",
+  "examples" : "function chars_between(lower: string, upper: string) :: strings:\\n    set {_lower} to codepoint of {_lower}\\n    return {_none} if {_lower} is not set\\n\\n    set {_upper} to codepoint of {_upper}\\n    return {_none} if {_upper} is not set\\n\\n    loop integers between {_lower} and {_upper}:\\n        add character from codepoint loop-value to {_chars::*}\\n    return {_chars::*}"
+},
+{
   "id" : "ExprCharacters",
   "name" : "Characters Between",
   "patterns" : [
@@ -8822,16 +8861,15 @@ May grab entities in unloaded chunks.",
   "id" : "ExprTargetedBlock",
   "name" : "Targeted Block",
   "patterns" : [
-    "[the] target[ed] block[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] target[ed] block[s]",
-"[the] actual[ly] target[ed] block[s] [of %<a href='./classes.html#player'>players</a>%]",
-"%<a href='./classes.html#player'>players</a>%'[s] actual[ly] target[ed] block[s]",
+    "[the] [(actual[ly]|exact)] target[ed] block[s] [of %<a href='./classes.html#livingentity'>living entities</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [(actual[ly]|exact)] target[ed] block[s]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.",
-  "examples" : "# A command to set the block a player looks at to a specific type:\\ncommand /setblock &amp;lt;material&amp;gt;:\\n    trigger:\\n        set targeted block to argument"
+  "since" : "1.0, INSERT VERSION (actual/exact)",
+  "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.
+The actual target block will regard the actual hit box of the block.",
+  "examples" : "set target block of player to stone\\nset target block of player to oak_stairs[waterlogged=true]\\nbreak target block of player using player's tool\\ngive player 1 of type of target block\\nteleport player to location above target block\\nkill all entities in radius 3 around target block of player\\nset {_block} to actual target block of player\\nbreak actual target block of player"
 },
 {
   "id" : "ExprTeleportCause",
@@ -9009,13 +9047,13 @@ In the future there will be an option to use a player's UUID instead of the name
   "id" : "ExprUnbreakable",
   "name" : "Unbreakable Items",
   "patterns" : [
-    "unbreakable %<a href='./classes.html#itemtype'>item types</a>%",
+    "[un]breakable %<a href='./classes.html#itemtype'>item types</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev13b",
-  "description" : "Creates unbreakable copies of given items.",
-  "examples" : "unbreakable iron sword #Creates unbreakable iron sword"
+  "since" : "2.2-dev13b, INSERT VERSION (breakable)",
+  "description" : "Creates breakable or unbreakable copies of given items.",
+  "examples" : "set {_item} to unbreakable iron sword\\ngive breakable {_weapon} to all players"
 },
 {
   "id" : "ExprUnixDate",
@@ -9066,21 +9104,6 @@ In the future there will be an option to use a player's UUID instead of the name
   "since" : "2.2-dev28",
   "description" : "Gets the angle between two vectors.",
   "examples" : "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
-},
-{
-  "id" : "ExprVectorArithmetic",
-  "name" : "Vectors - Arithmetic",
-  "patterns" : [
-    "%<a href='./classes.html#vector'>vector</a>%[ ]++[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]--[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]**[ ]%<a href='./classes.html#vector'>vector</a>%",
-"%<a href='./classes.html#vector'>vector</a>%[ ]//[ ]%<a href='./classes.html#vector'>vector</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev28, 2.8.0 (deprecation)",
-  "description" : "Arithmetic expressions for vectors.",
-  "examples" : "set {_v} to vector 1, 2, 3 // vector 5, 5, 5\\nset {_v} to {_v} ++ {_v}\\nset {_v} to {_v} -- {_v}\\nset {_v} to {_v} ** {_v}\\nset {_v} to {_v} // {_v}"
 },
 {
   "id" : "ExprLocationFromVector",
@@ -9400,9 +9423,11 @@ The return value in this case will be the view distance set in system.properties
 
     "pattern_end"
   ],
-  "since" : "2.5.2",
-  "description" : "A server's whitelist.This expression can be used to add/remove players to/from the whitelist, to enable it and disable it (set whitelist to true / set whitelist to false), and to empty it (reset whitelist)",
-  "examples" : "set whitelist to false\\nadd all players to whitelist\\nreset the whitelist"
+  "since" : "2.5.2, INSERT VERSION (delete)",
+  "description" : "An expression for obtaining and modifying the server's whitelist.
+Players may be added and removed from the whitelist.
+The whitelist can be enabled or disabled by setting the whitelist to true or false respectively.",
+  "examples" : "set the whitelist to false\\nadd all players to whitelist\\nreset the whitelist"
 },
 {
   "id" : "ExprWorld",
@@ -9630,6 +9655,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "2.8.0",
   "description" : "Clamps one or more values between two numbers.",
   "examples" : "clamp(5, 0, 10) = 5\\nclamp(5.5, 0, 5) = 5\\nclamp(0.25, 0, 0.5) = 0.25\\nclamp(5, 7, 10) = 7\\nclamp((5, 0, 10, 9, 13), 7, 10) = (7, 7, 10, 9, 10)\\nset {_clamped::*} to clamp({_values::*}, 0, 10)"
+},
+{
+  "id" : "concat",
+  "name" : "concat",
+  "patterns" : [
+    "concat(texts: objects)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Joins the provided texts (and other things) into a single text.",
+  "examples" : "concat(\"hello \", \"there\") # hello there\\nconcat(\"foo \", 100, \" bar\") # foo 100 bar"
 },
 {
   "id" : "cos",
