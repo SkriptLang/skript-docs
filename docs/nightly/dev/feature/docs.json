@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-380d044",
+  "skriptVersion" : "2.8.5-nightly-524dc18",
 
   "classes" : [
     {
@@ -1413,6 +1413,19 @@ Note: This is the only element where not all patterns are shown. It has actually
   "examples" : "tool of the player is enchanted with efficiency 2\\nhelm, chestplate, leggings or boots are enchanted"
 },
 {
+  "id" : "CondIsFireResistant",
+  "name" : "Is Fire Resistant",
+  "patterns" : [
+    "%<a href='./classes.html#itemtype'>item types</a>% (is|are) (fire resistant|resistant to fire)",
+"%<a href='./classes.html#itemtype'>item types</a>% (isn't|is not|aren't|are not) (fire resistant|resistant to fire)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether an item is fire resistant.",
+  "examples" : "if player's tool is fire resistant:\\nif {_items::*} aren't resistant to fire:"
+},
+{
   "id" : "CondIsFlammable",
   "name" : "Is Flammable",
   "patterns" : [
@@ -2786,6 +2799,18 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
   "since" : "2.7",
   "description" : "Makes the egg hatch in a Player Egg Throw event.",
   "examples" : "on player egg throw:\\n    # EGGS FOR DAYZ!\\n    make the egg hatch"
+},
+{
+  "id" : "EffFireResistant",
+  "name" : "Make Fire Resistant",
+  "patterns" : [
+    "make %<a href='./classes.html#itemtype'>item types</a>% [not] (fire resistant|resistant to fire)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Makes items fire resistant.",
+  "examples" : "make player's tool fire resistant:\\nmake {_items::*} not resistant to fire"
 },
 {
   "id" : "EffMakeFly",
@@ -9428,6 +9453,19 @@ The return value in this case will be the view distance set in system.properties
 Players may be added and removed from the whitelist.
 The whitelist can be enabled or disabled by setting the whitelist to true or false respectively.",
   "examples" : "set the whitelist to false\\nadd all players to whitelist\\nreset the whitelist"
+},
+{
+  "id" : "ExprWithFireResistance",
+  "name" : "With Fire Resistance",
+  "patterns" : [
+    "%<a href='./classes.html#itemtype'>item type</a>% with[out] fire[ ]resistance",
+"fire resistant %<a href='./classes.html#itemtype'>item type</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Creates a copy of an item with (or without) fire resistance.",
+  "examples" : "set {_x} to diamond sword with fire resistance\\nequip player with netherite helmet without fire resistance\\ndrop fire resistant stone at player"
 },
 {
   "id" : "ExprWorld",
