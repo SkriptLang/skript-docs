@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-98304dc",
+  "skriptVersion" : "2.8.5-nightly-a9be7cb",
 
   "classes" : [
     {
@@ -336,7 +336,7 @@
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "The heal reason in a heal event.",
+  "description" : "The health regain reason in a <a href='events.html#heal'>heal</a> event.",
   "examples" : "Missing examples."
 },
 {
@@ -6910,7 +6910,7 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHealReason",
   "name" : "Heal Reason",
   "patterns" : [
-    "(regen|health regain|heal[ing]) (reason|cause)",
+    "[the] (regen|health regain|heal[ing]) (reason|cause)",
 
     "pattern_end"
   ],
