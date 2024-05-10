@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-2971119",
+  "skriptVersion" : "2.8.5-nightly-4949691",
 
   "classes" : [
     {
@@ -3089,7 +3089,6 @@ Note: saving many worlds at once may possibly cause the server to freeze.",
   "patterns" : [
     "make %<a href='./classes.html#player'>players</a>% see %<a href='./classes.html#block'>blocks</a>% as %<a href='./classes.html#itemtype'>item type</a>/<a href='./classes.html#blockdata'>block data</a>%",
 "make %<a href='./classes.html#player'>players</a>% see %<a href='./classes.html#block'>blocks</a>% (as normal|the same as the server)",
-"(reset|sync) %<a href='./classes.html#block'>blocks</a>% (for|to) %<a href='./classes.html#player'>players</a>% [with the server]",
 
     "pattern_end"
   ],
