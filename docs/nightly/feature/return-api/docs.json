@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-bcdc5db",
+  "skriptVersion" : "2.8.5-nightly-5d75baf",
 
   "classes" : [
     {
@@ -1958,6 +1958,19 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "since" : "2.5.1, INSERT VERSION (breakable)",
   "description" : "Checks whether an item is unbreakable.",
   "examples" : "if event-item is unbreakable:\\n    send \"This item is unbreakable!\" to player\\nif tool of {_p} is breakable:\\n    send \"Your tool is breakable!\" to {_p}"
+},
+{
+  "id" : "CondIsUsingFeature",
+  "name" : "Is Using Experimental Feature",
+  "patterns" : [
+    "[the] [current] script is using %<a href='./classes.html#string'>texts</a>%",
+"[the] [current] script is(n't| not) using %<a href='./classes.html#string'>texts</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a script is using an experimental feature by name.",
+  "examples" : "the script is using \"example feature\"\\non load:\\n    if the script is using \"example feature\":\\n        broadcast \"You're using an experimental feature!\""
 },
 {
   "id" : "CondIsValid",
