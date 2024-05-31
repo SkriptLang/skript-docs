@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-f43bc75",
+  "skriptVersion" : "2.8.5-nightly-4f3ace9",
 
   "classes" : [
     {
@@ -3306,7 +3306,7 @@ This may require that there is enough space above the given location and that th
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.6.1 (with section)",
+  "since" : "1.0, 2.6.1 (with section), INSERT VERSION (dropped items)",
   "description" : "Spawn a creature. This can be used as an effect and as a section.
 If it is used as a section, the section is run before the entity is added to the world.
 You can modify the entity in this section, using for example 'event-entity' or 'cow'. 
