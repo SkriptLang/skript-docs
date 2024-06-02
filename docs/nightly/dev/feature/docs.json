@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-48dde9e",
+  "skriptVersion" : "2.8.6-nightly-cb94b39",
 
   "classes" : [
     {
@@ -3415,7 +3415,7 @@ This may require that there is enough space above the given location and that th
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.6.1 (with section)",
+  "since" : "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
   "description" : "Spawn a creature. This can be used as an effect and as a section.
 If it is used as a section, the section is run before the entity is added to the world.
 You can modify the entity in this section, using for example 'event-entity' or 'cow'. 
@@ -6524,9 +6524,9 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Get all the blocks that were destroyed in an explode event",
-  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}"
+  "since" : "2.5, 2.8.6 (modify blocks)",
+  "description" : "Get all the blocks that were destroyed in an explode event. Supports add/remove/set/clear/delete blocks.",
+  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}\\n\\non explode:\\n    loop exploded blocks:\\n        if loop-block is grass:\\n            remove loop-block from exploded blocks\\n\\non explode:\\n    clear exploded blocks\\n\\non explode:\\n    set exploded blocks to blocks in radius 10 around event-entity\\n\\non explode:\\n    add blocks above event-entity to exploded blocks"
 },
 {
   "id" : "ExprExplosionBlockYield",
