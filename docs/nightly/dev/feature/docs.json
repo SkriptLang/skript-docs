@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.6-nightly-d073e28",
+  "skriptVersion" : "2.8.6-nightly-1743000",
 
   "classes" : [
     {
@@ -3103,7 +3103,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
     "pattern_end"
   ],
   "since" : "2.2, 2.8.0 (returns aliases)",
-  "description" : "Makes a function return a value",
+  "description" : "Makes a trigger (e.g. a function) return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
