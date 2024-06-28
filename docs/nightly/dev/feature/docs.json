@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-ccc9373",
+  "skriptVersion" : "2.8.7-nightly-39acfe3",
 
   "classes" : [
     {
@@ -9452,6 +9452,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "1.0",
   "description" : "The weather in the given or the current world.",
   "examples" : "set weather to clear\\nweather in \"world\" is rainy"
+},
+{
+  "id" : "ExprWhether",
+  "name" : "Whether",
+  "patterns" : [
+    "whether &lt;.+&gt;",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "A shorthand for returning the result of a condition (true or false). This is functionally identical to using `true if <condition> else false`.",
+  "examples" : "set {fly} to whether player can fly\\nbroadcast \"Flying: %whether player is flying%\""
 },
 {
   "id" : "ExprWhitelist",
