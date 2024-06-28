@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-fccdbec",
+  "skriptVersion" : "2.8.7-nightly-3c1a20c",
 
   "classes" : [
     {
@@ -18,7 +18,7 @@
   "id" : "biome",
   "name" : "Biome",
   "patterns" : [
-    "roofed forest, old growth pine taiga, mesa forest, the void, snowy taiga, hell, jagged peaks, spiked ice plains, crimson forest, stone shore, birch forest, cold taiga, cold beach, savanna, giant tree taiga, marsh, windswept forest, wooded badlands, sky, nether, void, cold ocean, giant spruce taiga, lush caves, deep lukewarm ocean, deep frozen ocean, small end islands, ice spikes, old growth birch forest, badlands, badlands forest, ocean, lukewarm ocean, ice plains spikes, gravelly mountains, frozen peaks, stony peaks, jungle, basalt deltas, snowy beach, frozen ocean, mountains, forest, wooded mesa, eroded mesa, the end, dripstone caves, swampland, end barrens, ice plains with spikes, windswept hills, sea, unknown, black forest, soul sand valley, deep dark, mesa, plains, eroded badlands, mushroom fields, windswept gravelly hills, mushroom island, wooded mountains, shattered savanna, sunflower plains, snowy plains, meadow, snowy slopes, flower forest, windswept savanna, nether wastes, stony shore, taiga, frozen river, warm ocean, custom, old growth spruce taiga, deep cold ocean, swamp, mangrove swamp, deep ocean, end highlands, end midlands, cherry grove, sparse jungle, dark forest, jungle edge, grove, snowy tundra, beach, bamboo jungle, savanna plateau, river, tall birch forest, warped forest, desert",
+    "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, custom, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, minecraft:badlands, minecraft:bamboo_jungle, minecraft:basalt_deltas, minecraft:beach, minecraft:birch_forest, minecraft:cherry_grove, minecraft:cold_ocean, minecraft:crimson_forest, minecraft:custom, minecraft:dark_forest, minecraft:deep_cold_ocean, minecraft:deep_dark, minecraft:deep_frozen_ocean, minecraft:deep_lukewarm_ocean, minecraft:deep_ocean, minecraft:desert, minecraft:dripstone_caves, minecraft:end_barrens, minecraft:end_highlands, minecraft:end_midlands, minecraft:eroded_badlands, minecraft:flower_forest, minecraft:forest, minecraft:frozen_ocean, minecraft:frozen_peaks, minecraft:frozen_river, minecraft:grove, minecraft:ice_spikes, minecraft:jagged_peaks, minecraft:jungle, minecraft:lukewarm_ocean, minecraft:lush_caves, minecraft:mangrove_swamp, minecraft:meadow, minecraft:mushroom_fields, minecraft:nether_wastes, minecraft:ocean, minecraft:old_growth_birch_forest, minecraft:old_growth_pine_taiga, minecraft:old_growth_spruce_taiga, minecraft:plains, minecraft:river, minecraft:savanna, minecraft:savanna_plateau, minecraft:small_end_islands, minecraft:snowy_beach, minecraft:snowy_plains, minecraft:snowy_slopes, minecraft:snowy_taiga, minecraft:soul_sand_valley, minecraft:sparse_jungle, minecraft:stony_peaks, minecraft:stony_shore, minecraft:sunflower_plains, minecraft:swamp, minecraft:taiga, minecraft:the_end, minecraft:the_void, minecraft:warm_ocean, minecraft:warped_forest, minecraft:windswept_forest, minecraft:windswept_gravelly_hills, minecraft:windswept_hills, minecraft:windswept_savanna, minecraft:wooded_badlands, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, unknown, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains",
 
     "pattern_end"
   ],
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,7 +121,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -517,7 +517,7 @@
   ],
   "since" : "1.0",
   "description" : "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.\\nYou have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly.",
-  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;lt;none&amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
+  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
 },
 {
   "id" : "potioneffect",
@@ -770,7 +770,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, critical hit, note, portal, flame, lava pop, cloud, heart, dragon breath, end rod, damage indicator, sweep attack, falling dust, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, poof, large explosion, explosion emitter, firework, bubble, splash, water wake, underwater, critical hit, enchanted hit, smoke, large smoke, effect, instant effect, entity effect, witch, dripping water, dripping lava, angry villager, happy villager, mycelium, note, portal, enchant, flame, lava pop, cloud, dust, snowball, slime, heart, item, block, rain, elder guardian, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem of undying, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, dust color transition, vibration, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, cherry leaves, egg crack, dust plume, white smoke, gust, small gust, large gust emitter, small gust emitter, trial spawner detection, ominous trial spawner detection, vault connection, infested, cobweb, dust pillar, ominous spawning, raid omen, block marker",
 
     "pattern_end"
   ],
@@ -1972,6 +1972,19 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "examples" : "if event-item is unbreakable:\\n    send \"This item is unbreakable!\" to player\\nif tool of {_p} is breakable:\\n    send \"Your tool is breakable!\" to {_p}"
 },
 {
+  "id" : "CondIsUsingFeature",
+  "name" : "Is Using Experimental Feature",
+  "patterns" : [
+    "[the] [current] script is using %<a href='./classes.html#string'>texts</a>%",
+"[the] [current] script is(n't| not) using %<a href='./classes.html#string'>texts</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a script is using an experimental feature by name.",
+  "examples" : "the script is using \"example feature\"\\non load:\\n    if the script is using \"example feature\":\\n        broadcast \"You're using an experimental feature!\""
+},
+{
   "id" : "CondIsValid",
   "name" : "Is Valid",
   "patterns" : [
@@ -3102,7 +3115,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
     "pattern_end"
   ],
   "since" : "2.2, 2.8.0 (returns aliases)",
-  "description" : "Makes a function return a value",
+  "description" : "Makes a trigger (e.g. a function) return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
@@ -3414,7 +3427,7 @@ This may require that there is enough space above the given location and that th
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.6.1 (with section)",
+  "since" : "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
   "description" : "Spawn a creature. This can be used as an effect and as a section.
 If it is used as a section, the section is run before the entity is added to the world.
 You can modify the entity in this section, using for example 'event-entity' or 'cow'. 
@@ -3534,7 +3547,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "INSERT VERSION",
   "description" : "Called when a bell resonates, highlighting nearby raiders.",
-  "examples" : "on bell resonate:\\n    send \"&amp;amp;lt;red&amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
+  "examples" : "on bell resonate:\\n    send \"&amp;amp;amp;amp;lt;red&amp;amp;amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
 },
 {
   "id" : "bell_ring",
@@ -3546,7 +3559,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "INSERT VERSION",
   "description" : "Called when a bell is rung.",
-  "examples" : "on bell ring:\\n    send \"&amp;amp;lt;gold&amp;amp;gt;Ding-dong!&amp;amp;lt;reset&amp;amp;gt;\" to all players in radius 10 of event-block"
+  "examples" : "on bell ring:\\n    send \"&amp;amp;amp;amp;lt;gold&amp;amp;amp;amp;gt;Ding-dong!&amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;gt;\" to all players in radius 10 of event-block"
 },
 {
   "id" : "block_damage",
@@ -3680,7 +3693,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;light red&amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;lt;light red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;orange&amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;lt;orange&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;white&amp;amp;amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -4578,7 +4591,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4898,7 +4911,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -6523,9 +6536,9 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Get all the blocks that were destroyed in an explode event",
-  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}"
+  "since" : "2.5, 2.8.6 (modify blocks)",
+  "description" : "Get all the blocks that were destroyed in an explode event. Supports add/remove/set/clear/delete blocks.",
+  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}\\n\\non explode:\\n    loop exploded blocks:\\n        if loop-block is grass:\\n            remove loop-block from exploded blocks\\n\\non explode:\\n    clear exploded blocks\\n\\non explode:\\n    set exploded blocks to blocks in radius 10 around event-entity\\n\\non explode:\\n    add blocks above event-entity to exploded blocks"
 },
 {
   "id" : "ExprExplosionBlockYield",
@@ -9455,6 +9468,18 @@ The return value in this case will be the view distance set in system.properties
   "examples" : "set weather to clear\\nweather in \"world\" is rainy"
 },
 {
+  "id" : "ExprWhether",
+  "name" : "Whether",
+  "patterns" : [
+    "whether &lt;.+&gt;",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "A shorthand for returning the result of a condition (true or false). This is functionally identical to using `true if <condition> else false`.",
+  "examples" : "set {fly} to whether player can fly\\nbroadcast \"Flying: %whether player is flying%\""
+},
+{
   "id" : "ExprWhitelist",
   "name" : "Whitelist",
   "patterns" : [
@@ -9874,7 +9899,7 @@ The whitelist can be enabled or disabled by setting the whitelist to true or fal
   ],
   "since" : "2.8.0",
   "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
-  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &lt;none&gt; if player is offline"
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;amp;amp;lt;none&amp;amp;amp;amp;gt; if player is offline"
 },
 {
   "id" : "product",
