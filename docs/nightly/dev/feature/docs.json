@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-39acfe3",
+  "skriptVersion" : "2.8.7-nightly-df620e4",
 
   "classes" : [
     {
@@ -3888,6 +3888,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.5",
   "description" : "Called when a player puts an item into enchantment table. This event may be called multiple times.\\n To get the enchant item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>",
   "examples" : "on enchant prepare:\\n    set enchant offer 1 to sharpness 1\\n    set the cost of enchant offer 1 to 10 levels"
+},
+{
+  "id" : "enderman_enrage",
+  "name" : "On Enderman Enrage",
+  "patterns" : [
+    "[on] enderman (enrage|anger)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an enderman gets mad because a player looked at them.\\nNote: This does not stop enderman from targeting the player as a result of getting damaged.",
+  "examples" : "# Stops endermen from getting angry players with the permission \"safeFrom.enderman\"\\non enderman enrage:\\n    if player has permission \"safeFrom.enderman\":\\n        cancel event"
 },
 {
   "id" : "endermansheepsilverfishfalling_block",
