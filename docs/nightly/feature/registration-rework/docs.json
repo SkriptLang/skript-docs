@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.6-nightly-55fa670",
+  "skriptVersion" : "2.8.7-nightly-ec1f772",
 
   "classes" : [
     {
@@ -18,7 +18,7 @@
   "id" : "biome",
   "name" : "Biome",
   "patterns" : [
-    "roofed forest, old growth pine taiga, mesa forest, the void, snowy taiga, hell, jagged peaks, spiked ice plains, crimson forest, stone shore, birch forest, cold taiga, cold beach, savanna, giant tree taiga, marsh, windswept forest, wooded badlands, sky, nether, void, cold ocean, giant spruce taiga, lush caves, deep lukewarm ocean, deep frozen ocean, small end islands, ice spikes, old growth birch forest, badlands, badlands forest, ocean, lukewarm ocean, ice plains spikes, gravelly mountains, frozen peaks, stony peaks, jungle, basalt deltas, snowy beach, frozen ocean, mountains, forest, wooded mesa, eroded mesa, the end, dripstone caves, swampland, end barrens, ice plains with spikes, windswept hills, sea, unknown, black forest, soul sand valley, deep dark, mesa, plains, eroded badlands, mushroom fields, windswept gravelly hills, mushroom island, wooded mountains, shattered savanna, sunflower plains, snowy plains, meadow, snowy slopes, flower forest, windswept savanna, nether wastes, stony shore, taiga, frozen river, warm ocean, custom, old growth spruce taiga, deep cold ocean, swamp, mangrove swamp, deep ocean, end highlands, end midlands, cherry grove, sparse jungle, dark forest, jungle edge, grove, snowy tundra, beach, bamboo jungle, savanna plateau, river, tall birch forest, warped forest, desert",
+    "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, custom, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, minecraft:badlands, minecraft:bamboo_jungle, minecraft:basalt_deltas, minecraft:beach, minecraft:birch_forest, minecraft:cherry_grove, minecraft:cold_ocean, minecraft:crimson_forest, minecraft:custom, minecraft:dark_forest, minecraft:deep_cold_ocean, minecraft:deep_dark, minecraft:deep_frozen_ocean, minecraft:deep_lukewarm_ocean, minecraft:deep_ocean, minecraft:desert, minecraft:dripstone_caves, minecraft:end_barrens, minecraft:end_highlands, minecraft:end_midlands, minecraft:eroded_badlands, minecraft:flower_forest, minecraft:forest, minecraft:frozen_ocean, minecraft:frozen_peaks, minecraft:frozen_river, minecraft:grove, minecraft:ice_spikes, minecraft:jagged_peaks, minecraft:jungle, minecraft:lukewarm_ocean, minecraft:lush_caves, minecraft:mangrove_swamp, minecraft:meadow, minecraft:mushroom_fields, minecraft:nether_wastes, minecraft:ocean, minecraft:old_growth_birch_forest, minecraft:old_growth_pine_taiga, minecraft:old_growth_spruce_taiga, minecraft:plains, minecraft:river, minecraft:savanna, minecraft:savanna_plateau, minecraft:small_end_islands, minecraft:snowy_beach, minecraft:snowy_plains, minecraft:snowy_slopes, minecraft:snowy_taiga, minecraft:soul_sand_valley, minecraft:sparse_jungle, minecraft:stony_peaks, minecraft:stony_shore, minecraft:sunflower_plains, minecraft:swamp, minecraft:taiga, minecraft:the_end, minecraft:the_void, minecraft:warm_ocean, minecraft:warped_forest, minecraft:windswept_forest, minecraft:windswept_gravelly_hills, minecraft:windswept_hills, minecraft:windswept_savanna, minecraft:wooded_badlands, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, unknown, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains",
 
     "pattern_end"
   ],
@@ -3103,7 +3103,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
     "pattern_end"
   ],
   "since" : "2.2, 2.8.0 (returns aliases)",
-  "description" : "Makes a function return a value",
+  "description" : "Makes a trigger (e.g. a function) return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
@@ -3882,6 +3882,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "name" : "On Enchant Prepare",
   "patterns" : [
     "[on] [item] enchant prepare",
+
+    "pattern_end"
+  ],
+  "since" : "Unknown",
+  "description" : "Missing description.",
+  "examples" : "Missing examples."
+},
+{
+  "id" : "enderman_enrage",
+  "name" : "On Enderman Enrage",
+  "patterns" : [
+    "[on] enderman (enrage|anger)",
 
     "pattern_end"
   ],
@@ -9452,6 +9464,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "1.0",
   "description" : "The weather in the given or the current world.",
   "examples" : "set weather to clear\\nweather in \"world\" is rainy"
+},
+{
+  "id" : "ExprWhether",
+  "name" : "Whether",
+  "patterns" : [
+    "whether &lt;.+&gt;",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "A shorthand for returning the result of a condition (true or false). This is functionally identical to using `true if <condition> else false`.",
+  "examples" : "set {fly} to whether player can fly\\nbroadcast \"Flying: %whether player is flying%\""
 },
 {
   "id" : "ExprWhitelist",
