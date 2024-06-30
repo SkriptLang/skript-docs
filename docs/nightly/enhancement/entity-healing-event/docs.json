@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.5-nightly-c200b84",
+  "skriptVersion" : "2.8.7-nightly-a49840f",
 
   "classes" : [
     {
@@ -18,7 +18,7 @@
   "id" : "biome",
   "name" : "Biome",
   "patterns" : [
-    "roofed forest, old growth pine taiga, mesa forest, the void, snowy taiga, hell, jagged peaks, spiked ice plains, crimson forest, stone shore, birch forest, cold taiga, cold beach, savanna, giant tree taiga, marsh, windswept forest, wooded badlands, sky, nether, void, cold ocean, giant spruce taiga, lush caves, deep lukewarm ocean, deep frozen ocean, small end islands, ice spikes, old growth birch forest, badlands, badlands forest, ocean, lukewarm ocean, ice plains spikes, gravelly mountains, frozen peaks, stony peaks, jungle, basalt deltas, snowy beach, frozen ocean, mountains, forest, wooded mesa, eroded mesa, the end, dripstone caves, swampland, end barrens, ice plains with spikes, windswept hills, sea, unknown, black forest, soul sand valley, deep dark, mesa, plains, eroded badlands, mushroom fields, windswept gravelly hills, mushroom island, wooded mountains, shattered savanna, sunflower plains, snowy plains, meadow, snowy slopes, flower forest, windswept savanna, nether wastes, stony shore, taiga, frozen river, warm ocean, custom, old growth spruce taiga, deep cold ocean, swamp, mangrove swamp, deep ocean, end highlands, end midlands, cherry grove, sparse jungle, dark forest, jungle edge, grove, snowy tundra, beach, bamboo jungle, savanna plateau, river, tall birch forest, warped forest, desert",
+    "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, custom, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, minecraft:badlands, minecraft:bamboo_jungle, minecraft:basalt_deltas, minecraft:beach, minecraft:birch_forest, minecraft:cherry_grove, minecraft:cold_ocean, minecraft:crimson_forest, minecraft:custom, minecraft:dark_forest, minecraft:deep_cold_ocean, minecraft:deep_dark, minecraft:deep_frozen_ocean, minecraft:deep_lukewarm_ocean, minecraft:deep_ocean, minecraft:desert, minecraft:dripstone_caves, minecraft:end_barrens, minecraft:end_highlands, minecraft:end_midlands, minecraft:eroded_badlands, minecraft:flower_forest, minecraft:forest, minecraft:frozen_ocean, minecraft:frozen_peaks, minecraft:frozen_river, minecraft:grove, minecraft:ice_spikes, minecraft:jagged_peaks, minecraft:jungle, minecraft:lukewarm_ocean, minecraft:lush_caves, minecraft:mangrove_swamp, minecraft:meadow, minecraft:mushroom_fields, minecraft:nether_wastes, minecraft:ocean, minecraft:old_growth_birch_forest, minecraft:old_growth_pine_taiga, minecraft:old_growth_spruce_taiga, minecraft:plains, minecraft:river, minecraft:savanna, minecraft:savanna_plateau, minecraft:small_end_islands, minecraft:snowy_beach, minecraft:snowy_plains, minecraft:snowy_slopes, minecraft:snowy_taiga, minecraft:soul_sand_valley, minecraft:sparse_jungle, minecraft:stony_peaks, minecraft:stony_shore, minecraft:sunflower_plains, minecraft:swamp, minecraft:taiga, minecraft:the_end, minecraft:the_void, minecraft:warm_ocean, minecraft:warped_forest, minecraft:windswept_forest, minecraft:windswept_gravelly_hills, minecraft:windswept_hills, minecraft:windswept_savanna, minecraft:wooded_badlands, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, unknown, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains",
 
     "pattern_end"
   ],
@@ -758,7 +758,7 @@
   "id" : "visualeffect",
   "name" : "Visual Effect",
   "patterns" : [
-    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, villager hearts, angry villager entity, happy villager entity, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, critical hit, note, portal, flame, lava pop, cloud, heart, dragon breath, end rod, damage indicator, sweep attack, falling dust, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek",
+    "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, poof, large explosion, explosion emitter, firework, bubble, splash, water wake, underwater, critical hit, enchanted hit, smoke, large smoke, effect, instant effect, entity effect, witch, dripping water, dripping lava, angry villager, happy villager, mycelium, note, portal, enchant, flame, lava pop, cloud, dust, snowball, slime, heart, item, block, rain, elder guardian, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem of undying, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, dust color transition, vibration, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, cherry leaves, egg crack, dust plume, white smoke, gust, small gust, large gust emitter, small gust emitter, trial spawner detection, ominous trial spawner detection, vault connection, infested, cobweb, dust pillar, ominous spawning, raid omen, block marker",
 
     "pattern_end"
   ],
@@ -1960,6 +1960,19 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "examples" : "if event-item is unbreakable:\\n    send \"This item is unbreakable!\" to player\\nif tool of {_p} is breakable:\\n    send \"Your tool is breakable!\" to {_p}"
 },
 {
+  "id" : "CondIsUsingFeature",
+  "name" : "Is Using Experimental Feature",
+  "patterns" : [
+    "[the] [current] script is using %<a href='./classes.html#string'>texts</a>%",
+"[the] [current] script is(n't| not) using %<a href='./classes.html#string'>texts</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Checks whether a script is using an experimental feature by name.",
+  "examples" : "the script is using \"example feature\"\\non load:\\n    if the script is using \"example feature\":\\n        broadcast \"You're using an experimental feature!\""
+},
+{
   "id" : "CondIsValid",
   "name" : "Is Valid",
   "patterns" : [
@@ -3090,7 +3103,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
     "pattern_end"
   ],
   "since" : "2.2, 2.8.0 (returns aliases)",
-  "description" : "Makes a function return a value",
+  "description" : "Makes a trigger (e.g. a function) return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
@@ -3402,7 +3415,7 @@ This may require that there is enough space above the given location and that th
 
     "pattern_end"
   ],
-  "since" : "1.0, 2.6.1 (with section)",
+  "since" : "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
   "description" : "Spawn a creature. This can be used as an effect and as a section.
 If it is used as a section, the section is run before the entity is added to the world.
 You can modify the entity in this section, using for example 'event-entity' or 'cow'. 
@@ -3875,6 +3888,18 @@ Do note that other event values, such as 'player', won't work in this section.",
   "since" : "2.5",
   "description" : "Called when a player puts an item into enchantment table. This event may be called multiple times.\\n To get the enchant item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>",
   "examples" : "on enchant prepare:\\n    set enchant offer 1 to sharpness 1\\n    set the cost of enchant offer 1 to 10 levels"
+},
+{
+  "id" : "enderman_enrage",
+  "name" : "On Enderman Enrage",
+  "patterns" : [
+    "[on] enderman (enrage|anger)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when an enderman gets mad because a player looked at them.\\nNote: This does not stop enderman from targeting the player as a result of getting damaged.",
+  "examples" : "# Stops endermen from getting angry players with the permission \"safeFrom.enderman\"\\non enderman enrage:\\n    if player has permission \"safeFrom.enderman\":\\n        cancel event"
 },
 {
   "id" : "endermansheepsilverfishfalling_block",
@@ -6512,9 +6537,9 @@ Resetting an entity's attribute is only available in Minecraft 1.11 and above.",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Get all the blocks that were destroyed in an explode event",
-  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}"
+  "since" : "2.5, 2.8.6 (modify blocks)",
+  "description" : "Get all the blocks that were destroyed in an explode event. Supports add/remove/set/clear/delete blocks.",
+  "examples" : "on explode:\\n    loop exploded blocks:\\n        add loop-block to {exploded::blocks::*}\\n\\non explode:\\n    loop exploded blocks:\\n        if loop-block is grass:\\n            remove loop-block from exploded blocks\\n\\non explode:\\n    clear exploded blocks\\n\\non explode:\\n    set exploded blocks to blocks in radius 10 around event-entity\\n\\non explode:\\n    add blocks above event-entity to exploded blocks"
 },
 {
   "id" : "ExprExplosionBlockYield",
@@ -9440,6 +9465,18 @@ The return value in this case will be the view distance set in system.properties
   "since" : "1.0",
   "description" : "The weather in the given or the current world.",
   "examples" : "set weather to clear\\nweather in \"world\" is rainy"
+},
+{
+  "id" : "ExprWhether",
+  "name" : "Whether",
+  "patterns" : [
+    "whether &lt;.+&gt;",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "A shorthand for returning the result of a condition (true or false). This is functionally identical to using `true if <condition> else false`.",
+  "examples" : "set {fly} to whether player can fly\\nbroadcast \"Flying: %whether player is flying%\""
 },
 {
   "id" : "ExprWhitelist",
