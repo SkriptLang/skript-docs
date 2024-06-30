@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-a49840f",
+  "skriptVersion" : "2.8.7-nightly-4a85f39",
 
   "classes" : [
     {
@@ -4187,7 +4187,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "1.0, INSERT VERSION (by entity)",
+  "since" : "1.0, INSERT VERSION (by reason)",
   "description" : "Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs).",
   "examples" : "on heal:\\non player healing from a regeneration potion:\\non healing of a zombie, cow or a wither:\\n    heal reason is healing potion\\n    cancel event"
 },
