@@ -1,12 +1,12 @@
 {
-  "skriptVersion" : "2.8.7-nightly-abc782c",
+  "skriptVersion" : "2.8.7-nightly-f6f41ca",
 
   "classes" : [
     {
   "id" : "attributetype",
   "name" : "Attribute Type",
   "patterns" : [
-    "entity interaction range, luck, generic movement speed, generic luck, block interaction range, generic max absorption, generic scale, scale, generic step height, follow range, player block interaction range, movement speed, generic jump strength, max absorption, generic follow range, zombie spawn reinforcements, player entity interaction range, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic safe fall distance, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic fall damage multiplier, generic flying speed, generic knockback resistance, safe fall distance, fall damage multiplier, block break speed, generic gravity, armor, jump strength, attack speed, gravity, armor toughness, generic max health, step height, player block break speed",
+    "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, entity interaction range, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement speed, generic safe fall distance, generic scale, generic step height, generic.armor, generic.armor toughness, generic.attack damage, generic.attack knockback, generic.attack speed, generic.fall damage multiplier, generic.flying speed, generic.follow range, generic.gravity, generic.jump strength, generic.knockback resistance, generic.luck, generic.max absorption, generic.max health, generic.movement speed, generic.safe fall distance, generic.scale, generic.step height, gravity, jump strength, knockback resistance, luck, max absorption, max health, minecraft:generic.armor, minecraft:generic.armor_toughness, minecraft:generic.attack_damage, minecraft:generic.attack_knockback, minecraft:generic.attack_speed, minecraft:generic.fall_damage_multiplier, minecraft:generic.flying_speed, minecraft:generic.follow_range, minecraft:generic.gravity, minecraft:generic.jump_strength, minecraft:generic.knockback_resistance, minecraft:generic.luck, minecraft:generic.max_absorption, minecraft:generic.max_health, minecraft:generic.movement_speed, minecraft:generic.safe_fall_distance, minecraft:generic.scale, minecraft:generic.step_height, minecraft:player.block_break_speed, minecraft:player.block_interaction_range, minecraft:player.entity_interaction_range, minecraft:zombie.spawn_reinforcements, movement speed, player block break speed, player block interaction range, player entity interaction range, player.block break speed, player.block interaction range, player.entity interaction range, safe fall distance, scale, step height, zombie spawn reinforcements, zombie.spawn reinforcements",
 
     "pattern_end"
   ],
@@ -66,7 +66,7 @@
   "id" : "CatType",
   "name" : "Cat Type",
   "patterns" : [
-    "red, all black, british shorthair, ragdoll, white, jellie, siamese, black, tabby, calico, persian",
+    "all black, black, british shorthair, calico, jellie, minecraft:all_black, minecraft:black, minecraft:british_shorthair, minecraft:calico, minecraft:jellie, minecraft:persian, minecraft:ragdoll, minecraft:red, minecraft:siamese, minecraft:tabby, minecraft:white, persian, ragdoll, red, siamese, tabby, white",
 
     "pattern_end"
   ],
