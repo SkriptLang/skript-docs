@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-e65fe2f",
+  "skriptVersion" : "2.8.7-nightly-f1e0dd6",
 
   "classes" : [
     {
@@ -9935,13 +9935,13 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
   "id" : "offlineplayer",
   "name" : "offlineplayer",
   "patterns" : [
-    "offlineplayer(nameOrUUID: string)",
+    "offlineplayer(nameOrUUID: string, allowLookups: boolean = [[boolean:true]])",
 
     "pattern_end"
   ],
-  "since" : "2.8.0",
-  "description" : "Returns a offline player from their name or UUID. This function will still return the player if they're online.",
-  "examples" : "set {_p} to offlineplayer(\"Notch\")\\nset {_p} to offlineplayer(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")"
+  "since" : "2.8.0, INSERT VERSION (prevent lookups)",
+  "description" : "Returns a offline player from their name or UUID. This function will still return the player if they're online. If Paper 1.16.5+ is used, the 'allowLookup' parameter can be set to false to prevent this function from doing a web lookup for players who have not joined before. Lookups can cause lag spikes of up to multiple seconds, so use offline players with caution.",
+  "examples" : "set {_p} to offlineplayer(\"Notch\")\\nset {_p} to offlineplayer(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")\\nset {_p} to offlineplayer(\"Notch\", false)"
 },
 {
   "id" : "player",
