@@ -1,12 +1,12 @@
 {
-  "skriptVersion" : "2.8.7-nightly-4a85f39",
+  "skriptVersion" : "2.8.7-nightly-531da35",
 
   "classes" : [
     {
   "id" : "attributetype",
   "name" : "Attribute Type",
   "patterns" : [
-    "entity interaction range, luck, generic movement speed, generic luck, block interaction range, generic max absorption, generic scale, scale, generic step height, follow range, player block interaction range, movement speed, generic jump strength, max absorption, generic follow range, zombie spawn reinforcements, player entity interaction range, generic attack knockback, knockback resistance, attack knockback, generic armor toughness, generic safe fall distance, generic attack speed, max health, flying speed, attack damage, generic attack damage, generic armor, generic fall damage multiplier, generic flying speed, generic knockback resistance, safe fall distance, fall damage multiplier, block break speed, generic gravity, armor, jump strength, attack speed, gravity, armor toughness, generic max health, step height, player block break speed",
+    "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic water movement efficiency, generic.armor, generic.armor toughness, generic.attack damage, generic.attack knockback, generic.attack speed, generic.burning time, generic.explosion knockback resistance, generic.fall damage multiplier, generic.flying speed, generic.follow range, generic.gravity, generic.jump strength, generic.knockback resistance, generic.luck, generic.max absorption, generic.max health, generic.movement efficiency, generic.movement speed, generic.oxygen bonus, generic.safe fall distance, generic.scale, generic.step height, generic.water movement efficiency, gravity, jump strength, knockback resistance, luck, max absorption, max health, minecraft:generic.armor, minecraft:generic.armor_toughness, minecraft:generic.attack_damage, minecraft:generic.attack_knockback, minecraft:generic.attack_speed, minecraft:generic.burning_time, minecraft:generic.explosion_knockback_resistance, minecraft:generic.fall_damage_multiplier, minecraft:generic.flying_speed, minecraft:generic.follow_range, minecraft:generic.gravity, minecraft:generic.jump_strength, minecraft:generic.knockback_resistance, minecraft:generic.luck, minecraft:generic.max_absorption, minecraft:generic.max_health, minecraft:generic.movement_efficiency, minecraft:generic.movement_speed, minecraft:generic.oxygen_bonus, minecraft:generic.safe_fall_distance, minecraft:generic.scale, minecraft:generic.step_height, minecraft:generic.water_movement_efficiency, minecraft:player.block_break_speed, minecraft:player.block_interaction_range, minecraft:player.entity_interaction_range, minecraft:player.mining_efficiency, minecraft:player.sneaking_speed, minecraft:player.submerged_mining_speed, minecraft:player.sweeping_damage_ratio, minecraft:zombie.spawn_reinforcements, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, player.block break speed, player.block interaction range, player.entity interaction range, player.mining efficiency, player.sneaking speed, player.submerged mining speed, player.sweeping damage ratio, safe fall distance, scale, sneaking speed, step height, submerged mining speed, sweeping damage ratio, water movement efficiency, zombie spawn reinforcements, zombie.spawn reinforcements",
 
     "pattern_end"
   ],
@@ -66,7 +66,7 @@
   "id" : "CatType",
   "name" : "Cat Type",
   "patterns" : [
-    "red, all black, british shorthair, ragdoll, white, jellie, siamese, black, tabby, calico, persian",
+    "all black, black, british shorthair, calico, jellie, minecraft:all_black, minecraft:black, minecraft:british_shorthair, minecraft:calico, minecraft:jellie, minecraft:persian, minecraft:ragdoll, minecraft:red, minecraft:siamese, minecraft:tabby, minecraft:white, persian, ragdoll, red, siamese, tabby, white",
 
     "pattern_end"
   ],
@@ -2220,24 +2220,24 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffBan",
   "name" : "Ban",
   "patterns" : [
-    "ban %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+    "ban [and kick] %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "unban %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>%",
-"ban %<a href='./classes.html#player'>players</a>% by IP [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"ban [and kick] %<a href='./classes.html#player'>players</a>% by IP [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "unban %<a href='./classes.html#player'>players</a>% by IP",
-"IP(-| )ban %<a href='./classes.html#player'>players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"IP(-| )ban [and kick] %<a href='./classes.html#player'>players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "(IP(-| )unban|un[-]IP[-]ban) %<a href='./classes.html#player'>players</a>%",
 
     "pattern_end"
   ],
-  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan)",
+  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan), INSERT VERSION (kick)",
   "description" : "Bans or unbans a player or an IP address.
 If a reason is given, it will be shown to the player when they try to join the server while banned.
 A length of ban may also be given to apply a temporary ban. If it is absent for any reason, a permanent ban will be used instead.
 We recommend that you test your scripts so that no accidental permanent bans are applied.
 
 Note that banning people does not kick them from the server.
-Consider using the <a href='effects.html#EffKick'>kick effect</a> after applying a ban.",
-  "examples" : "unban player\\nban \"127.0.0.1\"\\nIP-ban the player because \"he is an idiot\"\\nban player due to \"inappropriate language\" for 2 days"
+You can optionally use 'and kick' or consider using the <a href='effects.html#EffKick'>kick effect</a> after applying a ban.",
+  "examples" : "unban player\\nban \"127.0.0.1\"\\nIP-ban the player because \"he is an idiot\"\\nban player due to \"inappropriate language\" for 2 days\\nban and kick player due to \"inappropriate language\" for 2 days"
 },
 {
   "id" : "EffBreakNaturally",
@@ -3217,6 +3217,19 @@ Please note that..:
   "examples" : "make target entity silent"
 },
 {
+  "id" : "EffSort",
+  "name" : "Sort",
+  "patterns" : [
+    "sort %~<a href='./classes.html#object'>objects</a>% [(by|based on) &lt;.+&gt;]",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.
+Be warned, this will overwrite the indices of the list variable.",
+  "examples" : "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"\\nsort {_words::*} # alphabetical sort\\nsort {_words::*} by length of input # shortest to longest\\nsort {_words::*} based on {tastiness::%input%} # sort based on custom value"
+},
+{
   "id" : "EffStopServer",
   "name" : "Stop Server",
   "patterns" : [
@@ -3270,7 +3283,7 @@ Please note that sound names can get changed in any Minecraft or Spigot version,
 This effect is delayed by default on Paper, meaning certain syntax such as the return effect for functions cannot be used after this effect.
 The keyword 'force' indicates this effect will not be delayed, 
 which may cause lag spikes or server crashes when using this effect to teleport entities to unloaded chunks.",
-  "examples" : "teleport the player to {homes.%player%}\\nteleport the attacker to the victim"
+  "examples" : "teleport the player to {homes::%player%}\\nteleport the attacker to the victim"
 },
 {
   "id" : "EffResetTitle",
@@ -6151,7 +6164,7 @@ You can use the specific type of the entity that's involved in the event, e.g. i
   ],
   "since" : "2.2-dev34, 2.8.0 (chat format)",
   "description" : "Returns a chest inventory with the given amount of rows and the name. Use the <a href=effects.html#EffOpenInventory>open inventory</a> effect to open it.",
-  "examples" : "open chest inventory with 1 row named \"test\" to player\\n\\nset {_inventory} to a chest inventory with 1 row\\nset slot 4 of {_inventory} to a diamond named \"example\"\\nopen {_inventory} to player\\n\\nopen chest inventory named \"&lt;##00ff00&gt;hex coloured title!\" with 6 rows to player"
+  "examples" : "open chest inventory with 1 row named \"test\" to player\\n\\nset {_inventory} to a chest inventory with 1 row\\nset slot 4 of {_inventory} to a diamond named \"example\"\\nopen {_inventory} to player\\n\\nopen chest inventory named \"&lt;#00ff00&gt;hex coloured title!\" with 6 rows to player"
 },
 {
   "id" : "ExprCustomModelData",
@@ -6632,21 +6645,10 @@ Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more in
     "pattern_end"
   ],
   "since" : "2.2-dev36",
-  "description" : "Filters a list based on a condition. For example, if you ran 'broadcast \"something\" and \"something else\" where [string input is \"something\"]', only \"something\" would be broadcast as it is the only string that matched the condition.",
+  "description" : "Filters a list based on a condition. 
+For example, if you ran 'broadcast \"something\" and \"something else\" where [string input is \"something\"]', 
+only \"something\" would be broadcast as it is the only string that matched the condition.",
   "examples" : "send \"congrats on being staff!\" to all players where [player input has permission \"staff\"]"
-},
-{
-  "id" : "ExprInput",
-  "name" : "Filter Input",
-  "patterns" : [
-    "input",
-"%*<a href='./classes.html#classinfo'>type</a>% input",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev36",
-  "description" : "Represents the input in a filter expression. For example, if you ran 'broadcast \"something\" and \"something else\" where [input is \"something\"]the condition would be checked twice, using \"something\" and \"something else\" as the inputs.",
-  "examples" : "send \"congrats on being staff!\" to all players where [input has permission \"staff\"]"
 },
 {
   "id" : "ExprFinalDamage",
@@ -7104,6 +7106,23 @@ Otherwise, this expression will just return the unsorted indices.",
   "examples" : "on inventory item move:\\n    holder of event-initiator-inventory is a chest\\n    broadcast \"Item transport happening at %location at holder of event-initiator-inventory%!\""
 },
 {
+  "id" : "ExprInput",
+  "name" : "Input",
+  "patterns" : [
+    "input",
+"%*<a href='./classes.html#classinfo'>type</a>% input",
+"input index",
+
+    "pattern_end"
+  ],
+  "since" : "2.2-dev36, INSERT_VERSION (input index)",
+  "description" : "Represents the input in a filter expression or sort effect.
+For example, if you ran 'broadcast \"something\" and \"something else\" where [input is \"something\"]
+the condition would be checked twice, using \"something\" and \"something else\" as the inputs.
+The 'input index' pattern can be used when acting on a variable to access the index of the input.",
+  "examples" : "send \"congrats on being staff!\" to all players where [input has permission \"staff\"]\\nsort {_list::*} based on length of input index"
+},
+{
   "id" : "ExprInventory",
   "name" : "Inventory",
   "patterns" : [
@@ -7559,7 +7578,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "2.8.0",
   "description" : "Returns the loop's current iteration count (for both normal and while loops).",
-  "examples" : "while player is online:\\n    give player 1 stone\\n    wait 5 ticks\\n    if loop-counter &gt; 30:\\n        stop loop\\n\\nloop {top-balances::*}:\\n    if loop-iteration &lt;= 10:\\n        broadcast \"##%loop-iteration% %loop-index% has $%loop-value%\""
+  "examples" : "while player is online:\\n    give player 1 stone\\n    wait 5 ticks\\n    if loop-counter &gt; 30:\\n        stop loop\\n\\nloop {top-balances::*}:\\n    if loop-iteration &lt;= 10:\\n        broadcast \"#%loop-iteration% %loop-index% has $%loop-value%\""
 },
 {
   "id" : "ExprLoopValue",
@@ -7571,7 +7590,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   ],
   "since" : "1.0, 2.8.0 (loop-counter)",
   "description" : "Returns the currently looped value.",
-  "examples" : "# Countdown\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n\\n# Generate a 10x10 floor made of randomly colored wool below the player\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool\\n\\nloop {top-balances::*}:\\n    loop-iteration &lt;= 10\\n    send \"##%loop-iteration% %loop-index% has $%loop-value%\""
+  "examples" : "# Countdown\\nloop 10 times:\\n    message \"%11 - loop-number%\"\\n    wait a second\\n\\n# Generate a 10x10 floor made of randomly colored wool below the player\\nloop blocks from the block below the player to the block 10 east of the block below the player:\\n    loop blocks from the loop-block to the block 10 north of the loop-block:\\n        set loop-block-2 to any wool\\n\\nloop {top-balances::*}:\\n    loop-iteration &lt;= 10\\n    send \"#%loop-iteration% %loop-index% has $%loop-value%\""
 },
 {
   "id" : "ExprLoot",
@@ -7745,9 +7764,9 @@ Some items, like bows and shields, do not have a limit to their use. They will r
 
     "pattern_end"
   ],
-  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message)",
+  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), INSERT VERSION (clear message)",
   "description" : "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed.",
-  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
+  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    if {vanish::%player's uuid%} is set:\\n        clear quit message\\n    else:\\n        set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
 },
 {
   "id" : "ExprMetadata",
@@ -7951,7 +7970,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "LitNewLine",
   "name" : "New Line",
   "patterns" : [
-    "n[ew]l[ine]",
+    "nl",
+"new[ ]line",
 "line[ ]break",
 
     "pattern_end"
@@ -9598,14 +9618,17 @@ The whitelist can be enabled or disabled by setting the whitelist to true or fal
   "id" : "ExprYawPitch",
   "name" : "Yaw / Pitch",
   "patterns" : [
-    "[the] (yaw|pitch) of %<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%",
-"%<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%'[s] (yaw|pitch)",
+    "[the] (yaw|pitch) of %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%",
+"%<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%'[s] (yaw|pitch)",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev28 (vector yaw/pitch)",
-  "description" : "The yaw or pitch of a location or vector.",
-  "examples" : "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"\\nset {_yaw} to yaw of player\\nset {_p} to pitch of target entity"
+  "since" : "2.0, 2.2-dev28 (vector yaw/pitch), INSERT VERSION (entity changers)",
+  "description" : "The yaw or pitch of a location or vector.
+A yaw of 0 or 360 represents the positive z direction. Adding a positive number to the yaw of a player will rotate it clockwise.
+A pitch of 90 represents the negative y direction, or downward facing. A pitch of -90 represents upward facing. Adding a positive number to the pitch will rotate the direction downwards.
+Only Paper 1.19+ users may directly change the yaw/pitch of players.",
+  "examples" : "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"\\nset {_yaw} to yaw of player\\nset {_p} to pitch of target entity\\nset pitch of player to -90 # Makes the player look upwards, Paper 1.19+ only\\nadd 180 to yaw of target of player # Makes the target look behind themselves"
 },
 
     {"end" : true}
