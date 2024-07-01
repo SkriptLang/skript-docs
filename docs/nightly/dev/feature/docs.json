@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-805a172",
+  "skriptVersion" : "2.8.7-nightly-7111887",
 
   "classes" : [
     {
@@ -5145,13 +5145,13 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "teleport",
   "name" : "On Teleport",
   "patterns" : [
-    "[on] [player] teleport[ing]",
+    "[on] [%<a href='./classes.html#entitytype'>entity types</a>%] teleport[ing]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
-  "description" : "Called whenever a player is teleported, either by a nether/end portal or other means (e.g. by plugins).",
-  "examples" : "on teleport:"
+  "since" : "1.0, INSERT VERSION (entity teleport)",
+  "description" : "This event can be used to listen to teleports from non-players or player entities respectively.\\nWhen teleporting entities, the event may also be called due to a result of natural causes, such as an enderman or shulker teleporting, or wolves teleporting to players.\\nWhen teleporting players, the event can be called by teleporting through a nether/end portal, or by other means (e.g. plugins).",
+  "examples" : "on teleport:\\non player teleport:\\non creeper teleport:"
 },
 {
   "id" : "tool_change",
