@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-befa81f",
+  "skriptVersion" : "2.8.7-nightly-3c0119f",
 
   "classes" : [
     {
@@ -1146,6 +1146,23 @@ Note: This is the only element where not all patterns are shown. It has actually
   "since" : "2.8.0",
   "description" : "Check whether a cooldown is active on the specified material for a specific player.",
   "examples" : "if player has player's tool on cooldown:\\n    send \"You can't use this item right now. Wait %item cooldown of player's tool for player%\""
+},
+{
+  "id" : "CondTooltip",
+  "name" : "Has Item Tooltips",
+  "patterns" : [
+    "[the] [entire|additional] tool[ ]tip[s] of %<a href='./classes.html#itemtype'>item types</a>% (is|are) (shown|hidden)",
+"[the] [entire|additional] tool[ ]tip[s] of %<a href='./classes.html#itemtype'>item types</a>% (isn't|is not|aren't|are not) (shown|hidden)",
+"%<a href='./classes.html#itemtype'>item types</a>%'[s] [entire|additional] tool[ ]tip[s] (is|are) (shown|hidden)",
+"%<a href='./classes.html#itemtype'>item types</a>%'[s] [entire|additional] tool[ ]tip[s] (isn't|is not|aren't|are not) (shown|hidden)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Whether the entire or additional tooltip of an item is shown or hidden.
+The 'entire tooltip' is what shows to the player when they hover an item (i.e. name, lore, etc.).
+The 'additional tooltip' hides certain information from certain items (potions, maps, books, fireworks, and banners).",
+  "examples" : "send true if entire tooltip of player's tool is shown\\nif additional tooltip of {_item} is hidden:"
 },
 {
   "id" : "CondHasLineOfSight",
@@ -2644,6 +2661,21 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "since" : "1.4",
   "description" : "Lights entities on fire or extinguishes them.",
   "examples" : "ignite the player\\nextinguish the player"
+},
+{
+  "id" : "EffTooltip",
+  "name" : "Item Tooltips",
+  "patterns" : [
+    "(show|reveal|hide) %<a href='./classes.html#itemtype'>item types</a>%'[s] [entire|additional] tool[ ]tip",
+"(show|reveal|hide) [the] [entire|additional] tool[ ]tip of %<a href='./classes.html#itemtype'>item types</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Show or hide the tooltip of an item.
+If changing the 'entire' tooltip of an item, nothing will show up when a player hovers over it.
+If changing the 'additional' tooltip, only specific parts (which change per item) will be hidden.",
+  "examples" : "hide the entire tooltip of player's tool\\nhide {_item}'s additional tool tip"
 },
 {
   "id" : "EffKeepInventory",
