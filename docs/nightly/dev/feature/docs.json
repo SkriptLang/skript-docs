@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-2c814b1",
+  "skriptVersion" : "2.8.7-nightly-a4f38d2",
 
   "classes" : [
     {
@@ -2220,24 +2220,24 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "EffBan",
   "name" : "Ban",
   "patterns" : [
-    "ban %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+    "ban [and kick] %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "unban %<a href='./classes.html#string'>texts</a>/<a href='./classes.html#offlineplayer'>offline players</a>%",
-"ban %<a href='./classes.html#player'>players</a>% by IP [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"ban [and kick] %<a href='./classes.html#player'>players</a>% by IP [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "unban %<a href='./classes.html#player'>players</a>% by IP",
-"IP(-| )ban %<a href='./classes.html#player'>players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"IP(-| )ban [and kick] %<a href='./classes.html#player'>players</a>% [(by reason of|because [of]|on account of|due to) %<a href='./classes.html#string'>text</a>%] [for %<a href='./classes.html#timespan'>time span</a>%]",
 "(IP(-| )unban|un[-]IP[-]ban) %<a href='./classes.html#player'>players</a>%",
 
     "pattern_end"
   ],
-  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan)",
+  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan), INSERT VERSION (kick)",
   "description" : "Bans or unbans a player or an IP address.
 If a reason is given, it will be shown to the player when they try to join the server while banned.
 A length of ban may also be given to apply a temporary ban. If it is absent for any reason, a permanent ban will be used instead.
 We recommend that you test your scripts so that no accidental permanent bans are applied.
 
 Note that banning people does not kick them from the server.
-Consider using the <a href='effects.html#EffKick'>kick effect</a> after applying a ban.",
-  "examples" : "unban player\\nban \"127.0.0.1\"\\nIP-ban the player because \"he is an idiot\"\\nban player due to \"inappropriate language\" for 2 days"
+You can optionally use 'and kick' or consider using the <a href='effects.html#EffKick'>kick effect</a> after applying a ban.",
+  "examples" : "unban player\\nban \"127.0.0.1\"\\nIP-ban the player because \"he is an idiot\"\\nban player due to \"inappropriate language\" for 2 days\\nban and kick player due to \"inappropriate language\" for 2 days"
 },
 {
   "id" : "EffBreakNaturally",
