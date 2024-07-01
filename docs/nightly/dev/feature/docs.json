@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-7111887",
+  "skriptVersion" : "2.8.7-nightly-b226c8b",
 
   "classes" : [
     {
@@ -8794,6 +8794,19 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
   "since" : "1.3",
   "description" : "A line of text on a sign. Can be changed, but remember that there is a 16 character limit per line (including color codes that use 2 characters each).",
   "examples" : "on rightclick on sign:\\n    line 2 of the clicked block is \"[Heal]\":\\n        heal the player\\n    set line 3 to \"%player%\""
+},
+{
+  "id" : "ExprSkullOwner",
+  "name" : "Skull Owner",
+  "patterns" : [
+    "[the] (head|skull) owner of %<a href='./classes.html#block'>blocks</a>%",
+"%<a href='./classes.html#block'>blocks</a>%'[s] (head|skull) owner",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The skull owner of a player skull.",
+  "examples" : "set {_owner} to the skull owner of event-block\\nset skull owner of {_block} to \"Njol\" parsed as offlineplayer"
 },
 {
   "id" : "ExprSlotIndex",
