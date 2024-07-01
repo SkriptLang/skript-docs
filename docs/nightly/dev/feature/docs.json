@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-5c3074e",
+  "skriptVersion" : "2.8.7-nightly-422b2db",
 
   "classes" : [
     {
@@ -3012,16 +3012,23 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
   "id" : "EffPlaySound",
   "name" : "Play Sound",
   "patterns" : [
-    "play sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(at|with) volume %<a href='./classes.html#number'>number</a>%] [(and|at|with) pitch %<a href='./classes.html#number'>number</a>%] at %<a href='./classes.html#location'>locations</a>% [(to|for) %<a href='./classes.html#player'>players</a>%]",
-"play sound[s] %<a href='./classes.html#string'>texts</a>% [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(at|with) volume %<a href='./classes.html#number'>number</a>%] [(and|at|with) pitch %<a href='./classes.html#number'>number</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%] [(at|from) %<a href='./classes.html#location'>locations</a>%]",
+    "play sound[s] %<a href='./classes.html#string'>texts</a>% [[with] seed %<a href='./classes.html#number'>number</a>%] [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(at|with) volume %<a href='./classes.html#number'>number</a>%] [(and|at|with) pitch %<a href='./classes.html#number'>number</a>%] (at|on|from) %<a href='./classes.html#location'>locations</a>/<a href='./classes.html#entity'>entities</a>% [(to|for) %<a href='./classes.html#player'>players</a>%]",
+"play sound[s] %<a href='./classes.html#string'>texts</a>% [[with] seed %<a href='./classes.html#number'>number</a>%] [(in|from) %<a href='./classes.html#soundcategory'>sound category</a>%] [(at|with) volume %<a href='./classes.html#number'>number</a>%] [(and|at|with) pitch %<a href='./classes.html#number'>number</a>%] [(to|for) %<a href='./classes.html#player'>players</a>%] [(at|on|from) %<a href='./classes.html#location'>locations</a>/<a href='./classes.html#entity'>entities</a>%]",
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.4 (sound categories)",
+  "since" : "2.2-dev28, 2.4 (sound categories), INSERT VERSION (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
+Playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
+If the sound is custom, a location emitter will follow the entity. Do note that pitch and volume 
+are reflected based on the entity, and Minecraft may not use the values from this syntax.
+
+If using Paper 1.19.4+ or Adventure API 4.12.0+ you can utilize sound seeds. Minecraft sometimes have a set of sounds under one sound ID 
+that will randomly play, to counter this, you can directly state which seed to use.
+
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}"
+  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
 },
 {
   "id" : "EffPlayerInfoVisibility",
