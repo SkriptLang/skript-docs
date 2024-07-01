@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-a4f38d2",
+  "skriptVersion" : "2.8.7-nightly-abc782c",
 
   "classes" : [
     {
@@ -7744,9 +7744,9 @@ Some items, like bows and shields, do not have a limit to their use. They will r
 
     "pattern_end"
   ],
-  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message)",
+  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), INSERT VERSION (clear message)",
   "description" : "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed.",
-  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
+  "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    if {vanish::%player's uuid%} is set:\\n        clear quit message\\n    else:\\n        set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
 },
 {
   "id" : "ExprMetadata",
