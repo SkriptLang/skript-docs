@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-f6f41ca",
+  "skriptVersion" : "2.8.7-nightly-1d587d4",
 
   "classes" : [
     {
@@ -7950,7 +7950,8 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "id" : "LitNewLine",
   "name" : "New Line",
   "patterns" : [
-    "n[ew]l[ine]",
+    "nl",
+"new[ ]line",
 "line[ ]break",
 
     "pattern_end"
