@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-585e8d1",
+  "skriptVersion" : "2.8.7-nightly-2f629f1",
 
   "classes" : [
     {
@@ -3161,7 +3161,7 @@ Please note that sound names can get changed in any Minecraft or Spigot version,
 This effect is delayed by default on Paper, meaning certain syntax such as the return effect for functions cannot be used after this effect.
 The keyword 'force' indicates this effect will not be delayed, 
 which may cause lag spikes or server crashes when using this effect to teleport entities to unloaded chunks.",
-  "examples" : "teleport the player to {homes.%player%}\\nteleport the attacker to the victim"
+  "examples" : "teleport the player to {homes::%player%}\\nteleport the attacker to the victim"
 },
 {
   "id" : "EffResetTitle",
