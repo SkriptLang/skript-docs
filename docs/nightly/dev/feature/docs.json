@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-422b2db",
+  "skriptVersion" : "2.8.7-nightly-9dcc973",
 
   "classes" : [
     {
@@ -7011,18 +7011,6 @@ Please note that this location is only accurate for entities whose head is exact
   "examples" : "message \"&amp;lt;light red&amp;gt;You are currently hiding: &amp;lt;light gray&amp;gt;%hidden players of the player%\""
 },
 {
-  "id" : "ExprHighestSolidBlock",
-  "name" : "Highest Solid Block",
-  "patterns" : [
-    "highest [(solid|non-air)] block at %<a href='./classes.html#location'>locations</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev34",
-  "description" : "Returns the highest solid block at the x and z coordinates of the world of a given location.",
-  "examples" : "highest block at location of arg-player"
-},
-{
   "id" : "ExprHostname",
   "name" : "Hostname",
   "patterns" : [
@@ -7659,6 +7647,20 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
   "since" : "2.1",
   "description" : "An item's lore.",
   "examples" : "set the 1st line of the item's lore to \"&amp;lt;orange&amp;gt;Excalibur 2.0\""
+},
+{
+  "id" : "ExprLowestHighestSolidBlock",
+  "name" : "Lowest/Highest Solid Block",
+  "patterns" : [
+    "[the] (highest|lowest) [solid] block (at|of) %<a href='./classes.html#location'>locations</a>%",
+"%<a href='./classes.html#location'>locations</a>%'[s] (highest|lowest) [solid] block",
+
+    "pattern_end"
+  ],
+  "since" : "2.2-dev34, INSERT VERSION (lowest solid block, 'non-air' option removed, additional syntax option)",
+  "description" : "An expression to obtain the lowest or highest solid (impassable) block at a location.
+Note that the y-coordinate of the location is not taken into account for this expression.",
+  "examples" : "teleport the player to the block above the highest block at the player\\nset the highest solid block at the player's location to the lowest solid block at the player's location"
 },
 {
   "id" : "ExprMOTD",
