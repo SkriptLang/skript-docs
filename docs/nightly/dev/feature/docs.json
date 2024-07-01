@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-f1e0dd6",
+  "skriptVersion" : "2.8.7-nightly-5c3074e",
 
   "classes" : [
     {
@@ -175,12 +175,12 @@
   "id" : "enchantment",
   "name" : "Enchantment",
   "patterns" : [
-    "Efficiency, Sweeping Edge, Looting, Silk Touch, Quick Charge, Soul Speed, Density, Breach, Flame, Fortune, Multishot, Aqua Affinity, Channeling, Loyalty, Curse of Binding, Punch, Projectile Protection, Power, Sharpness, Frost Walker, Fire Protection, Impaling, Luck of The Sea, Riptide, Protection, Mending, Respiration, Piercing, Swift Sneak, Feather Falling, Unbreaking, Smite, Lure, Fire Aspect, Knockback, Depth Strider, Wind Burst, Infinity, Curse of Vanishing, Bane of Arthropods, Blast Protection, Thorns",
+    "aqua affinity, bane of arthropods, binding curse, blast protection, breach, channeling, channelling, curse of binding, curse of vanishing, density, depth strider, efficiency, feather falling, fire aspect, fire protection, flame, fortune, frost walker, impaling, infinity, knockback, looting, loyalty, luck of the sea, lure, mending, multi-shot, multishot, piercing, power, projectile protection, protection, punch, quick charge, respiration, riptide, sharpness, silk touch, smite, soul speed, sweeping edge, swift sneak, thorns, unbreaking, vanishing curse, wind burst",
 
     "pattern_end"
   ],
   "since" : "1.4.6",
-  "description" : "An enchantment, e.g. 'sharpness' or 'fortune'. Unlike <a href='#enchantmenttype'>enchantment type</a> this type has no level, but you usually don't need to use this type anyway.",
+  "description" : "An enchantment, e.g. 'sharpness' or 'fortune'. Unlike <a href='#enchantmenttype'>enchantment type</a> this type has no level, but you usually don't need to use this type anyway.\\nNOTE: Minecraft namespaces are supported, ex: 'minecraft:basalt_deltas'.\\nAs of Minecraft 1.21 this will also support custom enchantments using namespaces, ex: 'myenchants:explosive'.",
   "examples" : "Missing examples."
 },
 {
