@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-27094a6",
+  "skriptVersion" : "2.8.7-nightly-dfaacd6",
 
   "classes" : [
     {
@@ -336,7 +336,7 @@
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "The heal reason in a heal event.",
+  "description" : "The health regain reason in a <a href='events.html#heal'>heal</a> event.",
   "examples" : "Missing examples."
 },
 {
@@ -4195,13 +4195,14 @@ Do note that other event values, such as 'player', won't work in this section.",
   "id" : "heal",
   "name" : "On Heal",
   "patterns" : [
-    "[on] heal[ing]",
+    "[on] heal[ing] [of %<a href='./classes.html#entitydata'>entity types</a>%] [(from|due to|by) %<a href='./classes.html#healreason'>heal reasons</a>%]",
+"[on] %<a href='./classes.html#entitydata'>entity types</a>% heal[ing] [(from|due to|by) %<a href='./classes.html#healreason'>heal reasons</a>%]",
 
     "pattern_end"
   ],
-  "since" : "1.0",
+  "since" : "1.0, INSERT VERSION (by reason)",
   "description" : "Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs).",
-  "examples" : "on heal:"
+  "examples" : "on heal:\\non player healing from a regeneration potion:\\non healing of a zombie, cow or a wither:\\n    heal reason is healing potion\\n    cancel event"
 },
 {
   "id" : "horse_jump",
@@ -6924,25 +6925,25 @@ Please note that this location is only accurate for entities whose head is exact
   "id" : "ExprHealAmount",
   "name" : "Heal Amount",
   "patterns" : [
-    "[the] heal amount",
+    "[the] heal[ing] amount",
 
     "pattern_end"
   ],
   "since" : "2.5.1",
-  "description" : "The amount of health healed in a healing event.",
-  "examples" : "increase heal amount by 2\\nremove 0.5 from heal amount"
+  "description" : "The amount of health healed in a <a href='/events.html#heal'>heal event</a>.",
+  "examples" : "on player healing:\\n    increase the heal amount by 2\\n    remove 0.5 from the healing amount"
 },
 {
   "id" : "ExprHealReason",
   "name" : "Heal Reason",
   "patterns" : [
-    "(regen|health regain|heal) (reason|cause)",
+    "[the] (regen|health regain|heal[ing]) (reason|cause)",
 
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "The <a href='./classes.html#healreason'>heal reason</a> of a heal event. Please click on the link for more information.",
-  "examples" : "on heal:\\n    if heal reason = satiated:\\n        send \"You ate enough food and gained health back!\" to player"
+  "description" : "The <a href='./classes.html#healreason'>heal reason</a> of a <a href='./events.html#heal'>heal event</a>.",
+  "examples" : "on heal:\\n    heal reason is satiated\\n    send \"You ate enough food and gained full health back!\""
 },
 {
   "id" : "ExprHealth",
