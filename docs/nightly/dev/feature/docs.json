@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-6065891",
+  "skriptVersion" : "2.8.7-nightly-27094a6",
 
   "classes" : [
     {
@@ -9617,14 +9617,17 @@ The whitelist can be enabled or disabled by setting the whitelist to true or fal
   "id" : "ExprYawPitch",
   "name" : "Yaw / Pitch",
   "patterns" : [
-    "[the] (yaw|pitch) of %<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%",
-"%<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%'[s] (yaw|pitch)",
+    "[the] (yaw|pitch) of %<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%",
+"%<a href='./classes.html#entity'>entities</a>/<a href='./classes.html#location'>locations</a>/<a href='./classes.html#vector'>vectors</a>%'[s] (yaw|pitch)",
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev28 (vector yaw/pitch)",
-  "description" : "The yaw or pitch of a location or vector.",
-  "examples" : "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"\\nset {_yaw} to yaw of player\\nset {_p} to pitch of target entity"
+  "since" : "2.0, 2.2-dev28 (vector yaw/pitch), INSERT VERSION (entity changers)",
+  "description" : "The yaw or pitch of a location or vector.
+A yaw of 0 or 360 represents the positive z direction. Adding a positive number to the yaw of a player will rotate it clockwise.
+A pitch of 90 represents the negative y direction, or downward facing. A pitch of -90 represents upward facing. Adding a positive number to the pitch will rotate the direction downwards.
+Only Paper 1.19+ users may directly change the yaw/pitch of players.",
+  "examples" : "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"\\nset {_yaw} to yaw of player\\nset {_p} to pitch of target entity\\nset pitch of player to -90 # Makes the player look upwards, Paper 1.19+ only\\nadd 180 to yaw of target of player # Makes the target look behind themselves"
 },
 
     {"end" : true}
