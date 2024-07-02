@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-724f2b5",
+  "skriptVersion" : "2.9.0-pre1-nightly-1ac7681",
 
   "classes" : [
     {
@@ -829,7 +829,7 @@
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Checks to see if a bell is currently resonating.
 A bell will start resonating five game ticks after being rung, and will continue to resonate for 40 game ticks.",
   "examples" : "target block is resonating"
@@ -843,7 +843,7 @@ A bell will start resonating five game ticks after being rung, and will continue
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Checks to see if a bell is currently ringing. A bell typically rings for 50 game ticks.",
   "examples" : "target block is ringing"
 },
@@ -1158,7 +1158,7 @@ Note: This is the only element where not all patterns are shown. It has actually
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Whether the entire or additional tooltip of an item is shown or hidden.
 The 'entire tooltip' is what shows to the player when they hover an item (i.e. name, lore, etc.).
 The 'additional tooltip' hides certain information from certain items (potions, maps, books, fireworks, and banners).",
@@ -1438,7 +1438,7 @@ The 'additional tooltip' hides certain information from certain items (potions, 
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Checks whether an item is fire resistant.",
   "examples" : "if player's tool is fire resistant:\\nif {_items::*} aren't resistant to fire:"
 },
@@ -1742,7 +1742,7 @@ Blocks like tall grass, flowers, signs, etc. are passable, but open doors, fence
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Checks whether living entities are pathfinding.
 Can only be a living entity that is a Mob.",
   "examples" : "make {_entity} pathfind to {_location} at speed 2\\nwhile {_entity} is pathfinding\\n    wait a second\\nlaunch flickering trailing burst firework colored red at location of {_entity}\\nsubtract 10 from {defence::tower::health}\\nclear entity within {_entity}"
@@ -1972,7 +1972,7 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
 
     "pattern_end"
   ],
-  "since" : "2.5.1, INSERT VERSION (breakable)",
+  "since" : "2.5.1, 2.9.0 (breakable)",
   "description" : "Checks whether an item is unbreakable.",
   "examples" : "if event-item is unbreakable:\\n    send \"This item is unbreakable!\" to player\\nif tool of {_p} is breakable:\\n    send \"Your tool is breakable!\" to {_p}"
 },
@@ -1985,7 +1985,7 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Checks whether a script is using an experimental feature by name.",
   "examples" : "the script is using \"example feature\"\\non load:\\n    if the script is using \"example feature\":\\n        broadcast \"You're using an experimental feature!\""
 },
@@ -2025,7 +2025,7 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
 
     "pattern_end"
   ],
-  "since" : "2.5.2, INSERT VERSION (enforce, offline players)",
+  "since" : "2.5.2, 2.9.0 (enforce, offline players)",
   "description" : "Whether or not the server or a player is whitelisted, or the server is whitelist enforced.",
   "examples" : "if the player is whitelisted:\\nif the server is whitelisted:\\nif the server whitelist is enforced:"
 },
@@ -2246,7 +2246,7 @@ This condition requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan), INSERT VERSION (kick)",
+  "since" : "1.4, 2.1.1 (ban reason), 2.5 (timespan), 2.9.0 (kick)",
   "description" : "Bans or unbans a player or an IP address.
 If a reason is given, it will be shown to the player when they try to join the server while banned.
 A length of ban may also be given to apply a temporary ban. If it is absent for any reason, a permanent ban will be used instead.
@@ -2518,7 +2518,7 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Enforces or un-enforce a server's whitelist.
 All non-whitelisted players will be kicked upon enforcing the whitelist.",
   "examples" : "enforce the whitelist\\nunenforce the whitelist"
@@ -2671,7 +2671,7 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Show or hide the tooltip of an item.
 If changing the 'entire' tooltip of an item, nothing will show up when a player hovers over it.
 If changing the 'additional' tooltip, only specific parts (which change per item) will be hidden.",
@@ -2815,7 +2815,7 @@ When attempting to load a normal vanilla world you must define it's environment 
 
     "pattern_end"
   ],
-  "since" : "2.0, INSERT VERSION (severities)",
+  "since" : "2.0, 2.9.0 (severities)",
   "description" : "Writes text into a .log file. Skript will write these files to /plugins/Skript/logs.
 NB: Using 'server.log' as the log file will write to the default server log. Omitting the log file altogether will log the message as '[Skript] [&lt;script&gt;.sk] &lt;message&gt;' in the server log.",
   "examples" : "on join:\\n    log \"%player% has just joined the server!\"\\non world change:\\n    log \"Someone just went to %event-world%!\" to file \"worldlog/worlds.log\"\\non command:\\n    log \"%player% just executed %full command%!\" to file \"server/commands.log\" with a severity of warning"
@@ -2853,7 +2853,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Makes items fire resistant.",
   "examples" : "make player's tool fire resistant:\\nmake {_items::*} not resistant to fire"
 },
@@ -3017,7 +3017,7 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.4 (sound categories), INSERT VERSION (sound seed & entity emitter)",
+  "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
 Playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
@@ -3154,7 +3154,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Causes a bell to ring.
 Optionally, the entity that rang the bell and the direction the bell should ring can be specified.
 A bell can only ring in two directions, and the direction is determined by which way the bell is facing.
@@ -3263,7 +3263,7 @@ Please note that..:
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.
 Be warned, this will overwrite the indices of the list variable.",
   "examples" : "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"\\nsort {_words::*} # alphabetical sort\\nsort {_words::*} by length of input # shortest to longest\\nsort {_words::*} based on {tastiness::%input%} # sort based on custom value"
@@ -3585,7 +3585,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Called when a bell resonates, highlighting nearby raiders.",
   "examples" : "on bell resonate:\\n    send \"&amp;amp;amp;amp;lt;red&amp;amp;amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
 },
@@ -3597,7 +3597,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Called when a bell is rung.",
   "examples" : "on bell ring:\\n    send \"&amp;amp;amp;amp;lt;gold&amp;amp;amp;amp;gt;Ding-dong!&amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;gt;\" to all players in radius 10 of event-block"
 },
@@ -3949,7 +3949,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Called when an enderman gets mad because a player looked at them.\\nNote: This does not stop enderman from targeting the player as a result of getting damaged.",
   "examples" : "# Stops endermen from getting angry players with the permission \"safeFrom.enderman\"\\non enderman enrage:\\n    if player has permission \"safeFrom.enderman\":\\n        cancel event"
 },
@@ -4239,7 +4239,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "1.0, INSERT VERSION (by reason)",
+  "since" : "1.0, 2.9.0 (by reason)",
   "description" : "Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs).",
   "examples" : "on heal:\\non player healing from a regeneration potion:\\non healing of a zombie, cow or a wither:\\n    heal reason is healing potion\\n    cancel event"
 },
@@ -5149,7 +5149,7 @@ Do note that other event values, such as 'player', won't work in this section.",
 
     "pattern_end"
   ],
-  "since" : "1.0, INSERT VERSION (entity teleport)",
+  "since" : "1.0, 2.9.0 (entity teleport)",
   "description" : "This event can be used to listen to teleports from non-players or player entities respectively.\\nWhen teleporting entities, the event may also be called due to a result of natural causes, such as an enderman or shulker teleporting, or wolves teleporting to players.\\nWhen teleporting players, the event can be called by teleporting through a nether/end portal, or by other means (e.g. plugins).",
   "examples" : "on teleport:\\non player teleport:\\non creeper teleport:"
 },
@@ -5948,7 +5948,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Returns the Unicode codepoint of a character",
   "examples" : "function is_in_order(letters: strings) :: boolean:\\n    loop {_letters::*}:\\n        set {_codepoint} to codepoint of lowercase loop-value\\n\\n        return false if {_codepoint} is not set # 'loop-value is not a single character'\\n\\n        if:\\n            {_previous-codepoint} is set\\n            # if the codepoint of the current character is not\\n            #  1 more than the codepoint of the previous character\\n            #  then the letters are not in order\\n            {_codepoint} - {_previous-codepoint} is not 1\\n        then:\\n            return false\\n\\n        set {_previous-codepoint} to {_codepoint}\\n    return true"
 },
@@ -5960,7 +5960,7 @@ Can also be used to change the burn/cook time of a placed furnace.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Returns the character at the specified codepoint",
   "examples" : "function chars_between(lower: string, upper: string) :: strings:\\n    set {_lower} to codepoint of {_lower}\\n    return {_none} if {_lower} is not set\\n\\n    set {_upper} to codepoint of {_upper}\\n    return {_none} if {_upper} is not set\\n\\n    loop integers between {_lower} and {_upper}:\\n        add character from codepoint loop-value to {_chars::*}\\n    return {_chars::*}"
 },
@@ -7657,7 +7657,7 @@ Please note that the location of an entity is at it's feet, use <a href='#ExprEy
 
     "pattern_end"
   ],
-  "since" : "2.2-dev34, INSERT VERSION (lowest solid block, 'non-air' option removed, additional syntax option)",
+  "since" : "2.2-dev34, 2.9.0 (lowest solid block, 'non-air' option removed, additional syntax option)",
   "description" : "An expression to obtain the lowest or highest solid (impassable) block at a location.
 Note that the y-coordinate of the location is not taken into account for this expression.",
   "examples" : "teleport the player to the block above the highest block at the player\\nset the highest solid block at the player's location to the lowest solid block at the player's location"
@@ -7684,7 +7684,7 @@ Note that the y-coordinate of the location is not taken into account for this ex
 
     "pattern_end"
   ],
-  "since" : "2.5, INSERT VERSION (change)",
+  "since" : "2.5, 2.9.0 (change)",
   "description" : "The maximum durability of an item. Changing requires Minecraft 1.20.5+
 Note: 'delete' will remove the max durability from the item (making it a non-damageable item). Delete requires Paper 1.21+",
   "examples" : "maximum durability of diamond sword\\nif max durability of player's tool is not 0: # Item is damageable\\nset max durability of player's tool to 5000\\nadd 5 to max durability of player's tool\\nreset max durability of player's tool\\ndelete max durability of player's tool"
@@ -7806,7 +7806,7 @@ Some items, like bows and shields, do not have a limit to their use. They will r
 
     "pattern_end"
   ],
-  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), INSERT VERSION (clear message)",
+  "since" : "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message)",
   "description" : "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed.",
   "examples" : "on chat:\\n    player has permission \"admin\"\\n    set message to \"&amp;c%message%\"\\n\\non first join:\\n    set join message to \"Welcome %player% to our awesome server!\"\\n\\non join:\\n    player has played before\\n    set join message to \"Welcome back, %player%!\"\\n\\non quit:\\n    if {vanish::%player's uuid%} is set:\\n        clear quit message\\n    else:\\n        set quit message to \"%player% left this awesome server!\"\\n\\non death:\\n    set the death message to \"%player% died!\""
 },
@@ -8578,7 +8578,7 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Returns the resonating time of a bell.
 A bell will start resonating five game ticks after being rung, and will continue to resonate for 40 game ticks.",
   "examples" : "broadcast \"The bell has been resonating for %resonating time of target block%\""
@@ -8629,7 +8629,7 @@ A bell will start resonating five game ticks after being rung, and will continue
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Returns the ringing time of a bell.
 A bell typically rings for 50 game ticks.",
   "examples" : "broadcast \"The bell has been ringing for %ringing time of target block%\""
@@ -8804,7 +8804,7 @@ or can be reset to the default icon in a <a href='events.html#server_list_ping'>
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "The skull owner of a player skull.",
   "examples" : "set {_owner} to the skull owner of event-block\\nset skull owner of {_block} to \"Njol\" parsed as offlineplayer"
 },
@@ -8992,7 +8992,7 @@ May grab entities in unloaded chunks.",
 
     "pattern_end"
   ],
-  "since" : "1.0, INSERT VERSION (actual/exact)",
+  "since" : "1.0, 2.9.0 (actual/exact)",
   "description" : "The block at the crosshair. This regards all blocks that are not air as fully solid, e.g. torches will be like a solid stone block for this expression.
 The actual target block will regard the actual hit box of the block.",
   "examples" : "set target block of player to stone\\nset target block of player to oak_stairs[waterlogged=true]\\nbreak target block of player using player's tool\\ngive player 1 of type of target block\\nteleport player to location above target block\\nkill all entities in radius 3 around target block of player\\nset {_block} to actual target block of player\\nbreak actual target block of player"
@@ -9094,7 +9094,7 @@ Using this expression on offline players on Minecraft 1.14 and below will return
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Retrieve specific information of a <a href=\"/classes.html#timespan\">timespan</a> such as hours/minutes/etc.",
   "examples" : "set {_t} to difference between now and {Payouts::players::%uuid of player%::last-date}\\nsend \"It has been %days of {_t}% day(s) since last payout.\""
 },
@@ -9177,7 +9177,7 @@ In the future there will be an option to use a player's UUID instead of the name
 
     "pattern_end"
   ],
-  "since" : "2.2-dev13b, INSERT VERSION (breakable)",
+  "since" : "2.2-dev13b, 2.9.0 (breakable)",
   "description" : "Creates breakable or unbreakable copies of given items.",
   "examples" : "set {_item} to unbreakable iron sword\\ngive breakable {_weapon} to all players"
 },
@@ -9549,7 +9549,7 @@ The return value in this case will be the view distance set in system.properties
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "A shorthand for returning the result of a condition (true or false). This is functionally identical to using `true if <condition> else false`.",
   "examples" : "set {fly} to whether player can fly\\nbroadcast \"Flying: %whether player is flying%\""
 },
@@ -9561,7 +9561,7 @@ The return value in this case will be the view distance set in system.properties
 
     "pattern_end"
   ],
-  "since" : "2.5.2, INSERT VERSION (delete)",
+  "since" : "2.5.2, 2.9.0 (delete)",
   "description" : "An expression for obtaining and modifying the server's whitelist.
 Players may be added and removed from the whitelist.
 The whitelist can be enabled or disabled by setting the whitelist to true or false respectively.",
@@ -9576,7 +9576,7 @@ The whitelist can be enabled or disabled by setting the whitelist to true or fal
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Creates a copy of an item with (or without) fire resistance.",
   "examples" : "set {_x} to diamond sword with fire resistance\\nequip player with netherite helmet without fire resistance\\ndrop fire resistant stone at player"
 },
@@ -9678,7 +9678,7 @@ The whitelist can be enabled or disabled by setting the whitelist to true or fal
 
     "pattern_end"
   ],
-  "since" : "2.0, 2.2-dev28 (vector yaw/pitch), INSERT VERSION (entity changers)",
+  "since" : "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)",
   "description" : "The yaw or pitch of a location or vector.
 A yaw of 0 or 360 represents the positive z direction. Adding a positive number to the yaw of a player will rotate it clockwise.
 A pitch of 90 represents the negative y direction, or downward facing. A pitch of -90 represents upward facing. Adding a positive number to the pitch will rotate the direction downwards.
@@ -9818,7 +9818,7 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.9.0",
   "description" : "Joins the provided texts (and other things) into a single text.",
   "examples" : "concat(\"hello \", \"there\") # hello there\\nconcat(\"foo \", 100, \" bar\") # foo 100 bar"
 },
@@ -9962,7 +9962,7 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
 
     "pattern_end"
   ],
-  "since" : "2.8.0, INSERT VERSION (prevent lookups)",
+  "since" : "2.8.0, 2.9.0 (prevent lookups)",
   "description" : "Returns a offline player from their name or UUID. This function will still return the player if they're online. If Paper 1.16.5+ is used, the 'allowLookup' parameter can be set to false to prevent this function from doing a web lookup for players who have not joined before. Lookups can cause lag spikes of up to multiple seconds, so use offline players with caution.",
   "examples" : "set {_p} to offlineplayer(\"Notch\")\\nset {_p} to offlineplayer(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")\\nset {_p} to offlineplayer(\"Notch\", false)"
 },
