@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-ad69bbe",
+  "skriptVersion" : "2.9.0-pre2-nightly-07e6f23",
 
   "classes" : [
     {
@@ -8646,6 +8646,20 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "examples" : "on server list ping:\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
 },
 {
+  "id" : "ExprQuaternionAxisAngle",
+  "name" : "Quaternion Axis/Angle of Rotation",
+  "patterns" : [
+    "[the] [rotation] (angle|axis) of %<a href='./classes.html#quaternion'>quaternions</a>%",
+"%<a href='./classes.html#quaternion'>quaternions</a>%'[s] [rotation] (angle|axis)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the axis or angle that a quaternion will rotate with.
+All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis.",
+  "examples" : "set {_quaternion} to axisAngle(45, vector(1, 2, 3))\\nsend axis of {_quaternion} # 1, 2, 3\\nsend angle of {_quaternion} # 45"
+},
+{
   "id" : "ExprQuitReason",
   "name" : "Quit Reason",
   "patterns" : [
@@ -9550,7 +9564,7 @@ In the future there will be an option to use a player's UUID instead of the name
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, INSERT VERSION (Quaternions)",
+  "since" : "2.2-dev28, INSERT VERSION (quaternions)",
   "description" : "Gets or changes the x, y or z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.
 You cannot use w of vector. W is for quaternions only.",
   "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v} to 1\\nset y component of {_v} to 2\\nset z component of {_v} to 3\\nsend \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
