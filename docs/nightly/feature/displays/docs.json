@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-a02074f",
+  "skriptVersion" : "2.9.0-pre2-nightly-093fa83",
 
   "classes" : [
     {
@@ -8631,20 +8631,6 @@ This can be set in a <a href='events.html#server_list_ping'>server list ping</a>
   "examples" : "on server list ping:\\n    set the version string to \"&amp;lt;light green&amp;gt;Version: &amp;lt;orange&amp;gt;%minecraft version%\"\\n    set the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
 },
 {
-  "id" : "ExprQuaternionAxisAngle",
-  "name" : "Quaternion Axis/Angle of Rotation",
-  "patterns" : [
-    "[the] [rotation] (angle|axis) of %<a href='./classes.html#quaternion'>quaternions</a>%",
-"%<a href='./classes.html#quaternion'>quaternions</a>%'[s] [rotation] (angle|axis)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns the axis or angle that a quaternion will rotate with.
-All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis.",
-  "examples" : "set {_quaternion} to axisAngle(45, vector(1, 2, 3))\\nsend axis of {_quaternion} # 1, 2, 3\\nsend angle of {_quaternion} # 45"
-},
-{
   "id" : "ExprQuitReason",
   "name" : "Quit Reason",
   "patterns" : [
@@ -8900,6 +8886,20 @@ A bell typically rings for 50 game ticks.",
 When you use a vector, the values will be used to rotate the x, y and z.
 Vector numbers will get converted from a double down to a float.",
   "examples" : "set {_new} to {_quaternion} rotated by vector(1, 0, 0)"
+},
+{
+  "id" : "ExprQuaternionAxisAngle",
+  "name" : "Rotation Axis/Angle",
+  "patterns" : [
+    "[the] rotation (angle|axis) of %<a href='./classes.html#quaternion'>quaternions</a>%",
+"%<a href='./classes.html#quaternion'>quaternions</a>%'[s] rotation (angle|axis)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns the axis or angle that a quaternion will rotate by/around.
+All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis.",
+  "examples" : "set {_quaternion} to axisAngle(45, vector(1, 2, 3))\\nsend rotation axis of {_quaternion} # 1, 2, 3\\nsend rotation angle of {_quaternion} # 45\\nset rotation angle of {_quaternion} to 135\\nset rotation axis of {_quaternion} to vector(0, 1, 0)"
 },
 {
   "id" : "ExprRound",
