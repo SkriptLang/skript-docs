@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-07e6f23",
+  "skriptVersion" : "2.9.0-pre2-nightly-a02074f",
 
   "classes" : [
     {
@@ -964,17 +964,16 @@ This condition requires a supported <a href='./classes.html#region'>regions</a> 
   "id" : "CondCanSee",
   "name" : "Can See",
   "patterns" : [
-    "%<a href='./classes.html#entity'>entities</a>% (is|are) [in]visible for %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>% can see %<a href='./classes.html#entity'>entities</a>%",
-"%<a href='./classes.html#entity'>entities</a>% (is|are)(n't| not) [in]visible for %<a href='./classes.html#player'>players</a>%",
-"%<a href='./classes.html#player'>players</a>% can('t| not) see %<a href='./classes.html#entity'>entities</a>%",
+    "%<a href='./classes.html#player'>players</a>% (is|are) [in]visible for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>% can see %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>% (is|are)(n't| not) [in]visible for %<a href='./classes.html#player'>players</a>%",
+"%<a href='./classes.html#player'>players</a>% can('t| not) see %<a href='./classes.html#player'>players</a>%",
 
     "pattern_end"
   ],
-  "since" : "2.3, INSERT VERSION (entities)",
-  "description" : "Checks whether the given players can see other entities.
-Note this means if the entities have been manually hidden from the player, and not if they have line of sight to eachother.",
-  "examples" : "if the player can't see the player-argument:\\n    message \"&amp;cThe player %player-argument% is not online!\""
+  "since" : "2.3",
+  "description" : "Checks whether the given players can see another players.",
+  "examples" : "if the player can't see the player-argument:\\n    message \"&amp;lt;light red&amp;gt;The player %player-argument% is not online!\""
 },
 {
   "id" : "CondChance",
@@ -2695,20 +2694,6 @@ Starting with Bukkit 1.4.5 and Skript 2.0 you can use safe explosions which will
   "since" : "2.8.0",
   "description" : "Make mobs left or right-handed. This does not affect players.",
   "examples" : "spawn skeleton at spawn of world \"world\":\\n    make entity left handed\\n\\nmake all zombies in radius 10 of player right handed"
-},
-{
-  "id" : "EffHideEntity",
-  "name" : "Hide Entities From Players",
-  "patterns" : [
-    "hide %<a href='./classes.html#entity'>entities</a>% from %<a href='./classes.html#player'>players</a>%",
-"show %<a href='./classes.html#entity'>entities</a>% to %<a href='./classes.html#player'>players</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Hide entities from players
-Do note that hidden entities still exist in the server space and can interact with the world.",
-  "examples" : "set {_player} to player\\nspawn a block display at location infront of player:\\n    hide event-entity from all players where [player input is not {_player}]"
 },
 {
   "id" : "EffHidePlayerFromServerList",
