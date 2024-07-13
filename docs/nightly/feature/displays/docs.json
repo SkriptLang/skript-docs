@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-7e33d72",
+  "skriptVersion" : "2.9.0-pre2-nightly-ad69bbe",
 
   "classes" : [
     {
@@ -12,18 +12,6 @@
   ],
   "since" : "2.5",
   "description" : "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.\\nNOTE: Minecraft namespaces are supported, ex: 'minecraft:generic.attack_damage'.",
-  "examples" : "Missing examples."
-},
-{
-  "id" : "axisangle",
-  "name" : "Axis Angle",
-  "patterns" : [
-    "Missing patterns.",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Represents a 3D rotation of a given radians about an axis represented as an unit 3D vector.",
   "examples" : "Missing examples."
 },
 {
@@ -9555,16 +9543,16 @@ In the future there will be an option to use a player's UUID instead of the name
 },
 {
   "id" : "ExprXYZComponent",
-  "name" : "Vector/Quaternion/AxisAngle - XYZ Component",
+  "name" : "Vector/Quaternion - XYZ Component",
   "patterns" : [
-    "[the] [vector|quaternion] ((w|angle)|x|y|z) [component[s]] of %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#axisangle'>axisangle</a>%",
-"%<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#axisangle'>axisangle</a>%'[s] [vector|quaternion] ((w|angle)|x|y|z) [component[s]]",
+    "[the] [vector|quaternion] (w|x|y|z) [component[s]] of %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>%",
+"%<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>%'[s] [vector|quaternion] (w|x|y|z) [component[s]]",
 
     "pattern_end"
   ],
   "since" : "2.2-dev28, INSERT VERSION (Quaternions)",
-  "description" : "Gets or changes the x, y or z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>/<a href='classes.html#axisangle'>axis angles</a>.
-You cannot use w of vector. W/ANGLE is for quaternions/axis angles only.",
+  "description" : "Gets or changes the x, y or z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.
+You cannot use w of vector. W is for quaternions only.",
   "examples" : "set {_v} to vector 1, 2, 3\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nadd 1 to x of {_v}\\nadd 2 to y of {_v}\\nadd 3 to z of {_v}\\nsend \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"\\nset x component of {_v} to 1\\nset y component of {_v} to 2\\nset z component of {_v} to 3\\nsend \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
 },
 {
@@ -10089,13 +10077,13 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
   "id" : "axisAngle",
   "name" : "axisAngle",
   "patterns" : [
-    "axisAngle(angle: number, x: number, y: number, z: number)",
+    "axisAngle(angle: number, axis: vector)",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Returns an axis angle from the given angle, x, y and z parameters.",
-  "examples" : "axisangle(90, 50.6, 20.0, 10.0)"
+  "description" : "Returns a quaternion from the given angle (in degrees) and axis (as a vector). This represents a rotation around the given axis by the given angle.",
+  "examples" : "axisangle(90, (vector from player's facing))"
 },
 {
   "id" : "calcExperience",
@@ -10346,7 +10334,7 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Returns a quaternion from the given w, x, y and z parameters.",
+  "description" : "Returns a quaternion from the given w, x, y and z parameters. ",
   "examples" : "quaternion(1, 5.6, 45.21, 10)"
 },
 {
