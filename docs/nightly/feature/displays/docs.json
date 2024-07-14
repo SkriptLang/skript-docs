@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-093fa83",
+  "skriptVersion" : "2.9.0-pre2-nightly-a00cf5b",
 
   "classes" : [
     {
@@ -6102,8 +6102,9 @@ If strings of more than one character are given, only the first character of eac
     "pattern_end"
   ],
   "since" : "1.2, INSERT VERSION (displays)",
-  "description" : "The <a href='./classes.html#color'>color</a> of an item
-can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
+  "description" : "The <a href='./classes.html#color'>color</a> of an item, entity, block, firework effect, or text display.
+This can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".
+Do note that firework effects support setting, adding, removing, resetting, and deleting; text displays support setting and resetting; and items, entities, and blocks only support setting, and only for very few items/blocks.",
   "examples" : "on click on wool:\\n    message \"This wool block is &lt;%color of block%&gt;%color of block%&lt;reset&gt;!\"\\n    set the color of the block to black"
 },
 {
@@ -10340,13 +10341,13 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
   "id" : "rgb",
   "name" : "rgb",
   "patterns" : [
-    "rgb(red: long, green: long, blue: long)",
+    "rgb(red: long, green: long, blue: long, alpha: long = [[long:255]])",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Returns a RGB color from the given red, green and blue parameters.",
-  "examples" : "dye player's leggings rgb(120, 30, 45)"
+  "since" : "2.5, INSERT VERSION (alpha)",
+  "description" : "Returns a RGB color from the given red, green and blue parameters. Alpha values can be added optionally, but these only take affect in certain situations, like text display backgrounds.",
+  "examples" : "dye player's leggings rgb(120, 30, 45)\\nset the colour of a text display to rgb(10, 50, 100, 50)"
 },
 {
   "id" : "round",
