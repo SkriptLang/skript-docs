@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-a00cf5b",
+  "skriptVersion" : "2.9.0-pre2-nightly-77a843b",
 
   "classes" : [
     {
@@ -6404,149 +6404,6 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
   "examples" : "thrust the player upwards\\nset the block behind the player to water\\nloop blocks above the player:\\n    set {_rand} to a random integer between 1 and 10\\n    set the block {_rand} meters south east of the loop-block to stone\\nblock in horizontal facing of the clicked entity from the player is air\\nspawn a creeper 1.5 meters horizontally behind the player\\nspawn a TNT 5 meters above and 2 meters horizontally behind the player\\nthrust the last spawned TNT in the horizontal direction of the player with speed 0.2\\npush the player upwards and horizontally forward at speed 0.5\\npush the clicked entity in in the direction of the player at speed -0.5\\nopen the inventory of the block 2 blocks below the player to the player\\nteleport the clicked entity behind the player\\ngrow a regular tree 2 meters horizontally behind the player"
 },
 {
-  "id" : "ExprDisplayBillboard",
-  "name" : "Display Billboard",
-  "patterns" : [
-    "[the] billboard[s] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] billboard[s]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#billboard'>billboard</a> setting of <a href='classes.html#display'>displays</a>.
-This describes the axes/points around which the display can pivot.
-Displays spawn with the default setting as 'fixed'. Resetting this expression will also set it to 'fixed'.",
-  "examples" : "set billboard of the last spawned text display to center"
-},
-{
-  "id" : "ExprDisplayBrightness",
-  "name" : "Display Brightness",
-  "patterns" : [
-    "[the] (sky|block) [light] brightness[es] of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] (sky|block) [light] brightness[es]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the block or sky brightness of <a href='classes.html#display'>displays</a>.
-Value must be between 0 and 15.",
-  "examples" : "set sky brightness of the last spawned text display to 5"
-},
-{
-  "id" : "ExprDisplayGlowOverride",
-  "name" : "Display Glow Color Override",
-  "patterns" : [
-    "[the] glow[ing] colo[u]r[s] [override[s]] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] glow[ing] colo[u]r[s] [override[s]]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the glowing color override of <a href='classes.html#display'>displays</a>.
-This overrides whatever color is already set for the scoreboard team of the displays.",
-  "examples" : "set glow color override of the last spawned text display to blue"
-},
-{
-  "id" : "ExprDisplayHeightWidth",
-  "name" : "Display Height/Width",
-  "patterns" : [
-    "[the] display (height|width) [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] display (height|width)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.
-The rendering culling bounding box spans horizontally width/2 from entity position, and the part beyond will be culled.
-If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0.",
-  "examples" : "set height of the last spawned text display to 2.5"
-},
-{
-  "id" : "ExprDisplayInterpolation",
-  "name" : "Display Interpolation Delay/Duration",
-  "patterns" : [
-    "[the] interpolation (delay|duration)[s] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] interpolation (delay|duration)[s]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the interpolation delay/duration of <a href='classes.html#display'>displays</a>.
-Interpolation delay is the amount of ticks before client-side interpolation will commence.
-Setting to 0 seconds will make it immediate.",
-  "examples" : "set interpolation delay of the last spawned text display to 2 ticks"
-},
-{
-  "id" : "ExprDisplayShadow",
-  "name" : "Display Shadow Radius/Strength",
-  "patterns" : [
-    "[the] shadow (radius|strength) [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] shadow (radius|strength)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the shadow radius/strength of <a href='classes.html#display'>displays</a>.",
-  "examples" : "set shadow radius of the last spawned text display to 1.75"
-},
-{
-  "id" : "ExprDisplayTeleportDuration",
-  "name" : "Display Teleport Delay/Duration",
-  "patterns" : [
-    "[the] teleport duration[s] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] teleport duration[s]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "The teleport duration of displays is the amount of time it takes to get between locations.
-0 means that updates are applied immediately.
-1 means that the display entity will move from current position to the updated one over one tick.
-Higher values spread the movement over multiple ticks. Max of 59 ticks.",
-  "examples" : "set teleport delay of the last spawned text display to 2 ticks\\nwait 2 ticks\\nmessage \"display entity has arived at location\""
-},
-{
-  "id" : "ExprDisplayTransformationRotation",
-  "name" : "Display Transformation Rotation",
-  "patterns" : [
-    "[the] (left|right) [transformation] rotation [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] (left|right) [transformation] rotation",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.
-The left rotation is applied first, with the right rotation then being applied based on the rotated axis.",
-  "examples" : "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
-},
-{
-  "id" : "ExprDisplayTransformationScaleTranslation",
-  "name" : "Display Transformation Scale/Translation",
-  "patterns" : [
-    "[the] [transformation] (scale|translation) of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] [transformation] (scale|translation)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the transformation scale or translation of <a href='classes.html#display'>displays</a>.",
-  "examples" : "set transformation translation of display to vector from -0.5, -0.5, -0.5 # Center the display in the same position as a block"
-},
-{
-  "id" : "ExprDisplayViewRange",
-  "name" : "Display View Range",
-  "patterns" : [
-    "[the] [display] view (range|radius) [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] [display] view (range|radius)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the view range of <a href='classes.html#display'>displays</a>.
-Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
-  "examples" : "set view range of the last spawned text display to 2.9"
-},
-{
   "id" : "ExprDistance",
   "name" : "Distance",
   "patterns" : [
@@ -7462,32 +7319,6 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
 },
 {
-  "id" : "ExprItemOfItemDisplay",
-  "name" : "Item Display Item",
-  "patterns" : [
-    "[the] display item[stack] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] display item[stack]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#itemstack'>itemstack</a> of <a href='classes.html#display'>item displays</a>.",
-  "examples" : "set the display item of the last spawned item display to a diamond sword"
-},
-{
-  "id" : "ExprItemDisplayTransform",
-  "name" : "Item Display Transform",
-  "patterns" : [
-    "[the] [item] [display] transform [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] [item] [display] transform",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>.",
-  "examples" : "set the item transform of the last spawned item display to fixed # Reset to default"
-},
-{
   "id" : "ExprEnchantments",
   "name" : "Item Enchantments",
   "patterns" : [
@@ -7499,23 +7330,6 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.2-dev36",
   "description" : "All the enchantments an <a href='classes.html#itemtype'>item type</a> has.",
   "examples" : "clear enchantments of event-item"
-},
-{
-  "id" : "ExprItemFrameSlot",
-  "name" : "Item of an Entity",
-  "patterns" : [
-    "[the] [the] item [inside] of %<a href='./classes.html#entity'>entities</a>%",
-"%<a href='./classes.html#entity'>entities</a>%'[s] [the] item [inside]",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles)",
-  "description" : "An item associated with an entity. For dropped item entities, it gets the item that was dropped. 
-For item frames, the item inside the frame is returned.
-For throwable projectiles (snowballs, enderpearls etc.) it gets the displayed item.
-For display entities (snowballs, enderpearls etc.) it gets the displayed item.
-Other entities do not have items associated with them.",
-  "examples" : "item of event-entity\\n\\nset the item inside of event-entity to a diamond sword named \"Example\""
 },
 {
   "id" : "ExprItemWithCustomModelData",
@@ -8874,35 +8688,6 @@ A bell typically rings for 50 game ticks.",
   "examples" : "broadcast \"The bell has been ringing for %ringing time of target block%\""
 },
 {
-  "id" : "ExprRotateQuaternion",
-  "name" : "Rotate Quaternion/Vector",
-  "patterns" : [
-    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated (around|on) [the] (x|y|z)-axis by %<a href='./classes.html#number'>number</a>% [degrees|radians]",
-"%<a href='./classes.html#quaternion'>quaternions</a>% rotated by %<a href='./classes.html#vector'>vector</a>%",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Rotates a Quaternion around an axis a set amount of degrees or rotated by a vector.
-When you use a vector, the values will be used to rotate the x, y and z.
-Vector numbers will get converted from a double down to a float.",
-  "examples" : "set {_new} to {_quaternion} rotated by vector(1, 0, 0)"
-},
-{
-  "id" : "ExprQuaternionAxisAngle",
-  "name" : "Rotation Axis/Angle",
-  "patterns" : [
-    "[the] rotation (angle|axis) of %<a href='./classes.html#quaternion'>quaternions</a>%",
-"%<a href='./classes.html#quaternion'>quaternions</a>%'[s] rotation (angle|axis)",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns the axis or angle that a quaternion will rotate by/around.
-All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis.",
-  "examples" : "set {_quaternion} to axisAngle(45, vector(1, 2, 3))\\nsend rotation axis of {_quaternion} # 1, 2, 3\\nsend rotation angle of {_quaternion} # 45\\nset rotation angle of {_quaternion} to 135\\nset rotation axis of {_quaternion} to vector(0, 1, 0)"
-},
-{
   "id" : "ExprRound",
   "name" : "Rounding",
   "patterns" : [
@@ -9301,60 +9086,6 @@ The actual target block will regard the actual hit box of the block.",
   "since" : "2.2-dev36",
   "description" : "A shorthand expression for returning something based on a condition.",
   "examples" : "set {points} to 500 if {admin::%player's uuid%} is set else 100"
-},
-{
-  "id" : "ExprTextDisplayAlignment",
-  "name" : "Text Display Alignment",
-  "patterns" : [
-    "[the] text alignment[s] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] text alignment[s]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>.",
-  "examples" : "set text alignment of the last spawned text display to left"
-},
-{
-  "id" : "ExprTextDisplayLineWidth",
-  "name" : "Text Display Line Width",
-  "patterns" : [
-    "[the] line width [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] line width",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the line width of <a href='classes.html#display'>text displays</a>. Default is 200.",
-  "examples" : "set the line width of the last spawned text display to 300"
-},
-{
-  "id" : "ExprTextDisplayOpacity",
-  "name" : "Text Display Opacity",
-  "patterns" : [
-    "[the] [display] opacity [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] [display] opacity",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the opacity of <a href='classes.html#display'>text displays</a>.
-Values are between -127 and 127. The value of 127 represents it being completely opaque.",
-  "examples" : "set the opacity of the last spawned text display to -1 # Reset"
-},
-{
-  "id" : "ExprTextOf",
-  "name" : "Text Of",
-  "patterns" : [
-    "[the] (string|text)[s] of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] (string|text)[s]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.
-Note that you can only currently use Skript chat codes when running PaperSpigot 1.19.4+",
-  "examples" : "set text of the last spawned text display to \"example\""
 },
 {
   "id" : "ExprEgg",
