@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-937bb37",
+  "skriptVersion" : "2.9.0-pre2-nightly-5c4ecbe",
 
   "classes" : [
     {
@@ -6407,8 +6407,8 @@ Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./
   "id" : "ExprDisplayBillboard",
   "name" : "Display Billboard",
   "patterns" : [
-    "[the] billboard[s] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] billboard[s]",
+    "[the] bill[ |-]board[ing] [setting] [of %<a href='./classes.html#display'>displays</a>%]",
+"%<a href='./classes.html#display'>displays</a>%'[s] bill[ |-]board[ing] [setting]",
 
     "pattern_end"
   ],
@@ -6422,15 +6422,17 @@ Displays spawn with the default setting as 'fixed'. Resetting this expression wi
   "id" : "ExprDisplayBrightness",
   "name" : "Display Brightness",
   "patterns" : [
-    "[the] (sky|block) [light] brightness[es] of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] (sky|block) [light] brightness[es]",
+    "[the] [block|sky] (light [level]|brightness) override[s] of %<a href='./classes.html#display'>displays</a>%",
+"%<a href='./classes.html#display'>displays</a>%'[s] [block|sky] (light [level]|brightness) override[s]",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Returns or changes the block or sky brightness of <a href='classes.html#display'>displays</a>.
-Value must be between 0 and 15.",
-  "examples" : "set sky brightness of the last spawned text display to 5"
+  "description" : "Returns or changes the brightness override of <a href='classes.html#display'>displays</a>.
+Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.
+Use the 'block' or 'sky' options to get/change specific values or get both values as a list by using neither option.
+NOTE: setting only one of the sky/block light overrides of a display without an existing override will set both sky and block light to the given value. Make sure to set both block and sky levels to your desired values for the best results. Likewise, you can only clear the brightness override, you cannot clear/reset the sky/block values individually.",
+  "examples" : "set brightness override of the last spawned text display to brightness(5, 7)\\nset sky light override of the last spawned text display to 7\\nsubtract 3 from the block light level override of the last spawned text display\\nif sky light level override of {_display} is 5:\\n    clear brightness override of {_display}"
 },
 {
   "id" : "ExprDisplayGlowOverride",
