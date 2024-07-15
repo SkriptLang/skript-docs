@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre1-nightly-d48a261",
+  "skriptVersion" : "2.9.0-pre2-nightly-ad3d5db",
 
   "classes" : [
     {
@@ -127,7 +127,7 @@
   "id" : "damagecause",
   "name" : "Damage Cause",
   "patterns" : [
-    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
+    "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, campfire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath",
 
     "pattern_end"
   ],
@@ -631,7 +631,7 @@
   "id" : "spawnreason",
   "name" : "Spawn Reason",
   "patterns" : [
-    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, infection, customized, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, customised, piglin zombification",
+    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, infection, customized, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
 
     "pattern_end"
   ],
