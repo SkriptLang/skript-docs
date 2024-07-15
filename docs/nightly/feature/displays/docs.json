@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-pre2-nightly-5c4ecbe",
+  "skriptVersion" : "2.9.0-pre2-nightly-a9c7110",
 
   "classes" : [
     {
@@ -6438,8 +6438,8 @@ NOTE: setting only one of the sky/block light overrides of a display without an 
   "id" : "ExprDisplayGlowOverride",
   "name" : "Display Glow Color Override",
   "patterns" : [
-    "[the] glow[ing] colo[u]r[s] [override[s]] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] glow[ing] colo[u]r[s] [override[s]]",
+    "[the] glow[ing] colo[u]r[s] override[s] [of %<a href='./classes.html#display'>displays</a>%]",
+"%<a href='./classes.html#display'>displays</a>%'[s] glow[ing] colo[u]r[s] override[s]",
 
     "pattern_end"
   ],
@@ -6459,9 +6459,9 @@ This overrides whatever color is already set for the scoreboard team of the disp
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.
-The rendering culling bounding box spans horizontally width/2 from entity position, and the part beyond will be culled.
+The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).
 If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0.",
-  "examples" : "set height of the last spawned text display to 2.5"
+  "examples" : "set display height of the last spawned text display to 2.5"
 },
 {
   "id" : "ExprDisplayInterpolation",
