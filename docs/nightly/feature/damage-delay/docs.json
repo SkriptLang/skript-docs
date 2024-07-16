@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-41672ab",
+  "skriptVersion" : "2.9.0-nightly-a7ed598",
 
   "classes" : [
     {
@@ -6248,8 +6248,8 @@ For items, it's the amount of durability damage the item will be taking.",
   "id" : "ExprDamageDelay",
   "name" : "Damage Delay",
   "patterns" : [
-    "[the] [max[imum]] (invulnerability|no damage) (time|delay|ticks) [of %<a href='./classes.html#livingentity'>living entities</a>%]",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [max[imum]] (invulnerability|no damage) (time|delay|ticks)",
+    "[the] [max[imum]] (invulnerability|no damage|invincibility) (time|delay|tick[s]) [of %<a href='./classes.html#livingentity'>living entities</a>%]",
+"%<a href='./classes.html#livingentity'>living entities</a>%'[s] [max[imum]] (invulnerability|no damage|invincibility) (time|delay|tick[s])",
 
     "pattern_end"
   ],
@@ -8035,19 +8035,6 @@ Some items, like bows and shields, do not have a limit to their use. They will r
   "since" : "2.5",
   "description" : "Returns a line break separator.",
   "examples" : "send \"Hello%nl%Goodbye!\" to player"
-},
-{
-  "id" : "ExprNoDamageTicks",
-  "name" : "No Damage Ticks",
-  "patterns" : [
-    "[the] (invulnerability|invincibility|no damage) tick[s] of %<a href='./classes.html#livingentity'>living entities</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>%'[s] (invulnerability|invincibility|no damage) tick[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.5",
-  "description" : "The number of ticks that an entity is invulnerable to damage for.",
-  "examples" : "on damage:\\n    set victim's invulnerability ticks to 20 #Victim will not take damage for the next second"
 },
 {
   "id" : "ExprNow",
