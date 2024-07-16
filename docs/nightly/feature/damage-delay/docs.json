@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-9a4851f",
+  "skriptVersion" : "2.9.0-nightly-41672ab",
 
   "classes" : [
     {
@@ -6256,7 +6256,7 @@ For items, it's the amount of durability damage the item will be taking.",
   "since" : "INSERT VERSION",
   "description" : "The time delay before living entities can take damage again.
 Using 'maximum' keyword will be the maximum duration in which the living entity will not take damage.",
-  "examples" : "on damage of player:\\n    player is holding a diamond named \"Damage saviour\"\\n    add 2 seconds to the damage delay"
+  "examples" : "on damage of player:\\n    player is holding a diamond named \"Damage saviour\"\\n    add 2 seconds to the invulnerability delay"
 },
 {
   "id" : "ExprDurability",
