@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-ed6208c",
+  "skriptVersion" : "2.9.0-nightly-d4e1c8d",
 
   "classes" : [
     {
@@ -6526,8 +6526,8 @@ The left rotation is applied first, with the right rotation then being applied b
   "id" : "ExprDisplayTransformationScaleTranslation",
   "name" : "Display Transformation Scale/Translation",
   "patterns" : [
-    "[the] [transformation] (scale|translation) of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] [transformation] (scale|translation)",
+    "[the] (display|[display] transformation) (scale|translation) of %<a href='./classes.html#display'>displays</a>%",
+"%<a href='./classes.html#display'>displays</a>%'[s] (display|[display] transformation) (scale|translation)",
 
     "pattern_end"
   ],
