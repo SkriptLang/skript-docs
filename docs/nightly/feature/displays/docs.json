@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-949b454",
+  "skriptVersion" : "2.9.0-nightly-c92f75a",
 
   "classes" : [
     {
@@ -7464,19 +7464,6 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.8.0",
   "description" : "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>.",
   "examples" : "on right click using stick:\\n    set item cooldown of player's tool for player to 1 minute\\n    set item cooldown of stone and grass for all players to 20 seconds\\n    reset item cooldown of cobblestone and dirt for all players"
-},
-{
-  "id" : "ExprItemOfItemDisplay",
-  "name" : "Item Display Item",
-  "patterns" : [
-    "[the] display item[stack] [of %<a href='./classes.html#display'>displays</a>%]",
-"%<a href='./classes.html#display'>displays</a>%'[s] display item[stack]",
-
-    "pattern_end"
-  ],
-  "since" : "INSERT VERSION",
-  "description" : "Returns or changes the <a href='classes.html#itemstack'>itemstack</a> of <a href='classes.html#display'>item displays</a>.",
-  "examples" : "set the display item of the last spawned item display to a diamond sword"
 },
 {
   "id" : "ExprItemDisplayTransform",
