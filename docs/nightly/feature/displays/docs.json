@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-045d75c",
+  "skriptVersion" : "2.9.0-nightly-9d94d43",
 
   "classes" : [
     {
@@ -3222,6 +3222,29 @@ By default, the bell will ring in the direction it is facing.",
   "examples" : "make player ring target-block"
 },
 {
+  "id" : "EffRotate",
+  "name" : "Rotate",
+  "patterns" : [
+    "rotate %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#display'>displays</a>% around [the] [global] (x|y|z)(-| )axis by %<a href='./classes.html#number'>number</a>% [degrees]",
+"rotate %<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#display'>displays</a>% around [the|its|their] local (x|y|z)(-| )ax(i|e)s by %<a href='./classes.html#number'>number</a>% [degrees]",
+"rotate %<a href='./classes.html#vector'>vectors</a>/<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#display'>displays</a>% around [the] %<a href='./classes.html#vector'>vector</a>% by %<a href='./classes.html#number'>number</a>% [degrees]",
+"rotate %<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#display'>displays</a>% by x %<a href='./classes.html#number'>number</a>%, y %<a href='./classes.html#number'>number</a>%(, [and]| and) z %<a href='./classes.html#number'>number</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Rotates Displays, Quaternions, or Vectors around an axis a set amount of degrees, or around all 3 axes at once.
+Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.
+Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axis at once.
+Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.
+
+Rotating a display is a shortcut for rotating its left rotation. If the right rotation needs to be modified, it should be acquired, rotated, and re-set.
+
+Note that rotating a quaternion/display around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating quaternions/displays around vector(1, 0, 0) is the same as rotating around the local x axis.
+In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first, and the X rotation last.",
+  "examples" : "rotate {_quaternion} around x axis by 10 degrees\\nrotate last spawned block display around y axis by 10 degrees\\nrotate {_vector} around vector(1, 1, 1) by 45\\nrotate {_quaternion} by x 45, y 90, z 135"
+},
+{
   "id" : "EffWorldSave",
   "name" : "Save World",
   "patterns" : [
@@ -3467,30 +3490,6 @@ Note: if no input is given for the times, it will keep the ones from the last ti
   "description" : "Creates a tree.
 This may require that there is enough space above the given location and that the block below is dirt/grass, but it is possible that the tree will just grow anyways, possibly replacing every block in its path.",
   "examples" : "grow a tall redwood tree above the clicked block"
-},
-{
-  "id" : "EffVectorRotateAroundAnother",
-  "name" : "Vectors - Rotate Around Vector",
-  "patterns" : [
-    "rotate %<a href='./classes.html#vector'>vectors</a>% around %<a href='./classes.html#vector'>vector</a>% by %<a href='./classes.html#number'>number</a>% [degrees]",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev28",
-  "description" : "Rotates one or more vectors around another vector",
-  "examples" : "rotate {_v} around vector 1, 0, 0 by 90"
-},
-{
-  "id" : "EffVectorRotateXYZ",
-  "name" : "Vectors - Rotate around XYZ",
-  "patterns" : [
-    "rotate %<a href='./classes.html#vector'>vectors</a>% around (x|y|z)(-| )axis by %<a href='./classes.html#number'>number</a>% [degrees]",
-
-    "pattern_end"
-  ],
-  "since" : "2.2-dev28",
-  "description" : "Rotates one or more vectors around the x, y, or z axis by some amount of degrees",
-  "examples" : "rotate {_v} around x-axis by 90\\nrotate {_v} around y-axis by 90\\nrotate {_v} around z-axis by 90 degrees"
 },
 {
   "id" : "EffVehicle",
@@ -8868,8 +8867,9 @@ A bell typically rings for 50 game ticks.",
   "id" : "ExprRotate",
   "name" : "Rotate Quaternion/Vector",
   "patterns" : [
-    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated (around|on) [the] ([global] (x|y|z)(-| )axis|%<a href='./classes.html#vector'>vector</a>%) by %<a href='./classes.html#number'>number</a>% [degrees]",
-"%<a href='./classes.html#quaternion'>quaternions</a>% rotated (around|on) [the|its|their] local (x|y|z)(-| )ax(i|e)s by %<a href='./classes.html#number'>number</a>% [degrees]",
+    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated around [the] [global] (x|y|z)(-| )axis by %<a href='./classes.html#number'>number</a>% [degrees]",
+"%<a href='./classes.html#quaternion'>quaternions</a>% rotated around [the|its|their] local (x|y|z)(-| )ax(i|e)s by %<a href='./classes.html#number'>number</a>% [degrees]",
+"%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated around [the] %<a href='./classes.html#vector'>vector</a>% by %<a href='./classes.html#number'>number</a>% [degrees]",
 "%<a href='./classes.html#quaternion'>quaternions</a>% rotated by x %<a href='./classes.html#number'>number</a>%, y %<a href='./classes.html#number'>number</a>%(, [and]| and) z %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
