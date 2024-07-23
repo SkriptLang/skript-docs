@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-c92f75a",
+  "skriptVersion" : "2.9.0-nightly-e089ddc",
 
   "classes" : [
     {
@@ -7492,7 +7492,7 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "examples" : "clear enchantments of event-item"
 },
 {
-  "id" : "ExprItemFrameSlot",
+  "id" : "ExprItemOfEntity",
   "name" : "Item of an Entity",
   "patterns" : [
     "[the] [the] item [inside] of %<a href='./classes.html#entity'>entities</a>%",
