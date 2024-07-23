@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-9d94d43",
+  "skriptVersion" : "2.9.0-nightly-234be4b",
 
   "classes" : [
     {
@@ -3232,7 +3232,7 @@ By default, the bell will ring in the direction it is facing.",
 
     "pattern_end"
   ],
-  "since" : "INSERT VERSION",
+  "since" : "2.2-dev28, INSERT VERSION (quaternions, displays)",
   "description" : "Rotates Displays, Quaternions, or Vectors around an axis a set amount of degrees, or around all 3 axes at once.
 Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.
 Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axis at once.
