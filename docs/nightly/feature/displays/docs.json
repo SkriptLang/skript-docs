@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-e089ddc",
+  "skriptVersion" : "2.9.0-nightly-045d75c",
 
   "classes" : [
     {
@@ -8865,19 +8865,24 @@ A bell typically rings for 50 game ticks.",
   "examples" : "broadcast \"The bell has been ringing for %ringing time of target block%\""
 },
 {
-  "id" : "ExprRotateQuaternion",
+  "id" : "ExprRotate",
   "name" : "Rotate Quaternion/Vector",
   "patterns" : [
-    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated (around|on) [the] (x|y|z)-axis by %<a href='./classes.html#number'>number</a>% [degrees|radians]",
-"%<a href='./classes.html#quaternion'>quaternions</a>% rotated by %<a href='./classes.html#vector'>vector</a>%",
+    "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated (around|on) [the] ([global] (x|y|z)(-| )axis|%<a href='./classes.html#vector'>vector</a>%) by %<a href='./classes.html#number'>number</a>% [degrees]",
+"%<a href='./classes.html#quaternion'>quaternions</a>% rotated (around|on) [the|its|their] local (x|y|z)(-| )ax(i|e)s by %<a href='./classes.html#number'>number</a>% [degrees]",
+"%<a href='./classes.html#quaternion'>quaternions</a>% rotated by x %<a href='./classes.html#number'>number</a>%, y %<a href='./classes.html#number'>number</a>%(, [and]| and) z %<a href='./classes.html#number'>number</a>%",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
-  "description" : "Rotates a Quaternion around an axis a set amount of degrees or rotated by a vector.
-When you use a vector, the values will be used to rotate the x, y and z.
-Vector numbers will get converted from a double down to a float.",
-  "examples" : "set {_new} to {_quaternion} rotated by vector(1, 0, 0)"
+  "description" : "Rotates a Quaternion or Vector around an axis a set amount of degrees, or around all 3 axes at once.
+Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.
+Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axis at once.
+Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.
+
+Note that rotating a quaternion around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating around vector(1, 0, 0) is the same as rotating around the local x axis.
+In addition, rotating around all three axes at once will rotate in ZYX order, meaning the Z rotation will be applied first, and the X rotation last.",
+  "examples" : "set {_new} to {_quaternion} rotated around x axis by 10 degrees\\nset {_new} to {_vector} rotated around vector(1, 1, 1) by 45\\nset {_new} to {_quaternion} rotated by x 45, y 90, z 135"
 },
 {
   "id" : "ExprQuaternionAxisAngle",
