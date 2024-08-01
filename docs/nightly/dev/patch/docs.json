@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-ad1a492",
+  "skriptVersion" : "2.9.0-nightly-c53a57e",
 
   "classes" : [
     {
@@ -8553,9 +8553,9 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 2.1)",
+  "since" : "2.0",
   "description" : "How much time a player has left underwater before starting to drown.",
-  "examples" : "player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
+  "examples" : "if the player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
 },
 {
   "id" : "ExprRepeat",
