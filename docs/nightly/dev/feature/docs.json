@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-92c0fd1",
+  "skriptVersion" : "2.9.1-nightly-c8aa674",
 
   "classes" : [
     {
@@ -631,7 +631,7 @@
   "id" : "spawnreason",
   "name" : "Spawn Reason",
   "patterns" : [
-    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, infection, customized, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
+    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
 
     "pattern_end"
   ],
@@ -1221,8 +1221,8 @@ The 'additional tooltip' hides certain information from certain items (potions, 
   "id" : "CondHasPotion",
   "name" : "Has Potion",
   "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potions</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>% (doesn't|does not|do not|don't) have potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potions</a>%",
+    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potion effect types</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% (doesn't|does not|do not|don't) have potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potion effect types</a>%",
 
     "pattern_end"
   ],
@@ -3020,7 +3020,7 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
   "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
-Playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
+When running 1.18+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
 If the sound is custom, a location emitter will follow the entity. Do note that pitch and volume 
 are reflected based on the entity, and Minecraft may not use the values from this syntax.
 
@@ -3082,8 +3082,8 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   "name" : "Potion Effects",
   "patterns" : [
     "apply %<a href='./classes.html#potioneffect'>potion effects</a>% to %<a href='./classes.html#livingentity'>living entities</a>%",
-"apply infinite [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [replacing [the] existing effect]",
-"apply [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [replacing [the] existing effect]",
+"apply infinite [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potion effect types</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [replacing [the] existing effect]",
+"apply [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potion effect types</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [replacing [the] existing effect]",
 
     "pattern_end"
   ],
@@ -8307,8 +8307,8 @@ Resetting will set the cooldown back to the default 15 seconds for non-player en
   "id" : "ExprPotionEffect",
   "name" : "Potion Effect",
   "patterns" : [
-    "[new] potion effect of %<a href='./classes.html#potioneffecttype'>potion</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
-"[new] ambient potion effect of %<a href='./classes.html#potioneffecttype'>potion</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
+    "[new] potion effect of %<a href='./classes.html#potioneffecttype'>potion effect type</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"[new] ambient potion effect of %<a href='./classes.html#potioneffecttype'>potion effect type</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
 
     "pattern_end"
   ],
@@ -8321,7 +8321,7 @@ to tipped arrows/lingering potions, Minecraft reduces the timespan.",
   "id" : "ExprPotionEffectTier",
   "name" : "Potion Effect Tier",
   "patterns" : [
-    "[the] [potion] (tier|amplifier|level) of %<a href='./classes.html#potioneffecttype'>potions</a>% (of|for|on) %<a href='./classes.html#livingentity'>living entities</a>%",
+    "[the] [potion] (tier|amplifier|level) of %<a href='./classes.html#potioneffecttype'>potion effect types</a>% (of|for|on) %<a href='./classes.html#livingentity'>living entities</a>%",
 
     "pattern_end"
   ],
@@ -8553,9 +8553,9 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 2.1)",
+  "since" : "2.0",
   "description" : "How much time a player has left underwater before starting to drown.",
-  "examples" : "player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
+  "examples" : "if the player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
 },
 {
   "id" : "ExprRepeat",
