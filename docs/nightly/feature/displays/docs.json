@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.0-nightly-234be4b",
+  "skriptVersion" : "2.9.1-nightly-3436ae8",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,7 +121,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -565,7 +565,7 @@
   ],
   "since" : "1.0",
   "description" : "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.\\nYou have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly.",
-  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
+  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
 },
 {
   "id" : "potioneffect",
@@ -691,7 +691,7 @@
   "id" : "spawnreason",
   "name" : "Spawn Reason",
   "patterns" : [
-    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, infection, customized, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
+    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
 
     "pattern_end"
   ],
@@ -1281,8 +1281,8 @@ The 'additional tooltip' hides certain information from certain items (potions, 
   "id" : "CondHasPotion",
   "name" : "Has Potion",
   "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potions</a>%",
-"%<a href='./classes.html#livingentity'>living entities</a>% (doesn't|does not|do not|don't) have potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potions</a>%",
+    "%<a href='./classes.html#livingentity'>living entities</a>% (has|have) potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potion effect types</a>%",
+"%<a href='./classes.html#livingentity'>living entities</a>% (doesn't|does not|do not|don't) have potion[s] [effect[s]] %<a href='./classes.html#potioneffecttype'>potion effect types</a>%",
 
     "pattern_end"
   ],
@@ -3080,7 +3080,7 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
   "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
-Playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
+When running 1.18+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
 If the sound is custom, a location emitter will follow the entity. Do note that pitch and volume 
 are reflected based on the entity, and Minecraft may not use the values from this syntax.
 
@@ -3142,8 +3142,8 @@ Note: if a player was hidden and relogs, this player will be visible again.",
   "name" : "Potion Effects",
   "patterns" : [
     "apply %<a href='./classes.html#potioneffect'>potion effects</a>% to %<a href='./classes.html#livingentity'>living entities</a>%",
-"apply infinite [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [replacing [the] existing effect]",
-"apply [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potions</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [replacing [the] existing effect]",
+"apply infinite [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potion effect types</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [replacing [the] existing effect]",
+"apply [ambient] [potion of] %<a href='./classes.html#potioneffecttype'>potion effect types</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without [any] particles] [(whilst hiding [the]|without (the|a)) [potion] icon] to %<a href='./classes.html#livingentity'>living entities</a>% [for %<a href='./classes.html#timespan'>time span</a>%] [replacing [the] existing effect]",
 
     "pattern_end"
   ],
@@ -8536,8 +8536,8 @@ Resetting will set the cooldown back to the default 15 seconds for non-player en
   "id" : "ExprPotionEffect",
   "name" : "Potion Effect",
   "patterns" : [
-    "[new] potion effect of %<a href='./classes.html#potioneffecttype'>potion</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
-"[new] ambient potion effect of %<a href='./classes.html#potioneffecttype'>potion</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
+    "[new] potion effect of %<a href='./classes.html#potioneffecttype'>potion effect type</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
+"[new] ambient potion effect of %<a href='./classes.html#potioneffecttype'>potion effect type</a>% [potion] [[[of] tier] %<a href='./classes.html#number'>number</a>%] [without particles] [for %<a href='./classes.html#timespan'>time span</a>%]",
 
     "pattern_end"
   ],
@@ -8550,7 +8550,7 @@ to tipped arrows/lingering potions, Minecraft reduces the timespan.",
   "id" : "ExprPotionEffectTier",
   "name" : "Potion Effect Tier",
   "patterns" : [
-    "[the] [potion] (tier|amplifier|level) of %<a href='./classes.html#potioneffecttype'>potions</a>% (of|for|on) %<a href='./classes.html#livingentity'>living entities</a>%",
+    "[the] [potion] (tier|amplifier|level) of %<a href='./classes.html#potioneffecttype'>potion effect types</a>% (of|for|on) %<a href='./classes.html#livingentity'>living entities</a>%",
 
     "pattern_end"
   ],
@@ -8782,9 +8782,9 @@ This expression requires a supported regions plugin to be installed.",
 
     "pattern_end"
   ],
-  "since" : "<i>unknown</i> (before 2.1)",
+  "since" : "2.0",
   "description" : "How much time a player has left underwater before starting to drown.",
-  "examples" : "player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
+  "examples" : "if the player's remaining air is less than 3 seconds:\\n    send \"hurry, get to the surface!\" to the player"
 },
 {
   "id" : "ExprRepeat",
@@ -10307,7 +10307,7 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
   ],
   "since" : "2.8.0",
   "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
-  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;lt;none&amp;amp;gt; if player is offline"
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;amp;amp;lt;none&amp;amp;amp;amp;gt; if player is offline"
 },
 {
   "id" : "product",
