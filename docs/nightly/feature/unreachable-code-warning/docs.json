@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-816e29e",
+  "skriptVersion" : "2.9.1-nightly-ff6c45b",
 
   "classes" : [
     {
@@ -2799,7 +2799,7 @@ When attempting to load a normal vanilla world you must define it's environment 
   "id" : "EffSuppressWarnings",
   "name" : "Locally Suppress Warning",
   "patterns" : [
-    "[local[ly]] suppress [the] (conflict|variable save|[missing] conjunction[s]|starting [with] expression[s]|deprecated syntax) warning[s]",
+    "[local[ly]] suppress [the] (conflict|variable save|[missing] conjunction|starting [with] expression[s]|deprecated syntax|unreachable code) warning[s]",
 
     "pattern_end"
   ],
