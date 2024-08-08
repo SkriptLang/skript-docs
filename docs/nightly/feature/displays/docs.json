@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-3436ae8",
+  "skriptVersion" : "2.9.1-nightly-df1a43e",
 
   "classes" : [
     {
@@ -3241,7 +3241,7 @@ Global axes are the ones in the Minecraft world. Local axes are relative to how 
 Rotating a display is a shortcut for rotating its left rotation. If the right rotation needs to be modified, it should be acquired, rotated, and re-set.
 
 Note that rotating a quaternion/display around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating quaternions/displays around vector(1, 0, 0) is the same as rotating around the local x axis.
-In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first, and the X rotation last.",
+The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last.",
   "examples" : "rotate {_quaternion} around x axis by 10 degrees\\nrotate last spawned block display around y axis by 10 degrees\\nrotate {_vector} around vector(1, 1, 1) by 45\\nrotate {_quaternion} by x 45, y 90, z 135"
 },
 {
@@ -8881,7 +8881,7 @@ Quaternions are more flexible, allowing rotation around the global or local X/Y/
 Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.
 
 Note that rotating a quaternion around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating around vector(1, 0, 0) is the same as rotating around the local x axis.
-In addition, rotating around all three axes at once will rotate in ZYX order, meaning the Z rotation will be applied first, and the X rotation last.",
+The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last.",
   "examples" : "set {_new} to {_quaternion} rotated around x axis by 10 degrees\\nset {_new} to {_vector} rotated around vector(1, 1, 1) by 45\\nset {_new} to {_quaternion} rotated by x 45, y 90, z 135"
 },
 {
