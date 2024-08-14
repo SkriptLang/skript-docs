@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-49dbe0b",
+  "skriptVersion" : "2.9.1-nightly-a54958a",
 
   "classes" : [
     {
@@ -2267,6 +2267,19 @@ This condition requires a supported regions plugin to be installed.",
   "examples" : "if {_display} has drop shadow:\\n    remove drop shadow from the text of {_display}"
 },
 {
+  "id" : "CondTextDisplaySeeThroughBlocks",
+  "name" : "Text Display Visible Through Blocks",
+  "patterns" : [
+    "%<a href='./classes.html#display'>displays</a>% (is|are) visible through (blocks|walls)",
+"%<a href='./classes.html#display'>displays</a>% (isn't|is not|aren't|are not) visible through (blocks|walls)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns whether text displays can be seen through blocks or not.",
+  "examples" : "if last spawned text display is visible through walls:\\n    prevent last spawned text display from being visible through walls"
+},
+{
   "id" : "CondDate",
   "name" : "Time",
   "patterns" : [
@@ -3436,6 +3449,20 @@ which may cause lag spikes or server crashes when using this effect to teleport 
   "since" : "INSERT VERSION",
   "description" : "Applies or removes drop shadow from the displayed text on a text display.",
   "examples" : "apply drop shadow to last spawned text display\\nif {_display} has drop shadow:\\n    remove drop shadow from the text of {_display}"
+},
+{
+  "id" : "EffTextDisplaySeeThroughBlocks",
+  "name" : "Text Display See Through Blocks",
+  "patterns" : [
+    "make %<a href='./classes.html#display'>displays</a>% visible through (blocks|walls)",
+"force %<a href='./classes.html#display'>displays</a>% to be visible through (blocks|walls)",
+"prevent %<a href='./classes.html#display'>displays</a>% from being (visible|seen) through (blocks|walls)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Forces a text display to either be or not be visible through blocks.",
+  "examples" : "force last spawned text display to be visible through walls\\nprevent all text displays from being visible through walls"
 },
 {
   "id" : "EffResetTitle",
