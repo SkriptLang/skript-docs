@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-df1a43e",
+  "skriptVersion" : "2.9.1-nightly-49dbe0b",
 
   "classes" : [
     {
@@ -2252,6 +2252,21 @@ This condition requires a supported regions plugin to be installed.",
   "examples" : "if the argument starts with \"test\" or \"debug\":\\n    send \"Stop!\""
 },
 {
+  "id" : "CondTextDisplayHasDropShadow",
+  "name" : "Text Display Has Drop Shadow",
+  "patterns" : [
+    "[[the] text of] %<a href='./classes.html#display'>displays</a>% (has|have) (drop|text) shadow",
+"%<a href='./classes.html#display'>displays</a>%'[s] text (has|have) (drop|text) shadow",
+"[[the] text of] %<a href='./classes.html#display'>displays</a>% (doesn't|does not|do not|don't) have (drop|text) shadow",
+"%<a href='./classes.html#display'>displays</a>%'[s] text (doesn't|does not|do not|don't) have (drop|text) shadow",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns whether the text of a display has drop shadow applied.",
+  "examples" : "if {_display} has drop shadow:\\n    remove drop shadow from the text of {_display}"
+},
+{
   "id" : "CondDate",
   "name" : "Time",
   "patterns" : [
@@ -3406,6 +3421,21 @@ This effect is delayed by default on Paper, meaning certain syntax such as the r
 The keyword 'force' indicates this effect will not be delayed, 
 which may cause lag spikes or server crashes when using this effect to teleport entities to unloaded chunks.",
   "examples" : "teleport the player to {homes::%player%}\\nteleport the attacker to the victim"
+},
+{
+  "id" : "EffTextDisplayDropShadow",
+  "name" : "Text Display Drop Shadow",
+  "patterns" : [
+    "(apply|add) (drop|text) shadow to [[the] text of] %<a href='./classes.html#display'>displays</a>%",
+"(apply|add) (drop|text) shadow to %<a href='./classes.html#display'>displays</a>%'[s] text",
+"(remove|clear) (drop|text) shadow from [[the] text of] %<a href='./classes.html#display'>displays</a>%",
+"(remove|clear) (drop|text) shadow from %<a href='./classes.html#display'>displays</a>%'[s] text",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Applies or removes drop shadow from the displayed text on a text display.",
+  "examples" : "apply drop shadow to last spawned text display\\nif {_display} has drop shadow:\\n    remove drop shadow from the text of {_display}"
 },
 {
   "id" : "EffResetTitle",
@@ -9342,14 +9372,14 @@ Values are between -127 and 127. The value of 127 represents it being completely
   "id" : "ExprTextOf",
   "name" : "Text Of",
   "patterns" : [
-    "[the] (string|text)[s] of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] (string|text)[s]",
+    "[the] (banana|string|text)[s] of %<a href='./classes.html#display'>displays</a>%",
+"%<a href='./classes.html#display'>displays</a>%'[s] (banana|string|text)[s]",
 
     "pattern_end"
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.
-Note that you can only currently use Skript chat codes when running PaperSpigot 1.19.4+",
+Note that currently you can only use Skript chat codes when running Paper.",
   "examples" : "set text of the last spawned text display to \"example\""
 },
 {
