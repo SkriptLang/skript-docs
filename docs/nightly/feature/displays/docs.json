@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-a54958a",
+  "skriptVersion" : "2.9.1-nightly-568dde5",
 
   "classes" : [
     {
@@ -8922,7 +8922,7 @@ A bell typically rings for 50 game ticks.",
 },
 {
   "id" : "ExprRotate",
-  "name" : "Rotate Quaternion/Vector",
+  "name" : "Rotated Quaternion/Vector",
   "patterns" : [
     "%<a href='./classes.html#quaternion'>quaternions</a>/<a href='./classes.html#vector'>vectors</a>% rotated around [the] [global] (x|y|z)(-| )axis by %<a href='./classes.html#number'>number</a>% [degrees]",
 "%<a href='./classes.html#quaternion'>quaternions</a>% rotated around [the|its|their] local (x|y|z)(-| )ax(i|e)s by %<a href='./classes.html#number'>number</a>% [degrees]",
