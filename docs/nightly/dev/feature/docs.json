@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-17c77f4",
+  "skriptVersion" : "2.9.1-nightly-bc0fe53",
 
   "classes" : [
     {
@@ -1951,6 +1951,19 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "examples" : "on damage:\\n    if victim is tameable:\\n        cancel event"
 },
 {
+  "id" : "CondIsTamed",
+  "name" : "Is Tamed",
+  "patterns" : [
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (tamed|domesticated)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (tamed|domesticated)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check if a tameable entity is tamed (horse, parrot, cat, etc.).",
+  "examples" : "send true if {_horse} is tamed\\ntame {_horse} if {_horse} is untamed"
+},
+{
   "id" : "CondIsTransparent",
   "name" : "Is Transparent",
   "patterns" : [
@@ -3308,6 +3321,18 @@ Please note that sound names can get changed in any Minecraft or Spigot version,
   "since" : "2.5.1",
   "description" : "Makes an entity swing their hand. This does nothing if the entity does not have an animation for swinging their hand.",
   "examples" : "make player swing their main hand"
+},
+{
+  "id" : "EffTame",
+  "name" : "Tame / Untame",
+  "patterns" : [
+    "[un](tame|domesticate) %<a href='./classes.html#entity'>entities</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Tame a tameable entity (horse, parrot, cat, etc.).",
+  "examples" : "tame {_horse}\\nuntame {_horse}"
 },
 {
   "id" : "EffTeleport",
