@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-f6ae828",
+  "skriptVersion" : "2.9.1-nightly-17c77f4",
 
   "classes" : [
     {
@@ -7337,16 +7337,16 @@ Please note that the positions of the items in the inventory are not saved, only
   "name" : "Join & Split",
   "patterns" : [
     "(concat[enate]|join) %<a href='./classes.html#string'>texts</a>% [(with|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%]",
-"split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity]",
-"%<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity]",
-"regex split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%",
-"regex %<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%",
+"split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity] [without [the] trailing [empty] (string|text)]",
+"%<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity] [without [the] trailing [empty] (string|text)]",
+"regex split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [without [the] trailing [empty] (string|text)]",
+"regex %<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [without [the] trailing [empty] (string|text)]",
 
     "pattern_end"
   ],
-  "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity)",
+  "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity), INSERT VERSION (without trailing string)",
   "description" : "Joins several texts with a common delimiter (e.g. \", \"), or splits a text into multiple texts at a given delimiter.",
-  "examples" : "message \"Online players: %join all players with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
+  "examples" : "message \"Online players: %join all players' names with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
 },
 {
   "id" : "ExprLanguage",
