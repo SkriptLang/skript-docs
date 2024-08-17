@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-d54d350",
+  "skriptVersion" : "2.9.1-nightly-1931b62",
 
   "classes" : [
     {
@@ -9399,8 +9399,8 @@ Values are between -127 and 127. The value of 127 represents it being completely
   "id" : "ExprTextOf",
   "name" : "Text Of",
   "patterns" : [
-    "[the] (banana|string|text)[s] of %<a href='./classes.html#display'>displays</a>%",
-"%<a href='./classes.html#display'>displays</a>%'[s] (banana|string|text)[s]",
+    "[the] (string|text)[s] of %<a href='./classes.html#display'>displays</a>%",
+"%<a href='./classes.html#display'>displays</a>%'[s] (string|text)[s]",
 
     "pattern_end"
   ],
