@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-dea8320",
+  "skriptVersion" : "2.9.1-nightly-db3302d",
 
   "classes" : [
     {
@@ -2011,6 +2011,19 @@ For more info, see <a href='https://minecraft.wiki/w/Slime#.22Slime_chunks.22'>t
   "examples" : "on damage:\\n    if victim is tameable:\\n        cancel event"
 },
 {
+  "id" : "CondIsTamed",
+  "name" : "Is Tamed",
+  "patterns" : [
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (tamed|domesticated)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (tamed|domesticated)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Check if a tameable entity is tamed (horse, parrot, cat, etc.).",
+  "examples" : "send true if {_horse} is tamed\\ntame {_horse} if {_horse} is untamed"
+},
+{
   "id" : "CondIsTransparent",
   "name" : "Is Transparent",
   "patterns" : [
@@ -3419,6 +3432,18 @@ Please note that sound names can get changed in any Minecraft or Spigot version,
   "since" : "2.5.1",
   "description" : "Makes an entity swing their hand. This does nothing if the entity does not have an animation for swinging their hand.",
   "examples" : "make player swing their main hand"
+},
+{
+  "id" : "EffTame",
+  "name" : "Tame / Untame",
+  "patterns" : [
+    "[un](tame|domesticate) %<a href='./classes.html#entity'>entities</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Tame a tameable entity (horse, parrot, cat, etc.).",
+  "examples" : "tame {_horse}\\nuntame {_horse}"
 },
 {
   "id" : "EffTeleport",
@@ -7623,16 +7648,16 @@ Please note that the positions of the items in the inventory are not saved, only
   "name" : "Join & Split",
   "patterns" : [
     "(concat[enate]|join) %<a href='./classes.html#string'>texts</a>% [(with|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%]",
-"split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity]",
-"%<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity]",
-"regex split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%",
-"regex %<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>%",
+"split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity] [without [the] trailing [empty] (string|text)]",
+"%<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [with case sensitivity] [without [the] trailing [empty] (string|text)]",
+"regex split %<a href='./classes.html#string'>text</a>% (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [without [the] trailing [empty] (string|text)]",
+"regex %<a href='./classes.html#string'>text</a>% split (at|using|by) [[the] delimiter] %<a href='./classes.html#string'>text</a>% [without [the] trailing [empty] (string|text)]",
 
     "pattern_end"
   ],
-  "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity)",
+  "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity), INSERT VERSION (without trailing string)",
   "description" : "Joins several texts with a common delimiter (e.g. \", \"), or splits a text into multiple texts at a given delimiter.",
-  "examples" : "message \"Online players: %join all players with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
+  "examples" : "message \"Online players: %join all players' names with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
 },
 {
   "id" : "ExprLanguage",
