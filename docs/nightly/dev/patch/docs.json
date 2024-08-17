@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-aa3fbbc",
+  "skriptVersion" : "2.9.1-nightly-d78bf61",
 
   "classes" : [
     {
@@ -2075,13 +2075,13 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "id" : "CondIsOfType",
   "name" : "Is of Type",
   "patterns" : [
-    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
-"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
 
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "Checks whether an item of an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
+  "description" : "Checks whether an item or an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
   "examples" : "tool is of type {selected type}\\nvictim is of type {villager type}"
 },
 {
