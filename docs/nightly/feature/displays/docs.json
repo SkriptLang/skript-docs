@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-1931b62",
+  "skriptVersion" : "2.9.1-nightly-dea8320",
 
   "classes" : [
     {
@@ -2255,10 +2255,10 @@ This condition requires a supported regions plugin to be installed.",
   "id" : "CondTextDisplayHasDropShadow",
   "name" : "Text Display Has Drop Shadow",
   "patterns" : [
-    "[[the] text of] %<a href='./classes.html#display'>displays</a>% (has|have) (drop|text) shadow",
-"%<a href='./classes.html#display'>displays</a>%'[s] text (has|have) (drop|text) shadow",
-"[[the] text of] %<a href='./classes.html#display'>displays</a>% (doesn't|does not|do not|don't) have (drop|text) shadow",
-"%<a href='./classes.html#display'>displays</a>%'[s] text (doesn't|does not|do not|don't) have (drop|text) shadow",
+    "[[the] text of] %<a href='./classes.html#display'>displays</a>% (has|have) [a] (drop|text) shadow",
+"%<a href='./classes.html#display'>displays</a>%'[s] text (has|have) [a] (drop|text) shadow",
+"[[the] text of] %<a href='./classes.html#display'>displays</a>% (doesn't|does not|do not|don't) have [a] (drop|text) shadow",
+"%<a href='./classes.html#display'>displays</a>%'[s] text (doesn't|does not|do not|don't) have [a] (drop|text) shadow",
 
     "pattern_end"
   ],
@@ -3456,7 +3456,7 @@ which may cause lag spikes or server crashes when using this effect to teleport 
   "patterns" : [
     "make %<a href='./classes.html#display'>displays</a>% visible through (blocks|walls)",
 "force %<a href='./classes.html#display'>displays</a>% to be visible through (blocks|walls)",
-"prevent %<a href='./classes.html#display'>displays</a>% from being (visible|seen) through (blocks|walls)",
+"(prevent|block) %<a href='./classes.html#display'>displays</a>% from being (visible|seen) through (blocks|walls)",
 
     "pattern_end"
   ],
@@ -6488,7 +6488,7 @@ Displays spawn with the default setting as 'fixed'. Resetting this expression wi
 Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.
 Use the 'block' or 'sky' options to get/change specific values or get both values as a list by using neither option.
 NOTE: setting only one of the sky/block light overrides of a display without an existing override will set both sky and block light to the given value. Make sure to set both block and sky levels to your desired values for the best results. Likewise, you can only clear the brightness override, you cannot clear/reset the sky/block values individually.",
-  "examples" : "set brightness override of the last spawned text display to brightness(5, 7)\\nset sky light override of the last spawned text display to 7\\nsubtract 3 from the block light level override of the last spawned text display\\nif sky light level override of {_display} is 5:\\n    clear brightness override of {_display}"
+  "examples" : "set sky light override of the last spawned text display to 7\\nsubtract 3 from the block light level override of the last spawned text display\\nif sky light level override of {_display} is 5:\\n    clear brightness override of {_display}"
 },
 {
   "id" : "ExprDisplayGlowOverride",
@@ -7532,7 +7532,7 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   ],
   "since" : "INSERT VERSION",
   "description" : "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>.",
-  "examples" : "set the item transform of the last spawned item display to no transform # Reset to default"
+  "examples" : "set the item transform of the last spawned item display to first person left handed\\nset the item transform of the last spawned item display to no transform # Reset to default"
 },
 {
   "id" : "ExprEnchantments",
