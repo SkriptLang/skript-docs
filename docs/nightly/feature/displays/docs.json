@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-926ef64",
+  "skriptVersion" : "2.9.1-nightly-371c3d8",
 
   "classes" : [
     {
@@ -3383,14 +3383,14 @@ Please note that..:
   "id" : "EffSort",
   "name" : "Sort",
   "patterns" : [
-    "sort %~<a href='./classes.html#object'>objects</a>% [(by|based on) &lt;.+&gt;]",
+    "sort %~<a href='./classes.html#object'>objects</a>% [in (descending|ascending) order] [(by|based on) &lt;.+&gt;]",
 
     "pattern_end"
   ],
-  "since" : "2.9.0",
+  "since" : "2.9.0, INSERT VERSION (sort order)",
   "description" : "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.
 Be warned, this will overwrite the indices of the list variable.",
-  "examples" : "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"\\nsort {_words::*} # alphabetical sort\\nsort {_words::*} by length of input # shortest to longest\\nsort {_words::*} based on {tastiness::%input%} # sort based on custom value"
+  "examples" : "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"\\nsort {_words::*} # alphabetical sort\\nsort {_words::*} by length of input # shortest to longest\\nsort {_words::*} in descending order by length of input # longest to shortest\\nsort {_words::*} based on {tastiness::%input%} # sort based on custom value"
 },
 {
   "id" : "EffStopServer",
