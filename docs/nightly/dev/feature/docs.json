@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-de1a529",
+  "skriptVersion" : "2.9.1-nightly-706c82f",
 
   "classes" : [
     {
@@ -1368,13 +1368,13 @@ The 'additional tooltip' hides certain information from certain items (potions, 
   "id" : "CondIsCharged",
   "name" : "Is Charged",
   "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (charged|powered)",
-"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (charged|powered)",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (charged|powered)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (charged|powered)",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Checks if a creeper is charged (powered).",
+  "since" : "2.5, INSERT VERSION (wither skulls)",
+  "description" : "Checks if a creeper or wither skull is charged (powered).",
   "examples" : "if the last spawned creeper is charged:\\n    broadcast \"A charged creeper is at %location of last spawned creeper%\""
 },
 {
@@ -2369,16 +2369,16 @@ For example, interrupting eating, or drawing back a bow.",
   "examples" : "# set:\\nSet the player's display name to \"&amp;lt;red&amp;gt;%name of player%\"\\nset the block above the victim to lava\\n# add:\\nadd 2 to the player's health # preferably use '&lt;a href='#EffHealth'&gt;heal&lt;/a&gt;' for this\\nadd argument to {blacklist::*}\\ngive a diamond pickaxe of efficiency 5 to the player\\nincrease the data value of the clicked block by 1\\n# remove:\\nremove 2 pickaxes from the victim\\nsubtract 2.5 from {points::%uuid of player%}\\n# remove all:\\nremove every iron tool from the player\\nremove all minecarts from {entitylist::*}\\n# delete:\\ndelete the block below the player\\nclear drops\\ndelete {variable}\\n# reset:\\nreset walk speed of player\\nreset chunk at the targeted block"
 },
 {
-  "id" : "EffChargeCreeper",
-  "name" : "Charge Creeper",
+  "id" : "EffCharge",
+  "name" : "Charge Entity",
   "patterns" : [
-    "make %<a href='./classes.html#livingentity'>living entities</a>% [a[n]] (charged|powered|((un|non[-])charged|(un|non[-])powered)) [creeper[s]]",
-"(charge|power|(uncharge|unpower)) %<a href='./classes.html#livingentity'>living entities</a>%",
+    "make %<a href='./classes.html#entity'>entities</a>% [(un|not |non[-| ])](charged|powered)",
+"[un](charge|power) %<a href='./classes.html#entity'>entities</a>%",
 
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "Charges or uncharges a creeper. A creeper is charged when it has been struck by lightning.",
+  "description" : "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning.",
   "examples" : "on spawn of creeper:\\n    charge the event-entity"
 },
 {
