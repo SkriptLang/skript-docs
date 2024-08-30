@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-db3302d",
+  "skriptVersion" : "2.9.1-nightly-e43eb3d",
 
   "classes" : [
     {
@@ -3615,7 +3615,7 @@ If it is used as a section, the section is run before the entity is added to the
 You can modify the entity in this section, using for example 'event-entity' or 'cow'. 
 Do note that other event values, such as 'player', won't work in this section.
 
-If you're spawning a display and want it to be empty on initialization, like not having a block display be stone; set hidden config node 'spawn empty displays' to true.",
+If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true.",
   "examples" : "spawn 3 creepers at the targeted block\\nspawn a ghast 5 meters above the player\\nspawn a zombie at the player:\\n    set name of the zombie to \"\"\\n\\nspawn a block display of a ladder[waterlogged=true] at location above player:\\n    set billboard of event-display to center # allows the display to rotate around the center axis"
 },
 
@@ -7581,8 +7581,8 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
 
     "pattern_end"
   ],
-  "since" : "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles)",
-  "description" : "An item associated with an entity. For dropped item entities, it gets the item that was dropped. 
+  "since" : "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
+  "description" : "An item associated with an entity. For dropped item entities, it gets the item that was dropped.
 For item frames, the item inside the frame is returned.
 For throwable projectiles (snowballs, enderpearls etc.) it gets the displayed item.
 For display entities (snowballs, enderpearls etc.) it gets the displayed item.
