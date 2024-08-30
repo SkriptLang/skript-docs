@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-5b763cc",
+  "skriptVersion" : "2.9.1-nightly-926ef64",
 
   "classes" : [
     {
@@ -7584,8 +7584,7 @@ NOTE: 'Viewers' expression returns a list of players viewing the inventory. Note
   "since" : "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
   "description" : "An item associated with an entity. For dropped item entities, it gets the item that was dropped.
 For item frames, the item inside the frame is returned.
-For throwable projectiles (snowballs, enderpearls etc.) it gets the displayed item.
-For display entities (snowballs, enderpearls etc.) it gets the displayed item.
+For throwable projectiles (snowballs, enderpearls etc.) or item displays, it gets the displayed item.
 Other entities do not have items associated with them.",
   "examples" : "item of event-entity\\n\\nset the item inside of event-entity to a diamond sword named \"Example\""
 },
