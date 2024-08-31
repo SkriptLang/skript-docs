@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-84f5b6e",
+  "skriptVersion" : "2.9.1-nightly-81e4b1e",
 
   "classes" : [
     {
@@ -1428,13 +1428,13 @@ The 'additional tooltip' hides certain information from certain items (potions, 
   "id" : "CondIsCharged",
   "name" : "Is Charged",
   "patterns" : [
-    "%<a href='./classes.html#livingentity'>living entities</a>% (is|are) (charged|powered)",
-"%<a href='./classes.html#livingentity'>living entities</a>% (isn't|is not|aren't|are not) (charged|powered)",
+    "%<a href='./classes.html#entity'>entities</a>% (is|are) (charged|powered)",
+"%<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) (charged|powered)",
 
     "pattern_end"
   ],
-  "since" : "2.5",
-  "description" : "Checks if a creeper is charged (powered).",
+  "since" : "2.5, INSERT VERSION (wither skulls)",
+  "description" : "Checks if a creeper or wither skull is charged (powered).",
   "examples" : "if the last spawned creeper is charged:\\n    broadcast \"A charged creeper is at %location of last spawned creeper%\""
 },
 {
@@ -2457,16 +2457,16 @@ For example, interrupting eating, or drawing back a bow.",
   "examples" : "# set:\\nSet the player's display name to \"&amp;lt;red&amp;gt;%name of player%\"\\nset the block above the victim to lava\\n# add:\\nadd 2 to the player's health # preferably use '&lt;a href='#EffHealth'&gt;heal&lt;/a&gt;' for this\\nadd argument to {blacklist::*}\\ngive a diamond pickaxe of efficiency 5 to the player\\nincrease the data value of the clicked block by 1\\n# remove:\\nremove 2 pickaxes from the victim\\nsubtract 2.5 from {points::%uuid of player%}\\n# remove all:\\nremove every iron tool from the player\\nremove all minecarts from {entitylist::*}\\n# delete:\\ndelete the block below the player\\nclear drops\\ndelete {variable}\\n# reset:\\nreset walk speed of player\\nreset chunk at the targeted block"
 },
 {
-  "id" : "EffChargeCreeper",
-  "name" : "Charge Creeper",
+  "id" : "EffCharge",
+  "name" : "Charge Entity",
   "patterns" : [
-    "make %<a href='./classes.html#livingentity'>living entities</a>% [a[n]] (charged|powered|((un|non[-])charged|(un|non[-])powered)) [creeper[s]]",
-"(charge|power|(uncharge|unpower)) %<a href='./classes.html#livingentity'>living entities</a>%",
+    "make %<a href='./classes.html#entity'>entities</a>% [(un|not |non[-| ])](charged|powered)",
+"[un](charge|power) %<a href='./classes.html#entity'>entities</a>%",
 
     "pattern_end"
   ],
   "since" : "2.5",
-  "description" : "Charges or uncharges a creeper. A creeper is charged when it has been struck by lightning.",
+  "description" : "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning.",
   "examples" : "on spawn of creeper:\\n    charge the event-entity"
 },
 {
@@ -4743,6 +4743,18 @@ If you're spawning a display and want it to be empty on initialization, like not
   "examples" : "on pig zap:"
 },
 {
+  "id" : "piglin_barter",
+  "name" : "On Piglin Barter",
+  "patterns" : [
+    "[on] piglin (barter[ing]|trad(e|ing))",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Called when a piglin finishes bartering. A piglin may start bartering after picking up an item on its bartering list.\\nCancelling will prevent piglins from dropping items, but will still make them pick up the input.",
+  "examples" : "on piglin barter:\\n    if barter drops contain diamond:\\n        send \"Diamonds belong in the money pit!\" to player\\n        cancel event"
+},
+{
   "id" : "piston_extend",
   "name" : "On Piston Extend",
   "patterns" : [
@@ -5861,6 +5873,30 @@ NOTE: Currently this can not be set to anything.",
   "description" : "The attacker of a damage event, e.g. when a player attacks a zombie this expression represents the player.
 Please note that the attacker can also be a block, e.g. a cactus or lava, but this expression will not be set in these cases.",
   "examples" : "on damage:\\n    attacker is a player\\n    health of attacker is less than or equal to 2\\n    damage victim by 1 heart"
+},
+{
+  "id" : "ExprBarterDrops",
+  "name" : "Barter Drops",
+  "patterns" : [
+    "[the] [piglin] barter[ing] drops",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The items dropped by the piglin in a piglin bartering event.",
+  "examples" : "on piglin barter:\\n    if the bartering drops contain a jack-o-lantern:\\n        remove jack-o-lantern from bartering output\\n        broadcast \"it's not halloween yet!\""
+},
+{
+  "id" : "ExprBarterInput",
+  "name" : "Barter Input",
+  "patterns" : [
+    "[the] [piglin] barter[ing] input",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "The item picked up by the piglin in a piglin bartering event.",
+  "examples" : "on piglin barter:\\n    if the bartering input is a gold ingot:\\n        broadcast \"my precious...\""
 },
 {
   "id" : "ExprBed",
