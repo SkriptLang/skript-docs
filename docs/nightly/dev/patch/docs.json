@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-af202ac",
+  "skriptVersion" : "2.9.1-nightly-cf1658e",
 
   "classes" : [
     {
@@ -8881,7 +8881,7 @@ Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventor
 
     "pattern_end"
   ],
-  "since" : "2.4",
+  "since" : "2.4, INSERT VERSION (trial spawner)",
   "description" : "Retrieves, sets, or resets the spawner's entity type",
   "examples" : "on right click:\\n    if event-block is spawner:\\n        send \"Spawner's type is %target block's entity type%\""
 },
