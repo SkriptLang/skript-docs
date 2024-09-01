@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-3843781",
+  "skriptVersion" : "2.9.1-nightly-e0862a8",
 
   "classes" : [
     {
@@ -3017,7 +3017,7 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
+  "since" : "2.2-dev28, 2.4 (sound categories), 2.9 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
 When running 1.19+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
