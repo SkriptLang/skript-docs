@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1",
+  "skriptVersion" : "2.9.2",
 
   "classes" : [
     {
@@ -108,7 +108,7 @@
   ],
   "since" : "Unknown",
   "description" : "Wool, dye and chat colors.",
-  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;lt;%color of tool%&amp;gt;%color of tool%&amp;lt;reset&amp;gt; wool block\""
+  "examples" : "color of the sheep is red or black\\nset the color of the block to green\\nmessage \"You're holding a &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;%color of tool%&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; wool block\""
 },
 {
   "id" : "commandsender",
@@ -121,7 +121,7 @@
   ],
   "since" : "1.0",
   "description" : "A player or the console.",
-  "examples" : "command /push [&amp;amp;lt;player&amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
+  "examples" : "command /push [&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;player&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;]:\\n    trigger:\\n        if arg-1 is not set:\\n            if command sender is console:\\n                send \"You can't push yourself as a console :\\\" to sender\\n                stop\\n            push sender upwards with force 2\\n            send \"Yay!\"\\n        else:\\n            push arg-1 upwards with force 2\\n            send \"Yay!\" to sender and arg-1"
 },
 {
   "id" : "damagecause",
@@ -517,7 +517,7 @@
   ],
   "since" : "1.0",
   "description" : "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.\\nYou have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly.",
-  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;lt;none&amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
+  "examples" : "set {_p} to \"Notch\" parsed as a player # returns &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;none&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; unless Notch is actually online or starts with Notch like Notchan\\nset {_p} to \"N\" parsed as a player # returns Notch if Notch is online because their name starts with 'N' (case insensitive) however, it would return nothing if no player whose name starts with 'N' is online."
 },
 {
   "id" : "potioneffect",
@@ -2075,13 +2075,13 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "id" : "CondIsOfType",
   "name" : "Is of Type",
   "patterns" : [
-    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
-"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
 
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "Checks whether an item of an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
+  "description" : "Checks whether an item or an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
   "examples" : "tool is of type {selected type}\\nvictim is of type {villager type}"
 },
 {
@@ -2831,7 +2831,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
   ],
   "since" : "2.7",
   "description" : "Forces the mob(s) or player(s) to look at an entity, vector or location. Vanilla max head pitches range from 10 to 50.",
-  "examples" : "force the head of the player to look towards event-entity's feet\\n\\non entity explosion:\\n    set {_player} to the nearest player\\n    {_player} is set\\n    distance between {_player} and the event-location is less than 15\\n    make {_player} look towards vector from the {_player} to location of the event-entity\\n\\nforce {_enderman} to face the block 3 meters above {_location} at head rotation speed 100.5 and max head pitch -40"
+  "examples" : "force the player to look towards event-entity's feet\\n\\non entity explosion:\\n    set {_player} to the nearest player\\n    {_player} is set\\n    distance between {_player} and the event-location is less than 15\\n    make {_player} look towards vector from the {_player} to location of the event-entity\\n\\nforce {_enderman} to face the block 3 meters above {_location} at head rotation speed 100.5 and max head pitch -40"
 },
 {
   "id" : "EffMakeEggHatch",
@@ -3017,10 +3017,10 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
+  "since" : "2.2-dev28, 2.4 (sound categories), 2.9 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
-When running 1.18+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
+When running 1.19+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
 If the sound is custom, a location emitter will follow the entity. Do note that pitch and volume 
 are reflected based on the entity, and Minecraft may not use the values from this syntax.
 
@@ -3028,7 +3028,7 @@ If using Paper 1.19.4+ or Adventure API 4.12.0+ you can utilize sound seeds. Min
 that will randomly play, to counter this, you can directly state which seed to use.
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
+  "examples" : "play sound \"block.note_block.pling\"\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
 },
 {
   "id" : "EffPlayerInfoVisibility",
@@ -3587,7 +3587,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.9.0",
   "description" : "Called when a bell resonates, highlighting nearby raiders.",
-  "examples" : "on bell resonate:\\n    send \"&amp;amp;lt;red&amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
+  "examples" : "on bell resonate:\\n    send \"&amp;amp;amp;amp;lt;red&amp;amp;amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
 },
 {
   "id" : "bell_ring",
@@ -3599,7 +3599,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.9.0",
   "description" : "Called when a bell is rung.",
-  "examples" : "on bell ring:\\n    send \"&amp;amp;lt;gold&amp;amp;gt;Ding-dong!&amp;amp;lt;reset&amp;amp;gt;\" to all players in radius 10 of event-block"
+  "examples" : "on bell ring:\\n    send \"&amp;amp;amp;amp;lt;gold&amp;amp;amp;amp;gt;Ding-dong!&amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;gt;\" to all players in radius 10 of event-block"
 },
 {
   "id" : "block_damage",
@@ -3733,7 +3733,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.4.1",
   "description" : "Called whenever a player chats.\\nUse <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.\\nUse <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients.",
-  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;light red&amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;lt;light red&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;orange&amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;lt;orange&amp;amp;amp;gt;[player]&amp;amp;amp;lt;light gray&amp;amp;amp;gt;: &amp;amp;amp;lt;white&amp;amp;amp;gt;[message]\""
+  "examples" : "on chat:\\n    if player has permission \"owner\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"\\n    else if player has permission \"admin\":\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"\\n    else: #default message format\\n        set chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
 },
 {
   "id" : "chunk_generate",
@@ -4644,7 +4644,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "2.7",
   "description" : "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally.",
-  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;gt; %event-chunk%!\" to player"
+  "examples" : "on player enters a chunk:\\n    send \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
 },
 {
   "id" : "player_deep_sleep",
@@ -4964,7 +4964,7 @@ Do note that other event values, such as 'player', won't work in this section.",
   ],
   "since" : "1.0",
   "description" : "As signs are placed empty, this event is called when a player is done editing a sign.",
-  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;lt;red&amp;amp;amp;gt;%line 1%\""
+  "examples" : "on sign change:\\n    line 2 is empty\\n    set line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
 },
 {
   "id" : "slime_split",
@@ -7053,8 +7053,8 @@ Use future and past tense to grab the previous slot in an item change event, see
   "id" : "ExprHoverList",
   "name" : "Hover List",
   "patterns" : [
-    "[the] [custom] [(player|server)] (hover|sample) ([message] list|message)",
-"[the] [custom] player [(hover|sample)] list",
+    "[the] [custom] [player|server] (hover|sample) ([message] list|message)",
+"[the] [custom] player [hover|sample] list",
 
     "pattern_end"
   ],
@@ -8881,7 +8881,7 @@ Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventor
 
     "pattern_end"
   ],
-  "since" : "2.4",
+  "since" : "2.4, 2.9.2 (trial spawner)",
   "description" : "Retrieves, sets, or resets the spawner's entity type",
   "examples" : "on right click:\\n    if event-block is spawner:\\n        send \"Spawner's type is %target block's entity type%\""
 },
@@ -9976,7 +9976,7 @@ Only Paper 1.19+ users may directly change the yaw/pitch of players.",
   ],
   "since" : "2.8.0",
   "description" : "Returns an online player from their name or UUID, if player is offline function will return nothing.\\nSetting 'getExactPlayer' parameter to true will return the player whose name is exactly equal to the provided name instead of returning a player that their name starts with the provided name.",
-  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;lt;none&amp;amp;gt; if player is offline"
+  "examples" : "set {_p} to player(\"Notch\") # will return an online player whose name is or starts with 'Notch'\\nset {_p} to player(\"Notch\", true) # will return the only online player whose name is 'Notch'\\nset {_p} to player(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\") # &amp;amp;amp;amp;lt;none&amp;amp;amp;amp;gt; if player is offline"
 },
 {
   "id" : "product",
