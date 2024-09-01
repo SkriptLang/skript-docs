@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-e0862a8",
+  "skriptVersion" : "2.9.1-nightly-af202ac",
 
   "classes" : [
     {
@@ -7053,8 +7053,8 @@ Use future and past tense to grab the previous slot in an item change event, see
   "id" : "ExprHoverList",
   "name" : "Hover List",
   "patterns" : [
-    "[the] [custom] [(player|server)] (hover|sample) ([message] list|message)",
-"[the] [custom] player [(hover|sample)] list",
+    "[the] [custom] [player|server] (hover|sample) ([message] list|message)",
+"[the] [custom] player [hover|sample] list",
 
     "pattern_end"
   ],
