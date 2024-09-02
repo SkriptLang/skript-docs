@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.1-nightly-29c6764",
+  "skriptVersion" : "2.9.2-nightly-0945caa",
 
   "classes" : [
     {
@@ -2088,13 +2088,13 @@ Note that using the <a href='conditions.html#CondCompare'>is between</a> conditi
   "id" : "CondIsOfType",
   "name" : "Is of Type",
   "patterns" : [
-    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
-"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#entitytype'>entity types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+    "%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (is|are) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
+"%<a href='./classes.html#itemstack'>item stacks</a>/<a href='./classes.html#entity'>entities</a>% (isn't|is not|aren't|are not) of type[s] %<a href='./classes.html#itemtype'>item types</a>/<a href='./classes.html#entitydata'>entity types</a>%",
 
     "pattern_end"
   ],
   "since" : "1.4",
-  "description" : "Checks whether an item of an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
+  "description" : "Checks whether an item or an entity is of the given type. This is mostly useful for variables, as you can use the general 'is' condition otherwise (e.g. 'victim is a creeper').",
   "examples" : "tool is of type {selected type}\\nvictim is of type {villager type}"
 },
 {
@@ -2844,7 +2844,7 @@ NB: Using 'server.log' as the log file will write to the default server log. Omi
   ],
   "since" : "2.7",
   "description" : "Forces the mob(s) or player(s) to look at an entity, vector or location. Vanilla max head pitches range from 10 to 50.",
-  "examples" : "force the head of the player to look towards event-entity's feet\\n\\non entity explosion:\\n    set {_player} to the nearest player\\n    {_player} is set\\n    distance between {_player} and the event-location is less than 15\\n    make {_player} look towards vector from the {_player} to location of the event-entity\\n\\nforce {_enderman} to face the block 3 meters above {_location} at head rotation speed 100.5 and max head pitch -40"
+  "examples" : "force the player to look towards event-entity's feet\\n\\non entity explosion:\\n    set {_player} to the nearest player\\n    {_player} is set\\n    distance between {_player} and the event-location is less than 15\\n    make {_player} look towards vector from the {_player} to location of the event-entity\\n\\nforce {_enderman} to face the block 3 meters above {_location} at head rotation speed 100.5 and max head pitch -40"
 },
 {
   "id" : "EffMakeEggHatch",
@@ -3030,10 +3030,10 @@ Please note that some effects can only be played on entities, e.g. wolf hearts o
 
     "pattern_end"
   ],
-  "since" : "2.2-dev28, 2.4 (sound categories), 2.9.0 (sound seed & entity emitter)",
+  "since" : "2.2-dev28, 2.4 (sound categories), 2.9 (sound seed & entity emitter)",
   "description" : "Plays a sound at given location for everyone or just for given players, or plays a sound to specified players. Both Minecraft sound names and <a href=\"https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\">Spigot sound names</a> are supported. Playing resource pack sounds are supported too. The sound category is 'master' by default. 
 
-When running 1.18+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
+When running 1.19+, playing a sound from an entity directly will result in the sound coming from said entity, even while moving.
 If the sound is custom, a location emitter will follow the entity. Do note that pitch and volume 
 are reflected based on the entity, and Minecraft may not use the values from this syntax.
 
@@ -3041,7 +3041,7 @@ If using Paper 1.19.4+ or Adventure API 4.12.0+ you can utilize sound seeds. Min
 that will randomly play, to counter this, you can directly state which seed to use.
 
 Please note that sound names can get changed in any Minecraft or Spigot version, or even removed from Minecraft itself.",
-  "examples" : "play sound \"block.note_block.pling\" # It is block.note.pling in 1.12.2\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
+  "examples" : "play sound \"block.note_block.pling\"\\nplay sound \"entity.experience_orb.pickup\" with volume 0.5 to the player\\nplay sound \"custom.music.1\" in jukebox category at {speakerBlock}\\nplay sound \"BLOCK_AMETHYST_BLOCK_RESONATE\" with seed 1 on target entity for the player #1.20.1+"
 },
 {
   "id" : "EffPlayerInfoVisibility",
@@ -7114,8 +7114,8 @@ Use future and past tense to grab the previous slot in an item change event, see
   "id" : "ExprHoverList",
   "name" : "Hover List",
   "patterns" : [
-    "[the] [custom] [(player|server)] (hover|sample) ([message] list|message)",
-"[the] [custom] player [(hover|sample)] list",
+    "[the] [custom] [player|server] (hover|sample) ([message] list|message)",
+"[the] [custom] player [hover|sample] list",
 
     "pattern_end"
   ],
@@ -8942,7 +8942,7 @@ Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventor
 
     "pattern_end"
   ],
-  "since" : "2.4",
+  "since" : "2.4, 2.9.2 (trial spawner)",
   "description" : "Retrieves, sets, or resets the spawner's entity type",
   "examples" : "on right click:\\n    if event-block is spawner:\\n        send \"Spawner's type is %target block's entity type%\""
 },
