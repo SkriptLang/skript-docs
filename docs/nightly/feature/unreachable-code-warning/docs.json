@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.2-nightly-b6e7f01",
+  "skriptVersion" : "2.9.2-nightly-245d1e5",
 
   "classes" : [
     {
@@ -2427,7 +2427,7 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "name" : "Continue",
   "patterns" : [
     "continue [this loop|[the] [current] loop]",
-"continue [the] %*integer%(st|nd|rd|th) loop",
+"continue [the] &lt;[1-9][0-9]*&gt;(st|nd|rd|th) loop",
 
     "pattern_end"
   ],
@@ -2557,7 +2557,7 @@ All non-whitelisted players will be kicked upon enforcing the whitelist.",
   "patterns" : [
     "(exit|stop) [trigger]",
 "(exit|stop) [(1|a|the|this)] (section|loop|conditional)",
-"(exit|stop) &lt;\\d+&gt; (section|loop|conditional)s",
+"(exit|stop) &lt;[1-9][0-9]*&gt; (section|loop|conditional)s",
 "(exit|stop) all (section|loop|conditional)s",
 
     "pattern_end"
