@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.8.7-nightly-c036074",
+  "skriptVersion" : "2.8.7-nightly-5664351",
 
   "classes" : [
     {
@@ -5941,7 +5941,7 @@ If strings of more than one character are given, only the first character of eac
   "id" : "ExprChatRecipients",
   "name" : "Chat Recipients",
   "patterns" : [
-    "[chat][( |-)]recipients",
+    "[chat( |-)]recipients",
 
     "pattern_end"
   ],
