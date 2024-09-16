@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.2-nightly-206e21d",
+  "skriptVersion" : "2.9.2-nightly-57f3b7f",
 
   "classes" : [
     {
@@ -9538,7 +9538,7 @@ Relative directions are relative to the origin, (0, 0, 0). Therefore, the vector
   "id" : "ExprVehicle",
   "name" : "Vehicle",
   "patterns" : [
-    "[the] vehicle[s] of %<a href='./classes.html#entity'>entities</a>%",
+    "[the] vehicle[s] [of %<a href='./classes.html#entity'>entities</a>%]",
 "%<a href='./classes.html#entity'>entities</a>%'[s] vehicle[s]",
 
     "pattern_end"
