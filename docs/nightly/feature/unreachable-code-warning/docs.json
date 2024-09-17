@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.2-nightly-e6e6000",
+  "skriptVersion" : "2.9.2-nightly-3fea368",
 
   "classes" : [
     {
@@ -2427,7 +2427,7 @@ If the command is a bungeecord side command, you can use the [bungeecord] option
   "name" : "Continue",
   "patterns" : [
     "continue [this loop|[the] [current] loop]",
-"continue [the] &lt;[1-9][0-9]*&gt;(st|nd|rd|th) loop",
+"continue [the] &lt;-?[0-9]+&gt;(st|nd|rd|th) loop",
 
     "pattern_end"
   ],
@@ -2556,8 +2556,8 @@ All non-whitelisted players will be kicked upon enforcing the whitelist.",
   "name" : "Exit",
   "patterns" : [
     "(exit|stop) [trigger]",
-"(exit|stop) [(1|a|the|this)] (section|loop|conditional)",
-"(exit|stop) &lt;[1-9][0-9]*&gt; (section|loop|conditional)s",
+"(exit|stop) [1|a|the|this] (section|loop|conditional)",
+"(exit|stop) &lt;-?[0-9]+&gt; (section|loop|conditional)s",
 "(exit|stop) all (section|loop|conditional)s",
 
     "pattern_end"
@@ -3155,7 +3155,7 @@ Note: if a player was hidden and relogs, this player will be visible again.",
     "pattern_end"
   ],
   "since" : "2.2, 2.8.0 (returns aliases)",
-  "description" : "Makes a trigger (e.g. a function) return a value",
+  "description" : "Makes a trigger or a section (e.g. a function) return a value",
   "examples" : "function double(i: number) :: number:\\n    return 2 * {_i}\\n\\nfunction divide(i: number) returns number:\\n    return {_i} / 2"
 },
 {
