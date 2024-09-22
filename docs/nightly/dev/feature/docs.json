@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-83808a1",
+  "skriptVersion": "2.9.2-nightly-c4c5560",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9487,6 +9487,24 @@
       ]
     },
     {
+      "id": "entity_potion_effect",
+      "name": "On Entity Potion Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when an entity's potion effect is modified.",
+        "This modification can include adding, removing or changing their potion effect."
+      ],
+      "examples": [
+        "on entity potion effect modification:",
+        "\t\tbroadcast \"A potion effect was added to %event-entity%!\" ",
+        "",
+        "on entity potion effect modification of night vision:"
+      ],
+      "patterns": [
+        "entity potion effect [modif[y|ication]] [[of] %-potioneffecttypes%] [due to %-entitypotioncause%]"
+      ]
+    },
+    {
       "id": "target",
       "name": "On Target",
       "since": "1.0",
@@ -12355,6 +12373,17 @@
       ],
       "patterns": [
         "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification"
+      ]
+    },
+    {
+      "id": "entitypotioncause",
+      "name": "Entity Potion Cause",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the cause of the action of a potion effect on an entity, e.g. arrow, command"
+      ],
+      "patterns": [
+        "patrol captain, death, removal by resurrection, beacon effect, potion drunk, illusion, unknown, drinking potion, expired, pillager captain, attack, villager trade, spawned spider, wither rose infliction, conversion, enter area effect cloud, conduit effect, command, food, drinking milk, plugin, converted, spider spawn, splash potion, expiration, potion splash, dolphin boost, arrow infliction, turtle helmet effect"
       ]
     },
     {
