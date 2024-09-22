@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-dc82a4f",
+  "skriptVersion": "2.9.2-nightly-f7a7bb6",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9114,8 +9114,8 @@
         "set the item inside of event-entity to a diamond sword named \"Example\""
       ],
       "patterns": [
-        "[the] [the] item [inside] of %entities%",
-        "%entities%'[s] [the] item [inside]"
+        "[the] item [inside] of %entities%",
+        "%entities%'[s] item [inside]"
       ]
     },
     {
@@ -9150,8 +9150,8 @@
         "set text of the last spawned text display to \"example\""
       ],
       "patterns": [
-        "[the] (string|text)[s] of %displays%",
-        "%displays%'[s] (string|text)[s]"
+        "[the] text[s] of %displays%",
+        "%displays%'[s] text[s]"
       ]
     },
     {
