@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.2-nightly-9801329",
+  "skriptVersion" : "2.9.2-nightly-19985d9",
 
   "classes" : [
     {
@@ -9056,8 +9056,11 @@ The actual target block will regard the actual hit box of the block.",
     "pattern_end"
   ],
   "since" : "1.0",
-  "description" : "The <a href='classes.html#time'>time</a> of a world.",
-  "examples" : "time in world is between 18:00 and 6:00:\\n    broadcast \"It's night-time, watch out for monsters!\""
+  "description" : "The <a href='classes.html#time'>time</a> of a world.
+Use the \"minecraft <a href='classes.html#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.
+Since Minecraft uses discrete intervals for time (ticks), changing the time by real-world minutes or real-world seconds only changes it approximately.
+Removing an amount of time from a world's time will move the clock forward a day.",
+  "examples" : "set time of world \"world\" to 2:00\\nadd 2 minecraft hours to time of world \"world\"\\nadd 54 real seconds to time of world \"world\" # approximately 1 minecraft hour"
 },
 {
   "id" : "ExprTimePlayed",
