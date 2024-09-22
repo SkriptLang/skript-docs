@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-14b9ed3",
+  "skriptVersion": "2.9.2-nightly-83808a1",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -8075,6 +8075,24 @@
       "patterns": [
         "[the] ping of %players%",
         "%players%'[s] ping"
+      ]
+    },
+    {
+      "id": "ExprPlayerChatCompletions",
+      "name": "Player Chat Completions",
+      "since": "INSERT VERSION",
+      "description": [
+        "The custom chat completion suggestions. You can add, set, remove, and clear them. Removing the names of online players with this expression is ineffective.",
+        "This expression will not return anything due to Bukkit limitations."
+      ],
+      "examples": [
+        "add \"Skript\" and \"Njol\" to chat completions of all players",
+        "remove \"text\" from {_p}'s chat completions",
+        "clear player's chat completions"
+      ],
+      "patterns": [
+        "[the] [custom] chat completion[s] of %players%",
+        "%players%'[s] [custom] chat completion[s]"
       ]
     },
     {
