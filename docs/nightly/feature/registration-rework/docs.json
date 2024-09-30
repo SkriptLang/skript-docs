@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-f4d1df6",
+  "skriptVersion": "2.9.2-nightly-3077f8d",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -9252,8 +9252,14 @@
     {
       "id": "at_time-2",
       "name": "At Time",
-      "description": [],
-      "examples": [],
+      "since": "1.3.4",
+      "description": [
+        "An event that occurs at a given <a href='./classes.html#time'>minecraft time</a> in every world or only in specific worlds."
+      ],
+      "examples": [
+        "at 18:00",
+        "at 7am in \"world\""
+      ],
       "patterns": [
         "at %-time% [in %-worlds%]"
       ]
@@ -9261,8 +9267,17 @@
     {
       "id": "break_mine-2",
       "name": "On Break / Mine",
-      "description": [],
-      "examples": [],
+      "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
+      "description": [
+        "Called when a block is broken by a player. If you use 'on mine', only events where the broken block dropped something will call the trigger."
+      ],
+      "examples": [
+        "on mine:",
+        "on break of stone:",
+        "on mine of any ore:",
+        "on break of chest[facing=north]:",
+        "on break of potatoes[age=7]:"
+      ],
       "patterns": [
         "[block] (break[ing]|1¦min(e|ing)) [[of] %-itemtypes/blockdatas%]"
       ]
@@ -9270,8 +9285,15 @@
     {
       "id": "burn-2",
       "name": "On Burn",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.6 (BlockData support)",
+      "description": [
+        "Called when a block is destroyed by fire."
+      ],
+      "examples": [
+        "on burn:",
+        "on burn of wood, fences, or chests:",
+        "on burn of oak_log[axis=y]:"
+      ],
       "patterns": [
         "[block] burn[ing] [[of] %-itemtypes/blockdatas%]"
       ]
@@ -9279,8 +9301,15 @@
     {
       "id": "place-2",
       "name": "On Place",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.6 (BlockData support)",
+      "description": [
+        "Called when a player places a block."
+      ],
+      "examples": [
+        "on place:",
+        "on place of a furnace, workbench or chest:",
+        "on break of chest[type=right] or chest[type=left]"
+      ],
       "patterns": [
         "[block] (plac(e|ing)|build[ing]) [[of] %-itemtypes/blockdatas%]"
       ]
@@ -9288,8 +9317,14 @@
     {
       "id": "fade-2",
       "name": "On Fade",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.6 (BlockData support)",
+      "description": [
+        "Called when a block 'fades away', e.g. ice or snow melts."
+      ],
+      "examples": [
+        "on fade of snow or ice:",
+        "on fade of snow[layers=2]"
+      ],
       "patterns": [
         "[block] fad(e|ing) [[of] %-itemtypes/blockdatas%]"
       ]
@@ -9297,8 +9332,14 @@
     {
       "id": "form-2",
       "name": "On Form",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.6 (BlockData support)",
+      "description": [
+        "Called when a block is created, but not by a player, e.g. snow forms due to snowfall, water freezes in cold biomes. This isn't called when block spreads (mushroom growth, water physics etc.), as it has its own event (see <a href='#spread'>spread event</a>)."
+      ],
+      "examples": [
+        "on form of snow:",
+        "on form of a mushroom:"
+      ],
       "patterns": [
         "[block] form[ing] [[of] %-itemtypes/blockdatas%]"
       ]
@@ -9306,8 +9347,13 @@
     {
       "id": "book_edit-2",
       "name": "On Book Edit",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev31",
+      "description": [
+        "Called when a player edits a book."
+      ],
+      "examples": [
+        "on book edit:"
+      ],
       "patterns": [
         "book (edit|change|write)"
       ]
@@ -9315,8 +9361,13 @@
     {
       "id": "book_sign-2",
       "name": "On Book Sign",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev31",
+      "description": [
+        "Called when a player signs a book."
+      ],
+      "examples": [
+        "on book sign:"
+      ],
       "patterns": [
         "book sign[ing]"
       ]
@@ -9324,8 +9375,19 @@
     {
       "id": "click-2",
       "name": "On Click",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a user clicks on a block, an entity or air with or without an item in their hand.",
+        "Please note that rightclick events with an empty hand while not looking at a block are not sent to the server, so there's no way to detect them.",
+        "Also note that a leftclick on an entity is an attack and thus not covered by the 'click' event, but the 'damage' event."
+      ],
+      "examples": [
+        "on click:",
+        "on rightclick holding a fishing rod:",
+        "on leftclick on a stone or obsidian:",
+        "on rightclick on a creeper:",
+        "on click with a sword:"
+      ],
       "patterns": [
         "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] [on %-entitydata/itemtype%] [(with|using|holding) %-itemtype%]",
         "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] (with|using|holding) %-itemtype% on %-entitydata/itemtype%"
@@ -9334,8 +9396,15 @@
     {
       "id": "command-2",
       "name": "On Command",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called when a player enters a command (not necessarily a Skript command) but you can check if command is a skript command, see <a href='conditions.html#CondIsSkriptCommand'>Is a Skript command condition</a>."
+      ],
+      "examples": [
+        "on command:",
+        "on command \"/stop\":",
+        "on command \"pm Njol \":"
+      ],
       "patterns": [
         "command [%-string%]"
       ]
@@ -9343,8 +9412,15 @@
     {
       "id": "damage-2",
       "name": "On Damage",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.7 (by entity)",
+      "description": [
+        "Called when an entity receives damage, e.g. by an attack from another entity, lava, fire, drowning, fall, suffocation, etc."
+      ],
+      "examples": [
+        "on damage:",
+        "on damage of a player:",
+        "on damage of player by zombie:"
+      ],
       "patterns": [
         "damag(e|ing) [of %-entitydata%] [by %-entitydata%]"
       ]
@@ -9352,8 +9428,16 @@
     {
       "id": "death-2",
       "name": "On Death",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a living entity (including players) dies."
+      ],
+      "examples": [
+        "on death:",
+        "on death of player:",
+        "on death of a wither or ender dragon:",
+        "\tbroadcast \"A %entity% has been slain in %world%!\""
+      ],
       "patterns": [
         "death [of %-entitydatas%]"
       ]
@@ -9361,8 +9445,15 @@
     {
       "id": "spawn-2",
       "name": "On Spawn",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.5.1 (non-living entities)",
+      "description": [
+        "Called when an entity spawns (excluding players)."
+      ],
+      "examples": [
+        "on spawn of a zombie:",
+        "on spawn of an ender dragon:",
+        "\tbroadcast \"A dragon has been sighted in %world%!\""
+      ],
       "patterns": [
         "spawn[ing] [of %-entitydatas%]"
       ]
@@ -9370,8 +9461,20 @@
     {
       "id": "endermansheepsilverfishfalling_block-2",
       "name": "On Enderman/Sheep/Silverfish/Falling Block",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i>, 2.5.2 (falling block), 2.8.0 (any entity support)",
+      "description": [
+        "Called when an enderman places or picks up a block, a sheep eats grass, a silverfish boops into/out of a block or a falling block lands and turns into a block respectively.",
+        "event-block represents the old block and event-blockdata represents the new replacement that'll be applied to the block."
+      ],
+      "examples": [
+        "on sheep eat:",
+        "\tkill event-entity",
+        "\tbroadcast \"A sheep stole some grass!\"",
+        "",
+        "on falling block land:",
+        "\tevent-entity is a falling dirt",
+        "\tcancel event"
+      ],
       "patterns": [
         "enderman place",
         "enderman pickup",
@@ -9386,8 +9489,17 @@
     {
       "id": "entity_potion_effect-2",
       "name": "On Entity Potion Effect",
-      "description": [],
-      "examples": [],
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when an entity's potion effect is modified.",
+        "This modification can include adding, removing or changing their potion effect."
+      ],
+      "examples": [
+        "on entity potion effect modification:",
+        "\t\tbroadcast \"A potion effect was added to %event-entity%!\" ",
+        "",
+        "on entity potion effect modification of night vision:"
+      ],
       "patterns": [
         "entity potion effect [modif[y|ication]] [[of] %-potioneffecttypes%] [due to %-entitypotioncause%]"
       ]
@@ -9395,8 +9507,14 @@
     {
       "id": "target-2",
       "name": "On Target",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a mob starts/stops following/attacking another entity, usually a player."
+      ],
+      "examples": [
+        "on entity target:",
+        "\ttarget is a player"
+      ],
       "patterns": [
         "[entity] target",
         "[entity] un[-]target"
@@ -9405,8 +9523,16 @@
     {
       "id": "entity_transform-2",
       "name": "On Entity Transform",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when an entity is about to be replaced by another entity.",
+        "Examples when it's called include; when a zombie gets cured and a villager spawns, an entity drowns in water like a zombie that turns to a drown, an entity that gets frozen in powder snow, a mooshroom that when sheared, spawns a new cow."
+      ],
+      "examples": [
+        "on a zombie transforming due to curing:",
+        "on mooshroom transforming:",
+        "on zombie, skeleton or slime transform:"
+      ],
       "patterns": [
         "(entit(y|ies)|%*-entitydatas%) transform[ing] [due to %-transformreasons%]"
       ]
@@ -9414,8 +9540,15 @@
     {
       "id": "experience_change-2",
       "name": "On Experience Change",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a player's experience changes."
+      ],
+      "examples": [
+        "on level progress change:",
+        "\tset {_xp} to event-experience",
+        "\tbroadcast \"%{_xp}%\""
+      ],
       "patterns": [
         "[player] (level progress|[e]xp|experience) (change|update|:increase|:decrease)"
       ]
@@ -9423,8 +9556,16 @@
     {
       "id": "experience_spawn-2",
       "name": "On Experience Spawn",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called whenever experience is about to spawn.",
+        "Please note that this event will not fire for xp orbs spawned by plugins (including Skript) with Bukkit."
+      ],
+      "examples": [
+        "on xp spawn:",
+        "\tworld is \"minigame_world\"",
+        "\tcancel event"
+      ],
       "patterns": [
         "[e]xp[erience] [orb] spawn",
         "spawn of [a[n]] [e]xp[erience] [orb]"
@@ -9433,8 +9574,16 @@
     {
       "id": "firework_explode-2",
       "name": "On Firework Explode",
-      "description": [],
-      "examples": [],
+      "since": "2.4",
+      "description": [
+        "Called when a firework explodes."
+      ],
+      "examples": [
+        "on firework explode",
+        "on firework exploding colored red, light green and black",
+        "on firework explosion colored light green:",
+        "\tbroadcast \"A firework colored %colors% was exploded at %location%!\""
+      ],
       "patterns": [
         "[a] firework explo(d(e|ing)|sion) [colo[u]red %-colors%]"
       ]
@@ -9442,8 +9591,14 @@
     {
       "id": "first_join-2",
       "name": "On First Join",
-      "description": [],
-      "examples": [],
+      "since": "1.3.7",
+      "description": [
+        "Called when a player joins the server for the first time."
+      ],
+      "examples": [
+        "on first join:",
+        "\tbroadcast \"Welcome %player% to the server!\""
+      ],
       "patterns": [
         "first (join|login)"
       ]
@@ -9451,8 +9606,14 @@
     {
       "id": "gamemode_change-2",
       "name": "On Gamemode Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player's <a href='./classes.html#gamemode'>gamemode</a> changes."
+      ],
+      "examples": [
+        "on gamemode change:",
+        "on gamemode change to adventure:"
+      ],
       "patterns": [
         "game[ ]mode change [to %-gamemode%]"
       ]
@@ -9460,8 +9621,23 @@
     {
       "id": "grow-2",
       "name": "On Grow",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.2-dev20 (plants), 2.8.0 (from, into, blockdata)",
+      "description": [
+        "Called when a tree, giant mushroom or plant grows to next stage.",
+        "\"of\" matches any grow event, \"from\" matches only the old state, \"into\" matches only the new state,and \"from into\" requires matching both the old and new states.",
+        "Using \"and\" lists in this event is equivalent to using \"or\" lists. The event will trigger if any one of the elements is what grew."
+      ],
+      "examples": [
+        "on grow:",
+        "on grow of tree:",
+        "on grow of wheat[age=7]:",
+        "on grow from a sapling:",
+        "on grow into tree:",
+        "on grow from a sapling into tree:",
+        "on grow of wheat, carrots, or potatoes:",
+        "on grow into tree, giant mushroom, cactus:",
+        "on grow from wheat[age=0] to wheat[age=1] or wheat[age=2]:"
+      ],
       "patterns": [
         "grow[th] [of (1:%-structuretypes%|2:%-itemtypes/blockdatas%)]",
         "grow[th] from %-itemtypes/blockdatas%",
@@ -9472,8 +9648,17 @@
     {
       "id": "heal-2",
       "name": "On Heal",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.9.0 (by reason)",
+      "description": [
+        "Called when an entity is healed, e.g. by eating (players), being fed (pets), or by the effect of a potion of healing (overworld mobs) or harm (nether mobs)."
+      ],
+      "examples": [
+        "on heal:",
+        "on player healing from a regeneration potion:",
+        "on healing of a zombie, cow or a wither:",
+        "\theal reason is healing potion",
+        "\tcancel event"
+      ],
       "patterns": [
         "heal[ing] [of %-entitydatas%] [(from|due to|by) %-healreasons%]",
         "%-entitydatas% heal[ing] [(from|due to|by) %-healreasons%]"
@@ -9482,8 +9667,14 @@
     {
       "id": "dispense-2",
       "name": "On Dispense",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i> (before 2.1)",
+      "description": [
+        "Called when a dispenser dispenses an item."
+      ],
+      "examples": [
+        "on dispense of iron block:",
+        "\tsend \"that'd be 19.99 please!\""
+      ],
       "patterns": [
         "dispens(e|ing) [[of] %-itemtypes%]"
       ]
@@ -9491,8 +9682,14 @@
     {
       "id": "item_spawn-2",
       "name": "On Item Spawn",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i> (before 2.1)",
+      "description": [
+        "Called whenever an item stack is spawned in a world, e.g. as drop of a block or mob, a player throwing items out of their inventory, or a dispenser dispensing an item (not shooting it)."
+      ],
+      "examples": [
+        "on item spawn of iron sword:",
+        "\tbroadcast \"Someone dropped an iron sword!\""
+      ],
       "patterns": [
         "item spawn[ing] [[of] %-itemtypes%]"
       ]
@@ -9500,8 +9697,19 @@
     {
       "id": "drop-2",
       "name": "On Drop",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i> (before 2.1), 2.7 (entity)",
+      "description": [
+        "Called when a player drops an item from their inventory, or an entity drops an item, such as a chicken laying an egg."
+      ],
+      "examples": [
+        "on drop:",
+        "\tif event-item is compass:",
+        "\t\tcancel event",
+        "",
+        "on entity drop of an egg:",
+        "\tif event-entity is a chicken:",
+        "\t\tset item of event-dropped item to a diamond"
+      ],
       "patterns": [
         "[player|1:entity] drop[ping] [[of] %-itemtypes%]"
       ]
@@ -9509,8 +9717,13 @@
     {
       "id": "prepare_craft-2",
       "name": "On Prepare Craft",
-      "description": [],
-      "examples": [],
+      "since": "2.2-Fixes-V10",
+      "description": [
+        "Called just before displaying crafting result to player. Note that setting the result item might or might not work due to Bukkit bugs."
+      ],
+      "examples": [
+        "on preparing craft of torch:"
+      ],
       "patterns": [
         "[player] (preparing|beginning) craft[ing] [[of] %-itemtypes%]"
       ]
@@ -9518,8 +9731,13 @@
     {
       "id": "craft-2",
       "name": "On Craft",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i> (before 2.1)",
+      "description": [
+        "Called when a player crafts an item."
+      ],
+      "examples": [
+        "on craft:"
+      ],
       "patterns": [
         "[player] craft[ing] [[of] %-itemtypes%]"
       ]
@@ -9527,8 +9745,14 @@
     {
       "id": "pick_up-2",
       "name": "On Pick Up",
-      "description": [],
-      "examples": [],
+      "since": "<i>unknown</i> (before 2.1), 2.5 (entity)",
+      "description": [
+        "Called when a player/entity picks up an item. Please note that the item is still on the ground when this event is called."
+      ],
+      "examples": [
+        "on pick up:",
+        "on entity pickup of wheat:"
+      ],
       "patterns": [
         "[(player|1¦entity)] (pick[ ]up|picking up) [[of] %-itemtypes%]"
       ]
@@ -9536,8 +9760,13 @@
     {
       "id": "consume-2",
       "name": "On Consume",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called when a player is done eating/drinking something, e.g. an apple, bread, meat, milk or a potion."
+      ],
+      "examples": [
+        "on consume:"
+      ],
       "patterns": [
         "[player] ((eat|drink)[ing]|consum(e|ing)) [[of] %-itemtypes%]"
       ]
@@ -9545,8 +9774,16 @@
     {
       "id": "inventory_click-2",
       "name": "On Inventory Click",
-      "description": [],
-      "examples": [],
+      "since": "2.2-Fixes-V10",
+      "description": [
+        "Called when clicking on inventory slot."
+      ],
+      "examples": [
+        "on inventory click:",
+        "\tif event-item is stone:",
+        "\t\tgive player 1 stone",
+        "\t\tremove 20$ from player's balance"
+      ],
       "patterns": [
         "[player] inventory(-| )click[ing] [[at] %-itemtypes%]"
       ]
@@ -9554,8 +9791,15 @@
     {
       "id": "item_despawn-2",
       "name": "On Item Despawn",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev35",
+      "description": [
+        "Called when an item is about to be despawned from the world, usually 5 minutes after it was dropped."
+      ],
+      "examples": [
+        "on item despawn of diamond:",
+        "\tsend \"Not my precious!\"",
+        "\tcancel event"
+      ],
       "patterns": [
         "(item[ ][stack]|[item] %-itemtypes%) despawn[ing]",
         "[item[ ][stack]] despawn[ing] [[of] %-itemtypes%]"
@@ -9564,8 +9808,14 @@
     {
       "id": "item_merge-2",
       "name": "On Item Merge",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev35",
+      "description": [
+        "Called when dropped items merge into a single stack. event-entity will be the entity which is trying to merge, and future event-entity will be the entity which is being merged into."
+      ],
+      "examples": [
+        "on item merge of gold blocks:",
+        "\tcancel event"
+      ],
       "patterns": [
         "(item[ ][stack]|[item] %-itemtypes%) merg(e|ing)",
         "item[ ][stack] merg(e|ing) [[of] %-itemtypes%]"
@@ -9574,8 +9824,16 @@
     {
       "id": "inventory_item_move-2",
       "name": "On Inventory Item Move",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when an entity or block (e.g. hopper) tries to move items directly from one inventory to another.",
+        "When this event is called, the initiator may have already removed the item from the source inventory and is ready to move it into the destination inventory.",
+        "If this event is cancelled, the items will be returned to the source inventory."
+      ],
+      "examples": [
+        "on inventory item move:",
+        "\tbroadcast \"%holder of past event-inventory% is transporting %event-item% to %holder of event-inventory%!\""
+      ],
       "patterns": [
         "inventory item (move|transport)",
         "inventory (mov(e|ing)|transport[ing]) [an] item"
@@ -9584,8 +9842,17 @@
     {
       "id": "stonecutter_recipe_select-2",
       "name": "On Stonecutter Recipe Select",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when a player selects a recipe in a stonecutter."
+      ],
+      "examples": [
+        "on stonecutting stone slabs",
+        "\tcancel the event",
+        "",
+        "on stonecutting:",
+        "\tbroadcast \"%player% is using stonecutter to craft %event-item%!\""
+      ],
       "patterns": [
         "stonecutting [[of] %-itemtypes%]"
       ]
@@ -9593,8 +9860,13 @@
     {
       "id": "level_change-2",
       "name": "On Level Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.4 (level up/down)",
+      "description": [
+        "Called when a player's <a href='expressions.html#ExprLevel'>level</a> changes, e.g. by gathering experience or by enchanting something."
+      ],
+      "examples": [
+        "on level change:"
+      ],
       "patterns": [
         "[player] level (change|1¦up|-1¦down)"
       ]
@@ -9602,8 +9874,22 @@
     {
       "id": "move_rotate-2",
       "name": "On Move / Rotate",
-      "description": [],
-      "examples": [],
+      "since": "2.6, 2.8.0 (turn around)",
+      "description": [
+        "Called when a player or entity moves or rotates their head.",
+        "NOTE: Move event will only be called when the entity/player moves position, keyword 'turn around' is for orientation (ie: looking around), and the combined syntax listens for both.",
+        "NOTE: These events can be performance heavy as they are called quite often."
+      ],
+      "examples": [
+        "on player move:",
+        "\tif player does not have permission \"player.can.move\":",
+        "\t\tcancel event",
+        "on skeleton move:",
+        "\tif event-entity is not in world \"world\":",
+        "\t\tkill event-entity",
+        "on player turning around:",
+        "\tsend action bar \"You are currently turning your head around!\" to player"
+      ],
       "patterns": [
         "%-entitydata% (move|walk|step|rotate:(turn[ing] around|rotate))",
         "%-entitydata% (move|walk|step) or (turn[ing] around|rotate)",
@@ -9613,8 +9899,13 @@
     {
       "id": "pressure_plate_trip-2",
       "name": "On Pressure Plate / Trip",
-      "description": [],
-      "examples": [],
+      "since": "1.0 (pressure plate), 1.4.4 (tripwire)",
+      "description": [
+        "Called when a <i>player</i> steps on a pressure plate or tripwire respectively."
+      ],
+      "examples": [
+        "on step on pressure plate:"
+      ],
       "patterns": [
         "[step[ping] on] [a] [pressure] plate",
         "(trip|[step[ping] on] [a] tripwire)"
@@ -9623,26 +9914,49 @@
     {
       "id": "move_on-2",
       "name": "On Move On",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called when a player moves onto a certain type of block.",
+        "Please note that using this event can cause lag if there are many players online."
+      ],
+      "examples": [
+        "on walking on dirt or grass:",
+        "on stepping on stone:"
+      ],
       "patterns": [
         "(step|walk)[ing] (on|over) %-*itemtypes%"
       ]
     },
     {
-      "id": "periodical-3",
+      "id": "periodical-2",
       "name": "Periodical",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "An event that is called periodically."
+      ],
+      "examples": [
+        "every 2 seconds:",
+        "every minecraft hour:",
+        "every tick: # can cause lag depending on the code inside the event",
+        "every minecraft days:"
+      ],
       "patterns": [
         "every %-timespan%"
       ]
     },
     {
-      "id": "periodical-3",
+      "id": "eventperiodical-2",
       "name": "Periodical",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "An event that is called periodically."
+      ],
+      "examples": [
+        "every 2 seconds in \"world\":",
+        "every minecraft hour in \"flatworld\":",
+        "every tick in \"world\": # can cause lag depending on the code inside the event",
+        "every minecraft days in \"plots\":"
+      ],
       "patterns": [
         "every %-timespan% in [world[s]] %-worlds%"
       ]
@@ -9650,8 +9964,13 @@
     {
       "id": "block_growth-2",
       "name": "On Block Growth",
-      "description": [],
-      "examples": [],
+      "since": "2.2-Fixes-V10",
+      "description": [
+        "Called when a crop grows. Alternative to new form of generic grow event."
+      ],
+      "examples": [
+        "on crop growth:"
+      ],
       "patterns": [
         "(plant|crop|block) grow[(th|ing)] [[of] %-itemtypes%]"
       ]
@@ -9659,8 +9978,14 @@
     {
       "id": "player_chunk_enter-2",
       "name": "On Player Chunk Enter",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a player enters a chunk. Note that this event is based on 'player move' event, and may be called frequent internally."
+      ],
+      "examples": [
+        "on player enters a chunk:",
+        "\tsend \"You entered a chunk: %past event-chunk% -> %event-chunk%!\" to player"
+      ],
       "patterns": [
         "[player] (enter[s] [a] chunk|chunk enter[ing])"
       ]
@@ -9668,8 +9993,17 @@
     {
       "id": "send_command_list-2",
       "name": "On Send Command List",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when the server sends a list of commands to the player. This usually happens on join. The sent commands can be modified via the <a href='expressions.html#ExprSentCommands'>sent commands expression</a>.",
+        "Modifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.",
+        "Adding new commands to the list is illegal behavior and will be ignored."
+      ],
+      "examples": [
+        "on send command list:",
+        "\tset command list to command list where [input does not contain \":\"]",
+        "\tremove \"help\" from command list"
+      ],
       "patterns": [
         "send[ing] [of [the]] [server] command[s] list",
         "[server] command list send"
@@ -9678,8 +10012,23 @@
     {
       "id": "resource_pack_request_response-2",
       "name": "On Resource Pack Request Response",
-      "description": [],
-      "examples": [],
+      "since": "2.4",
+      "description": [
+        "Called when a player takes action on a resource pack request sent via the ",
+        "<a href='effects.html#EffSendResourcePack'>send resource pack</a> effect. ",
+        "The <a href='conditions.html#CondResourcePack'>resource pack</a> condition can be used ",
+        "to check the resource pack state.",
+        "",
+        "This event will be triggered once when the player accepts or declines the resource pack request, ",
+        "and once when the resource pack is successfully installed or failed to download."
+      ],
+      "examples": [
+        "on resource pack request response:",
+        "\tif the resource pack was declined or failed to download:",
+        "",
+        "on resource pack deny:",
+        "\tkick the player due to \"You have to install the resource pack to play in this server!\""
+      ],
       "patterns": [
         "resource pack [request] response",
         "resource pack [request] %-resourcepackstates%"
@@ -9688,8 +10037,17 @@
     {
       "id": "script_loadunload-2",
       "name": "On Script Load/Unload",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called directly after the trigger is loaded, or directly before the whole script is unloaded.",
+        "The keyword 'async' indicates the trigger can be ran asynchronously, "
+      ],
+      "examples": [
+        "on load:",
+        "\tset {running::%script%} to true",
+        "on unload:",
+        "\tset {running::%script%} to false"
+      ],
       "patterns": [
         "[:async] [script] (load|init|enable)",
         "[:async] [script] (unload|stop|disable)"
@@ -9698,8 +10056,14 @@
     {
       "id": "server_startstop-2",
       "name": "On Server Start/Stop",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called when the server starts or stops (actually, when Skript starts or stops, so a /reload will trigger these events as well)."
+      ],
+      "examples": [
+        "on skript start:",
+        "on server stop:"
+      ],
       "patterns": [
         "(:server|skript) (start|load|enable)",
         "(:server|skript) (stop|unload|disable)"
@@ -9708,8 +10072,13 @@
     {
       "id": "spectate-2",
       "name": "On Spectate",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called with a player starts, stops or swaps spectating an entity."
+      ],
+      "examples": [
+        "on player start spectating of a zombie:"
+      ],
       "patterns": [
         "[player] stop spectating [(of|from) %-*entitydatas%]",
         "[player] (swap|switch) spectating [(of|from) %-*entitydatas%]",
@@ -9719,8 +10088,17 @@
     {
       "id": "teleport-2",
       "name": "On Teleport",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.9.0 (entity teleport)",
+      "description": [
+        "This event can be used to listen to teleports from non-players or player entities respectively.",
+        "When teleporting entities, the event may also be called due to a result of natural causes, such as an enderman or shulker teleporting, or wolves teleporting to players.",
+        "When teleporting players, the event can be called by teleporting through a nether/end portal, or by other means (e.g. plugins)."
+      ],
+      "examples": [
+        "on teleport:",
+        "on player teleport:",
+        "on creeper teleport:"
+      ],
       "patterns": [
         "[%-entitytypes%] teleport[ing]"
       ]
@@ -9728,8 +10106,14 @@
     {
       "id": "weather_change-2",
       "name": "On Weather Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a world's weather changes."
+      ],
+      "examples": [
+        "on weather change:",
+        "on weather change to sunny:"
+      ],
       "patterns": [
         "weather change [to %-weathertypes%]"
       ]
@@ -9737,8 +10121,14 @@
     {
       "id": "world_save-2",
       "name": "On World Save",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.8.0 (defining worlds)",
+      "description": [
+        "Called when a world is saved to disk. Usually all worlds are saved simultaneously, but world management plugins could change this."
+      ],
+      "examples": [
+        "on world save of \"world\":",
+        "\tbroadcast \"The world %event-world% has been saved\""
+      ],
       "patterns": [
         "world sav(e|ing) [of %-worlds%]"
       ]
@@ -9746,8 +10136,15 @@
     {
       "id": "world_init-2",
       "name": "On World Init",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.8.0 (defining worlds)",
+      "description": [
+        "Called when a world is initialized. As all default worlds are initialized before",
+        "any scripts are loaded, this event is only called for newly created worlds.",
+        "World management plugins might change the behaviour of this event though."
+      ],
+      "examples": [
+        "on world init of \"world_the_end\":"
+      ],
       "patterns": [
         "world init[ialization] [of %-worlds%]"
       ]
@@ -9755,8 +10152,14 @@
     {
       "id": "world_unload-2",
       "name": "On World Unload",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.8.0 (defining worlds)",
+      "description": [
+        "Called when a world is unloaded. This event will never be called if you don't have a world management plugin."
+      ],
+      "examples": [
+        "on world unload:",
+        "\tbroadcast \"the %event-world% has been unloaded!\""
+      ],
       "patterns": [
         "world unload[ing] [of %-worlds%]"
       ]
@@ -9764,8 +10167,14 @@
     {
       "id": "world_load-2",
       "name": "On World Load",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.8.0 (defining worlds)",
+      "description": [
+        "Called when a world is loaded. As with the world init event, this event will not be called for the server's default world(s)."
+      ],
+      "examples": [
+        "on world load of \"world_nether\":",
+        "\tbroadcast \"The world %event-world% has been loaded!\""
+      ],
       "patterns": [
         "world load[ing] [of %-worlds%]"
       ]
@@ -9773,8 +10182,15 @@
     {
       "id": "can_build_check-2",
       "name": "On Can Build Check",
-      "description": [],
-      "examples": [],
+      "since": "1.0 (basic), 2.0 ([un]cancellable)",
+      "description": [
+        "Called when a player rightclicks on a block while holding a block or a placeable item. You can either cancel the event to prevent the block from being built, or uncancel it to allow it.",
+        "Please note that the <a href='expressions.html#ExprDurability'>data value</a> of the block to be placed is not available in this event, only its <a href='expressions.html#ExprIdOf'>ID</a>."
+      ],
+      "examples": [
+        "on block can build check:",
+        "\tcancel event"
+      ],
       "patterns": [
         "[block] can build check"
       ]
@@ -9782,8 +10198,15 @@
     {
       "id": "block_damage-2",
       "name": "On Block Damage",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player starts to break a block. You can usually just use the leftclick event for this."
+      ],
+      "examples": [
+        "on block damaging:",
+        "\tif block is log:",
+        "\t\tsend \"You can't break the holy log!\""
+      ],
       "patterns": [
         "block damag(ing|e)"
       ]
@@ -9791,8 +10214,15 @@
     {
       "id": "flow-2",
       "name": "On Flow",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a blocks flows or teleports to another block. This not only applies to water and lava, but teleporting dragon eggs as well."
+      ],
+      "examples": [
+        "on block flow:",
+        "\tif event-block is water:",
+        "\t\tbroadcast \"Build more dams! It's starting to get wet in here\""
+      ],
       "patterns": [
         "[block] flow[ing]",
         "block mov(e|ing)"
@@ -9801,8 +10231,16 @@
     {
       "id": "ignition-2",
       "name": "On Ignition",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a block starts burning, i.e. a fire block is placed next to it and this block is flammable.",
+        "The <a href='#burn'>burn event</a> will be called when the block is about do be destroyed by the fire."
+      ],
+      "examples": [
+        "on block ignite:",
+        "\tif event-block is a ladder:",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "[block] ignit(e|ion)"
       ]
@@ -9810,8 +10248,16 @@
     {
       "id": "physics-2",
       "name": "On Physics",
-      "description": [],
-      "examples": [],
+      "since": "1.4.6",
+      "description": [
+        "Called when a physics check is done on a block. By cancelling this event you can prevent some things from happening, e.g. sand falling, dirt turning into grass, torches dropping if their supporting block is destroyed, etc.Please note that using this event might cause quite some lag since it gets called extremely often."
+      ],
+      "examples": [
+        "# prevents sand from falling",
+        "on block physics:",
+        "\tblock is sand",
+        "\tcancel event"
+      ],
       "patterns": [
         "[block] physics"
       ]
@@ -9819,8 +10265,14 @@
     {
       "id": "piston_extend-2",
       "name": "On Piston Extend",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a piston is about to extend."
+      ],
+      "examples": [
+        "on piston extend:",
+        "\tbroadcast \"A piston is extending!\""
+      ],
       "patterns": [
         "piston extend[ing]"
       ]
@@ -9828,8 +10280,14 @@
     {
       "id": "piston_retract-2",
       "name": "On Piston Retract",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a piston is about to retract."
+      ],
+      "examples": [
+        "on piston retract:",
+        "\tbroadcast \"A piston is retracting!\""
+      ],
       "patterns": [
         "piston retract[ing]"
       ]
@@ -9837,8 +10295,14 @@
     {
       "id": "redstone-2",
       "name": "On Redstone",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when the redstone current of a block changes. This event is of not much use yet."
+      ],
+      "examples": [
+        "on redstone change:",
+        "\tsend \"someone is using redstone\" to console"
+      ],
       "patterns": [
         "redstone [current] [chang(e|ing)]"
       ]
@@ -9846,8 +10310,13 @@
     {
       "id": "spread-2",
       "name": "On Spread",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a new block <a href='#form'>forms</a> as a result of a block that can spread, e.g. water or mushrooms."
+      ],
+      "examples": [
+        "on spread:"
+      ],
       "patterns": [
         "spread[ing]"
       ]
@@ -9855,8 +10324,13 @@
     {
       "id": "chunk_load-2",
       "name": "On Chunk Load",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a chunk loads. The chunk might or might not contain mobs when it's loaded."
+      ],
+      "examples": [
+        "on chunk load:"
+      ],
       "patterns": [
         "chunk load[ing]"
       ]
@@ -9864,8 +10338,13 @@
     {
       "id": "chunk_generate-2",
       "name": "On Chunk Generate",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called after a new chunk was generated."
+      ],
+      "examples": [
+        "on chunk generate:"
+      ],
       "patterns": [
         "chunk (generat|populat)(e|ing)"
       ]
@@ -9873,8 +10352,13 @@
     {
       "id": "chunk_unload-2",
       "name": "On Chunk Unload",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a chunk is unloaded due to not being near any player."
+      ],
+      "examples": [
+        "on chunk unload:"
+      ],
       "patterns": [
         "chunk unload[ing]"
       ]
@@ -9882,8 +10366,13 @@
     {
       "id": "creeper_power-2",
       "name": "On Creeper Power",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a creeper is struck by lighting and gets powered. Cancel the event to prevent the creeper from being powered."
+      ],
+      "examples": [
+        "on creeper power:"
+      ],
       "patterns": [
         "creeper power"
       ]
@@ -9891,8 +10380,13 @@
     {
       "id": "zombie_break_door-2",
       "name": "On Zombie Break Door",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a zombie is done breaking a wooden door. Can be cancelled to prevent the zombie from breaking the door."
+      ],
+      "examples": [
+        "on zombie breaking a wood door:"
+      ],
       "patterns": [
         "zombie break[ing] [a] [wood[en]] door"
       ]
@@ -9900,8 +10394,13 @@
     {
       "id": "combust-2",
       "name": "On Combust",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an entity is set on fire, e.g. by fire or lava, a fireball, or by standing in direct sunlight (zombies, skeletons)."
+      ],
+      "examples": [
+        "on combust:"
+      ],
       "patterns": [
         "combust[ing]"
       ]
@@ -9909,8 +10408,13 @@
     {
       "id": "explode-2",
       "name": "On Explode",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an entity (a primed TNT or a creeper) explodes."
+      ],
+      "examples": [
+        "on explosion:"
+      ],
       "patterns": [
         "explo(d(e|ing)|sion)"
       ]
@@ -9918,8 +10422,13 @@
     {
       "id": "portal_enter-2",
       "name": "On Portal Enter",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an entity enters a nether portal or an end portal. Please note that this event will be fired many times for a nether portal."
+      ],
+      "examples": [
+        "on portal enter:"
+      ],
       "patterns": [
         "portal enter[ing]",
         "entering [a] portal"
@@ -9928,8 +10437,13 @@
     {
       "id": "tame-2",
       "name": "On Tame",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player tames a wolf or ocelot. Can be cancelled to prevent the entity from being tamed."
+      ],
+      "examples": [
+        "on tame:"
+      ],
       "patterns": [
         "[entity] tam(e|ing)"
       ]
@@ -9937,8 +10451,13 @@
     {
       "id": "explosion_prime-2",
       "name": "On Explosion Prime",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an explosive is primed, i.e. an entity will explode shortly. Creepers can abort the explosion if the player gets too far away, while TNT will explode for sure after a short time."
+      ],
+      "examples": [
+        "on explosion prime:"
+      ],
       "patterns": [
         "explosion prime"
       ]
@@ -9946,8 +10465,13 @@
     {
       "id": "hunger_meter_change-2",
       "name": "On Hunger Meter Change",
-      "description": [],
-      "examples": [],
+      "since": "1.4.4",
+      "description": [
+        "Called when the hunger bar of a player changes, i.e. either increases by eating or decreases over time."
+      ],
+      "examples": [
+        "on food bar change:"
+      ],
       "patterns": [
         "(food|hunger) (level|met(er|re)|bar) chang(e|ing)"
       ]
@@ -9955,8 +10479,13 @@
     {
       "id": "fuel_burn-2",
       "name": "On Fuel Burn",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
+      ],
+      "examples": [
+        "on fuel burning:"
+      ],
       "patterns": [
         "fuel burn[ing]"
       ]
@@ -9964,8 +10493,13 @@
     {
       "id": "smelt-2",
       "name": "On Smelt",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>ore slot</a>."
+      ],
+      "examples": [
+        "on smelt:"
+      ],
       "patterns": [
         "[ore] smelt[ing]",
         "smelt[ing] of ore"
@@ -9974,8 +10508,13 @@
     {
       "id": "leaves_decay-2",
       "name": "On Leaves Decay",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a leaf block decays due to not being connected to a tree."
+      ],
+      "examples": [
+        "on leaves decay:"
+      ],
       "patterns": [
         "leaves decay[ing]"
       ]
@@ -9983,8 +10522,14 @@
     {
       "id": "lightning_strike-2",
       "name": "On Lightning Strike",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when lightning strikes."
+      ],
+      "examples": [
+        "on lightning:",
+        "\tspawn a zombie at location of event-entity"
+      ],
       "patterns": [
         "lightning [strike]"
       ]
@@ -9992,8 +10537,13 @@
     {
       "id": "pig_zap-2",
       "name": "On Pig Zap",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a pig is stroke by lightning and transformed into a zombie pigman. Cancel the event to prevent the transformation."
+      ],
+      "examples": [
+        "on pig zap:"
+      ],
       "patterns": [
         "pig[ ]zap"
       ]
@@ -10001,8 +10551,13 @@
     {
       "id": "bed_enter-2",
       "name": "On Bed Enter",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player starts sleeping."
+      ],
+      "examples": [
+        "on bed enter:"
+      ],
       "patterns": [
         "bed enter[ing]",
         "[player] enter[ing] [a] bed"
@@ -10011,8 +10566,13 @@
     {
       "id": "bed_leave-2",
       "name": "On Bed Leave",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player leaves a bed."
+      ],
+      "examples": [
+        "on player leaving a bed:"
+      ],
       "patterns": [
         "bed leav(e|ing)",
         "[player] leav(e|ing) [a] bed"
@@ -10021,8 +10581,13 @@
     {
       "id": "bucket_empty-2",
       "name": "On Bucket Empty",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player empties a bucket. You can also use the <a href='#place'>place event</a> with a check for water or lava."
+      ],
+      "examples": [
+        "on bucket empty:"
+      ],
       "patterns": [
         "bucket empty[ing]",
         "[player] empty[ing] [a] bucket"
@@ -10031,8 +10596,13 @@
     {
       "id": "bucket_fill-2",
       "name": "On Bucket fill",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player fills a bucket."
+      ],
+      "examples": [
+        "on player filling a bucket:"
+      ],
       "patterns": [
         "bucket fill[ing]",
         "[player] fill[ing] [a] bucket"
@@ -10041,8 +10611,13 @@
     {
       "id": "egg_throw-2",
       "name": "On Egg Throw",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player throws an egg and it lands. You can just use the <a href='#shoot'>shoot event</a> in most cases. However, this event allows modification of properties like the hatched entity type and the number of entities to hatch."
+      ],
+      "examples": [
+        "on throw of an egg:"
+      ],
       "patterns": [
         "throw[ing] [of] [an] egg",
         "[player] egg throw"
@@ -10051,8 +10626,13 @@
     {
       "id": "fishing-2",
       "name": "On Fishing",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player fishes something. This is not of much use yet."
+      ],
+      "examples": [
+        "on fish:"
+      ],
       "patterns": [
         "[player] fish[ing]"
       ]
@@ -10060,8 +10640,14 @@
     {
       "id": "item_break-2",
       "name": "On Item Break",
-      "description": [],
-      "examples": [],
+      "since": "2.1.1",
+      "description": [
+        "Called when a player breaks their tool because its damage reached the maximum value.",
+        "This event cannot be cancelled."
+      ],
+      "examples": [
+        "on tool break:"
+      ],
       "patterns": [
         "[player] tool break[ing]",
         "[player] break[ing] (a|the|) tool"
@@ -10070,8 +10656,14 @@
     {
       "id": "item_damage-2",
       "name": "On Item Damage",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when an item is damaged. Most tools are damaged by using them; armor is damaged when the wearer takes damage."
+      ],
+      "examples": [
+        "on item damage:",
+        "\tcancel event"
+      ],
       "patterns": [
         "item damag(e|ing)"
       ]
@@ -10079,8 +10671,13 @@
     {
       "id": "tool_change-2",
       "name": "On Tool Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called whenever a player changes their held item by selecting a different slot (e.g. the keys 1-9 or the mouse wheel), <i>not</i> by dropping or replacing the item in the current slot."
+      ],
+      "examples": [
+        "on player's held item change:"
+      ],
       "patterns": [
         "[player['s]] (tool|item held|held item) chang(e|ing)"
       ]
@@ -10088,8 +10685,15 @@
     {
       "id": "join-2",
       "name": "On Join",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when the player joins the server. The player is already in a world when this event is called, so if you want to prevent players from joining you should prefer <a href='#connect'>on connect</a> over this event."
+      ],
+      "examples": [
+        "on join:",
+        "\tmessage \"Welcome on our awesome server!\"",
+        "\tbroadcast \"%player% just joined the server!\""
+      ],
       "patterns": [
         "[player] (login|logging in|join[ing])"
       ]
@@ -10097,8 +10701,16 @@
     {
       "id": "connect-2",
       "name": "On Connect",
-      "description": [],
-      "examples": [],
+      "since": "2.0",
+      "description": [
+        "Called when the player connects to the server. This event is called before the player actually joins the server, so if you want to prevent players from joining you should prefer this event over <a href='#join'>on join</a>."
+      ],
+      "examples": [
+        "on connect:",
+        "\tplayer doesn't have permission \"VIP\"",
+        "\tnumber of players is greater than 15",
+        "\tkick the player due to \"The last 5 slots are reserved for VIP players.\""
+      ],
       "patterns": [
         "[player] connect[ing]"
       ]
@@ -10106,8 +10718,13 @@
     {
       "id": "kick-2",
       "name": "On Kick",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player is kicked from the server. You can change the <a href='expressions.html#ExprMessage'>kick message</a> or <a href='effects.html#EffCancelEvent'>cancel the event</a> entirely."
+      ],
+      "examples": [
+        "on kick:"
+      ],
       "patterns": [
         "[player] (kick|being kicked)"
       ]
@@ -10115,8 +10732,14 @@
     {
       "id": "entity_portal-2",
       "name": "On Entity Portal",
-      "description": [],
-      "examples": [],
+      "since": "2.5.3",
+      "description": [
+        "Called when an entity uses a nether or end portal. <a href='effects.html#EffCancelEvent'>Cancel the event</a> to prevent the entity from teleporting."
+      ],
+      "examples": [
+        "on entity portal:",
+        "\tbroadcast \"A %type of event-entity% has entered a portal!"
+      ],
       "patterns": [
         "entity portal"
       ]
@@ -10124,8 +10747,13 @@
     {
       "id": "portal-2",
       "name": "On Portal",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player uses a nether or end portal. <a href='effects.html#EffCancelEvent'>Cancel the event</a> to prevent the player from teleporting."
+      ],
+      "examples": [
+        "on player portal:"
+      ],
       "patterns": [
         "[player] portal"
       ]
@@ -10133,8 +10761,14 @@
     {
       "id": "quit-2",
       "name": "On Quit",
-      "description": [],
-      "examples": [],
+      "since": "1.0 (simple disconnection)",
+      "description": [
+        "Called when a player leaves the server."
+      ],
+      "examples": [
+        "on quit:",
+        "on disconnect:"
+      ],
       "patterns": [
         "(quit[ting]|disconnect[ing]|log[ ]out|logging out|leav(e|ing))"
       ]
@@ -10142,8 +10776,13 @@
     {
       "id": "respawn-2",
       "name": "On Respawn",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player respawns. You should prefer this event over the <a href='#death'>death event</a> as the player is technically alive when this event is called."
+      ],
+      "examples": [
+        "on respawn:"
+      ],
       "patterns": [
         "[player] respawn[ing]"
       ]
@@ -10151,8 +10790,16 @@
     {
       "id": "sneak_toggle-2",
       "name": "On Sneak Toggle",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player starts or stops sneaking. Use <a href='conditions.html#CondIsSneaking'>is sneaking</a> to get whether the player was sneaking before the event was called."
+      ],
+      "examples": [
+        "# make players that stop sneaking jump",
+        "on sneak toggle:",
+        "\tplayer is sneaking",
+        "\tpush the player upwards at speed 0.5"
+      ],
       "patterns": [
         "[player] toggl(e|ing) sneak",
         "[player] sneak toggl(e|ing)"
@@ -10161,8 +10808,15 @@
     {
       "id": "sprint_toggle-2",
       "name": "On Sprint Toggle",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a player starts or stops sprinting. Use <a href='conditions.html#CondIsSprinting'>is sprinting</a> to get whether the player was sprinting before the event was called."
+      ],
+      "examples": [
+        "on sprint toggle:",
+        "\tplayer is not sprinting",
+        "\tsend \"Run!\""
+      ],
       "patterns": [
         "[player] toggl(e|ing) sprint",
         "[player] sprint toggl(e|ing)"
@@ -10171,8 +10825,15 @@
     {
       "id": "portal_create-2",
       "name": "On Portal Create",
-      "description": [],
-      "examples": [],
+      "since": "1.0, 2.5.3 (event-entity support)",
+      "description": [
+        "Called when a portal is created, either by a player or mob lighting an obsidian frame on fire, or by a nether portal creating its teleportation target in the nether/overworld.",
+        "In Minecraft 1.14+, you can use <a href='expressions.html#ExprEntity'>the player</a> in this event.",
+        "Please note that there may not always be a player (or other entity) in this event."
+      ],
+      "examples": [
+        "on portal create:"
+      ],
       "patterns": [
         "portal creat(e|ion)"
       ]
@@ -10180,8 +10841,17 @@
     {
       "id": "projectile_hit-2",
       "name": "On Projectile Hit",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a projectile hits an entity or a block.",
+        "Use the <a href='#damage'>damage event</a> with a <a href='conditions.html#CondIsSet'>check</a> for a <a href='expressions.html#ExprEntity'>projectile</a> to be able to use the <a href='expressions.html#ExprAttacked'>entity that got hit</a> in the case when the projectile hit a living entity.",
+        "A damage event will even be fired if the damage is 0, e.g. when throwing snowballs at non-nether mobs."
+      ],
+      "examples": [
+        "on projectile hit:",
+        "\tevent-projectile is arrow",
+        "\tdelete event-projectile"
+      ],
       "patterns": [
         "projectile hit"
       ]
@@ -10189,8 +10859,14 @@
     {
       "id": "projectile_collide-2",
       "name": "On Projectile Collide",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when a projectile collides with an entity."
+      ],
+      "examples": [
+        "on projectile collide:",
+        "\tteleport shooter of event-projectile to event-entity"
+      ],
       "patterns": [
         "projectile collide"
       ]
@@ -10198,8 +10874,15 @@
     {
       "id": "shoot-2",
       "name": "On Shoot",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called whenever a <a href='classes.html#projectile'>projectile</a> is shot. Use the <a href='expressions.html#ExprShooter'>shooter expression</a> to get who shot the projectile."
+      ],
+      "examples": [
+        "on shoot:",
+        "\tif projectile is an arrow:",
+        "\t\tsend \"you shot an arrow!\" to shooter"
+      ],
       "patterns": [
         "[projectile] shoot"
       ]
@@ -10207,8 +10890,15 @@
     {
       "id": "sign_change-2",
       "name": "On Sign Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "As signs are placed empty, this event is called when a player is done editing a sign."
+      ],
+      "examples": [
+        "on sign change:",
+        "\tline 2 is empty",
+        "\tset line 1 to \"&lt;red&gt;%line 1%\""
+      ],
       "patterns": [
         "sign (chang[e]|edit)[ing]",
         "[player] (chang[e]|edit)[ing] [a] sign"
@@ -10217,8 +10907,14 @@
     {
       "id": "spawn_change-2",
       "name": "On Spawn Change",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when the spawn point of a world changes."
+      ],
+      "examples": [
+        "on spawn change:",
+        "\tbroadcast \"someone changed the spawn!\""
+      ],
       "patterns": [
         "[world] spawn change"
       ]
@@ -10226,8 +10922,13 @@
     {
       "id": "vehicle_create-2",
       "name": "On Vehicle Create",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a new vehicle is created, e.g. when a player places a boat or minecart."
+      ],
+      "examples": [
+        "on vehicle create:"
+      ],
       "patterns": [
         "vehicle create",
         "creat(e|ing|ion of) [a] vehicle"
@@ -10236,8 +10937,13 @@
     {
       "id": "vehicle_damage-2",
       "name": "On Vehicle Damage",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a vehicle gets damage. Too much damage will <a href='#vehicle_destroy'>destroy</a> the vehicle."
+      ],
+      "examples": [
+        "on vehicle damage:"
+      ],
       "patterns": [
         "vehicle damage",
         "damag(e|ing) [a] vehicle"
@@ -10246,8 +10952,14 @@
     {
       "id": "vehicle_destroy-2",
       "name": "On Vehicle Destroy",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when a vehicle is destroyed. Any <a href='expressions.html#ExprPassenger'>passenger</a> will be ejected and the vehicle might drop some item(s)."
+      ],
+      "examples": [
+        "on vehicle destroy:",
+        "\tcancel event"
+      ],
       "patterns": [
         "vehicle destroy",
         "destr(oy[ing]|uction of) [a] vehicle"
@@ -10256,8 +10968,15 @@
     {
       "id": "vehicle_enter-2",
       "name": "On Vehicle Enter",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an <a href='classes.html#entity'>entity</a> enters a vehicle, either deliberately (players) or by falling into them (mobs)."
+      ],
+      "examples": [
+        "on vehicle enter:",
+        "\tentity is a player",
+        "\tcancel event"
+      ],
       "patterns": [
         "vehicle enter",
         "enter[ing] [a] vehicle"
@@ -10266,8 +10985,15 @@
     {
       "id": "vehicle_exit-2",
       "name": "On Vehicle Exit",
-      "description": [],
-      "examples": [],
+      "since": "1.0",
+      "description": [
+        "Called when an entity exits a vehicle."
+      ],
+      "examples": [
+        "on vehicle exit:",
+        "\tif event-entity is a spider:",
+        "\t\tkill event-entity"
+      ],
       "patterns": [
         "vehicle exit",
         "exit[ing] [a] vehicle"
@@ -10276,8 +11002,14 @@
     {
       "id": "entity_mount-2",
       "name": "On Entity Mount",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev13b",
+      "description": [
+        "Called when entity starts riding another."
+      ],
+      "examples": [
+        "on mount:",
+        "\tcancel event"
+      ],
       "patterns": [
         "mount[ing]"
       ]
@@ -10285,8 +11017,14 @@
     {
       "id": "entity_dismount-2",
       "name": "On Entity Dismount",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev13b",
+      "description": [
+        "Called when an entity dismounts."
+      ],
+      "examples": [
+        "on dismount:",
+        "\tkill event-entity"
+      ],
       "patterns": [
         "dismount[ing]"
       ]
@@ -10294,8 +11032,14 @@
     {
       "id": "gliding_state_change-2",
       "name": "On Gliding State Change",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev21",
+      "description": [
+        "Called when an entity toggles glider on or off, or when server toggles gliding state of an entity forcibly."
+      ],
+      "examples": [
+        "on toggling gliding:",
+        "\tcancel the event # bad idea, but you CAN do it!"
+      ],
       "patterns": [
         "(gliding state change|toggl(e|ing) gliding)"
       ]
@@ -10303,8 +11047,13 @@
     {
       "id": "aoe_cloud_effect-2",
       "name": "On AoE Cloud Effect",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev21",
+      "description": [
+        "Called when area effect cloud applies its potion effect. This happens every 5 ticks by default."
+      ],
+      "examples": [
+        "on area cloud effect:"
+      ],
       "patterns": [
         "(area|AoE) [cloud] effect"
       ]
@@ -10312,8 +11061,14 @@
     {
       "id": "sheep_regrow_wool-2",
       "name": "On Sheep Regrow Wool",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev21",
+      "description": [
+        "Called when sheep regrows its sheared wool back."
+      ],
+      "examples": [
+        "on sheep grow wool:",
+        "\tcancel event"
+      ],
       "patterns": [
         "sheep [re]grow[ing] wool"
       ]
@@ -10321,8 +11076,14 @@
     {
       "id": "inventory_open-2",
       "name": "On Inventory Open",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev21",
+      "description": [
+        "Called when an inventory is opened for player."
+      ],
+      "examples": [
+        "on inventory open:",
+        "\tclose player's inventory"
+      ],
       "patterns": [
         "inventory open[ed]"
       ]
@@ -10330,8 +11091,15 @@
     {
       "id": "inventory_close-2",
       "name": "On Inventory Close",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev21",
+      "description": [
+        "Called when player's currently viewed inventory is closed."
+      ],
+      "examples": [
+        "on inventory close:",
+        "\tif player's location is {location}:",
+        "\t\tsend \"You exited the shop!\""
+      ],
       "patterns": [
         "inventory clos(ing|e[d])"
       ]
@@ -10339,8 +11107,13 @@
     {
       "id": "slime_split-2",
       "name": "On Slime Split",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev26",
+      "description": [
+        "Called when a slime splits. Usually this happens when a big slime dies."
+      ],
+      "examples": [
+        "on slime split:"
+      ],
       "patterns": [
         "slime split[ting]"
       ]
@@ -10348,8 +11121,16 @@
     {
       "id": "resurrect_attempt-2",
       "name": "On Resurrect Attempt",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev28",
+      "description": [
+        "Called when an entity dies, always. If they are not holding a totem, this is cancelled - you can, however, uncancel it."
+      ],
+      "examples": [
+        "on resurrect attempt:",
+        "\tentity is player",
+        "\tentity has permission \"admin.undying\"",
+        "\tuncancel the event"
+      ],
       "patterns": [
         "[entity] resurrect[ion] [attempt]"
       ]
@@ -10357,8 +11138,15 @@
     {
       "id": "player_world_change-2",
       "name": "On Player World Change",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev28",
+      "description": [
+        "Called when a player enters a world. Does not work with other entities!"
+      ],
+      "examples": [
+        "on player world change:",
+        "\tworld is \"city\"",
+        "\tsend \"Welcome to the City!\""
+      ],
       "patterns": [
         "[player] world chang(ing|e[d])"
       ]
@@ -10366,8 +11154,15 @@
     {
       "id": "flight_toggle-2",
       "name": "On Flight Toggle",
-      "description": [],
-      "examples": [],
+      "since": "2.2-dev36",
+      "description": [
+        "Called when a players stops/starts flying."
+      ],
+      "examples": [
+        "on flight toggle:",
+        "\tif {game::%player%::playing} exists:",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "[player] flight toggl(e|ing)",
         "[player] toggl(e|ing) flight"
@@ -10376,8 +11171,16 @@
     {
       "id": "language_change-2",
       "name": "On Language Change",
-      "description": [],
-      "examples": [],
+      "since": "2.3",
+      "description": [
+        "Called after a player changed their language in the game settings. You can use the <a href='expressions.html#ExprLanguage'>language</a> expression to get the current language of the player.",
+        "This event requires Minecraft 1.12+."
+      ],
+      "examples": [
+        "on language change:",
+        "\tif player's language starts with \"en\":",
+        "\t\tsend \"Hello!\""
+      ],
       "patterns": [
         "[player] (language|locale) chang(e|ing)",
         "[player] chang(e|ing) (language|locale)"
@@ -10386,8 +11189,16 @@
     {
       "id": "jump-2",
       "name": "On Jump",
-      "description": [],
-      "examples": [],
+      "since": "2.3",
+      "description": [
+        "Called whenever a player jumps.",
+        "This event requires PaperSpigot."
+      ],
+      "examples": [
+        "on jump:",
+        "\tevent-player does not have permission \"jump\"",
+        "\tcancel event"
+      ],
       "patterns": [
         "[player] jump[ing]"
       ]
@@ -10395,8 +11206,20 @@
     {
       "id": "hand_item_swap-2",
       "name": "On Hand Item Swap",
-      "description": [],
-      "examples": [],
+      "since": "2.3",
+      "description": [
+        "Called whenever a player swaps the items in their main- and offhand slots.",
+        "Works also when one or both of the slots are empty.",
+        "The event is called before the items are actually swapped,",
+        "so when you use the player's tool or player's offtool expressions,",
+        "they will return the values before the swap -",
+        "this enables you to cancel the event before anything happens."
+      ],
+      "examples": [
+        "on swap hand items:",
+        "\tevent-player's tool is a diamond sword",
+        "\tcancel event"
+      ],
       "patterns": [
         "swap[ping of] [(hand|held)] item[s]"
       ]
@@ -10404,8 +11227,20 @@
     {
       "id": "server_list_ping-2",
       "name": "On Server List Ping",
-      "description": [],
-      "examples": [],
+      "since": "2.3",
+      "description": [
+        "Called when a server list ping is coming in, generally when a Minecraft client pings the server to show its information in the server list.",
+        "The <a href='expressions.html#ExprIP'>IP</a> expression can be used to get the IP adress of the pinger.",
+        "This event can be cancelled on PaperSpigot 1.12.2+ only and this means the player will see the server as offline (but still can join).",
+        "",
+        "Also you can use <a href='expressions.html#ExprMOTD'>MOTD</a>, <a href='expressions.html#ExprMaxPlayers'>Max Players</a>, <a href='expressions.html#ExprOnlinePlayersCount'>Online Players Count</a>, <a href='expressions.html#ExprProtocolVersion'>Protocol Version</a>, <a href='expressions.html#ExprVersionString'>Version String</a>, <a href='expressions.html#ExprHoverList'>Hover List</a> and <a href='expressions.html#ExprServerIcon'>Server Icon</a> expressions, and <a href='effects.html#EffPlayerInfoVisibility'>Player Info Visibility</a> and <a href='effects.html#EffHidePlayerFromServerList'>Hide Player from Server List</a> effects to modify the server list."
+      ],
+      "examples": [
+        "on server list ping:",
+        "\tset the motd to \"Welcome %{player-by-IP::%ip%}%! Join now!\" if {player-by-IP::%ip%} is set, else \"Join now!\"",
+        "\tset the fake max players count to (online players count + 1)",
+        "\tset the shown icon to a random server icon out of {server-icons::*}"
+      ],
       "patterns": [
         "server [list] ping"
       ]
@@ -10413,8 +11248,15 @@
     {
       "id": "swim_toggle-2",
       "name": "On Swim Toggle",
-      "description": [],
-      "examples": [],
+      "since": "2.3",
+      "description": [
+        "Called when an entity swims or stops swimming."
+      ],
+      "examples": [
+        "on swim toggle:",
+        "\tevent-entity does not have permission \"swim\"",
+        "\tcancel event"
+      ],
       "patterns": [
         "[entity] toggl(e|ing) swim",
         "[entity] swim toggl(e|ing)"
@@ -10423,8 +11265,15 @@
     {
       "id": "riptide-2",
       "name": "On Riptide",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when the player activates the riptide enchantment, using their trident to propel them through the air.",
+        "Note: the riptide action is performed client side, so manipulating the player in this event may have undesired effects."
+      ],
+      "examples": [
+        "on riptide:",
+        "\tsend \"You are riptiding!\""
+      ],
       "patterns": [
         "[use of] riptide [enchant[ment]]"
       ]
@@ -10432,8 +11281,14 @@
     {
       "id": "armor_change-2",
       "name": "On Armor Change",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when armor pieces of a player are changed."
+      ],
+      "examples": [
+        "on armor change:",
+        "\tsend \"You equipped %event-item%!\""
+      ],
       "patterns": [
         "[player] armo[u]r change[d]"
       ]
@@ -10441,8 +11296,15 @@
     {
       "id": "sponge_absorb-2",
       "name": "On Sponge Absorb",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when a sponge absorbs blocks."
+      ],
+      "examples": [
+        "on sponge absorb:",
+        "\tloop absorbed blocks:",
+        "\t\tbroadcast \"%loop-block% was absorbed by a sponge\"!"
+      ],
       "patterns": [
         "sponge absorb"
       ]
@@ -10450,8 +11312,16 @@
     {
       "id": "enchant_prepare-2",
       "name": "On Enchant Prepare",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when a player puts an item into enchantment table. This event may be called multiple times.",
+        " To get the enchant item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
+      ],
+      "examples": [
+        "on enchant prepare:",
+        "\tset enchant offer 1 to sharpness 1",
+        "\tset the cost of enchant offer 1 to 10 levels"
+      ],
       "patterns": [
         "[item] enchant prepare"
       ]
@@ -10459,8 +11329,16 @@
     {
       "id": "enchant-2",
       "name": "On Enchant",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when a player successfully enchants an item.",
+        " To get the enchanted item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
+      ],
+      "examples": [
+        "on enchant:",
+        "\tif the clicked button is 1: # offer 1",
+        "\t\tset the applied enchantments to sharpness 10 and unbreaking 10"
+      ],
       "patterns": [
         "[item] enchant"
       ]
@@ -10468,8 +11346,13 @@
     {
       "id": "inventory_pickup-2",
       "name": "On Inventory Pickup",
-      "description": [],
-      "examples": [],
+      "since": "2.5.1",
+      "description": [
+        "Called when an inventory (a hopper, a hopper minecart, etc.) picks up an item"
+      ],
+      "examples": [
+        "on inventory pickup:"
+      ],
       "patterns": [
         "inventory pick[ ]up"
       ]
@@ -10477,8 +11360,14 @@
     {
       "id": "horse_jump-2",
       "name": "On Horse Jump",
-      "description": [],
-      "examples": [],
+      "since": "2.5.1",
+      "description": [
+        "Called when a horse jumps."
+      ],
+      "examples": [
+        "on horse jump:",
+        "\tpush event-entity upwards at speed 2"
+      ],
       "patterns": [
         "horse jump"
       ]
@@ -10486,8 +11375,14 @@
     {
       "id": "block_fertilize-2",
       "name": "On Block Fertilize",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Called when a player fertilizes blocks."
+      ],
+      "examples": [
+        "on block fertilize:",
+        "\tsend \"Fertilized %size of fertilized blocks% blocks got fertilized.\""
+      ],
       "patterns": [
         "[block] fertilize"
       ]
@@ -10495,8 +11390,14 @@
     {
       "id": "arm_swing-2",
       "name": "On Arm Swing",
-      "description": [],
-      "examples": [],
+      "since": "2.5.1",
+      "description": [
+        "Called when a player swings their arm."
+      ],
+      "examples": [
+        "on arm swing:",
+        "\tsend \"You swung your arm!\""
+      ],
       "patterns": [
         "[player] arm swing"
       ]
@@ -10504,8 +11405,16 @@
     {
       "id": "item_mend-2",
       "name": "On Item Mend",
-      "description": [],
-      "examples": [],
+      "since": "2.5.1",
+      "description": [
+        "Called when a player has an item repaired via the Mending enchantment."
+      ],
+      "examples": [
+        "on item mend:",
+        "\tchance of 50%:",
+        "\t\tcancel the event",
+        "\t\tsend \"Oops! Mending failed!\" to player"
+      ],
       "patterns": [
         "item mend[ing]"
       ]
@@ -10513,8 +11422,17 @@
     {
       "id": "anvil_prepare-2",
       "name": "On Anvil Prepare",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when an item is put in a slot for repair by an anvil. Please note that this event is called multiple times in a single item slot move."
+      ],
+      "examples": [
+        "on anvil prepare:",
+        "\tevent-item is set # result item",
+        "\tchance of 5%:",
+        "\t\tset repair cost to repair cost * 50%",
+        "\t\tsend \"You're LUCKY! You got 50% discount.\" to player"
+      ],
       "patterns": [
         "anvil prepar(e|ing)"
       ]
@@ -10522,8 +11440,16 @@
     {
       "id": "player_trade-2",
       "name": "On Player Trade",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a player has traded with a villager."
+      ],
+      "examples": [
+        "on player trade:",
+        "\tchance of 50%:",
+        "\t\tcancel event",
+        "\t\tsend \"The trade was somehow denied!\" to player"
+      ],
       "patterns": [
         "player trad(e|ing)"
       ]
@@ -10531,8 +11457,15 @@
     {
       "id": "entity_jump-2",
       "name": "On Entity Jump",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when an entity jumps."
+      ],
+      "examples": [
+        "on entity jump:",
+        "\tif entity is a wither skeleton:",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "entity jump[ing]"
       ]
@@ -10540,8 +11473,15 @@
     {
       "id": "anvil_damage-2",
       "name": "On Anvil Damage",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when an anvil is damaged/broken from being used to repair/rename items.",
+        "Note: this does not include anvil damage from falling."
+      ],
+      "examples": [
+        "on anvil damage:",
+        "\tcancel the event"
+      ],
       "patterns": [
         "anvil damag(e|ing)"
       ]
@@ -10549,8 +11489,15 @@
     {
       "id": "stop_using_item-2",
       "name": "On Stop Using Item",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when a player stops using an item. For example, when the player releases the interact button when holding a bow, an edible item, or a spyglass.",
+        "Note that event-timespan will return the time the item was used for."
+      ],
+      "examples": [
+        "on player stop using item:",
+        "\tbroadcast \"%player% used %event-item% for %event-timespan%.\""
+      ],
       "patterns": [
         "[player] (stop|end) (using item|item use)"
       ]
@@ -10558,8 +11505,18 @@
     {
       "id": "ready_arrow-2",
       "name": "On Ready Arrow",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when a player is firing a bow and the server is choosing an arrow to use.",
+        "Cancelling this event will skip the current arrow item and fire a new event for the next arrow item.",
+        "The arrow and bow in the event can be accessed with the Readied Arrow/Bow expression."
+      ],
+      "examples": [
+        "on player ready arrow:",
+        "\tselected bow's name is \"Spectral Bow\"",
+        "\tif selected arrow is not a spectral arrow:",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "[player] ((ready|choose|draw|load) arrow|arrow (choose|draw|load))"
       ]
@@ -10567,8 +11524,16 @@
     {
       "id": "inventory_slot_change-2",
       "name": "On Inventory Slot Change",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a slot in a player's inventory is changed.",
+        "Warning: setting the event-slot to a new item can result in an infinite loop."
+      ],
+      "examples": [
+        "on inventory slot change:",
+        "\tif event-item is a diamond:",
+        "\t\tsend \"You obtained a diamond!\" to player"
+      ],
       "patterns": [
         "[player] inventory slot chang(e|ing)"
       ]
@@ -10576,8 +11541,21 @@
     {
       "id": "chat-2",
       "name": "On Chat",
-      "description": [],
-      "examples": [],
+      "since": "1.4.1",
+      "description": [
+        "Called whenever a player chats.",
+        "Use <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.",
+        "Use <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients."
+      ],
+      "examples": [
+        "on chat:",
+        "\tif player has permission \"owner\":",
+        "\t\tset chat format to \"&lt;red&gt;[player]&lt;light gray&gt;: &lt;light red&gt;[message]\"",
+        "\telse if player has permission \"admin\":",
+        "\t\tset chat format to \"&lt;light red&gt;[player]&lt;light gray&gt;: &lt;orange&gt;[message]\"",
+        "\telse: #default message format",
+        "\t\tset chat format to \"&lt;orange&gt;[player]&lt;light gray&gt;: &lt;white&gt;[message]\""
+      ],
       "patterns": [
         "chat"
       ]
@@ -10585,8 +11563,17 @@
     {
       "id": "loot_generate-2",
       "name": "On Loot Generate",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a loot table of an inventory is generated in the world.",
+        "For example, when opening a shipwreck chest."
+      ],
+      "examples": [
+        "on loot generate:",
+        "\tchance of 10%",
+        "\tadd 64 diamonds to the loot",
+        "\tsend \"You hit the jackpot at %event-location%!\""
+      ],
       "patterns": [
         "loot generat(e|ing)"
       ]
@@ -10594,8 +11581,15 @@
     {
       "id": "player_deep_sleep-2",
       "name": "On Player Deep Sleep",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a player has slept long enough to count as passing the night/storm.",
+        "Cancelling this event will prevent the player from being counted as deeply sleeping unless they exit and re-enter the bed."
+      ],
+      "examples": [
+        "on player deep sleeping:",
+        "\tsend \"Zzzz..\" to player"
+      ],
       "patterns": [
         "[player] deep sleep[ing]"
       ]
@@ -10603,8 +11597,15 @@
     {
       "id": "player_pickup_arrow-2",
       "name": "On Player Pickup Arrow",
-      "description": [],
-      "examples": [],
+      "since": "2.8.0",
+      "description": [
+        "Called when a player picks up an arrow from the ground."
+      ],
+      "examples": [
+        "on arrow pickup:",
+        "\tcancel the event",
+        "\tteleport event-projectile to block 5 above event-projectile"
+      ],
       "patterns": [
         "[player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)"
       ]
@@ -10612,8 +11613,16 @@
     {
       "id": "inventory_drag-2",
       "name": "On Inventory Drag",
-      "description": [],
-      "examples": [],
+      "since": "2.7",
+      "description": [
+        "Called when a player drags an item in their cursor across the inventory."
+      ],
+      "examples": [
+        "on inventory drag:",
+        "\tif player's current inventory is {_gui}:",
+        "\t\tsend \"You can't drag your items here!\" to player",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "inventory drag[ging]"
       ]
@@ -10621,8 +11630,17 @@
     {
       "id": "piglin_barter-2",
       "name": "On Piglin Barter",
-      "description": [],
-      "examples": [],
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a piglin finishes bartering. A piglin may start bartering after picking up an item on its bartering list.",
+        "Cancelling will prevent piglins from dropping items, but will still make them pick up the input."
+      ],
+      "examples": [
+        "on piglin barter:",
+        "\tif barter drops contain diamond:",
+        "\t\tsend \"Diamonds belong in the money pit!\" to player",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "piglin (barter[ing]|trad(e|ing))"
       ]
@@ -10630,8 +11648,14 @@
     {
       "id": "bell_ring-2",
       "name": "On Bell Ring",
-      "description": [],
-      "examples": [],
+      "since": "2.9.0",
+      "description": [
+        "Called when a bell is rung."
+      ],
+      "examples": [
+        "on bell ring:",
+        "\tsend \"<gold>Ding-dong!<reset>\" to all players in radius 10 of event-block"
+      ],
       "patterns": [
         "bell ring[ing]"
       ]
@@ -10639,8 +11663,14 @@
     {
       "id": "bell_resonate-2",
       "name": "On Bell Resonate",
-      "description": [],
-      "examples": [],
+      "since": "2.9.0",
+      "description": [
+        "Called when a bell resonates, highlighting nearby raiders."
+      ],
+      "examples": [
+        "on bell resonate:",
+        "\tsend \"<red>Raiders are nearby!\" to all players in radius 32 around event-block"
+      ],
       "patterns": [
         "bell resonat(e|ing)"
       ]
@@ -10648,8 +11678,17 @@
     {
       "id": "enderman_enrage-2",
       "name": "On Enderman Enrage",
-      "description": [],
-      "examples": [],
+      "since": "2.9.0",
+      "description": [
+        "Called when an enderman gets mad because a player looked at them.",
+        "Note: This does not stop enderman from targeting the player as a result of getting damaged."
+      ],
+      "examples": [
+        "# Stops endermen from getting angry players with the permission \"safeFrom.enderman\"",
+        "on enderman enrage:",
+        "\tif player has permission \"safeFrom.enderman\":",
+        "\t\tcancel event"
+      ],
       "patterns": [
         "enderman (enrage|anger)"
       ]
@@ -10657,8 +11696,15 @@
     {
       "id": "region_enterleave-2",
       "name": "On Region Enter/Leave",
-      "description": [],
-      "examples": [],
+      "since": "2.1",
+      "description": [
+        "Called when a player enters or leaves a <a href='./classes.html#region'>region</a>.",
+        "This event requires a supported regions plugin to be installed."
+      ],
+      "examples": [
+        "on region exit:",
+        "\tmessage \"Leaving %region%.\""
+      ],
       "patterns": [
         "(:enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %-regions%)",
         "region (:enter[ing]|leav(e|ing)|exit[ing])"
@@ -10667,8 +11713,13 @@
     {
       "id": "test_case-2",
       "name": "On Test Case",
-      "description": [],
-      "examples": [],
+      "since": "2.5",
+      "description": [
+        "Contents represent one test case."
+      ],
+      "examples": [
+        ""
+      ],
       "patterns": [
         "test %-string% [when <.+>]"
       ]
