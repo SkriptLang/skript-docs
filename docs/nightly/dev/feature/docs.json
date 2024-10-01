@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-45ce386",
+  "skriptVersion": "2.9.2-nightly-6d4582e",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3169,8 +3169,7 @@
       "name": "Sort",
       "since": "2.9.0, INSERT VERSION (sort order)",
       "description": [
-        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.",
-        "Be warned, this will overwrite the indices of the list variable."
+        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.\nBe warned, this will overwrite the indices of the list variable.\n\nWhen using the full <code>sort %~objects% (by|based on) &lt;expression&gt;</code> pattern,\nthe input expression can be used to refer to the current item being sorted.\n(See input expression for more information.)"
       ],
       "examples": [
         "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"",
