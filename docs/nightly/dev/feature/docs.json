@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-6d4582e",
+  "skriptVersion": "2.9.3-nightly-9e61f38",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -8605,11 +8605,15 @@
       "name": "Time",
       "since": "1.0",
       "description": [
-        "The <a href='classes.html#time'>time</a> of a world."
+        "The <a href='classes.html#time'>time</a> of a world.",
+        "Use the \"minecraft <a href='classes.html#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.",
+        "Since Minecraft uses discrete intervals for time (ticks), changing the time by real-world minutes or real-world seconds only changes it approximately.",
+        "Removing an amount of time from a world's time will move the clock forward a day."
       ],
       "examples": [
-        "time in world is between 18:00 and 6:00:",
-        "\tbroadcast \"It's night-time, watch out for monsters!\""
+        "set time of world \"world\" to 2:00",
+        "add 2 minecraft hours to time of world \"world\"",
+        "add 54 real seconds to time of world \"world\" # approximately 1 minecraft hour"
       ],
       "patterns": [
         "[the] time[s] [([with]in|of) %worlds%]",
