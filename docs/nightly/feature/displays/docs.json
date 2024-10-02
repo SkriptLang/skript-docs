@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-ca655f4",
+  "skriptVersion": "2.9.3-nightly-76cca4e",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3203,8 +3203,7 @@
       "name": "Sort",
       "since": "2.9.0, INSERT VERSION (sort order)",
       "description": [
-        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.",
-        "Be warned, this will overwrite the indices of the list variable."
+        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.\nBe warned, this will overwrite the indices of the list variable.\n\nWhen using the full <code>sort %~objects% (by|based on) &lt;expression&gt;</code> pattern,\nthe input expression can be used to refer to the current item being sorted.\n(See input expression for more information.)"
       ],
       "examples": [
         "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"",
@@ -5949,18 +5948,20 @@
     },
     {
       "id": "ExprRandomNumber",
-      "name": "Random Number",
-      "since": "1.4",
+      "name": "Random Numbers",
+      "since": "1.4, INSERT VERSION (Multiple random numbers)",
       "description": [
-        "A random number or integer between two given numbers. Use 'number' if you want any number with decimal parts, or use use 'integer' if you only want whole numbers.",
+        "A given amount of random numbers or integers between two given numbers. Use 'number' if you want any number with decimal parts, or use use 'integer' if you only want whole numbers.",
         "Please note that the order of the numbers doesn't matter, i.e. <code>random number between 2 and 1</code> will work as well as <code>random number between 1 and 2</code>."
       ],
       "examples": [
         "set the player's health to a random number between 5 and 10",
-        "send \"You rolled a %random integer from 1 to 6%!\" to the player"
+        "send \"You rolled a %random integer from 1 to 6%!\" to the player",
+        "set {_chances::*} to 5 random integers between 5 and 96",
+        "set {_decimals::*} to 3 random numbers between 2.7 and -1.5"
       ],
       "patterns": [
-        "[a] random (:integer|number) (from|between) %number% (to|and) %number%"
+        "[a|%-integer%] random (:integer|number)[s] (from|between) %number% (to|and) %number%"
       ]
     },
     {
@@ -8158,6 +8159,24 @@
       ]
     },
     {
+      "id": "ExprPlayerChatCompletions",
+      "name": "Player Chat Completions",
+      "since": "INSERT VERSION",
+      "description": [
+        "The custom chat completion suggestions. You can add, set, remove, and clear them. Removing the names of online players with this expression is ineffective.",
+        "This expression will not return anything due to Bukkit limitations."
+      ],
+      "examples": [
+        "add \"Skript\" and \"Njol\" to chat completions of all players",
+        "remove \"text\" from {_p}'s chat completions",
+        "clear player's chat completions"
+      ],
+      "patterns": [
+        "[the] [custom] chat completion[s] of %players%",
+        "%players%'[s] [custom] chat completion[s]"
+      ]
+    },
+    {
       "id": "ExprPlayerlistHeaderFooter",
       "name": "Player List Header and Footer",
       "since": "2.4",
@@ -8668,11 +8687,15 @@
       "name": "Time",
       "since": "1.0",
       "description": [
-        "The <a href='classes.html#time'>time</a> of a world."
+        "The <a href='classes.html#time'>time</a> of a world.",
+        "Use the \"minecraft <a href='classes.html#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.",
+        "Since Minecraft uses discrete intervals for time (ticks), changing the time by real-world minutes or real-world seconds only changes it approximately.",
+        "Removing an amount of time from a world's time will move the clock forward a day."
       ],
       "examples": [
-        "time in world is between 18:00 and 6:00:",
-        "\tbroadcast \"It's night-time, watch out for monsters!\""
+        "set time of world \"world\" to 2:00",
+        "add 2 minecraft hours to time of world \"world\"",
+        "add 54 real seconds to time of world \"world\" # approximately 1 minecraft hour"
       ],
       "patterns": [
         "[the] time[s] [([with]in|of) %worlds%]",
@@ -9838,6 +9861,24 @@
         "falling block fall[ing]",
         "falling block land[ing]",
         "(entity|%*-entitydatas%) chang(e|ing) block[s]"
+      ]
+    },
+    {
+      "id": "entity_potion_effect",
+      "name": "On Entity Potion Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when an entity's potion effect is modified.",
+        "This modification can include adding, removing or changing their potion effect."
+      ],
+      "examples": [
+        "on entity potion effect modification:",
+        "\t\tbroadcast \"A potion effect was added to %event-entity%!\" ",
+        "",
+        "on entity potion effect modification of night vision:"
+      ],
+      "patterns": [
+        "entity potion effect [modif[y|ication]] [[of] %-potioneffecttypes%] [due to %-entitypotioncause%]"
       ]
     },
     {
@@ -12717,6 +12758,17 @@
       ],
       "patterns": [
         "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification"
+      ]
+    },
+    {
+      "id": "entitypotioncause",
+      "name": "Entity Potion Cause",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the cause of the action of a potion effect on an entity, e.g. arrow, command"
+      ],
+      "patterns": [
+        "patrol captain, axolotl, death, removal by resurrection, beacon effect, potion drunk, illusion, unknown, drinking potion, expired, pillager captain, attack, villager trade, spawned spider, wither rose infliction, conversion, enter area effect cloud, conduit effect, command, food, drinking milk, plugin, converted, spider spawn, splash potion, warden, expiration, potion splash, dolphin boost, arrow infliction, turtle helmet effect"
       ]
     },
     {
