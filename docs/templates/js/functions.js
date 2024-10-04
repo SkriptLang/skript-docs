@@ -1,8 +1,16 @@
-let isCookiesAccepted = getCookie("cookies-accepted") === "true";
-
 // <> Cookies
+
+// Returns whether the user has accepted the cookies or not, or undefined if the user hasn't chosen yet
+function isCookiesAccepted() {
+  const cookie = getCookie("cookies-accepted");
+  if (!cookie) {
+    return undefined;
+  }
+  return Boolean(cookie);
+}
+
 function setCookie(cname, cvalue, exdays, force = false) {
-  if (!isCookiesAccepted && !force)
+  if (!isCookiesAccepted() && !force)
     return;
 
   const d = new Date();
@@ -37,7 +45,7 @@ function getCookie(cname) {
  * @param {double} exdays time in days
  */
 function setStorageItem(item, value, exdays, force = false) {
-  if (!isCookiesAccepted && !force)
+  if (!isCookiesAccepted() && !force)
     return;
     
   const d = new Date();
