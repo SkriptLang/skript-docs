@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-d763411",
+  "skriptVersion": "2.9.3-nightly-8ec8c2c",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2277,6 +2277,20 @@
       ],
       "patterns": [
         "copy %~objects% [in]to %~objects%"
+      ]
+    },
+    {
+      "id": "EffDetonate",
+      "name": "Detonate Entities",
+      "since": "INSERT VERSION",
+      "description": [
+        "Immediately detonates an entity. Accepted entities are fireworks, TNT minecarts, primed TNT, wind charges and creepers."
+      ],
+      "examples": [
+        "detonate last launched firework"
+      ],
+      "patterns": [
+        "detonate %entities%"
       ]
     },
     {
