@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-0ff13e7",
+  "skriptVersion": "2.9.3-nightly-d05ed06",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1022,9 +1022,9 @@
     {
       "id": "CondIsCharged",
       "name": "Is Charged",
-      "since": "2.5, INSERT VERSION (wither skulls)",
+      "since": "2.5, INSERT VERSION (withers, wither skulls)",
       "description": [
-        "Checks if a creeper or wither skull is charged (powered)."
+        "Checks if a creeper, wither, or wither skull is charged (powered)."
       ],
       "examples": [
         "if the last spawned creeper is charged:",
@@ -2127,7 +2127,7 @@
     {
       "id": "EffCharge",
       "name": "Charge Entity",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (wither skulls)",
       "description": [
         "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning."
       ],
