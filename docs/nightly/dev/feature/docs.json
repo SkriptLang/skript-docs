@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-d05ed06",
+  "skriptVersion": "2.9.3-nightly-7cf5d79",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -5565,6 +5565,36 @@
       "patterns": [
         "[the] %attributetype% [(1:(total|final|modified))] attribute [value] of %entities%",
         "%entities%'[s] %attributetype% [(1:(total|final|modified))] attribute [value]"
+      ]
+    },
+    {
+      "id": "ExprEntitySound",
+      "name": "Entity Sound",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the sound that a given entity will make in a specific scenario."
+      ],
+      "examples": [
+        "play sound (hurt sound of player) at player",
+        "set {_sounds::*} to death sounds of (all mobs in radius 10 of player)"
+      ],
+      "patterns": [
+        "[the] (damage|hurt) sound[s] of %livingentities%",
+        "%livingentities%'[s] (damage|hurt) sound[s]",
+        "[the] death sound[s] of %livingentities%",
+        "%livingentities%'[s] death sound[s]",
+        "[the] [high:(tall|high)|(low|normal)] fall damage sound[s] [from [[a] height [of]] %-number%] of %livingentities%",
+        "%livingentities%'[s] [high:(tall|high)|low:(low|normal)] fall [damage] sound[s] [from [[a] height [of]] %-number%]",
+        "[the] swim[ming] sound[s] of %livingentities%",
+        "%livingentities%'[s] swim[ming] sound[s]",
+        "[the] [fast:(fast|speedy)] splash sound[s] of %livingentities%",
+        "%livingentities%'[s] [fast:(fast|speedy)] splash sound[s]",
+        "[the] eat[ing] sound[s] of %livingentities% [(with|using|[while] eating [a]) %-itemtype%]",
+        "%livingentities%'[s] eat[ing] sound[s]",
+        "[the] drink[ing] sound[s] of %livingentities% [(with|using|[while] drinking [a]) %-itemtype%]",
+        "%livingentities%'[s] drink[ing] sound[s]",
+        "[the] ambient sound[s] of %livingentities%",
+        "%livingentities%'[s] ambient sound[s]"
       ]
     },
     {
