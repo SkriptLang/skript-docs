@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-9ffced2",
+  "skriptVersion": "2.9.3-nightly-0ff13e7",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2193,16 +2193,21 @@
     {
       "id": "EffConnect",
       "name": "Connect",
-      "since": "2.3",
+      "since": "2.3, INSERT VERSION (transfer)",
       "description": [
-        "Connects a player to another bungeecord server"
+        "Connect a player to a server running on your proxy, or any server supporting transfers. Read below for more information.",
+        "If the server is running Minecraft 1.20.5 or above, you may specify an IP and Port to transfer a player over to that server.",
+        "When transferring players using an IP, the transfer will not complete if the `accepts-transfers` option isn't enabled in `server.properties` for the server specified.",
+        "If the port is not provided, it will default to `25565`."
       ],
       "examples": [
-        "connect all players to \"hub\""
+        "connect all players to proxy server \"hub\"",
+        "transfer player to server \"my.server.com\"",
+        "transfer player to server \"localhost\" on port 25566"
       ],
       "patterns": [
-        "connect %players% to [server] %string%",
-        "send %players% to server %string%"
+        "(send|connect) %players% to [proxy|bungeecord] [server] %string%",
+        "transfer %players% to server %string% [on port %-number%]"
       ]
     },
     {
