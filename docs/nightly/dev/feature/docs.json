@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-22dfe9f",
+  "skriptVersion": "2.9.3-nightly-d638d16",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6912,6 +6912,27 @@
       "patterns": [
         "[the] difficult(y|ies) of %worlds%",
         "%worlds%'[s] difficult(y|ies)"
+      ]
+    },
+    {
+      "id": "ExprDomestication",
+      "name": "Horse Domestication",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets and/or sets the (max) domestication of a horse.",
+        "The domestication of a horse is how close a horse is to becoming tame - the higher the domestication, the closer they are to becoming tame (must be between 1 and the max domestication level of the horse).",
+        "The max domestication of a horse is how long it will take for a horse to become tame (must be greater than 0)."
+      ],
+      "examples": [
+        "function domesticateAndTame(horse: entity, p: offline player, i: int = 10):",
+        "\tadd {_i} to domestication level of {_horse}",
+        "\tif domestication level of {_horse} >= max domestication level of {_horse}:",
+        "\t\ttame {_horse}",
+        "\t\tset tamer of {_horse} to {_p}"
+      ],
+      "patterns": [
+        "[the] [:max[imum]] domestication level of %livingentities%",
+        "%livingentities%'[s] [:max[imum]] domestication level"
       ]
     },
     {
