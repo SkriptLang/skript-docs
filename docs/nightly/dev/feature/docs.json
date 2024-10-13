@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-59d3bc4",
+  "skriptVersion": "2.9.3-nightly-9ffced2",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9535,7 +9535,7 @@
     {
       "id": "ExprPrefixSuffix",
       "name": "Prefix/Suffix",
-      "since": "2.0",
+      "since": "2.0, INSERT VERSION (delete)",
       "description": [
         "The prefix or suffix as defined in the server's chat plugin."
       ],
@@ -9544,11 +9544,13 @@
         "\tcancel event",
         "\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world",
         "",
-        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \""
+        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \"",
+        "",
+        "clear player's prefix"
       ],
       "patterns": [
-        "[the] [chat] (1¦prefix|2¦suffix) of %players%",
-        "%players%'[s] [chat] (1¦prefix|2¦suffix)"
+        "[the] [chat] (1:prefix|2:suffix) of %players%",
+        "%players%'[s] [chat] (1:prefix|2:suffix)"
       ]
     },
     {
