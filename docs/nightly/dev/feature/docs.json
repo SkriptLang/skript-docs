@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-751c102",
+  "skriptVersion": "2.9.3-nightly-2b3c828",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -681,6 +681,24 @@
       ],
       "patterns": [
         "[the] egg (:will|will not|won't) hatch"
+      ]
+    },
+    {
+      "id": "CondTextDisplayHasDropShadow",
+      "name": "Text Display Has Drop Shadow",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns whether the text of a display has drop shadow applied."
+      ],
+      "examples": [
+        "if {_display} has drop shadow:",
+        "\tremove drop shadow from the text of {_display}"
+      ],
+      "patterns": [
+        "[[the] text of] %displays% (has|have) [a] (drop|text) shadow",
+        "%displays%'[s] text (has|have) [a] (drop|text) shadow",
+        "[[the] text of] %displays% (doesn't|does not|do not|don't) have [a] (drop|text) shadow",
+        "%displays%'[s] text (doesn't|does not|do not|don't) have [a] (drop|text) shadow"
       ]
     },
     {
@@ -1768,6 +1786,22 @@
       "patterns": [
         "%locations% (is|are) within %number% (block|metre|meter)[s] (around|of) %locations%",
         "%locations% (isn't|is not|aren't|are not) within %number% (block|metre|meter)[s] (around|of) %locations%"
+      ]
+    },
+    {
+      "id": "CondTextDisplaySeeThroughBlocks",
+      "name": "Text Display Visible Through Blocks",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns whether text displays can be seen through blocks or not."
+      ],
+      "examples": [
+        "if last spawned text display is visible through walls:",
+        "\tprevent last spawned text display from being visible through walls"
+      ],
+      "patterns": [
+        "%displays% (is|are) visible through (blocks|walls)",
+        "%displays% (isn't|is not|aren't|are not) visible through (blocks|walls)"
       ]
     },
     {
@@ -3370,36 +3404,6 @@
       ]
     },
     {
-      "id": "EffVectorRotateAroundAnother",
-      "name": "Vectors - Rotate Around Vector",
-      "since": "2.2-dev28",
-      "description": [
-        "Rotates one or more vectors around another vector"
-      ],
-      "examples": [
-        "rotate {_v} around vector 1, 0, 0 by 90"
-      ],
-      "patterns": [
-        "rotate %vectors% around %vector% by %number% [degrees]"
-      ]
-    },
-    {
-      "id": "EffVectorRotateXYZ",
-      "name": "Vectors - Rotate around XYZ",
-      "since": "2.2-dev28",
-      "description": [
-        "Rotates one or more vectors around the x, y, or z axis by some amount of degrees"
-      ],
-      "examples": [
-        "rotate {_v} around x-axis by 90",
-        "rotate {_v} around y-axis by 90",
-        "rotate {_v} around z-axis by 90 degrees"
-      ],
-      "patterns": [
-        "rotate %vectors% around (0¦x|1¦y|2¦z)(-| )axis by %number% [degrees]"
-      ]
-    },
-    {
       "id": "EffVehicle",
       "name": "Vehicle",
       "since": "2.0",
@@ -3468,6 +3472,70 @@
       ],
       "patterns": [
         "save [[the] world[s]] %worlds%"
+      ]
+    },
+    {
+      "id": "EffRotate",
+      "name": "Rotate",
+      "since": "2.2-dev28, INSERT VERSION (quaternions, displays)",
+      "description": [
+        "Rotates displays, quaternions, or vectors around an axis a set amount of degrees, or around all 3 axes at once.",
+        "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
+        "Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axes at once.",
+        "Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.",
+        "",
+        "Rotating a display is a shortcut for rotating its left rotation. If the right rotation needs to be modified, it should be acquired, rotated, and re-set.",
+        "",
+        "Note that rotating a quaternion/display around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating quaternions/displays around vector(1, 0, 0) is the same as rotating around the local X axis.",
+        "The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last."
+      ],
+      "examples": [
+        "rotate {_quaternion} around x axis by 10 degrees",
+        "rotate last spawned block display around y axis by 10 degrees",
+        "rotate {_vector} around vector(1, 1, 1) by 45",
+        "rotate {_quaternion} by x 45, y 90, z 135"
+      ],
+      "patterns": [
+        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
+        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
+        "rotate %vectors/quaternions/displays% around [the] %vector% by %number% [degrees]",
+        "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "EffTextDisplayDropShadow",
+      "name": "Text Display Drop Shadow",
+      "since": "INSERT VERSION",
+      "description": [
+        "Applies or removes drop shadow from the displayed text on a text display."
+      ],
+      "examples": [
+        "apply drop shadow to last spawned text display",
+        "if {_display} has drop shadow:",
+        "\tremove drop shadow from the text of {_display}"
+      ],
+      "patterns": [
+        "(apply|add) (drop|text) shadow to [[the] text of] %displays%",
+        "(apply|add) (drop|text) shadow to %displays%'[s] text",
+        "(remove|clear) (drop|text) shadow from [[the] text of] %displays%",
+        "(remove|clear) (drop|text) shadow from %displays%'[s] text"
+      ]
+    },
+    {
+      "id": "EffTextDisplaySeeThroughBlocks",
+      "name": "Text Display See Through Blocks",
+      "since": "INSERT VERSION",
+      "description": [
+        "Forces a text display to either be or not be visible through blocks."
+      ],
+      "examples": [
+        "force last spawned text display to be visible through walls",
+        "prevent all text displays from being visible through walls"
+      ],
+      "patterns": [
+        "make %displays% visible through (blocks|walls)",
+        "force %displays% to be visible through (blocks|walls)",
+        "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
       ]
     }
   ],
@@ -4901,6 +4969,31 @@
       ],
       "patterns": [
         "(pi|π)"
+      ]
+    },
+    {
+      "id": "ExprRotate",
+      "name": "Rotated Quaternion/Vector",
+      "since": "INSERT VERSION",
+      "description": [
+        "Rotates a quaternion or vector around an axis a set amount of degrees, or around all 3 axes at once.",
+        "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
+        "Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axes at once.",
+        "Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.",
+        "",
+        "Note that rotating a quaternion around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating around vector(1, 0, 0) is the same as rotating around the local X axis.",
+        "The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last."
+      ],
+      "examples": [
+        "set {_new} to {_quaternion} rotated around x axis by 10 degrees",
+        "set {_new} to {_vector} rotated around vector(1, 1, 1) by 45",
+        "set {_new} to {_quaternion} rotated by x 45, y 90, z 135"
+      ],
+      "patterns": [
+        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
+        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
+        "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
+        "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
     {
@@ -6434,18 +6527,20 @@
     {
       "id": "ExprBlockData",
       "name": "Block Data",
-      "since": "2.5, 2.5.2 (set)",
+      "since": "2.5, 2.5.2 (set), INSERT VERSION (block displays)",
       "description": [
-        "Get the <a href='classes.html#blockdata'>block data</a> associated with a block. This data can also be used to set blocks."
+        "Get the <a href='classes.html#blockdata'>block data</a> associated with a block.",
+        "This data can also be used to set blocks."
       ],
       "examples": [
-        "set {data} to block data of target block",
-        "set block at player to {data}",
+        "set {_data} to block data of target block",
+        "set block at player to {_data}",
+        "",
         "set block data of target block to oak_stairs[facing=south;waterlogged=true]"
       ],
       "patterns": [
-        "[the] block[ ]data of %blocks%",
-        "%blocks%'[s] block[ ]data"
+        "[the] block[ ]data of %blocks/displays%",
+        "%blocks/displays%'[s] block[ ]data"
       ]
     },
     {
@@ -6626,9 +6721,11 @@
     {
       "id": "ExprColorOf",
       "name": "Color of",
-      "since": "1.2",
+      "since": "1.2, INSERT VERSION (displays)",
       "description": [
-        "The <a href='./classes.html#color'>color</a> of an item, can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\"."
+        "The <a href='./classes.html#color'>color</a> of an item, entity, block, firework effect, or text display.",
+        "This can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
+        "Do note that firework effects support setting, adding, removing, resetting, and deleting; text displays support setting and resetting; and items, entities, and blocks only support setting, and only for very few items/blocks."
       ],
       "examples": [
         "on click on wool:",
@@ -6636,8 +6733,8 @@
         "\tset the color of the block to black"
       ],
       "patterns": [
-        "[the] colo[u]r[s] of %blocks/itemtypes/entities/fireworkeffects%",
-        "%blocks/itemtypes/entities/fireworkeffects%'[s] colo[u]r[s]"
+        "[the] colo[u]r[s] of %blocks/itemtypes/entities/fireworkeffects/displays%",
+        "%blocks/itemtypes/entities/fireworkeffects/displays%'[s] colo[u]r[s]"
       ]
     },
     {
@@ -7316,21 +7413,6 @@
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/itemtypes/itemstacks%",
         "%slots/itemtypes/itemstacks%'[s] item[[ ]stack] (amount|size|number)"
-      ]
-    },
-    {
-      "id": "ExprItemFrameSlot",
-      "name": "Item of an Entity",
-      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles)",
-      "description": [
-        "An item associated with an entity. For dropped item entities, it gets, obviously, the item that was dropped. For item frames, the item inside the frame is returned. For throwable projectiles (snowballs, enderpearls etc.),it gets the displayed item. Other entities do not have items associated with them."
-      ],
-      "examples": [
-        ""
-      ],
-      "patterns": [
-        "[the] item of %entities%",
-        "%entities%'[s] item"
       ]
     },
     {
@@ -8895,30 +8977,6 @@
       ]
     },
     {
-      "id": "ExprVectorXYZ",
-      "name": "Vectors - XYZ Component",
-      "since": "2.2-dev28",
-      "description": [
-        "Gets or changes the x, y or z component of a vector."
-      ],
-      "examples": [
-        "set {_v} to vector 1, 2, 3",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "add 1 to x of {_v}",
-        "add 2 to y of {_v}",
-        "add 3 to z of {_v}",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "set x component of {_v::*} to 1",
-        "set y component of {_v::*} to 2",
-        "set z component of {_v::*} to 3",
-        "send \"%x component of {_v::*}%, %y component of {_v::*}%, %z component of {_v::*}%\""
-      ],
-      "patterns": [
-        "[the] [vector] (0:x|1:y|2:z) [component[s]] of %vectors%",
-        "%vectors%'[s] [vector] (0:x|1:y|2:z) [component[s]]"
-      ]
-    },
-    {
       "id": "ExprVehicle",
       "name": "Vehicle",
       "since": "2.0",
@@ -9017,6 +9075,31 @@
       ]
     },
     {
+      "id": "ExprXYZComponent",
+      "name": "Vector/Quaternion - WXYZ Component",
+      "since": "2.2-dev28, INSERT VERSION (quaternions)",
+      "description": [
+        "Gets or changes the W, X, Y or Z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.",
+        "You cannot use the W component with vectors; it is for quaternions only."
+      ],
+      "examples": [
+        "set {_v} to vector 1, 2, 3",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "add 1 to x of {_v}",
+        "add 2 to y of {_v}",
+        "add 3 to z of {_v}",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "set x component of {_v} to 1",
+        "set y component of {_v} to 2",
+        "set z component of {_v} to 3",
+        "send \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
+      ],
+      "patterns": [
+        "[the] [vector|quaternion] (:w|:x|:y|:z) [component[s]] of %vectors/quaternions%",
+        "%vectors/quaternions%'[s] [vector|quaternion] (:w|:x|:y|:z) [component[s]]"
+      ]
+    },
+    {
       "id": "ExprYawPitch",
       "name": "Yaw / Pitch",
       "since": "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)",
@@ -9036,6 +9119,297 @@
       "patterns": [
         "[the] (:yaw|pitch) of %entities/locations/vectors%",
         "%entities/locations/vectors%'[s] (:yaw|pitch)"
+      ]
+    },
+    {
+      "id": "ExprItemOfEntity",
+      "name": "Item of an Entity",
+      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
+      "description": [
+        "An item associated with an entity. For dropped item entities, it gets the item that was dropped.",
+        "For item frames, the item inside the frame is returned.",
+        "For throwable projectiles (snowballs, enderpearls etc.) or item displays, it gets the displayed item.",
+        "Other entities do not have items associated with them."
+      ],
+      "examples": [
+        "item of event-entity",
+        "",
+        "set the item inside of event-entity to a diamond sword named \"Example\""
+      ],
+      "patterns": [
+        "[the] item [inside] of %entities%",
+        "%entities%'[s] item [inside]"
+      ]
+    },
+    {
+      "id": "ExprQuaternionAxisAngle",
+      "name": "Rotation Axis/Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the axis or angle that a quaternion will rotate by/around.",
+        "All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis."
+      ],
+      "examples": [
+        "set {_quaternion} to axisAngle(45, vector(1, 2, 3))",
+        "send rotation axis of {_quaternion} # 1, 2, 3",
+        "send rotation angle of {_quaternion} # 45",
+        "set rotation angle of {_quaternion} to 135",
+        "set rotation axis of {_quaternion} to vector(0, 1, 0)"
+      ],
+      "patterns": [
+        "[the] rotation (angle|:axis) of %quaternions%",
+        "%quaternions%'[s] rotation (angle|:axis)"
+      ]
+    },
+    {
+      "id": "ExprTextOf",
+      "name": "Text Of",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.",
+        "Note that currently you can only use Skript chat codes when running Paper."
+      ],
+      "examples": [
+        "set text of the last spawned text display to \"example\""
+      ],
+      "patterns": [
+        "[the] text[s] of %displays%",
+        "%displays%'[s] text[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayBillboard",
+      "name": "Display Billboard",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#billboard'>billboard</a> setting of <a href='classes.html#display'>displays</a>.",
+        "This describes the axes/points around which the display can pivot.",
+        "Displays spawn with the 'fixed' billboard by default. Resetting this expression will also set it to 'fixed'."
+      ],
+      "examples": [
+        "set billboard of the last spawned text display to center"
+      ],
+      "patterns": [
+        "[the] bill[ |-]board[ing] [setting] [of %displays%]",
+        "%displays%'[s] bill[ |-]board[ing] [setting]"
+      ]
+    },
+    {
+      "id": "ExprDisplayBrightness",
+      "name": "Display Brightness",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the brightness override of <a href='classes.html#display'>displays</a>.",
+        "Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.",
+        "Use the 'block' or 'sky' options to get/change specific values or get both values as a list by using neither option.",
+        "NOTE: setting only one of the sky/block light overrides of a display without an existing override will set both sky and block light to the given value. Make sure to set both block and sky levels to your desired values for the best results. Likewise, you can only clear the brightness override, you cannot clear/reset the sky/block values individually."
+      ],
+      "examples": [
+        "set sky light override of the last spawned text display to 7",
+        "subtract 3 from the block light level override of the last spawned text display",
+        "if sky light level override of {_display} is 5:",
+        "\tclear brightness override of {_display}"
+      ],
+      "patterns": [
+        "[the] [:block|:sky] (light [level]|brightness) override[s] of %displays%",
+        "%displays%'[s] [:block|:sky] (light [level]|brightness) override[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayGlowOverride",
+      "name": "Display Glow Color Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the glowing color override of <a href='classes.html#display'>displays</a>.",
+        "This overrides whatever color is already set for the scoreboard team of the displays."
+      ],
+      "examples": [
+        "set glow color override of the last spawned text display to blue"
+      ],
+      "patterns": [
+        "[the] glow[ing] colo[u]r[s] override[s] [of %displays%]",
+        "%displays%'[s] glow[ing] colo[u]r[s] override[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayHeightWidth",
+      "name": "Display Height/Width",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.",
+        "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
+        "If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0."
+      ],
+      "examples": [
+        "set display height of the last spawned text display to 2.5"
+      ],
+      "patterns": [
+        "[the] display (:height|width) [of %displays%]",
+        "%displays%'[s] display (:height|width)"
+      ]
+    },
+    {
+      "id": "ExprDisplayInterpolation",
+      "name": "Display Interpolation Delay/Duration",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the interpolation delay/duration of <a href='classes.html#display'>displays</a>.",
+        "Interpolation duration is the amount of time a display will take to interpolate, or shift, between its current state and a new state.",
+        "Interpolation delay is the amount of ticks before client-side interpolation will commence.Setting to 0 seconds will make it immediate.",
+        "Resetting either value will return that value to 0."
+      ],
+      "examples": [
+        "set interpolation delay of the last spawned text display to 2 ticks"
+      ],
+      "patterns": [
+        "[the] interpolation (:delay|duration)[s] [of %displays%]",
+        "%displays%'[s] interpolation (:delay|duration)[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayShadow",
+      "name": "Display Shadow Radius/Strength",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the shadow radius/strength of <a href='classes.html#display'>displays</a>."
+      ],
+      "examples": [
+        "set shadow radius of the last spawned text display to 1.75"
+      ],
+      "patterns": [
+        "[the] shadow (:radius|strength) [of %displays%]",
+        "%displays%'[s] shadow (:radius|strength)"
+      ]
+    },
+    {
+      "id": "ExprDisplayTeleportDuration",
+      "name": "Display Teleport Delay/Duration",
+      "since": "INSERT VERSION",
+      "description": [
+        "The teleport duration of displays is the amount of time it takes to get between locations.",
+        "0 means that updates are applied immediately.",
+        "1 means that the display entity will move from current position to the updated one over one tick.",
+        "Higher values spread the movement over multiple ticks. Max of 59 ticks."
+      ],
+      "examples": [
+        "set teleport delay of the last spawned text display to 2 ticks",
+        "teleport last spawned text display to {_location}",
+        "wait 2 ticks",
+        "message \"display entity has arrived at %{_location}%\""
+      ],
+      "patterns": [
+        "[the] teleport[ation] duration[s] [of %displays%]",
+        "%displays%'[s] teleport[ation] duration[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayTransformationRotation",
+      "name": "Display Transformation Rotation",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.",
+        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+      ],
+      "examples": [
+        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+      ],
+      "patterns": [
+        "[the] (:left|right) [transformation] rotation [of %displays%]",
+        "%displays%'[s] (:left|right) [transformation] rotation"
+      ]
+    },
+    {
+      "id": "ExprDisplayTransformationScaleTranslation",
+      "name": "Display Transformation Scale/Translation",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the transformation scale or translation of <a href='classes.html#display'>displays</a>."
+      ],
+      "examples": [
+        "set transformation translation of display to vector from -0.5, -0.5, -0.5 # Center the display in the same position as a block"
+      ],
+      "patterns": [
+        "[the] (display|[display] transformation) (:scale|translation) of %displays%",
+        "%displays%'[s] (display|[display] transformation) (:scale|translation)"
+      ]
+    },
+    {
+      "id": "ExprDisplayViewRange",
+      "name": "Display View Range",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the view range of <a href='classes.html#display'>displays</a>.",
+        "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
+        "For example, a player with 150% entity view distance will see a block display with a view range of 1.2 at 1.2 * 64 * 150% = 115.2 blocks away."
+      ],
+      "examples": [
+        "set view range of the last spawned text display to 2.9"
+      ],
+      "patterns": [
+        "[the] [display] view (range|radius) [of %displays%]",
+        "%displays%'[s] [display] view (range|radius)"
+      ]
+    },
+    {
+      "id": "ExprItemDisplayTransform",
+      "name": "Item Display Transform",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>."
+      ],
+      "examples": [
+        "set the item transform of the last spawned item display to first person left handed",
+        "set the item transform of the last spawned item display to no transform # Reset to default"
+      ],
+      "patterns": [
+        "[the] item [display] transform [of %displays%]",
+        "%displays%'[s] item [display] transform"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayAlignment",
+      "name": "Text Display Alignment",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>."
+      ],
+      "examples": [
+        "set text alignment of the last spawned text display to left"
+      ],
+      "patterns": [
+        "[the] text alignment[s] [of %displays%]",
+        "%displays%'[s] text alignment[s]"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayLineWidth",
+      "name": "Text Display Line Width",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the line width of <a href='classes.html#display'>text displays</a>. Default is 200."
+      ],
+      "examples": [
+        "set the line width of the last spawned text display to 300"
+      ],
+      "patterns": [
+        "[the] line width [of %displays%]",
+        "%displays%'[s] line width"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayOpacity",
+      "name": "Text Display Opacity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the opacity of <a href='classes.html#display'>text displays</a>.",
+        "Values are between -127 and 127. The value of 127 represents it being completely opaque."
+      ],
+      "examples": [
+        "set the opacity of the last spawned text display to -1 # Reset"
+      ],
+      "patterns": [
+        "[the] [display] opacity [of %displays%]",
+        "%displays%'[s] [display] opacity"
       ]
     },
     {
@@ -11765,6 +12139,14 @@
       ]
     },
     {
+      "id": "quaternion",
+      "name": "Quaternion",
+      "since": "INSERT VERSION",
+      "description": [
+        "Quaternions are four dimensional vectors, often used for representing rotations."
+      ]
+    },
+    {
       "id": "weathertype",
       "name": "Weather Type",
       "since": "1.0",
@@ -12390,6 +12772,47 @@
       ]
     },
     {
+      "id": "display",
+      "name": "Display Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "A text, block or item display entity."
+      ]
+    },
+    {
+      "id": "billboard",
+      "name": "Display Billboard",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the billboard setting of a display."
+      ],
+      "patterns": [
+        "vertical pivot, horizontal, middle, horizontal pivot, center pivot, center, fixed, vertical"
+      ]
+    },
+    {
+      "id": "textalignment",
+      "name": "Display Text Alignment",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the text alignment setting of a text display."
+      ],
+      "patterns": [
+        "middle aligned, centered, right aligned, center aligned, left aligned"
+      ]
+    },
+    {
+      "id": "itemdisplaytransform",
+      "name": "Item Display Transforms",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the transform setting of an item display."
+      ],
+      "patterns": [
+        "first person left handed, left handed in first person, right handed in third person, first person left hand, no transform, the ground, third person right hand, third person right handed, right handed in first person, menu, head, third person left hand, first person right handed, first person right hand, fixed position, left handed in third person, gui, ground, fixed, third person left handed"
+      ]
+    },
+    {
       "id": "money",
       "name": "Money",
       "since": "2.0",
@@ -12840,16 +13263,22 @@
       "name": "Spawn",
       "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
       "description": [
-        "Spawn a creature. This can be used as an effect and as a section.",
+        "Spawns entities. This can be used as an effect and as a section.",
+        "",
         "If it is used as a section, the section is run before the entity is added to the world.",
         "You can modify the entity in this section, using for example 'event-entity' or 'cow'. ",
-        "Do note that other event values, such as 'player', won't work in this section."
+        "Do note that other event values, such as 'player', won't work in this section.",
+        "",
+        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true."
       ],
       "examples": [
         "spawn 3 creepers at the targeted block",
         "spawn a ghast 5 meters above the player",
         "spawn a zombie at the player:",
-        "\tset name of the zombie to \"\""
+        "\tset name of the zombie to \"\"",
+        "",
+        "spawn a block display of a ladder[waterlogged=true] at location above player:",
+        "\tset billboard of event-display to center # allows the display to rotate around the center axis"
       ],
       "patterns": [
         "(spawn|summon) %entitytypes% [%directions% %locations%]",
@@ -13171,6 +13600,21 @@
       ]
     },
     {
+      "id": "axisAngle",
+      "name": "axisAngle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a quaternion from the given angle (in degrees) and axis (as a vector). This represents a rotation around the given axis by the given angle."
+      ],
+      "examples": [
+        "axisangle(90, (vector from player's facing))"
+      ],
+      "return-type": "Quaternion",
+      "patterns": [
+        "axisAngle(angle: number, axis: vector)"
+      ]
+    },
+    {
       "id": "ceiling",
       "name": "ceiling",
       "since": "2.2",
@@ -13275,16 +13719,17 @@
     {
       "id": "rgb",
       "name": "rgb",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (alpha)",
       "description": [
-        "Returns a RGB color from the given red, green and blue parameters."
+        "Returns a RGB color from the given red, green and blue parameters. Alpha values can be added optionally, but these only take affect in certain situations, like text display backgrounds."
       ],
       "examples": [
-        "dye player's leggings rgb(120, 30, 45)"
+        "dye player's leggings rgb(120, 30, 45)",
+        "set the colour of a text display to rgb(10, 50, 100, 50)"
       ],
       "return-type": "Color",
       "patterns": [
-        "rgb(red: long, green: long, blue: long)"
+        "rgb(red: long, green: long, blue: long, alpha: long = 255)"
       ]
     },
     {
@@ -13438,6 +13883,21 @@
       "return-type": "Number",
       "patterns": [
         "max(ns: numbers)"
+      ]
+    },
+    {
+      "id": "quaternion",
+      "name": "quaternion",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a quaternion from the given W, X, Y and Z parameters. "
+      ],
+      "examples": [
+        "quaternion(1, 5.6, 45.21, 10)"
+      ],
+      "return-type": "Quaternion",
+      "patterns": [
+        "quaternion(w: number, x: number, y: number, z: number)"
       ]
     },
     {
