@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-7cf5d79",
+  "skriptVersion": "2.9.3-nightly-97055a2",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2235,7 +2235,7 @@
       ],
       "patterns": [
         "continue [this loop|[the] [current] loop]",
-        "continue [the] <-?[0-9]+>(st|nd|rd|th) loop"
+        "continue [the] <-?\\d+(_\\d+)*>(st|nd|rd|th) loop"
       ]
     },
     {
@@ -2360,7 +2360,7 @@
       "patterns": [
         "(exit|stop) [trigger]",
         "(exit|stop) [1|a|the|this] (section|1:loop|2:conditional)",
-        "(exit|stop) <-?[0-9]+> (section|1:loop|2:conditional)s",
+        "(exit|stop) <-?\\d+(_\\d+)*> (section|1:loop|2:conditional)s",
         "(exit|stop) all (section|1:loop|2:conditional)s"
       ]
     },
