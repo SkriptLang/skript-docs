@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-2b3c828",
+  "skriptVersion": "2.9.3-nightly-0f320f2",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1219,16 +1219,20 @@
     {
       "id": "CondIsInvulnerable",
       "name": "Is Invulnerable",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (gamemode)",
       "description": [
-        "Checks whether an entity is invulnerable."
+        "Checks whether an entity or a gamemode is invulnerable.\nFor gamemodes, Paper and Minecraft 1.20.6 are required"
       ],
       "examples": [
-        "target entity is invulnerable"
+        "target entity is invulnerable",
+        "",
+        "loop all gamemodes:",
+        "\tif loop-value is not invulnerable:",
+        "\t\tbroadcast \"the gamemode %loop-value% is vulnerable!\""
       ],
       "patterns": [
-        "%entities% (is|are) (invulnerable|invincible)",
-        "%entities% (isn't|is not|aren't|are not) (invulnerable|invincible)"
+        "%entities/gamemodes% (is|are) (invulnerable|invincible)",
+        "%entities/gamemodes% (isn't|is not|aren't|are not) (invulnerable|invincible)"
       ]
     },
     {
