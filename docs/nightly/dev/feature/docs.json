@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-99731b0",
+  "skriptVersion": "2.9.3-nightly-b4887d7",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -12931,6 +12931,18 @@
       ],
       "patterns": [
         "patrol captain, axolotl, death, removal by resurrection, beacon effect, potion drunk, illusion, unknown, drinking potion, expired, pillager captain, attack, villager trade, spawned spider, wither rose infliction, conversion, enter area effect cloud, conduit effect, command, food, drinking milk, plugin, converted, spider spawn, splash potion, warden, expiration, potion splash, dolphin boost, arrow infliction, turtle helmet effect"
+      ]
+    },
+    {
+      "id": "WolfVariant",
+      "name": "Wolf Variant",
+      "since": "@VERSION",
+      "description": [
+        "Represents the variant of a wolf entity.",
+        "NOTE: Minecraft namespaces are supported, ex: 'minecraft:ashen'."
+      ],
+      "patterns": [
+        "ashen, black, chestnut, pale, rusty, snowy, spotted, striped, woods"
       ]
     },
     {
