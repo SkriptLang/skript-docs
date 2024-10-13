@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-b4887d7",
+  "skriptVersion": "2.9.3-nightly-ad654cf",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -7693,6 +7693,23 @@
       "patterns": [
         "[the] last damage (cause|reason|type) of %livingentities%",
         "%livingentities%'[s] last damage (cause|reason|type)"
+      ]
+    },
+    {
+      "id": "ExprLastDeathLocation",
+      "name": "Last Death Location",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the last death location of a player, or offline player, if available.",
+        "Can also be set, reset, and deleted if the player is online."
+      ],
+      "examples": [
+        "set {_loc} to the last death location of player",
+        "teleport player to last death location of (random element out of all players)"
+      ],
+      "patterns": [
+        "[the] [last] death location[s] of %offlineplayers%",
+        "%offlineplayers%'[s] [last] death location[s]"
       ]
     },
     {
