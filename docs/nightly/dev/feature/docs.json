@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-33ebb8f",
+  "skriptVersion": "2.9.3-nightly-6b4a24d",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9646,22 +9646,25 @@
     {
       "id": "ExprEntities",
       "name": "Entities",
-      "since": "1.2.1, 2.5 (chunks)",
+      "since": "1.2.1, 2.5 (chunks), INSERT VERSION (within)",
       "description": [
-        "All entities in all worlds, in a specific world, in a chunk or in a radius around a certain location, e.g. <code>all players</code>, <code>all creepers in the player's world</code>, or <code>players in radius 100 of the player</code>."
+        "All entities in all worlds, in a specific world, in a chunk, in a radius around a certain location or within two locations. e.g. <code>all players</code>, <code>all creepers in the player's world</code>, or <code>players in radius 100 of the player</code>."
       ],
       "examples": [
         "kill all creepers in the player's world",
         "send \"Psst!\" to all players within 100 meters of the player",
         "give a diamond to all ops",
         "heal all tamed wolves in radius 2000 around {town center}",
-        "delete all monsters in chunk at player"
+        "delete all monsters in chunk at player",
+        "size of all players within {_corner::1} and {_corner::2}}"
       ],
       "patterns": [
         "[(all [[of] the]|the)] %*entitydatas% [(in|of) ([world[s]] %-worlds%|1¦%-chunks%)]",
         "[(all [[of] the]|the)] entities of type[s] %entitydatas% [(in|of) ([world[s]] %-worlds%|1¦%-chunks%)]",
         "[(all [[of] the]|the)] %*entitydatas% (within|[with]in radius) %number% [(block[s]|met(er|re)[s])] (of|around) %location%",
-        "[(all [[of] the]|the)] entities of type[s] %entitydatas% in radius %number% (of|around) %location%"
+        "[(all [[of] the]|the)] entities of type[s] %entitydatas% in radius %number% (of|around) %location%",
+        "[(all [[of] the]|the)] %*entitydatas% within %location% and %location%",
+        "[(all [[of] the]|the)] entities of type[s] %entitydatas% within %location% and %location%"
       ]
     },
     {
