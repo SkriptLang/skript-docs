@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-92088ce",
+  "skriptVersion": "2.9.3-nightly-d763411",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -67,19 +67,22 @@
     {
       "id": "CondCanSee",
       "name": "Can See",
-      "since": "2.3",
+      "since": "2.3, INSERT VERSION (entities)",
       "description": [
-        "Checks whether the given players can see another players."
+        "Checks whether the given players can see the provided entities."
       ],
       "examples": [
-        "if the player can't see the player-argument:",
-        "\tmessage \"&lt;light red&gt;The player %player-argument% is not online!\""
+        "if sender can't see the player-argument:",
+        "\tmessage \"who dat?\"",
+        "",
+        "if the player can see the last spawned entity:",
+        "\tmessage \"hello there!\""
       ],
       "patterns": [
-        "%players% (is|are) [(1¦in)]visible for %players%",
-        "%players% can see %players%",
-        "%players% (is|are)(n't| not) [(1¦in)]visible for %players%",
-        "%players% can('t| not) see %players%"
+        "%entities% (is|are) [visible|:invisible] for %players%",
+        "%players% can see %entities%",
+        "%entities% (is|are)(n't| not) [visible|:invisible] for %players%",
+        "%players% can('t| not) see %entities%"
       ]
     },
     {
@@ -2339,6 +2342,30 @@
       ]
     },
     {
+      "id": "EffEntityVisibility",
+      "name": "Entity Visibility",
+      "since": "2.3, INSERT VERSION (entities)",
+      "description": [
+        "Change visibility of the given entities for the given players.",
+        "If no players are given, will hide the entities from all online players.",
+        "",
+        "When reveal is used in combination of the <a href='expressions.html#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
+        "",
+        "Note: all previously hidden entities (including players) will be visible when a player leaves and rejoins."
+      ],
+      "examples": [
+        "on spawn:",
+        "\tif event-entity is a chicken:",
+        "\t\thide event-entity",
+        "",
+        "reveal hidden players of players"
+      ],
+      "patterns": [
+        "hide %entities% [(from|for) %-players%]",
+        "reveal %entities% [(to|for|from) %-players%]"
+      ]
+    },
+    {
       "id": "EffEquip",
       "name": "Equip",
       "since": "1.0, 2.7 (multiple entities, unequip)",
@@ -2951,28 +2978,6 @@
       "patterns": [
         "hide [all] player [related] info[rmation] [(in|on|from) [the] server list]",
         "(show|reveal) [all] player [related] info[rmation] [(in|to|on|from) [the] server list]"
-      ]
-    },
-    {
-      "id": "EffPlayerVisibility",
-      "name": "Player Visibility",
-      "since": "2.3",
-      "description": [
-        "Change visibility of a player for the given players.",
-        "When reveal is used in combination of the <a href='expressions.html#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
-        "",
-        "Note: if a player was hidden and relogs, this player will be visible again."
-      ],
-      "examples": [
-        "on join:",
-        "\tif {vanished::%player's uuid%} is true:",
-        "\t\thide the player from all players",
-        "",
-        "reveal hidden players of {_player}"
-      ],
-      "patterns": [
-        "hide %players% [(from|for) %-players%]",
-        "reveal %players% [(to|for|from) %-players%]"
       ]
     },
     {
@@ -7484,7 +7489,7 @@
       "name": "Hidden Players",
       "since": "2.3",
       "description": [
-        "The players hidden from a player that were hidden using the <a href='effects.html#EffPlayerVisibility'>player visibility</a> effect."
+        "The players hidden from a player that were hidden using the <a href='effects.html#EffEntityVisibility'>entity visibility</a> effect."
       ],
       "examples": [
         "message \"&lt;light red&gt;You are currently hiding: &lt;light gray&gt;%hidden players of the player%\""
