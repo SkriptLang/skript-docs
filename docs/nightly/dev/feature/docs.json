@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-97055a2",
+  "skriptVersion": "2.9.3-nightly-99731b0",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6655,6 +6655,25 @@
       "patterns": [
         "[the] [block] hardness of %itemtypes%",
         "%itemtypes%'[s] [block] hardness"
+      ]
+    },
+    {
+      "id": "ExprBlockSound",
+      "name": "Block Sound",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the sound that a given block, blockdata, or itemtype will use in a specific scenario.",
+        "This will return a string in the form of \"SOUND_EXAMPLE\", which can be used in the play sound syntax.",
+        "",
+        "Check out <a href=\"https://minecraft.wiki/w/Sounds.json\">this website</a> for a list of sounds in Minecraft, or <a href=\"https://minecraft.wiki/w/Sound\">this one</a> to go to the Sounds wiki page."
+      ],
+      "examples": [
+        "play sound (break sound of dirt) at all players",
+        "set {_sounds::*} to place sounds of dirt, grass block, blue wool and stone"
+      ],
+      "patterns": [
+        "[the] (1:break|2:fall|3:hit|4:place|5:step) sound[s] of %blocks/blockdatas/itemtypes%",
+        "%blocks/blockdatas/itemtypes%'[s] (1:break|2:fall|3:hit|4:place|5:step) sound[s]"
       ]
     },
     {
