@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-ad654cf",
+  "skriptVersion": "2.9.3-nightly-b36ca00",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -4400,9 +4400,9 @@
     {
       "id": "ExprMessage",
       "name": "Message",
-      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message)",
+      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message), INSERT VERSION (broadcasted message)",
       "description": [
-        "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed."
+        "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, the death message of a death event or the broadcasted message in a broadcast event. This expression is mostly useful for being changed."
       ],
       "examples": [
         "on chat:",
@@ -4423,13 +4423,17 @@
         "\t\tset quit message to \"%player% left this awesome server!\"",
         "",
         "on death:",
-        "\tset the death message to \"%player% died!\""
+        "\tset the death message to \"%player% died!\"",
+        "",
+        "on broadcast:",
+        "\tset broadcast message to \"&a[BROADCAST] %broadcast message%\""
       ],
       "patterns": [
         "[the] [chat( |-)]message",
         "[the] (join|log[ ]in)( |-)message",
         "[the] (quit|leave|log[ ]out|kick)( |-)message",
-        "[the] death( |-)message"
+        "[the] death( |-)message",
+        "[the] broadcast(-|[ed] )message"
       ]
     },
     {
@@ -12247,6 +12251,21 @@
       ],
       "patterns": [
         "enderman (enrage|anger)"
+      ]
+    },
+    {
+      "id": "broadcast",
+      "name": "On Broadcast",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a message is broadcasted."
+      ],
+      "examples": [
+        "on broadcast:",
+        "\tset broadcast-message to \"&amp;amp;amp;amp;amp;c[BROADCAST] %broadcasted message%\""
+      ],
+      "patterns": [
+        "broadcast"
       ]
     },
     {
