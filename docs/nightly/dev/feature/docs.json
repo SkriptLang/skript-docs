@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-790c779",
+  "skriptVersion": "2.9.3-nightly-92088ce",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1819,6 +1819,24 @@
       ]
     },
     {
+      "id": "CondLidState",
+      "name": "Lid Is Open/Closed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Check to see whether lidded blocks (chests, shulkers, etc.) are open or closed."
+      ],
+      "examples": [
+        "if the lid of {_chest} is closed:",
+        "\topen the lid of {_block}"
+      ],
+      "patterns": [
+        "[the] lid[s] of %blocks% (is|are) (open[ed]|:close[d])",
+        "[the] lid[s] of %blocks% (isn't|is not|aren't|are not) (open[ed]|:close[d])",
+        "%blocks%'[s] lid[s] (is|are) (open[ed]|:close[d])",
+        "%blocks%'[s] lid[s] (isn't|is not|aren't|are not) (open[ed]|:close[d])"
+      ]
+    },
+    {
       "id": "CondWithinRadius",
       "name": "Is Within Radius",
       "since": "2.7",
@@ -2676,6 +2694,22 @@
         "(leash|lead) %livingentities% to %entity%",
         "make %entity% (leash|lead) %livingentities%",
         "un(leash|lead) [holder of] %livingentities%"
+      ]
+    },
+    {
+      "id": "EffLidState",
+      "name": "Open/Close Lid",
+      "since": "INSERT VERSION",
+      "description": [
+        "Open or close the lid of the block(s)."
+      ],
+      "examples": [
+        "open the lid of {_chest}",
+        "close the lid of {_blocks::*}"
+      ],
+      "patterns": [
+        "(open|:close) [the] lid[s] (of|for) %blocks%",
+        "(open|:close) %blocks%'[s] lid[s]"
       ]
     },
     {
