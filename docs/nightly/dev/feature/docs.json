@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-6b4a24d",
+  "skriptVersion": "2.9.3-nightly-59d3bc4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2230,7 +2230,7 @@
       ],
       "patterns": [
         "continue [this loop|[the] [current] loop]",
-        "continue [the] %*integer%(st|nd|rd|th) loop"
+        "continue [the] <-?[0-9]+>(st|nd|rd|th) loop"
       ]
     },
     {
@@ -2354,8 +2354,8 @@
       ],
       "patterns": [
         "(exit|stop) [trigger]",
-        "(exit|stop) [(1|a|the|this)] (section|1:loop|2:conditional)",
-        "(exit|stop) <\\d+> (section|1:loop|2:conditional)s",
+        "(exit|stop) [1|a|the|this] (section|1:loop|2:conditional)",
+        "(exit|stop) <-?[0-9]+> (section|1:loop|2:conditional)s",
         "(exit|stop) all (section|1:loop|2:conditional)s"
       ]
     },
@@ -3096,7 +3096,7 @@
       "name": "Return",
       "since": "2.2, 2.8.0 (returns aliases)",
       "description": [
-        "Makes a trigger (e.g. a function) return a value"
+        "Makes a trigger or a section (e.g. a function) return a value"
       ],
       "examples": [
         "function double(i: number) :: number:",
@@ -3327,7 +3327,7 @@
         "suppress the variable save warnings"
       ],
       "patterns": [
-        "[local[ly]] suppress [the] (1:conflict|2:variable save|3:[missing] conjunction[s]|4:starting [with] expression[s]|5:deprecated syntax) warning[s]"
+        "[local[ly]] suppress [the] (0:conflict|1:variable save|2:[missing] conjunction|3:starting [with] expression[s]|4:deprecated syntax|5:unreachable code) warning[s]"
       ]
     },
     {
@@ -13510,7 +13510,7 @@
         "\twait 1 second # without using a delay effect the server will crash"
       ],
       "patterns": [
-        "[(:do)] while <.+>"
+        "[:do] while <.+>"
       ]
     }
   ],
