@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-b36ca00",
+  "skriptVersion": "2.9.3-nightly-790c779",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9902,6 +9902,35 @@
       ],
       "patterns": [
         "[block] form[ing] [[of] %-itemtypes/blockdatas%]"
+      ]
+    },
+    {
+      "id": "block_drop",
+      "name": "On Block Drop",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a block broken by a player drops something.",
+        "<ul>",
+        "<li>event-player: The player that broke the block</li>",
+        "<li>past event-block: The block that was broken</li>",
+        "<li>event-block: The block after being broken</li>",
+        "<li>event-items (or drops): The drops of the block</li>",
+        "<li>event-entities: The entities of the dropped items</li>",
+        "</ul>",
+        "",
+        "If the breaking of the block leads to others being broken, such as torches, they will appearin \"event-items\" and \"event-entities\"."
+      ],
+      "examples": [
+        "on block drop:",
+        "\tbroadcast event-player",
+        "\tbroadcast past event-block",
+        "\tbroadcast event-block",
+        "\tbroadcast event-items",
+        "\tbroadcast event-entities",
+        "on block drop of oak log:"
+      ],
+      "patterns": [
+        "block drop[ping] [[of] %-itemtypes/blockdatas%]"
       ]
     },
     {
