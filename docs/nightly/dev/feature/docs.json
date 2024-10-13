@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-0f320f2",
+  "skriptVersion": "2.9.3-nightly-22dfe9f",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1023,6 +1023,22 @@
       "patterns": [
         "%livingentities% (is|are) climbing",
         "%livingentities% (isn't|is not|aren't|are not) climbing"
+      ]
+    },
+    {
+      "id": "CondIsCommandBlockConditional",
+      "name": "Is Conditional",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a command block is conditional or not."
+      ],
+      "examples": [
+        "if {_block} is conditional:",
+        "\tmake {_block} unconditional"
+      ],
+      "patterns": [
+        "%blocks% (is|are) [:un]conditional",
+        "%blocks% (isn't|is not|aren't|are not) [:un]conditional"
       ]
     },
     {
@@ -2129,6 +2145,21 @@
         "[execute] [the] [bungee:bungee[cord]] command[s] %strings% [by %-commandsenders%]",
         "[execute] [the] %commandsenders% [bungee:bungee[cord]] command[s] %strings%",
         "(let|make) %commandsenders% execute [[the] [bungee:bungee[cord]] command[s]] %strings%"
+      ]
+    },
+    {
+      "id": "EffCommandBlockConditional",
+      "name": "Conditional / Unconditional",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether the provided command blocks are conditional or not."
+      ],
+      "examples": [
+        "make command block {_block} conditional",
+        "make command block {_block} unconditional if {_block} is conditional"
+      ],
+      "patterns": [
+        "make command block[s] %blocks% [not:(un|not )]conditional"
       ]
     },
     {
@@ -6739,6 +6770,22 @@
       "patterns": [
         "[the] colo[u]r[s] of %blocks/itemtypes/entities/fireworkeffects/displays%",
         "%blocks/itemtypes/entities/fireworkeffects/displays%'[s] colo[u]r[s]"
+      ]
+    },
+    {
+      "id": "ExprCommandBlockCommand",
+      "name": "Command Block Command",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets or sets the command associated with a command block or minecart with command block."
+      ],
+      "examples": [
+        "send command of {_block}",
+        "set command of {_cmdMinecart} to \"say asdf\""
+      ],
+      "patterns": [
+        "[the] [command[ ]block] command of %blocks/entities%",
+        "%blocks/entities%'[s] [command[ ]block] command"
       ]
     },
     {
