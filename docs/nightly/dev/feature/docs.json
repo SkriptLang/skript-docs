@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-d638d16",
+  "skriptVersion": "2.9.3-nightly-33ebb8f",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -531,6 +531,34 @@
       ],
       "patterns": [
         "running [(1¦below)] minecraft %string%"
+      ]
+    },
+    {
+      "id": "CondPastFuture",
+      "name": "In The Past/Future",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a date is in the past or future.",
+        "Note that using the 'now' expression will not be in the past or future when used directly in the condition."
+      ],
+      "examples": [
+        "set {_date} to now",
+        "wait 5 seconds",
+        "if {_date} is in the past:",
+        "\t# this will be true",
+        "",
+        "if now is in the future:",
+        "\t# this will be false",
+        "",
+        "set {_dates::*} to 1 day from now, 12 days from now, and 1 year from now",
+        "if {_dates::*} are in the future:",
+        "\t# this will be true",
+        "if {_dates::*} have passed:",
+        "\t# this will be false"
+      ],
+      "patterns": [
+        "%dates% (is|are)[negated:(n't| not)] in the (past|:future)",
+        "%dates% ha(s|ve)[negated:(n't| not)] passed"
       ]
     },
     {
@@ -8796,16 +8824,19 @@
     },
     {
       "id": "ExprTimeSince",
-      "name": "Time Since",
-      "since": "2.5",
+      "name": "Time Since/Until",
+      "since": "2.5, INSERT VERSION (time until)",
       "description": [
-        "The time that has passed since a date. If the given date is in the future, a value will not be returned."
+        "The time since a date has passed or the time until a date will pass.",
+        "This expression will return 0 seconds if the time since or time until would be negative, e.g. if one tries to get the time since a future date."
       ],
       "examples": [
-        "send \"%time since 5 minecraft days ago% has passed since 5 minecraft days ago!\" to player"
+        "send \"%time since 5 minecraft days ago% has passed since 5 minecraft days ago!\" to player",
+        "send \"%time until {countdown::end}% until the game begins!\" to player"
       ],
       "patterns": [
-        "[the] time since %dates%"
+        "[the] time since %dates%",
+        "[the] (time [remaining]|remaining time) until %dates%"
       ]
     },
     {
