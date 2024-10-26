@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-a3d490b",
+  "skriptVersion": "2.9.3-nightly-04afda1",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -5203,6 +5203,24 @@
       ]
     },
     {
+      "id": "ExprExperienceCooldownChangeReason",
+      "name": "Experience Cooldown Change Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "The <a href='classes.html#experiencechangereason'>experience change reason</a> within in an<a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
+      ],
+      "examples": [
+        "on player experience cooldown change:",
+        "\tif xp cooldown change reason is plugin:",
+        "\t\t#Changed by a plugin",
+        "\telse if xp cooldown change reason is orb pickup:",
+        "\t\t#Changed by picking up xp orb"
+      ],
+      "patterns": [
+        "[the] [the] (experience|[e]xp) cooldown change (reason|cause|type)"
+      ]
+    },
+    {
       "id": "ExprHealReason",
       "name": "Heal Reason",
       "since": "2.5",
@@ -7247,6 +7265,26 @@
       "patterns": [
         "[the] exhaustion of %players%",
         "%players%'[s] exhaustion"
+      ]
+    },
+    {
+      "id": "ExprExperienceCooldown",
+      "name": "Experience Pickup Cooldown",
+      "since": "INSERT VERSION",
+      "description": [
+        "The experience cooldown of a player.",
+        "Experience cooldown is how long until a player can pick up another orb of experience.",
+        "The cooldown of a player must be 0 to pick up another orb of experience."
+      ],
+      "examples": [
+        "send experience cooldown of player",
+        "set the xp pickup cooldown of player to 1 hour",
+        "if exp collection cooldown of player >= 10 minutes:",
+        "\tclear the experience pickup cooldown of player"
+      ],
+      "patterns": [
+        "[the] [the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
+        "%players%'[s] [the] (experience|[e]xp) [pickup|collection] cooldown"
       ]
     },
     {
@@ -12369,6 +12407,25 @@
       ]
     },
     {
+      "id": "experience_cooldown_change",
+      "name": "On Experience Cooldown Change",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player's experience cooldown changes.",
+        "Experience cooldown is how long until a player can pick up another orb of experience."
+      ],
+      "examples": [
+        "on player experience cooldown change:",
+        "\tbroadcast event-player",
+        "\tbroadcast event-timespan",
+        "\tbroadcast past event-timespan",
+        "\tbroadcast xp cooldown change reason"
+      ],
+      "patterns": [
+        "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
       "id": "region_enterleave",
       "name": "On Region Enter/Leave",
       "since": "2.1",
@@ -13079,6 +13136,17 @@
       ],
       "patterns": [
         "ashen, black, chestnut, pale, rusty, snowy, spotted, striped, woods"
+      ]
+    },
+    {
+      "id": "experiencecooldownchangereason",
+      "name": "Experience Cooldown Change Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a change reason of an <a href='events.html#experience cooldown change event'>experience cooldown change event</a>."
+      ],
+      "patterns": [
+        "plugin, pickup orb, orb pickup"
       ]
     },
     {
