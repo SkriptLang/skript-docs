@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-7495ae5",
+  "skriptVersion": "2.9.3-nightly-a3d490b",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -312,6 +312,24 @@
         "%blocks% (is|are) indirectly redstone powered",
         "%blocks% (is|are)(n't| not) redstone powered",
         "%blocks% (is|are)(n't| not) indirectly redstone powered"
+      ]
+    },
+    {
+      "id": "CondIsDivisibleBy",
+      "name": "Is Evenly Divisible By",
+      "since": "INSERT VERSION",
+      "description": [
+        "Check if a number is evenly divisible by another number."
+      ],
+      "examples": [
+        "if 5 is evenly divisible by 5:",
+        "if 11 cannot be evenly divided by 10:"
+      ],
+      "patterns": [
+        "%numbers% (is|are) evenly divisible by %number%",
+        "%numbers% (isn't|is not|aren't|are not) evenly divisible by %number%",
+        "%numbers% can be evenly divided by %number%",
+        "%numbers% (can't|can[ ]not) be evenly divided by %number%"
       ]
     },
     {
