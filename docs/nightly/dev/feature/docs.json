@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-13e00f6",
+  "skriptVersion": "2.9.3-nightly-ead4ca4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1892,6 +1892,91 @@
       ]
     },
     {
+      "id": "CondCanAge",
+      "name": "Can Age",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not an entity will be able to age/grow up."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tentity can't age",
+        "\tbroadcast \"An immortal has been born!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (age|grow (up|old[er]))",
+        "%livingentities% (can't|cannot|can not) (age|grow (up|old[er]))"
+      ]
+    },
+    {
+      "id": "CondCanBreed",
+      "name": "Can Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity can be bred."
+      ],
+      "examples": [
+        "on right click on living entity:",
+        "\tevent-entity can't breed",
+        "\tsend \"Turns out %event-entity% is not breedable. Must be a Skript user!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (breed|be bred)",
+        "%livingentities% (can't|cannot|can not) (breed|be bred)"
+      ]
+    },
+    {
+      "id": "CondIsAdult",
+      "name": "Is Adult",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is an adult."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is not an adult",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [an] adult",
+        "%livingentities% (isn't|is not|aren't|are not) [an] adult"
+      ]
+    },
+    {
+      "id": "CondIsBaby",
+      "name": "Is Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is a baby."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is a baby",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) a (child|baby)",
+        "%livingentities% (isn't|is not|aren't|are not) a (child|baby)"
+      ]
+    },
+    {
+      "id": "CondIsInLove",
+      "name": "Is In Love",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is in love."
+      ],
+      "examples": [
+        "on spawn of living entity:",
+        "\tif entity is in love:",
+        "broadcast \"That was quick!\""
+      ],
+      "patterns": [
+        "%livingentities% (is|are) in lov(e|ing) [state|mode]",
+        "%livingentities% (isn't|is not|aren't|are not) in lov(e|ing) [state|mode]"
+      ]
+    },
+    {
       "id": "CondCompare",
       "name": "Comparison",
       "since": "1.0",
@@ -3676,6 +3761,61 @@
         "force %displays% to be visible through (blocks|walls)",
         "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
       ]
+    },
+    {
+      "id": "EffAllowAging",
+      "name": "Allow Aging",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not living entities will be able to age."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tallow aging of entity"
+      ],
+      "patterns": [
+        "lock age of %livingentities%",
+        "prevent aging of %livingentities%",
+        "prevent %livingentities% from aging",
+        "unlock age of %livingentities%",
+        "allow aging of %livingentities%",
+        "allow %livingentities% to age"
+      ]
+    },
+    {
+      "id": "EffBreedable",
+      "name": "Make Breedable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not entities will be able to breed. Only works on animals."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tmake entity unbreedable"
+      ],
+      "patterns": [
+        "make %livingentities% breedable",
+        "unsterilize %livingentities%",
+        "make %livingentities% (not |non(-| )|un)breedable",
+        "sterilize %livingentities%"
+      ]
+    },
+    {
+      "id": "EffMakeAdultOrBaby",
+      "name": "Make Adult/Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Force a animal to become an adult or baby."
+      ],
+      "examples": [
+        "on spawn of mob:",
+        "\tentity is not an adult",
+        "\tmake entity an adult"
+      ],
+      "patterns": [
+        "make %livingentities% [a[n]] (adult|:baby)",
+        "force %livingentities% to be[come] a[n] (adult|:baby)"
+      ]
     }
   ],
   "expressions": [
@@ -4078,18 +4218,24 @@
     {
       "id": "ExprExperience",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
       "examples": [
         "on experience spawn:",
         "\tadd 5 to the spawned experience",
+        "",
         "on break of coal ore:",
         "\tclear dropped experience",
+        "",
         "on break of diamond ore:",
         "\tif tool of player = diamond pickaxe:",
-        "\t\tadd 100 to dropped experience"
+        "\t\tadd 100 to dropped experience",
+        "",
+        "on breed:",
+        "\tbreeding father is a cow",
+        "\tset dropped experience to 10"
       ],
       "patterns": [
         "[the] (spawned|dropped|) [e]xp[erience] [orb[s]]"
@@ -5137,6 +5283,24 @@
         "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
         "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
         "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "ExprBreedingFamily",
+      "name": "Breeding Family",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents family members within a breeding event."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much, they make a %bred offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[the] breeding mother",
+        "[the] breeding father",
+        "[the] [bred] (offspring|child)",
+        "[the] breeder"
       ]
     },
     {
@@ -9700,6 +9864,23 @@
       ]
     },
     {
+      "id": "ExprLoveTime",
+      "name": "Love Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "The amount of time the animals have been in love for. Using a value of 30 seconds is equivalent to using an item to breed them.",
+        "Only works on animals that can be bred and returns '0 seconds' for animals that can't be bred."
+      ],
+      "examples": [
+        "on right click:",
+        "\tsend \"%event-entity% has been in love for %love time of event-entity% more than you!\" to player"
+      ],
+      "patterns": [
+        "[the] love[d] time of %livingentities%",
+        "%livingentities%'[s] love[d] time"
+      ]
+    },
+    {
       "id": "ExprBalance",
       "name": "Money",
       "since": "2.0, 2.5 (offline players)",
@@ -12425,6 +12606,37 @@
       ],
       "patterns": [
         "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
+      "id": "entity_breed",
+      "name": "On Entity Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever two animals begin to conceive a child. The type can be specified."
+      ],
+      "examples": [
+        "on breeding of llamas:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much they make %offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[entity] breed[ing] [of %-entitytypes%]"
+      ]
+    },
+    {
+      "id": "love_mode_enter",
+      "name": "On Love Mode Enter",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever an entity enters a state of being in love."
+      ],
+      "examples": [
+        "on love mode enter:",
+        "\tcancel event # No one is allowed love here"
+      ],
+      "patterns": [
+        "[entity] enter[s] love mode",
+        "[entity] love mode [enter]"
       ]
     },
     {
