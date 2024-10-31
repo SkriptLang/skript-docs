@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-04afda1",
+  "skriptVersion": "2.9.3-nightly-9786eb4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -14161,6 +14161,28 @@
       "return-type": "Number",
       "patterns": [
         "sqrt(n: number)"
+      ]
+    },
+    {
+      "id": "formatNumber",
+      "name": "formatNumber",
+      "since": "INSERT VERSION",
+      "description": [
+        "Converts numbers to human-readable format. By default, '###,###' (e.g. '123,456,789') will be used for whole numbers and '###,###.##' (e.g. '123,456,789.00) will be used for decimal numbers. A hashtag '#' represents a digit, a comma ',' is used to separate numbers, and a period '.' is used for decimals. ",
+        "Will return none if the format is invalid.",
+        "For further reference, see this <a href=\"https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html\" target=\"_blank\">article</a>."
+      ],
+      "examples": [
+        "command /balance:",
+        "\taliases: bal",
+        "\texecutable by: players",
+        "\ttrigger:",
+        "\t\tset {_money} to formatNumber({money::%sender's uuid%})",
+        "\t\tsend \"Your balance: %{_money}%\" to sender"
+      ],
+      "return-type": "Text",
+      "patterns": [
+        "formatNumber(number: number, format: string = )"
       ]
     },
     {
