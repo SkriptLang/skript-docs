@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-ead4ca4",
+  "skriptVersion": "2.9.3-nightly-d75b47f",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -101,6 +101,29 @@
       ],
       "patterns": [
         "chance of %number%(1¦\\%|)"
+      ]
+    },
+    {
+      "id": "CondChatVisibility",
+      "name": "Can See Messages",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see specific message types in chat."
+      ],
+      "examples": [
+        "if player can see all messages:",
+        "\tsend \"You can see all messages.\"",
+        "if player can only see commands:",
+        "\tsend \"This game doesn't work with commands-only chat.\"",
+        "if player can't see any messages:",
+        "\tsend action bar \"Server shutting down in 5 minutes!\""
+      ],
+      "patterns": [
+        "%player% can see all messages [in chat]",
+        "%player% can only see (commands|system messages) [in chat]",
+        "%player% can('t|[ ]not) see any (command[s]|message[s]) [in chat]",
+        "%player% can('t|[ ]not) see all messages [in chat]",
+        "%player% can('t|[ ]not) only see (commands|system messages) [in chat]"
       ]
     },
     {
@@ -861,6 +884,40 @@
       "patterns": [
         "%livingentities% can pick([ ]up items| items up)",
         "%livingentities% (can't|cannot|can not) pick([ ]up items| items up)"
+      ]
+    },
+    {
+      "id": "CondChatColors",
+      "name": "Can See Chat Colors",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see chat colors."
+      ],
+      "examples": [
+        "if player can see chat colors:",
+        "\tsend \"Find the red word in <red>this<reset> message.\"",
+        "else:",
+        "\tsend \"You cannot partake in finding the colored word.\""
+      ],
+      "patterns": [
+        "%players% can see chat colo[u]r[s|ing]",
+        "%players% (can't|cannot|can not) see chat colo[u]r[s|ing]"
+      ]
+    },
+    {
+      "id": "CondChatFiltering",
+      "name": "Has Chat Filtering",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player has chat filtering enabled."
+      ],
+      "examples": [
+        "if player doesn't have chat filtering enabled:",
+        "send \"<gray>This server may contain mature chat messages. You have been warned!\" to player"
+      ],
+      "patterns": [
+        "%players% (has|have) (chat|text) filtering (on|enabled)",
+        "%players% (doesn't|does not|do not|don't) have (chat|text) filtering (on|enabled)"
       ]
     },
     {
