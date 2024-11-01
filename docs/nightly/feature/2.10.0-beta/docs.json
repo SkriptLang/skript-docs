@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-0410f72",
+  "skriptVersion": "2.10.0-beta1-nightly-d89d654",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -67,7 +67,7 @@
     {
       "id": "CondCanSee",
       "name": "Can See",
-      "since": "2.3, INSERT VERSION (entities)",
+      "since": "2.3, 2.10.0 (entities)",
       "description": [
         "Checks whether the given players can see the provided entities."
       ],
@@ -106,7 +106,7 @@
     {
       "id": "CondChatVisibility",
       "name": "Can See Messages",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether a player can see specific message types in chat."
       ],
@@ -340,7 +340,7 @@
     {
       "id": "CondIsDivisibleBy",
       "name": "Is Evenly Divisible By",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Check if a number is evenly divisible by another number."
       ],
@@ -580,7 +580,7 @@
     {
       "id": "CondPastFuture",
       "name": "In The Past/Future",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether a date is in the past or future.",
         "Note that using the 'now' expression will not be in the past or future when used directly in the condition."
@@ -758,7 +758,7 @@
     {
       "id": "CondTextDisplayHasDropShadow",
       "name": "Text Display Has Drop Shadow",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns whether the text of a display has drop shadow applied."
       ],
@@ -889,7 +889,7 @@
     {
       "id": "CondChatColors",
       "name": "Can See Chat Colors",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether a player can see chat colors."
       ],
@@ -907,7 +907,7 @@
     {
       "id": "CondChatFiltering",
       "name": "Has Chat Filtering",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether a player has chat filtering enabled."
       ],
@@ -1100,7 +1100,7 @@
     {
       "id": "CondIsCharged",
       "name": "Is Charged",
-      "since": "2.5, INSERT VERSION (withers, wither skulls)",
+      "since": "2.5, 2.10.0 (withers, wither skulls)",
       "description": [
         "Checks if a creeper, wither, or wither skull is charged (powered)."
       ],
@@ -1134,7 +1134,7 @@
     {
       "id": "CondIsCommandBlockConditional",
       "name": "Is Conditional",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether a command block is conditional or not."
       ],
@@ -1341,7 +1341,7 @@
     {
       "id": "CondIsInvulnerable",
       "name": "Is Invulnerable",
-      "since": "2.5, INSERT VERSION (gamemode)",
+      "since": "2.5, 2.10.0 (gamemode)",
       "description": [
         "Checks whether an entity or a gamemode is invulnerable.\nFor gamemodes, Paper and Minecraft 1.20.6 are required"
       ],
@@ -1789,7 +1789,7 @@
     {
       "id": "CondIsTamed",
       "name": "Is Tamed",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Check if a tameable entity is tamed (horse, parrot, cat, etc.)."
       ],
@@ -1899,7 +1899,7 @@
     {
       "id": "CondLidState",
       "name": "Lid Is Open/Closed",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Check to see whether lidded blocks (chests, shulkers, etc.) are open or closed."
       ],
@@ -1935,7 +1935,7 @@
     {
       "id": "CondTextDisplaySeeThroughBlocks",
       "name": "Text Display Visible Through Blocks",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns whether text displays can be seen through blocks or not."
       ],
@@ -1951,7 +1951,7 @@
     {
       "id": "CondCanAge",
       "name": "Can Age",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether or not an entity will be able to age/grow up."
       ],
@@ -1968,7 +1968,7 @@
     {
       "id": "CondCanBreed",
       "name": "Can Breed",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether or not a living entity can be bred."
       ],
@@ -1985,7 +1985,7 @@
     {
       "id": "CondIsAdult",
       "name": "Is Adult",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether or not a living entity is an adult."
       ],
@@ -2002,7 +2002,7 @@
     {
       "id": "CondIsBaby",
       "name": "Is Baby",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether or not a living entity is a baby."
       ],
@@ -2019,7 +2019,7 @@
     {
       "id": "CondIsInLove",
       "name": "Is In Love",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Checks whether or not a living entity is in love."
       ],
@@ -2308,7 +2308,7 @@
     {
       "id": "EffCharge",
       "name": "Charge Entity",
-      "since": "2.5, INSERT VERSION (wither skulls)",
+      "since": "2.5, 2.10.0 (wither skulls)",
       "description": [
         "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning."
       ],
@@ -2359,7 +2359,7 @@
     {
       "id": "EffCommandBlockConditional",
       "name": "Conditional / Unconditional",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Sets whether the provided command blocks are conditional or not."
       ],
@@ -2374,7 +2374,7 @@
     {
       "id": "EffConnect",
       "name": "Connect",
-      "since": "2.3, INSERT VERSION (transfer)",
+      "since": "2.3, 2.10.0 (transfer)",
       "description": [
         "Connect a player to a server running on your proxy, or any server supporting transfers. Read below for more information.",
         "If the server is running Minecraft 1.20.5 or above, you may specify an IP and Port to transfer a player over to that server.",
@@ -2442,7 +2442,7 @@
     {
       "id": "EffDetonate",
       "name": "Detonate Entities",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Immediately detonates an entity. Accepted entities are fireworks, TNT minecarts, primed TNT, wind charges and creepers."
       ],
@@ -2518,7 +2518,7 @@
     {
       "id": "EffEntityVisibility",
       "name": "Entity Visibility",
-      "since": "2.3, INSERT VERSION (entities)",
+      "since": "2.3, 2.10.0 (entities)",
       "description": [
         "Change visibility of the given entities for the given players.",
         "If no players are given, will hide the entities from all online players.",
@@ -2900,7 +2900,7 @@
     {
       "id": "EffLidState",
       "name": "Open/Close Lid",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Open or close the lid of the block(s)."
       ],
@@ -3482,7 +3482,7 @@
     {
       "id": "EffSort",
       "name": "Sort",
-      "since": "2.9.0, INSERT VERSION (sort order)",
+      "since": "2.9.0, 2.10.0 (sort order)",
       "description": [
         "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.\nBe warned, this will overwrite the indices of the list variable.\n\nWhen using the full <code>sort %~objects% (by|based on) &lt;expression&gt;</code> pattern,\nthe input expression can be used to refer to the current item being sorted.\n(See input expression for more information.)"
       ],
@@ -3566,7 +3566,7 @@
     {
       "id": "EffTame",
       "name": "Tame / Untame",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Tame a tameable entity (horse, parrot, cat, etc.)."
       ],
@@ -3758,7 +3758,7 @@
     {
       "id": "EffRotate",
       "name": "Rotate",
-      "since": "2.2-dev28, INSERT VERSION (quaternions, displays)",
+      "since": "2.2-dev28, 2.10.0 (quaternions, displays)",
       "description": [
         "Rotates displays, quaternions, or vectors around an axis a set amount of degrees, or around all 3 axes at once.",
         "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
@@ -3786,7 +3786,7 @@
     {
       "id": "EffTextDisplayDropShadow",
       "name": "Text Display Drop Shadow",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Applies or removes drop shadow from the displayed text on a text display."
       ],
@@ -3805,7 +3805,7 @@
     {
       "id": "EffTextDisplaySeeThroughBlocks",
       "name": "Text Display See Through Blocks",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Forces a text display to either be or not be visible through blocks."
       ],
@@ -3822,7 +3822,7 @@
     {
       "id": "EffAllowAging",
       "name": "Allow Aging",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Sets whether or not living entities will be able to age."
       ],
@@ -3842,7 +3842,7 @@
     {
       "id": "EffBreedable",
       "name": "Make Breedable",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Sets whether or not entities will be able to breed. Only works on animals."
       ],
@@ -3860,7 +3860,7 @@
     {
       "id": "EffMakeAdultOrBaby",
       "name": "Make Adult/Baby",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Force a animal to become an adult or baby."
       ],
@@ -4016,7 +4016,7 @@
     {
       "id": "ExprBarterDrops",
       "name": "Barter Drops",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The items dropped by the piglin in a piglin bartering event."
       ],
@@ -4033,7 +4033,7 @@
     {
       "id": "ExprBarterInput",
       "name": "Barter Input",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The item picked up by the piglin in a piglin bartering event."
       ],
@@ -4275,7 +4275,7 @@
     {
       "id": "ExprExperience",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), 2.10.0 (breeding event)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
@@ -4674,7 +4674,7 @@
     {
       "id": "ExprMessage",
       "name": "Message",
-      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message), INSERT VERSION (broadcasted message)",
+      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message), 2.10.0 (broadcasted message)",
       "description": [
         "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, the death message of a death event or the broadcasted message in a broadcast event. This expression is mostly useful for being changed."
       ],
@@ -5320,7 +5320,7 @@
     {
       "id": "ExprRotate",
       "name": "Rotated Quaternion/Vector",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Rotates a quaternion or vector around an axis a set amount of degrees, or around all 3 axes at once.",
         "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
@@ -5345,7 +5345,7 @@
     {
       "id": "ExprBreedingFamily",
       "name": "Breeding Family",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents family members within a breeding event."
       ],
@@ -5426,7 +5426,7 @@
     {
       "id": "ExprExperienceCooldownChangeReason",
       "name": "Experience Cooldown Change Reason",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The <a href='classes.html#experiencechangereason'>experience change reason</a> within in an<a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
       ],
@@ -5884,7 +5884,7 @@
     {
       "id": "ExprEntitySound",
       "name": "Entity Sound",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Gets the sound that a given entity will make in a specific scenario."
       ],
@@ -6113,7 +6113,7 @@
     {
       "id": "ExprJoinSplit",
       "name": "Join & Split",
-      "since": "2.1, 2.5.2 (regex support), 2.7 (case sensitivity), INSERT VERSION (without trailing string)",
+      "since": "2.1, 2.5.2 (regex support), 2.7 (case sensitivity), 2.10.0 (without trailing string)",
       "description": [
         "Joins several texts with a common delimiter (e.g. \", \"), or splits a text into multiple texts at a given delimiter."
       ],
@@ -6361,7 +6361,7 @@
     {
       "id": "ExprRandomNumber",
       "name": "Random Numbers",
-      "since": "1.4, INSERT VERSION (Multiple random numbers)",
+      "since": "1.4, 2.10.0 (Multiple random numbers)",
       "description": [
         "A given amount of random numbers or integers between two given numbers. Use 'number' if you want any number with decimal parts, or use use 'integer' if you only want whole numbers.",
         "Please note that the order of the numbers doesn't matter, i.e. <code>random number between 2 and 1</code> will work as well as <code>random number between 1 and 2</code>."
@@ -6939,7 +6939,7 @@
     {
       "id": "ExprBlockData",
       "name": "Block Data",
-      "since": "2.5, 2.5.2 (set), INSERT VERSION (block displays)",
+      "since": "2.5, 2.5.2 (set), 2.10.0 (block displays)",
       "description": [
         "Get the <a href='classes.html#blockdata'>block data</a> associated with a block.",
         "This data can also be used to set blocks."
@@ -6974,7 +6974,7 @@
     {
       "id": "ExprBlockSound",
       "name": "Block Sound",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Gets the sound that a given block, blockdata, or itemtype will use in a specific scenario.",
         "This will return a string in the form of \"SOUND_EXAMPLE\", which can be used in the play sound syntax.",
@@ -7152,7 +7152,7 @@
     {
       "id": "ExprColorOf",
       "name": "Color of",
-      "since": "1.2, INSERT VERSION (displays)",
+      "since": "1.2, 2.10.0 (displays)",
       "description": [
         "The <a href='./classes.html#color'>color</a> of an item, entity, block, firework effect, or text display.",
         "This can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
@@ -7171,7 +7171,7 @@
     {
       "id": "ExprCommandBlockCommand",
       "name": "Command Block Command",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Gets or sets the command associated with a command block or minecart with command block."
       ],
@@ -7313,7 +7313,7 @@
     {
       "id": "ExprDomestication",
       "name": "Horse Domestication",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Gets and/or sets the (max) domestication of a horse.",
         "The domestication of a horse is how close a horse is to becoming tame - the higher the domestication, the closer they are to becoming tame (must be between 1 and the max domestication level of the horse).",
@@ -7491,7 +7491,7 @@
     {
       "id": "ExprExperienceCooldown",
       "name": "Experience Pickup Cooldown",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The experience cooldown of a player.",
         "Experience cooldown is how long until a player can pick up another orb of experience.",
@@ -8032,7 +8032,7 @@
     {
       "id": "ExprLastDeathLocation",
       "name": "Last Death Location",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Gets the last death location of a player, or offline player, if available.",
         "Can also be set, reset, and deleted if the player is online."
@@ -8349,7 +8349,7 @@
     {
       "id": "ExprMetadata",
       "name": "Metadata",
-      "since": "2.2-dev36, INSERT VERSION (add, remove)",
+      "since": "2.2-dev36, 2.10.0 (add, remove)",
       "description": [
         "Metadata is a way to store temporary data on entities, blocks and more that disappears after a server restart."
       ],
@@ -8666,7 +8666,7 @@
     {
       "id": "ExprPlayerChatCompletions",
       "name": "Player Chat Completions",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The custom chat completion suggestions. You can add, set, remove, and clear them. Removing the names of online players with this expression is ineffective.",
         "This expression will not return anything due to Bukkit limitations."
@@ -9230,7 +9230,7 @@
     {
       "id": "ExprTimeSince",
       "name": "Time Since/Until",
-      "since": "2.5, INSERT VERSION (time until)",
+      "since": "2.5, 2.10.0 (time until)",
       "description": [
         "The time since a date has passed or the time until a date will pass.",
         "This expression will return 0 seconds if the time since or time until would be negative, e.g. if one tries to get the time since a future date."
@@ -9585,7 +9585,7 @@
     {
       "id": "ExprXYZComponent",
       "name": "Vector/Quaternion - WXYZ Component",
-      "since": "2.2-dev28, INSERT VERSION (quaternions)",
+      "since": "2.2-dev28, 2.10.0 (quaternions)",
       "description": [
         "Gets or changes the W, X, Y or Z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.",
         "You cannot use the W component with vectors; it is for quaternions only."
@@ -9632,7 +9632,7 @@
     {
       "id": "ExprItemOfEntity",
       "name": "Item of an Entity",
-      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
+      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), 2.10.0 (item displays)",
       "description": [
         "An item associated with an entity. For dropped item entities, it gets the item that was dropped.",
         "For item frames, the item inside the frame is returned.",
@@ -9652,7 +9652,7 @@
     {
       "id": "ExprQuaternionAxisAngle",
       "name": "Rotation Axis/Angle",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns the axis or angle that a quaternion will rotate by/around.",
         "All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis."
@@ -9672,7 +9672,7 @@
     {
       "id": "ExprTextOf",
       "name": "Text Of",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.",
         "Note that currently you can only use Skript chat codes when running Paper."
@@ -9688,7 +9688,7 @@
     {
       "id": "ExprDisplayBillboard",
       "name": "Display Billboard",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the <a href='classes.html#billboard'>billboard</a> setting of <a href='classes.html#display'>displays</a>.",
         "This describes the axes/points around which the display can pivot.",
@@ -9705,7 +9705,7 @@
     {
       "id": "ExprDisplayBrightness",
       "name": "Display Brightness",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the brightness override of <a href='classes.html#display'>displays</a>.",
         "Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.",
@@ -9726,7 +9726,7 @@
     {
       "id": "ExprDisplayGlowOverride",
       "name": "Display Glow Color Override",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the glowing color override of <a href='classes.html#display'>displays</a>.",
         "This overrides whatever color is already set for the scoreboard team of the displays."
@@ -9742,7 +9742,7 @@
     {
       "id": "ExprDisplayHeightWidth",
       "name": "Display Height/Width",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.",
         "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
@@ -9759,7 +9759,7 @@
     {
       "id": "ExprDisplayInterpolation",
       "name": "Display Interpolation Delay/Duration",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the interpolation delay/duration of <a href='classes.html#display'>displays</a>.",
         "Interpolation duration is the amount of time a display will take to interpolate, or shift, between its current state and a new state.",
@@ -9777,7 +9777,7 @@
     {
       "id": "ExprDisplayShadow",
       "name": "Display Shadow Radius/Strength",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the shadow radius/strength of <a href='classes.html#display'>displays</a>."
       ],
@@ -9792,7 +9792,7 @@
     {
       "id": "ExprDisplayTeleportDuration",
       "name": "Display Teleport Delay/Duration",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The teleport duration of displays is the amount of time it takes to get between locations.",
         "0 means that updates are applied immediately.",
@@ -9813,7 +9813,7 @@
     {
       "id": "ExprDisplayTransformationRotation",
       "name": "Display Transformation Rotation",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.",
         "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
@@ -9829,7 +9829,7 @@
     {
       "id": "ExprDisplayTransformationScaleTranslation",
       "name": "Display Transformation Scale/Translation",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the transformation scale or translation of <a href='classes.html#display'>displays</a>."
       ],
@@ -9844,7 +9844,7 @@
     {
       "id": "ExprDisplayViewRange",
       "name": "Display View Range",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the view range of <a href='classes.html#display'>displays</a>.",
         "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
@@ -9861,7 +9861,7 @@
     {
       "id": "ExprItemDisplayTransform",
       "name": "Item Display Transform",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>."
       ],
@@ -9877,7 +9877,7 @@
     {
       "id": "ExprTextDisplayAlignment",
       "name": "Text Display Alignment",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>."
       ],
@@ -9892,7 +9892,7 @@
     {
       "id": "ExprTextDisplayLineWidth",
       "name": "Text Display Line Width",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the line width of <a href='classes.html#display'>text displays</a>. Default is 200."
       ],
@@ -9907,7 +9907,7 @@
     {
       "id": "ExprTextDisplayOpacity",
       "name": "Text Display Opacity",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns or changes the opacity of <a href='classes.html#display'>text displays</a>.",
         "Values are between -127 and 127. The value of 127 represents it being completely opaque."
@@ -9923,7 +9923,7 @@
     {
       "id": "ExprLoveTime",
       "name": "Love Time",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "The amount of time the animals have been in love for. Using a value of 30 seconds is equivalent to using an item to breed them.",
         "Only works on animals that can be bred and returns '0 seconds' for animals that can't be bred."
@@ -9957,7 +9957,7 @@
     {
       "id": "ExprPrefixSuffix",
       "name": "Prefix/Suffix",
-      "since": "2.0, INSERT VERSION (delete)",
+      "since": "2.0, 2.10.0 (delete)",
       "description": [
         "The prefix or suffix as defined in the server's chat plugin."
       ],
@@ -10070,7 +10070,7 @@
     {
       "id": "ExprEntities",
       "name": "Entities",
-      "since": "1.2.1, 2.5 (chunks), INSERT VERSION (within)",
+      "since": "1.2.1, 2.5 (chunks), 2.10.0 (within)",
       "description": [
         "All entities in all worlds, in a specific world, in a chunk, in a radius around a certain location or within two locations. e.g. <code>all players</code>, <code>all creepers in the player's world</code>, or <code>players in radius 100 of the player</code>."
       ],
@@ -10254,7 +10254,7 @@
     {
       "id": "block_drop",
       "name": "On Block Drop",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called when a block broken by a player drops something.",
         "<ul>",
@@ -10311,7 +10311,7 @@
     {
       "id": "click",
       "name": "On Click",
-      "since": "1.0, INSERT VERSION (blockdata)",
+      "since": "1.0, 2.10.0 (blockdata)",
       "description": [
         "Called when a user clicks on a block, an entity or air with or without an item in their hand.",
         "Please note that rightclick events with an empty hand while not looking at a block are not sent to the server, so there's no way to detect them.",
@@ -10427,7 +10427,7 @@
     {
       "id": "entity_potion_effect",
       "name": "On Entity Potion Effect",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called when an entity's potion effect is modified.",
         "This modification can include adding, removing or changing their potion effect."
@@ -12568,7 +12568,7 @@
     {
       "id": "piglin_barter",
       "name": "On Piglin Barter",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called when a piglin finishes bartering. A piglin may start bartering after picking up an item on its bartering list.",
         "Cancelling will prevent piglins from dropping items, but will still make them pick up the input."
@@ -12634,7 +12634,7 @@
     {
       "id": "broadcast",
       "name": "On Broadcast",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called when a message is broadcasted."
       ],
@@ -12649,7 +12649,7 @@
     {
       "id": "experience_cooldown_change",
       "name": "On Experience Cooldown Change",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called when a player's experience cooldown changes.",
         "Experience cooldown is how long until a player can pick up another orb of experience."
@@ -12668,7 +12668,7 @@
     {
       "id": "entity_breed",
       "name": "On Entity Breed",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called whenever two animals begin to conceive a child. The type can be specified."
       ],
@@ -12683,7 +12683,7 @@
     {
       "id": "love_mode_enter",
       "name": "On Love Mode Enter",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Called whenever an entity enters a state of being in love."
       ],
@@ -12767,7 +12767,7 @@
     {
       "id": "quaternion",
       "name": "Quaternion",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Quaternions are four dimensional vectors, often used for representing rotations."
       ]
@@ -13389,7 +13389,7 @@
     {
       "id": "entitypotioncause",
       "name": "Entity Potion Cause",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents the cause of the action of a potion effect on an entity, e.g. arrow, command"
       ],
@@ -13412,7 +13412,7 @@
     {
       "id": "experiencecooldownchangereason",
       "name": "Experience Cooldown Change Reason",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents a change reason of an <a href='events.html#experience cooldown change event'>experience cooldown change event</a>."
       ],
@@ -13423,7 +13423,7 @@
     {
       "id": "display",
       "name": "Display Entity",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "A text, block or item display entity."
       ]
@@ -13431,7 +13431,7 @@
     {
       "id": "billboard",
       "name": "Display Billboard",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents the billboard setting of a display."
       ],
@@ -13442,7 +13442,7 @@
     {
       "id": "textalignment",
       "name": "Display Text Alignment",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents the text alignment setting of a text display."
       ],
@@ -13453,7 +13453,7 @@
     {
       "id": "itemdisplaytransform",
       "name": "Item Display Transforms",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Represents the transform setting of an item display."
       ],
@@ -13976,7 +13976,7 @@
     {
       "id": "SecFilter",
       "name": "Filter (Section)",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Filters a variable list based on the supplied conditions. Unlike the filter expression, this effect maintains the indices of the filtered list.",
         "It also supports filtering based on meeting any of the given criteria, rather than all, like multi-line if statements."
@@ -14251,7 +14251,7 @@
     {
       "id": "axisAngle",
       "name": "axisAngle",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns a quaternion from the given angle (in degrees) and axis (as a vector). This represents a rotation around the given axis by the given angle."
       ],
@@ -14368,7 +14368,7 @@
     {
       "id": "rgb",
       "name": "rgb",
-      "since": "2.5, INSERT VERSION (alpha)",
+      "since": "2.5, 2.10.0 (alpha)",
       "description": [
         "Returns a RGB color from the given red, green and blue parameters. Alpha values can be added optionally, but these only take affect in certain situations, like text display backgrounds."
       ],
@@ -14437,7 +14437,7 @@
     {
       "id": "formatNumber",
       "name": "formatNumber",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Converts numbers to human-readable format. By default, '###,###' (e.g. '123,456,789') will be used for whole numbers and '###,###.##' (e.g. '123,456,789.00) will be used for decimal numbers. A hashtag '#' represents a digit, a comma ',' is used to separate numbers, and a period '.' is used for decimals. ",
         "Will return none if the format is invalid.",
@@ -14559,7 +14559,7 @@
     {
       "id": "quaternion",
       "name": "quaternion",
-      "since": "INSERT VERSION",
+      "since": "2.10.0",
       "description": [
         "Returns a quaternion from the given W, X, Y and Z parameters. "
       ],
