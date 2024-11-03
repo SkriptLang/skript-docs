@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-0410f72",
+  "skriptVersion": "2.9.4-nightly-0335ff7",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9281,10 +9281,10 @@
         "\tset {weather::%world%::current} to the new weather"
       ],
       "patterns": [
-        "[the] (former|past|old) [state] [of] %~object%",
-        "%~object% before [the event]",
-        "[the] (future|to-be|new) [state] [of] %~object%",
-        "%~object%(-to-be| after[(wards| the event)])"
+        "[the] (former|past|old) [state] [of] %~objects%",
+        "%~objects% before [the event]",
+        "[the] (future|to-be|new) [state] [of] %~objects%",
+        "%~objects%(-to-be| after[(wards| the event)])"
       ]
     },
     {
