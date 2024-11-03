@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.3-nightly-031c660",
+  "skriptVersion" : "2.9.4-nightly-1fb7e67",
 
   "classes" : [
     {
@@ -6757,10 +6757,10 @@ only \"something\" would be broadcast as it is the only string that matched the 
   "id" : "ExprTimeState",
   "name" : "Former/Future State",
   "patterns" : [
-    "[the] (former|past|old) [state] [of] %~<a href='./classes.html#object'>object</a>%",
-"%~<a href='./classes.html#object'>object</a>% before [the event]",
-"[the] (future|to-be|new) [state] [of] %~<a href='./classes.html#object'>object</a>%",
-"%~<a href='./classes.html#object'>object</a>%(-to-be| after[(wards| the event)])",
+    "[the] (former|past|old) [state] [of] %~<a href='./classes.html#object'>objects</a>%",
+"%~<a href='./classes.html#object'>objects</a>% before [the event]",
+"[the] (future|to-be|new) [state] [of] %~<a href='./classes.html#object'>objects</a>%",
+"%~<a href='./classes.html#object'>objects</a>%(-to-be| after[(wards| the event)])",
 
     "pattern_end"
   ],
