@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-a383b5d",
+  "skriptVersion": "2.9.4-nightly-9189acc",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -10986,11 +10986,12 @@
       "name": "On Player Input",
       "since": "INSERT VERSION",
       "description": [
-        "Called when a player sends an updated input to the server."
+        "Called when a player sends an updated input to the server.",
+        "Note: The input keys event value is the set of keys the player is currently pressing, not the keys that were pressed or released."
       ],
       "examples": [
         "on player press any key:",
-        "\tsend \"You are pressing: %event-inputs%\" to player"
+        "\tsend \"You are pressing: %event-inputkeys%\" to player"
       ],
       "patterns": [
         "[player] (toggle|toggling|1:press[ing]|2:releas(e|ing)) [of] (%-inputkeys%|[a|any] key)",
