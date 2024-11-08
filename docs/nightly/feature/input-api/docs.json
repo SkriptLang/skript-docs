@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-c46cb8a",
+  "skriptVersion": "2.9.4-nightly-2ce9736",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -12739,12 +12739,12 @@
         "Note: The input keys event value is the set of keys the player is currently pressing, not the keys that were pressed or released."
       ],
       "examples": [
-        "on player press any key:",
+        "on player press any input key:",
         "\tsend \"You are pressing: %event-inputkeys%\" to player"
       ],
       "patterns": [
-        "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) [of] (%-inputkeys%|[a|any] key)",
-        "([player] %-inputkeys%|[a|any] [player] key) (toggle|toggling|1:press[ing]|2:releas(e|ing))"
+        "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) [of] (%-inputkeys%|[a|any] input key)",
+        "([player] %-inputkeys%|[a|any] [player] input key) (toggle|toggling|1:press[ing]|2:releas(e|ing))"
       ]
     },
     {
