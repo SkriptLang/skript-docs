@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-365704d",
+  "skriptVersion": "2.9.4-nightly-59e0b46",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -12743,8 +12743,8 @@
         "\tsend \"You are pressing: %event-inputkeys%\" to player"
       ],
       "patterns": [
-        "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) [of] (%-inputkeys%|[a|any] input key)",
-        "([player] %-inputkeys%|[a|any] [player] input key) (toggle|toggling|1:press[ing]|2:releas(e|ing))"
+        "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) of (%-inputkeys%|(an|any) input key)",
+        "([player] %-inputkeys%|[an|any [player]] input key) (toggle|toggling|1:press[ing]|2:release|2:releasing)"
       ]
     },
     {
