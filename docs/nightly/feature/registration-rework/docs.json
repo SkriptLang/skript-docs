@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.2-nightly-3077f8d",
+  "skriptVersion": "2.9.4-nightly-8a69e33",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -67,19 +67,22 @@
     {
       "id": "CondCanSee-2",
       "name": "Can See",
-      "since": "2.3",
+      "since": "2.3, INSERT VERSION (entities)",
       "description": [
-        "Checks whether the given players can see another players."
+        "Checks whether the given players can see the provided entities."
       ],
       "examples": [
-        "if the player can't see the player-argument:",
-        "\tmessage \"&lt;light red&gt;The player %player-argument% is not online!\""
+        "if sender can't see the player-argument:",
+        "\tmessage \"who dat?\"",
+        "",
+        "if the player can see the last spawned entity:",
+        "\tmessage \"hello there!\""
       ],
       "patterns": [
-        "%players% (is|are) [(1¦in)]visible for %players%",
-        "%players% can see %players%",
-        "%players% (is|are)(n't| not) [(1¦in)]visible for %players%",
-        "%players% can('t| not) see %players%"
+        "%entities% (is|are) [visible|:invisible] for %players%",
+        "%players% can see %entities%",
+        "%entities% (is|are)(n't| not) [visible|:invisible] for %players%",
+        "%players% can('t| not) see %entities%"
       ]
     },
     {
@@ -98,6 +101,29 @@
       ],
       "patterns": [
         "chance of %number%(1¦\\%|)"
+      ]
+    },
+    {
+      "id": "CondChatVisibility-2",
+      "name": "Can See Messages",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see specific message types in chat."
+      ],
+      "examples": [
+        "if player can see all messages:",
+        "\tsend \"You can see all messages.\"",
+        "if player can only see commands:",
+        "\tsend \"This game doesn't work with commands-only chat.\"",
+        "if player can't see any messages:",
+        "\tsend action bar \"Server shutting down in 5 minutes!\""
+      ],
+      "patterns": [
+        "%player% can see all messages [in chat]",
+        "%player% can only see (commands|system messages) [in chat]",
+        "%player% can('t|[ ]not) see any (command[s]|message[s]) [in chat]",
+        "%player% can('t|[ ]not) see all messages [in chat]",
+        "%player% can('t|[ ]not) only see (commands|system messages) [in chat]"
       ]
     },
     {
@@ -309,6 +335,24 @@
         "%blocks% (is|are) indirectly redstone powered",
         "%blocks% (is|are)(n't| not) redstone powered",
         "%blocks% (is|are)(n't| not) indirectly redstone powered"
+      ]
+    },
+    {
+      "id": "CondIsDivisibleBy-2",
+      "name": "Is Evenly Divisible By",
+      "since": "INSERT VERSION",
+      "description": [
+        "Check if a number is evenly divisible by another number."
+      ],
+      "examples": [
+        "if 5 is evenly divisible by 5:",
+        "if 11 cannot be evenly divided by 10:"
+      ],
+      "patterns": [
+        "%numbers% (is|are) evenly divisible by %number%",
+        "%numbers% (isn't|is not|aren't|are not) evenly divisible by %number%",
+        "%numbers% can be evenly divided by %number%",
+        "%numbers% (can't|can[ ]not) be evenly divided by %number%"
       ]
     },
     {
@@ -534,6 +578,34 @@
       ]
     },
     {
+      "id": "CondPastFuture-2",
+      "name": "In The Past/Future",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a date is in the past or future.",
+        "Note that using the 'now' expression will not be in the past or future when used directly in the condition."
+      ],
+      "examples": [
+        "set {_date} to now",
+        "wait 5 seconds",
+        "if {_date} is in the past:",
+        "\t# this will be true",
+        "",
+        "if now is in the future:",
+        "\t# this will be false",
+        "",
+        "set {_dates::*} to 1 day from now, 12 days from now, and 1 year from now",
+        "if {_dates::*} are in the future:",
+        "\t# this will be true",
+        "if {_dates::*} have passed:",
+        "\t# this will be false"
+      ],
+      "patterns": [
+        "%dates% (is|are)[negated:(n't| not)] in the (past|:future)",
+        "%dates% ha(s|ve)[negated:(n't| not)] passed"
+      ]
+    },
+    {
       "id": "CondPermission-2",
       "name": "Has Permission",
       "since": "1.0",
@@ -684,6 +756,24 @@
       ]
     },
     {
+      "id": "CondTextDisplayHasDropShadow-2",
+      "name": "Text Display Has Drop Shadow",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns whether the text of a display has drop shadow applied."
+      ],
+      "examples": [
+        "if {_display} has drop shadow:",
+        "\tremove drop shadow from the text of {_display}"
+      ],
+      "patterns": [
+        "[[the] text of] %displays% (has|have) [a] (drop|text) shadow",
+        "%displays%'[s] text (has|have) [a] (drop|text) shadow",
+        "[[the] text of] %displays% (doesn't|does not|do not|don't) have [a] (drop|text) shadow",
+        "%displays%'[s] text (doesn't|does not|do not|don't) have [a] (drop|text) shadow"
+      ]
+    },
+    {
       "id": "CondCanBuild-2",
       "name": "Can Build",
       "since": "2.0",
@@ -794,6 +884,40 @@
       "patterns": [
         "%livingentities% can pick([ ]up items| items up)",
         "%livingentities% (can't|cannot|can not) pick([ ]up items| items up)"
+      ]
+    },
+    {
+      "id": "CondChatColors-2",
+      "name": "Can See Chat Colors",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see chat colors."
+      ],
+      "examples": [
+        "if player can see chat colors:",
+        "\tsend \"Find the red word in <red>this<reset> message.\"",
+        "else:",
+        "\tsend \"You cannot partake in finding the colored word.\""
+      ],
+      "patterns": [
+        "%players% can see chat colo[u]r[s|ing]",
+        "%players% (can't|cannot|can not) see chat colo[u]r[s|ing]"
+      ]
+    },
+    {
+      "id": "CondChatFiltering-2",
+      "name": "Has Chat Filtering",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player has chat filtering enabled."
+      ],
+      "examples": [
+        "if player doesn't have chat filtering enabled:",
+        "send \"<gray>This server may contain mature chat messages. You have been warned!\" to player"
+      ],
+      "patterns": [
+        "%players% (has|have) (chat|text) filtering (on|enabled)",
+        "%players% (doesn't|does not|do not|don't) have (chat|text) filtering (on|enabled)"
       ]
     },
     {
@@ -976,9 +1100,9 @@
     {
       "id": "CondIsCharged-2",
       "name": "Is Charged",
-      "since": "2.5, INSERT VERSION (wither skulls)",
+      "since": "2.5, INSERT VERSION (withers, wither skulls)",
       "description": [
-        "Checks if a creeper or wither skull is charged (powered)."
+        "Checks if a creeper, wither, or wither skull is charged (powered)."
       ],
       "examples": [
         "if the last spawned creeper is charged:",
@@ -1005,6 +1129,22 @@
       "patterns": [
         "%livingentities% (is|are) climbing",
         "%livingentities% (isn't|is not|aren't|are not) climbing"
+      ]
+    },
+    {
+      "id": "CondIsCommandBlockConditional-2",
+      "name": "Is Conditional",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a command block is conditional or not."
+      ],
+      "examples": [
+        "if {_block} is conditional:",
+        "\tmake {_block} unconditional"
+      ],
+      "patterns": [
+        "%blocks% (is|are) [:un]conditional",
+        "%blocks% (isn't|is not|aren't|are not) [:un]conditional"
       ]
     },
     {
@@ -1201,16 +1341,20 @@
     {
       "id": "CondIsInvulnerable-2",
       "name": "Is Invulnerable",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (gamemode)",
       "description": [
-        "Checks whether an entity is invulnerable."
+        "Checks whether an entity or a gamemode is invulnerable.\nFor gamemodes, Paper and Minecraft 1.20.6 are required"
       ],
       "examples": [
-        "target entity is invulnerable"
+        "target entity is invulnerable",
+        "",
+        "loop all gamemodes:",
+        "\tif loop-value is not invulnerable:",
+        "\t\tbroadcast \"the gamemode %loop-value% is vulnerable!\""
       ],
       "patterns": [
-        "%entities% (is|are) (invulnerable|invincible)",
-        "%entities% (isn't|is not|aren't|are not) (invulnerable|invincible)"
+        "%entities/gamemodes% (is|are) (invulnerable|invincible)",
+        "%entities/gamemodes% (isn't|is not|aren't|are not) (invulnerable|invincible)"
       ]
     },
     {
@@ -1753,6 +1897,24 @@
       ]
     },
     {
+      "id": "CondLidState-2",
+      "name": "Lid Is Open/Closed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Check to see whether lidded blocks (chests, shulkers, etc.) are open or closed."
+      ],
+      "examples": [
+        "if the lid of {_chest} is closed:",
+        "\topen the lid of {_block}"
+      ],
+      "patterns": [
+        "[the] lid[s] of %blocks% (is|are) (open[ed]|:close[d])",
+        "[the] lid[s] of %blocks% (isn't|is not|aren't|are not) (open[ed]|:close[d])",
+        "%blocks%'[s] lid[s] (is|are) (open[ed]|:close[d])",
+        "%blocks%'[s] lid[s] (isn't|is not|aren't|are not) (open[ed]|:close[d])"
+      ]
+    },
+    {
       "id": "CondWithinRadius-2",
       "name": "Is Within Radius",
       "since": "2.7",
@@ -1768,6 +1930,107 @@
       "patterns": [
         "%locations% (is|are) within %number% (block|metre|meter)[s] (around|of) %locations%",
         "%locations% (isn't|is not|aren't|are not) within %number% (block|metre|meter)[s] (around|of) %locations%"
+      ]
+    },
+    {
+      "id": "CondTextDisplaySeeThroughBlocks-2",
+      "name": "Text Display Visible Through Blocks",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns whether text displays can be seen through blocks or not."
+      ],
+      "examples": [
+        "if last spawned text display is visible through walls:",
+        "\tprevent last spawned text display from being visible through walls"
+      ],
+      "patterns": [
+        "%displays% (is|are) visible through (blocks|walls)",
+        "%displays% (isn't|is not|aren't|are not) visible through (blocks|walls)"
+      ]
+    },
+    {
+      "id": "CondCanAge-2",
+      "name": "Can Age",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not an entity will be able to age/grow up."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tentity can't age",
+        "\tbroadcast \"An immortal has been born!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (age|grow (up|old[er]))",
+        "%livingentities% (can't|cannot|can not) (age|grow (up|old[er]))"
+      ]
+    },
+    {
+      "id": "CondCanBreed-2",
+      "name": "Can Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity can be bred."
+      ],
+      "examples": [
+        "on right click on living entity:",
+        "\tevent-entity can't breed",
+        "\tsend \"Turns out %event-entity% is not breedable. Must be a Skript user!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (breed|be bred)",
+        "%livingentities% (can't|cannot|can not) (breed|be bred)"
+      ]
+    },
+    {
+      "id": "CondIsAdult-2",
+      "name": "Is Adult",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is an adult."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is not an adult",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [an] adult",
+        "%livingentities% (isn't|is not|aren't|are not) [an] adult"
+      ]
+    },
+    {
+      "id": "CondIsBaby-2",
+      "name": "Is Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is a baby."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is a baby",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) a (child|baby)",
+        "%livingentities% (isn't|is not|aren't|are not) a (child|baby)"
+      ]
+    },
+    {
+      "id": "CondIsInLove-2",
+      "name": "Is In Love",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is in love."
+      ],
+      "examples": [
+        "on spawn of living entity:",
+        "\tif entity is in love:",
+        "broadcast \"That was quick!\""
+      ],
+      "patterns": [
+        "%livingentities% (is|are) in lov(e|ing) [state|mode]",
+        "%livingentities% (isn't|is not|aren't|are not) in lov(e|ing) [state|mode]"
       ]
     },
     {
@@ -2045,7 +2308,7 @@
     {
       "id": "EffCharge-2",
       "name": "Charge Entity",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (wither skulls)",
       "description": [
         "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning."
       ],
@@ -2094,18 +2357,38 @@
       ]
     },
     {
-      "id": "EffConnect-2",
-      "name": "Connect",
-      "since": "2.3",
+      "id": "EffCommandBlockConditional-2",
+      "name": "Conditional / Unconditional",
+      "since": "INSERT VERSION",
       "description": [
-        "Connects a player to another bungeecord server"
+        "Sets whether the provided command blocks are conditional or not."
       ],
       "examples": [
-        "connect all players to \"hub\""
+        "make command block {_block} conditional",
+        "make command block {_block} unconditional if {_block} is conditional"
       ],
       "patterns": [
-        "connect %players% to [server] %string%",
-        "send %players% to server %string%"
+        "make command block[s] %blocks% [not:(un|not )]conditional"
+      ]
+    },
+    {
+      "id": "EffConnect-2",
+      "name": "Connect",
+      "since": "2.3, INSERT VERSION (transfer)",
+      "description": [
+        "Connect a player to a server running on your proxy, or any server supporting transfers. Read below for more information.",
+        "If the server is running Minecraft 1.20.5 or above, you may specify an IP and Port to transfer a player over to that server.",
+        "When transferring players using an IP, the transfer will not complete if the `accepts-transfers` option isn't enabled in `server.properties` for the server specified.",
+        "If the port is not provided, it will default to `25565`."
+      ],
+      "examples": [
+        "connect all players to proxy server \"hub\"",
+        "transfer player to server \"my.server.com\"",
+        "transfer player to server \"localhost\" on port 25566"
+      ],
+      "patterns": [
+        "(send|connect) %players% to [proxy|bungeecord] [server] %string%",
+        "transfer %players% to server %string% [on port %-number%]"
       ]
     },
     {
@@ -2133,7 +2416,7 @@
       ],
       "patterns": [
         "continue [this loop|[the] [current] loop]",
-        "continue [the] %*integer%(st|nd|rd|th) loop"
+        "continue [the] <-?\\d+(_\\d+)*>(st|nd|rd|th) loop"
       ]
     },
     {
@@ -2154,6 +2437,20 @@
       ],
       "patterns": [
         "copy %~objects% [in]to %~objects%"
+      ]
+    },
+    {
+      "id": "EffDetonate-2",
+      "name": "Detonate Entities",
+      "since": "INSERT VERSION",
+      "description": [
+        "Immediately detonates an entity. Accepted entities are fireworks, TNT minecarts, primed TNT, wind charges and creepers."
+      ],
+      "examples": [
+        "detonate last launched firework"
+      ],
+      "patterns": [
+        "detonate %entities%"
       ]
     },
     {
@@ -2219,6 +2516,30 @@
       ]
     },
     {
+      "id": "EffEntityVisibility-2",
+      "name": "Entity Visibility",
+      "since": "2.3, INSERT VERSION (entities)",
+      "description": [
+        "Change visibility of the given entities for the given players.",
+        "If no players are given, will hide the entities from all online players.",
+        "",
+        "When reveal is used in combination of the <a href='expressions.html#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
+        "",
+        "Note: all previously hidden entities (including players) will be visible when a player leaves and rejoins."
+      ],
+      "examples": [
+        "on spawn:",
+        "\tif event-entity is a chicken:",
+        "\t\thide event-entity",
+        "",
+        "reveal hidden players of players"
+      ],
+      "patterns": [
+        "hide %entities% [(from|for) %-players%]",
+        "reveal %entities% [(to|for|from) %-players%]"
+      ]
+    },
+    {
       "id": "EffEquip-2",
       "name": "Equip",
       "since": "1.0, 2.7 (multiple entities, unequip)",
@@ -2236,7 +2557,7 @@
         "equip [%livingentities%] with %itemtypes%",
         "make %livingentities% wear %itemtypes%",
         "unequip %itemtypes% [from %livingentities%]",
-        "unequip %livingentities%'[s] (armor|equipment)"
+        "unequip %livingentities%'[s] (armo[u]r|equipment)"
       ]
     },
     {
@@ -2257,8 +2578,8 @@
       ],
       "patterns": [
         "(exit|stop) [trigger]",
-        "(exit|stop) [(1|a|the|this)] (section|1:loop|2:conditional)",
-        "(exit|stop) <\\d+> (section|1:loop|2:conditional)s",
+        "(exit|stop) [1|a|the|this] (section|1:loop|2:conditional)",
+        "(exit|stop) <-?\\d+(_\\d+)*> (section|1:loop|2:conditional)s",
         "(exit|stop) all (section|1:loop|2:conditional)s"
       ]
     },
@@ -2577,6 +2898,22 @@
       ]
     },
     {
+      "id": "EffLidState-2",
+      "name": "Open/Close Lid",
+      "since": "INSERT VERSION",
+      "description": [
+        "Open or close the lid of the block(s)."
+      ],
+      "examples": [
+        "open the lid of {_chest}",
+        "close the lid of {_blocks::*}"
+      ],
+      "patterns": [
+        "(open|:close) [the] lid[s] (of|for) %blocks%",
+        "(open|:close) %blocks%'[s] lid[s]"
+      ]
+    },
+    {
       "id": "EffLightning-2",
       "name": "Lightning",
       "since": "1.4",
@@ -2818,28 +3155,6 @@
       ]
     },
     {
-      "id": "EffPlayerVisibility-2",
-      "name": "Player Visibility",
-      "since": "2.3",
-      "description": [
-        "Change visibility of a player for the given players.",
-        "When reveal is used in combination of the <a href='expressions.html#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
-        "",
-        "Note: if a player was hidden and relogs, this player will be visible again."
-      ],
-      "examples": [
-        "on join:",
-        "\tif {vanished::%player's uuid%} is true:",
-        "\t\thide the player from all players",
-        "",
-        "reveal hidden players of {_player}"
-      ],
-      "patterns": [
-        "hide %players% [(from|for) %-players%]",
-        "reveal %players% [(to|for|from) %-players%]"
-      ]
-    },
-    {
       "id": "EffPlaySound-2",
       "name": "Play Sound",
       "since": "2.2-dev28, 2.4 (sound categories), 2.9 (sound seed & entity emitter)",
@@ -2999,7 +3314,7 @@
       "name": "Return",
       "since": "2.2, 2.8.0 (returns aliases)",
       "description": [
-        "Makes a trigger (e.g. a function) return a value"
+        "Makes a trigger or a section (e.g. a function) return a value"
       ],
       "examples": [
         "function double(i: number) :: number:",
@@ -3169,8 +3484,7 @@
       "name": "Sort",
       "since": "2.9.0, INSERT VERSION (sort order)",
       "description": [
-        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.",
-        "Be warned, this will overwrite the indices of the list variable."
+        "Sorts a list variable using either the natural ordering of the contents or the results of the given expression.\nBe warned, this will overwrite the indices of the list variable.\n\nWhen using the full <code>sort %~objects% (by|based on) &lt;expression&gt;</code> pattern,\nthe input expression can be used to refer to the current item being sorted.\n(See input expression for more information.)"
       ],
       "examples": [
         "set {_words::*} to \"pineapple\", \"banana\", \"yoghurt\", and \"apple\"",
@@ -3231,7 +3545,7 @@
         "suppress the variable save warnings"
       ],
       "patterns": [
-        "[local[ly]] suppress [the] (1:conflict|2:variable save|3:[missing] conjunction[s]|4:starting [with] expression[s]|5:deprecated syntax) warning[s]"
+        "[local[ly]] suppress [the] (0:conflict|1:variable save|2:[missing] conjunction|3:starting [with] expression[s]|4:deprecated syntax|5:unreachable code) warning[s]"
       ]
     },
     {
@@ -3371,36 +3685,6 @@
       ]
     },
     {
-      "id": "EffVectorRotateAroundAnother-2",
-      "name": "Vectors - Rotate Around Vector",
-      "since": "2.2-dev28",
-      "description": [
-        "Rotates one or more vectors around another vector"
-      ],
-      "examples": [
-        "rotate {_v} around vector 1, 0, 0 by 90"
-      ],
-      "patterns": [
-        "rotate %vectors% around %vector% by %number% [degrees]"
-      ]
-    },
-    {
-      "id": "EffVectorRotateXYZ-2",
-      "name": "Vectors - Rotate around XYZ",
-      "since": "2.2-dev28",
-      "description": [
-        "Rotates one or more vectors around the x, y, or z axis by some amount of degrees"
-      ],
-      "examples": [
-        "rotate {_v} around x-axis by 90",
-        "rotate {_v} around y-axis by 90",
-        "rotate {_v} around z-axis by 90 degrees"
-      ],
-      "patterns": [
-        "rotate %vectors% around (0¦x|1¦y|2¦z)(-| )axis by %number% [degrees]"
-      ]
-    },
-    {
       "id": "EffVehicle-2",
       "name": "Vehicle",
       "since": "2.0",
@@ -3469,6 +3753,125 @@
       ],
       "patterns": [
         "save [[the] world[s]] %worlds%"
+      ]
+    },
+    {
+      "id": "EffRotate-2",
+      "name": "Rotate",
+      "since": "2.2-dev28, INSERT VERSION (quaternions, displays)",
+      "description": [
+        "Rotates displays, quaternions, or vectors around an axis a set amount of degrees, or around all 3 axes at once.",
+        "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
+        "Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axes at once.",
+        "Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.",
+        "",
+        "Rotating a display is a shortcut for rotating its left rotation. If the right rotation needs to be modified, it should be acquired, rotated, and re-set.",
+        "",
+        "Note that rotating a quaternion/display around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating quaternions/displays around vector(1, 0, 0) is the same as rotating around the local X axis.",
+        "The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last."
+      ],
+      "examples": [
+        "rotate {_quaternion} around x axis by 10 degrees",
+        "rotate last spawned block display around y axis by 10 degrees",
+        "rotate {_vector} around vector(1, 1, 1) by 45",
+        "rotate {_quaternion} by x 45, y 90, z 135"
+      ],
+      "patterns": [
+        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
+        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
+        "rotate %vectors/quaternions/displays% around [the] %vector% by %number% [degrees]",
+        "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "EffTextDisplayDropShadow-2",
+      "name": "Text Display Drop Shadow",
+      "since": "INSERT VERSION",
+      "description": [
+        "Applies or removes drop shadow from the displayed text on a text display."
+      ],
+      "examples": [
+        "apply drop shadow to last spawned text display",
+        "if {_display} has drop shadow:",
+        "\tremove drop shadow from the text of {_display}"
+      ],
+      "patterns": [
+        "(apply|add) (drop|text) shadow to [[the] text of] %displays%",
+        "(apply|add) (drop|text) shadow to %displays%'[s] text",
+        "(remove|clear) (drop|text) shadow from [[the] text of] %displays%",
+        "(remove|clear) (drop|text) shadow from %displays%'[s] text"
+      ]
+    },
+    {
+      "id": "EffTextDisplaySeeThroughBlocks-2",
+      "name": "Text Display See Through Blocks",
+      "since": "INSERT VERSION",
+      "description": [
+        "Forces a text display to either be or not be visible through blocks."
+      ],
+      "examples": [
+        "force last spawned text display to be visible through walls",
+        "prevent all text displays from being visible through walls"
+      ],
+      "patterns": [
+        "make %displays% visible through (blocks|walls)",
+        "force %displays% to be visible through (blocks|walls)",
+        "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
+      ]
+    },
+    {
+      "id": "EffAllowAging-2",
+      "name": "Allow Aging",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not living entities will be able to age."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tallow aging of entity"
+      ],
+      "patterns": [
+        "lock age of %livingentities%",
+        "prevent aging of %livingentities%",
+        "prevent %livingentities% from aging",
+        "unlock age of %livingentities%",
+        "allow aging of %livingentities%",
+        "allow %livingentities% to age"
+      ]
+    },
+    {
+      "id": "EffBreedable-2",
+      "name": "Make Breedable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not entities will be able to breed. Only works on animals."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tmake entity unbreedable"
+      ],
+      "patterns": [
+        "make %livingentities% breedable",
+        "unsterilize %livingentities%",
+        "make %livingentities% (not |non(-| )|un)breedable",
+        "sterilize %livingentities%"
+      ]
+    },
+    {
+      "id": "EffMakeAdultOrBaby-2",
+      "name": "Make Adult/Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Force a animal to become an adult or baby."
+      ],
+      "examples": [
+        "on spawn of mob:",
+        "\tentity is not an adult",
+        "\tmake entity an adult"
+      ],
+      "patterns": [
+        "make %livingentities% [a[n]] (adult|:baby)",
+        "force %livingentities% to be[come] a[n] (adult|:baby)"
       ]
     }
   ],
@@ -3872,18 +4275,24 @@
     {
       "id": "ExprExperience-2",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
       "examples": [
         "on experience spawn:",
         "\tadd 5 to the spawned experience",
+        "",
         "on break of coal ore:",
         "\tclear dropped experience",
+        "",
         "on break of diamond ore:",
         "\tif tool of player = diamond pickaxe:",
-        "\t\tadd 100 to dropped experience"
+        "\t\tadd 100 to dropped experience",
+        "",
+        "on breed:",
+        "\tbreeding father is a cow",
+        "\tset dropped experience to 10"
       ],
       "patterns": [
         "[the] (spawned|dropped|) [e]xp[erience] [orb[s]]"
@@ -4265,9 +4674,9 @@
     {
       "id": "ExprMessage-2",
       "name": "Message",
-      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message)",
+      "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message), INSERT VERSION (broadcasted message)",
       "description": [
-        "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, or the death message on a death event. This expression is mostly useful for being changed."
+        "The (chat) message of a chat event, the join message of a join event, the quit message of a quit event, the death message of a death event or the broadcasted message in a broadcast event. This expression is mostly useful for being changed."
       ],
       "examples": [
         "on chat:",
@@ -4288,13 +4697,17 @@
         "\t\tset quit message to \"%player% left this awesome server!\"",
         "",
         "on death:",
-        "\tset the death message to \"%player% died!\""
+        "\tset the death message to \"%player% died!\"",
+        "",
+        "on broadcast:",
+        "\tset broadcast message to \"&a[BROADCAST] %broadcast message%\""
       ],
       "patterns": [
         "[the] [chat( |-)]message",
         "[the] (join|log[ ]in)( |-)message",
         "[the] (quit|leave|log[ ]out|kick)( |-)message",
-        "[the] death( |-)message"
+        "[the] death( |-)message",
+        "[the] broadcast(-|[ed] )message"
       ]
     },
     {
@@ -4905,6 +5318,49 @@
       ]
     },
     {
+      "id": "ExprRotate-2",
+      "name": "Rotated Quaternion/Vector",
+      "since": "INSERT VERSION",
+      "description": [
+        "Rotates a quaternion or vector around an axis a set amount of degrees, or around all 3 axes at once.",
+        "Vectors can only be rotated around the global X/Y/Z axes, or an arbitrary vector axis.",
+        "Quaternions are more flexible, allowing rotation around the global or local X/Y/Z axes, arbitrary vectors, or all 3 local axes at once.",
+        "Global axes are the ones in the Minecraft world. Local axes are relative to how the quaternion is already oriented.",
+        "",
+        "Note that rotating a quaternion around a vector results in a rotation around the local vector, so results may not be what you expect. For example, rotating around vector(1, 0, 0) is the same as rotating around the local X axis.",
+        "The same applies to rotations by all three axes at once. In addition, rotating around all three axes of a quaternion/display at once will rotate in ZYX order, meaning the Z rotation will be applied first and the X rotation last."
+      ],
+      "examples": [
+        "set {_new} to {_quaternion} rotated around x axis by 10 degrees",
+        "set {_new} to {_vector} rotated around vector(1, 1, 1) by 45",
+        "set {_new} to {_quaternion} rotated by x 45, y 90, z 135"
+      ],
+      "patterns": [
+        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
+        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
+        "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
+        "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "ExprBreedingFamily-2",
+      "name": "Breeding Family",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents family members within a breeding event."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much, they make a %bred offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[the] breeding mother",
+        "[the] breeding father",
+        "[the] [bred] (offspring|child)",
+        "[the] breeder"
+      ]
+    },
+    {
       "id": "ExprAllGroups-2",
       "name": "All Groups",
       "since": "2.2-dev35",
@@ -4965,6 +5421,24 @@
       ],
       "patterns": [
         "[the] [thrown] egg"
+      ]
+    },
+    {
+      "id": "ExprExperienceCooldownChangeReason-2",
+      "name": "Experience Cooldown Change Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "The <a href='classes.html#experiencechangereason'>experience change reason</a> within in an<a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
+      ],
+      "examples": [
+        "on player experience cooldown change:",
+        "\tif xp cooldown change reason is plugin:",
+        "\t\t#Changed by a plugin",
+        "\telse if xp cooldown change reason is orb pickup:",
+        "\t\t#Changed by picking up xp orb"
+      ],
+      "patterns": [
+        "[the] [the] (experience|[e]xp) cooldown change (reason|cause|type)"
       ]
     },
     {
@@ -5405,6 +5879,36 @@
       "patterns": [
         "[the] %attributetype% [(1:(total|final|modified))] attribute [value] of %entities%",
         "%entities%'[s] %attributetype% [(1:(total|final|modified))] attribute [value]"
+      ]
+    },
+    {
+      "id": "ExprEntitySound-2",
+      "name": "Entity Sound",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the sound that a given entity will make in a specific scenario."
+      ],
+      "examples": [
+        "play sound (hurt sound of player) at player",
+        "set {_sounds::*} to death sounds of (all mobs in radius 10 of player)"
+      ],
+      "patterns": [
+        "[the] (damage|hurt) sound[s] of %livingentities%",
+        "%livingentities%'[s] (damage|hurt) sound[s]",
+        "[the] death sound[s] of %livingentities%",
+        "%livingentities%'[s] death sound[s]",
+        "[the] [high:(tall|high)|(low|normal)] fall damage sound[s] [from [[a] height [of]] %-number%] of %livingentities%",
+        "%livingentities%'[s] [high:(tall|high)|low:(low|normal)] fall [damage] sound[s] [from [[a] height [of]] %-number%]",
+        "[the] swim[ming] sound[s] of %livingentities%",
+        "%livingentities%'[s] swim[ming] sound[s]",
+        "[the] [fast:(fast|speedy)] splash sound[s] of %livingentities%",
+        "%livingentities%'[s] [fast:(fast|speedy)] splash sound[s]",
+        "[the] eat[ing] sound[s] of %livingentities% [(with|using|[while] eating [a]) %-itemtype%]",
+        "%livingentities%'[s] eat[ing] sound[s]",
+        "[the] drink[ing] sound[s] of %livingentities% [(with|using|[while] drinking [a]) %-itemtype%]",
+        "%livingentities%'[s] drink[ing] sound[s]",
+        "[the] ambient sound[s] of %livingentities%",
+        "%livingentities%'[s] ambient sound[s]"
       ]
     },
     {
@@ -6435,18 +6939,20 @@
     {
       "id": "ExprBlockData-2",
       "name": "Block Data",
-      "since": "2.5, 2.5.2 (set)",
+      "since": "2.5, 2.5.2 (set), INSERT VERSION (block displays)",
       "description": [
-        "Get the <a href='classes.html#blockdata'>block data</a> associated with a block. This data can also be used to set blocks."
+        "Get the <a href='classes.html#blockdata'>block data</a> associated with a block.",
+        "This data can also be used to set blocks."
       ],
       "examples": [
-        "set {data} to block data of target block",
-        "set block at player to {data}",
+        "set {_data} to block data of target block",
+        "set block at player to {_data}",
+        "",
         "set block data of target block to oak_stairs[facing=south;waterlogged=true]"
       ],
       "patterns": [
-        "[the] block[ ]data of %blocks%",
-        "%blocks%'[s] block[ ]data"
+        "[the] block[ ]data of %blocks/displays%",
+        "%blocks/displays%'[s] block[ ]data"
       ]
     },
     {
@@ -6463,6 +6969,25 @@
       "patterns": [
         "[the] [block] hardness of %itemtypes%",
         "%itemtypes%'[s] [block] hardness"
+      ]
+    },
+    {
+      "id": "ExprBlockSound-2",
+      "name": "Block Sound",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the sound that a given block, blockdata, or itemtype will use in a specific scenario.",
+        "This will return a string in the form of \"SOUND_EXAMPLE\", which can be used in the play sound syntax.",
+        "",
+        "Check out <a href=\"https://minecraft.wiki/w/Sounds.json\">this website</a> for a list of sounds in Minecraft, or <a href=\"https://minecraft.wiki/w/Sound\">this one</a> to go to the Sounds wiki page."
+      ],
+      "examples": [
+        "play sound (break sound of dirt) at all players",
+        "set {_sounds::*} to place sounds of dirt, grass block, blue wool and stone"
+      ],
+      "patterns": [
+        "[the] (1:break|2:fall|3:hit|4:place|5:step) sound[s] of %blocks/blockdatas/itemtypes%",
+        "%blocks/blockdatas/itemtypes%'[s] (1:break|2:fall|3:hit|4:place|5:step) sound[s]"
       ]
     },
     {
@@ -6627,9 +7152,11 @@
     {
       "id": "ExprColorOf-2",
       "name": "Color of",
-      "since": "1.2",
+      "since": "1.2, INSERT VERSION (displays)",
       "description": [
-        "The <a href='./classes.html#color'>color</a> of an item, can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\"."
+        "The <a href='./classes.html#color'>color</a> of an item, entity, block, firework effect, or text display.",
+        "This can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
+        "Do note that firework effects support setting, adding, removing, resetting, and deleting; text displays support setting and resetting; and items, entities, and blocks only support setting, and only for very few items/blocks."
       ],
       "examples": [
         "on click on wool:",
@@ -6637,8 +7164,24 @@
         "\tset the color of the block to black"
       ],
       "patterns": [
-        "[the] colo[u]r[s] of %blocks/itemtypes/entities/fireworkeffects%",
-        "%blocks/itemtypes/entities/fireworkeffects%'[s] colo[u]r[s]"
+        "[the] colo[u]r[s] of %blocks/itemtypes/entities/fireworkeffects/displays%",
+        "%blocks/itemtypes/entities/fireworkeffects/displays%'[s] colo[u]r[s]"
+      ]
+    },
+    {
+      "id": "ExprCommandBlockCommand-2",
+      "name": "Command Block Command",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets or sets the command associated with a command block or minecart with command block."
+      ],
+      "examples": [
+        "send command of {_block}",
+        "set command of {_cmdMinecart} to \"say asdf\""
+      ],
+      "patterns": [
+        "[the] [command[ ]block] command of %blocks/entities%",
+        "%blocks/entities%'[s] [command[ ]block] command"
       ]
     },
     {
@@ -6765,6 +7308,27 @@
       "patterns": [
         "[the] difficult(y|ies) of %worlds%",
         "%worlds%'[s] difficult(y|ies)"
+      ]
+    },
+    {
+      "id": "ExprDomestication-2",
+      "name": "Horse Domestication",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets and/or sets the (max) domestication of a horse.",
+        "The domestication of a horse is how close a horse is to becoming tame - the higher the domestication, the closer they are to becoming tame (must be between 1 and the max domestication level of the horse).",
+        "The max domestication of a horse is how long it will take for a horse to become tame (must be greater than 0)."
+      ],
+      "examples": [
+        "function domesticateAndTame(horse: entity, p: offline player, i: int = 10):",
+        "\tadd {_i} to domestication level of {_horse}",
+        "\tif domestication level of {_horse} >= max domestication level of {_horse}:",
+        "\t\ttame {_horse}",
+        "\t\tset tamer of {_horse} to {_p}"
+      ],
+      "patterns": [
+        "[the] [:max[imum]] domestication level of %livingentities%",
+        "%livingentities%'[s] [:max[imum]] domestication level"
       ]
     },
     {
@@ -6922,6 +7486,26 @@
       "patterns": [
         "[the] exhaustion of %players%",
         "%players%'[s] exhaustion"
+      ]
+    },
+    {
+      "id": "ExprExperienceCooldown-2",
+      "name": "Experience Pickup Cooldown",
+      "since": "INSERT VERSION",
+      "description": [
+        "The experience cooldown of a player.",
+        "Experience cooldown is how long until a player can pick up another orb of experience.",
+        "The cooldown of a player must be 0 to pick up another orb of experience."
+      ],
+      "examples": [
+        "send experience cooldown of player",
+        "set the xp pickup cooldown of player to 1 hour",
+        "if exp collection cooldown of player >= 10 minutes:",
+        "\tclear the experience pickup cooldown of player"
+      ],
+      "patterns": [
+        "[the] [the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
+        "%players%'[s] [the] (experience|[e]xp) [pickup|collection] cooldown"
       ]
     },
     {
@@ -7196,7 +7780,7 @@
       "name": "Hidden Players",
       "since": "2.3",
       "description": [
-        "The players hidden from a player that were hidden using the <a href='effects.html#EffPlayerVisibility'>player visibility</a> effect."
+        "The players hidden from a player that were hidden using the <a href='effects.html#EffEntityVisibility'>entity visibility</a> effect."
       ],
       "examples": [
         "message \"&lt;light red&gt;You are currently hiding: &lt;light gray&gt;%hidden players of the player%\""
@@ -7317,21 +7901,6 @@
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/itemtypes/itemstacks%",
         "%slots/itemtypes/itemstacks%'[s] item[[ ]stack] (amount|size|number)"
-      ]
-    },
-    {
-      "id": "ExprItemFrameSlot-2",
-      "name": "Item of an Entity",
-      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles)",
-      "description": [
-        "An item associated with an entity. For dropped item entities, it gets, obviously, the item that was dropped. For item frames, the item inside the frame is returned. For throwable projectiles (snowballs, enderpearls etc.),it gets the displayed item. Other entities do not have items associated with them."
-      ],
-      "examples": [
-        ""
-      ],
-      "patterns": [
-        "[the] item of %entities%",
-        "%entities%'[s] item"
       ]
     },
     {
@@ -7458,6 +8027,23 @@
       "patterns": [
         "[the] last damage (cause|reason|type) of %livingentities%",
         "%livingentities%'[s] last damage (cause|reason|type)"
+      ]
+    },
+    {
+      "id": "ExprLastDeathLocation-2",
+      "name": "Last Death Location",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the last death location of a player, or offline player, if available.",
+        "Can also be set, reset, and deleted if the player is online."
+      ],
+      "examples": [
+        "set {_loc} to the last death location of player",
+        "teleport player to last death location of (random element out of all players)"
+      ],
+      "patterns": [
+        "[the] [last] death location[s] of %offlineplayers%",
+        "%offlineplayers%'[s] [last] death location[s]"
       ]
     },
     {
@@ -7763,7 +8349,7 @@
     {
       "id": "ExprMetadata-2",
       "name": "Metadata",
-      "since": "2.2-dev36",
+      "since": "2.2-dev36, INSERT VERSION (add, remove)",
       "description": [
         "Metadata is a way to store temporary data on entities, blocks and more that disappears after a server restart."
       ],
@@ -8606,11 +9192,15 @@
       "name": "Time",
       "since": "1.0",
       "description": [
-        "The <a href='classes.html#time'>time</a> of a world."
+        "The <a href='classes.html#time'>time</a> of a world.",
+        "Use the \"minecraft <a href='classes.html#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.",
+        "Since Minecraft uses discrete intervals for time (ticks), changing the time by real-world minutes or real-world seconds only changes it approximately.",
+        "Removing an amount of time from a world's time will move the clock forward a day."
       ],
       "examples": [
-        "time in world is between 18:00 and 6:00:",
-        "\tbroadcast \"It's night-time, watch out for monsters!\""
+        "set time of world \"world\" to 2:00",
+        "add 2 minecraft hours to time of world \"world\"",
+        "add 54 real seconds to time of world \"world\" # approximately 1 minecraft hour"
       ],
       "patterns": [
         "[the] time[s] [([with]in|of) %worlds%]",
@@ -8639,16 +9229,19 @@
     },
     {
       "id": "ExprTimeSince-2",
-      "name": "Time Since",
-      "since": "2.5",
+      "name": "Time Since/Until",
+      "since": "2.5, INSERT VERSION (time until)",
       "description": [
-        "The time that has passed since a date. If the given date is in the future, a value will not be returned."
+        "The time since a date has passed or the time until a date will pass.",
+        "This expression will return 0 seconds if the time since or time until would be negative, e.g. if one tries to get the time since a future date."
       ],
       "examples": [
-        "send \"%time since 5 minecraft days ago% has passed since 5 minecraft days ago!\" to player"
+        "send \"%time since 5 minecraft days ago% has passed since 5 minecraft days ago!\" to player",
+        "send \"%time until {countdown::end}% until the game begins!\" to player"
       ],
       "patterns": [
-        "[the] time since %dates%"
+        "[the] time since %dates%",
+        "[the] (time [remaining]|remaining time) until %dates%"
       ]
     },
     {
@@ -8688,10 +9281,10 @@
         "\tset {weather::%world%::current} to the new weather"
       ],
       "patterns": [
-        "[the] (former|past|old) [state] [of] %~object%",
-        "%~object% before [the event]",
-        "[the] (future|to-be|new) [state] [of] %~object%",
-        "%~object%(-to-be| after[(wards| the event)])"
+        "[the] (former|past|old) [state] [of] %~objects%",
+        "%~objects% before [the event]",
+        "[the] (future|to-be|new) [state] [of] %~objects%",
+        "%~objects%(-to-be| after[(wards| the event)])"
       ]
     },
     {
@@ -8892,30 +9485,6 @@
       ]
     },
     {
-      "id": "ExprVectorXYZ-2",
-      "name": "Vectors - XYZ Component",
-      "since": "2.2-dev28",
-      "description": [
-        "Gets or changes the x, y or z component of a vector."
-      ],
-      "examples": [
-        "set {_v} to vector 1, 2, 3",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "add 1 to x of {_v}",
-        "add 2 to y of {_v}",
-        "add 3 to z of {_v}",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "set x component of {_v::*} to 1",
-        "set y component of {_v::*} to 2",
-        "set z component of {_v::*} to 3",
-        "send \"%x component of {_v::*}%, %y component of {_v::*}%, %z component of {_v::*}%\""
-      ],
-      "patterns": [
-        "[the] [vector] (0:x|1:y|2:z) [component[s]] of %vectors%",
-        "%vectors%'[s] [vector] (0:x|1:y|2:z) [component[s]]"
-      ]
-    },
-    {
       "id": "ExprVehicle-2",
       "name": "Vehicle",
       "since": "2.0",
@@ -9014,6 +9583,31 @@
       ]
     },
     {
+      "id": "ExprXYZComponent-2",
+      "name": "Vector/Quaternion - WXYZ Component",
+      "since": "2.2-dev28, INSERT VERSION (quaternions)",
+      "description": [
+        "Gets or changes the W, X, Y or Z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.",
+        "You cannot use the W component with vectors; it is for quaternions only."
+      ],
+      "examples": [
+        "set {_v} to vector 1, 2, 3",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "add 1 to x of {_v}",
+        "add 2 to y of {_v}",
+        "add 3 to z of {_v}",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "set x component of {_v} to 1",
+        "set y component of {_v} to 2",
+        "set z component of {_v} to 3",
+        "send \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
+      ],
+      "patterns": [
+        "[the] [vector|quaternion] (:w|:x|:y|:z) [component[s]] of %vectors/quaternions%",
+        "%vectors/quaternions%'[s] [vector|quaternion] (:w|:x|:y|:z) [component[s]]"
+      ]
+    },
+    {
       "id": "ExprYawPitch-2",
       "name": "Yaw / Pitch",
       "since": "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)",
@@ -9036,6 +9630,314 @@
       ]
     },
     {
+      "id": "ExprItemOfEntity-2",
+      "name": "Item of an Entity",
+      "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
+      "description": [
+        "An item associated with an entity. For dropped item entities, it gets the item that was dropped.",
+        "For item frames, the item inside the frame is returned.",
+        "For throwable projectiles (snowballs, enderpearls etc.) or item displays, it gets the displayed item.",
+        "Other entities do not have items associated with them."
+      ],
+      "examples": [
+        "item of event-entity",
+        "",
+        "set the item inside of event-entity to a diamond sword named \"Example\""
+      ],
+      "patterns": [
+        "[the] item [inside] of %entities%",
+        "%entities%'[s] item [inside]"
+      ]
+    },
+    {
+      "id": "ExprQuaternionAxisAngle-2",
+      "name": "Rotation Axis/Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the axis or angle that a quaternion will rotate by/around.",
+        "All quaternions can be represented by a rotation of some amount around some axis, so this expression provides the ability to get that angle/axis."
+      ],
+      "examples": [
+        "set {_quaternion} to axisAngle(45, vector(1, 2, 3))",
+        "send rotation axis of {_quaternion} # 1, 2, 3",
+        "send rotation angle of {_quaternion} # 45",
+        "set rotation angle of {_quaternion} to 135",
+        "set rotation axis of {_quaternion} to vector(0, 1, 0)"
+      ],
+      "patterns": [
+        "[the] rotation (angle|:axis) of %quaternions%",
+        "%quaternions%'[s] rotation (angle|:axis)"
+      ]
+    },
+    {
+      "id": "ExprTextOf-2",
+      "name": "Text Of",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.",
+        "Note that currently you can only use Skript chat codes when running Paper."
+      ],
+      "examples": [
+        "set text of the last spawned text display to \"example\""
+      ],
+      "patterns": [
+        "[the] text[s] of %displays%",
+        "%displays%'[s] text[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayBillboard-2",
+      "name": "Display Billboard",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#billboard'>billboard</a> setting of <a href='classes.html#display'>displays</a>.",
+        "This describes the axes/points around which the display can pivot.",
+        "Displays spawn with the 'fixed' billboard by default. Resetting this expression will also set it to 'fixed'."
+      ],
+      "examples": [
+        "set billboard of the last spawned text display to center"
+      ],
+      "patterns": [
+        "[the] bill[ |-]board[ing] [setting] [of %displays%]",
+        "%displays%'[s] bill[ |-]board[ing] [setting]"
+      ]
+    },
+    {
+      "id": "ExprDisplayBrightness-2",
+      "name": "Display Brightness",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the brightness override of <a href='classes.html#display'>displays</a>.",
+        "Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.",
+        "Use the 'block' or 'sky' options to get/change specific values or get both values as a list by using neither option.",
+        "NOTE: setting only one of the sky/block light overrides of a display without an existing override will set both sky and block light to the given value. Make sure to set both block and sky levels to your desired values for the best results. Likewise, you can only clear the brightness override, you cannot clear/reset the sky/block values individually."
+      ],
+      "examples": [
+        "set sky light override of the last spawned text display to 7",
+        "subtract 3 from the block light level override of the last spawned text display",
+        "if sky light level override of {_display} is 5:",
+        "\tclear brightness override of {_display}"
+      ],
+      "patterns": [
+        "[the] [:block|:sky] (light [level]|brightness) override[s] of %displays%",
+        "%displays%'[s] [:block|:sky] (light [level]|brightness) override[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayGlowOverride-2",
+      "name": "Display Glow Color Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the glowing color override of <a href='classes.html#display'>displays</a>.",
+        "This overrides whatever color is already set for the scoreboard team of the displays."
+      ],
+      "examples": [
+        "set glow color override of the last spawned text display to blue"
+      ],
+      "patterns": [
+        "[the] glow[ing] colo[u]r[s] override[s] [of %displays%]",
+        "%displays%'[s] glow[ing] colo[u]r[s] override[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayHeightWidth-2",
+      "name": "Display Height/Width",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.",
+        "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
+        "If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0."
+      ],
+      "examples": [
+        "set display height of the last spawned text display to 2.5"
+      ],
+      "patterns": [
+        "[the] display (:height|width) [of %displays%]",
+        "%displays%'[s] display (:height|width)"
+      ]
+    },
+    {
+      "id": "ExprDisplayInterpolation-2",
+      "name": "Display Interpolation Delay/Duration",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the interpolation delay/duration of <a href='classes.html#display'>displays</a>.",
+        "Interpolation duration is the amount of time a display will take to interpolate, or shift, between its current state and a new state.",
+        "Interpolation delay is the amount of ticks before client-side interpolation will commence.Setting to 0 seconds will make it immediate.",
+        "Resetting either value will return that value to 0."
+      ],
+      "examples": [
+        "set interpolation delay of the last spawned text display to 2 ticks"
+      ],
+      "patterns": [
+        "[the] interpolation (:delay|duration)[s] [of %displays%]",
+        "%displays%'[s] interpolation (:delay|duration)[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayShadow-2",
+      "name": "Display Shadow Radius/Strength",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the shadow radius/strength of <a href='classes.html#display'>displays</a>."
+      ],
+      "examples": [
+        "set shadow radius of the last spawned text display to 1.75"
+      ],
+      "patterns": [
+        "[the] shadow (:radius|strength) [of %displays%]",
+        "%displays%'[s] shadow (:radius|strength)"
+      ]
+    },
+    {
+      "id": "ExprDisplayTeleportDuration-2",
+      "name": "Display Teleport Delay/Duration",
+      "since": "INSERT VERSION",
+      "description": [
+        "The teleport duration of displays is the amount of time it takes to get between locations.",
+        "0 means that updates are applied immediately.",
+        "1 means that the display entity will move from current position to the updated one over one tick.",
+        "Higher values spread the movement over multiple ticks. Max of 59 ticks."
+      ],
+      "examples": [
+        "set teleport delay of the last spawned text display to 2 ticks",
+        "teleport last spawned text display to {_location}",
+        "wait 2 ticks",
+        "message \"display entity has arrived at %{_location}%\""
+      ],
+      "patterns": [
+        "[the] teleport[ation] duration[s] [of %displays%]",
+        "%displays%'[s] teleport[ation] duration[s]"
+      ]
+    },
+    {
+      "id": "ExprDisplayTransformationRotation-2",
+      "name": "Display Transformation Rotation",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.",
+        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+      ],
+      "examples": [
+        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+      ],
+      "patterns": [
+        "[the] (:left|right) [transformation] rotation [of %displays%]",
+        "%displays%'[s] (:left|right) [transformation] rotation"
+      ]
+    },
+    {
+      "id": "ExprDisplayTransformationScaleTranslation-2",
+      "name": "Display Transformation Scale/Translation",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the transformation scale or translation of <a href='classes.html#display'>displays</a>."
+      ],
+      "examples": [
+        "set transformation translation of display to vector from -0.5, -0.5, -0.5 # Center the display in the same position as a block"
+      ],
+      "patterns": [
+        "[the] (display|[display] transformation) (:scale|translation) of %displays%",
+        "%displays%'[s] (display|[display] transformation) (:scale|translation)"
+      ]
+    },
+    {
+      "id": "ExprDisplayViewRange-2",
+      "name": "Display View Range",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the view range of <a href='classes.html#display'>displays</a>.",
+        "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
+        "For example, a player with 150% entity view distance will see a block display with a view range of 1.2 at 1.2 * 64 * 150% = 115.2 blocks away."
+      ],
+      "examples": [
+        "set view range of the last spawned text display to 2.9"
+      ],
+      "patterns": [
+        "[the] [display] view (range|radius) [of %displays%]",
+        "%displays%'[s] [display] view (range|radius)"
+      ]
+    },
+    {
+      "id": "ExprItemDisplayTransform-2",
+      "name": "Item Display Transform",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>."
+      ],
+      "examples": [
+        "set the item transform of the last spawned item display to first person left handed",
+        "set the item transform of the last spawned item display to no transform # Reset to default"
+      ],
+      "patterns": [
+        "[the] item [display] transform [of %displays%]",
+        "%displays%'[s] item [display] transform"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayAlignment-2",
+      "name": "Text Display Alignment",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>."
+      ],
+      "examples": [
+        "set text alignment of the last spawned text display to left"
+      ],
+      "patterns": [
+        "[the] text alignment[s] [of %displays%]",
+        "%displays%'[s] text alignment[s]"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayLineWidth-2",
+      "name": "Text Display Line Width",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the line width of <a href='classes.html#display'>text displays</a>. Default is 200."
+      ],
+      "examples": [
+        "set the line width of the last spawned text display to 300"
+      ],
+      "patterns": [
+        "[the] line width [of %displays%]",
+        "%displays%'[s] line width"
+      ]
+    },
+    {
+      "id": "ExprTextDisplayOpacity-2",
+      "name": "Text Display Opacity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns or changes the opacity of <a href='classes.html#display'>text displays</a>.",
+        "Values are between -127 and 127. The value of 127 represents it being completely opaque."
+      ],
+      "examples": [
+        "set the opacity of the last spawned text display to -1 # Reset"
+      ],
+      "patterns": [
+        "[the] [display] opacity [of %displays%]",
+        "%displays%'[s] [display] opacity"
+      ]
+    },
+    {
+      "id": "ExprLoveTime-2",
+      "name": "Love Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "The amount of time the animals have been in love for. Using a value of 30 seconds is equivalent to using an item to breed them.",
+        "Only works on animals that can be bred and returns '0 seconds' for animals that can't be bred."
+      ],
+      "examples": [
+        "on right click:",
+        "\tsend \"%event-entity% has been in love for %love time of event-entity% more than you!\" to player"
+      ],
+      "patterns": [
+        "[the] love[d] time of %livingentities%",
+        "%livingentities%'[s] love[d] time"
+      ]
+    },
+    {
       "id": "ExprBalance-2",
       "name": "Money",
       "since": "2.0, 2.5 (offline players)",
@@ -9055,7 +9957,7 @@
     {
       "id": "ExprPrefixSuffix-2",
       "name": "Prefix/Suffix",
-      "since": "2.0",
+      "since": "2.0, INSERT VERSION (delete)",
       "description": [
         "The prefix or suffix as defined in the server's chat plugin."
       ],
@@ -9064,11 +9966,13 @@
         "\tcancel event",
         "\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world",
         "",
-        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \""
+        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \"",
+        "",
+        "clear player's prefix"
       ],
       "patterns": [
-        "[the] [chat] (1¦prefix|2¦suffix) of %players%",
-        "%players%'[s] [chat] (1¦prefix|2¦suffix)"
+        "[the] [chat] (1:prefix|2:suffix) of %players%",
+        "%players%'[s] [chat] (1:prefix|2:suffix)"
       ]
     },
     {
@@ -9166,22 +10070,25 @@
     {
       "id": "ExprEntities-2",
       "name": "Entities",
-      "since": "1.2.1, 2.5 (chunks)",
+      "since": "1.2.1, 2.5 (chunks), INSERT VERSION (within)",
       "description": [
-        "All entities in all worlds, in a specific world, in a chunk or in a radius around a certain location, e.g. <code>all players</code>, <code>all creepers in the player's world</code>, or <code>players in radius 100 of the player</code>."
+        "All entities in all worlds, in a specific world, in a chunk, in a radius around a certain location or within two locations. e.g. <code>all players</code>, <code>all creepers in the player's world</code>, or <code>players in radius 100 of the player</code>."
       ],
       "examples": [
         "kill all creepers in the player's world",
         "send \"Psst!\" to all players within 100 meters of the player",
         "give a diamond to all ops",
         "heal all tamed wolves in radius 2000 around {town center}",
-        "delete all monsters in chunk at player"
+        "delete all monsters in chunk at player",
+        "size of all players within {_corner::1} and {_corner::2}}"
       ],
       "patterns": [
         "[(all [[of] the]|the)] %*entitydatas% [(in|of) ([world[s]] %-worlds%|1¦%-chunks%)]",
         "[(all [[of] the]|the)] entities of type[s] %entitydatas% [(in|of) ([world[s]] %-worlds%|1¦%-chunks%)]",
         "[(all [[of] the]|the)] %*entitydatas% (within|[with]in radius) %number% [(block[s]|met(er|re)[s])] (of|around) %location%",
-        "[(all [[of] the]|the)] entities of type[s] %entitydatas% in radius %number% (of|around) %location%"
+        "[(all [[of] the]|the)] entities of type[s] %entitydatas% in radius %number% (of|around) %location%",
+        "[(all [[of] the]|the)] %*entitydatas% within %location% and %location%",
+        "[(all [[of] the]|the)] entities of type[s] %entitydatas% within %location% and %location%"
       ]
     },
     {
@@ -9345,6 +10252,35 @@
       ]
     },
     {
+      "id": "block_drop-2",
+      "name": "On Block Drop",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a block broken by a player drops something.",
+        "<ul>",
+        "<li>event-player: The player that broke the block</li>",
+        "<li>past event-block: The block that was broken</li>",
+        "<li>event-block: The block after being broken</li>",
+        "<li>event-items (or drops): The drops of the block</li>",
+        "<li>event-entities: The entities of the dropped items</li>",
+        "</ul>",
+        "",
+        "If the breaking of the block leads to others being broken, such as torches, they will appearin \"event-items\" and \"event-entities\"."
+      ],
+      "examples": [
+        "on block drop:",
+        "\tbroadcast event-player",
+        "\tbroadcast past event-block",
+        "\tbroadcast event-block",
+        "\tbroadcast event-items",
+        "\tbroadcast event-entities",
+        "on block drop of oak log:"
+      ],
+      "patterns": [
+        "block drop[ping] [[of] %-itemtypes/blockdatas%]"
+      ]
+    },
+    {
       "id": "book_edit-2",
       "name": "On Book Edit",
       "since": "2.2-dev31",
@@ -9375,7 +10311,7 @@
     {
       "id": "click-2",
       "name": "On Click",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (blockdata)",
       "description": [
         "Called when a user clicks on a block, an entity or air with or without an item in their hand.",
         "Please note that rightclick events with an empty hand while not looking at a block are not sent to the server, so there's no way to detect them.",
@@ -9386,11 +10322,13 @@
         "on rightclick holding a fishing rod:",
         "on leftclick on a stone or obsidian:",
         "on rightclick on a creeper:",
-        "on click with a sword:"
+        "on click with a sword:",
+        "on click on chest[facing=north]:",
+        "on click on campfire[lit=true]:"
       ],
       "patterns": [
-        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] [on %-entitydata/itemtype%] [(with|using|holding) %-itemtype%]",
-        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] (with|using|holding) %-itemtype% on %-entitydata/itemtype%"
+        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] [on %-entitydata/itemtype/blockdata%] [(with|using|holding) %-itemtype%]",
+        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] (with|using|holding) %-itemtype% on %-entitydata/itemtype/blockdata%"
       ]
     },
     {
@@ -11694,6 +12632,71 @@
       ]
     },
     {
+      "id": "broadcast-2",
+      "name": "On Broadcast",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a message is broadcasted."
+      ],
+      "examples": [
+        "on broadcast:",
+        "\tset broadcast-message to \"&c[BROADCAST] %broadcasted message%\""
+      ],
+      "patterns": [
+        "broadcast"
+      ]
+    },
+    {
+      "id": "experience_cooldown_change-2",
+      "name": "On Experience Cooldown Change",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player's experience cooldown changes.",
+        "Experience cooldown is how long until a player can pick up another orb of experience."
+      ],
+      "examples": [
+        "on player experience cooldown change:",
+        "\tbroadcast event-player",
+        "\tbroadcast event-timespan",
+        "\tbroadcast past event-timespan",
+        "\tbroadcast xp cooldown change reason"
+      ],
+      "patterns": [
+        "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
+      "id": "entity_breed-2",
+      "name": "On Entity Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever two animals begin to conceive a child. The type can be specified."
+      ],
+      "examples": [
+        "on breeding of llamas:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much they make %offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[entity] breed[ing] [of %-entitytypes%]"
+      ]
+    },
+    {
+      "id": "love_mode_enter-2",
+      "name": "On Love Mode Enter",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever an entity enters a state of being in love."
+      ],
+      "examples": [
+        "on love mode enter:",
+        "\tcancel event # No one is allowed love here"
+      ],
+      "patterns": [
+        "[entity] enter[s] love mode",
+        "[entity] love mode [enter]"
+      ]
+    },
+    {
       "id": "region_enterleave-2",
       "name": "On Region Enter/Leave",
       "since": "2.1",
@@ -11759,6 +12762,14 @@
         "quotes: \"...\"\"...\"",
         "expressions: \"...%expression%...\"",
         "percent signs: \"...%%...\""
+      ]
+    },
+    {
+      "id": "quaternion",
+      "name": "Quaternion",
+      "since": "INSERT VERSION",
+      "description": [
+        "Quaternions are four dimensional vectors, often used for representing rotations."
       ]
     },
     {
@@ -12292,7 +13303,7 @@
         "A gamerule"
       ],
       "patterns": [
-        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
+        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, disablePlayerMovementCheck, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, minecartMaxSpeed, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
       ]
     },
     {
@@ -12317,7 +13328,7 @@
         "NOTE: Minecraft namespaces are supported, ex: 'minecraft:generic.attack_damage'."
       ],
       "patterns": [
-        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic water movement efficiency, generic.armor, generic.armor toughness, generic.attack damage, generic.attack knockback, generic.attack speed, generic.burning time, generic.explosion knockback resistance, generic.fall damage multiplier, generic.flying speed, generic.follow range, generic.gravity, generic.jump strength, generic.knockback resistance, generic.luck, generic.max absorption, generic.max health, generic.movement efficiency, generic.movement speed, generic.oxygen bonus, generic.safe fall distance, generic.scale, generic.step height, generic.water movement efficiency, gravity, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, player.block break speed, player.block interaction range, player.entity interaction range, player.mining efficiency, player.sneaking speed, player.submerged mining speed, player.sweeping damage ratio, safe fall distance, scale, sneaking speed, step height, submerged mining speed, sweeping damage ratio, water movement efficiency, zombie spawn reinforcements, zombie.spawn reinforcements"
+        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
       ]
     },
     {
@@ -12384,6 +13395,70 @@
       ],
       "patterns": [
         "patrol captain, axolotl, death, removal by resurrection, beacon effect, potion drunk, illusion, unknown, drinking potion, expired, pillager captain, attack, villager trade, spawned spider, wither rose infliction, conversion, enter area effect cloud, conduit effect, command, food, drinking milk, plugin, converted, spider spawn, splash potion, warden, expiration, potion splash, dolphin boost, arrow infliction, turtle helmet effect"
+      ]
+    },
+    {
+      "id": "WolfVariant",
+      "name": "Wolf Variant",
+      "since": "@VERSION",
+      "description": [
+        "Represents the variant of a wolf entity.",
+        "NOTE: Minecraft namespaces are supported, ex: 'minecraft:ashen'."
+      ],
+      "patterns": [
+        "ashen, black, chestnut, pale, rusty, snowy, spotted, striped, woods"
+      ]
+    },
+    {
+      "id": "experiencecooldownchangereason",
+      "name": "Experience Cooldown Change Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a change reason of an <a href='events.html#experience cooldown change event'>experience cooldown change event</a>."
+      ],
+      "patterns": [
+        "plugin, pickup orb, orb pickup"
+      ]
+    },
+    {
+      "id": "display",
+      "name": "Display Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "A text, block or item display entity."
+      ]
+    },
+    {
+      "id": "billboard",
+      "name": "Display Billboard",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the billboard setting of a display."
+      ],
+      "patterns": [
+        "vertical pivot, horizontal, middle, horizontal pivot, center pivot, center, fixed, vertical"
+      ]
+    },
+    {
+      "id": "textalignment",
+      "name": "Display Text Alignment",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the text alignment setting of a text display."
+      ],
+      "patterns": [
+        "middle aligned, centered, right aligned, center aligned, left aligned"
+      ]
+    },
+    {
+      "id": "itemdisplaytransform",
+      "name": "Item Display Transforms",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the transform setting of an item display."
+      ],
+      "patterns": [
+        "first person left handed, left handed in first person, right handed in third person, first person left hand, no transform, the ground, third person right hand, third person right handed, right handed in first person, menu, head, third person left hand, first person right handed, first person right hand, fixed position, left handed in third person, gui, ground, fixed, third person left handed"
       ]
     },
     {
@@ -12680,7 +13755,7 @@
         "biome at the player is desert"
       ],
       "patterns": [
-        "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, custom, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, unknown, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains"
+        "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains"
       ]
     },
     {
@@ -12837,16 +13912,22 @@
       "name": "Spawn",
       "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
       "description": [
-        "Spawn a creature. This can be used as an effect and as a section.",
+        "Spawns entities. This can be used as an effect and as a section.",
+        "",
         "If it is used as a section, the section is run before the entity is added to the world.",
         "You can modify the entity in this section, using for example 'event-entity' or 'cow'. ",
-        "Do note that other event values, such as 'player', won't work in this section."
+        "Do note that other event values, such as 'player', won't work in this section.",
+        "",
+        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true."
       ],
       "examples": [
         "spawn 3 creepers at the targeted block",
         "spawn a ghast 5 meters above the player",
         "spawn a zombie at the player:",
-        "\tset name of the zombie to \"\""
+        "\tset name of the zombie to \"\"",
+        "",
+        "spawn a block display of a ladder[waterlogged=true] at location above player:",
+        "\tset billboard of event-display to center # allows the display to rotate around the center axis"
       ],
       "patterns": [
         "(spawn|summon) %entitytypes% [%directions% %locations%]",
@@ -12972,7 +14053,7 @@
         "\twait 1 second # without using a delay effect the server will crash"
       ],
       "patterns": [
-        "[(:do)] while <.+>"
+        "[:do] while <.+>"
       ]
     }
   ],
@@ -13168,6 +14249,21 @@
       ]
     },
     {
+      "id": "axisAngle",
+      "name": "axisAngle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a quaternion from the given angle (in degrees) and axis (as a vector). This represents a rotation around the given axis by the given angle."
+      ],
+      "examples": [
+        "axisangle(90, (vector from player's facing))"
+      ],
+      "return-type": "Quaternion",
+      "patterns": [
+        "axisAngle(angle: number, axis: vector)"
+      ]
+    },
+    {
       "id": "ceiling",
       "name": "ceiling",
       "since": "2.2",
@@ -13272,16 +14368,17 @@
     {
       "id": "rgb",
       "name": "rgb",
-      "since": "2.5",
+      "since": "2.5, INSERT VERSION (alpha)",
       "description": [
-        "Returns a RGB color from the given red, green and blue parameters."
+        "Returns a RGB color from the given red, green and blue parameters. Alpha values can be added optionally, but these only take affect in certain situations, like text display backgrounds."
       ],
       "examples": [
-        "dye player's leggings rgb(120, 30, 45)"
+        "dye player's leggings rgb(120, 30, 45)",
+        "set the colour of a text display to rgb(10, 50, 100, 50)"
       ],
       "return-type": "Color",
       "patterns": [
-        "rgb(red: long, green: long, blue: long)"
+        "rgb(red: long, green: long, blue: long, alpha: long = 255)"
       ]
     },
     {
@@ -13335,6 +14432,28 @@
       "return-type": "Number",
       "patterns": [
         "sqrt(n: number)"
+      ]
+    },
+    {
+      "id": "formatNumber",
+      "name": "formatNumber",
+      "since": "INSERT VERSION",
+      "description": [
+        "Converts numbers to human-readable format. By default, '###,###' (e.g. '123,456,789') will be used for whole numbers and '###,###.##' (e.g. '123,456,789.00) will be used for decimal numbers. A hashtag '#' represents a digit, a comma ',' is used to separate numbers, and a period '.' is used for decimals. ",
+        "Will return none if the format is invalid.",
+        "For further reference, see this <a href=\"https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html\" target=\"_blank\">article</a>."
+      ],
+      "examples": [
+        "command /balance:",
+        "\taliases: bal",
+        "\texecutable by: players",
+        "\ttrigger:",
+        "\t\tset {_money} to formatNumber({money::%sender's uuid%})",
+        "\t\tsend \"Your balance: %{_money}%\" to sender"
+      ],
+      "return-type": "Text",
+      "patterns": [
+        "formatNumber(number: number, format: string = )"
       ]
     },
     {
@@ -13435,6 +14554,21 @@
       "return-type": "Number",
       "patterns": [
         "max(ns: numbers)"
+      ]
+    },
+    {
+      "id": "quaternion",
+      "name": "quaternion",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a quaternion from the given W, X, Y and Z parameters. "
+      ],
+      "examples": [
+        "quaternion(1, 5.6, 45.21, 10)"
+      ],
+      "return-type": "Quaternion",
+      "patterns": [
+        "quaternion(w: number, x: number, y: number, z: number)"
       ]
     },
     {
