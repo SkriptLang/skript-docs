@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.3-nightly-75e2e74",
+  "skriptVersion": "2.9.4-nightly-c467551",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -101,6 +101,29 @@
       ],
       "patterns": [
         "chance of %number%(1¦\\%|)"
+      ]
+    },
+    {
+      "id": "CondChatVisibility",
+      "name": "Can See Messages",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see specific message types in chat."
+      ],
+      "examples": [
+        "if player can see all messages:",
+        "\tsend \"You can see all messages.\"",
+        "if player can only see commands:",
+        "\tsend \"This game doesn't work with commands-only chat.\"",
+        "if player can't see any messages:",
+        "\tsend action bar \"Server shutting down in 5 minutes!\""
+      ],
+      "patterns": [
+        "%player% can see all messages [in chat]",
+        "%player% can only see (commands|system messages) [in chat]",
+        "%player% can('t|[ ]not) see any (command[s]|message[s]) [in chat]",
+        "%player% can('t|[ ]not) see all messages [in chat]",
+        "%player% can('t|[ ]not) only see (commands|system messages) [in chat]"
       ]
     },
     {
@@ -861,6 +884,40 @@
       "patterns": [
         "%livingentities% can pick([ ]up items| items up)",
         "%livingentities% (can't|cannot|can not) pick([ ]up items| items up)"
+      ]
+    },
+    {
+      "id": "CondChatColors",
+      "name": "Can See Chat Colors",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player can see chat colors."
+      ],
+      "examples": [
+        "if player can see chat colors:",
+        "\tsend \"Find the red word in <red>this<reset> message.\"",
+        "else:",
+        "\tsend \"You cannot partake in finding the colored word.\""
+      ],
+      "patterns": [
+        "%players% can see chat colo[u]r[s|ing]",
+        "%players% (can't|cannot|can not) see chat colo[u]r[s|ing]"
+      ]
+    },
+    {
+      "id": "CondChatFiltering",
+      "name": "Has Chat Filtering",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a player has chat filtering enabled."
+      ],
+      "examples": [
+        "if player doesn't have chat filtering enabled:",
+        "send \"<gray>This server may contain mature chat messages. You have been warned!\" to player"
+      ],
+      "patterns": [
+        "%players% (has|have) (chat|text) filtering (on|enabled)",
+        "%players% (doesn't|does not|do not|don't) have (chat|text) filtering (on|enabled)"
       ]
     },
     {
@@ -1892,6 +1949,91 @@
       ]
     },
     {
+      "id": "CondCanAge",
+      "name": "Can Age",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not an entity will be able to age/grow up."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tentity can't age",
+        "\tbroadcast \"An immortal has been born!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (age|grow (up|old[er]))",
+        "%livingentities% (can't|cannot|can not) (age|grow (up|old[er]))"
+      ]
+    },
+    {
+      "id": "CondCanBreed",
+      "name": "Can Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity can be bred."
+      ],
+      "examples": [
+        "on right click on living entity:",
+        "\tevent-entity can't breed",
+        "\tsend \"Turns out %event-entity% is not breedable. Must be a Skript user!\" to player"
+      ],
+      "patterns": [
+        "%livingentities% can (breed|be bred)",
+        "%livingentities% (can't|cannot|can not) (breed|be bred)"
+      ]
+    },
+    {
+      "id": "CondIsAdult",
+      "name": "Is Adult",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is an adult."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is not an adult",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [an] adult",
+        "%livingentities% (isn't|is not|aren't|are not) [an] adult"
+      ]
+    },
+    {
+      "id": "CondIsBaby",
+      "name": "Is Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is a baby."
+      ],
+      "examples": [
+        "on drink:",
+        "\tevent-entity is a baby",
+        "\tkill event-entity"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) a (child|baby)",
+        "%livingentities% (isn't|is not|aren't|are not) a (child|baby)"
+      ]
+    },
+    {
+      "id": "CondIsInLove",
+      "name": "Is In Love",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether or not a living entity is in love."
+      ],
+      "examples": [
+        "on spawn of living entity:",
+        "\tif entity is in love:",
+        "broadcast \"That was quick!\""
+      ],
+      "patterns": [
+        "%livingentities% (is|are) in lov(e|ing) [state|mode]",
+        "%livingentities% (isn't|is not|aren't|are not) in lov(e|ing) [state|mode]"
+      ]
+    },
+    {
       "id": "CondCompare",
       "name": "Comparison",
       "since": "1.0",
@@ -2415,7 +2557,7 @@
         "equip [%livingentities%] with %itemtypes%",
         "make %livingentities% wear %itemtypes%",
         "unequip %itemtypes% [from %livingentities%]",
-        "unequip %livingentities%'[s] (armor|equipment)"
+        "unequip %livingentities%'[s] (armo[u]r|equipment)"
       ]
     },
     {
@@ -3691,6 +3833,61 @@
         "force %displays% to be visible through (blocks|walls)",
         "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
       ]
+    },
+    {
+      "id": "EffAllowAging",
+      "name": "Allow Aging",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not living entities will be able to age."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tallow aging of entity"
+      ],
+      "patterns": [
+        "lock age of %livingentities%",
+        "prevent aging of %livingentities%",
+        "prevent %livingentities% from aging",
+        "unlock age of %livingentities%",
+        "allow aging of %livingentities%",
+        "allow %livingentities% to age"
+      ]
+    },
+    {
+      "id": "EffBreedable",
+      "name": "Make Breedable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether or not entities will be able to breed. Only works on animals."
+      ],
+      "examples": [
+        "on spawn of animal:",
+        "\tmake entity unbreedable"
+      ],
+      "patterns": [
+        "make %livingentities% breedable",
+        "unsterilize %livingentities%",
+        "make %livingentities% (not |non(-| )|un)breedable",
+        "sterilize %livingentities%"
+      ]
+    },
+    {
+      "id": "EffMakeAdultOrBaby",
+      "name": "Make Adult/Baby",
+      "since": "INSERT VERSION",
+      "description": [
+        "Force a animal to become an adult or baby."
+      ],
+      "examples": [
+        "on spawn of mob:",
+        "\tentity is not an adult",
+        "\tmake entity an adult"
+      ],
+      "patterns": [
+        "make %livingentities% [a[n]] (adult|:baby)",
+        "force %livingentities% to be[come] a[n] (adult|:baby)"
+      ]
     }
   ],
   "expressions": [
@@ -4093,18 +4290,24 @@
     {
       "id": "ExprExperience",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
       "examples": [
         "on experience spawn:",
         "\tadd 5 to the spawned experience",
+        "",
         "on break of coal ore:",
         "\tclear dropped experience",
+        "",
         "on break of diamond ore:",
         "\tif tool of player = diamond pickaxe:",
-        "\t\tadd 100 to dropped experience"
+        "\t\tadd 100 to dropped experience",
+        "",
+        "on breed:",
+        "\tbreeding father is a cow",
+        "\tset dropped experience to 10"
       ],
       "patterns": [
         "[the] (spawned|dropped|) [e]xp[erience] [orb[s]]"
@@ -5152,6 +5355,24 @@
         "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
         "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
         "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "ExprBreedingFamily",
+      "name": "Breeding Family",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents family members within a breeding event."
+      ],
+      "examples": [
+        "on breeding:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much, they make a %bred offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[the] breeding mother",
+        "[the] breeding father",
+        "[the] [bred] (offspring|child)",
+        "[the] breeder"
       ]
     },
     {
@@ -8143,7 +8364,7 @@
     {
       "id": "ExprMetadata",
       "name": "Metadata",
-      "since": "2.2-dev36",
+      "since": "2.2-dev36, INSERT VERSION (add, remove)",
       "description": [
         "Metadata is a way to store temporary data on entities, blocks and more that disappears after a server restart."
       ],
@@ -9075,10 +9296,10 @@
         "\tset {weather::%world%::current} to the new weather"
       ],
       "patterns": [
-        "[the] (former|past|old) [state] [of] %~object%",
-        "%~object% before [the event]",
-        "[the] (future|to-be|new) [state] [of] %~object%",
-        "%~object%(-to-be| after[(wards| the event)])"
+        "[the] (former|past|old) [state] [of] %~objects%",
+        "%~objects% before [the event]",
+        "[the] (future|to-be|new) [state] [of] %~objects%",
+        "%~objects%(-to-be| after[(wards| the event)])"
       ]
     },
     {
@@ -9715,6 +9936,23 @@
       ]
     },
     {
+      "id": "ExprLoveTime",
+      "name": "Love Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "The amount of time the animals have been in love for. Using a value of 30 seconds is equivalent to using an item to breed them.",
+        "Only works on animals that can be bred and returns '0 seconds' for animals that can't be bred."
+      ],
+      "examples": [
+        "on right click:",
+        "\tsend \"%event-entity% has been in love for %love time of event-entity% more than you!\" to player"
+      ],
+      "patterns": [
+        "[the] love[d] time of %livingentities%",
+        "%livingentities%'[s] love[d] time"
+      ]
+    },
+    {
       "id": "ExprBalance",
       "name": "Money",
       "since": "2.0, 2.5 (offline players)",
@@ -10088,7 +10326,7 @@
     {
       "id": "click",
       "name": "On Click",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (blockdata)",
       "description": [
         "Called when a user clicks on a block, an entity or air with or without an item in their hand.",
         "Please note that rightclick events with an empty hand while not looking at a block are not sent to the server, so there's no way to detect them.",
@@ -10099,11 +10337,13 @@
         "on rightclick holding a fishing rod:",
         "on leftclick on a stone or obsidian:",
         "on rightclick on a creeper:",
-        "on click with a sword:"
+        "on click with a sword:",
+        "on click on chest[facing=north]:",
+        "on click on campfire[lit=true]:"
       ],
       "patterns": [
-        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] [on %-entitydata/itemtype%] [(with|using|holding) %-itemtype%]",
-        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] (with|using|holding) %-itemtype% on %-entitydata/itemtype%"
+        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] [on %-entitydata/itemtype/blockdata%] [(with|using|holding) %-itemtype%]",
+        "[(1:right|2:left)(| |-)][mouse(| |-)]click[ing] (with|using|holding) %-itemtype% on %-entitydata/itemtype/blockdata%"
       ]
     },
     {
@@ -12441,6 +12681,37 @@
       ]
     },
     {
+      "id": "entity_breed",
+      "name": "On Entity Breed",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever two animals begin to conceive a child. The type can be specified."
+      ],
+      "examples": [
+        "on breeding of llamas:",
+        "\tsend \"When a %breeding mother% and %breeding father% love each other very much they make %offspring%\" to breeder"
+      ],
+      "patterns": [
+        "[entity] breed[ing] [of %-entitytypes%]"
+      ]
+    },
+    {
+      "id": "love_mode_enter",
+      "name": "On Love Mode Enter",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called whenever an entity enters a state of being in love."
+      ],
+      "examples": [
+        "on love mode enter:",
+        "\tcancel event # No one is allowed love here"
+      ],
+      "patterns": [
+        "[entity] enter[s] love mode",
+        "[entity] love mode [enter]"
+      ]
+    },
+    {
       "id": "region_enterleave",
       "name": "On Region Enter/Leave",
       "since": "2.1",
@@ -13047,7 +13318,7 @@
         "A gamerule"
       ],
       "patterns": [
-        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
+        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, disablePlayerMovementCheck, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, minecartMaxSpeed, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
       ]
     },
     {
@@ -13072,7 +13343,7 @@
         "NOTE: Minecraft namespaces are supported, ex: 'minecraft:generic.attack_damage'."
       ],
       "patterns": [
-        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic water movement efficiency, generic.armor, generic.armor toughness, generic.attack damage, generic.attack knockback, generic.attack speed, generic.burning time, generic.explosion knockback resistance, generic.fall damage multiplier, generic.flying speed, generic.follow range, generic.gravity, generic.jump strength, generic.knockback resistance, generic.luck, generic.max absorption, generic.max health, generic.movement efficiency, generic.movement speed, generic.oxygen bonus, generic.safe fall distance, generic.scale, generic.step height, generic.water movement efficiency, gravity, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, player.block break speed, player.block interaction range, player.entity interaction range, player.mining efficiency, player.sneaking speed, player.submerged mining speed, player.sweeping damage ratio, safe fall distance, scale, sneaking speed, step height, submerged mining speed, sweeping damage ratio, water movement efficiency, zombie spawn reinforcements, zombie.spawn reinforcements"
+        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
       ]
     },
     {
@@ -13499,7 +13770,7 @@
         "biome at the player is desert"
       ],
       "patterns": [
-        "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, custom, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, unknown, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains"
+        "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains"
       ]
     },
     {
@@ -14176,6 +14447,28 @@
       "return-type": "Number",
       "patterns": [
         "sqrt(n: number)"
+      ]
+    },
+    {
+      "id": "formatNumber",
+      "name": "formatNumber",
+      "since": "INSERT VERSION",
+      "description": [
+        "Converts numbers to human-readable format. By default, '###,###' (e.g. '123,456,789') will be used for whole numbers and '###,###.##' (e.g. '123,456,789.00) will be used for decimal numbers. A hashtag '#' represents a digit, a comma ',' is used to separate numbers, and a period '.' is used for decimals. ",
+        "Will return none if the format is invalid.",
+        "For further reference, see this <a href=\"https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html\" target=\"_blank\">article</a>."
+      ],
+      "examples": [
+        "command /balance:",
+        "\taliases: bal",
+        "\texecutable by: players",
+        "\ttrigger:",
+        "\t\tset {_money} to formatNumber({money::%sender's uuid%})",
+        "\t\tsend \"Your balance: %{_money}%\" to sender"
+      ],
+      "return-type": "Text",
+      "patterns": [
+        "formatNumber(number: number, format: string = )"
       ]
     },
     {
