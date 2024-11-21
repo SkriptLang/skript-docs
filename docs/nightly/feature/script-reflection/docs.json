@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-a45c0b9",
+  "skriptVersion": "2.9.4-nightly-6099204",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -383,19 +383,23 @@
     {
       "id": "CondIsLoaded",
       "name": "Is Loaded",
-      "since": "2.3, 2.5 (revamp with chunk at location/coords)",
+      "since": "2.3, 2.5 (revamp with chunk at location/coords), INSERT VERSION (Scripts)",
       "description": [
-        "Checks whether or not a chunk/world is loaded. 'chunk at 1, 1' uses chunk coords, which are location coords divided by 16."
+        "Checks whether a world, chunk or script is loaded.",
+        "'chunk at 1, 1' uses chunk coordinates, which are location coords divided by 16."
       ],
       "examples": [
         "if chunk at {home::%player's uuid%} is loaded:",
         "if chunk 1, 10 in world \"world\" is loaded:",
-        "if world(\"lobby\") is loaded:"
+        "if world(\"lobby\") is loaded:",
+        "if script named \"MyScript.sk\" is loaded:"
       ],
       "patterns": [
         "chunk[s] %directions% [%locations%] (is|are)[(1¦(n't| not))] loaded",
         "chunk [at] %number%, %number% (in|of) [world] %world% is[(1¦(n't| not))] loaded",
-        "[world[s]] %worlds% (is|are)[(1¦(n't| not))] loaded"
+        "%scripts/worlds% (is|are)[1:(n't| not)] loaded",
+        "script[s] %scripts% (is|are)[1:(n't| not)] loaded",
+        "world[s] %worlds% (is|are)[1:(n't| not)] loaded"
       ]
     },
     {
@@ -1838,16 +1842,18 @@
     {
       "id": "CondIsValid",
       "name": "Is Valid",
-      "since": "2.7",
+      "since": "2.7, INSERT VERSION (Scripts)",
       "description": [
-        "Checks whether an entity has died or been despawned for some other reason."
+        "Checks whether something (an entity, a script) is valid.",
+        "An invalid entity may have died or de-spawned for some other reason.",
+        "An invalid script reference may have been reloaded, moved or disabled since."
       ],
       "examples": [
         "if event-entity is valid"
       ],
       "patterns": [
-        "%entities% (is|are) valid",
-        "%entities% (isn't|is not|aren't|are not) valid"
+        "%entities/scripts% (is|are) valid",
+        "%entities/scripts% (isn't|is not|aren't|are not) valid"
       ]
     },
     {
@@ -3347,18 +3353,22 @@
     },
     {
       "id": "EffScriptFile",
-      "name": "Enable/Disable/Reload Script File",
-      "since": "2.4",
+      "name": "Enable/Disable/Unload/Reload Script",
+      "since": "2.4, INSERT VERSION (unloading)",
       "description": [
-        "Enables, disables, or reloads a script file."
+        "Enables, disables, unloads, or reloads a script.\n\nDisabling a script unloads it and prepends - to its name so it will not be loaded the next time the server restarts.\nIf the script reflection experiment is enabled: unloading a script terminates it and removes it from memory, but does not alter the file."
       ],
       "examples": [
         "reload script \"test\"",
         "enable script file \"testing\"",
-        "unload script file \"script.sk\""
+        "unload script file \"script.sk\"",
+        "set {_script} to the script \"MyScript.sk\"",
+        "reload {_script}"
       ],
       "patterns": [
-        "(1:(enable|load)|2:reload|3:(disable|unload)) s(c|k)ript [file] %string%"
+        "(1:(enable|load)|2:reload|3:disable|4:unload) script [file|named] %string%",
+        "(1:(enable|load)|2:reload|3:disable|4:unload) skript file %string%",
+        "(1:(enable|load)|2:reload|3:disable|4:unload) %scripts%"
       ]
     },
     {
@@ -4942,24 +4952,52 @@
     },
     {
       "id": "ExprScript",
-      "name": "Script Name",
+      "name": "Script",
       "since": "2.0",
       "description": [
-        "Holds the current script's name (the file name without '.sk')."
+        "The current script, or a script from its (file) name.",
+        "If the script is enabled or disabled (or reloaded) this reference will become invalid.",
+        "Therefore, it is recommended to obtain a script reference <em>when needed</em>."
       ],
       "examples": [
         "on script load:",
+        "\tbroadcast \"Loaded %the current script%\"",
+        "on script load:",
         "\tset {running::%script%} to true",
         "on script unload:",
-        "\tset {running::%script%} to false"
+        "\tset {running::%script%} to false",
+        "set {script} to the script named \"weather.sk\"",
+        "loop the scripts in directory \"quests/\":",
+        "\tenable loop-value"
       ],
       "patterns": [
-        "[the] script[['s] name]",
-        "name of [the] script"
+        "[the] [current] script",
+        "[the] script[s] [named] %strings%",
+        "[the] scripts in [directory|folder] %string%"
       ]
     },
     {
       "id": "ExprScripts",
+      "name": "All Scripts (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns all of the scripts, or just the enabled or disabled ones."
+      ],
+      "examples": [
+        "command /scripts:",
+        "\ttrigger:",
+        "\t\tsend \"All Scripts: %scripts%\" to player",
+        "\t\tsend \"Loaded Scripts: %enabled scripts%\" to player",
+        "\t\tsend \"Unloaded Scripts: %disabled scripts%\" to player"
+      ],
+      "patterns": [
+        "[all [[of] the]|the] scripts",
+        "[all [[of] the]|the] (enabled|loaded) scripts",
+        "[all [[of] the]|the] (disabled|unloaded) scripts"
+      ]
+    },
+    {
+      "id": "ExprScriptsOld",
       "name": "All Scripts",
       "since": "2.5",
       "description": [
@@ -8454,6 +8492,11 @@
         "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
         "\t\t</ul>",
         "\t</li>",
+        "\t<li><strong>Scripts</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of a script, excluding its file extension.</li>",
+        "\t\t</ul>",
+        "\t</li>",
         "</ul>"
       ],
       "examples": [
@@ -8464,8 +8507,8 @@
         "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
       ],
       "patterns": [
-        "[the] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s]) of %offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/gamerules%",
-        "%offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/gamerules%'[s] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s])"
+        "[the] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s]) of %offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/scripts/gamerules%",
+        "%offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/scripts/gamerules%'[s] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s])"
       ]
     },
     {
@@ -8506,6 +8549,11 @@
         "\t<li><strong>Worlds</strong>",
         "\t\t<ul>",
         "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Scripts</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of a script, excluding its file extension.</li>",
         "\t\t</ul>",
         "\t</li>",
         "</ul>"
@@ -12931,6 +12979,21 @@
       ],
       "examples": [
         ""
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "script",
+      "name": "Script",
+      "since": "INSERT VERSION",
+      "description": [
+        "A script loaded by Skript.",
+        "Disabled scripts will report as being empty since their content has not been loaded."
+      ],
+      "examples": [
+        "the current script"
       ],
       "patterns": [
         ""
