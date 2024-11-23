@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-6099204",
+  "skriptVersion": "2.9.4-nightly-a5d1a7e",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -478,8 +478,10 @@
         "\t\tbroadcast \"You're using an experimental feature!\""
       ],
       "patterns": [
-        "[the] [current] script is using %strings%",
-        "[the] [current] script is(n't| not) using %strings%"
+        "%script% is using %strings%",
+        "%scripts% are using %strings%",
+        "%script% is(n't| not) using %strings%",
+        "%scripts% are(n't| not) using %strings%"
       ]
     },
     {
