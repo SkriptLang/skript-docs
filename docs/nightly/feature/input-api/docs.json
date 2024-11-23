@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-6fdce8b",
+  "skriptVersion": "2.9.4-nightly-37334ba",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6828,6 +6828,23 @@
       "patterns": [
         "[the] anvil [inventory] (rename|text) input of %inventories%",
         "%inventories%'[s] anvil [inventory] (rename|text) input"
+      ]
+    },
+    {
+      "id": "ExprARGB",
+      "name": "Alpha/Red/Green/Blue Color Value",
+      "since": "INSERT VERSION",
+      "description": [
+        "The alpha, red, green, or blue value of colors. Ranges from 0 to 255.",
+        "Alpha represents opacity."
+      ],
+      "examples": [
+        "broadcast red value of rgb(100, 0, 50) # sends '100'",
+        "set {_red} to red's red value + 10"
+      ],
+      "patterns": [
+        "[the] (:alpha|:red|:green|:blue) (value|component) of %colors%",
+        "%colors%'[s] (:alpha|:red|:green|:blue) (value|component)"
       ]
     },
     {
