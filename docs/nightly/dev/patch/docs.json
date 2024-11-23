@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.4-nightly-91e8b93",
+  "skriptVersion" : "2.9.4-nightly-9111b87",
 
   "classes" : [
     {
@@ -7346,7 +7346,7 @@ Please note that the positions of the items in the inventory are not saved, only
   ],
   "since" : "2.1, 2.5.2 (regex support), 2.7 (case sensitivity)",
   "description" : "Joins several texts with a common delimiter (e.g. \", \"), or splits a text into multiple texts at a given delimiter.",
-  "examples" : "message \"Online players: %join all players with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
+  "examples" : "message \"Online players: %join all players' names with \"\" | \"\"%\" # %all players% would use the default \"x, y, and z\"\\nset {_s::*} to the string argument split at \",\""
 },
 {
   "id" : "ExprLanguage",
