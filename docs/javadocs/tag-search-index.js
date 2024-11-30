@@ -1,1 +1,1 @@
-tagSearchIndex = [{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();
+tagSearchIndex = [{"l":"Arbitrary Selection","h":"ch.njol.skript.util.Utils.highestDenominator(Class<? super Found>, Class<? extends Type>...)","d":"Section","u":"ch/njol/skript/util/Utils.html#arbitrary-selection-heading"},{"l":"Constant Field Values","h":"","u":"constant-values.html"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();
