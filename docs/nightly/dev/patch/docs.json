@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.9.4-nightly-9111b87",
+  "skriptVersion" : "2.9.4-nightly-876aee2",
 
   "classes" : [
     {
@@ -4777,8 +4777,8 @@ Do note that other event values, such as 'player', won't work in this section.",
     "pattern_end"
   ],
   "since" : "1.0",
-  "description" : "Called when a projectile hits an entity or a block.\\nUse the <a href='#damage'>damage event</a> with a <a href='conditions.html#CondIsSet'>check</a> for a <a href='expressions.html#ExprEntity'>projectile</a> to be able to use the <a href='expressions.html#ExprAttacked'>entity that got hit</a> in the case when the projectile hit a living entity.\\nA damage event will even be fired if the damage is 0, e.g. when throwing snowballs at non-nether mobs.",
-  "examples" : "on projectile hit:\\n    event-projectile is arrow\\n    delete event-projectile"
+  "description" : "Called when a projectile hits an entity or a block.",
+  "examples" : "on projectile hit:\\n    if victim's health &lt;= 3:\\n        delete event-projectile"
 },
 {
   "id" : "quit",
