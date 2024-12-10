@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-bc40b24",
+  "skriptVersion": "2.9.5-nightly-937b7a4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -11836,14 +11836,12 @@
       "name": "On Projectile Hit",
       "since": "1.0",
       "description": [
-        "Called when a projectile hits an entity or a block.",
-        "Use the <a href='#damage'>damage event</a> with a <a href='conditions.html#CondIsSet'>check</a> for a <a href='expressions.html#ExprEntity'>projectile</a> to be able to use the <a href='expressions.html#ExprAttacked'>entity that got hit</a> in the case when the projectile hit a living entity.",
-        "A damage event will even be fired if the damage is 0, e.g. when throwing snowballs at non-nether mobs."
+        "Called when a projectile hits an entity or a block."
       ],
       "examples": [
         "on projectile hit:",
-        "\tevent-projectile is arrow",
-        "\tdelete event-projectile"
+        "\tif victim's health &amp;amp;amp;amp;lt;= 3:",
+        "\t\tdelete event-projectile"
       ],
       "patterns": [
         "projectile hit"
