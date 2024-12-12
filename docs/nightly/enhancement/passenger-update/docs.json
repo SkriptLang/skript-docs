@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-5f8b477",
+  "skriptVersion": "2.9.4-nightly-ffb0c05",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3712,9 +3712,9 @@
         "make the attacker ride the victim"
       ],
       "patterns": [
-        "(make|let|force) %entities% [to] (ride|mount) [(in|on)] %entities/entitydatas%",
-        "(make|let|force) %entities% [to] (dismount|(dismount|leave) (from|of|) (any|the[ir]|his|her|) vehicle[s])",
-        "(eject|dismount) (any|the|) passenger[s] (of|from) %entities%"
+        "(make|let|force) %entities% [to] (ride|mount) [in|on] %entities/entitydatas%",
+        "(make|let|force) %entities% [to] (dismount|(dismount|leave) [from|of] [any|the[ir]|his|her] vehicle[s])",
+        "(eject|dismount) [any|the] passenger[s] (of|from) %entities%"
       ]
     },
     {
@@ -8607,18 +8607,13 @@
     },
     {
       "id": "ExprPassengers",
-      "name": "Passenger",
+      "name": "Passengers",
       "since": "2.0, 2.2-dev26 (Multiple passengers for 1.11.2+)",
       "description": [
-        "The passenger of a vehicle, or the rider of a mob.",
-        "For 1.11.2 and above, it returns a list of passengers and you can use all changers in it.",
+        "The passengers of a vehicle, or the riders of a mob.",
         "See also: <a href='#ExprVehicle'>vehicle</a>"
       ],
       "examples": [
-        "#for 1.11 and lower",
-        "passenger of the minecart is a creeper or a cow",
-        "the saddled pig's passenger is a player",
-        "#for 1.11.2+",
         "passengers of the minecart contains a creeper or a cow",
         "the boat's passenger contains a pig",
         "add a cow and a zombie to passengers of last spawned boat",
