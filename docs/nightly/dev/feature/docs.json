@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-342d7e9",
+  "skriptVersion": "2.9.5-nightly-6f0b993",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6867,18 +6867,24 @@
     },
     {
       "id": "ExprArmorSlot",
-      "name": "Armour Slot",
-      "since": "1.0, 2.8.0 (Armour)",
+      "name": "Armor Slot",
+      "since": "1.0, 2.8.0 (armor), INSERT VERSION (body armor)",
       "description": [
-        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet."
+        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet.",
+        "Body armor is a special slot that can only be used for:",
+        "<ul>",
+        "<li>Horses: Horse armour (doesn't work on zombie or skeleton horses)</li>",
+        "<li>Wolves: Wolf Armor</li>",
+        "<li>Llamas (regular or trader): Carpet</li>",
+        "</ul>"
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
         "helmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
       ],
       "patterns": [
-        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]) of %livingentities%",
-        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s])"
+        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r) of %livingentities%",
+        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r)"
       ]
     },
     {
