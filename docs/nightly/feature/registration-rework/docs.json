@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-ea854db",
+  "skriptVersion": "2.9.5-nightly-fc97b56",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -193,6 +193,23 @@
       ]
     },
     {
+      "id": "CondFromMobSpawner-2",
+      "name": "Is From A Mob Spawner",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity was spawned from a mob spawner."
+      ],
+      "examples": [
+        "send whether target is from a mob spawner"
+      ],
+      "patterns": [
+        "%entities% (is|are) from a [mob] spawner",
+        "%entities% (isn't|aren't|is not|are not) from a [mob] spawner",
+        "%entities% (was|were) spawned (from|by) a [mob] spawner",
+        "%entities% (wasn't|weren't|was not|were not) spawned (from|by) a [mob] spawner"
+      ]
+    },
+    {
       "id": "CondHasItemCooldown-2",
       "name": "Has Item Cooldown",
       "since": "2.8.0",
@@ -335,6 +352,23 @@
         "%blocks% (is|are) indirectly redstone powered",
         "%blocks% (is|are)(n't| not) redstone powered",
         "%blocks% (is|are)(n't| not) indirectly redstone powered"
+      ]
+    },
+    {
+      "id": "CondIsCustomNameVisible-2",
+      "name": "Is Custom Name Visible",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity's custom name is visible."
+      ],
+      "examples": [
+        "send true if target's custom name is visible"
+      ],
+      "patterns": [
+        "%entities%'[s] custom name[s] (is|are) visible",
+        "%entities%'[s] custom name[s] (isn't|is not|are not|aren't) visible",
+        "custom name of %entities% (is|are) visible",
+        "custom name of %entities% (isn't|is not|are not|aren't) visible"
       ]
     },
     {
@@ -1615,6 +1649,22 @@
       ]
     },
     {
+      "id": "CondIsSaddled-2",
+      "name": "Is Saddled",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a given entity (horse or steerable) is saddled.",
+        "If 'properly' is used, this will only return true if the entity is wearing specifically a saddle item."
+      ],
+      "examples": [
+        "send whether {_horse} is saddled"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [:properly] saddled",
+        "%livingentities% (isn't|is not|aren't|are not) [:properly] saddled"
+      ]
+    },
+    {
       "id": "CondIsSheared-2",
       "name": "Entity Is Sheared",
       "since": "2.8.0",
@@ -1822,6 +1872,21 @@
       ]
     },
     {
+      "id": "CondIsTicking-2",
+      "name": "Is Ticking",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity is ticking."
+      ],
+      "examples": [
+        "send true if target is ticking"
+      ],
+      "patterns": [
+        "%entities% (is|are) ticking",
+        "%entities% (isn't|is not|aren't|are not) ticking"
+      ]
+    },
+    {
       "id": "CondIsTransparent-2",
       "name": "Is Transparent",
       "since": "2.2-dev36",
@@ -1889,11 +1954,12 @@
       "name": "Is Wearing",
       "since": "1.0",
       "description": [
-        "Checks whether a player is wearing some armour."
+        "Checks whether an entity is wearing some items (usually armor)."
       ],
       "examples": [
         "player is wearing an iron chestplate and iron leggings",
-        "player is wearing all diamond armour"
+        "player is wearing all diamond armour",
+        "target is wearing wolf armor"
       ],
       "patterns": [
         "%livingentities% (is|are) wearing %itemtypes%",
@@ -2459,6 +2525,22 @@
       ]
     },
     {
+      "id": "EffCustomName-2",
+      "name": "Toggle Custom Name Visibility",
+      "since": "INSERT VERSION",
+      "description": [
+        "Toggles the custom name visibility of an entity."
+      ],
+      "examples": [
+        "show the custom name of event-entity",
+        "hide target's display name"
+      ],
+      "patterns": [
+        "(:show|hide) [the] (custom|display)[ ]name of %entities%",
+        "(:show|hide) %entities%'[s] (custom|display)[ ]name"
+      ]
+    },
+    {
       "id": "EffDetonate-2",
       "name": "Detonate Entities",
       "since": "INSERT VERSION",
@@ -2561,9 +2643,10 @@
     {
       "id": "EffEquip-2",
       "name": "Equip",
-      "since": "1.0, 2.7 (multiple entities, unequip)",
+      "since": "1.0, 2.7 (multiple entities, unequip), INSERT VERSION (wolves)",
       "description": [
-        "Equips or unequips an entity with some given armor. This will replace any armor that the entity is wearing."
+        "Equips or unequips an entity with the given itemtypes (usually armor).",
+        "This effect will replace any armor that the entity is already wearing."
       ],
       "examples": [
         "equip player with diamond helmet",
@@ -3796,9 +3879,9 @@
         "rotate {_quaternion} by x 45, y 90, z 135"
       ],
       "patterns": [
-        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "rotate %vectors/quaternions/displays% around [the] %vector% by %number% [degrees]",
+        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "rotate %vectors/quaternions/displays% around [the] %vector% by %number%",
         "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
@@ -3955,6 +4038,27 @@
       ],
       "patterns": [
         "[(all|the|all [of] the)] [registered] [(1¦script)] commands"
+      ]
+    },
+    {
+      "id": "ExprAngle-2",
+      "name": "Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the passed number value in degrees.",
+        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
+      ],
+      "examples": [
+        "set {_angle} to 90 degrees",
+        "{_angle} is 90 # true",
+        "180 degrees is pi # true",
+        "pi radians is 180 degrees # true"
+      ],
+      "patterns": [
+        "%number% [in] deg[ree][s]",
+        "%number% [in] rad[ian][s]",
+        "%numbers% in deg[ree][s]",
+        "%numbers% in rad[ian][s]"
       ]
     },
     {
@@ -5130,7 +5234,8 @@
       "patterns": [
         "%number% time[s]",
         "once",
-        "twice"
+        "twice",
+        "thrice"
       ]
     },
     {
@@ -5355,9 +5460,9 @@
         "set {_new} to {_quaternion} rotated by x 45, y 90, z 135"
       ],
       "patterns": [
-        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
+        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "%quaternions/vectors% rotated around [the] %vector% by %number%",
         "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
@@ -6657,6 +6762,24 @@
       ]
     },
     {
+      "id": "ExprWithItemFlags-2",
+      "name": "Item with Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "Creates a new item with the specified item flags."
+      ],
+      "examples": [
+        "give player diamond sword with item flags hide enchants and hide attributes",
+        "set {_item} to player's tool with item flag hide additional tooltip",
+        "give player torch with hide placed on item flag",
+        "set {_item} to diamond sword with all item flags"
+      ],
+      "patterns": [
+        "%itemtypes% with [the] item flag[s] %itemflags%",
+        "%itemtypes% with [the] %itemflags% item flag[s]"
+      ]
+    },
+    {
       "id": "ExprBlocksInRegion-2",
       "name": "Blocks in Region",
       "since": "2.1",
@@ -6849,18 +6972,24 @@
     },
     {
       "id": "ExprArmorSlot-2",
-      "name": "Armour Slot",
-      "since": "1.0, 2.8.0 (Armour)",
+      "name": "Armor Slot",
+      "since": "1.0, 2.8.0 (armor), INSERT VERSION (body armor)",
       "description": [
-        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet."
+        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet.",
+        "Body armor is a special slot that can only be used for:",
+        "<ul>",
+        "<li>Horses: Horse armour (doesn't work on zombie or skeleton horses)</li>",
+        "<li>Wolves: Wolf Armor</li>",
+        "<li>Llamas (regular or trader): Carpet</li>",
+        "</ul>"
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
         "helmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
       ],
       "patterns": [
-        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]) of %livingentities%",
-        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s])"
+        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r) of %livingentities%",
+        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r)"
       ]
     },
     {
@@ -7634,16 +7763,17 @@
     {
       "id": "ExprFireTicks-2",
       "name": "Entity Fire Burn Duration",
-      "since": "2.7",
+      "since": "2.7, INSERT VERSION (maximum)",
       "description": [
         "How much time an entity will be burning for."
       ],
       "examples": [
-        "send \"You will stop burning in %fire time of player%\""
+        "send \"You will stop burning in %fire time of player%\"",
+        "send the max burn time of target"
       ],
       "patterns": [
-        "[the] (burn[ing]|fire) (time|duration) of %entities%",
-        "%entities%'[s] (burn[ing]|fire) (time|duration)"
+        "[the] [:max[imum]] (burn[ing]|fire) (time|duration) of %entities%",
+        "%entities%'[s] [:max[imum]] (burn[ing]|fire) (time|duration)"
       ]
     },
     {
@@ -7937,6 +8067,23 @@
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/itemtypes/itemstacks%",
         "%slots/itemtypes/itemstacks%'[s] item[[ ]stack] (amount|size|number)"
+      ]
+    },
+    {
+      "id": "ExprItemFlags-2",
+      "name": "Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "The item flags of an item. Can be modified."
+      ],
+      "examples": [
+        "set item flags of player's tool to hide enchants and hide attributes",
+        "add hide potion effects to item flags of player's held item",
+        "remove hide enchants from item flags of {legendary sword}"
+      ],
+      "patterns": [
+        "[the] item flags of %itemtypes%",
+        "%itemtypes%'[s] item flags"
       ]
     },
     {
@@ -9083,17 +9230,18 @@
     {
       "id": "ExprSkullOwner-2",
       "name": "Skull Owner",
-      "since": "2.9.0",
+      "since": "2.9.0, INSERT VERSION (of items)",
       "description": [
         "The skull owner of a player skull."
       ],
       "examples": [
         "set {_owner} to the skull owner of event-block",
-        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer"
+        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer",
+        "set head owner of player's tool to {_player}"
       ],
       "patterns": [
-        "[the] (head|skull) owner of %blocks%",
-        "%blocks%'[s] (head|skull) owner"
+        "[the] (head|skull) owner of %slots/itemtypes/itemstacks/blocks%",
+        "%slots/itemtypes/itemstacks/blocks%'[s] (head|skull) owner"
       ]
     },
     {
@@ -10572,9 +10720,10 @@
         "Called when a firework explodes."
       ],
       "examples": [
-        "on firework explode",
-        "on firework exploding colored red, light green and black",
-        "on firework explosion colored light green:",
+        "on firework explode:",
+        "\tif event-colors contains red:",
+        "on firework exploding colored red, light green and black:",
+        "on firework explosion colored rgb 0, 255, 0:",
         "\tbroadcast \"A firework colored %colors% was exploded at %location%!\""
       ],
       "patterns": [
@@ -11836,14 +11985,12 @@
       "name": "On Projectile Hit",
       "since": "1.0",
       "description": [
-        "Called when a projectile hits an entity or a block.",
-        "Use the <a href='#damage'>damage event</a> with a <a href='conditions.html#CondIsSet'>check</a> for a <a href='expressions.html#ExprEntity'>projectile</a> to be able to use the <a href='expressions.html#ExprAttacked'>entity that got hit</a> in the case when the projectile hit a living entity.",
-        "A damage event will even be fired if the damage is 0, e.g. when throwing snowballs at non-nether mobs."
+        "Called when a projectile hits an entity or a block."
       ],
       "examples": [
         "on projectile hit:",
-        "\tevent-projectile is arrow",
-        "\tdelete event-projectile"
+        "\tif victim's health <= 3:",
+        "\t\tdelete event-projectile"
       ],
       "patterns": [
         "projectile hit"
@@ -13459,6 +13606,17 @@
       ]
     },
     {
+      "id": "itemflag",
+      "name": "Item Flag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents flags that may be applied to hide certain attributes of an item."
+      ],
+      "patterns": [
+        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, unbreakable hidden, dye color hidden, hide enchantments, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
+      ]
+    },
+    {
       "id": "entitypotioncause",
       "name": "Entity Potion Cause",
       "since": "INSERT VERSION",
@@ -13631,15 +13789,17 @@
       "name": "Number",
       "since": "1.0",
       "description": [
-        "A number, e.g. 2.5, 3, or -9812454.",
-        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error."
+        "A number, e.g. 2.5, 3, -9812454, 30 degrees or 3.14 radians.",
+        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error.",
+        "Radians will be converted to degrees."
       ],
       "examples": [
         "set the player's health to 5.5",
-        "set {_temp} to 2*{_temp} - 2.5"
+        "set {_temp} to 2*{_temp} - 2.5",
+        "set {_angle} to 3.14 in radians # will be converted to degrees"
       ],
       "patterns": [
-        "[-]###[.###]</code> (any amount of digits; very large numbers will be truncated though)"
+        "[-]###[.###] [[in ](rad[ian][s]|deg[ree][s])]</code> (any amount of digits; very large numbers will be truncated though)"
       ]
     },
     {
