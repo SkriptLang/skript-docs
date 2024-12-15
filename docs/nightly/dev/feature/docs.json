@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-949a055",
+  "skriptVersion": "2.9.5-nightly-f9eb760",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9229,17 +9229,18 @@
     {
       "id": "ExprSkullOwner",
       "name": "Skull Owner",
-      "since": "2.9.0",
+      "since": "2.9.0, INSERT VERSION (of items)",
       "description": [
         "The skull owner of a player skull."
       ],
       "examples": [
         "set {_owner} to the skull owner of event-block",
-        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer"
+        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer",
+        "set head owner of player's tool to {_player}"
       ],
       "patterns": [
-        "[the] (head|skull) owner of %blocks%",
-        "%blocks%'[s] (head|skull) owner"
+        "[the] (head|skull) owner of %slots/itemtypes/itemstacks/blocks%",
+        "%slots/itemtypes/itemstacks/blocks%'[s] (head|skull) owner"
       ]
     },
     {
