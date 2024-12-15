@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-f9eb760",
+  "skriptVersion": "2.9.5-nightly-a845cb4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -5234,7 +5234,8 @@
       "patterns": [
         "%number% time[s]",
         "once",
-        "twice"
+        "twice",
+        "thrice"
       ]
     },
     {
