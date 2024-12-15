@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-0c8aa27",
+  "skriptVersion": "2.9.5-nightly-949a055",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3879,9 +3879,9 @@
         "rotate {_quaternion} by x 45, y 90, z 135"
       ],
       "patterns": [
-        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "rotate %vectors/quaternions/displays% around [the] %vector% by %number% [degrees]",
+        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "rotate %vectors/quaternions/displays% around [the] %vector% by %number%",
         "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
@@ -4038,6 +4038,27 @@
       ],
       "patterns": [
         "[(all|the|all [of] the)] [registered] [(1¦script)] commands"
+      ]
+    },
+    {
+      "id": "ExprAngle",
+      "name": "Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the passed number value in degrees.",
+        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
+      ],
+      "examples": [
+        "set {_angle} to 90 degrees",
+        "{_angle} is 90 # true",
+        "180 degrees is pi # true",
+        "pi radians is 180 degrees # true"
+      ],
+      "patterns": [
+        "%number% [in] deg[ree][s]",
+        "%number% [in] rad[ian][s]",
+        "%numbers% in deg[ree][s]",
+        "%numbers% in rad[ian][s]"
       ]
     },
     {
@@ -5438,9 +5459,9 @@
         "set {_new} to {_quaternion} rotated by x 45, y 90, z 135"
       ],
       "patterns": [
-        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
+        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "%quaternions/vectors% rotated around [the] %vector% by %number%",
         "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
@@ -13766,15 +13787,17 @@
       "name": "Number",
       "since": "1.0",
       "description": [
-        "A number, e.g. 2.5, 3, or -9812454.",
-        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error."
+        "A number, e.g. 2.5, 3, -9812454, 30 degrees or 3.14 radians.",
+        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error.",
+        "Radians will be converted to degrees."
       ],
       "examples": [
         "set the player's health to 5.5",
-        "set {_temp} to 2*{_temp} - 2.5"
+        "set {_temp} to 2*{_temp} - 2.5",
+        "set {_angle} to 3.14 in radians # will be converted to degrees"
       ],
       "patterns": [
-        "[-]###[.###]</code> (any amount of digits; very large numbers will be truncated though)"
+        "[-]###[.###] [[in ](rad[ian][s]|deg[ree][s])]</code> (any amount of digits; very large numbers will be truncated though)"
       ]
     },
     {
