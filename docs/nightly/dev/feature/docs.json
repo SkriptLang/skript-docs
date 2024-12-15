@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-6f0b993",
+  "skriptVersion": "2.9.5-nightly-bf6ec19",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6675,6 +6675,24 @@
       ]
     },
     {
+      "id": "ExprWithItemFlags",
+      "name": "Item with Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "Creates a new item with the specified item flags."
+      ],
+      "examples": [
+        "give player diamond sword with item flags hide enchants and hide attributes",
+        "set {_item} to player's tool with item flag hide additional tooltip",
+        "give player torch with hide placed on item flag",
+        "set {_item} to diamond sword with all item flags"
+      ],
+      "patterns": [
+        "%itemtypes% with [the] item flag[s] %itemflags%",
+        "%itemtypes% with [the] %itemflags% item flag[s]"
+      ]
+    },
+    {
       "id": "ExprBlocksInRegion",
       "name": "Blocks in Region",
       "since": "2.1",
@@ -7961,6 +7979,23 @@
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/itemtypes/itemstacks%",
         "%slots/itemtypes/itemstacks%'[s] item[[ ]stack] (amount|size|number)"
+      ]
+    },
+    {
+      "id": "ExprItemFlags",
+      "name": "Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "The item flags of an item. Can be modified."
+      ],
+      "examples": [
+        "set item flags of player's tool to hide enchants and hide attributes",
+        "add hide potion effects to item flags of player's held item",
+        "remove hide enchants from item flags of {legendary sword}"
+      ],
+      "patterns": [
+        "[the] item flags of %itemtypes%",
+        "%itemtypes%'[s] item flags"
       ]
     },
     {
@@ -13478,6 +13513,17 @@
       ],
       "patterns": [
         "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification"
+      ]
+    },
+    {
+      "id": "itemflag",
+      "name": "Item Flag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents flags that may be applied to hide certain attributes of an item."
+      ],
+      "patterns": [
+        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, unbreakable hidden, dye color hidden, hide enchantments, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
       ]
     },
     {
