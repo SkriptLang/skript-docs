@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-e40ef23",
+  "skriptVersion": "2.9.5-nightly-342d7e9",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1615,6 +1615,22 @@
       ]
     },
     {
+      "id": "CondIsSaddled",
+      "name": "Is Saddled",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a given entity (horse or steerable) is saddled.",
+        "If 'properly' is used, this will only return true if the entity is wearing specifically a saddle item."
+      ],
+      "examples": [
+        "send whether {_horse} is saddled"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [:properly] saddled",
+        "%livingentities% (isn't|is not|aren't|are not) [:properly] saddled"
+      ]
+    },
+    {
       "id": "CondIsSheared",
       "name": "Entity Is Sheared",
       "since": "2.8.0",
@@ -1889,11 +1905,12 @@
       "name": "Is Wearing",
       "since": "1.0",
       "description": [
-        "Checks whether a player is wearing some armour."
+        "Checks whether an entity is wearing some items (usually armor)."
       ],
       "examples": [
         "player is wearing an iron chestplate and iron leggings",
-        "player is wearing all diamond armour"
+        "player is wearing all diamond armour",
+        "target is wearing wolf armor"
       ],
       "patterns": [
         "%livingentities% (is|are) wearing %itemtypes%",
@@ -2561,9 +2578,10 @@
     {
       "id": "EffEquip",
       "name": "Equip",
-      "since": "1.0, 2.7 (multiple entities, unequip)",
+      "since": "1.0, 2.7 (multiple entities, unequip), INSERT VERSION (wolves)",
       "description": [
-        "Equips or unequips an entity with some given armor. This will replace any armor that the entity is wearing."
+        "Equips or unequips an entity with the given itemtypes (usually armor).",
+        "This effect will replace any armor that the entity is already wearing."
       ],
       "examples": [
         "equip player with diamond helmet",
