@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-fc97b56",
+  "skriptVersion": "2.9.5-nightly-9ec6fec",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -787,6 +787,23 @@
       ],
       "patterns": [
         "[the] egg (:will|will not|won't) hatch"
+      ]
+    },
+    {
+      "id": "CondFishingLure-2",
+      "name": "Fishing Lure Applied",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if the lure enchantment is applied to the current fishing event."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tif lure enchantment is applied:",
+        "\t\tcancel event"
+      ],
+      "patterns": [
+        "lure enchantment bonus is (applied|active)",
+        "lure enchantment bonus is(n't| not) (applied|active)"
       ]
     },
     {
@@ -2015,6 +2032,24 @@
       "patterns": [
         "%locations% (is|are) within %number% (block|metre|meter)[s] (around|of) %locations%",
         "%locations% (isn't|is not|aren't|are not) within %number% (block|metre|meter)[s] (around|of) %locations%"
+      ]
+    },
+    {
+      "id": "CondIsInOpenWater-2",
+      "name": "Is Fish Hook in Open Water",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether the fish hook is in open water.",
+        "Open water is defined by a 5x4x5 area of water, air and lily pads. If in open water, treasure items may be caught."
+      ],
+      "examples": [
+        "on fish catch:",
+        "\tif fish hook is in open water:",
+        "\t\tsend \"You will catch a shark soon!\""
+      ],
+      "patterns": [
+        "%entities% (is|are) in open water[s]",
+        "%entities% (isn't|is not|aren't|are not) in open water[s]"
       ]
     },
     {
@@ -3358,26 +3393,28 @@
     {
       "id": "EffReplace-2",
       "name": "Replace",
-      "since": "2.0, 2.2-dev24 (replace in multiple strings and replace items in inventory), 2.5 (replace first, case sensitivity)",
+      "since": "2.0, 2.2-dev24 (multiple strings, items in inventory), 2.5 (replace first, case sensitivity), INSERT VERSION (regex)",
       "description": [
-        "Replaces all occurrences of a given text with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='./expressions.html#ExprMessage'>message</a> or a line of a sign."
+        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
       ],
       "examples": [
-        "replace \"<item>\" in {textvar} with \"%item%\"",
-        "replace every \"&\" with \"§\" in line 1",
-        "# The following acts as a simple chat censor, but it will e.g. censor mass, hassle, assassin, etc. as well:",
+        "replace \"<item>\" in {_msg} with \"[%name of player's tool%]\"",
+        "replace every \"&\" with \"§\" in line 1 of targeted block",
+        "",
+        "# Very simple chat censor",
         "on chat:",
-        "\treplace all \"kys\", \"idiot\" and \"noob\" with \"****\" in the message",
-        " ",
+        "\treplace all \"idiot\" and \"noob\" with \"****\" in the message",
+        "\tregex replace \"\\b(idiot|noob)\\b\" with \"****\" in the message # Regex version using word boundaries for better results",
+        "",
         "replace all stone and dirt in player's inventory and player's top inventory with diamond"
       ],
       "patterns": [
-        "replace (all|every|) %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %strings% with %string% in %strings% [(1¦with case sensitivity)]",
-        "replace first %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace first %strings% with %string% in %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %itemtypes% in %inventories% with %itemtype%",
-        "replace (all|every|) %itemtypes% with %itemtype% in %inventories%"
+        "replace [(all|every)|first:[the] first] %strings% in %strings% with %string% [case:with case sensitivity]",
+        "replace [(all|every)|first:[the] first] %strings% with %string% in %strings% [case:with case sensitivity]",
+        "(replace [with|using] regex|regex replace) %strings% in %strings% with %string%",
+        "(replace [with|using] regex|regex replace) %strings% with %string% in %strings%",
+        "replace [all|every] %itemtypes% in %inventories% with %itemtype%",
+        "replace [all|every] %itemtypes% with %itemtype% in %inventories%"
       ]
     },
     {
@@ -3883,6 +3920,37 @@
         "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
         "rotate %vectors/quaternions/displays% around [the] %vector% by %number%",
         "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "EffFishingLure-2",
+      "name": "Apply Fishing Lure",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether the lure enchantment should be applied, which reduces the wait time."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tapply lure enchantment bonus"
+      ],
+      "patterns": [
+        "apply [the] lure enchantment bonus",
+        "remove [the] lure enchantment bonus"
+      ]
+    },
+    {
+      "id": "EffPullHookedEntity-2",
+      "name": "Pull In Hooked Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Pull the hooked entity to the player."
+      ],
+      "examples": [
+        "on fishing state of caught entity:",
+        "\tpull in hooked entity"
+      ],
+      "patterns": [
+        "(reel|pull) in hook[ed] entity"
       ]
     },
     {
@@ -4398,7 +4466,7 @@
     {
       "id": "ExprExperience-2",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding, fishing)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
@@ -4415,7 +4483,10 @@
         "",
         "on breed:",
         "\tbreeding father is a cow",
-        "\tset dropped experience to 10"
+        "\tset dropped experience to 10",
+        "",
+        "on fish catch:",
+        "\tadd 70 to dropped experience"
       ],
       "patterns": [
         "[the] (spawned|dropped|) [e]xp[erience] [orb[s]]"
@@ -5658,6 +5729,89 @@
       ],
       "patterns": [
         "[the] teleport (cause|reason|type)"
+      ]
+    },
+    {
+      "id": "ExprFishingApproachAngle-2",
+      "name": "Fishing Approach Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the angle at which the fish will approach the fishing hook, after the wait time.",
+        "The angle is in degrees, with 0 being positive Z, 90 being negative X, 180 being negative Z, and 270 being positive X.",
+        "By default, returns a value between 0 and 360 degrees."
+      ],
+      "examples": [
+        "on fish approach:",
+        "\tif fishing approach angle is bigger than 300.5 degrees or fishing approach angle is smaller than 59.5 degrees:",
+        "\t\tcancel event"
+      ],
+      "patterns": [
+        "(min:min[imum]|max[imum]) fish[ing] approach[ing] angle"
+      ]
+    },
+    {
+      "id": "ExprFishingBiteTime-2",
+      "name": "Fishing Bite Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the time it takes a fish to bite the fishing hook, after it started approaching the hook.",
+        "May return a timespan of 0 seconds. If modifying the value, it should be at least 1 tick."
+      ],
+      "examples": [
+        "on fish approach:",
+        "\tset fishing bite time to 5 seconds"
+      ],
+      "patterns": [
+        "fish[ing] bit(e|ing) [wait] time"
+      ]
+    },
+    {
+      "id": "ExprFishingHook-2",
+      "name": "Fishing Hook",
+      "since": "INSERT VERSION",
+      "description": [
+        "The <a href='classes.html#entity'>fishing hook</a> in a fishing event."
+      ],
+      "examples": [
+        "on fish line cast:",
+        "\twait a second",
+        "\tteleport player to fishing hook"
+      ],
+      "patterns": [
+        "[the] fish[ing] (hook|bobber)"
+      ]
+    },
+    {
+      "id": "ExprFishingHookEntity-2",
+      "name": "Fishing Hooked Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the hooked entity in the hooked event."
+      ],
+      "examples": [
+        "on entity hooked:",
+        "\tif hooked entity is a player:",
+        "\t\tteleport hooked entity to player"
+      ],
+      "patterns": [
+        "hook[ed] entity"
+      ]
+    },
+    {
+      "id": "ExprFishingWaitTime-2",
+      "name": "Fishing Wait Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the minimum and/or maximum waiting time of the fishing hook. ",
+        "Default minimum value is 5 seconds and maximum is 30 seconds, before lure is applied."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tset min waiting time to 10 seconds",
+        "\tset max waiting time to 20 seconds"
+      ],
+      "patterns": [
+        "(min:min[imum]|max[imum]) fish[ing] wait[ing] time"
       ]
     },
     {
@@ -11246,6 +11400,24 @@
       ]
     },
     {
+      "id": "vehicle_collision-2",
+      "name": "On Vehicle Collision",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle collides with a block or entity."
+      ],
+      "examples": [
+        "on vehicle collision:",
+        "on vehicle collision with obsidian:",
+        "on vehicle collision with a zombie:"
+      ],
+      "patterns": [
+        "vehicle collision [(with|of) [a[n]] %-itemtypes/blockdatas/entitydatas%]",
+        "vehicle block collision [(with|of) [a[n]] %-itemtypes/blockdatas%]",
+        "vehicle entity collision [(with|of) [a[n]] %-entitydatas%]"
+      ]
+    },
+    {
       "id": "weather_change-2",
       "name": "On Weather Change",
       "since": "1.0",
@@ -11763,20 +11935,6 @@
       "patterns": [
         "throw[ing] [of] [an] egg",
         "[player] egg throw"
-      ]
-    },
-    {
-      "id": "fishing-2",
-      "name": "On Fishing",
-      "since": "1.0",
-      "description": [
-        "Called when a player fishes something. This is not of much use yet."
-      ],
-      "examples": [
-        "on fish:"
-      ],
-      "patterns": [
-        "[player] fish[ing]"
       ]
     },
     {
@@ -12865,6 +13023,48 @@
       ],
       "patterns": [
         "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
+      "id": "vehicle_move-2",
+      "name": "On Vehicle Move",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle moves.",
+        "Please note that using this event can cause lag if there are multiple vehicle entities, i.e. Horse, Pig, Boat, Minecart"
+      ],
+      "examples": [
+        "on vehicle move:",
+        "\tbroadcast past event-location",
+        "\tbroadcast event-location"
+      ],
+      "patterns": [
+        "vehicle move"
+      ]
+    },
+    {
+      "id": "bucket_catch_entity-2",
+      "name": "On Bucket Catch Entity",
+      "description": [],
+      "examples": [],
+      "patterns": [
+        "bucket (catch[ing]|captur(e|ing)) [[of] %-entitydatas%]"
+      ]
+    },
+    {
+      "id": "fishing-2",
+      "name": "On Fishing",
+      "description": [],
+      "examples": [],
+      "patterns": [
+        "[fishing] (line|rod) cast",
+        "fish (caught|catch)",
+        "entity (hook[ed]|caught|catch)",
+        "(bobber|hook) (in|hit) ground",
+        "fish (escape|get away)",
+        "[fishing] (rod|line) reel in",
+        "fish bit(e|ing)",
+        "(fish approach[ing]|(bobber|hook) lure[d])"
       ]
     },
     {
@@ -14270,6 +14470,35 @@
       ],
       "patterns": [
         "loop %objects%"
+      ]
+    },
+    {
+      "id": "SecFor-2",
+      "name": "For Each Loop (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "A specialised loop section run for each element in a list.\nUnlike the basic loop, this is designed for extracting the key & value from pairs.\nThe loop element's key/index and value can be stored in a variable for convenience.\n\nWhen looping a simple (non-indexed) set of values, e.g. all players, the index will be the loop counter number."
+      ],
+      "examples": [
+        "for each {_player} in players:",
+        "\tsend \"Hello %{_player}%!\" to {_player}",
+        "",
+        "loop {_item} in {list of items::*}:",
+        "\tbroadcast {_item}'s name",
+        "",
+        "for each key {_index} in {list of items::*}:",
+        "\tbroadcast {_index}",
+        "",
+        "loop key {_index} and value {_value} in {list of items::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\"",
+        "",
+        "for each {_index} = {_value} in {my list::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\""
+      ],
+      "patterns": [
+        "(for [each]|loop) [value] %~object% in %objects%",
+        "(for [each]|loop) (key|index) %~object% in %objects%",
+        "(for [each]|loop) [key|index] %~object%(,| and) [value] %~object% in %objects%"
       ]
     },
     {
