@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-3bcee98",
+  "skriptVersion": "2.9.5-nightly-7c01138",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3358,26 +3358,28 @@
     {
       "id": "EffReplace",
       "name": "Replace",
-      "since": "2.0, 2.2-dev24 (replace in multiple strings and replace items in inventory), 2.5 (replace first, case sensitivity)",
+      "since": "2.0, 2.2-dev24 (multiple strings, items in inventory), 2.5 (replace first, case sensitivity), INSERT VERSION (regex)",
       "description": [
-        "Replaces all occurrences of a given text with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='./expressions.html#ExprMessage'>message</a> or a line of a sign."
+        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
       ],
       "examples": [
-        "replace \"<item>\" in {textvar} with \"%item%\"",
-        "replace every \"&\" with \"§\" in line 1",
-        "# The following acts as a simple chat censor, but it will e.g. censor mass, hassle, assassin, etc. as well:",
+        "replace \"<item>\" in {_msg} with \"[%name of player's tool%]\"",
+        "replace every \"&\" with \"§\" in line 1 of targeted block",
+        "",
+        "# Very simple chat censor",
         "on chat:",
-        "\treplace all \"kys\", \"idiot\" and \"noob\" with \"****\" in the message",
-        " ",
+        "\treplace all \"idiot\" and \"noob\" with \"****\" in the message",
+        "\tregex replace \"\\b(idiot|noob)\\b\" with \"****\" in the message # Regex version using word boundaries for better results",
+        "",
         "replace all stone and dirt in player's inventory and player's top inventory with diamond"
       ],
       "patterns": [
-        "replace (all|every|) %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %strings% with %string% in %strings% [(1¦with case sensitivity)]",
-        "replace first %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace first %strings% with %string% in %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %itemtypes% in %inventories% with %itemtype%",
-        "replace (all|every|) %itemtypes% with %itemtype% in %inventories%"
+        "replace [(all|every)|first:[the] first] %strings% in %strings% with %string% [case:with case sensitivity]",
+        "replace [(all|every)|first:[the] first] %strings% with %string% in %strings% [case:with case sensitivity]",
+        "(replace [with|using] regex|regex replace) %strings% in %strings% with %string%",
+        "(replace [with|using] regex|regex replace) %strings% with %string% in %strings%",
+        "replace [all|every] %itemtypes% in %inventories% with %itemtype%",
+        "replace [all|every] %itemtypes% with %itemtype% in %inventories%"
       ]
     },
     {
