@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-ccd7b28",
+  "skriptVersion": "2.9.5-nightly-3bcee98",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -14270,6 +14270,35 @@
       ],
       "patterns": [
         "loop %objects%"
+      ]
+    },
+    {
+      "id": "SecFor",
+      "name": "For Each Loop (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "A specialised loop section run for each element in a list.\nUnlike the basic loop, this is designed for extracting the key & value from pairs.\nThe loop element's key/index and value can be stored in a variable for convenience.\n\nWhen looping a simple (non-indexed) set of values, e.g. all players, the index will be the loop counter number."
+      ],
+      "examples": [
+        "for each {_player} in players:",
+        "\tsend \"Hello %{_player}%!\" to {_player}",
+        "",
+        "loop {_item} in {list of items::*}:",
+        "\tbroadcast {_item}'s name",
+        "",
+        "for each key {_index} in {list of items::*}:",
+        "\tbroadcast {_index}",
+        "",
+        "loop key {_index} and value {_value} in {list of items::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\"",
+        "",
+        "for each {_index} = {_value} in {my list::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\""
+      ],
+      "patterns": [
+        "(for [each]|loop) [value] %~object% in %objects%",
+        "(for [each]|loop) (key|index) %~object% in %objects%",
+        "(for [each]|loop) [key|index] %~object%(,| and) [value] %~object% in %objects%"
       ]
     },
     {
