@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-7c01138",
+  "skriptVersion": "2.9.5-nightly-8d3404a",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -11248,6 +11248,24 @@
       ]
     },
     {
+      "id": "vehicle_collision",
+      "name": "On Vehicle Collision",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle collides with a block or entity."
+      ],
+      "examples": [
+        "on vehicle collision:",
+        "on vehicle collision with obsidian:",
+        "on vehicle collision with a zombie:"
+      ],
+      "patterns": [
+        "vehicle collision [(with|of) [a[n]] %-itemtypes/blockdatas/entitydatas%]",
+        "vehicle block collision [(with|of) [a[n]] %-itemtypes/blockdatas%]",
+        "vehicle entity collision [(with|of) [a[n]] %-entitydatas%]"
+      ]
+    },
+    {
       "id": "weather_change",
       "name": "On Weather Change",
       "since": "1.0",
@@ -12867,6 +12885,23 @@
       ],
       "patterns": [
         "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
+      "id": "vehicle_move",
+      "name": "On Vehicle Move",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle moves.",
+        "Please note that using this event can cause lag if there are multiple vehicle entities, i.e. Horse, Pig, Boat, Minecart"
+      ],
+      "examples": [
+        "on vehicle move:",
+        "\tbroadcast past event-location",
+        "\tbroadcast event-location"
+      ],
+      "patterns": [
+        "vehicle move"
       ]
     },
     {
