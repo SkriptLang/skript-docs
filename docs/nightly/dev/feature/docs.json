@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-21746e6",
+  "skriptVersion": "2.9.5-nightly-e301294",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -4130,6 +4130,24 @@
       ]
     },
     {
+      "id": "ExprAppliedEffect",
+      "name": "Applied Beacon Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "The type of effect applied by a beacon."
+      ],
+      "examples": [
+        "on beacon effect:",
+        "\tif the applied effect is primary beacon effect:",
+        "\t\tbroadcast \"Is Primary\"",
+        "\telse if applied effect = secondary effect:",
+        "\t\tbroadcast \"Is Secondary\""
+      ],
+      "patterns": [
+        "[the] applied [beacon] effect"
+      ]
+    },
+    {
       "id": "ExprAppliedEnchantments",
       "name": "Applied Enchantments",
       "since": "2.5",
@@ -7219,6 +7237,33 @@
       "patterns": [
         "[the] attack cooldown of %players%",
         "%players%'[s] attack cooldown"
+      ]
+    },
+    {
+      "id": "ExprBeaconValues",
+      "name": "Beacon Effects",
+      "since": "INSERT VERSION",
+      "description": [
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared.",
+        "You can only change the range on Paper."
+      ],
+      "examples": [
+        "broadcast tier of {_block}",
+        "set primary beacon effect of {_block} to haste",
+        "add 1 to range of {_block}"
+      ],
+      "patterns": [
+        "%blocks%['s] primary [beacon] effect",
+        "[the] primary [beacon] effect [of %blocks%]",
+        "%blocks%['s] secondary [beacon] effect",
+        "[the] secondary [beacon] effect [of %blocks%]",
+        "%blocks%['s] [beacon] range",
+        "[the] [beacon] range [of %blocks%]",
+        "%blocks%['s] [beacon] tier",
+        "[the] [beacon] tier [of %blocks%]"
       ]
     },
     {
@@ -10539,6 +10584,24 @@
       ]
     },
     {
+      "id": "beacon_effect",
+      "name": "On Beacon Effect",
+      "patterns": [
+        "[:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "application of [:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "[:primary|:secondary] beacon effect apply [of %-potioneffecttypes%]"
+      ]
+    },
+    {
+      "id": "beacon_toggle",
+      "name": "On Beacon Toggle",
+      "patterns": [
+        "beacon toggle",
+        "beacon activat(e|ion)",
+        "beacon deactivat(e|ion)"
+      ]
+    },
+    {
       "id": "break_mine",
       "name": "On Break / Mine",
       "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
@@ -12999,6 +13062,28 @@
       ],
       "patterns": [
         "enderman (enrage|anger)"
+      ]
+    },
+    {
+      "id": "beacon_change_effect",
+      "name": "On Beacon Change Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player changes the effects of a beacon."
+      ],
+      "examples": [
+        "on beacon effect change:",
+        "\tbroadcast event-player",
+        "\tbroadcast event-block",
+        "\tbroadcast primary beacon effect",
+        "\tbroadcast secondary beacon effect",
+        "on beacon change effect:",
+        "on player change beacon effect:"
+      ],
+      "patterns": [
+        "beacon change effect",
+        "beacon effect change",
+        "player chang(e[s]|ing) [of] beacon effect"
       ]
     },
     {
