@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-df3392f",
+  "skriptVersion": "2.9.5-nightly-4899216",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -4130,6 +4130,24 @@
       ]
     },
     {
+      "id": "ExprAppliedEffect-2",
+      "name": "Applied Beacon Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "The type of effect applied by a beacon."
+      ],
+      "examples": [
+        "on beacon effect:",
+        "\tif the applied effect is primary beacon effect:",
+        "\t\tbroadcast \"Is Primary\"",
+        "\telse if applied effect = secondary effect:",
+        "\t\tbroadcast \"Is Secondary\""
+      ],
+      "patterns": [
+        "[the] applied [beacon] effect"
+      ]
+    },
+    {
       "id": "ExprAppliedEnchantments-2",
       "name": "Applied Enchantments",
       "since": "2.5",
@@ -4776,9 +4794,9 @@
     {
       "id": "ExprLoopValue-2",
       "name": "Loop value",
-      "since": "1.0, 2.8.0 (loop-counter)",
+      "since": "1.0, 2.8.0 (loop-counter), INSERT VERSION (previous, next)",
       "description": [
-        "Returns the currently looped value."
+        "Returns the previous, current, or next looped value."
       ],
       "examples": [
         "# Countdown",
@@ -4793,10 +4811,20 @@
         "",
         "loop {top-balances::*}:",
         "\tloop-iteration <= 10",
-        "\tsend \"#%loop-iteration% %loop-index% has $%loop-value%\""
+        "\tsend \"#%loop-iteration% %loop-index% has $%loop-value%\"",
+        "",
+        "loop shuffled (integers between 0 and 8):",
+        "\tif all:",
+        "\t\tprevious loop-value = 1",
+        "\t\tloop-value = 4",
+        "\t\tnext loop-value = 8",
+        "\tthen:",
+        "\t\t kill all players"
       ],
       "patterns": [
-        "[the] loop-<.+>"
+        "[the] [current] loop-<.+>",
+        "[the] next loop-<.+>",
+        "[the] previous loop-<.+>"
       ]
     },
     {
@@ -7209,6 +7237,33 @@
       "patterns": [
         "[the] attack cooldown of %players%",
         "%players%'[s] attack cooldown"
+      ]
+    },
+    {
+      "id": "ExprBeaconValues-2",
+      "name": "Beacon Effects",
+      "since": "INSERT VERSION",
+      "description": [
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared.",
+        "You can only change the range on Paper."
+      ],
+      "examples": [
+        "broadcast tier of {_block}",
+        "set primary beacon effect of {_block} to haste",
+        "add 1 to range of {_block}"
+      ],
+      "patterns": [
+        "%blocks%['s] primary [beacon] effect",
+        "[the] primary [beacon] effect [of %blocks%]",
+        "%blocks%['s] secondary [beacon] effect",
+        "[the] secondary [beacon] effect [of %blocks%]",
+        "%blocks%['s] [beacon] range",
+        "[the] [beacon] range [of %blocks%]",
+        "%blocks%['s] [beacon] tier",
+        "[the] [beacon] tier [of %blocks%]"
       ]
     },
     {
@@ -10529,6 +10584,28 @@
       ]
     },
     {
+      "id": "beacon_effect-2",
+      "name": "On Beacon Effect",
+      "description": [],
+      "examples": [],
+      "patterns": [
+        "[:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "application of [:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "[:primary|:secondary] beacon effect apply [of %-potioneffecttypes%]"
+      ]
+    },
+    {
+      "id": "beacon_toggle-2",
+      "name": "On Beacon Toggle",
+      "description": [],
+      "examples": [],
+      "patterns": [
+        "beacon toggle",
+        "beacon activat(e|ion)",
+        "beacon deactivat(e|ion)"
+      ]
+    },
+    {
       "id": "break_mine-2",
       "name": "On Break / Mine",
       "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
@@ -12992,6 +13069,28 @@
       ]
     },
     {
+      "id": "beacon_change_effect-2",
+      "name": "On Beacon Change Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player changes the effects of a beacon."
+      ],
+      "examples": [
+        "on beacon effect change:",
+        "\tbroadcast event-player",
+        "\tbroadcast event-block",
+        "\tbroadcast primary beacon effect",
+        "\tbroadcast secondary beacon effect",
+        "on beacon change effect:",
+        "on player change beacon effect:"
+      ],
+      "patterns": [
+        "beacon change effect",
+        "beacon effect change",
+        "player chang(e[s]|ing) [of] beacon effect"
+      ]
+    },
+    {
       "id": "broadcast-2",
       "name": "On Broadcast",
       "since": "INSERT VERSION",
@@ -14466,7 +14565,15 @@
         "\twait 1 second",
         "",
         "loop {Coins::*}:",
-        "\tset {Coins::%loop-index%} to loop-value + 5 # Same as \"add 5 to {Coins::%loop-index%}\" where loop-index is the uuid of the player and loop-value is the actually coins value such as 200"
+        "\tset {Coins::%loop-index%} to loop-value + 5 # Same as \"add 5 to {Coins::%loop-index%}\" where loop-index is the uuid of the player and loop-value is the number of coins for the player",
+        "",
+        "loop shuffled (integers between 0 and 8):",
+        "\tif all:",
+        "\t\tprevious loop-value = 1",
+        "\t\tloop-value = 4",
+        "\t\tnext loop-value = 8",
+        "\tthen:",
+        "\t\t kill all players"
       ],
       "patterns": [
         "loop %objects%"
