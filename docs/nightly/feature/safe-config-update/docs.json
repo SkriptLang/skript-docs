@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-9160ad6",
+  "skriptVersion": "2.9.5-nightly-f48e2e1",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -193,6 +193,23 @@
       ]
     },
     {
+      "id": "CondFromMobSpawner",
+      "name": "Is From A Mob Spawner",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity was spawned from a mob spawner."
+      ],
+      "examples": [
+        "send whether target is from a mob spawner"
+      ],
+      "patterns": [
+        "%entities% (is|are) from a [mob] spawner",
+        "%entities% (isn't|aren't|is not|are not) from a [mob] spawner",
+        "%entities% (was|were) spawned (from|by) a [mob] spawner",
+        "%entities% (wasn't|weren't|was not|were not) spawned (from|by) a [mob] spawner"
+      ]
+    },
+    {
       "id": "CondHasItemCooldown",
       "name": "Has Item Cooldown",
       "since": "2.8.0",
@@ -335,6 +352,23 @@
         "%blocks% (is|are) indirectly redstone powered",
         "%blocks% (is|are)(n't| not) redstone powered",
         "%blocks% (is|are)(n't| not) indirectly redstone powered"
+      ]
+    },
+    {
+      "id": "CondIsCustomNameVisible",
+      "name": "Is Custom Name Visible",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity's custom name is visible."
+      ],
+      "examples": [
+        "send true if target's custom name is visible"
+      ],
+      "patterns": [
+        "%entities%'[s] custom name[s] (is|are) visible",
+        "%entities%'[s] custom name[s] (isn't|is not|are not|aren't) visible",
+        "custom name of %entities% (is|are) visible",
+        "custom name of %entities% (isn't|is not|are not|aren't) visible"
       ]
     },
     {
@@ -753,6 +787,23 @@
       ],
       "patterns": [
         "[the] egg (:will|will not|won't) hatch"
+      ]
+    },
+    {
+      "id": "CondFishingLure",
+      "name": "Fishing Lure Applied",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if the lure enchantment is applied to the current fishing event."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tif lure enchantment is applied:",
+        "\t\tcancel event"
+      ],
+      "patterns": [
+        "lure enchantment bonus is (applied|active)",
+        "lure enchantment bonus is(n't| not) (applied|active)"
       ]
     },
     {
@@ -1615,6 +1666,22 @@
       ]
     },
     {
+      "id": "CondIsSaddled",
+      "name": "Is Saddled",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether a given entity (horse or steerable) is saddled.",
+        "If 'properly' is used, this will only return true if the entity is wearing specifically a saddle item."
+      ],
+      "examples": [
+        "send whether {_horse} is saddled"
+      ],
+      "patterns": [
+        "%livingentities% (is|are) [:properly] saddled",
+        "%livingentities% (isn't|is not|aren't|are not) [:properly] saddled"
+      ]
+    },
+    {
       "id": "CondIsSheared",
       "name": "Entity Is Sheared",
       "since": "2.8.0",
@@ -1822,6 +1889,21 @@
       ]
     },
     {
+      "id": "CondIsTicking",
+      "name": "Is Ticking",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks if an entity is ticking."
+      ],
+      "examples": [
+        "send true if target is ticking"
+      ],
+      "patterns": [
+        "%entities% (is|are) ticking",
+        "%entities% (isn't|is not|aren't|are not) ticking"
+      ]
+    },
+    {
       "id": "CondIsTransparent",
       "name": "Is Transparent",
       "since": "2.2-dev36",
@@ -1889,11 +1971,12 @@
       "name": "Is Wearing",
       "since": "1.0",
       "description": [
-        "Checks whether a player is wearing some armour."
+        "Checks whether an entity is wearing some items (usually armor)."
       ],
       "examples": [
         "player is wearing an iron chestplate and iron leggings",
-        "player is wearing all diamond armour"
+        "player is wearing all diamond armour",
+        "target is wearing wolf armor"
       ],
       "patterns": [
         "%livingentities% (is|are) wearing %itemtypes%",
@@ -1949,6 +2032,24 @@
       "patterns": [
         "%locations% (is|are) within %number% (block|metre|meter)[s] (around|of) %locations%",
         "%locations% (isn't|is not|aren't|are not) within %number% (block|metre|meter)[s] (around|of) %locations%"
+      ]
+    },
+    {
+      "id": "CondIsInOpenWater",
+      "name": "Is Fish Hook in Open Water",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether the fish hook is in open water.",
+        "Open water is defined by a 5x4x5 area of water, air and lily pads. If in open water, treasure items may be caught."
+      ],
+      "examples": [
+        "on fish catch:",
+        "\tif fish hook is in open water:",
+        "\t\tsend \"You will catch a shark soon!\""
+      ],
+      "patterns": [
+        "%entities% (is|are) in open water[s]",
+        "%entities% (isn't|is not|aren't|are not) in open water[s]"
       ]
     },
     {
@@ -2459,6 +2560,22 @@
       ]
     },
     {
+      "id": "EffCustomName",
+      "name": "Toggle Custom Name Visibility",
+      "since": "INSERT VERSION",
+      "description": [
+        "Toggles the custom name visibility of an entity."
+      ],
+      "examples": [
+        "show the custom name of event-entity",
+        "hide target's display name"
+      ],
+      "patterns": [
+        "(:show|hide) [the] (custom|display)[ ]name of %entities%",
+        "(:show|hide) %entities%'[s] (custom|display)[ ]name"
+      ]
+    },
+    {
       "id": "EffDetonate",
       "name": "Detonate Entities",
       "since": "INSERT VERSION",
@@ -2561,9 +2678,10 @@
     {
       "id": "EffEquip",
       "name": "Equip",
-      "since": "1.0, 2.7 (multiple entities, unequip)",
+      "since": "1.0, 2.7 (multiple entities, unequip), INSERT VERSION (wolves)",
       "description": [
-        "Equips or unequips an entity with some given armor. This will replace any armor that the entity is wearing."
+        "Equips or unequips an entity with the given itemtypes (usually armor).",
+        "This effect will replace any armor that the entity is already wearing."
       ],
       "examples": [
         "equip player with diamond helmet",
@@ -3275,26 +3393,28 @@
     {
       "id": "EffReplace",
       "name": "Replace",
-      "since": "2.0, 2.2-dev24 (replace in multiple strings and replace items in inventory), 2.5 (replace first, case sensitivity)",
+      "since": "2.0, 2.2-dev24 (multiple strings, items in inventory), 2.5 (replace first, case sensitivity), INSERT VERSION (regex)",
       "description": [
-        "Replaces all occurrences of a given text with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='./expressions.html#ExprMessage'>message</a> or a line of a sign."
+        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
       ],
       "examples": [
-        "replace \"<item>\" in {textvar} with \"%item%\"",
-        "replace every \"&\" with \"§\" in line 1",
-        "# The following acts as a simple chat censor, but it will e.g. censor mass, hassle, assassin, etc. as well:",
+        "replace \"<item>\" in {_msg} with \"[%name of player's tool%]\"",
+        "replace every \"&\" with \"§\" in line 1 of targeted block",
+        "",
+        "# Very simple chat censor",
         "on chat:",
-        "\treplace all \"kys\", \"idiot\" and \"noob\" with \"****\" in the message",
-        " ",
+        "\treplace all \"idiot\" and \"noob\" with \"****\" in the message",
+        "\tregex replace \"\\b(idiot|noob)\\b\" with \"****\" in the message # Regex version using word boundaries for better results",
+        "",
         "replace all stone and dirt in player's inventory and player's top inventory with diamond"
       ],
       "patterns": [
-        "replace (all|every|) %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %strings% with %string% in %strings% [(1¦with case sensitivity)]",
-        "replace first %strings% in %strings% with %string% [(1¦with case sensitivity)]",
-        "replace first %strings% with %string% in %string% [(1¦with case sensitivity)]",
-        "replace (all|every|) %itemtypes% in %inventories% with %itemtype%",
-        "replace (all|every|) %itemtypes% with %itemtype% in %inventories%"
+        "replace [(all|every)|first:[the] first] %strings% in %strings% with %string% [case:with case sensitivity]",
+        "replace [(all|every)|first:[the] first] %strings% with %string% in %strings% [case:with case sensitivity]",
+        "(replace [with|using] regex|regex replace) %strings% in %strings% with %string%",
+        "(replace [with|using] regex|regex replace) %strings% with %string% in %strings%",
+        "replace [all|every] %itemtypes% in %inventories% with %itemtype%",
+        "replace [all|every] %itemtypes% with %itemtype% in %inventories%"
       ]
     },
     {
@@ -3796,10 +3916,41 @@
         "rotate {_quaternion} by x 45, y 90, z 135"
       ],
       "patterns": [
-        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "rotate %vectors/quaternions/displays% around [the] %vector% by %number% [degrees]",
+        "rotate %vectors/quaternions/displays% around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "rotate %quaternions/displays% around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "rotate %vectors/quaternions/displays% around [the] %vector% by %number%",
         "rotate %quaternions/displays% by x %number%, y %number%(, [and]| and) z %number%"
+      ]
+    },
+    {
+      "id": "EffFishingLure",
+      "name": "Apply Fishing Lure",
+      "since": "INSERT VERSION",
+      "description": [
+        "Sets whether the lure enchantment should be applied, which reduces the wait time."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tapply lure enchantment bonus"
+      ],
+      "patterns": [
+        "apply [the] lure enchantment bonus",
+        "remove [the] lure enchantment bonus"
+      ]
+    },
+    {
+      "id": "EffPullHookedEntity",
+      "name": "Pull In Hooked Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Pull the hooked entity to the player."
+      ],
+      "examples": [
+        "on fishing state of caught entity:",
+        "\tpull in hooked entity"
+      ],
+      "patterns": [
+        "(reel|pull) in hook[ed] entity"
       ]
     },
     {
@@ -3955,6 +4106,45 @@
       ],
       "patterns": [
         "[(all|the|all [of] the)] [registered] [(1¦script)] commands"
+      ]
+    },
+    {
+      "id": "ExprAngle",
+      "name": "Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the passed number value in degrees.",
+        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
+      ],
+      "examples": [
+        "set {_angle} to 90 degrees",
+        "{_angle} is 90 # true",
+        "180 degrees is pi # true",
+        "pi radians is 180 degrees # true"
+      ],
+      "patterns": [
+        "%number% [in] deg[ree][s]",
+        "%number% [in] rad[ian][s]",
+        "%numbers% in deg[ree][s]",
+        "%numbers% in rad[ian][s]"
+      ]
+    },
+    {
+      "id": "ExprAppliedEffect",
+      "name": "Applied Beacon Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "The type of effect applied by a beacon."
+      ],
+      "examples": [
+        "on beacon effect:",
+        "\tif the applied effect is primary beacon effect:",
+        "\t\tbroadcast \"Is Primary\"",
+        "\telse if applied effect = secondary effect:",
+        "\t\tbroadcast \"Is Secondary\""
+      ],
+      "patterns": [
+        "[the] applied [beacon] effect"
       ]
     },
     {
@@ -4294,7 +4484,7 @@
     {
       "id": "ExprExperience",
       "name": "Experience",
-      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding event)",
+      "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding, fishing)",
       "description": [
         "How much experience was spawned in an experience spawn or block break event. Can be changed."
       ],
@@ -4311,7 +4501,10 @@
         "",
         "on breed:",
         "\tbreeding father is a cow",
-        "\tset dropped experience to 10"
+        "\tset dropped experience to 10",
+        "",
+        "on fish catch:",
+        "\tadd 70 to dropped experience"
       ],
       "patterns": [
         "[the] (spawned|dropped|) [e]xp[erience] [orb[s]]"
@@ -4601,9 +4794,9 @@
     {
       "id": "ExprLoopValue",
       "name": "Loop value",
-      "since": "1.0, 2.8.0 (loop-counter)",
+      "since": "1.0, 2.8.0 (loop-counter), INSERT VERSION (previous, next)",
       "description": [
-        "Returns the currently looped value."
+        "Returns the previous, current, or next looped value."
       ],
       "examples": [
         "# Countdown",
@@ -4618,10 +4811,20 @@
         "",
         "loop {top-balances::*}:",
         "\tloop-iteration <= 10",
-        "\tsend \"#%loop-iteration% %loop-index% has $%loop-value%\""
+        "\tsend \"#%loop-iteration% %loop-index% has $%loop-value%\"",
+        "",
+        "loop shuffled (integers between 0 and 8):",
+        "\tif all:",
+        "\t\tprevious loop-value = 1",
+        "\t\tloop-value = 4",
+        "\t\tnext loop-value = 8",
+        "\tthen:",
+        "\t\t kill all players"
       ],
       "patterns": [
-        "[the] loop-<.+>"
+        "[the] [current] loop-<.+>",
+        "[the] next loop-<.+>",
+        "[the] previous loop-<.+>"
       ]
     },
     {
@@ -5130,7 +5333,8 @@
       "patterns": [
         "%number% time[s]",
         "once",
-        "twice"
+        "twice",
+        "thrice"
       ]
     },
     {
@@ -5355,9 +5559,9 @@
         "set {_new} to {_quaternion} rotated by x 45, y 90, z 135"
       ],
       "patterns": [
-        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number% [degrees]",
-        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number% [degrees]",
-        "%quaternions/vectors% rotated around [the] %vector% by %number% [degrees]",
+        "%quaternions/vectors% rotated around [the] [global] (:x|:y|:z)(-| )axis by %number%",
+        "%quaternions% rotated around [the|its|their] local (:x|:y|:z)(-| )ax(i|e)s by %number%",
+        "%quaternions/vectors% rotated around [the] %vector% by %number%",
         "%quaternions% rotated by x %number%, y %number%(, [and]| and) z %number%"
       ]
     },
@@ -5553,6 +5757,89 @@
       ],
       "patterns": [
         "[the] teleport (cause|reason|type)"
+      ]
+    },
+    {
+      "id": "ExprFishingApproachAngle",
+      "name": "Fishing Approach Angle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the angle at which the fish will approach the fishing hook, after the wait time.",
+        "The angle is in degrees, with 0 being positive Z, 90 being negative X, 180 being negative Z, and 270 being positive X.",
+        "By default, returns a value between 0 and 360 degrees."
+      ],
+      "examples": [
+        "on fish approach:",
+        "\tif fishing approach angle is bigger than 300.5 degrees or fishing approach angle is smaller than 59.5 degrees:",
+        "\t\tcancel event"
+      ],
+      "patterns": [
+        "(min:min[imum]|max[imum]) fish[ing] approach[ing] angle"
+      ]
+    },
+    {
+      "id": "ExprFishingBiteTime",
+      "name": "Fishing Bite Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the time it takes a fish to bite the fishing hook, after it started approaching the hook.",
+        "May return a timespan of 0 seconds. If modifying the value, it should be at least 1 tick."
+      ],
+      "examples": [
+        "on fish approach:",
+        "\tset fishing bite time to 5 seconds"
+      ],
+      "patterns": [
+        "fish[ing] bit(e|ing) [wait] time"
+      ]
+    },
+    {
+      "id": "ExprFishingHook",
+      "name": "Fishing Hook",
+      "since": "INSERT VERSION",
+      "description": [
+        "The <a href='classes.html#entity'>fishing hook</a> in a fishing event."
+      ],
+      "examples": [
+        "on fish line cast:",
+        "\twait a second",
+        "\tteleport player to fishing hook"
+      ],
+      "patterns": [
+        "[the] fish[ing] (hook|bobber)"
+      ]
+    },
+    {
+      "id": "ExprFishingHookEntity",
+      "name": "Fishing Hooked Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the hooked entity in the hooked event."
+      ],
+      "examples": [
+        "on entity hooked:",
+        "\tif hooked entity is a player:",
+        "\t\tteleport hooked entity to player"
+      ],
+      "patterns": [
+        "hook[ed] entity"
+      ]
+    },
+    {
+      "id": "ExprFishingWaitTime",
+      "name": "Fishing Wait Time",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the minimum and/or maximum waiting time of the fishing hook. ",
+        "Default minimum value is 5 seconds and maximum is 30 seconds, before lure is applied."
+      ],
+      "examples": [
+        "on fishing line cast:",
+        "\tset min waiting time to 10 seconds",
+        "\tset max waiting time to 20 seconds"
+      ],
+      "patterns": [
+        "(min:min[imum]|max[imum]) fish[ing] wait[ing] time"
       ]
     },
     {
@@ -6657,6 +6944,24 @@
       ]
     },
     {
+      "id": "ExprWithItemFlags",
+      "name": "Item with Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "Creates a new item with the specified item flags."
+      ],
+      "examples": [
+        "give player diamond sword with item flags hide enchants and hide attributes",
+        "set {_item} to player's tool with item flag hide additional tooltip",
+        "give player torch with hide placed on item flag",
+        "set {_item} to diamond sword with all item flags"
+      ],
+      "patterns": [
+        "%itemtypes% with [the] item flag[s] %itemflags%",
+        "%itemtypes% with [the] %itemflags% item flag[s]"
+      ]
+    },
+    {
       "id": "ExprBlocksInRegion",
       "name": "Blocks in Region",
       "since": "2.1",
@@ -6849,18 +7154,24 @@
     },
     {
       "id": "ExprArmorSlot",
-      "name": "Armour Slot",
-      "since": "1.0, 2.8.0 (Armour)",
+      "name": "Armor Slot",
+      "since": "1.0, 2.8.0 (armor), INSERT VERSION (body armor)",
       "description": [
-        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet."
+        "Equipment of living entities, i.e. the boots, leggings, chestplate or helmet.",
+        "Body armor is a special slot that can only be used for:",
+        "<ul>",
+        "<li>Horses: Horse armour (doesn't work on zombie or skeleton horses)</li>",
+        "<li>Wolves: Wolf Armor</li>",
+        "<li>Llamas (regular or trader): Carpet</li>",
+        "</ul>"
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
         "helmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
       ],
       "patterns": [
-        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]) of %livingentities%",
-        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s])"
+        "[the] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r) of %livingentities%",
+        "%livingentities%'[s] ((boots:(boots|shoes)|leggings:leg[ging]s|chestplate:chestplate[s]|helmet:helmet[s]) [(item|:slot)]|armour:armo[u]r[s]|bodyarmor:body armo[u]r)"
       ]
     },
     {
@@ -6926,6 +7237,33 @@
       "patterns": [
         "[the] attack cooldown of %players%",
         "%players%'[s] attack cooldown"
+      ]
+    },
+    {
+      "id": "ExprBeaconValues",
+      "name": "Beacon Effects",
+      "since": "INSERT VERSION",
+      "description": [
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared.",
+        "You can only change the range on Paper."
+      ],
+      "examples": [
+        "broadcast tier of {_block}",
+        "set primary beacon effect of {_block} to haste",
+        "add 1 to range of {_block}"
+      ],
+      "patterns": [
+        "%blocks%['s] primary [beacon] effect",
+        "[the] primary [beacon] effect [of %blocks%]",
+        "%blocks%['s] secondary [beacon] effect",
+        "[the] secondary [beacon] effect [of %blocks%]",
+        "%blocks%['s] [beacon] range",
+        "[the] [beacon] range [of %blocks%]",
+        "%blocks%['s] [beacon] tier",
+        "[the] [beacon] tier [of %blocks%]"
       ]
     },
     {
@@ -7634,16 +7972,17 @@
     {
       "id": "ExprFireTicks",
       "name": "Entity Fire Burn Duration",
-      "since": "2.7",
+      "since": "2.7, INSERT VERSION (maximum)",
       "description": [
         "How much time an entity will be burning for."
       ],
       "examples": [
-        "send \"You will stop burning in %fire time of player%\""
+        "send \"You will stop burning in %fire time of player%\"",
+        "send the max burn time of target"
       ],
       "patterns": [
-        "[the] (burn[ing]|fire) (time|duration) of %entities%",
-        "%entities%'[s] (burn[ing]|fire) (time|duration)"
+        "[the] [:max[imum]] (burn[ing]|fire) (time|duration) of %entities%",
+        "%entities%'[s] [:max[imum]] (burn[ing]|fire) (time|duration)"
       ]
     },
     {
@@ -7937,6 +8276,23 @@
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/itemtypes/itemstacks%",
         "%slots/itemtypes/itemstacks%'[s] item[[ ]stack] (amount|size|number)"
+      ]
+    },
+    {
+      "id": "ExprItemFlags",
+      "name": "Item Flags",
+      "since": "INSERT VERSION",
+      "description": [
+        "The item flags of an item. Can be modified."
+      ],
+      "examples": [
+        "set item flags of player's tool to hide enchants and hide attributes",
+        "add hide potion effects to item flags of player's held item",
+        "remove hide enchants from item flags of {legendary sword}"
+      ],
+      "patterns": [
+        "[the] item flags of %itemtypes%",
+        "%itemtypes%'[s] item flags"
       ]
     },
     {
@@ -9083,17 +9439,18 @@
     {
       "id": "ExprSkullOwner",
       "name": "Skull Owner",
-      "since": "2.9.0",
+      "since": "2.9.0, INSERT VERSION (of items)",
       "description": [
         "The skull owner of a player skull."
       ],
       "examples": [
         "set {_owner} to the skull owner of event-block",
-        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer"
+        "set skull owner of {_block} to \"Njol\" parsed as offlineplayer",
+        "set head owner of player's tool to {_player}"
       ],
       "patterns": [
-        "[the] (head|skull) owner of %blocks%",
-        "%blocks%'[s] (head|skull) owner"
+        "[the] (head|skull) owner of %slots/itemtypes/itemstacks/blocks%",
+        "%slots/itemtypes/itemstacks/blocks%'[s] (head|skull) owner"
       ]
     },
     {
@@ -10227,6 +10584,24 @@
       ]
     },
     {
+      "id": "beacon_effect",
+      "name": "On Beacon Effect",
+      "patterns": [
+        "[:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "application of [:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
+        "[:primary|:secondary] beacon effect apply [of %-potioneffecttypes%]"
+      ]
+    },
+    {
+      "id": "beacon_toggle",
+      "name": "On Beacon Toggle",
+      "patterns": [
+        "beacon toggle",
+        "beacon activat(e|ion)",
+        "beacon deactivat(e|ion)"
+      ]
+    },
+    {
       "id": "break_mine",
       "name": "On Break / Mine",
       "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
@@ -10572,9 +10947,10 @@
         "Called when a firework explodes."
       ],
       "examples": [
-        "on firework explode",
-        "on firework exploding colored red, light green and black",
-        "on firework explosion colored light green:",
+        "on firework explode:",
+        "\tif event-colors contains red:",
+        "on firework exploding colored red, light green and black:",
+        "on firework explosion colored rgb 0, 255, 0:",
         "\tbroadcast \"A firework colored %colors% was exploded at %location%!\""
       ],
       "patterns": [
@@ -11097,6 +11473,24 @@
       ]
     },
     {
+      "id": "vehicle_collision",
+      "name": "On Vehicle Collision",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle collides with a block or entity."
+      ],
+      "examples": [
+        "on vehicle collision:",
+        "on vehicle collision with obsidian:",
+        "on vehicle collision with a zombie:"
+      ],
+      "patterns": [
+        "vehicle collision [(with|of) [a[n]] %-itemtypes/blockdatas/entitydatas%]",
+        "vehicle block collision [(with|of) [a[n]] %-itemtypes/blockdatas%]",
+        "vehicle entity collision [(with|of) [a[n]] %-entitydatas%]"
+      ]
+    },
+    {
       "id": "weather_change",
       "name": "On Weather Change",
       "since": "1.0",
@@ -11614,20 +12008,6 @@
       "patterns": [
         "throw[ing] [of] [an] egg",
         "[player] egg throw"
-      ]
-    },
-    {
-      "id": "fishing",
-      "name": "On Fishing",
-      "since": "1.0",
-      "description": [
-        "Called when a player fishes something. This is not of much use yet."
-      ],
-      "examples": [
-        "on fish:"
-      ],
-      "patterns": [
-        "[player] fish[ing]"
       ]
     },
     {
@@ -12685,6 +13065,28 @@
       ]
     },
     {
+      "id": "beacon_change_effect",
+      "name": "On Beacon Change Effect",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player changes the effects of a beacon."
+      ],
+      "examples": [
+        "on beacon effect change:",
+        "\tbroadcast event-player",
+        "\tbroadcast event-block",
+        "\tbroadcast primary beacon effect",
+        "\tbroadcast secondary beacon effect",
+        "on beacon change effect:",
+        "on player change beacon effect:"
+      ],
+      "patterns": [
+        "beacon change effect",
+        "beacon effect change",
+        "player chang(e[s]|ing) [of] beacon effect"
+      ]
+    },
+    {
       "id": "broadcast",
       "name": "On Broadcast",
       "since": "INSERT VERSION",
@@ -12716,6 +13118,44 @@
       ],
       "patterns": [
         "player (experience|[e]xp) cooldown change"
+      ]
+    },
+    {
+      "id": "vehicle_move",
+      "name": "On Vehicle Move",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a vehicle moves.",
+        "Please note that using this event can cause lag if there are multiple vehicle entities, i.e. Horse, Pig, Boat, Minecart"
+      ],
+      "examples": [
+        "on vehicle move:",
+        "\tbroadcast past event-location",
+        "\tbroadcast event-location"
+      ],
+      "patterns": [
+        "vehicle move"
+      ]
+    },
+    {
+      "id": "bucket_catch_entity",
+      "name": "On Bucket Catch Entity",
+      "patterns": [
+        "bucket (catch[ing]|captur(e|ing)) [[of] %-entitydatas%]"
+      ]
+    },
+    {
+      "id": "fishing",
+      "name": "On Fishing",
+      "patterns": [
+        "[fishing] (line|rod) cast",
+        "fish (caught|catch)",
+        "entity (hook[ed]|caught|catch)",
+        "(bobber|hook) (in|hit) ground",
+        "fish (escape|get away)",
+        "[fishing] (rod|line) reel in",
+        "fish bit(e|ing)",
+        "(fish approach[ing]|(bobber|hook) lure[d])"
       ]
     },
     {
@@ -13457,6 +13897,17 @@
       ]
     },
     {
+      "id": "itemflag",
+      "name": "Item Flag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents flags that may be applied to hide certain attributes of an item."
+      ],
+      "patterns": [
+        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, unbreakable hidden, dye color hidden, hide enchantments, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
+      ]
+    },
+    {
       "id": "entitypotioncause",
       "name": "Entity Potion Cause",
       "since": "INSERT VERSION",
@@ -13629,15 +14080,17 @@
       "name": "Number",
       "since": "1.0",
       "description": [
-        "A number, e.g. 2.5, 3, or -9812454.",
-        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error."
+        "A number, e.g. 2.5, 3, -9812454, 30 degrees or 3.14 radians.",
+        "Please note that many expressions only need integers, i.e. will discard any fractional parts of any numbers without producing an error.",
+        "Radians will be converted to degrees."
       ],
       "examples": [
         "set the player's health to 5.5",
-        "set {_temp} to 2*{_temp} - 2.5"
+        "set {_temp} to 2*{_temp} - 2.5",
+        "set {_angle} to 3.14 in radians # will be converted to degrees"
       ],
       "patterns": [
-        "[-]###[.###]</code> (any amount of digits; very large numbers will be truncated though)"
+        "[-]###[.###] [[in ](rad[ian][s]|deg[ree][s])]</code> (any amount of digits; very large numbers will be truncated though)"
       ]
     },
     {
@@ -14104,10 +14557,47 @@
         "\twait 1 second",
         "",
         "loop {Coins::*}:",
-        "\tset {Coins::%loop-index%} to loop-value + 5 # Same as \"add 5 to {Coins::%loop-index%}\" where loop-index is the uuid of the player and loop-value is the actually coins value such as 200"
+        "\tset {Coins::%loop-index%} to loop-value + 5 # Same as \"add 5 to {Coins::%loop-index%}\" where loop-index is the uuid of the player and loop-value is the number of coins for the player",
+        "",
+        "loop shuffled (integers between 0 and 8):",
+        "\tif all:",
+        "\t\tprevious loop-value = 1",
+        "\t\tloop-value = 4",
+        "\t\tnext loop-value = 8",
+        "\tthen:",
+        "\t\t kill all players"
       ],
       "patterns": [
         "loop %objects%"
+      ]
+    },
+    {
+      "id": "SecFor",
+      "name": "For Each Loop (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "A specialised loop section run for each element in a list.\nUnlike the basic loop, this is designed for extracting the key & value from pairs.\nThe loop element's key/index and value can be stored in a variable for convenience.\n\nWhen looping a simple (non-indexed) set of values, e.g. all players, the index will be the loop counter number."
+      ],
+      "examples": [
+        "for each {_player} in players:",
+        "\tsend \"Hello %{_player}%!\" to {_player}",
+        "",
+        "loop {_item} in {list of items::*}:",
+        "\tbroadcast {_item}'s name",
+        "",
+        "for each key {_index} in {list of items::*}:",
+        "\tbroadcast {_index}",
+        "",
+        "loop key {_index} and value {_value} in {list of items::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\"",
+        "",
+        "for each {_index} = {_value} in {my list::*}:",
+        "\tbroadcast \"%{_index}% = %{_value}%\""
+      ],
+      "patterns": [
+        "(for [each]|loop) [value] %~object% in %objects%",
+        "(for [each]|loop) (key|index) %~object% in %objects%",
+        "(for [each]|loop) [key|index] %~object%(,| and) [value] %~object% in %objects%"
       ]
     },
     {
