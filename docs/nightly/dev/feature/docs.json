@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-f56a854",
+  "skriptVersion": "2.9.5-nightly-b0be357",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -7831,6 +7831,27 @@
       ]
     },
     {
+      "id": "ExprEntitySnapshot",
+      "name": "Entity Snapshot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the entity snapshot of a provided entity, which includes all the data associated with it (name, health, attributes, etc.) at the time this expression is used.",
+        "Individual attributes of a snapshot cannot be modified or retrieved."
+      ],
+      "examples": [
+        "spawn a pig at location(0, 0, 0):",
+        "\tset the max health of entity to 20",
+        "\tset the health of entity to 20",
+        "\tset {_snapshot} to the entity snapshot of entity",
+        "\tclear entity",
+        "spawn {_snapshot} at location(0, 0, 0)"
+      ],
+      "patterns": [
+        "[the] entity snapshot of %entities/entitydatas%",
+        "%entities/entitydatas%'[s] entity snapshot"
+      ]
+    },
+    {
       "id": "ExprEntityTamer",
       "name": "Entity Owner",
       "since": "2.5",
@@ -9489,6 +9510,34 @@
       "patterns": [
         "[the] spawn[s] [(point|location)[s]] [of %worlds%]",
         "%worlds%'[s] spawn[s] [(point|location)[s]]"
+      ]
+    },
+    {
+      "id": "ExprSpawnEggEntity",
+      "name": "Spawn Egg Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets or sets the entity snapshot that the provided spawn eggs will spawn when used."
+      ],
+      "examples": [
+        "set {_item} to a zombie spawn egg",
+        "broadcast the spawn egg entity of {_item}",
+        "",
+        "spawn a pig at location(0,0,0):",
+        "\tset the max health of entity to 20",
+        "\tset the health of entity to 20",
+        "\tset {_snapshot} to the entity snapshot of entity",
+        "\tclear entity",
+        "set the spawn egg entity of {_item} to {_snapshot}",
+        "if the spawn egg entity of {_item} is {_snapshot}: # Minecraft 1.20.5+",
+        "",
+        "set the spawn egg entity of {_item} to (random element out of all entities)",
+        "",
+        "set the spawn egg entity of {_item} to a zombie"
+      ],
+      "patterns": [
+        "[the] spawn egg entity of %itemstacks/itemtypes/slots%",
+        "%itemstacks/itemtypes/slots%'[s] spawn egg entity"
       ]
     },
     {
@@ -13942,6 +13991,16 @@
       ]
     },
     {
+      "id": "entitysnapshot",
+      "name": "Entity Snapshot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a snapshot of an entity's data.",
+        "This includes all of the data associated with an entity (its name, health, attributes, etc.), at the time this expression is used. Essentially, these are a way to create templates for entities.",
+        "Individual attributes of a snapshot cannot be modified or retrieved."
+      ]
+    },
+    {
       "id": "display",
       "name": "Display Entity",
       "since": "INSERT VERSION",
@@ -14444,7 +14503,7 @@
     {
       "id": "EffSecSpawn",
       "name": "Spawn",
-      "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
+      "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items), INSERT VERSION (entity snapshots)",
       "description": [
         "Spawns entities. This can be used as an effect and as a section.",
         "",
@@ -14452,7 +14511,9 @@
         "You can modify the entity in this section, using for example 'event-entity' or 'cow'. ",
         "Do note that other event values, such as 'player', won't work in this section.",
         "",
-        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true."
+        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true.",
+        "",
+        "Note that when spawning an entity via entity snapshots, the code within the section will not run instantaneously as compared to spawning normally (via 'a zombie')."
       ],
       "examples": [
         "spawn 3 creepers at the targeted block",
@@ -14464,8 +14525,8 @@
         "\tset billboard of event-display to center # allows the display to rotate around the center axis"
       ],
       "patterns": [
-        "(spawn|summon) %entitytypes% [%directions% %locations%]",
-        "(spawn|summon) %number% of %entitytypes% [%directions% %locations%]"
+        "(spawn|summon) %entitytypes/entitysnapshots% [%directions% %locations%]",
+        "(spawn|summon) %number% of %entitytypes/entitysnapshots% [%directions% %locations%]"
       ]
     },
     {
