@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-a91c968",
+  "skriptVersion": "2.9.5-nightly-e899ac1",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -7616,25 +7616,6 @@
       ]
     },
     {
-      "id": "ExprBurnCookTime",
-      "name": "Burn/Cook Time",
-      "since": "2.3",
-      "description": [
-        "The time a furnace takes to burn an item in a <a href='events.html#fuel_burn'>fuel burn</a> event.",
-        "Can also be used to change the burn/cook time of a placed furnace."
-      ],
-      "examples": [
-        "on fuel burn:",
-        "\tif fuel slot is coal:",
-        "\t\tset burning time to 1 tick"
-      ],
-      "patterns": [
-        "[the] burn[ing] time",
-        "[the] (burn|1:cook)[ing] time of %blocks%",
-        "%blocks%'[s] (burn|1:cook)[ing] time"
-      ]
-    },
-    {
       "id": "ExprCharacterFromCodepoint",
       "name": "Character from Codepoint",
       "since": "2.9.0",
@@ -8265,30 +8246,6 @@
       "patterns": [
         "[the] freeze time of %entities%",
         "%entities%'[s] freeze time"
-      ]
-    },
-    {
-      "id": "ExprFurnaceSlot",
-      "name": "Furnace Slot",
-      "since": "1.0, 2.8.0 (syntax rework)",
-      "description": [
-        "A slot of a furnace, i.e. either the ore, fuel or result slot.",
-        "Remember to use '<a href='#ExprBlock'>block</a>' and not <code>furnace</code>, as <code>furnace</code> is not an existing expression.",
-        "Note that <code>the result</code> and <code>the result slot</code> refer to separate things. <code>the result</code> is the product in a smelt event and <code>the result slot</code> is the output slot of a furnace (where <code>the result</code> will end up).",
-        "Note that if the result in a smelt event is changed to an item that differs in type from the items currently in the result slot, the smelting will fail to complete (the item will attempt to smelt itself again).",
-        "Note that if values other than <code>the result</code> are changed, event values may not accurately reflect the actual items in a furnace.",
-        "Thus you may wish to use the event block in this case (e.g. <code>the fuel slot of the event-block</code>) to get accurate values if needed."
-      ],
-      "examples": [
-        "set the fuel slot of the clicked block to a lava bucket",
-        "set the block's ore slot to 64 iron ore",
-        "give the result of the block to the player",
-        "clear the result slot of the block"
-      ],
-      "patterns": [
-        "[the] (0:ore slot|1:fuel slot|2:result [5:slot])",
-        "[the] (0:ore|1:fuel|2:result) slot[s] of %blocks%",
-        "%blocks%'[s] (0:ore|1:fuel|2:result) slot[s]"
       ]
     },
     {
@@ -10666,6 +10623,86 @@
       ]
     },
     {
+      "id": "ExprFurnaceEventItems",
+      "name": "Furnace Event Items",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different items in furnace events.",
+        "Only 'smelting item' can be changed."
+      ],
+      "examples": [
+        "on furnace smelt:",
+        "\tbroadcast smelted item",
+        "\t# Or 'result'",
+        "on furnace extract:",
+        "\tbroadcast extracted item",
+        "on fuel burn:",
+        "\tbroadcast burned fuel",
+        "on smelting start:",
+        "\tbroadcast smelting item",
+        "\tclear smelting item"
+      ],
+      "patterns": [
+        "[the] (smelted item|result[ item])",
+        "[the] extracted item[s]",
+        "[the] smelting item",
+        "[the] burned (fuel|item)"
+      ]
+    },
+    {
+      "id": "ExprFurnaceSlot",
+      "name": "Furnace Slot",
+      "since": "1.0, 2.8.0 (syntax rework)",
+      "description": [
+        "A slot of a furnace, i.e. either the ore, fuel or result slot."
+      ],
+      "examples": [
+        "set the fuel slot of the clicked block to a lava bucket",
+        "set the block's ore slot to 64 iron ore",
+        "clear the result slot of the block",
+        "on smelt:",
+        "\tif the fuel slot is charcoal:",
+        "\t\tadd 5 seconds to the burn time"
+      ],
+      "patterns": [
+        "[the] (ore|input) slot[s] [of %blocks%]",
+        "%blocks%'[s] (ore|input) slot[s]",
+        "[the] fuel slot[s] [of %blocks%]",
+        "%blocks%'[s] fuel slot[s]",
+        "[the] (result|output) slot[s] [of %blocks%]",
+        "%blocks%'[s] (result|output) slot[s]"
+      ]
+    },
+    {
+      "id": "ExprFurnaceTime",
+      "name": "Furnace Times",
+      "since": "INSERT VERSION",
+      "description": [
+        "The cook time, total cook time, and burn time of a furnace. Can be changed.",
+        "<ul>",
+        "<li>cook time: The amount of time an item has been smelting for.</li>",
+        "<li>total cook time: The amount of time required to finish smelting an item.</li>",
+        "<li>burn time: The amount of time left for the current fuel until consumption of another fuel item.</li>",
+        "</ul>"
+      ],
+      "examples": [
+        "set the cooking time of {_block} to 10",
+        "set the total cooking time of {_block} to 50",
+        "set the fuel burning time of {_block} to 100",
+        "on smelt:",
+        "\tif the fuel slot is charcoal:",
+        "\t\tadd 5 seconds to the fuel burn time"
+      ],
+      "patterns": [
+        "[the] [furnace] cook[ing] time [of %blocks%]",
+        "%blocks%'[s]cook[ing] time",
+        "[the] [furnace] total cook[ing] time [of %blocks%]",
+        "%blocks%'[s]total cook[ing] time",
+        "[the] [furnace] fuel burn[ing] time [of %blocks%]",
+        "%blocks%'[s]fuel burn[ing] time"
+      ]
+    },
+    {
       "id": "ExprLootContextEntity",
       "name": "Looted Entity of Loot Context",
       "since": "INSERT VERSION",
@@ -12295,35 +12332,6 @@
       ]
     },
     {
-      "id": "fuel_burn",
-      "name": "On Fuel Burn",
-      "since": "1.0",
-      "description": [
-        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
-      ],
-      "examples": [
-        "on fuel burning:"
-      ],
-      "patterns": [
-        "fuel burn[ing]"
-      ]
-    },
-    {
-      "id": "smelt",
-      "name": "On Smelt",
-      "since": "1.0",
-      "description": [
-        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>ore slot</a>."
-      ],
-      "examples": [
-        "on smelt:"
-      ],
-      "patterns": [
-        "[ore] smelt[ing]",
-        "smelt[ing] of ore"
-      ]
-    },
-    {
       "id": "leaves_decay",
       "name": "On Leaves Decay",
       "since": "1.0",
@@ -13617,6 +13625,77 @@
       "patterns": [
         "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) of (%-inputkeys%|(an|any) input key)",
         "([player] %-inputkeys%|[an|any [player]] input key) (toggle|toggling|1:press[ing]|2:release|2:releasing)"
+      ]
+    },
+    {
+      "id": "smelt",
+      "name": "On Smelt",
+      "since": "1.0, INSERT VERSION (specific item)",
+      "description": [
+        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>input slot</a>."
+      ],
+      "examples": [
+        "on smelt:",
+        "\tclear the smelted item",
+        "on smelt of raw iron:",
+        "\tbroadcast smelted item",
+        "\tset the smelted item to iron block"
+      ],
+      "patterns": [
+        "[furnace] [ore] smelt[ed|ing] [of %-itemtypes%]",
+        "[furnace] smelt[ed|ing] of ore"
+      ]
+    },
+    {
+      "id": "fuel_burn",
+      "name": "On Fuel Burn",
+      "since": "1.0, INSERT VERSION (specific item)",
+      "description": [
+        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
+      ],
+      "examples": [
+        "on fuel burning:",
+        "\tbroadcast fuel burned",
+        "\tif burned fuel is coal:",
+        "\t\tadd 20 seconds to burn time"
+      ],
+      "patterns": [
+        "[furnace] fuel burn[ing] [of %-itemtypes%]"
+      ]
+    },
+    {
+      "id": "furnace_item_extract",
+      "name": "On Furnace Item Extract",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player takes any item out of the furnace."
+      ],
+      "examples": [
+        "on furnace extract:",
+        "\tif event-items is an iron ingot:",
+        "\t\tremove event-items from event-player's inventory"
+      ],
+      "patterns": [
+        "furnace [item] extract[ion] [of %-itemtypes%]"
+      ]
+    },
+    {
+      "id": "start_smelt",
+      "name": "On Start Smelt",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a furnace starts smelting an item in its ore slot."
+      ],
+      "examples": [
+        "on smelting start:",
+        "\tif the smelting item is raw iron:",
+        "\t\tset total cook time to 1 second",
+        "on smelting start of raw iron:",
+        "\tadd 20 seconds to total cook time"
+      ],
+      "patterns": [
+        "[furnace] start [of] smelt[ing] [[of] %-itemtypes%]",
+        "[furnace] smelt[ing] start [of %-itemtypes%]"
       ]
     },
     {
