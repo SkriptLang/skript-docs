@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-192c134",
+  "skriptVersion": "2.9.5-nightly-084bc7f",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3712,23 +3712,6 @@
       "patterns": [
         "[:force] shear %livingentities%",
         "un[-]shear %livingentities%"
-      ]
-    },
-    {
-      "id": "EffShoot",
-      "name": "Shoot",
-      "since": "1.4",
-      "description": [
-        "Shoots a projectile (or any other entity) from a given entity."
-      ],
-      "examples": [
-        "shoot an arrow",
-        "make the player shoot a creeper at speed 10",
-        "shoot a pig from the creeper"
-      ],
-      "patterns": [
-        "shoot %entitydatas% [from %livingentities/locations%] [(at|with) (speed|velocity) %-number%] [%-direction%]",
-        "(make|let) %livingentities/locations% shoot %entitydatas% [(at|with) (speed|velocity) %-number%] [%-direction%]"
       ]
     },
     {
@@ -14864,6 +14847,23 @@
     }
   ],
   "sections": [
+    {
+      "id": "EffSecShoot",
+      "name": "Shoot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Shoots a projectile (or any other entity) from a given entity or location."
+      ],
+      "examples": [
+        "shoot arrow from all players at speed 2",
+        "shoot a pig from all players:",
+        "\tadd event-entity to {_projectiles::*}"
+      ],
+      "patterns": [
+        "shoot %entitydatas% [from %livingentities/locations%] [(at|with) (speed|velocity) %-number%] [%-direction%]",
+        "(make|let) %livingentities/locations% shoot %entitydatas% [(at|with) (speed|velocity) %-number%] [%-direction%]"
+      ]
+    },
     {
       "id": "EffSecSpawn",
       "name": "Spawn",
