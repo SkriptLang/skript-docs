@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-b0be357",
+  "skriptVersion": "2.9.5-nightly-b123b88",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2154,6 +2154,54 @@
       ]
     },
     {
+      "id": "CondHasLootTable",
+      "name": "Has Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an entity or block has a loot table. The loot tables of chests will be deleted when the chest is opened or broken."
+      ],
+      "examples": [
+        "set event-block to chest",
+        "if event-block has a loot table:",
+        "\t# this will never happen, because it doesn't have a loot table.",
+        "",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\"",
+        "",
+        "if event-block has a loot table:",
+        "\t# this will happen, because it now has a loot table."
+      ],
+      "patterns": [
+        "%blocks/entities% (has|have) [a] loot[ ]table",
+        "%blocks/entities% (doesn't|does not|do not|don't) have [a] loot[ ]table"
+      ]
+    },
+    {
+      "id": "CondIsLootable",
+      "name": "Is Lootable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an entity or block is lootable. Lootables are entities or blocks that can have a loot table."
+      ],
+      "examples": [
+        "spawn a pig at event-location",
+        "set {_pig} to last spawned entity",
+        "if {_pig} is lootable:",
+        "\tset loot table of {_pig} to \"minecraft:entities/cow\"",
+        "\t# the pig will now drop the loot of a cow when killed, because it is indeed a lootable entity.",
+        "set block at event-location to chest",
+        "if block at event-location is lootable:",
+        "\tset loot table of block at event-location to \"minecraft:chests/simple_dungeon\"",
+        "\t# the chest will now generate the loot of a simple dungeon when opened, because it is indeed a lootable block.",
+        "set block at event-location to wool block",
+        "if block at event-location is lootable:",
+        "\t# uh oh, nothing will happen because a wool is not a lootable block."
+      ],
+      "patterns": [
+        "%blocks/entities% (is|are) lootable",
+        "%blocks/entities% (isn't|is not|aren't|are not) lootable"
+      ]
+    },
+    {
       "id": "CondCompare",
       "name": "Comparison",
       "since": "1.0",
@@ -4043,6 +4091,22 @@
         "force %displays% to be visible through (blocks|walls)",
         "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
       ]
+    },
+    {
+      "id": "EffGenerateLoot",
+      "name": "Generate Loot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Generates the loot in the specified inventories from a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin.",
+        "Note that if the inventory is full, it will cause warnings in the console due to over-filling the inventory."
+      ],
+      "examples": [
+        "generate loot of loot table \"minecraft:chests/simple_dungeon\" using loot context at player in {_inventory}",
+        "generate loot using \"minecraft:chests/shipwreck_supply\" in {_inventory}"
+      ],
+      "patterns": [
+        "generate [the] loot (of|using) %loottable% [(with|using) %-lootcontext%] in %inventories%"
+      ]
     }
   ],
   "expressions": [
@@ -4828,23 +4892,6 @@
       ]
     },
     {
-      "id": "ExprLoot",
-      "name": "Loot",
-      "since": "2.7",
-      "description": [
-        "The loot that will be generated in a 'loot generate' event."
-      ],
-      "examples": [
-        "on loot generate:",
-        "\tchance of %10",
-        "\tadd 64 diamonds",
-        "\tsend \"You hit the jackpot!!\""
-      ],
-      "patterns": [
-        "[the] loot"
-      ]
-    },
-    {
       "id": "ExprMe",
       "name": "Me",
       "since": "2.1.1",
@@ -5584,6 +5631,23 @@
       ]
     },
     {
+      "id": "ExprLoot",
+      "name": "Loot",
+      "since": "2.7",
+      "description": [
+        "The loot that will be generated in a 'loot generate' event."
+      ],
+      "examples": [
+        "on loot generate:",
+        "\tchance of %10",
+        "\tadd 64 diamonds to loot",
+        "\tsend \"You hit the jackpot!!\""
+      ],
+      "patterns": [
+        "[the] loot"
+      ]
+    },
+    {
       "id": "ExprAllGroups",
       "name": "All Groups",
       "since": "2.2-dev35",
@@ -5840,6 +5904,21 @@
       ],
       "patterns": [
         "(min:min[imum]|max[imum]) fish[ing] wait[ing] time"
+      ]
+    },
+    {
+      "id": "ExprLootContext",
+      "name": "Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "The loot context involved in the context create section."
+      ],
+      "examples": [
+        "set {_context} to a new loot context at {_location}:",
+        "\tbroadcast loot context"
+      ],
+      "patterns": [
+        "[the] loot[ ]context"
       ]
     },
     {
@@ -6959,6 +7038,58 @@
       "patterns": [
         "%itemtypes% with [the] item flag[s] %itemflags%",
         "%itemtypes% with [the] %itemflags% item flag[s]"
+      ]
+    },
+    {
+      "id": "ExprLootItems",
+      "name": "Loot of Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the items of a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin."
+      ],
+      "examples": [
+        "set {_items::*} to loot items of the loot table \"minecraft:chests/simple_dungeon\" with loot context {_context}",
+        "# this will set {_items::*} to the items that would be dropped from the simple dungeon loot table with the given loot context",
+        "",
+        "give player loot items of entity's loot table with loot context {_context}",
+        "# this will give the player the items that the entity would drop with the given loot context"
+      ],
+      "patterns": [
+        "[the] loot of %loottables% [(with|using) %-lootcontext%]",
+        "%loottables%'[s] loot [(with|using) %-lootcontext%]"
+      ]
+    },
+    {
+      "id": "ExprLootTableFromString",
+      "name": "Loot Table from Key",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot table from a namespaced key."
+      ],
+      "examples": [
+        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] %strings%"
+      ]
+    },
+    {
+      "id": "ExprSecCreateLootContext",
+      "name": "Create Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Create a loot context."
+      ],
+      "examples": [
+        "set {_player} to player",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to {_player}",
+        "\tset looted entity to last spawned pig",
+        "give player loot items of loot table \"minecraft:entities/iron_golem\" with loot context {_context}"
+      ],
+      "patterns": [
+        "[a] loot context %direction% %location%"
       ]
     },
     {
@@ -10399,6 +10530,121 @@
       ]
     },
     {
+      "id": "ExprLootContextEntity",
+      "name": "Looted Entity of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the looted entity of a loot context."
+      ],
+      "examples": [
+        "set {_entity} to looted entity of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] looted entity [of %lootcontexts%]",
+        "%lootcontexts%'[s] looted entity"
+      ]
+    },
+    {
+      "id": "ExprLootContextLocation",
+      "name": "Loot Location of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot location of a loot context."
+      ],
+      "examples": [
+        "set {_player} to player",
+        "set {_context} to a loot context at player:",
+        "\tif {_player} is in \"world_nether\":",
+        "\t\tset loot location to location of last spawned pig",
+        "send loot location of {_context} to player"
+      ],
+      "patterns": [
+        "[the] loot[ing] [context] location [of %lootcontexts%]",
+        "%lootcontexts%'[s] loot[ing] [context] location"
+      ]
+    },
+    {
+      "id": "ExprLootContextLooter",
+      "name": "Looter of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the looter of a loot context. Note that setting the looter will read the looter's tool enchantments (e.g. looting) when generating loot."
+      ],
+      "examples": [
+        "set {_killer} to looter of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] (looter|looting player) [of %lootcontexts%]",
+        "%lootcontexts%'[s] (looter|looting player)"
+      ]
+    },
+    {
+      "id": "ExprLootContextLuck",
+      "name": "Luck of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the luck of a loot context as a float. This represents the luck potion effect that an entity can have."
+      ],
+      "examples": [
+        "set {_luck} to loot luck value of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] loot[ing] [context] luck [value|factor] [of %lootcontexts%]",
+        "%lootcontexts%'[s] loot[ing] [context] luck [value|factor]"
+      ]
+    },
+    {
+      "id": "ExprLootTable",
+      "name": "Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot table of an entity or block.",
+        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
+        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
+      ],
+      "examples": [
+        "set loot table of event-entity to \"minecraft:entities/ghast\"",
+        "# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder",
+        "",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[ ]table[s]"
+      ]
+    },
+    {
+      "id": "ExprLootTableSeed",
+      "name": "Seed of Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the seed of a loot table. Setting the seed of a block or entity that does not have a loot table will not do anything."
+      ],
+      "examples": [
+        "set {_seed} loot table seed of block",
+        "set loot table seed of entity to 123456789"
+      ],
+      "patterns": [
+        "[the] loot[[ ]table] seed[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[[ ]table] seed[s]"
+      ]
+    },
+    {
       "id": "ExprBalance",
       "name": "Money",
       "since": "2.0, 2.5 (offline players)",
@@ -12981,24 +13227,6 @@
       ]
     },
     {
-      "id": "loot_generate",
-      "name": "On Loot Generate",
-      "since": "2.7",
-      "description": [
-        "Called when a loot table of an inventory is generated in the world.",
-        "For example, when opening a shipwreck chest."
-      ],
-      "examples": [
-        "on loot generate:",
-        "\tchance of 10%",
-        "\tadd 64 diamonds to the loot",
-        "\tsend \"You hit the jackpot at %event-location%!\""
-      ],
-      "patterns": [
-        "loot generat(e|ing)"
-      ]
-    },
-    {
       "id": "player_deep_sleep",
       "name": "On Player Deep Sleep",
       "since": "2.7",
@@ -13253,6 +13481,24 @@
       "patterns": [
         "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) of (%-inputkeys%|(an|any) input key)",
         "([player] %-inputkeys%|[an|any [player]] input key) (toggle|toggling|1:press[ing]|2:release|2:releasing)"
+      ]
+    },
+    {
+      "id": "loot_generate",
+      "name": "On Loot Generate",
+      "since": "2.7",
+      "description": [
+        "Called when a loot table of an inventory is generated in the world.",
+        "For example, when opening a shipwreck chest."
+      ],
+      "examples": [
+        "on loot generate:",
+        "\tchance of 10%",
+        "\tadd 64 diamonds to the loot",
+        "\tsend \"You hit the jackpot at %event-location%!\""
+      ],
+      "patterns": [
+        "loot generat(e|ing)"
       ]
     },
     {
@@ -14050,6 +14296,27 @@
       ],
       "patterns": [
         "left movement key, forward movement key, right movement key, backward key, left key, sprint key, forward key, right key, jumping key, sneaking key, jump key, sneak key, sprinting key, backward movement key"
+      ]
+    },
+    {
+      "id": "loottable",
+      "name": "Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Loot tables represent what items should be in naturally generated containers, what items should be dropped when killing a mob, or what items can be fished.",
+        "You can find more information about this in https://minecraft.wiki/w/Loot_table"
+      ]
+    },
+    {
+      "id": "lootcontext",
+      "name": "Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents additional information a loot table can use to modify its generated loot.",
+        "",
+        "Some loot tables will require some values (i.e. looter, location, looted entity) in a loot context when generating loot whereas others may not.",
+        "For example, the loot table of a simple dungeon chest will only require a location, whereas the loot table of a cow will require a looting player, looted entity, and location.",
+        "You can find more information about this in https://minecraft.wiki/w/Loot_context"
       ]
     },
     {
