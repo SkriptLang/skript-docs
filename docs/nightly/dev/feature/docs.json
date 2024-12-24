@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-854e06d",
+  "skriptVersion": "2.9.5-nightly-fc44b03",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3018,17 +3018,19 @@
     {
       "id": "EffHealth",
       "name": "Damage/Heal/Repair",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (damage cause)",
       "description": [
-        "Damage/Heal/Repair an entity, or item."
+        "Damage, heal, or repair an entity or item.",
+        "Servers running Spigot 1.20.4+ can optionally choose to specify a fake damage cause."
       ],
       "examples": [
         "damage player by 5 hearts",
+        "damage player by 3 hearts with fake cause fall",
         "heal the player",
         "repair tool of player"
       ],
       "patterns": [
-        "damage %livingentities/itemtypes/slots% by %number% [heart[s]] [with fake cause %-damagecause%]",
+        "damage %livingentities/itemtypes/slots% by %number% [heart[s]] [with [fake] [damage] cause %-damagecause%]",
         "heal %livingentities% [by %-number% [heart[s]]]",
         "repair %itemtypes/slots% [by %-number%]"
       ]
