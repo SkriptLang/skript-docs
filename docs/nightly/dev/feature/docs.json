@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-e899ac1",
+  "skriptVersion": "2.9.5-nightly-854e06d",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -190,6 +190,23 @@
       "patterns": [
         "%date% (was|were)( more|(n't| not) less) than %timespan% [ago]",
         "%date% (was|were)((n't| not) more| less) than %timespan% [ago]"
+      ]
+    },
+    {
+      "id": "CondElytraBoostConsume",
+      "name": "Will Consume Boosting Firework",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks to see if the firework used in an 'elytra boost' event will be consumed."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "[the] (boosting|used) firework will be consumed",
+        "[the] (boosting|used) firework (will not|won't) be consumed"
       ]
     },
     {
@@ -2729,6 +2746,23 @@
       ],
       "patterns": [
         "drop %itemtypes/experiences% [%directions% %locations%] [(1¦without velocity)]"
+      ]
+    },
+    {
+      "id": "EffElytraBoostConsume",
+      "name": "Consume Boosting Firework",
+      "since": "INSERT VERSION",
+      "description": [
+        "Prevent the firework used in an 'elytra boost' event to be consumed."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "(prevent|disallow) [the] (boosting|used) firework from being consumed",
+        "allow [the] (boosting|used) firework to be consumed"
       ]
     },
     {
@@ -13556,6 +13590,22 @@
       ],
       "patterns": [
         "vehicle move"
+      ]
+    },
+    {
+      "id": "elytra_boost",
+      "name": "On Elytra Boost",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player uses a firework to boost their fly speed when flying with an elytra."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "elytra boost"
       ]
     },
     {
