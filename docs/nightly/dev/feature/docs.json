@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-31626ba",
+  "skriptVersion": "2.9.5-nightly-192c134",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -1984,6 +1984,52 @@
       ]
     },
     {
+      "id": "CondItemEnchantmentGlint",
+      "name": "Item Has Enchantment Glint Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an item has the enchantment glint overridden, or is forced to glint or not."
+      ],
+      "examples": [
+        "if the player's tool has the enchantment glint override",
+        "\tsend \"Your tool has the enchantment glint override.\" to player",
+        "",
+        "if {_item} is forced to glint:",
+        "\tsend \"This item is forced to glint.\" to player",
+        "else if {_item} is forced to not glint:",
+        "\tsend \"This item is forced to not glint.\" to player",
+        "else:",
+        "\tsend \"This item does not have any glint override.\" to player"
+      ],
+      "patterns": [
+        "%itemtypes% (has|have) enchantment glint overrid(den|e)",
+        "%itemtypes% (doesn't|does not|do not|don't) have enchantment glint overrid(den|e)"
+      ]
+    },
+    {
+      "id": "CondItemEnchantmentGlint-2",
+      "name": "Item Has Enchantment Glint Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an item has the enchantment glint overridden, or is forced to glint or not."
+      ],
+      "examples": [
+        "if the player's tool has the enchantment glint override",
+        "\tsend \"Your tool has the enchantment glint override.\" to player",
+        "",
+        "if {_item} is forced to glint:",
+        "\tsend \"This item is forced to glint.\" to player",
+        "else if {_item} is forced to not glint:",
+        "\tsend \"This item is forced to not glint.\" to player",
+        "else:",
+        "\tsend \"This item does not have any glint override.\" to player"
+      ],
+      "patterns": [
+        "%itemtypes% (is|are) forced to [:not] glint",
+        "%itemtypes% (isn't|is not|aren't|are not) forced to [:not] glint"
+      ]
+    },
+    {
       "id": "CondLeashed",
       "name": "Is Leashed",
       "since": "2.5",
@@ -2883,6 +2929,24 @@
       "patterns": [
         "make %livingentities% attack %entity%",
         "force %livingentities% to attack %entity%"
+      ]
+    },
+    {
+      "id": "EffForceEnchantmentGlint",
+      "name": "Force Enchantment Glint",
+      "since": "INSERT VERSION",
+      "description": [
+        "Forces the items to glint or not, or removes its existing enchantment glint enforcement."
+      ],
+      "examples": [
+        "force {_items::*} to glint",
+        "force the player's tool to stop glinting"
+      ],
+      "patterns": [
+        "(force|make) %itemtypes% [to] [start] glint[ing]",
+        "(force|make) %itemtypes% [to] (not|stop) glint[ing]",
+        "(clear|delete|reset) [the] enchantment glint override of %itemtypes%",
+        "(clear|delete|reset) %itemtypes%'s enchantment glint override"
       ]
     },
     {
@@ -8497,6 +8561,21 @@
       ],
       "patterns": [
         "%itemtype% with [custom] model data %number%"
+      ]
+    },
+    {
+      "id": "ExprItemWithEnchantmentGlint",
+      "name": "Item with Enchantment Glint",
+      "since": "INSERT VERSION",
+      "description": [
+        "Get an item with or without enchantment glint."
+      ],
+      "examples": [
+        "set {_item with glint} to diamond with enchantment glint",
+        "set {_item without glint} to diamond without enchantment glint"
+      ],
+      "patterns": [
+        "%itemtypes% with[:out] [enchant[ment]] glint"
       ]
     },
     {
