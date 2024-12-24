@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-084bc7f",
+  "skriptVersion": "2.9.5-nightly-a91c968",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -10173,6 +10173,62 @@
       ]
     },
     {
+      "id": "ExprVillagerLevel",
+      "name": "Villager Level",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the level of a villager.",
+        "Level must be between 1 and 5, with 1 being the default level.",
+        "Do note when a villager's level is 1, they may lose their profession."
+      ],
+      "examples": [
+        "set {_level} to villager level of {_villager}",
+        "set villager level of last spawned villager to 2",
+        "add 1 to villager level of target entity",
+        "remove 1 from villager level of event-entity",
+        "reset villager level of event-entity"
+      ],
+      "patterns": [
+        "[the] villager level of %livingentities%",
+        "%livingentities%'[s] villager level"
+      ]
+    },
+    {
+      "id": "ExprVillagerProfession",
+      "name": "Villager Profession",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the profession of a villager."
+      ],
+      "examples": [
+        "set {_p} to villager profession of event-entity",
+        "villager profession of event-entity = nitwit profession",
+        "set villager profession of {_villager} to librarian profession",
+        "delete villager profession of event-entity"
+      ],
+      "patterns": [
+        "[the] villager profession of %livingentities%",
+        "%livingentities%'[s] villager profession"
+      ]
+    },
+    {
+      "id": "ExprVillagerType",
+      "name": "Villager Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the type of a villager. This usually represents the biome the villager is from."
+      ],
+      "examples": [
+        "set {_type} to villager type of {_villager}",
+        "villager type of {_villager} = plains",
+        "set villager type of event-entity to plains"
+      ],
+      "patterns": [
+        "[the] villager type of %livingentities%",
+        "%livingentities%'[s] villager type"
+      ]
+    },
+    {
       "id": "ExprWeather",
       "name": "Weather",
       "since": "1.0",
@@ -14317,6 +14373,17 @@
       ]
     },
     {
+      "id": "villagerprofession",
+      "name": "Villager Profession",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different professions of villagers."
+      ],
+      "patterns": [
+        "armorer, armorer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
+      ]
+    },
+    {
       "id": "entitysnapshot",
       "name": "Entity Snapshot",
       "since": "INSERT VERSION",
@@ -14696,6 +14763,17 @@
       ],
       "patterns": [
         "badlands, badlands forest, bamboo jungle, basalt deltas, beach, birch forest, black forest, cherry grove, cold beach, cold ocean, cold taiga, crimson forest, dark forest, deep cold ocean, deep dark, deep frozen ocean, deep lukewarm ocean, deep ocean, desert, dripstone caves, end barrens, end highlands, end midlands, eroded badlands, eroded mesa, flower forest, forest, frozen ocean, frozen peaks, frozen river, giant spruce taiga, giant tree taiga, gravelly mountains, grove, hell, ice plains spikes, ice plains with spikes, ice spikes, jagged peaks, jungle, jungle edge, lukewarm ocean, lush caves, mangrove swamp, marsh, meadow, mesa, mesa forest, mountains, mushroom fields, mushroom island, nether, nether wastes, ocean, old growth birch forest, old growth pine taiga, old growth spruce taiga, plains, river, roofed forest, savanna, savanna plateau, sea, shattered savanna, sky, small end islands, snowy beach, snowy plains, snowy slopes, snowy taiga, snowy tundra, soul sand valley, sparse jungle, spiked ice plains, stone shore, stony peaks, stony shore, sunflower plains, swamp, swampland, taiga, tall birch forest, the end, the void, void, warm ocean, warped forest, windswept forest, windswept gravelly hills, windswept hills, windswept savanna, wooded badlands, wooded mesa, wooded mountains"
+      ]
+    },
+    {
+      "id": "villagertype",
+      "name": "Villager Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different types of villagers. These are usually the biomes a villager can be from."
+      ],
+      "patterns": [
+        "desert, jungle, plains, savanna, snow, swamp, taiga"
       ]
     },
     {
