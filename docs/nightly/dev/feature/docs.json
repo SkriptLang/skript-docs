@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-b123b88",
+  "skriptVersion": "2.9.5-nightly-31626ba",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2314,6 +2314,24 @@
         "unban %players% by IP",
         "IP(-| )ban [kick:and kick] %players% [(by reason of|because [of]|on account of|due to) %-string%] [for %-timespan%]",
         "(IP(-| )unban|un[-]IP[-]ban) %players%"
+      ]
+    },
+    {
+      "id": "EffBlockUpdate",
+      "name": "Update Block",
+      "since": "INSERT VERSION",
+      "description": [
+        "Updates the blocks by setting them to a selected block",
+        "Using 'without physics' will not send updates to the surrounding blocks of the blocks being set.",
+        "Example: Updating a block next to a sand block in the air 'without physics' will not cause the sand block to fall."
+      ],
+      "examples": [
+        "update {_blocks::*} as gravel",
+        "update {_blocks::*} to be sand without physics updates",
+        "update {_blocks::*} as stone without neighbouring updates"
+      ],
+      "patterns": [
+        "update %blocks% (as|to be) %blockdata% [physics:without [neighbo[u]r[ing]|adjacent] [physic[s]] update[s]]"
       ]
     },
     {
