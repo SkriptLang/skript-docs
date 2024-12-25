@@ -1,0 +1,82 @@
+<h1 id="nav-title">Get started</h1>
+
+<div id="content-no-docs" class="no-left-panel">
+  <h2 class="title">Requirements</h2>
+  <p class="subtitle">
+    Skript requires Spigot to work. You heard it right, CraftBukkit does not work. <a
+      href="https://papermc.io/">Paper</a>, which is a fork of Spigot, is recommended; it is required for some parts of
+    Skript to be available.
+  </p>
+  <p class="subtitle">
+    Skript supports only the latest patch versions of Minecraft. For example, this means that if 1.16.5 is supported,
+    then 1.16.4 is not. Testing with all old patch versions is not feasible for us.
+  </p>
+  <p class="subtitle">
+    Minecraft 1.12 and earlier are not, and will not be supported. New Minecraft versions will be supported as soon as
+    possible.
+  </p>
+  <h2 class="title">Downloading Skript</h2>
+  <p class="subtitle">
+    You can find the downloads for each version with their release notes in the <a
+      href="https://github.com/SkriptLang/Skript/releases">releases page</a> (scroll down to the Assets section and
+    download the <code>.jar</code> file).
+  </p>
+  <p class="subtitle">
+    Two major feature updates are expected each year in January and July, with monthly patches occurring in between. For
+    full details, please review our <a
+      href="https://github.com/SkriptLang/Skript/blob/master/CLOCKWORK_RELEASE_MODEL.md">release model</a>.
+  </p>
+  <h2 class="title">Adding plugin</h2>
+  <p class="subtitle">
+    Follow these simple steps to add Skript plugin to the Paper server:
+  </p>
+  <!-- Sorry, for the !important inline styling, but the subtitle class already overrides the padding and I am not going to do the css clean-up now. -->
+  <ol class="subtitle" style="padding-left: 52px !important;">
+    <li>
+      Ensure the file you have downloaded ends in <code>.jar</code>. Some plugins also distribute as <code>.zip</code>
+      files, in which case you will need to extract the file and locate the <code>.jar</code> for your platform.
+    </li>
+    <li>
+      Once you have the plugin downloaded locally, locate the <code>plugins</code> folder from the root directory of
+      your Paper server.
+    </li>
+    <li>
+      Drag and drop the plugin file (<code>.jar</code>) into the <code>plugins</code> folder.
+    </li>
+    <li>
+      Restart your server. The plugin should load.
+    </li>
+  </ol>
+
+  <p class="subtitle">
+    For more information see <a href="https://docs.papermc.io/paper/adding-plugins">the Paper tutorial</a>.
+  </p>
+  <h2 class="title">Add the frist script</h2>
+  <p class="subtitle">
+    Once you have restarted server, you should see the folder <code>scripts</code> inside of <code>plugins/Script</code>
+    folder.
+  </p>
+  <p class="subtitle">
+    Just create <code>a-new-file.sk</code> file with a following content:
+  </p>
+  <pre class="box skript-code-block left-margin">
+      on click: 
+      &nbsp;&nbsp;message "Hello player!" to player</pre>
+  <p class="subtitle">
+    For more examples see the <code>examples</code> folder.
+  </p>
+
+  <div id="info" class="grid-container padding">
+    <div class="grid-item">
+      <p class="box-title">Previous step</p>
+      <p class="box placeholder"><a class="link" href="index.html">Introduction</a></p>
+    </div>
+    <div class="grid-item">
+    </div>
+    <div class="grid-item">
+      <p class="box-title">Next step</p>
+      <p class="box placeholder"><a class="link" href="text.html">Text and formatting</a></p>
+    </div>
+  </div>
+  <div style="padding-top: 32px;"></div> <!-- Space -->
+</div>

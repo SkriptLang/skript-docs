@@ -21,7 +21,8 @@ You can find more about the docs templates in [docs/templates](docs/templates/RE
 Currently, the docs files is generated using Skript plugin.
 
 1. You will need to create a directory named `docs/templates` in `plugins/Skript/`, and copy everything from [docs/templates folder](docs/templates) into that directory.
-2. Execute the command `/sk gen-docs`.
-3. The `docs/` directory will be created _(if not created already)_ in `plugins/Skript` containing the website's files.
-4. Open `index.html` and browse the documentation.
-5. _(Optionally)_ Add this system property `-Dskript.forceregisterhooks` in your server startup script (before the -jar property) to force generating hooks docs.
+2. Launch the server ([Paper](https://papermc.io/), which is a fork of Spigot, is recommended).
+3. Execute the command `skript gen-docs` (formerly `/sk gen-docs`)
+4. The `docs/` directory will be created _(if not created already)_ in `plugins/Skript` containing the website's files.
+5. Open `index.html` and browse the documentation.
+6. _(Optionally)_ Add this system property `-Dskript.forceregisterhooks` in your server startup script (before the -jar property) to force generating hooks docs.
