@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-d61d686",
+  "skriptVersion": "2.9.5-nightly-799e5d0",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -190,6 +190,23 @@
       "patterns": [
         "%date% (was|were)( more|(n't| not) less) than %timespan% [ago]",
         "%date% (was|were)((n't| not) more| less) than %timespan% [ago]"
+      ]
+    },
+    {
+      "id": "CondElytraBoostConsume",
+      "name": "Will Consume Boosting Firework",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks to see if the firework used in an 'elytra boost' event will be consumed."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "[the] (boosting|used) firework will be consumed",
+        "[the] (boosting|used) firework (will not|won't) be consumed"
       ]
     },
     {
@@ -1984,6 +2001,52 @@
       ]
     },
     {
+      "id": "CondItemEnchantmentGlint",
+      "name": "Item Has Enchantment Glint Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an item has the enchantment glint overridden, or is forced to glint or not."
+      ],
+      "examples": [
+        "if the player's tool has the enchantment glint override",
+        "\tsend \"Your tool has the enchantment glint override.\" to player",
+        "",
+        "if {_item} is forced to glint:",
+        "\tsend \"This item is forced to glint.\" to player",
+        "else if {_item} is forced to not glint:",
+        "\tsend \"This item is forced to not glint.\" to player",
+        "else:",
+        "\tsend \"This item does not have any glint override.\" to player"
+      ],
+      "patterns": [
+        "%itemtypes% (has|have) enchantment glint overrid(den|e)",
+        "%itemtypes% (doesn't|does not|do not|don't) have enchantment glint overrid(den|e)"
+      ]
+    },
+    {
+      "id": "CondItemEnchantmentGlint-2",
+      "name": "Item Has Enchantment Glint Override",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an item has the enchantment glint overridden, or is forced to glint or not."
+      ],
+      "examples": [
+        "if the player's tool has the enchantment glint override",
+        "\tsend \"Your tool has the enchantment glint override.\" to player",
+        "",
+        "if {_item} is forced to glint:",
+        "\tsend \"This item is forced to glint.\" to player",
+        "else if {_item} is forced to not glint:",
+        "\tsend \"This item is forced to not glint.\" to player",
+        "else:",
+        "\tsend \"This item does not have any glint override.\" to player"
+      ],
+      "patterns": [
+        "%itemtypes% (is|are) forced to [:not] glint",
+        "%itemtypes% (isn't|is not|aren't|are not) forced to [:not] glint"
+      ]
+    },
+    {
       "id": "CondLeashed",
       "name": "Is Leashed",
       "since": "2.5",
@@ -2154,6 +2217,54 @@
       ]
     },
     {
+      "id": "CondHasLootTable",
+      "name": "Has Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an entity or block has a loot table. The loot tables of chests will be deleted when the chest is opened or broken."
+      ],
+      "examples": [
+        "set event-block to chest",
+        "if event-block has a loot table:",
+        "\t# this will never happen, because it doesn't have a loot table.",
+        "",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\"",
+        "",
+        "if event-block has a loot table:",
+        "\t# this will happen, because it now has a loot table."
+      ],
+      "patterns": [
+        "%blocks/entities% (has|have) [a] loot[ ]table",
+        "%blocks/entities% (doesn't|does not|do not|don't) have [a] loot[ ]table"
+      ]
+    },
+    {
+      "id": "CondIsLootable",
+      "name": "Is Lootable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an entity or block is lootable. Lootables are entities or blocks that can have a loot table."
+      ],
+      "examples": [
+        "spawn a pig at event-location",
+        "set {_pig} to last spawned entity",
+        "if {_pig} is lootable:",
+        "\tset loot table of {_pig} to \"minecraft:entities/cow\"",
+        "\t# the pig will now drop the loot of a cow when killed, because it is indeed a lootable entity.",
+        "set block at event-location to chest",
+        "if block at event-location is lootable:",
+        "\tset loot table of block at event-location to \"minecraft:chests/simple_dungeon\"",
+        "\t# the chest will now generate the loot of a simple dungeon when opened, because it is indeed a lootable block.",
+        "set block at event-location to wool block",
+        "if block at event-location is lootable:",
+        "\t# uh oh, nothing will happen because a wool is not a lootable block."
+      ],
+      "patterns": [
+        "%blocks/entities% (is|are) lootable",
+        "%blocks/entities% (isn't|is not|aren't|are not) lootable"
+      ]
+    },
+    {
       "id": "CondCompare",
       "name": "Comparison",
       "since": "1.0",
@@ -2266,6 +2377,24 @@
         "unban %players% by IP",
         "IP(-| )ban [kick:and kick] %players% [(by reason of|because [of]|on account of|due to) %-string%] [for %-timespan%]",
         "(IP(-| )unban|un[-]IP[-]ban) %players%"
+      ]
+    },
+    {
+      "id": "EffBlockUpdate",
+      "name": "Update Block",
+      "since": "INSERT VERSION",
+      "description": [
+        "Updates the blocks by setting them to a selected block",
+        "Using 'without physics' will not send updates to the surrounding blocks of the blocks being set.",
+        "Example: Updating a block next to a sand block in the air 'without physics' will not cause the sand block to fall."
+      ],
+      "examples": [
+        "update {_blocks::*} as gravel",
+        "update {_blocks::*} to be sand without physics updates",
+        "update {_blocks::*} as stone without neighbouring updates"
+      ],
+      "patterns": [
+        "update %blocks% (as|to be) %blockdata% [physics:without [neighbo[u]r[ing]|adjacent] [physic[s]] update[s]]"
       ]
     },
     {
@@ -2620,6 +2749,23 @@
       ]
     },
     {
+      "id": "EffElytraBoostConsume",
+      "name": "Consume Boosting Firework",
+      "since": "INSERT VERSION",
+      "description": [
+        "Prevent the firework used in an 'elytra boost' event to be consumed."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "(prevent|disallow) [the] (boosting|used) firework from being consumed",
+        "allow [the] (boosting|used) firework to be consumed"
+      ]
+    },
+    {
       "id": "EffEnchant",
       "name": "Enchant/Disenchant",
       "since": "2.0",
@@ -2820,6 +2966,24 @@
       ]
     },
     {
+      "id": "EffForceEnchantmentGlint",
+      "name": "Force Enchantment Glint",
+      "since": "INSERT VERSION",
+      "description": [
+        "Forces the items to glint or not, or removes its existing enchantment glint enforcement."
+      ],
+      "examples": [
+        "force {_items::*} to glint",
+        "force the player's tool to stop glinting"
+      ],
+      "patterns": [
+        "(force|make) %itemtypes% [to] [start] glint[ing]",
+        "(force|make) %itemtypes% [to] (not|stop) glint[ing]",
+        "(clear|delete|reset) [the] enchantment glint override of %itemtypes%",
+        "(clear|delete|reset) %itemtypes%'s enchantment glint override"
+      ]
+    },
+    {
       "id": "EffGlowingText",
       "name": "Make Sign Glow",
       "since": "2.8.0",
@@ -2854,17 +3018,19 @@
     {
       "id": "EffHealth",
       "name": "Damage/Heal/Repair",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (damage cause)",
       "description": [
-        "Damage/Heal/Repair an entity, or item."
+        "Damage, heal, or repair an entity or item.",
+        "Servers running Spigot 1.20.4+ can optionally choose to specify a fake damage cause."
       ],
       "examples": [
         "damage player by 5 hearts",
+        "damage player by 3 hearts with fake cause fall",
         "heal the player",
         "repair tool of player"
       ],
       "patterns": [
-        "damage %livingentities/itemtypes/slots% by %number% [heart[s]] [with fake cause %-damagecause%]",
+        "damage %livingentities/itemtypes/slots% by %number% [heart[s]] [with [fake] [damage] cause %-damagecause%]",
         "heal %livingentities% [by %-number% [heart[s]]]",
         "repair %itemtypes/slots% [by %-number%]"
       ]
@@ -3585,23 +3751,6 @@
       ]
     },
     {
-      "id": "EffShoot",
-      "name": "Shoot",
-      "since": "1.4",
-      "description": [
-        "Shoots a projectile (or any other entity) from a given entity."
-      ],
-      "examples": [
-        "shoot an arrow",
-        "make the player shoot a creeper at speed 10",
-        "shoot a pig from the creeper"
-      ],
-      "patterns": [
-        "shoot %entitydatas% [from %livingentities/locations%] [(at|with) (speed|velocity) %-number%] [%-direction%]",
-        "(make|let) %livingentities/locations% shoot %entitydatas% [(at|with) (speed|velocity) %-number%] [%-direction%]"
-      ]
-    },
-    {
       "id": "EffSilence",
       "name": "Silence Entity",
       "since": "2.5",
@@ -4042,6 +4191,22 @@
         "make %displays% visible through (blocks|walls)",
         "force %displays% to be visible through (blocks|walls)",
         "(prevent|block) %displays% from being (visible|seen) through (blocks|walls)"
+      ]
+    },
+    {
+      "id": "EffGenerateLoot",
+      "name": "Generate Loot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Generates the loot in the specified inventories from a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin.",
+        "Note that if the inventory is full, it will cause warnings in the console due to over-filling the inventory."
+      ],
+      "examples": [
+        "generate loot of loot table \"minecraft:chests/simple_dungeon\" using loot context at player in {_inventory}",
+        "generate loot using \"minecraft:chests/shipwreck_supply\" in {_inventory}"
+      ],
+      "patterns": [
+        "generate [the] loot (of|using) %loottable% [(with|using) %-lootcontext%] in %inventories%"
       ]
     }
   ],
@@ -4828,23 +4993,6 @@
       ]
     },
     {
-      "id": "ExprLoot",
-      "name": "Loot",
-      "since": "2.7",
-      "description": [
-        "The loot that will be generated in a 'loot generate' event."
-      ],
-      "examples": [
-        "on loot generate:",
-        "\tchance of %10",
-        "\tadd 64 diamonds",
-        "\tsend \"You hit the jackpot!!\""
-      ],
-      "patterns": [
-        "[the] loot"
-      ]
-    },
-    {
       "id": "ExprMe",
       "name": "Me",
       "since": "2.1.1",
@@ -5584,6 +5732,23 @@
       ]
     },
     {
+      "id": "ExprLoot",
+      "name": "Loot",
+      "since": "2.7",
+      "description": [
+        "The loot that will be generated in a 'loot generate' event."
+      ],
+      "examples": [
+        "on loot generate:",
+        "\tchance of %10",
+        "\tadd 64 diamonds to loot",
+        "\tsend \"You hit the jackpot!!\""
+      ],
+      "patterns": [
+        "[the] loot"
+      ]
+    },
+    {
       "id": "ExprAllGroups",
       "name": "All Groups",
       "since": "2.2-dev35",
@@ -5651,7 +5816,7 @@
       "name": "Experience Cooldown Change Reason",
       "since": "INSERT VERSION",
       "description": [
-        "The <a href='classes.html#experiencechangereason'>experience change reason</a> within in an<a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
+        "The <a href='classes.html#experiencechangereason'>experience change reason</a> within an <a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
       ],
       "examples": [
         "on player experience cooldown change:",
@@ -5840,6 +6005,21 @@
       ],
       "patterns": [
         "(min:min[imum]|max[imum]) fish[ing] wait[ing] time"
+      ]
+    },
+    {
+      "id": "ExprLootContext",
+      "name": "Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "The loot context involved in the context create section."
+      ],
+      "examples": [
+        "set {_context} to a new loot context at {_location}:",
+        "\tbroadcast loot context"
+      ],
+      "patterns": [
+        "[the] loot[ ]context"
       ]
     },
     {
@@ -6962,6 +7142,58 @@
       ]
     },
     {
+      "id": "ExprLootItems",
+      "name": "Loot of Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the items of a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin."
+      ],
+      "examples": [
+        "set {_items::*} to loot items of the loot table \"minecraft:chests/simple_dungeon\" with loot context {_context}",
+        "# this will set {_items::*} to the items that would be dropped from the simple dungeon loot table with the given loot context",
+        "",
+        "give player loot items of entity's loot table with loot context {_context}",
+        "# this will give the player the items that the entity would drop with the given loot context"
+      ],
+      "patterns": [
+        "[the] loot of %loottables% [(with|using) %-lootcontext%]",
+        "%loottables%'[s] loot [(with|using) %-lootcontext%]"
+      ]
+    },
+    {
+      "id": "ExprLootTableFromString",
+      "name": "Loot Table from Key",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot table from a namespaced key."
+      ],
+      "examples": [
+        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] %strings%"
+      ]
+    },
+    {
+      "id": "ExprSecCreateLootContext",
+      "name": "Create Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Create a loot context."
+      ],
+      "examples": [
+        "set {_player} to player",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to {_player}",
+        "\tset looted entity to last spawned pig",
+        "give player loot items of loot table \"minecraft:entities/iron_golem\" with loot context {_context}"
+      ],
+      "patterns": [
+        "[a] loot context %direction% %location%"
+      ]
+    },
+    {
       "id": "ExprBlocksInRegion",
       "name": "Blocks in Region",
       "since": "2.1",
@@ -7420,25 +7652,6 @@
       ]
     },
     {
-      "id": "ExprBurnCookTime",
-      "name": "Burn/Cook Time",
-      "since": "2.3",
-      "description": [
-        "The time a furnace takes to burn an item in a <a href='events.html#fuel_burn'>fuel burn</a> event.",
-        "Can also be used to change the burn/cook time of a placed furnace."
-      ],
-      "examples": [
-        "on fuel burn:",
-        "\tif fuel slot is coal:",
-        "\t\tset burning time to 1 tick"
-      ],
-      "patterns": [
-        "[the] burn[ing] time",
-        "[the] (burn|1:cook)[ing] time of %blocks%",
-        "%blocks%'[s] (burn|1:cook)[ing] time"
-      ]
-    },
-    {
       "id": "ExprCharacterFromCodepoint",
       "name": "Character from Codepoint",
       "since": "2.9.0",
@@ -7831,6 +8044,27 @@
       ]
     },
     {
+      "id": "ExprEntitySnapshot",
+      "name": "Entity Snapshot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the entity snapshot of a provided entity, which includes all the data associated with it (name, health, attributes, etc.) at the time this expression is used.",
+        "Individual attributes of a snapshot cannot be modified or retrieved."
+      ],
+      "examples": [
+        "spawn a pig at location(0, 0, 0):",
+        "\tset the max health of entity to 20",
+        "\tset the health of entity to 20",
+        "\tset {_snapshot} to the entity snapshot of entity",
+        "\tclear entity",
+        "spawn {_snapshot} at location(0, 0, 0)"
+      ],
+      "patterns": [
+        "[the] entity snapshot of %entities/entitydatas%",
+        "%entities/entitydatas%'[s] entity snapshot"
+      ]
+    },
+    {
       "id": "ExprEntityTamer",
       "name": "Entity Owner",
       "since": "2.5",
@@ -8048,30 +8282,6 @@
       "patterns": [
         "[the] freeze time of %entities%",
         "%entities%'[s] freeze time"
-      ]
-    },
-    {
-      "id": "ExprFurnaceSlot",
-      "name": "Furnace Slot",
-      "since": "1.0, 2.8.0 (syntax rework)",
-      "description": [
-        "A slot of a furnace, i.e. either the ore, fuel or result slot.",
-        "Remember to use '<a href='#ExprBlock'>block</a>' and not <code>furnace</code>, as <code>furnace</code> is not an existing expression.",
-        "Note that <code>the result</code> and <code>the result slot</code> refer to separate things. <code>the result</code> is the product in a smelt event and <code>the result slot</code> is the output slot of a furnace (where <code>the result</code> will end up).",
-        "Note that if the result in a smelt event is changed to an item that differs in type from the items currently in the result slot, the smelting will fail to complete (the item will attempt to smelt itself again).",
-        "Note that if values other than <code>the result</code> are changed, event values may not accurately reflect the actual items in a furnace.",
-        "Thus you may wish to use the event block in this case (e.g. <code>the fuel slot of the event-block</code>) to get accurate values if needed."
-      ],
-      "examples": [
-        "set the fuel slot of the clicked block to a lava bucket",
-        "set the block's ore slot to 64 iron ore",
-        "give the result of the block to the player",
-        "clear the result slot of the block"
-      ],
-      "patterns": [
-        "[the] (0:ore slot|1:fuel slot|2:result [5:slot])",
-        "[the] (0:ore|1:fuel|2:result) slot[s] of %blocks%",
-        "%blocks%'[s] (0:ore|1:fuel|2:result) slot[s]"
       ]
     },
     {
@@ -8327,6 +8537,21 @@
       ],
       "patterns": [
         "%itemtype% with [custom] model data %number%"
+      ]
+    },
+    {
+      "id": "ExprItemWithEnchantmentGlint",
+      "name": "Item with Enchantment Glint",
+      "since": "INSERT VERSION",
+      "description": [
+        "Get an item with or without enchantment glint."
+      ],
+      "examples": [
+        "set {_item with glint} to diamond with enchantment glint",
+        "set {_item without glint} to diamond without enchantment glint"
+      ],
+      "patterns": [
+        "%itemtypes% with[:out] [enchant[ment]] glint"
       ]
     },
     {
@@ -9492,6 +9717,34 @@
       ]
     },
     {
+      "id": "ExprSpawnEggEntity",
+      "name": "Spawn Egg Entity",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets or sets the entity snapshot that the provided spawn eggs will spawn when used."
+      ],
+      "examples": [
+        "set {_item} to a zombie spawn egg",
+        "broadcast the spawn egg entity of {_item}",
+        "",
+        "spawn a pig at location(0,0,0):",
+        "\tset the max health of entity to 20",
+        "\tset the health of entity to 20",
+        "\tset {_snapshot} to the entity snapshot of entity",
+        "\tclear entity",
+        "set the spawn egg entity of {_item} to {_snapshot}",
+        "if the spawn egg entity of {_item} is {_snapshot}: # Minecraft 1.20.5+",
+        "",
+        "set the spawn egg entity of {_item} to (random element out of all entities)",
+        "",
+        "set the spawn egg entity of {_item} to a zombie"
+      ],
+      "patterns": [
+        "[the] spawn egg entity of %itemstacks/itemtypes/slots%",
+        "%itemstacks/itemtypes/slots%'[s] spawn egg entity"
+      ]
+    },
+    {
       "id": "ExprSpawnerType",
       "name": "Spawner Type",
       "since": "2.4, 2.9.2 (trial spawner)",
@@ -9910,6 +10163,62 @@
       "patterns": [
         "[the] velocit(y|ies) of %entities%",
         "%entities%'[s] velocit(y|ies)"
+      ]
+    },
+    {
+      "id": "ExprVillagerLevel",
+      "name": "Villager Level",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the level of a villager.",
+        "Level must be between 1 and 5, with 1 being the default level.",
+        "Do note when a villager's level is 1, they may lose their profession."
+      ],
+      "examples": [
+        "set {_level} to villager level of {_villager}",
+        "set villager level of last spawned villager to 2",
+        "add 1 to villager level of target entity",
+        "remove 1 from villager level of event-entity",
+        "reset villager level of event-entity"
+      ],
+      "patterns": [
+        "[the] villager level of %livingentities%",
+        "%livingentities%'[s] villager level"
+      ]
+    },
+    {
+      "id": "ExprVillagerProfession",
+      "name": "Villager Profession",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the profession of a villager."
+      ],
+      "examples": [
+        "set {_p} to villager profession of event-entity",
+        "villager profession of event-entity = nitwit profession",
+        "set villager profession of {_villager} to librarian profession",
+        "delete villager profession of event-entity"
+      ],
+      "patterns": [
+        "[the] villager profession of %livingentities%",
+        "%livingentities%'[s] villager profession"
+      ]
+    },
+    {
+      "id": "ExprVillagerType",
+      "name": "Villager Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the type of a villager. This usually represents the biome the villager is from."
+      ],
+      "examples": [
+        "set {_type} to villager type of {_villager}",
+        "villager type of {_villager} = plains",
+        "set villager type of event-entity to plains"
+      ],
+      "patterns": [
+        "[the] villager type of %livingentities%",
+        "%livingentities%'[s] villager type"
       ]
     },
     {
@@ -10347,6 +10656,201 @@
       "patterns": [
         "[the] [current] (inputs|input keys) of %players%",
         "%players%'[s] [current] (inputs|input keys)"
+      ]
+    },
+    {
+      "id": "ExprFurnaceEventItems",
+      "name": "Furnace Event Items",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different items in furnace events.",
+        "Only 'smelting item' can be changed."
+      ],
+      "examples": [
+        "on furnace smelt:",
+        "\tbroadcast smelted item",
+        "\t# Or 'result'",
+        "on furnace extract:",
+        "\tbroadcast extracted item",
+        "on fuel burn:",
+        "\tbroadcast burned fuel",
+        "on smelting start:",
+        "\tbroadcast smelting item",
+        "\tclear smelting item"
+      ],
+      "patterns": [
+        "[the] (smelted item|result[ item])",
+        "[the] extracted item[s]",
+        "[the] smelting item",
+        "[the] burned (fuel|item)"
+      ]
+    },
+    {
+      "id": "ExprFurnaceSlot",
+      "name": "Furnace Slot",
+      "since": "1.0, 2.8.0 (syntax rework)",
+      "description": [
+        "A slot of a furnace, i.e. either the ore, fuel or result slot."
+      ],
+      "examples": [
+        "set the fuel slot of the clicked block to a lava bucket",
+        "set the block's ore slot to 64 iron ore",
+        "clear the result slot of the block",
+        "on smelt:",
+        "\tif the fuel slot is charcoal:",
+        "\t\tadd 5 seconds to the burn time"
+      ],
+      "patterns": [
+        "[the] (ore|input) slot[s] [of %blocks%]",
+        "%blocks%'[s] (ore|input) slot[s]",
+        "[the] fuel slot[s] [of %blocks%]",
+        "%blocks%'[s] fuel slot[s]",
+        "[the] (result|output) slot[s] [of %blocks%]",
+        "%blocks%'[s] (result|output) slot[s]"
+      ]
+    },
+    {
+      "id": "ExprFurnaceTime",
+      "name": "Furnace Times",
+      "since": "INSERT VERSION",
+      "description": [
+        "The cook time, total cook time, and burn time of a furnace. Can be changed.",
+        "<ul>",
+        "<li>cook time: The amount of time an item has been smelting for.</li>",
+        "<li>total cook time: The amount of time required to finish smelting an item.</li>",
+        "<li>burn time: The amount of time left for the current fuel until consumption of another fuel item.</li>",
+        "</ul>"
+      ],
+      "examples": [
+        "set the cooking time of {_block} to 10",
+        "set the total cooking time of {_block} to 50",
+        "set the fuel burning time of {_block} to 100",
+        "on smelt:",
+        "\tif the fuel slot is charcoal:",
+        "\t\tadd 5 seconds to the fuel burn time"
+      ],
+      "patterns": [
+        "[the] [furnace] cook[ing] time [of %blocks%]",
+        "%blocks%'[s]cook[ing] time",
+        "[the] [furnace] total cook[ing] time [of %blocks%]",
+        "%blocks%'[s]total cook[ing] time",
+        "[the] [furnace] fuel burn[ing] time [of %blocks%]",
+        "%blocks%'[s]fuel burn[ing] time"
+      ]
+    },
+    {
+      "id": "ExprLootContextEntity",
+      "name": "Looted Entity of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the looted entity of a loot context."
+      ],
+      "examples": [
+        "set {_entity} to looted entity of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] looted entity [of %lootcontexts%]",
+        "%lootcontexts%'[s] looted entity"
+      ]
+    },
+    {
+      "id": "ExprLootContextLocation",
+      "name": "Loot Location of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot location of a loot context."
+      ],
+      "examples": [
+        "set {_player} to player",
+        "set {_context} to a loot context at player:",
+        "\tif {_player} is in \"world_nether\":",
+        "\t\tset loot location to location of last spawned pig",
+        "send loot location of {_context} to player"
+      ],
+      "patterns": [
+        "[the] loot[ing] [context] location [of %lootcontexts%]",
+        "%lootcontexts%'[s] loot[ing] [context] location"
+      ]
+    },
+    {
+      "id": "ExprLootContextLooter",
+      "name": "Looter of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the looter of a loot context. Note that setting the looter will read the looter's tool enchantments (e.g. looting) when generating loot."
+      ],
+      "examples": [
+        "set {_killer} to looter of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] (looter|looting player) [of %lootcontexts%]",
+        "%lootcontexts%'[s] (looter|looting player)"
+      ]
+    },
+    {
+      "id": "ExprLootContextLuck",
+      "name": "Luck of Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the luck of a loot context as a float. This represents the luck potion effect that an entity can have."
+      ],
+      "examples": [
+        "set {_luck} to loot luck value of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
+      ],
+      "patterns": [
+        "[the] loot[ing] [context] luck [value|factor] [of %lootcontexts%]",
+        "%lootcontexts%'[s] loot[ing] [context] luck [value|factor]"
+      ]
+    },
+    {
+      "id": "ExprLootTable",
+      "name": "Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the loot table of an entity or block.",
+        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
+        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
+      ],
+      "examples": [
+        "set loot table of event-entity to \"minecraft:entities/ghast\"",
+        "# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder",
+        "",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[ ]table[s]"
+      ]
+    },
+    {
+      "id": "ExprLootTableSeed",
+      "name": "Seed of Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the seed of a loot table. Setting the seed of a block or entity that does not have a loot table will not do anything."
+      ],
+      "examples": [
+        "set {_seed} loot table seed of block",
+        "set loot table seed of entity to 123456789"
+      ],
+      "patterns": [
+        "[the] loot[[ ]table] seed[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[[ ]table] seed[s]"
       ]
     },
     {
@@ -11864,35 +12368,6 @@
       ]
     },
     {
-      "id": "fuel_burn",
-      "name": "On Fuel Burn",
-      "since": "1.0",
-      "description": [
-        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
-      ],
-      "examples": [
-        "on fuel burning:"
-      ],
-      "patterns": [
-        "fuel burn[ing]"
-      ]
-    },
-    {
-      "id": "smelt",
-      "name": "On Smelt",
-      "since": "1.0",
-      "description": [
-        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>ore slot</a>."
-      ],
-      "examples": [
-        "on smelt:"
-      ],
-      "patterns": [
-        "[ore] smelt[ing]",
-        "smelt[ing] of ore"
-      ]
-    },
-    {
       "id": "leaves_decay",
       "name": "On Leaves Decay",
       "since": "1.0",
@@ -12932,24 +13407,6 @@
       ]
     },
     {
-      "id": "loot_generate",
-      "name": "On Loot Generate",
-      "since": "2.7",
-      "description": [
-        "Called when a loot table of an inventory is generated in the world.",
-        "For example, when opening a shipwreck chest."
-      ],
-      "examples": [
-        "on loot generate:",
-        "\tchance of 10%",
-        "\tadd 64 diamonds to the loot",
-        "\tsend \"You hit the jackpot at %event-location%!\""
-      ],
-      "patterns": [
-        "loot generat(e|ing)"
-      ]
-    },
-    {
       "id": "player_deep_sleep",
       "name": "On Player Deep Sleep",
       "since": "2.7",
@@ -13138,6 +13595,22 @@
       ]
     },
     {
+      "id": "elytra_boost",
+      "name": "On Elytra Boost",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player uses a firework to boost their fly speed when flying with an elytra."
+      ],
+      "examples": [
+        "on elytra boost:",
+        "\tif the used firework will be consumed:",
+        "\t\tprevent the used firework from being consume"
+      ],
+      "patterns": [
+        "elytra boost"
+      ]
+    },
+    {
       "id": "bucket_catch_entity",
       "name": "On Bucket Catch Entity",
       "patterns": [
@@ -13204,6 +13677,95 @@
       "patterns": [
         "[player] (toggle|toggling|1:press[ing]|2:release|2:releasing) of (%-inputkeys%|(an|any) input key)",
         "([player] %-inputkeys%|[an|any [player]] input key) (toggle|toggling|1:press[ing]|2:release|2:releasing)"
+      ]
+    },
+    {
+      "id": "smelt",
+      "name": "On Smelt",
+      "since": "1.0, INSERT VERSION (specific item)",
+      "description": [
+        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>input slot</a>."
+      ],
+      "examples": [
+        "on smelt:",
+        "\tclear the smelted item",
+        "on smelt of raw iron:",
+        "\tbroadcast smelted item",
+        "\tset the smelted item to iron block"
+      ],
+      "patterns": [
+        "[furnace] [ore] smelt[ed|ing] [of %-itemtypes%]",
+        "[furnace] smelt[ed|ing] of ore"
+      ]
+    },
+    {
+      "id": "fuel_burn",
+      "name": "On Fuel Burn",
+      "since": "1.0, INSERT VERSION (specific item)",
+      "description": [
+        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
+      ],
+      "examples": [
+        "on fuel burning:",
+        "\tbroadcast fuel burned",
+        "\tif burned fuel is coal:",
+        "\t\tadd 20 seconds to burn time"
+      ],
+      "patterns": [
+        "[furnace] fuel burn[ing] [of %-itemtypes%]"
+      ]
+    },
+    {
+      "id": "furnace_item_extract",
+      "name": "On Furnace Item Extract",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a player takes any item out of the furnace."
+      ],
+      "examples": [
+        "on furnace extract:",
+        "\tif event-items is an iron ingot:",
+        "\t\tremove event-items from event-player's inventory"
+      ],
+      "patterns": [
+        "furnace [item] extract[ion] [of %-itemtypes%]"
+      ]
+    },
+    {
+      "id": "start_smelt",
+      "name": "On Start Smelt",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when a furnace starts smelting an item in its ore slot."
+      ],
+      "examples": [
+        "on smelting start:",
+        "\tif the smelting item is raw iron:",
+        "\t\tset total cook time to 1 second",
+        "on smelting start of raw iron:",
+        "\tadd 20 seconds to total cook time"
+      ],
+      "patterns": [
+        "[furnace] start [of] smelt[ing] [[of] %-itemtypes%]",
+        "[furnace] smelt[ing] start [of %-itemtypes%]"
+      ]
+    },
+    {
+      "id": "loot_generate",
+      "name": "On Loot Generate",
+      "since": "2.7",
+      "description": [
+        "Called when a loot table of an inventory is generated in the world.",
+        "For example, when opening a shipwreck chest."
+      ],
+      "examples": [
+        "on loot generate:",
+        "\tchance of 10%",
+        "\tadd 64 diamonds to the loot",
+        "\tsend \"You hit the jackpot at %event-location%!\""
+      ],
+      "patterns": [
+        "loot generat(e|ing)"
       ]
     },
     {
@@ -13942,6 +14504,27 @@
       ]
     },
     {
+      "id": "villagerprofession",
+      "name": "Villager Profession",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different professions of villagers."
+      ],
+      "patterns": [
+        "armorer, armorer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
+      ]
+    },
+    {
+      "id": "entitysnapshot",
+      "name": "Entity Snapshot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a snapshot of an entity's data.",
+        "This includes all of the data associated with an entity (its name, health, attributes, etc.), at the time this expression is used. Essentially, these are a way to create templates for entities.",
+        "Individual attributes of a snapshot cannot be modified or retrieved."
+      ]
+    },
+    {
       "id": "display",
       "name": "Display Entity",
       "since": "INSERT VERSION",
@@ -13991,6 +14574,27 @@
       ],
       "patterns": [
         "left movement key, forward movement key, right movement key, backward key, left key, sprint key, forward key, right key, jumping key, sneaking key, jump key, sneak key, sprinting key, backward movement key"
+      ]
+    },
+    {
+      "id": "loottable",
+      "name": "Loot Table",
+      "since": "INSERT VERSION",
+      "description": [
+        "Loot tables represent what items should be in naturally generated containers, what items should be dropped when killing a mob, or what items can be fished.",
+        "You can find more information about this in https://minecraft.wiki/w/Loot_table"
+      ]
+    },
+    {
+      "id": "lootcontext",
+      "name": "Loot Context",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents additional information a loot table can use to modify its generated loot.",
+        "",
+        "Some loot tables will require some values (i.e. looter, location, looted entity) in a loot context when generating loot whereas others may not.",
+        "For example, the loot table of a simple dungeon chest will only require a location, whereas the loot table of a cow will require a looting player, looted entity, and location.",
+        "You can find more information about this in https://minecraft.wiki/w/Loot_context"
       ]
     },
     {
@@ -14293,6 +14897,17 @@
       ]
     },
     {
+      "id": "villagertype",
+      "name": "Villager Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the different types of villagers. These are usually the biomes a villager can be from."
+      ],
+      "patterns": [
+        "desert, jungle, plains, savanna, snow, swamp, taiga"
+      ]
+    },
+    {
       "id": "object",
       "name": "Object",
       "since": "1.0",
@@ -14442,9 +15057,26 @@
   ],
   "sections": [
     {
+      "id": "EffSecShoot",
+      "name": "Shoot",
+      "since": "INSERT VERSION",
+      "description": [
+        "Shoots a projectile (or any other entity) from a given entity or location."
+      ],
+      "examples": [
+        "shoot arrow from all players at speed 2",
+        "shoot a pig from all players:",
+        "\tadd event-entity to {_projectiles::*}"
+      ],
+      "patterns": [
+        "shoot %entitydatas% [from %livingentities/locations%] [(at|with) (speed|velocity) %-number%] [%-direction%]",
+        "(make|let) %livingentities/locations% shoot %entitydatas% [(at|with) (speed|velocity) %-number%] [%-direction%]"
+      ]
+    },
+    {
       "id": "EffSecSpawn",
       "name": "Spawn",
-      "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items)",
+      "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items), INSERT VERSION (entity snapshots)",
       "description": [
         "Spawns entities. This can be used as an effect and as a section.",
         "",
@@ -14452,7 +15084,9 @@
         "You can modify the entity in this section, using for example 'event-entity' or 'cow'. ",
         "Do note that other event values, such as 'player', won't work in this section.",
         "",
-        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true."
+        "If you're spawning a display and want it to be empty on initialization, like not having a block display be stone, set hidden config node 'spawn empty displays' to true.",
+        "",
+        "Note that when spawning an entity via entity snapshots, the code within the section will not run instantaneously as compared to spawning normally (via 'a zombie')."
       ],
       "examples": [
         "spawn 3 creepers at the targeted block",
@@ -14464,8 +15098,8 @@
         "\tset billboard of event-display to center # allows the display to rotate around the center axis"
       ],
       "patterns": [
-        "(spawn|summon) %entitytypes% [%directions% %locations%]",
-        "(spawn|summon) %number% of %entitytypes% [%directions% %locations%]"
+        "(spawn|summon) %entitytypes/entitysnapshots% [%directions% %locations%]",
+        "(spawn|summon) %number% of %entitytypes/entitysnapshots% [%directions% %locations%]"
       ]
     },
     {
