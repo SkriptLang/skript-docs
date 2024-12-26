@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-380492f",
+  "skriptVersion": "2.9.5-nightly-0b6cfc0",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -14628,6 +14628,22 @@
       "patterns": [
         "\"region name\""
       ]
+    },
+    {
+      "id": "testgui",
+      "name": "Test -ui"
+    },
+    {
+      "id": "exemplus",
+      "name": "Test -i"
+    },
+    {
+      "id": "aardwolf",
+      "name": "Test -ves"
+    },
+    {
+      "id": "hoof",
+      "name": "Test -ves 2"
     },
     {
       "id": "timespan",
