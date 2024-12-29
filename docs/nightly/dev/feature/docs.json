@@ -1,8 +1,8 @@
 {
-  "skriptVersion": "2.9.5-nightly-5501f28",
+  "skriptVersion": "2.9.5-nightly-a0f3a5b",
   "conditions": [
     {
-      "id": "CondAlphanumeric",
+      "id": "CondAlphanumeric-2",
       "name": "Alphanumeric",
       "since": "2.4",
       "description": [
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "id": "CondAnchorWorks",
+      "id": "CondAnchorWorks-2",
       "name": "Do Respawn Anchors Work",
       "since": "2.7",
       "description": [
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "id": "CondCancelled",
+      "id": "CondCancelled-2",
       "name": "Event Cancelled",
       "since": "2.2-dev36",
       "description": [
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "CondCanHold",
+      "id": "CondCanHold-2",
       "name": "Can Hold",
       "since": "1.0",
       "description": [
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "id": "CondCanSee",
+      "id": "CondCanSee-2",
       "name": "Can See",
       "since": "2.3, INSERT VERSION (entities)",
       "description": [
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "id": "CondChance",
+      "id": "CondChance-2",
       "name": "Chance",
       "since": "1.0",
       "description": [
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "id": "CondChatVisibility",
+      "id": "CondChatVisibility-2",
       "name": "Can See Messages",
       "since": "INSERT VERSION",
       "description": [
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": "CondContains",
+      "id": "CondContains-2",
       "name": "Contains",
       "since": "1.0",
       "description": [
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "id": "CondDamageCause",
+      "id": "CondDamageCause-2",
       "name": "Damage Cause",
       "since": "2.0",
       "description": [
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "id": "CondDate",
+      "id": "CondDate-2",
       "name": "Time",
       "since": "2.0",
       "description": [
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "id": "CondElytraBoostConsume",
+      "id": "CondElytraBoostConsume-2",
       "name": "Will Consume Boosting Firework",
       "since": "INSERT VERSION",
       "description": [
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "id": "CondFromMobSpawner",
+      "id": "CondFromMobSpawner-2",
       "name": "Is From A Mob Spawner",
       "since": "INSERT VERSION",
       "description": [
@@ -227,7 +227,7 @@
       ]
     },
     {
-      "id": "CondHasItemCooldown",
+      "id": "CondHasItemCooldown-2",
       "name": "Has Item Cooldown",
       "since": "2.8.0",
       "description": [
@@ -245,7 +245,7 @@
       ]
     },
     {
-      "id": "CondHasLineOfSight",
+      "id": "CondHasLineOfSight-2",
       "name": "Has Line of Sight",
       "since": "2.8.0",
       "description": [
@@ -263,7 +263,7 @@
       ]
     },
     {
-      "id": "CondHasMetadata",
+      "id": "CondHasMetadata-2",
       "name": "Has Metadata",
       "since": "2.2-dev36",
       "description": [
@@ -278,7 +278,7 @@
       ]
     },
     {
-      "id": "CondHasPotion",
+      "id": "CondHasPotion-2",
       "name": "Has Potion",
       "since": "2.6.1",
       "description": [
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "id": "CondIgnitionProcess",
+      "id": "CondIgnitionProcess-2",
       "name": "Ignition Process",
       "since": "2.5",
       "description": [
@@ -315,7 +315,7 @@
       ]
     },
     {
-      "id": "CondIncendiary",
+      "id": "CondIncendiary-2",
       "name": "Is Incendiary",
       "since": "2.5",
       "description": [
@@ -333,7 +333,7 @@
       ]
     },
     {
-      "id": "CondIsBanned",
+      "id": "CondIsBanned-2",
       "name": "Is Banned",
       "since": "1.4",
       "description": [
@@ -352,7 +352,7 @@
       ]
     },
     {
-      "id": "CondIsBlockRedstonePowered",
+      "id": "CondIsBlockRedstonePowered-2",
       "name": "Is Block Redstone Powered",
       "since": "2.5",
       "description": [
@@ -372,7 +372,7 @@
       ]
     },
     {
-      "id": "CondIsCustomNameVisible",
+      "id": "CondIsCustomNameVisible-2",
       "name": "Is Custom Name Visible",
       "since": "INSERT VERSION",
       "description": [
@@ -389,7 +389,7 @@
       ]
     },
     {
-      "id": "CondIsDivisibleBy",
+      "id": "CondIsDivisibleBy-2",
       "name": "Is Evenly Divisible By",
       "since": "INSERT VERSION",
       "description": [
@@ -407,7 +407,7 @@
       ]
     },
     {
-      "id": "CondIsHandRaised",
+      "id": "CondIsHandRaised-2",
       "name": "Is Hand Raised",
       "since": "2.8.0",
       "description": [
@@ -432,7 +432,7 @@
       ]
     },
     {
-      "id": "CondIsLoaded",
+      "id": "CondIsLoaded-2",
       "name": "Is Loaded",
       "since": "2.3, 2.5 (revamp with chunk at location/coords)",
       "description": [
@@ -450,7 +450,7 @@
       ]
     },
     {
-      "id": "CondIsPluginEnabled",
+      "id": "CondIsPluginEnabled-2",
       "name": "Is Plugin Enabled",
       "since": "2.6",
       "description": [
@@ -472,7 +472,7 @@
       ]
     },
     {
-      "id": "CondIsPreferredTool",
+      "id": "CondIsPreferredTool-2",
       "name": "Is Preferred Tool",
       "since": "2.7",
       "description": [
@@ -494,7 +494,7 @@
       ]
     },
     {
-      "id": "CondIsSet",
+      "id": "CondIsSet-2",
       "name": "Exists/Is Set",
       "since": "1.2",
       "description": [
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "id": "CondIsUsingFeature",
+      "id": "CondIsUsingFeature-2",
       "name": "Is Using Experimental Feature",
       "since": "2.9.0",
       "description": [
@@ -530,7 +530,7 @@
       ]
     },
     {
-      "id": "CondIsWhitelisted",
+      "id": "CondIsWhitelisted-2",
       "name": "Is Whitelisted",
       "since": "2.5.2, 2.9.0 (enforce, offline players)",
       "description": [
@@ -548,7 +548,7 @@
       ]
     },
     {
-      "id": "CondIsWithin",
+      "id": "CondIsWithin-2",
       "name": "Is Within",
       "since": "2.7",
       "description": [
@@ -574,7 +574,7 @@
       ]
     },
     {
-      "id": "CondItemInHand",
+      "id": "CondItemInHand-2",
       "name": "Is Holding",
       "since": "1.0",
       "description": [
@@ -596,7 +596,7 @@
       ]
     },
     {
-      "id": "CondMatches",
+      "id": "CondMatches-2",
       "name": "Matches",
       "since": "2.5.2",
       "description": [
@@ -615,7 +615,7 @@
       ]
     },
     {
-      "id": "CondMinecraftVersion",
+      "id": "CondMinecraftVersion-2",
       "name": "Running Minecraft",
       "since": "2.5",
       "description": [
@@ -629,7 +629,7 @@
       ]
     },
     {
-      "id": "CondPastFuture",
+      "id": "CondPastFuture-2",
       "name": "In The Past/Future",
       "since": "INSERT VERSION",
       "description": [
@@ -657,7 +657,7 @@
       ]
     },
     {
-      "id": "CondPermission",
+      "id": "CondPermission-2",
       "name": "Has Permission",
       "since": "1.0",
       "description": [
@@ -674,7 +674,7 @@
       ]
     },
     {
-      "id": "CondPlayedBefore",
+      "id": "CondPlayedBefore-2",
       "name": "Has Played Before",
       "since": "1.4, 2.7 (multiple players)",
       "description": [
@@ -690,7 +690,7 @@
       ]
     },
     {
-      "id": "CondPvP",
+      "id": "CondPvP-2",
       "name": "PvP",
       "since": "1.3.4",
       "description": [
@@ -706,7 +706,7 @@
       ]
     },
     {
-      "id": "CondResourcePack",
+      "id": "CondResourcePack-2",
       "name": "Resource Pack",
       "since": "2.4",
       "description": [
@@ -723,7 +723,7 @@
       ]
     },
     {
-      "id": "CondRespawnLocation",
+      "id": "CondRespawnLocation-2",
       "name": "Is Bed/Anchor Spawn",
       "since": "2.7",
       "description": [
@@ -739,7 +739,7 @@
       ]
     },
     {
-      "id": "CondScriptLoaded",
+      "id": "CondScriptLoaded-2",
       "name": "Is Script Loaded",
       "since": "2.2-dev31",
       "description": [
@@ -755,7 +755,7 @@
       ]
     },
     {
-      "id": "CondStartsEndsWith",
+      "id": "CondStartsEndsWith-2",
       "name": "Starts/Ends With",
       "since": "2.2-dev36, 2.5.1 (multiple strings support)",
       "description": [
@@ -771,7 +771,7 @@
       ]
     },
     {
-      "id": "CondTooltip",
+      "id": "CondTooltip-2",
       "name": "Has Item Tooltips",
       "since": "2.9.0",
       "description": [
@@ -791,7 +791,7 @@
       ]
     },
     {
-      "id": "CondWillHatch",
+      "id": "CondWillHatch-2",
       "name": "Egg Will Hatch",
       "since": "2.7",
       "description": [
@@ -807,7 +807,7 @@
       ]
     },
     {
-      "id": "CondFishingLure",
+      "id": "CondFishingLure-2",
       "name": "Fishing Lure Applied",
       "since": "INSERT VERSION",
       "description": [
@@ -824,7 +824,7 @@
       ]
     },
     {
-      "id": "CondTextDisplayHasDropShadow",
+      "id": "CondTextDisplayHasDropShadow-2",
       "name": "Text Display Has Drop Shadow",
       "since": "INSERT VERSION",
       "description": [
@@ -842,7 +842,7 @@
       ]
     },
     {
-      "id": "CondIsPressingKey",
+      "id": "CondIsPressingKey-2",
       "name": "Is Pressing Key",
       "since": "INSERT VERSION",
       "description": [
@@ -861,7 +861,7 @@
       ]
     },
     {
-      "id": "CondCanBuild",
+      "id": "CondCanBuild-2",
       "name": "Can Build",
       "since": "2.0",
       "description": [
@@ -883,7 +883,7 @@
       ]
     },
     {
-      "id": "CondIsMember",
+      "id": "CondIsMember-2",
       "name": "Is Member/Owner of Region",
       "since": "2.1",
       "description": [
@@ -902,7 +902,7 @@
       ]
     },
     {
-      "id": "CondRegionContains",
+      "id": "CondRegionContains-2",
       "name": "Region Contains",
       "since": "2.1",
       "description": [
@@ -924,7 +924,7 @@
       ]
     },
     {
-      "id": "CondAI",
+      "id": "CondAI-2",
       "name": "Has AI",
       "since": "2.5",
       "description": [
@@ -939,7 +939,7 @@
       ]
     },
     {
-      "id": "CondCanFly",
+      "id": "CondCanFly-2",
       "name": "Can Fly",
       "since": "2.3",
       "description": [
@@ -954,7 +954,7 @@
       ]
     },
     {
-      "id": "CondCanPickUpItems",
+      "id": "CondCanPickUpItems-2",
       "name": "Can Pick Up Items",
       "since": "2.8.0",
       "description": [
@@ -974,7 +974,7 @@
       ]
     },
     {
-      "id": "CondChatColors",
+      "id": "CondChatColors-2",
       "name": "Can See Chat Colors",
       "since": "INSERT VERSION",
       "description": [
@@ -992,7 +992,7 @@
       ]
     },
     {
-      "id": "CondChatFiltering",
+      "id": "CondChatFiltering-2",
       "name": "Has Chat Filtering",
       "since": "INSERT VERSION",
       "description": [
@@ -1008,7 +1008,7 @@
       ]
     },
     {
-      "id": "CondEntityIsInLiquid",
+      "id": "CondEntityIsInLiquid-2",
       "name": "Entity is in Liquid",
       "since": "2.6.1",
       "description": [
@@ -1026,7 +1026,7 @@
       ]
     },
     {
-      "id": "CondEntityIsWet",
+      "id": "CondEntityIsWet-2",
       "name": "Entity is Wet",
       "since": "2.6.1",
       "description": [
@@ -1041,7 +1041,7 @@
       ]
     },
     {
-      "id": "CondGlowingText",
+      "id": "CondGlowingText-2",
       "name": "Has Glowing Text",
       "since": "2.8.0",
       "description": [
@@ -1056,7 +1056,7 @@
       ]
     },
     {
-      "id": "CondHasClientWeather",
+      "id": "CondHasClientWeather-2",
       "name": "Has Client Weather",
       "since": "2.3",
       "description": [
@@ -1072,7 +1072,7 @@
       ]
     },
     {
-      "id": "CondHasCustomModelData",
+      "id": "CondHasCustomModelData-2",
       "name": "Has Custom Model Data",
       "since": "2.5",
       "description": [
@@ -1087,7 +1087,7 @@
       ]
     },
     {
-      "id": "CondHasResourcePack",
+      "id": "CondHasResourcePack-2",
       "name": "Has Resource Pack",
       "since": "2.4",
       "description": [
@@ -1102,7 +1102,7 @@
       ]
     },
     {
-      "id": "CondHasScoreboardTag",
+      "id": "CondHasScoreboardTag-2",
       "name": "Has Scoreboard Tag",
       "since": "2.3",
       "description": [
@@ -1117,7 +1117,7 @@
       ]
     },
     {
-      "id": "CondIsAlive",
+      "id": "CondIsAlive-2",
       "name": "Is Alive",
       "since": "2.0, 2.4-alpha4 (non-living entity support)",
       "description": [
@@ -1135,7 +1135,7 @@
       ]
     },
     {
-      "id": "CondIsBlock",
+      "id": "CondIsBlock-2",
       "name": "Is Block",
       "since": "2.4",
       "description": [
@@ -1151,7 +1151,7 @@
       ]
     },
     {
-      "id": "CondIsBlocking",
+      "id": "CondIsBlocking-2",
       "name": "Is Blocking",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -1168,7 +1168,7 @@
       ]
     },
     {
-      "id": "CondIsBurning",
+      "id": "CondIsBurning-2",
       "name": "Is Burning",
       "since": "1.4.4",
       "description": [
@@ -1185,7 +1185,7 @@
       ]
     },
     {
-      "id": "CondIsCharged",
+      "id": "CondIsCharged-2",
       "name": "Is Charged",
       "since": "2.5, INSERT VERSION (withers, wither skulls)",
       "description": [
@@ -1201,7 +1201,7 @@
       ]
     },
     {
-      "id": "CondIsClimbing",
+      "id": "CondIsClimbing-2",
       "name": "Is Climbing",
       "since": "2.8.0",
       "description": [
@@ -1219,7 +1219,7 @@
       ]
     },
     {
-      "id": "CondIsCommandBlockConditional",
+      "id": "CondIsCommandBlockConditional-2",
       "name": "Is Conditional",
       "since": "INSERT VERSION",
       "description": [
@@ -1235,7 +1235,7 @@
       ]
     },
     {
-      "id": "CondIsEdible",
+      "id": "CondIsEdible-2",
       "name": "Is Edible",
       "since": "2.2-dev36",
       "description": [
@@ -1251,7 +1251,7 @@
       ]
     },
     {
-      "id": "CondIsEmpty",
+      "id": "CondIsEmpty-2",
       "name": "Is Empty",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -1266,7 +1266,7 @@
       ]
     },
     {
-      "id": "CondIsEnchanted",
+      "id": "CondIsEnchanted-2",
       "name": "Is Enchanted",
       "since": "1.4.6",
       "description": [
@@ -1282,7 +1282,7 @@
       ]
     },
     {
-      "id": "CondIsFireResistant",
+      "id": "CondIsFireResistant-2",
       "name": "Is Fire Resistant",
       "since": "2.9.0",
       "description": [
@@ -1298,7 +1298,7 @@
       ]
     },
     {
-      "id": "CondIsFlammable",
+      "id": "CondIsFlammable-2",
       "name": "Is Flammable",
       "since": "2.2-dev36",
       "description": [
@@ -1314,7 +1314,7 @@
       ]
     },
     {
-      "id": "CondIsFlying",
+      "id": "CondIsFlying-2",
       "name": "Is Flying",
       "since": "1.4.4",
       "description": [
@@ -1329,7 +1329,7 @@
       ]
     },
     {
-      "id": "CondIsFrozen",
+      "id": "CondIsFrozen-2",
       "name": "Is Frozen",
       "since": "2.7",
       "description": [
@@ -1345,7 +1345,7 @@
       ]
     },
     {
-      "id": "CondIsFuel",
+      "id": "CondIsFuel-2",
       "name": "Is Fuel",
       "since": "2.5.1",
       "description": [
@@ -1363,7 +1363,7 @@
       ]
     },
     {
-      "id": "CondIsGliding",
+      "id": "CondIsGliding-2",
       "name": "Is Gliding",
       "since": "2.7",
       "description": [
@@ -1378,7 +1378,7 @@
       ]
     },
     {
-      "id": "CondIsInfinite",
+      "id": "CondIsInfinite-2",
       "name": "Is Infinite",
       "since": "2.7",
       "description": [
@@ -1393,7 +1393,7 @@
       ]
     },
     {
-      "id": "CondIsInteractable",
+      "id": "CondIsInteractable-2",
       "name": "Is Interactable",
       "since": "2.5.2",
       "description": [
@@ -1411,7 +1411,7 @@
       ]
     },
     {
-      "id": "CondIsInvisible",
+      "id": "CondIsInvisible-2",
       "name": "Is Invisible",
       "since": "2.7",
       "description": [
@@ -1426,7 +1426,7 @@
       ]
     },
     {
-      "id": "CondIsInvulnerable",
+      "id": "CondIsInvulnerable-2",
       "name": "Is Invulnerable",
       "since": "2.5, INSERT VERSION (gamemode)",
       "description": [
@@ -1445,7 +1445,7 @@
       ]
     },
     {
-      "id": "CondIsJumping",
+      "id": "CondIsJumping-2",
       "name": "Is Jumping",
       "since": "2.8.0",
       "description": [
@@ -1463,7 +1463,7 @@
       ]
     },
     {
-      "id": "CondIsLeftHanded",
+      "id": "CondIsLeftHanded-2",
       "name": "Left Handed",
       "since": "2.8.0",
       "description": [
@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "id": "CondIsOccluding",
+      "id": "CondIsOccluding-2",
       "name": "Is Occluding",
       "since": "2.5.1",
       "description": [
@@ -1496,7 +1496,7 @@
       ]
     },
     {
-      "id": "CondIsOfType",
+      "id": "CondIsOfType-2",
       "name": "Is of Type",
       "since": "1.4",
       "description": [
@@ -1512,7 +1512,7 @@
       ]
     },
     {
-      "id": "CondIsOnGround",
+      "id": "CondIsOnGround-2",
       "name": "Is on Ground",
       "since": "2.2-dev26",
       "description": [
@@ -1527,7 +1527,7 @@
       ]
     },
     {
-      "id": "CondIsOnline",
+      "id": "CondIsOnline-2",
       "name": "Is Online",
       "since": "1.4",
       "description": [
@@ -1552,7 +1552,7 @@
       ]
     },
     {
-      "id": "CondIsOp",
+      "id": "CondIsOp-2",
       "name": "Is Operator",
       "since": "2.7",
       "description": [
@@ -1567,7 +1567,7 @@
       ]
     },
     {
-      "id": "CondIsPassable",
+      "id": "CondIsPassable-2",
       "name": "Is Passable",
       "since": "2.5.1",
       "description": [
@@ -1584,7 +1584,7 @@
       ]
     },
     {
-      "id": "CondIsPathfinding",
+      "id": "CondIsPathfinding-2",
       "name": "Is Pathfinding",
       "since": "2.9.0",
       "description": [
@@ -1605,7 +1605,7 @@
       ]
     },
     {
-      "id": "CondIsPoisoned",
+      "id": "CondIsPoisoned-2",
       "name": "Is Poisoned",
       "since": "1.4.4",
       "description": [
@@ -1622,7 +1622,7 @@
       ]
     },
     {
-      "id": "CondIsResonating",
+      "id": "CondIsResonating-2",
       "name": "Bell Is Resonating",
       "since": "2.9.0",
       "description": [
@@ -1638,7 +1638,7 @@
       ]
     },
     {
-      "id": "CondIsRiding",
+      "id": "CondIsRiding-2",
       "name": "Is Riding",
       "since": "2.0",
       "description": [
@@ -1653,7 +1653,7 @@
       ]
     },
     {
-      "id": "CondIsRinging",
+      "id": "CondIsRinging-2",
       "name": "Bell Is Ringing",
       "since": "2.9.0",
       "description": [
@@ -1668,7 +1668,7 @@
       ]
     },
     {
-      "id": "CondIsRiptiding",
+      "id": "CondIsRiptiding-2",
       "name": "Is Riptiding",
       "since": "2.5",
       "description": [
@@ -1683,7 +1683,7 @@
       ]
     },
     {
-      "id": "CondIsSaddled",
+      "id": "CondIsSaddled-2",
       "name": "Is Saddled",
       "since": "INSERT VERSION",
       "description": [
@@ -1699,7 +1699,7 @@
       ]
     },
     {
-      "id": "CondIsSheared",
+      "id": "CondIsSheared-2",
       "name": "Entity Is Sheared",
       "since": "2.8.0",
       "description": [
@@ -1715,7 +1715,7 @@
       ]
     },
     {
-      "id": "CondIsSilent",
+      "id": "CondIsSilent-2",
       "name": "Is Silent",
       "since": "2.5",
       "description": [
@@ -1730,7 +1730,7 @@
       ]
     },
     {
-      "id": "CondIsSkriptCommand",
+      "id": "CondIsSkriptCommand-2",
       "name": "Is a Skript command",
       "since": "2.6",
       "description": [
@@ -1750,7 +1750,7 @@
       ]
     },
     {
-      "id": "CondIsSleeping",
+      "id": "CondIsSleeping-2",
       "name": "Is Sleeping",
       "since": "1.4.4",
       "description": [
@@ -1769,7 +1769,7 @@
       ]
     },
     {
-      "id": "CondIsSlimeChunk",
+      "id": "CondIsSlimeChunk-2",
       "name": "Is Slime Chunk",
       "since": "2.3",
       "description": [
@@ -1791,7 +1791,7 @@
       ]
     },
     {
-      "id": "CondIsSneaking",
+      "id": "CondIsSneaking-2",
       "name": "Is Sneaking",
       "since": "1.4.4",
       "description": [
@@ -1810,7 +1810,7 @@
       ]
     },
     {
-      "id": "CondIsSolid",
+      "id": "CondIsSolid-2",
       "name": "Is Solid",
       "since": "2.2-dev36",
       "description": [
@@ -1826,7 +1826,7 @@
       ]
     },
     {
-      "id": "CondIsSprinting",
+      "id": "CondIsSprinting-2",
       "name": "Is Sprinting",
       "since": "1.4.4",
       "description": [
@@ -1841,7 +1841,7 @@
       ]
     },
     {
-      "id": "CondIsStackable",
+      "id": "CondIsStackable-2",
       "name": "Is Stackable",
       "since": "2.7",
       "description": [
@@ -1858,7 +1858,7 @@
       ]
     },
     {
-      "id": "CondIsSwimming",
+      "id": "CondIsSwimming-2",
       "name": "Is Swimming",
       "since": "2.3",
       "description": [
@@ -1873,7 +1873,7 @@
       ]
     },
     {
-      "id": "CondIsTameable",
+      "id": "CondIsTameable-2",
       "name": "Is Tameable",
       "since": "2.5",
       "description": [
@@ -1890,7 +1890,7 @@
       ]
     },
     {
-      "id": "CondIsTamed",
+      "id": "CondIsTamed-2",
       "name": "Is Tamed",
       "since": "INSERT VERSION",
       "description": [
@@ -1906,7 +1906,7 @@
       ]
     },
     {
-      "id": "CondIsTicking",
+      "id": "CondIsTicking-2",
       "name": "Is Ticking",
       "since": "INSERT VERSION",
       "description": [
@@ -1921,7 +1921,7 @@
       ]
     },
     {
-      "id": "CondIsTransparent",
+      "id": "CondIsTransparent-2",
       "name": "Is Transparent",
       "since": "2.2-dev36",
       "description": [
@@ -1936,7 +1936,7 @@
       ]
     },
     {
-      "id": "CondIsUnbreakable",
+      "id": "CondIsUnbreakable-2",
       "name": "Is Unbreakable",
       "since": "2.5.1, 2.9.0 (breakable)",
       "description": [
@@ -1954,7 +1954,7 @@
       ]
     },
     {
-      "id": "CondIsValid",
+      "id": "CondIsValid-2",
       "name": "Is Valid",
       "since": "2.7",
       "description": [
@@ -1969,7 +1969,7 @@
       ]
     },
     {
-      "id": "CondIsVectorNormalized",
+      "id": "CondIsVectorNormalized-2",
       "name": "Is Normalized",
       "since": "2.5.1",
       "description": [
@@ -1984,7 +1984,7 @@
       ]
     },
     {
-      "id": "CondIsWearing",
+      "id": "CondIsWearing-2",
       "name": "Is Wearing",
       "since": "1.0",
       "description": [
@@ -2001,7 +2001,7 @@
       ]
     },
     {
-      "id": "CondItemEnchantmentGlint",
+      "id": "CondItemEnchantmentGlint-3",
       "name": "Item Has Enchantment Glint Override",
       "since": "INSERT VERSION",
       "description": [
@@ -2024,7 +2024,7 @@
       ]
     },
     {
-      "id": "CondItemEnchantmentGlint-2",
+      "id": "CondItemEnchantmentGlint-3",
       "name": "Item Has Enchantment Glint Override",
       "since": "INSERT VERSION",
       "description": [
@@ -2047,7 +2047,7 @@
       ]
     },
     {
-      "id": "CondLeashed",
+      "id": "CondLeashed-2",
       "name": "Is Leashed",
       "since": "2.5",
       "description": [
@@ -2062,7 +2062,7 @@
       ]
     },
     {
-      "id": "CondLidState",
+      "id": "CondLidState-2",
       "name": "Lid Is Open/Closed",
       "since": "INSERT VERSION",
       "description": [
@@ -2080,7 +2080,7 @@
       ]
     },
     {
-      "id": "CondWithinRadius",
+      "id": "CondWithinRadius-2",
       "name": "Is Within Radius",
       "since": "2.7",
       "description": [
@@ -2098,7 +2098,7 @@
       ]
     },
     {
-      "id": "CondIsInOpenWater",
+      "id": "CondIsInOpenWater-2",
       "name": "Is Fish Hook in Open Water",
       "since": "INSERT VERSION",
       "description": [
@@ -2116,7 +2116,7 @@
       ]
     },
     {
-      "id": "CondCanAge",
+      "id": "CondCanAge-2",
       "name": "Can Age",
       "since": "INSERT VERSION",
       "description": [
@@ -2133,7 +2133,7 @@
       ]
     },
     {
-      "id": "CondCanBreed",
+      "id": "CondCanBreed-2",
       "name": "Can Breed",
       "since": "INSERT VERSION",
       "description": [
@@ -2150,7 +2150,7 @@
       ]
     },
     {
-      "id": "CondIsAdult",
+      "id": "CondIsAdult-2",
       "name": "Is Adult",
       "since": "INSERT VERSION",
       "description": [
@@ -2167,7 +2167,7 @@
       ]
     },
     {
-      "id": "CondIsBaby",
+      "id": "CondIsBaby-2",
       "name": "Is Baby",
       "since": "INSERT VERSION",
       "description": [
@@ -2184,7 +2184,7 @@
       ]
     },
     {
-      "id": "CondIsInLove",
+      "id": "CondIsInLove-2",
       "name": "Is In Love",
       "since": "INSERT VERSION",
       "description": [
@@ -2201,7 +2201,7 @@
       ]
     },
     {
-      "id": "CondTextDisplaySeeThroughBlocks",
+      "id": "CondTextDisplaySeeThroughBlocks-2",
       "name": "Text Display Visible Through Blocks",
       "since": "INSERT VERSION",
       "description": [
@@ -2217,7 +2217,7 @@
       ]
     },
     {
-      "id": "CondHasLootTable",
+      "id": "CondHasLootTable-2",
       "name": "Has Loot Table",
       "since": "INSERT VERSION",
       "description": [
@@ -2239,7 +2239,7 @@
       ]
     },
     {
-      "id": "CondIsLootable",
+      "id": "CondIsLootable-2",
       "name": "Is Lootable",
       "since": "INSERT VERSION",
       "description": [
@@ -2265,7 +2265,7 @@
       ]
     },
     {
-      "id": "CondCompare",
+      "id": "CondCompare-2",
       "name": "Comparison",
       "since": "1.0",
       "description": [
@@ -2307,7 +2307,7 @@
   ],
   "effects": [
     {
-      "id": "Delay",
+      "id": "Delay-2",
       "name": "Delay",
       "since": "1.4",
       "description": [
@@ -2323,7 +2323,7 @@
       ]
     },
     {
-      "id": "EffActionBar",
+      "id": "EffActionBar-2",
       "name": "Action Bar",
       "since": "2.3",
       "description": [
@@ -2337,7 +2337,7 @@
       ]
     },
     {
-      "id": "EffApplyBoneMeal",
+      "id": "EffApplyBoneMeal-2",
       "name": "Apply Bone Meal",
       "since": "2.8.0",
       "description": [
@@ -2351,7 +2351,7 @@
       ]
     },
     {
-      "id": "EffBan",
+      "id": "EffBan-2",
       "name": "Ban",
       "since": "1.4, 2.1.1 (ban reason), 2.5 (timespan), 2.9.0 (kick)",
       "description": [
@@ -2380,7 +2380,7 @@
       ]
     },
     {
-      "id": "EffBlockUpdate",
+      "id": "EffBlockUpdate-2",
       "name": "Update Block",
       "since": "INSERT VERSION",
       "description": [
@@ -2398,7 +2398,7 @@
       ]
     },
     {
-      "id": "EffBreakNaturally",
+      "id": "EffBreakNaturally-2",
       "name": "Break Block",
       "since": "2.4",
       "description": [
@@ -2419,7 +2419,7 @@
       ]
     },
     {
-      "id": "EffBroadcast",
+      "id": "EffBroadcast-2",
       "name": "Broadcast",
       "since": "1.0, 2.6 (broadcasting objects), 2.6.1 (using advanced formatting)",
       "description": [
@@ -2434,7 +2434,7 @@
       ]
     },
     {
-      "id": "EffCancelCooldown",
+      "id": "EffCancelCooldown-2",
       "name": "Cancel Command Cooldown",
       "since": "2.2-dev34",
       "description": [
@@ -2458,7 +2458,7 @@
       ]
     },
     {
-      "id": "EffCancelDrops",
+      "id": "EffCancelDrops-2",
       "name": "Cancel Drops",
       "since": "2.4",
       "description": [
@@ -2478,7 +2478,7 @@
       ]
     },
     {
-      "id": "EffCancelEvent",
+      "id": "EffCancelEvent-2",
       "name": "Cancel Event",
       "since": "1.0",
       "description": [
@@ -2496,7 +2496,7 @@
       ]
     },
     {
-      "id": "EffCancelItemUse",
+      "id": "EffCancelItemUse-2",
       "name": "Cancel Active Item",
       "since": "2.8.0",
       "description": [
@@ -2513,7 +2513,7 @@
       ]
     },
     {
-      "id": "EffChange",
+      "id": "EffChange-2",
       "name": "Change: Set/Add/Remove/Delete/Reset",
       "since": "1.0 (set, add, remove, delete), 2.0 (remove all)",
       "description": [
@@ -2555,7 +2555,7 @@
       ]
     },
     {
-      "id": "EffCharge",
+      "id": "EffCharge-2",
       "name": "Charge Entity",
       "since": "2.5, INSERT VERSION (wither skulls)",
       "description": [
@@ -2571,7 +2571,7 @@
       ]
     },
     {
-      "id": "EffColorItems",
+      "id": "EffColorItems-2",
       "name": "Color Items",
       "since": "2.0, 2.2-dev26 (maps and potions)",
       "description": [
@@ -2587,7 +2587,7 @@
       ]
     },
     {
-      "id": "EffCommand",
+      "id": "EffCommand-2",
       "name": "Command",
       "since": "1.0, 2.8.0 (bungeecord command)",
       "description": [
@@ -2606,7 +2606,7 @@
       ]
     },
     {
-      "id": "EffCommandBlockConditional",
+      "id": "EffCommandBlockConditional-2",
       "name": "Conditional / Unconditional",
       "since": "INSERT VERSION",
       "description": [
@@ -2621,7 +2621,7 @@
       ]
     },
     {
-      "id": "EffConnect",
+      "id": "EffConnect-2",
       "name": "Connect",
       "since": "2.3, INSERT VERSION (transfer)",
       "description": [
@@ -2641,7 +2641,7 @@
       ]
     },
     {
-      "id": "EffContinue",
+      "id": "EffContinue-2",
       "name": "Continue",
       "since": "2.2-dev37, 2.7 (while loops), 2.8.0 (outer loops)",
       "description": [
@@ -2669,7 +2669,7 @@
       ]
     },
     {
-      "id": "EffCopy",
+      "id": "EffCopy-2",
       "name": "Copy Into Variable",
       "since": "2.8.0",
       "description": [
@@ -2689,7 +2689,7 @@
       ]
     },
     {
-      "id": "EffCustomName",
+      "id": "EffCustomName-2",
       "name": "Toggle Custom Name Visibility",
       "since": "INSERT VERSION",
       "description": [
@@ -2705,7 +2705,7 @@
       ]
     },
     {
-      "id": "EffDetonate",
+      "id": "EffDetonate-2",
       "name": "Detonate Entities",
       "since": "INSERT VERSION",
       "description": [
@@ -2719,7 +2719,7 @@
       ]
     },
     {
-      "id": "EffDoIf",
+      "id": "EffDoIf-2",
       "name": "Do If",
       "since": "2.3",
       "description": [
@@ -2734,7 +2734,7 @@
       ]
     },
     {
-      "id": "EffDrop",
+      "id": "EffDrop-2",
       "name": "Drop",
       "since": "1.0",
       "description": [
@@ -2749,7 +2749,7 @@
       ]
     },
     {
-      "id": "EffElytraBoostConsume",
+      "id": "EffElytraBoostConsume-2",
       "name": "Consume Boosting Firework",
       "since": "INSERT VERSION",
       "description": [
@@ -2766,7 +2766,7 @@
       ]
     },
     {
-      "id": "EffEnchant",
+      "id": "EffEnchant-2",
       "name": "Enchant/Disenchant",
       "since": "2.0",
       "description": [
@@ -2782,7 +2782,7 @@
       ]
     },
     {
-      "id": "EffEnforceWhitelist",
+      "id": "EffEnforceWhitelist-2",
       "name": "Enforce Whitelist",
       "since": "2.9.0",
       "description": [
@@ -2798,7 +2798,7 @@
       ]
     },
     {
-      "id": "EffEntityVisibility",
+      "id": "EffEntityVisibility-2",
       "name": "Entity Visibility",
       "since": "2.3, INSERT VERSION (entities)",
       "description": [
@@ -2822,7 +2822,7 @@
       ]
     },
     {
-      "id": "EffEquip",
+      "id": "EffEquip-2",
       "name": "Equip",
       "since": "1.0, 2.7 (multiple entities, unequip), INSERT VERSION (wolves)",
       "description": [
@@ -2844,7 +2844,7 @@
       ]
     },
     {
-      "id": "EffExit",
+      "id": "EffExit-2",
       "name": "Exit",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -2867,7 +2867,7 @@
       ]
     },
     {
-      "id": "EffExplodeCreeper",
+      "id": "EffExplodeCreeper-2",
       "name": "Explode Creeper",
       "since": "2.5",
       "description": [
@@ -2886,7 +2886,7 @@
       ]
     },
     {
-      "id": "EffExplosion",
+      "id": "EffExplosion-2",
       "name": "Explosion",
       "since": "1.0",
       "description": [
@@ -2906,7 +2906,7 @@
       ]
     },
     {
-      "id": "EffFeed",
+      "id": "EffFeed-2",
       "name": "Feed",
       "since": "2.2-dev34",
       "description": [
@@ -2921,7 +2921,7 @@
       ]
     },
     {
-      "id": "EffFireResistant",
+      "id": "EffFireResistant-2",
       "name": "Make Fire Resistant",
       "since": "2.9.0",
       "description": [
@@ -2936,7 +2936,7 @@
       ]
     },
     {
-      "id": "EffFireworkLaunch",
+      "id": "EffFireworkLaunch-2",
       "name": "Launch firework",
       "since": "2.4",
       "description": [
@@ -2950,7 +2950,7 @@
       ]
     },
     {
-      "id": "EffForceAttack",
+      "id": "EffForceAttack-2",
       "name": "Force Attack",
       "since": "2.5.1",
       "description": [
@@ -2966,7 +2966,7 @@
       ]
     },
     {
-      "id": "EffForceEnchantmentGlint",
+      "id": "EffForceEnchantmentGlint-2",
       "name": "Force Enchantment Glint",
       "since": "INSERT VERSION",
       "description": [
@@ -2984,7 +2984,7 @@
       ]
     },
     {
-      "id": "EffGlowingText",
+      "id": "EffGlowingText-2",
       "name": "Make Sign Glow",
       "since": "2.8.0",
       "description": [
@@ -2999,7 +2999,7 @@
       ]
     },
     {
-      "id": "EffHandedness",
+      "id": "EffHandedness-2",
       "name": "Handedness",
       "since": "2.8.0",
       "description": [
@@ -3016,7 +3016,7 @@
       ]
     },
     {
-      "id": "EffHealth",
+      "id": "EffHealth-2",
       "name": "Damage/Heal/Repair",
       "since": "1.0, INSERT VERSION (damage cause)",
       "description": [
@@ -3036,7 +3036,7 @@
       ]
     },
     {
-      "id": "EffHidePlayerFromServerList",
+      "id": "EffHidePlayerFromServerList-2",
       "name": "Hide Player from Server List",
       "since": "2.3",
       "description": [
@@ -3052,7 +3052,7 @@
       ]
     },
     {
-      "id": "EffIgnite",
+      "id": "EffIgnite-2",
       "name": "Ignite/Extinguish",
       "since": "1.4",
       "description": [
@@ -3069,7 +3069,7 @@
       ]
     },
     {
-      "id": "EffIncendiary",
+      "id": "EffIncendiary-2",
       "name": "Make Incendiary",
       "since": "2.5",
       "description": [
@@ -3086,7 +3086,7 @@
       ]
     },
     {
-      "id": "EffInvisible",
+      "id": "EffInvisible-2",
       "name": "Make Invisible",
       "since": "2.7",
       "description": [
@@ -3102,7 +3102,7 @@
       ]
     },
     {
-      "id": "EffInvulnerability",
+      "id": "EffInvulnerability-2",
       "name": "Make Invulnerable",
       "since": "2.5",
       "description": [
@@ -3117,7 +3117,7 @@
       ]
     },
     {
-      "id": "EffKeepInventory",
+      "id": "EffKeepInventory-2",
       "name": "Keep Inventory / Experience",
       "since": "2.4",
       "description": [
@@ -3134,7 +3134,7 @@
       ]
     },
     {
-      "id": "EffKick",
+      "id": "EffKick-2",
       "name": "Kick",
       "since": "1.0",
       "description": [
@@ -3150,7 +3150,7 @@
       ]
     },
     {
-      "id": "EffKill",
+      "id": "EffKill-2",
       "name": "Kill",
       "since": "1.0",
       "description": [
@@ -3167,7 +3167,7 @@
       ]
     },
     {
-      "id": "EffKnockback",
+      "id": "EffKnockback-2",
       "name": "Knockback",
       "since": "2.7",
       "description": [
@@ -3182,7 +3182,7 @@
       ]
     },
     {
-      "id": "EffLeash",
+      "id": "EffLeash-2",
       "name": "Leash entities",
       "since": "2.3",
       "description": [
@@ -3201,7 +3201,7 @@
       ]
     },
     {
-      "id": "EffLidState",
+      "id": "EffLidState-2",
       "name": "Open/Close Lid",
       "since": "INSERT VERSION",
       "description": [
@@ -3217,7 +3217,7 @@
       ]
     },
     {
-      "id": "EffLightning",
+      "id": "EffLightning-2",
       "name": "Lightning",
       "since": "1.4",
       "description": [
@@ -3232,7 +3232,7 @@
       ]
     },
     {
-      "id": "EffLoadServerIcon",
+      "id": "EffLoadServerIcon-2",
       "name": "Load Server Icon",
       "since": "2.3",
       "description": [
@@ -3255,7 +3255,7 @@
       ]
     },
     {
-      "id": "EffLog",
+      "id": "EffLog-2",
       "name": "Log",
       "since": "2.0, 2.9.0 (severities)",
       "description": [
@@ -3275,7 +3275,7 @@
       ]
     },
     {
-      "id": "EffLook",
+      "id": "EffLook-2",
       "name": "Look At",
       "since": "2.7",
       "description": [
@@ -3298,7 +3298,7 @@
       ]
     },
     {
-      "id": "EffMakeEggHatch",
+      "id": "EffMakeEggHatch-2",
       "name": "Make Egg Hatch",
       "since": "2.7",
       "description": [
@@ -3314,7 +3314,7 @@
       ]
     },
     {
-      "id": "EffMakeFly",
+      "id": "EffMakeFly-2",
       "name": "Make Fly",
       "since": "2.2-dev34",
       "description": [
@@ -3331,7 +3331,7 @@
       ]
     },
     {
-      "id": "EffMakeSay",
+      "id": "EffMakeSay-2",
       "name": "Make Say",
       "since": "2.3",
       "description": [
@@ -3347,7 +3347,7 @@
       ]
     },
     {
-      "id": "EffMessage",
+      "id": "EffMessage-2",
       "name": "Message",
       "since": "1.0, 2.2-dev26 (advanced features), 2.5.2 (optional sender), 2.6 (sending objects)",
       "description": [
@@ -3372,7 +3372,7 @@
       ]
     },
     {
-      "id": "EffOp",
+      "id": "EffOp-2",
       "name": "op/deop",
       "since": "1.0",
       "description": [
@@ -3387,7 +3387,7 @@
       ]
     },
     {
-      "id": "EffOpenBook",
+      "id": "EffOpenBook-2",
       "name": "Open Book",
       "since": "2.5.1",
       "description": [
@@ -3401,7 +3401,7 @@
       ]
     },
     {
-      "id": "EffOpenInventory",
+      "id": "EffOpenInventory-2",
       "name": "Open/Close Inventory",
       "since": "2.0, 2.1.1 (closing), 2.2-Fixes-V10 (anvil), 2.4 (hopper, dropper, dispenser",
       "description": [
@@ -3419,7 +3419,7 @@
       ]
     },
     {
-      "id": "EffPathfind",
+      "id": "EffPathfind-2",
       "name": "Pathfind",
       "since": "2.7",
       "description": [
@@ -3436,7 +3436,7 @@
       ]
     },
     {
-      "id": "EffPlayerInfoVisibility",
+      "id": "EffPlayerInfoVisibility-2",
       "name": "Player Info Visibility",
       "since": "2.3",
       "description": [
@@ -3458,7 +3458,7 @@
       ]
     },
     {
-      "id": "EffPlaySound",
+      "id": "EffPlaySound-2",
       "name": "Play Sound",
       "since": "2.2-dev28, 2.4 (sound categories), 2.9 (sound seed & entity emitter)",
       "description": [
@@ -3485,7 +3485,7 @@
       ]
     },
     {
-      "id": "EffPoison",
+      "id": "EffPoison-2",
       "name": "Poison/Cure",
       "since": "1.3.2",
       "description": [
@@ -3502,7 +3502,7 @@
       ]
     },
     {
-      "id": "EffPotion",
+      "id": "EffPotion-2",
       "name": "Potion Effects",
       "since": "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), 2.7 (icon and infinite)",
       "description": [
@@ -3526,7 +3526,7 @@
       ]
     },
     {
-      "id": "EffPush",
+      "id": "EffPush-2",
       "name": "Push",
       "since": "1.4.6",
       "description": [
@@ -3541,7 +3541,7 @@
       ]
     },
     {
-      "id": "EffPvP",
+      "id": "EffPvP-2",
       "name": "PvP",
       "since": "1.3.4",
       "description": [
@@ -3557,7 +3557,7 @@
       ]
     },
     {
-      "id": "EffReplace",
+      "id": "EffReplace-2",
       "name": "Replace",
       "since": "2.0, 2.2-dev24 (multiple strings, items in inventory), 2.5 (replace first, case sensitivity), INSERT VERSION (regex)",
       "description": [
@@ -3584,7 +3584,7 @@
       ]
     },
     {
-      "id": "EffResetTitle",
+      "id": "EffResetTitle-2",
       "name": "Title - Reset",
       "since": "2.3",
       "description": [
@@ -3600,7 +3600,7 @@
       ]
     },
     {
-      "id": "EffRespawn",
+      "id": "EffRespawn-2",
       "name": "Force Respawn",
       "since": "2.2-dev21",
       "description": [
@@ -3615,7 +3615,7 @@
       ]
     },
     {
-      "id": "EffReturn",
+      "id": "EffReturn-2",
       "name": "Return",
       "since": "2.2, 2.8.0 (returns aliases)",
       "description": [
@@ -3633,7 +3633,7 @@
       ]
     },
     {
-      "id": "EffRing",
+      "id": "EffRing-2",
       "name": "Ring Bell",
       "since": "2.9.0",
       "description": [
@@ -3651,7 +3651,7 @@
       ]
     },
     {
-      "id": "EffScriptFile",
+      "id": "EffScriptFile-2",
       "name": "Enable/Disable/Reload Script File",
       "since": "2.4",
       "description": [
@@ -3667,7 +3667,7 @@
       ]
     },
     {
-      "id": "EffSendBlockChange",
+      "id": "EffSendBlockChange-2",
       "name": "Send Block Change",
       "since": "2.2-dev37c, 2.5.1 (block data support)",
       "description": [
@@ -3682,7 +3682,7 @@
       ]
     },
     {
-      "id": "EffSendResourcePack",
+      "id": "EffSendResourcePack-2",
       "name": "Send Resource Pack",
       "since": "2.4",
       "description": [
@@ -3707,7 +3707,7 @@
       ]
     },
     {
-      "id": "EffSendTitle",
+      "id": "EffSendTitle-2",
       "name": "Title - Send",
       "since": "2.3",
       "description": [
@@ -3730,7 +3730,7 @@
       ]
     },
     {
-      "id": "EffShear",
+      "id": "EffShear-2",
       "name": "Shear",
       "since": "2.0 (cows, sheep & snowmen), 2.8.0 (all shearable entities)",
       "description": [
@@ -3751,7 +3751,7 @@
       ]
     },
     {
-      "id": "EffSilence",
+      "id": "EffSilence-2",
       "name": "Silence Entity",
       "since": "2.5",
       "description": [
@@ -3768,7 +3768,7 @@
       ]
     },
     {
-      "id": "EffSort",
+      "id": "EffSort-2",
       "name": "Sort",
       "since": "2.9.0, INSERT VERSION (sort order)",
       "description": [
@@ -3786,7 +3786,7 @@
       ]
     },
     {
-      "id": "EffStopServer",
+      "id": "EffStopServer-2",
       "name": "Stop Server",
       "since": "2.5",
       "description": [
@@ -3802,7 +3802,7 @@
       ]
     },
     {
-      "id": "EffStopSound",
+      "id": "EffStopSound-2",
       "name": "Stop Sound",
       "since": "2.4, 2.7 (stop all sounds)",
       "description": [
@@ -3822,7 +3822,7 @@
       ]
     },
     {
-      "id": "EffSuppressWarnings",
+      "id": "EffSuppressWarnings-2",
       "name": "Locally Suppress Warning",
       "since": "2.3",
       "description": [
@@ -3837,7 +3837,7 @@
       ]
     },
     {
-      "id": "EffSwingHand",
+      "id": "EffSwingHand-2",
       "name": "Swing Hand",
       "since": "2.5.1",
       "description": [
@@ -3852,7 +3852,7 @@
       ]
     },
     {
-      "id": "EffTame",
+      "id": "EffTame-2",
       "name": "Tame / Untame",
       "since": "INSERT VERSION",
       "description": [
@@ -3867,7 +3867,7 @@
       ]
     },
     {
-      "id": "EffTeleport",
+      "id": "EffTeleport-2",
       "name": "Teleport",
       "since": "1.0",
       "description": [
@@ -3885,7 +3885,7 @@
       ]
     },
     {
-      "id": "EffToggle",
+      "id": "EffToggle-2",
       "name": "Toggle",
       "since": "1.4",
       "description": [
@@ -3904,7 +3904,7 @@
       ]
     },
     {
-      "id": "EffToggleCanPickUpItems",
+      "id": "EffToggleCanPickUpItems-2",
       "name": "Toggle Picking Up Items",
       "since": "2.8.0",
       "description": [
@@ -3924,7 +3924,7 @@
       ]
     },
     {
-      "id": "EffToggleFlight",
+      "id": "EffToggleFlight-2",
       "name": "Toggle Flight",
       "since": "2.3",
       "description": [
@@ -3939,7 +3939,7 @@
       ]
     },
     {
-      "id": "EffTooltip",
+      "id": "EffTooltip-2",
       "name": "Item Tooltips",
       "since": "2.9.0",
       "description": [
@@ -3957,7 +3957,7 @@
       ]
     },
     {
-      "id": "EffTree",
+      "id": "EffTree-2",
       "name": "Tree",
       "since": "1.0",
       "description": [
@@ -3973,7 +3973,7 @@
       ]
     },
     {
-      "id": "EffVehicle",
+      "id": "EffVehicle-2",
       "name": "Vehicle",
       "since": "2.0",
       "description": [
@@ -3990,7 +3990,7 @@
       ]
     },
     {
-      "id": "EffVisualEffect",
+      "id": "EffVisualEffect-2",
       "name": "Play Effect",
       "since": "2.1",
       "description": [
@@ -4007,7 +4007,7 @@
       ]
     },
     {
-      "id": "EffWorldLoad",
+      "id": "EffWorldLoad-2",
       "name": "Load World",
       "since": "2.8.0",
       "description": [
@@ -4028,7 +4028,7 @@
       ]
     },
     {
-      "id": "EffWorldSave",
+      "id": "EffWorldSave-2",
       "name": "Save World",
       "since": "2.8.0",
       "description": [
@@ -4044,7 +4044,7 @@
       ]
     },
     {
-      "id": "EffRotate",
+      "id": "EffRotate-2",
       "name": "Rotate",
       "since": "2.2-dev28, INSERT VERSION (quaternions, displays)",
       "description": [
@@ -4072,7 +4072,7 @@
       ]
     },
     {
-      "id": "EffFishingLure",
+      "id": "EffFishingLure-2",
       "name": "Apply Fishing Lure",
       "since": "INSERT VERSION",
       "description": [
@@ -4088,7 +4088,7 @@
       ]
     },
     {
-      "id": "EffPullHookedEntity",
+      "id": "EffPullHookedEntity-2",
       "name": "Pull In Hooked Entity",
       "since": "INSERT VERSION",
       "description": [
@@ -4103,7 +4103,7 @@
       ]
     },
     {
-      "id": "EffAllowAging",
+      "id": "EffAllowAging-2",
       "name": "Allow Aging",
       "since": "INSERT VERSION",
       "description": [
@@ -4123,7 +4123,7 @@
       ]
     },
     {
-      "id": "EffBreedable",
+      "id": "EffBreedable-2",
       "name": "Make Breedable",
       "since": "INSERT VERSION",
       "description": [
@@ -4141,7 +4141,7 @@
       ]
     },
     {
-      "id": "EffMakeAdultOrBaby",
+      "id": "EffMakeAdultOrBaby-2",
       "name": "Make Adult/Baby",
       "since": "INSERT VERSION",
       "description": [
@@ -4158,7 +4158,7 @@
       ]
     },
     {
-      "id": "EffTextDisplayDropShadow",
+      "id": "EffTextDisplayDropShadow-2",
       "name": "Text Display Drop Shadow",
       "since": "INSERT VERSION",
       "description": [
@@ -4177,7 +4177,7 @@
       ]
     },
     {
-      "id": "EffTextDisplaySeeThroughBlocks",
+      "id": "EffTextDisplaySeeThroughBlocks-2",
       "name": "Text Display See Through Blocks",
       "since": "INSERT VERSION",
       "description": [
@@ -4194,7 +4194,7 @@
       ]
     },
     {
-      "id": "EffGenerateLoot",
+      "id": "EffGenerateLoot-2",
       "name": "Generate Loot",
       "since": "INSERT VERSION",
       "description": [
@@ -4212,7 +4212,7 @@
   ],
   "expressions": [
     {
-      "id": "ExprAbsorbedBlocks",
+      "id": "ExprAbsorbedBlocks-2",
       "name": "Absorbed blocks",
       "since": "2.5",
       "description": [
@@ -4226,7 +4226,7 @@
       ]
     },
     {
-      "id": "ExprAffectedEntities",
+      "id": "ExprAffectedEntities-2",
       "name": "Affected Entities",
       "since": "2.4",
       "description": [
@@ -4243,7 +4243,7 @@
       ]
     },
     {
-      "id": "ExprAllBannedEntries",
+      "id": "ExprAllBannedEntries-2",
       "name": "All Banned Players/IPs",
       "since": "2.7",
       "description": [
@@ -4259,7 +4259,7 @@
       ]
     },
     {
-      "id": "ExprAllCommands",
+      "id": "ExprAllCommands-2",
       "name": "All commands",
       "since": "2.6",
       "description": [
@@ -4274,7 +4274,7 @@
       ]
     },
     {
-      "id": "ExprAngle",
+      "id": "ExprAngle-2",
       "name": "Angle",
       "since": "INSERT VERSION",
       "description": [
@@ -4295,7 +4295,7 @@
       ]
     },
     {
-      "id": "ExprAppliedEffect",
+      "id": "ExprAppliedEffect-2",
       "name": "Applied Beacon Effect",
       "since": "INSERT VERSION",
       "description": [
@@ -4313,7 +4313,7 @@
       ]
     },
     {
-      "id": "ExprAppliedEnchantments",
+      "id": "ExprAppliedEnchantments-2",
       "name": "Applied Enchantments",
       "since": "2.5",
       "description": [
@@ -4329,7 +4329,7 @@
       ]
     },
     {
-      "id": "ExprArgument",
+      "id": "ExprArgument-2",
       "name": "Argument",
       "since": "1.0, 2.7 (support for command events)",
       "description": [
@@ -4354,7 +4354,7 @@
       ]
     },
     {
-      "id": "ExprAttacked",
+      "id": "ExprAttacked-2",
       "name": "Attacked",
       "since": "1.3, 2.6.1 (projectile hit event)",
       "description": [
@@ -4370,7 +4370,7 @@
       ]
     },
     {
-      "id": "ExprAttacker",
+      "id": "ExprAttacker-2",
       "name": "Attacker",
       "since": "1.3",
       "description": [
@@ -4388,7 +4388,7 @@
       ]
     },
     {
-      "id": "ExprBarterDrops",
+      "id": "ExprBarterDrops-2",
       "name": "Barter Drops",
       "since": "INSERT VERSION",
       "description": [
@@ -4405,7 +4405,7 @@
       ]
     },
     {
-      "id": "ExprBarterInput",
+      "id": "ExprBarterInput-2",
       "name": "Barter Input",
       "since": "INSERT VERSION",
       "description": [
@@ -4421,7 +4421,7 @@
       ]
     },
     {
-      "id": "ExprBlock",
+      "id": "ExprBlock-3",
       "name": "Block",
       "since": "1.0",
       "description": [
@@ -4443,7 +4443,7 @@
       ]
     },
     {
-      "id": "ExprChatFormat",
+      "id": "ExprChatFormat-2",
       "name": "Chat Format",
       "since": "2.2-dev31",
       "description": [
@@ -4457,7 +4457,7 @@
       ]
     },
     {
-      "id": "ExprChatRecipients",
+      "id": "ExprChatRecipients-2",
       "name": "Chat Recipients",
       "since": "2.2-Fixes-v7, 2.2-dev35 (clearing recipients)",
       "description": [
@@ -4471,7 +4471,7 @@
       ]
     },
     {
-      "id": "ExprClicked",
+      "id": "ExprClicked-2",
       "name": "Clicked Block/Entity/Inventory/Slot",
       "since": "1.0, 2.2-dev35 (more clickable things)",
       "description": [
@@ -4487,7 +4487,7 @@
       ]
     },
     {
-      "id": "ExprCmdCooldownInfo",
+      "id": "ExprCmdCooldownInfo-2",
       "name": "Cooldown Time/Remaining Time/Elapsed Time/Last Usage/Bypass Permission",
       "since": "2.2-dev33",
       "description": [
@@ -4510,7 +4510,7 @@
       ]
     },
     {
-      "id": "ExprCommand",
+      "id": "ExprCommand-2",
       "name": "Command",
       "since": "2.0, 2.7 (support for script commands)",
       "description": [
@@ -4530,7 +4530,7 @@
       ]
     },
     {
-      "id": "ExprDamage",
+      "id": "ExprDamage-2",
       "name": "Damage",
       "since": "1.3.5, 2.8.0 (item damage event)",
       "description": [
@@ -4550,7 +4550,7 @@
       ]
     },
     {
-      "id": "ExprDrops",
+      "id": "ExprDrops-2",
       "name": "Drops",
       "since": "1.0",
       "description": [
@@ -4565,7 +4565,7 @@
       ]
     },
     {
-      "id": "ExprEnchantingExpCost",
+      "id": "ExprEnchantingExpCost-2",
       "name": "Enchanting Experience Cost",
       "since": "2.5",
       "description": [
@@ -4581,7 +4581,7 @@
       ]
     },
     {
-      "id": "ExprEnchantItem",
+      "id": "ExprEnchantItem-2",
       "name": "Enchant Item",
       "since": "2.5",
       "description": [
@@ -4599,7 +4599,7 @@
       ]
     },
     {
-      "id": "ExprEnchantmentBonus",
+      "id": "ExprEnchantmentBonus-2",
       "name": "Enchantment Bonus",
       "since": "2.5",
       "description": [
@@ -4614,7 +4614,7 @@
       ]
     },
     {
-      "id": "ExprEnchantmentOffer",
+      "id": "ExprEnchantmentOffer-2",
       "name": "Enchantment Offer",
       "since": "2.5",
       "description": [
@@ -4631,7 +4631,7 @@
       ]
     },
     {
-      "id": "ExprEvtInitiator",
+      "id": "ExprEvtInitiator-2",
       "name": "Initiator Inventory",
       "since": "2.8.0",
       "description": [
@@ -4647,7 +4647,7 @@
       ]
     },
     {
-      "id": "ExprExperience",
+      "id": "ExprExperience-2",
       "name": "Experience",
       "since": "2.1, 2.5.3 (block break event), 2.7 (experience change event), INSERT VERSION (breeding, fishing)",
       "description": [
@@ -4676,7 +4676,7 @@
       ]
     },
     {
-      "id": "ExprExplosionYield",
+      "id": "ExprExplosionYield-2",
       "name": "Explosion Yield",
       "since": "2.5",
       "description": [
@@ -4694,7 +4694,7 @@
       ]
     },
     {
-      "id": "ExprFertilizedBlocks",
+      "id": "ExprFertilizedBlocks-2",
       "name": "Fertilized Blocks",
       "since": "2.5",
       "description": [
@@ -4708,7 +4708,7 @@
       ]
     },
     {
-      "id": "ExprFinalDamage",
+      "id": "ExprFinalDamage-2",
       "name": "Final Damage",
       "since": "2.2-dev19",
       "description": [
@@ -4722,7 +4722,7 @@
       ]
     },
     {
-      "id": "ExprHanging",
+      "id": "ExprHanging-2",
       "name": "Hanging Entity/Remover",
       "since": "2.6.2",
       "description": [
@@ -4740,7 +4740,7 @@
       ]
     },
     {
-      "id": "ExprHash",
+      "id": "ExprHash-2",
       "name": "Hash",
       "since": "2.0, 2.2-dev32 (SHA-256 algorithm)",
       "description": [
@@ -4767,7 +4767,7 @@
       ]
     },
     {
-      "id": "ExprHatchingNumber",
+      "id": "ExprHatchingNumber-2",
       "name": "Hatching Number",
       "since": "2.7",
       "description": [
@@ -4783,7 +4783,7 @@
       ]
     },
     {
-      "id": "ExprHatchingType",
+      "id": "ExprHatchingType-2",
       "name": "Hatching Entity Type",
       "since": "2.7",
       "description": [
@@ -4798,7 +4798,7 @@
       ]
     },
     {
-      "id": "ExprHealAmount",
+      "id": "ExprHealAmount-2",
       "name": "Heal Amount",
       "since": "2.5.1",
       "description": [
@@ -4814,7 +4814,7 @@
       ]
     },
     {
-      "id": "ExprHostname",
+      "id": "ExprHostname-2",
       "name": "Hostname",
       "since": "2.6.1",
       "description": [
@@ -4830,7 +4830,7 @@
       ]
     },
     {
-      "id": "ExprHotbarButton",
+      "id": "ExprHotbarButton-2",
       "name": "Hotbar Button",
       "since": "2.5",
       "description": [
@@ -4845,7 +4845,7 @@
       ]
     },
     {
-      "id": "ExprHoverList",
+      "id": "ExprHoverList-2",
       "name": "Hover List",
       "since": "2.3",
       "description": [
@@ -4866,7 +4866,7 @@
       ]
     },
     {
-      "id": "ExprInventoryCloseReason",
+      "id": "ExprInventoryCloseReason-2",
       "name": "Inventory Close Reason",
       "since": "2.8.0",
       "description": [
@@ -4882,7 +4882,7 @@
       ]
     },
     {
-      "id": "ExprLastLoadedServerIcon",
+      "id": "ExprLastLoadedServerIcon-2",
       "name": "Last Loaded Server Icon",
       "since": "2.3",
       "description": [
@@ -4896,7 +4896,7 @@
       ]
     },
     {
-      "id": "ExprLastSpawnedEntity",
+      "id": "ExprLastSpawnedEntity-2",
       "name": "Last Spawned Entity",
       "since": "1.3 (spawned entity), 2.0 (shot entity), 2.2-dev26 (dropped item), 2.7 (struck lightning, firework)",
       "description": [
@@ -4920,7 +4920,7 @@
       ]
     },
     {
-      "id": "ExprLocation",
+      "id": "ExprLocation-3",
       "name": "Location",
       "since": "2.0",
       "description": [
@@ -4935,7 +4935,7 @@
       ]
     },
     {
-      "id": "ExprLoopIteration",
+      "id": "ExprLoopIteration-2",
       "name": "Loop Iteration",
       "since": "2.8.0",
       "description": [
@@ -4957,7 +4957,7 @@
       ]
     },
     {
-      "id": "ExprLoopValue",
+      "id": "ExprLoopValue-2",
       "name": "Loop value",
       "since": "1.0, 2.8.0 (loop-counter), INSERT VERSION (previous, next)",
       "description": [
@@ -4993,7 +4993,7 @@
       ]
     },
     {
-      "id": "ExprMe",
+      "id": "ExprMe-2",
       "name": "Me",
       "since": "2.1.1",
       "description": [
@@ -5010,7 +5010,7 @@
       ]
     },
     {
-      "id": "ExprMemory",
+      "id": "ExprMemory-2",
       "name": "Free / Max / Total Memory",
       "since": "2.8.0",
       "description": [
@@ -5026,7 +5026,7 @@
       ]
     },
     {
-      "id": "ExprMendingRepairAmount",
+      "id": "ExprMendingRepairAmount-2",
       "name": "Mending Repair Amount",
       "since": "2.5.1",
       "description": [
@@ -5042,7 +5042,7 @@
       ]
     },
     {
-      "id": "ExprMessage",
+      "id": "ExprMessage-2",
       "name": "Message",
       "since": "1.4.6 (chat message), 1.4.9 (join & quit messages), 2.0 (death message), 2.9.0 (clear message), INSERT VERSION (broadcasted message)",
       "description": [
@@ -5081,7 +5081,7 @@
       ]
     },
     {
-      "id": "ExprMOTD",
+      "id": "ExprMOTD-2",
       "name": "MOTD",
       "since": "2.3",
       "description": [
@@ -5097,7 +5097,7 @@
       ]
     },
     {
-      "id": "ExprNow",
+      "id": "ExprNow-2",
       "name": "Now",
       "since": "1.4",
       "description": [
@@ -5111,7 +5111,7 @@
       ]
     },
     {
-      "id": "ExprNumberOfCharacters",
+      "id": "ExprNumberOfCharacters-2",
       "name": "Number of Characters",
       "since": "2.5",
       "description": [
@@ -5131,7 +5131,7 @@
       ]
     },
     {
-      "id": "ExprOfflinePlayers",
+      "id": "ExprOfflinePlayers-2",
       "name": "Offline players",
       "since": "2.2-dev35",
       "description": [
@@ -5145,7 +5145,7 @@
       ]
     },
     {
-      "id": "ExprOps",
+      "id": "ExprOps-2",
       "name": "All Operators",
       "since": "2.7",
       "description": [
@@ -5159,7 +5159,7 @@
       ]
     },
     {
-      "id": "ExprParseError",
+      "id": "ExprParseError-2",
       "name": "Parse Error",
       "since": "2.0",
       "description": [
@@ -5178,7 +5178,7 @@
       ]
     },
     {
-      "id": "ExprPlugins",
+      "id": "ExprPlugins-2",
       "name": "Loaded Plugins",
       "since": "2.7",
       "description": [
@@ -5195,7 +5195,7 @@
       ]
     },
     {
-      "id": "ExprPortal",
+      "id": "ExprPortal-2",
       "name": "Portal",
       "since": "2.4",
       "description": [
@@ -5212,7 +5212,7 @@
       ]
     },
     {
-      "id": "ExprProtocolVersion",
+      "id": "ExprProtocolVersion-2",
       "name": "Protocol Version",
       "since": "2.3",
       "description": [
@@ -5237,7 +5237,7 @@
       ]
     },
     {
-      "id": "ExprPushedBlocks",
+      "id": "ExprPushedBlocks-2",
       "name": "Moved blocks",
       "since": "2.2-dev27",
       "description": [
@@ -5251,7 +5251,7 @@
       ]
     },
     {
-      "id": "ExprRandomUUID",
+      "id": "ExprRandomUUID-2",
       "name": "Random UUID",
       "since": "2.5.1",
       "description": [
@@ -5265,7 +5265,7 @@
       ]
     },
     {
-      "id": "ExprRawName",
+      "id": "ExprRawName-2",
       "name": "Raw Name",
       "since": "unknown (2.2)",
       "description": [
@@ -5279,7 +5279,7 @@
       ]
     },
     {
-      "id": "ExprReadiedArrow",
+      "id": "ExprReadiedArrow-2",
       "name": "Readied Arrow/Bow",
       "since": "2.8.0",
       "description": [
@@ -5296,7 +5296,7 @@
       ]
     },
     {
-      "id": "ExprRespawnLocation",
+      "id": "ExprRespawnLocation-2",
       "name": "Respawn location",
       "since": "2.2-dev35",
       "description": [
@@ -5311,7 +5311,7 @@
       ]
     },
     {
-      "id": "ExprScript",
+      "id": "ExprScript-2",
       "name": "Script Name",
       "since": "2.0",
       "description": [
@@ -5329,7 +5329,7 @@
       ]
     },
     {
-      "id": "ExprScripts",
+      "id": "ExprScripts-2",
       "name": "All Scripts",
       "since": "2.5",
       "description": [
@@ -5349,7 +5349,7 @@
       ]
     },
     {
-      "id": "ExprSentCommands",
+      "id": "ExprSentCommands-2",
       "name": "Sent Command List",
       "since": "2.8.0",
       "description": [
@@ -5367,7 +5367,7 @@
       ]
     },
     {
-      "id": "ExprShooter",
+      "id": "ExprShooter-2",
       "name": "Shooter",
       "since": "1.3.7",
       "description": [
@@ -5381,7 +5381,7 @@
       ]
     },
     {
-      "id": "ExprSourceBlock",
+      "id": "ExprSourceBlock-2",
       "name": "Source Block",
       "since": "2.7",
       "description": [
@@ -5397,7 +5397,7 @@
       ]
     },
     {
-      "id": "ExprSpecialNumber",
+      "id": "ExprSpecialNumber-2",
       "name": "Special Number",
       "since": "2.2-dev32d",
       "description": [
@@ -5412,7 +5412,7 @@
       ]
     },
     {
-      "id": "ExprStringCase",
+      "id": "ExprStringCase-2",
       "name": "Case Text",
       "since": "2.2-dev16 (lowercase and uppercase), 2.5 (advanced cases)",
       "description": [
@@ -5451,7 +5451,7 @@
       ]
     },
     {
-      "id": "ExprTamer",
+      "id": "ExprTamer-2",
       "name": "Tamer",
       "since": "2.2-dev25",
       "description": [
@@ -5467,7 +5467,7 @@
       ]
     },
     {
-      "id": "ExprTimes",
+      "id": "ExprTimes-2",
       "name": "X Times",
       "since": "1.4.6",
       "description": [
@@ -5486,7 +5486,7 @@
       ]
     },
     {
-      "id": "ExprTPS",
+      "id": "ExprTPS-2",
       "name": "TPS (ticks per second)",
       "since": "2.2-dev36",
       "description": [
@@ -5503,7 +5503,7 @@
       ]
     },
     {
-      "id": "ExprTransformReason",
+      "id": "ExprTransformReason-2",
       "name": "Transform Reason",
       "since": "2.8.0",
       "description": [
@@ -5518,7 +5518,7 @@
       ]
     },
     {
-      "id": "ExprVectorCylindrical",
+      "id": "ExprVectorCylindrical-2",
       "name": "Vectors - Cylindrical Shape",
       "since": "2.2-dev28",
       "description": [
@@ -5534,7 +5534,7 @@
       ]
     },
     {
-      "id": "ExprVectorRandom",
+      "id": "ExprVectorRandom-2",
       "name": "Vectors - Random Vector",
       "since": "2.2-dev28, 2.7 (signed components)",
       "description": [
@@ -5548,7 +5548,7 @@
       ]
     },
     {
-      "id": "ExprVectorSpherical",
+      "id": "ExprVectorSpherical-2",
       "name": "Vectors - Spherical Shape",
       "since": "2.2-dev28",
       "description": [
@@ -5564,7 +5564,7 @@
       ]
     },
     {
-      "id": "ExprVersion",
+      "id": "ExprVersion-2",
       "name": "Version",
       "since": "2.0",
       "description": [
@@ -5579,7 +5579,7 @@
       ]
     },
     {
-      "id": "ExprVersionString",
+      "id": "ExprVersionString-2",
       "name": "Version String",
       "since": "2.3",
       "description": [
@@ -5596,7 +5596,7 @@
       ]
     },
     {
-      "id": "ExprWhitelist",
+      "id": "ExprWhitelist-2",
       "name": "Whitelist",
       "since": "2.5.2, 2.9.0 (delete)",
       "description": [
@@ -5614,7 +5614,7 @@
       ]
     },
     {
-      "id": "ExprWorldFromName",
+      "id": "ExprWorldFromName-2",
       "name": "World from Name",
       "since": "2.6.1",
       "description": [
@@ -5629,7 +5629,7 @@
       ]
     },
     {
-      "id": "ExprWorlds",
+      "id": "ExprWorlds-2",
       "name": "Worlds",
       "since": "1.0",
       "description": [
@@ -5644,7 +5644,7 @@
       ]
     },
     {
-      "id": "LitConsole",
+      "id": "LitConsole-2",
       "name": "Console",
       "since": "1.3.1",
       "description": [
@@ -5659,7 +5659,7 @@
       ]
     },
     {
-      "id": "LitNewLine",
+      "id": "LitNewLine-2",
       "name": "New Line",
       "since": "2.5",
       "description": [
@@ -5675,7 +5675,7 @@
       ]
     },
     {
-      "id": "LitPi",
+      "id": "LitPi-2",
       "name": "Pi",
       "since": "2.7",
       "description": [
@@ -5689,7 +5689,7 @@
       ]
     },
     {
-      "id": "ExprRotate",
+      "id": "ExprRotate-2",
       "name": "Rotated Quaternion/Vector",
       "since": "INSERT VERSION",
       "description": [
@@ -5714,7 +5714,7 @@
       ]
     },
     {
-      "id": "ExprBreedingFamily",
+      "id": "ExprBreedingFamily-2",
       "name": "Breeding Family",
       "since": "INSERT VERSION",
       "description": [
@@ -5732,7 +5732,7 @@
       ]
     },
     {
-      "id": "ExprLoot",
+      "id": "ExprLoot-2",
       "name": "Loot",
       "since": "2.7",
       "description": [
@@ -5749,7 +5749,7 @@
       ]
     },
     {
-      "id": "ExprAllGroups",
+      "id": "ExprAllGroups-2",
       "name": "All Groups",
       "since": "2.2-dev35",
       "description": [
@@ -5766,7 +5766,7 @@
       ]
     },
     {
-      "id": "ExprDamageCause",
+      "id": "ExprDamageCause-2",
       "name": "Damage Cause",
       "since": "2.0",
       "description": [
@@ -5780,7 +5780,7 @@
       ]
     },
     {
-      "id": "ExprCommandSender",
+      "id": "ExprCommandSender-2",
       "name": "Command Sender",
       "since": "2.0",
       "description": [
@@ -5798,7 +5798,7 @@
       ]
     },
     {
-      "id": "ExprEgg",
+      "id": "ExprEgg-2",
       "name": "The Egg",
       "since": "2.7",
       "description": [
@@ -5812,7 +5812,7 @@
       ]
     },
     {
-      "id": "ExprExperienceCooldownChangeReason",
+      "id": "ExprExperienceCooldownChangeReason-2",
       "name": "Experience Cooldown Change Reason",
       "since": "INSERT VERSION",
       "description": [
@@ -5830,7 +5830,7 @@
       ]
     },
     {
-      "id": "ExprHealReason",
+      "id": "ExprHealReason-2",
       "name": "Heal Reason",
       "since": "2.5",
       "description": [
@@ -5846,7 +5846,7 @@
       ]
     },
     {
-      "id": "ExprInventoryAction",
+      "id": "ExprInventoryAction-2",
       "name": "Inventory Action",
       "since": "2.2-dev16",
       "description": [
@@ -5860,7 +5860,7 @@
       ]
     },
     {
-      "id": "ExprItem",
+      "id": "ExprItem-2",
       "name": "Item",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -5876,7 +5876,7 @@
       ]
     },
     {
-      "id": "ExprQuitReason",
+      "id": "ExprQuitReason-2",
       "name": "Quit Reason",
       "since": "2.8.0",
       "description": [
@@ -5893,7 +5893,7 @@
       ]
     },
     {
-      "id": "ExprSpawnReason",
+      "id": "ExprSpawnReason-2",
       "name": "Spawn Reason",
       "since": "2.3",
       "description": [
@@ -5909,7 +5909,7 @@
       ]
     },
     {
-      "id": "ExprTeleportCause",
+      "id": "ExprTeleportCause-2",
       "name": "Teleport Cause",
       "since": "2.2-dev35",
       "description": [
@@ -5925,7 +5925,7 @@
       ]
     },
     {
-      "id": "ExprFishingApproachAngle",
+      "id": "ExprFishingApproachAngle-2",
       "name": "Fishing Approach Angle",
       "since": "INSERT VERSION",
       "description": [
@@ -5943,7 +5943,7 @@
       ]
     },
     {
-      "id": "ExprFishingBiteTime",
+      "id": "ExprFishingBiteTime-2",
       "name": "Fishing Bite Time",
       "since": "INSERT VERSION",
       "description": [
@@ -5959,7 +5959,7 @@
       ]
     },
     {
-      "id": "ExprFishingHook",
+      "id": "ExprFishingHook-2",
       "name": "Fishing Hook",
       "since": "INSERT VERSION",
       "description": [
@@ -5975,7 +5975,7 @@
       ]
     },
     {
-      "id": "ExprFishingHookEntity",
+      "id": "ExprFishingHookEntity-2",
       "name": "Fishing Hooked Entity",
       "since": "INSERT VERSION",
       "description": [
@@ -5991,7 +5991,7 @@
       ]
     },
     {
-      "id": "ExprFishingWaitTime",
+      "id": "ExprFishingWaitTime-2",
       "name": "Fishing Wait Time",
       "since": "INSERT VERSION",
       "description": [
@@ -6008,7 +6008,7 @@
       ]
     },
     {
-      "id": "ExprLootContext",
+      "id": "ExprLootContext-2",
       "name": "Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -6023,7 +6023,7 @@
       ]
     },
     {
-      "id": "ExprRegion",
+      "id": "ExprRegion-2",
       "name": "Region",
       "since": "2.1",
       "description": [
@@ -6040,7 +6040,7 @@
       ]
     },
     {
-      "id": "ExprAlphabetList",
+      "id": "ExprAlphabetList-2",
       "name": "Alphabetical Sort",
       "since": "2.2-dev18b",
       "description": [
@@ -6054,7 +6054,7 @@
       ]
     },
     {
-      "id": "ExprBlock-2",
+      "id": "ExprBlock-3",
       "name": "Block",
       "since": "1.0",
       "description": [
@@ -6076,7 +6076,7 @@
       ]
     },
     {
-      "id": "ExprBlocks",
+      "id": "ExprBlocks-2",
       "name": "Blocks",
       "since": "1.0, 2.5.1 (within/cuboid/chunk)",
       "description": [
@@ -6100,7 +6100,7 @@
       ]
     },
     {
-      "id": "ExprBlockSphere",
+      "id": "ExprBlockSphere-2",
       "name": "Block Sphere",
       "since": "1.0",
       "description": [
@@ -6116,7 +6116,7 @@
       ]
     },
     {
-      "id": "ExprBreakSpeed",
+      "id": "ExprBreakSpeed-2",
       "name": "Block Break Speed",
       "since": "2.7",
       "description": [
@@ -6133,7 +6133,7 @@
       ]
     },
     {
-      "id": "ExprCharacters",
+      "id": "ExprCharacters-2",
       "name": "Characters Between",
       "since": "2.8.0",
       "description": [
@@ -6156,7 +6156,7 @@
       ]
     },
     {
-      "id": "ExprChestInventory",
+      "id": "ExprChestInventory-2",
       "name": "Custom Chest Inventory",
       "since": "2.2-dev34, 2.8.0 (chat format)",
       "description": [
@@ -6177,7 +6177,7 @@
       ]
     },
     {
-      "id": "ExprChunk",
+      "id": "ExprChunk-2",
       "name": "Chunk",
       "since": "2.0, 2.8.0 (loaded chunks)",
       "description": [
@@ -6194,7 +6194,7 @@
       ]
     },
     {
-      "id": "ExprColoured",
+      "id": "ExprColoured-2",
       "name": "Colored / Uncolored",
       "since": "2.0",
       "description": [
@@ -6220,7 +6220,7 @@
       ]
     },
     {
-      "id": "ExprDamagedItem",
+      "id": "ExprDamagedItem-2",
       "name": "Damaged Item",
       "since": "2.4",
       "description": [
@@ -6240,7 +6240,7 @@
       ]
     },
     {
-      "id": "ExprDateAgoLater",
+      "id": "ExprDateAgoLater-2",
       "name": "Date Ago/Later",
       "since": "2.2-dev33",
       "description": [
@@ -6257,7 +6257,7 @@
       ]
     },
     {
-      "id": "ExprDefaultValue",
+      "id": "ExprDefaultValue-2",
       "name": "Default Value",
       "since": "2.2-dev36",
       "description": [
@@ -6271,7 +6271,7 @@
       ]
     },
     {
-      "id": "ExprDifference",
+      "id": "ExprDifference-2",
       "name": "Difference",
       "since": "1.4",
       "description": [
@@ -6287,7 +6287,7 @@
       ]
     },
     {
-      "id": "ExprDirection",
+      "id": "ExprDirection-2",
       "name": "Direction",
       "since": "1.0 (basic), 2.0 (extended)",
       "description": [
@@ -6318,7 +6318,7 @@
       ]
     },
     {
-      "id": "ExprDistance",
+      "id": "ExprDistance-2",
       "name": "Distance",
       "since": "1.0",
       "description": [
@@ -6333,7 +6333,7 @@
       ]
     },
     {
-      "id": "ExprDropsOfBlock",
+      "id": "ExprDropsOfBlock-2",
       "name": "Drops Of Block",
       "since": "2.5.1",
       "description": [
@@ -6349,7 +6349,7 @@
       ]
     },
     {
-      "id": "ExprEntityAttribute",
+      "id": "ExprEntityAttribute-2",
       "name": "Entity Attribute",
       "since": "2.5, 2.6.1 (final attribute value)",
       "description": [
@@ -6368,7 +6368,7 @@
       ]
     },
     {
-      "id": "ExprEntitySound",
+      "id": "ExprEntitySound-2",
       "name": "Entity Sound",
       "since": "INSERT VERSION",
       "description": [
@@ -6398,7 +6398,7 @@
       ]
     },
     {
-      "id": "ExprExplodedBlocks",
+      "id": "ExprExplodedBlocks-2",
       "name": "Exploded Blocks",
       "since": "2.5, 2.8.6 (modify blocks)",
       "description": [
@@ -6428,7 +6428,7 @@
       ]
     },
     {
-      "id": "ExprFilter",
+      "id": "ExprFilter-2",
       "name": "Filter (Expression)",
       "since": "2.2-dev36",
       "description": [
@@ -6444,7 +6444,7 @@
       ]
     },
     {
-      "id": "ExprFireworkEffect",
+      "id": "ExprFireworkEffect-2",
       "name": "Firework Effect",
       "since": "2.4",
       "description": [
@@ -6461,7 +6461,7 @@
       ]
     },
     {
-      "id": "ExprGameRule",
+      "id": "ExprGameRule-2",
       "name": "Gamerule Value",
       "since": "2.5",
       "description": [
@@ -6475,7 +6475,7 @@
       ]
     },
     {
-      "id": "ExprIndexOf",
+      "id": "ExprIndexOf-2",
       "name": "Index Of",
       "since": "2.1",
       "description": [
@@ -6491,7 +6491,7 @@
       ]
     },
     {
-      "id": "ExprIndices",
+      "id": "ExprIndices-2",
       "name": "Indices of List",
       "since": "2.4 (indices), 2.6.1 (sorting)",
       "description": [
@@ -6520,7 +6520,7 @@
       ]
     },
     {
-      "id": "ExprInput",
+      "id": "ExprInput-2",
       "name": "Input",
       "since": "2.2-dev36, 2.9.0 (input index)",
       "description": [
@@ -6540,7 +6540,7 @@
       ]
     },
     {
-      "id": "ExprInventorySlot",
+      "id": "ExprInventorySlot-2",
       "name": "Inventory Slot",
       "since": "2.2-dev24",
       "description": [
@@ -6559,7 +6559,7 @@
       ]
     },
     {
-      "id": "ExprItemCooldown",
+      "id": "ExprItemCooldown-2",
       "name": "Item Cooldown",
       "since": "2.8.0",
       "description": [
@@ -6577,7 +6577,7 @@
       ]
     },
     {
-      "id": "ExprItems",
+      "id": "ExprItems-2",
       "name": "Items",
       "since": "1.0 pre-5",
       "description": [
@@ -6597,7 +6597,7 @@
       ]
     },
     {
-      "id": "ExprJoinSplit",
+      "id": "ExprJoinSplit-2",
       "name": "Join & Split",
       "since": "2.1, 2.5.2 (regex support), 2.7 (case sensitivity), INSERT VERSION (without trailing string)",
       "description": [
@@ -6616,7 +6616,7 @@
       ]
     },
     {
-      "id": "ExprLocation-2",
+      "id": "ExprLocation-3",
       "name": "Location",
       "since": "2.0",
       "description": [
@@ -6631,7 +6631,7 @@
       ]
     },
     {
-      "id": "ExprLocationAt",
+      "id": "ExprLocationAt-2",
       "name": "Location At",
       "since": "2.0",
       "description": [
@@ -6646,7 +6646,7 @@
       ]
     },
     {
-      "id": "ExprLocationFromVector",
+      "id": "ExprLocationFromVector-2",
       "name": "Vectors - Create Location from Vector",
       "since": "2.2-dev28",
       "description": [
@@ -6665,7 +6665,7 @@
       ]
     },
     {
-      "id": "ExprLocationVectorOffset",
+      "id": "ExprLocationVectorOffset-2",
       "name": "Vectors - Location Vector Offset",
       "since": "2.2-dev28",
       "description": [
@@ -6680,7 +6680,7 @@
       ]
     },
     {
-      "id": "ExprNearestEntity",
+      "id": "ExprNearestEntity-2",
       "name": "Nearest Entity",
       "since": "2.7",
       "description": [
@@ -6700,7 +6700,7 @@
       ]
     },
     {
-      "id": "ExprNumbers",
+      "id": "ExprNumbers-2",
       "name": "Numbers",
       "since": "1.4.6 (integers & numbers), 2.5.1 (decimals)",
       "description": [
@@ -6719,7 +6719,7 @@
       ]
     },
     {
-      "id": "ExprParse",
+      "id": "ExprParse-2",
       "name": "Parse",
       "since": "2.0",
       "description": [
@@ -6747,7 +6747,7 @@
       ]
     },
     {
-      "id": "ExprPercent",
+      "id": "ExprPercent-2",
       "name": "Percent of",
       "since": "2.8.0",
       "description": [
@@ -6765,7 +6765,7 @@
       ]
     },
     {
-      "id": "ExprPlain",
+      "id": "ExprPlain-2",
       "name": "Plain Item",
       "since": "2.6",
       "description": [
@@ -6780,7 +6780,7 @@
       ]
     },
     {
-      "id": "ExprPotionEffect",
+      "id": "ExprPotionEffect-2",
       "name": "Potion Effect",
       "since": "2.5.2",
       "description": [
@@ -6799,7 +6799,7 @@
       ]
     },
     {
-      "id": "ExprPotionEffectTier",
+      "id": "ExprPotionEffectTier-2",
       "name": "Potion Effect Tier",
       "since": "2.7",
       "description": [
@@ -6813,7 +6813,7 @@
       ]
     },
     {
-      "id": "ExprRandom",
+      "id": "ExprRandom-2",
       "name": "Random",
       "since": "1.4.9",
       "description": [
@@ -6828,7 +6828,7 @@
       ]
     },
     {
-      "id": "ExprRandomCharacter",
+      "id": "ExprRandomCharacter-2",
       "name": "Random Character",
       "since": "2.8.0",
       "description": [
@@ -6845,7 +6845,7 @@
       ]
     },
     {
-      "id": "ExprRandomNumber",
+      "id": "ExprRandomNumber-2",
       "name": "Random Numbers",
       "since": "1.4, INSERT VERSION (Multiple random numbers)",
       "description": [
@@ -6863,7 +6863,7 @@
       ]
     },
     {
-      "id": "ExprRawString",
+      "id": "ExprRawString-2",
       "name": "Raw String",
       "since": "2.7",
       "description": [
@@ -6877,7 +6877,7 @@
       ]
     },
     {
-      "id": "ExprRepeat",
+      "id": "ExprRepeat-2",
       "name": "Repeat String",
       "since": "2.8.0",
       "description": [
@@ -6894,7 +6894,7 @@
       ]
     },
     {
-      "id": "ExprReversedList",
+      "id": "ExprReversedList-2",
       "name": "Reversed List",
       "since": "2.4",
       "description": [
@@ -6908,7 +6908,7 @@
       ]
     },
     {
-      "id": "ExprShuffledList",
+      "id": "ExprShuffledList-2",
       "name": "Shuffled List",
       "since": "2.2-dev32",
       "description": [
@@ -6922,7 +6922,7 @@
       ]
     },
     {
-      "id": "ExprSortedList",
+      "id": "ExprSortedList-2",
       "name": "Sorted List",
       "since": "2.2-dev19",
       "description": [
@@ -6936,7 +6936,7 @@
       ]
     },
     {
-      "id": "ExprSubstring",
+      "id": "ExprSubstring-2",
       "name": "Substring",
       "since": "2.1, 2.5.2 (character at, multiple strings support)",
       "description": [
@@ -6956,7 +6956,7 @@
       ]
     },
     {
-      "id": "ExprTargetedBlock",
+      "id": "ExprTargetedBlock-2",
       "name": "Targeted Block",
       "since": "1.0, 2.9.0 (actual/exact)",
       "description": [
@@ -6979,7 +6979,7 @@
       ]
     },
     {
-      "id": "ExprTernary",
+      "id": "ExprTernary-2",
       "name": "Ternary",
       "since": "2.2-dev36",
       "description": [
@@ -6993,7 +6993,7 @@
       ]
     },
     {
-      "id": "ExprValueWithin",
+      "id": "ExprValueWithin-2",
       "name": "Value Within",
       "since": "2.7",
       "description": [
@@ -7011,7 +7011,7 @@
       ]
     },
     {
-      "id": "ExprVectorAngleBetween",
+      "id": "ExprVectorAngleBetween-2",
       "name": "Vectors - Angle Between",
       "since": "2.2-dev28",
       "description": [
@@ -7025,7 +7025,7 @@
       ]
     },
     {
-      "id": "ExprVectorBetweenLocations",
+      "id": "ExprVectorBetweenLocations-2",
       "name": "Vectors - Vector Between Locations",
       "since": "2.2-dev28",
       "description": [
@@ -7039,7 +7039,7 @@
       ]
     },
     {
-      "id": "ExprVectorCrossProduct",
+      "id": "ExprVectorCrossProduct-2",
       "name": "Vectors - Cross Product",
       "since": "2.2-dev28",
       "description": [
@@ -7053,7 +7053,7 @@
       ]
     },
     {
-      "id": "ExprVectorDotProduct",
+      "id": "ExprVectorDotProduct-2",
       "name": "Vectors - Dot Product",
       "since": "2.2-dev28",
       "description": [
@@ -7067,7 +7067,7 @@
       ]
     },
     {
-      "id": "ExprVectorFromXYZ",
+      "id": "ExprVectorFromXYZ-2",
       "name": "Vectors - Create from XYZ",
       "since": "2.2-dev28",
       "description": [
@@ -7081,7 +7081,7 @@
       ]
     },
     {
-      "id": "ExprVectorFromYawAndPitch",
+      "id": "ExprVectorFromYawAndPitch-2",
       "name": "Vectors - Vector from Pitch and Yaw",
       "since": "2.2-dev28",
       "description": [
@@ -7095,7 +7095,7 @@
       ]
     },
     {
-      "id": "ExprVectorNormalize",
+      "id": "ExprVectorNormalize-2",
       "name": "Vectors - Normalized",
       "since": "2.2-dev28",
       "description": [
@@ -7110,7 +7110,7 @@
       ]
     },
     {
-      "id": "ExprVectorProjection",
+      "id": "ExprVectorProjection-2",
       "name": "Vectors - Vector Projection",
       "since": "2.8.0",
       "description": [
@@ -7124,7 +7124,7 @@
       ]
     },
     {
-      "id": "ExprWithItemFlags",
+      "id": "ExprWithItemFlags-2",
       "name": "Item with Item Flags",
       "since": "INSERT VERSION",
       "description": [
@@ -7142,7 +7142,7 @@
       ]
     },
     {
-      "id": "ExprLootItems",
+      "id": "ExprLootItems-2",
       "name": "Loot of Loot Table",
       "since": "INSERT VERSION",
       "description": [
@@ -7161,7 +7161,7 @@
       ]
     },
     {
-      "id": "ExprLootTableFromString",
+      "id": "ExprLootTableFromString-2",
       "name": "Loot Table from Key",
       "since": "INSERT VERSION",
       "description": [
@@ -7175,7 +7175,7 @@
       ]
     },
     {
-      "id": "ExprSecCreateLootContext",
+      "id": "ExprSecCreateLootContext-2",
       "name": "Create Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -7194,7 +7194,7 @@
       ]
     },
     {
-      "id": "ExprBlocksInRegion",
+      "id": "ExprBlocksInRegion-2",
       "name": "Blocks in Region",
       "since": "2.1",
       "description": [
@@ -7210,7 +7210,7 @@
       ]
     },
     {
-      "id": "ExprActiveItem",
+      "id": "ExprActiveItem-2",
       "name": "Active Item",
       "since": "2.8.0",
       "description": [
@@ -7227,7 +7227,7 @@
       ]
     },
     {
-      "id": "ExprAge",
+      "id": "ExprAge-2",
       "name": "Age of Block/Entity",
       "since": "2.7",
       "description": [
@@ -7249,7 +7249,7 @@
       ]
     },
     {
-      "id": "ExprAI",
+      "id": "ExprAI-2",
       "name": "Entity AI",
       "since": "2.5",
       "description": [
@@ -7264,7 +7264,7 @@
       ]
     },
     {
-      "id": "ExprAltitude",
+      "id": "ExprAltitude-2",
       "name": "Altitude",
       "since": "1.4.3",
       "description": [
@@ -7281,7 +7281,7 @@
       ]
     },
     {
-      "id": "ExprAmount",
+      "id": "ExprAmount-2",
       "name": "Amount",
       "since": "1.0",
       "description": [
@@ -7312,7 +7312,7 @@
       ]
     },
     {
-      "id": "ExprAmountOfItems",
+      "id": "ExprAmountOfItems-2",
       "name": "Amount of Items",
       "since": "2.0",
       "description": [
@@ -7326,7 +7326,7 @@
       ]
     },
     {
-      "id": "ExprAnvilRepairCost",
+      "id": "ExprAnvilRepairCost-2",
       "name": "Anvil Repair Cost",
       "since": "2.8.0",
       "description": [
@@ -7350,7 +7350,7 @@
       ]
     },
     {
-      "id": "ExprAnvilText",
+      "id": "ExprAnvilText-2",
       "name": "Anvil Text Input",
       "since": "2.7",
       "description": [
@@ -7368,7 +7368,7 @@
       ]
     },
     {
-      "id": "ExprARGB",
+      "id": "ExprARGB-2",
       "name": "Alpha/Red/Green/Blue Color Value",
       "since": "INSERT VERSION",
       "description": [
@@ -7385,7 +7385,7 @@
       ]
     },
     {
-      "id": "ExprArmorSlot",
+      "id": "ExprArmorSlot-2",
       "name": "Armor Slot",
       "since": "1.0, 2.8.0 (armor), INSERT VERSION (body armor)",
       "description": [
@@ -7407,7 +7407,7 @@
       ]
     },
     {
-      "id": "ExprArrowKnockbackStrength",
+      "id": "ExprArrowKnockbackStrength-2",
       "name": "Arrow Knockback Strength",
       "since": "2.5.1",
       "description": [
@@ -7424,7 +7424,7 @@
       ]
     },
     {
-      "id": "ExprArrowsStuck",
+      "id": "ExprArrowsStuck-2",
       "name": "Arrows Stuck",
       "since": "2.5",
       "description": [
@@ -7438,7 +7438,7 @@
       ]
     },
     {
-      "id": "ExprAttachedBlock",
+      "id": "ExprAttachedBlock-2",
       "name": "Arrow Attached Block",
       "since": "2.8.0",
       "description": [
@@ -7453,7 +7453,7 @@
       ]
     },
     {
-      "id": "ExprAttackCooldown",
+      "id": "ExprAttackCooldown-2",
       "name": "Attack Cooldown",
       "since": "2.6.1",
       "description": [
@@ -7472,7 +7472,7 @@
       ]
     },
     {
-      "id": "ExprBeaconValues",
+      "id": "ExprBeaconValues-2",
       "name": "Beacon Effects",
       "since": "INSERT VERSION",
       "description": [
@@ -7499,7 +7499,7 @@
       ]
     },
     {
-      "id": "ExprBed",
+      "id": "ExprBed-2",
       "name": "Bed",
       "since": "2.0, 2.7 (offlineplayers, safe bed)",
       "description": [
@@ -7522,7 +7522,7 @@
       ]
     },
     {
-      "id": "ExprBiome",
+      "id": "ExprBiome-2",
       "name": "Biome",
       "since": "1.4.4, 2.6.1 (3D biomes)",
       "description": [
@@ -7543,7 +7543,7 @@
       ]
     },
     {
-      "id": "ExprBlockData",
+      "id": "ExprBlockData-2",
       "name": "Block Data",
       "since": "2.5, 2.5.2 (set), INSERT VERSION (block displays)",
       "description": [
@@ -7562,7 +7562,7 @@
       ]
     },
     {
-      "id": "ExprBlockHardness",
+      "id": "ExprBlockHardness-2",
       "name": "Block Hardness",
       "since": "2.6",
       "description": [
@@ -7578,7 +7578,7 @@
       ]
     },
     {
-      "id": "ExprBlockSound",
+      "id": "ExprBlockSound-2",
       "name": "Block Sound",
       "since": "INSERT VERSION",
       "description": [
@@ -7597,7 +7597,7 @@
       ]
     },
     {
-      "id": "ExprBookAuthor",
+      "id": "ExprBookAuthor-2",
       "name": "Book Author",
       "since": "2.2-dev31",
       "description": [
@@ -7613,7 +7613,7 @@
       ]
     },
     {
-      "id": "ExprBookPages",
+      "id": "ExprBookPages-2",
       "name": "Book Pages",
       "since": "2.2-dev31, 2.7 (changers)",
       "description": [
@@ -7636,7 +7636,7 @@
       ]
     },
     {
-      "id": "ExprBookTitle",
+      "id": "ExprBookTitle-2",
       "name": "Book Title",
       "since": "2.2-dev31",
       "description": [
@@ -7652,7 +7652,7 @@
       ]
     },
     {
-      "id": "ExprCharacterFromCodepoint",
+      "id": "ExprCharacterFromCodepoint-2",
       "name": "Character from Codepoint",
       "since": "2.9.0",
       "description": [
@@ -7675,7 +7675,7 @@
       ]
     },
     {
-      "id": "ExprCharges",
+      "id": "ExprCharges-2",
       "name": "Respawn Anchor Charges",
       "since": "2.7",
       "description": [
@@ -7690,7 +7690,7 @@
       ]
     },
     {
-      "id": "ExprClientViewDistance",
+      "id": "ExprClientViewDistance-2",
       "name": "View Distance of Client",
       "since": "2.5",
       "description": [
@@ -7706,7 +7706,7 @@
       ]
     },
     {
-      "id": "ExprCodepoint",
+      "id": "ExprCodepoint-2",
       "name": "Character Codepoint",
       "since": "2.9.0",
       "description": [
@@ -7737,7 +7737,7 @@
       ]
     },
     {
-      "id": "ExprColorOf",
+      "id": "ExprColorOf-2",
       "name": "Color of",
       "since": "1.2, INSERT VERSION (displays)",
       "description": [
@@ -7756,7 +7756,7 @@
       ]
     },
     {
-      "id": "ExprCommandBlockCommand",
+      "id": "ExprCommandBlockCommand-2",
       "name": "Command Block Command",
       "since": "INSERT VERSION",
       "description": [
@@ -7772,7 +7772,7 @@
       ]
     },
     {
-      "id": "ExprCommandInfo",
+      "id": "ExprCommandInfo-2",
       "name": "Command Info",
       "since": "2.6",
       "description": [
@@ -7817,7 +7817,7 @@
       ]
     },
     {
-      "id": "ExprCompassTarget",
+      "id": "ExprCompassTarget-2",
       "name": "Compass Target",
       "since": "2.0",
       "description": [
@@ -7835,7 +7835,7 @@
       ]
     },
     {
-      "id": "ExprCoordinate",
+      "id": "ExprCoordinate-2",
       "name": "Coordinate",
       "since": "1.4.3",
       "description": [
@@ -7851,7 +7851,7 @@
       ]
     },
     {
-      "id": "ExprCursorSlot",
+      "id": "ExprCursorSlot-2",
       "name": "Cursor Slot",
       "since": "2.2-dev17",
       "description": [
@@ -7867,7 +7867,7 @@
       ]
     },
     {
-      "id": "ExprCustomModelData",
+      "id": "ExprCustomModelData-2",
       "name": "Custom Model Data",
       "since": "2.5",
       "description": [
@@ -7883,7 +7883,7 @@
       ]
     },
     {
-      "id": "ExprDifficulty",
+      "id": "ExprDifficulty-2",
       "name": "Difficulty",
       "since": "2.3",
       "description": [
@@ -7898,7 +7898,7 @@
       ]
     },
     {
-      "id": "ExprDomestication",
+      "id": "ExprDomestication-2",
       "name": "Horse Domestication",
       "since": "INSERT VERSION",
       "description": [
@@ -7919,7 +7919,7 @@
       ]
     },
     {
-      "id": "ExprDurability",
+      "id": "ExprDurability-2",
       "name": "Damage Value/Durability",
       "since": "1.2, 2.7 (durability reversed)",
       "description": [
@@ -7936,7 +7936,7 @@
       ]
     },
     {
-      "id": "ExprElement",
+      "id": "ExprElement-2",
       "name": "Elements",
       "since": "2.0, 2.7 (relative to last element), 2.8.0 (range of elements)",
       "description": [
@@ -7959,7 +7959,7 @@
       ]
     },
     {
-      "id": "ExprEnchantmentLevel",
+      "id": "ExprEnchantmentLevel-2",
       "name": "Enchantment Level",
       "since": "2.0",
       "description": [
@@ -7977,7 +7977,7 @@
       ]
     },
     {
-      "id": "ExprEnchantmentOfferCost",
+      "id": "ExprEnchantmentOfferCost-2",
       "name": "Enchantment Offer Cost",
       "since": "2.5",
       "description": [
@@ -7995,7 +7995,7 @@
       ]
     },
     {
-      "id": "ExprEnchantments",
+      "id": "ExprEnchantments-2",
       "name": "Item Enchantments",
       "since": "2.2-dev36",
       "description": [
@@ -8010,7 +8010,7 @@
       ]
     },
     {
-      "id": "ExprEnderChest",
+      "id": "ExprEnderChest-2",
       "name": "Ender Chest",
       "since": "2.0",
       "description": [
@@ -8025,7 +8025,7 @@
       ]
     },
     {
-      "id": "ExprEntityItemUseTime",
+      "id": "ExprEntityItemUseTime-2",
       "name": "Active Item Use Time",
       "since": "2.8.0",
       "description": [
@@ -8044,7 +8044,7 @@
       ]
     },
     {
-      "id": "ExprEntitySnapshot",
+      "id": "ExprEntitySnapshot-2",
       "name": "Entity Snapshot",
       "since": "INSERT VERSION",
       "description": [
@@ -8065,7 +8065,7 @@
       ]
     },
     {
-      "id": "ExprEntityTamer",
+      "id": "ExprEntityTamer-2",
       "name": "Entity Owner",
       "since": "2.5",
       "description": [
@@ -8082,7 +8082,7 @@
       ]
     },
     {
-      "id": "ExprExhaustion",
+      "id": "ExprExhaustion-2",
       "name": "Exhaustion",
       "since": "2.2-dev35",
       "description": [
@@ -8097,7 +8097,7 @@
       ]
     },
     {
-      "id": "ExprExperienceCooldown",
+      "id": "ExprExperienceCooldown-2",
       "name": "Experience Pickup Cooldown",
       "since": "INSERT VERSION",
       "description": [
@@ -8117,7 +8117,7 @@
       ]
     },
     {
-      "id": "ExprExplosionBlockYield",
+      "id": "ExprExplosionBlockYield-2",
       "name": "Explosion Block Yield",
       "since": "2.5",
       "description": [
@@ -8135,7 +8135,7 @@
       ]
     },
     {
-      "id": "ExprExplosiveYield",
+      "id": "ExprExplosiveYield-2",
       "name": "Explosive Yield",
       "since": "2.5",
       "description": [
@@ -8152,7 +8152,7 @@
       ]
     },
     {
-      "id": "ExprEyeLocation",
+      "id": "ExprEyeLocation-2",
       "name": "Head location",
       "since": "2.0",
       "description": [
@@ -8170,7 +8170,7 @@
       ]
     },
     {
-      "id": "ExprFacing",
+      "id": "ExprFacing-2",
       "name": "Facing",
       "since": "1.4",
       "description": [
@@ -8187,7 +8187,7 @@
       ]
     },
     {
-      "id": "ExprFallDistance",
+      "id": "ExprFallDistance-2",
       "name": "Fall Distance",
       "since": "2.5",
       "description": [
@@ -8204,7 +8204,7 @@
       ]
     },
     {
-      "id": "ExprFireTicks",
+      "id": "ExprFireTicks-2",
       "name": "Entity Fire Burn Duration",
       "since": "2.7, INSERT VERSION (maximum)",
       "description": [
@@ -8220,7 +8220,7 @@
       ]
     },
     {
-      "id": "ExprFlightMode",
+      "id": "ExprFlightMode-2",
       "name": "Flight Mode",
       "since": "2.2-dev34",
       "description": [
@@ -8236,7 +8236,7 @@
       ]
     },
     {
-      "id": "ExprFoodLevel",
+      "id": "ExprFoodLevel-2",
       "name": "Food Level",
       "since": "1.0",
       "description": [
@@ -8251,7 +8251,7 @@
       ]
     },
     {
-      "id": "ExprFormatDate",
+      "id": "ExprFormatDate-2",
       "name": "Formatted Date",
       "since": "2.2-dev31, 2.7 (support variables in format)",
       "description": [
@@ -8269,7 +8269,7 @@
       ]
     },
     {
-      "id": "ExprFreezeTicks",
+      "id": "ExprFreezeTicks-2",
       "name": "Freeze Time",
       "since": "2.7",
       "description": [
@@ -8285,7 +8285,7 @@
       ]
     },
     {
-      "id": "ExprGameMode",
+      "id": "ExprGameMode-2",
       "name": "Game Mode",
       "since": "1.0",
       "description": [
@@ -8301,7 +8301,7 @@
       ]
     },
     {
-      "id": "ExprGlidingState",
+      "id": "ExprGlidingState-2",
       "name": "Gliding State",
       "since": "2.2-dev21",
       "description": [
@@ -8316,7 +8316,7 @@
       ]
     },
     {
-      "id": "ExprGlowing",
+      "id": "ExprGlowing-2",
       "name": "Glowing",
       "since": "2.2-dev18",
       "description": [
@@ -8331,7 +8331,7 @@
       ]
     },
     {
-      "id": "ExprGravity",
+      "id": "ExprGravity-2",
       "name": "Gravity",
       "since": "2.2-dev21",
       "description": [
@@ -8346,7 +8346,7 @@
       ]
     },
     {
-      "id": "ExprHealth",
+      "id": "ExprHealth-2",
       "name": "Health",
       "since": "1.0",
       "description": [
@@ -8361,7 +8361,7 @@
       ]
     },
     {
-      "id": "ExprHiddenPlayers",
+      "id": "ExprHiddenPlayers-2",
       "name": "Hidden Players",
       "since": "2.3",
       "description": [
@@ -8376,7 +8376,7 @@
       ]
     },
     {
-      "id": "ExprHotbarSlot",
+      "id": "ExprHotbarSlot-2",
       "name": "Hotbar Slot",
       "since": "2.2-dev36",
       "description": [
@@ -8400,7 +8400,7 @@
       ]
     },
     {
-      "id": "ExprHumidity",
+      "id": "ExprHumidity-2",
       "name": "Humidity",
       "since": "2.2-dev35",
       "description": [
@@ -8415,7 +8415,7 @@
       ]
     },
     {
-      "id": "ExprInventory",
+      "id": "ExprInventory-2",
       "name": "Inventory",
       "since": "1.0",
       "description": [
@@ -8432,7 +8432,7 @@
       ]
     },
     {
-      "id": "ExprInventoryInfo",
+      "id": "ExprInventoryInfo-2",
       "name": "Inventory Holder/Viewers/Rows/Slots",
       "since": "2.2-dev34, 2.5 (slots)",
       "description": [
@@ -8451,7 +8451,7 @@
       ]
     },
     {
-      "id": "ExprIP",
+      "id": "ExprIP-2",
       "name": "IP",
       "since": "1.4, 2.2-dev26 (when used in connect event), 2.3 (when used in server list ping event)",
       "description": [
@@ -8474,7 +8474,7 @@
       ]
     },
     {
-      "id": "ExprItemAmount",
+      "id": "ExprItemAmount-2",
       "name": "Item Amount",
       "since": "2.2-dev24",
       "description": [
@@ -8489,7 +8489,7 @@
       ]
     },
     {
-      "id": "ExprItemFlags",
+      "id": "ExprItemFlags-2",
       "name": "Item Flags",
       "since": "INSERT VERSION",
       "description": [
@@ -8506,7 +8506,7 @@
       ]
     },
     {
-      "id": "ExprItemsIn",
+      "id": "ExprItemsIn-2",
       "name": "Items In",
       "since": "2.0, 2.8.0 (specific types of items)",
       "description": [
@@ -8525,7 +8525,7 @@
       ]
     },
     {
-      "id": "ExprItemWithCustomModelData",
+      "id": "ExprItemWithCustomModelData-2",
       "name": "Item with CustomModelData",
       "since": "2.5",
       "description": [
@@ -8540,7 +8540,7 @@
       ]
     },
     {
-      "id": "ExprItemWithEnchantmentGlint",
+      "id": "ExprItemWithEnchantmentGlint-2",
       "name": "Item with Enchantment Glint",
       "since": "INSERT VERSION",
       "description": [
@@ -8555,7 +8555,7 @@
       ]
     },
     {
-      "id": "ExprItemWithLore",
+      "id": "ExprItemWithLore-2",
       "name": "Item with Lore",
       "since": "2.3",
       "description": [
@@ -8571,7 +8571,7 @@
       ]
     },
     {
-      "id": "ExprLanguage",
+      "id": "ExprLanguage-2",
       "name": "Language",
       "since": "2.3",
       "description": [
@@ -8587,7 +8587,7 @@
       ]
     },
     {
-      "id": "ExprLastAttacker",
+      "id": "ExprLastAttacker-2",
       "name": "Last Attacker",
       "since": "2.5.1",
       "description": [
@@ -8602,7 +8602,7 @@
       ]
     },
     {
-      "id": "ExprLastColor",
+      "id": "ExprLastColor-2",
       "name": "Last Color",
       "since": "2.6",
       "description": [
@@ -8617,7 +8617,7 @@
       ]
     },
     {
-      "id": "ExprLastDamage",
+      "id": "ExprLastDamage-2",
       "name": "Last Damage",
       "since": "2.5.1",
       "description": [
@@ -8632,7 +8632,7 @@
       ]
     },
     {
-      "id": "ExprLastDamageCause",
+      "id": "ExprLastDamageCause-2",
       "name": "Last Damage Cause",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -8647,7 +8647,7 @@
       ]
     },
     {
-      "id": "ExprLastDeathLocation",
+      "id": "ExprLastDeathLocation-2",
       "name": "Last Death Location",
       "since": "INSERT VERSION",
       "description": [
@@ -8664,7 +8664,7 @@
       ]
     },
     {
-      "id": "ExprLastLoginTime",
+      "id": "ExprLastLoginTime-2",
       "name": "Last/First Login Time",
       "since": "2.5",
       "description": [
@@ -8682,7 +8682,7 @@
       ]
     },
     {
-      "id": "ExprLastResourcePackResponse",
+      "id": "ExprLastResourcePackResponse-2",
       "name": "Last Resource Pack Response",
       "since": "2.4",
       "description": [
@@ -8697,7 +8697,7 @@
       ]
     },
     {
-      "id": "ExprLeashHolder",
+      "id": "ExprLeashHolder-2",
       "name": "Leash Holder",
       "since": "2.3",
       "description": [
@@ -8712,7 +8712,7 @@
       ]
     },
     {
-      "id": "ExprLength",
+      "id": "ExprLength-2",
       "name": "Length",
       "since": "2.1",
       "description": [
@@ -8727,7 +8727,7 @@
       ]
     },
     {
-      "id": "ExprLevel",
+      "id": "ExprLevel-2",
       "name": "Level",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -8743,7 +8743,7 @@
       ]
     },
     {
-      "id": "ExprLevelProgress",
+      "id": "ExprLevelProgress-2",
       "name": "Level Progress",
       "since": "2.0",
       "description": [
@@ -8771,7 +8771,7 @@
       ]
     },
     {
-      "id": "ExprLightLevel",
+      "id": "ExprLightLevel-2",
       "name": "Light Level",
       "since": "1.3.4",
       "description": [
@@ -8791,7 +8791,7 @@
       ]
     },
     {
-      "id": "ExprLocationOf",
+      "id": "ExprLocationOf-2",
       "name": "Location",
       "since": "",
       "description": [
@@ -8808,7 +8808,7 @@
       ]
     },
     {
-      "id": "ExprLore",
+      "id": "ExprLore-2",
       "name": "Lore",
       "since": "2.1",
       "description": [
@@ -8827,7 +8827,7 @@
       ]
     },
     {
-      "id": "ExprLowestHighestSolidBlock",
+      "id": "ExprLowestHighestSolidBlock-2",
       "name": "Lowest/Highest Solid Block",
       "since": "2.2-dev34, 2.9.0 (lowest solid block, 'non-air' option removed, additional syntax option)",
       "description": [
@@ -8844,7 +8844,7 @@
       ]
     },
     {
-      "id": "ExprMaxDurability",
+      "id": "ExprMaxDurability-2",
       "name": "Max Durability",
       "since": "2.5, 2.9.0 (change)",
       "description": [
@@ -8865,7 +8865,7 @@
       ]
     },
     {
-      "id": "ExprMaxFreezeTicks",
+      "id": "ExprMaxFreezeTicks-2",
       "name": "Maximum Freeze Time",
       "since": "2.7",
       "description": [
@@ -8881,7 +8881,7 @@
       ]
     },
     {
-      "id": "ExprMaxHealth",
+      "id": "ExprMaxHealth-2",
       "name": "Max Health",
       "since": "2.0",
       "description": [
@@ -8899,7 +8899,7 @@
       ]
     },
     {
-      "id": "ExprMaxItemUseTime",
+      "id": "ExprMaxItemUseTime-2",
       "name": "Max Item Use Time",
       "since": "2.8.0",
       "description": [
@@ -8916,7 +8916,7 @@
       ]
     },
     {
-      "id": "ExprMaxMinecartSpeed",
+      "id": "ExprMaxMinecartSpeed-2",
       "name": "Max Minecart Speed",
       "since": "2.5.1",
       "description": [
@@ -8932,7 +8932,7 @@
       ]
     },
     {
-      "id": "ExprMaxPlayers",
+      "id": "ExprMaxPlayers-2",
       "name": "Max Players",
       "since": "2.3, 2.7 (modify max real players)",
       "description": [
@@ -8949,7 +8949,7 @@
       ]
     },
     {
-      "id": "ExprMaxStack",
+      "id": "ExprMaxStack-2",
       "name": "Maximum Stack Size",
       "since": "2.1, INSERT VERSION (changeable, inventories)",
       "description": [
@@ -8968,7 +8968,7 @@
       ]
     },
     {
-      "id": "ExprMetadata",
+      "id": "ExprMetadata-2",
       "name": "Metadata",
       "since": "2.2-dev36, INSERT VERSION (add, remove)",
       "description": [
@@ -8985,7 +8985,7 @@
       ]
     },
     {
-      "id": "ExprMiddleOfLocation",
+      "id": "ExprMiddleOfLocation-2",
       "name": "Middle of Location",
       "since": "2.6.1",
       "description": [
@@ -9004,7 +9004,7 @@
       ]
     },
     {
-      "id": "ExprMinecartDerailedFlyingVelocity",
+      "id": "ExprMinecartDerailedFlyingVelocity-2",
       "name": "Minecart Derailed / Flying Velocity",
       "since": "2.5.1",
       "description": [
@@ -9020,7 +9020,7 @@
       ]
     },
     {
-      "id": "ExprMoonPhase",
+      "id": "ExprMoonPhase-2",
       "name": "Moon Phase",
       "since": "2.7",
       "description": [
@@ -9036,7 +9036,7 @@
       ]
     },
     {
-      "id": "ExprName",
+      "id": "ExprName-3",
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
@@ -9090,7 +9090,7 @@
       ]
     },
     {
-      "id": "ExprName-2",
+      "id": "ExprName-3",
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
@@ -9144,7 +9144,7 @@
       ]
     },
     {
-      "id": "ExprNamed",
+      "id": "ExprNamed-2",
       "name": "Named Item/Inventory",
       "since": "2.0, 2.2-dev34 (inventories)",
       "description": [
@@ -9161,7 +9161,7 @@
       ]
     },
     {
-      "id": "ExprNoDamageTicks",
+      "id": "ExprNoDamageTicks-2",
       "name": "No Damage Ticks",
       "since": "2.5",
       "description": [
@@ -9177,7 +9177,7 @@
       ]
     },
     {
-      "id": "ExprOnlinePlayersCount",
+      "id": "ExprOnlinePlayersCount-2",
       "name": "Online Player Count",
       "since": "2.3",
       "description": [
@@ -9195,7 +9195,7 @@
       ]
     },
     {
-      "id": "ExprOpenedInventory",
+      "id": "ExprOpenedInventory-2",
       "name": "Opened Inventory",
       "since": "2.2-dev24, 2.2-dev35 (Just 'current inventory' works in player events)",
       "description": [
@@ -9211,7 +9211,7 @@
       ]
     },
     {
-      "id": "ExprPassenger",
+      "id": "ExprPassenger-2",
       "name": "Passenger",
       "since": "2.0, 2.2-dev26 (Multiple passengers for 1.11.2+)",
       "description": [
@@ -9237,7 +9237,7 @@
       ]
     },
     {
-      "id": "ExprPermissions",
+      "id": "ExprPermissions-2",
       "name": "All Permissions",
       "since": "2.2-dev33",
       "description": [
@@ -9252,7 +9252,7 @@
       ]
     },
     {
-      "id": "ExprPickupDelay",
+      "id": "ExprPickupDelay-2",
       "name": "Pickup Delay",
       "since": "2.7",
       "description": [
@@ -9268,7 +9268,7 @@
       ]
     },
     {
-      "id": "ExprPing",
+      "id": "ExprPing-2",
       "name": "Ping",
       "since": "2.2-dev36",
       "description": [
@@ -9285,7 +9285,7 @@
       ]
     },
     {
-      "id": "ExprPlayerChatCompletions",
+      "id": "ExprPlayerChatCompletions-2",
       "name": "Player Chat Completions",
       "since": "INSERT VERSION",
       "description": [
@@ -9303,7 +9303,7 @@
       ]
     },
     {
-      "id": "ExprPlayerlistHeaderFooter",
+      "id": "ExprPlayerlistHeaderFooter-2",
       "name": "Player List Header and Footer",
       "since": "2.4",
       "description": [
@@ -9320,7 +9320,7 @@
       ]
     },
     {
-      "id": "ExprPlayerProtocolVersion",
+      "id": "ExprPlayerProtocolVersion-2",
       "name": "Player Protocol Version",
       "since": "2.6.2",
       "description": [
@@ -9337,7 +9337,7 @@
       ]
     },
     {
-      "id": "ExprPlayerViewDistance",
+      "id": "ExprPlayerViewDistance-2",
       "name": "View Distance",
       "since": "2.4",
       "description": [
@@ -9359,7 +9359,7 @@
       ]
     },
     {
-      "id": "ExprPlayerWeather",
+      "id": "ExprPlayerWeather-2",
       "name": "Player Weather",
       "since": "2.2-dev34",
       "description": [
@@ -9376,7 +9376,7 @@
       ]
     },
     {
-      "id": "ExprPortalCooldown",
+      "id": "ExprPortalCooldown-2",
       "name": "Portal Cooldown",
       "since": "2.8.0",
       "description": [
@@ -9395,7 +9395,7 @@
       ]
     },
     {
-      "id": "ExprPotionEffects",
+      "id": "ExprPotionEffects-2",
       "name": "Potion Effects",
       "since": "2.5.2",
       "description": [
@@ -9418,7 +9418,7 @@
       ]
     },
     {
-      "id": "ExprProjectileCriticalState",
+      "id": "ExprProjectileCriticalState-2",
       "name": "Projectile Critical State",
       "since": "2.5.1",
       "description": [
@@ -9435,7 +9435,7 @@
       ]
     },
     {
-      "id": "ExprRedstoneBlockPower",
+      "id": "ExprRedstoneBlockPower-2",
       "name": "Redstone Block Power",
       "since": "2.5",
       "description": [
@@ -9451,7 +9451,7 @@
       ]
     },
     {
-      "id": "ExprRemainingAir",
+      "id": "ExprRemainingAir-2",
       "name": "Remaining Air",
       "since": "2.0",
       "description": [
@@ -9467,7 +9467,7 @@
       ]
     },
     {
-      "id": "ExprResonatingTime",
+      "id": "ExprResonatingTime-2",
       "name": "Resonating Time",
       "since": "2.9.0",
       "description": [
@@ -9483,7 +9483,7 @@
       ]
     },
     {
-      "id": "ExprRingingTime",
+      "id": "ExprRingingTime-2",
       "name": "Ringing Time",
       "since": "2.9.0",
       "description": [
@@ -9499,7 +9499,7 @@
       ]
     },
     {
-      "id": "ExprRound",
+      "id": "ExprRound-2",
       "name": "Rounding",
       "since": "2.0",
       "description": [
@@ -9517,7 +9517,7 @@
       ]
     },
     {
-      "id": "ExprSaturation",
+      "id": "ExprSaturation-2",
       "name": "Saturation",
       "since": "2.2-Fixes-v10, 2.2-dev35 (fully modifiable), 2.6.2 (syntax pattern changed)",
       "description": [
@@ -9532,7 +9532,7 @@
       ]
     },
     {
-      "id": "ExprScoreboardTags",
+      "id": "ExprScoreboardTags-2",
       "name": "Scoreboard Tags",
       "since": "2.3",
       "description": [
@@ -9558,7 +9558,7 @@
       ]
     },
     {
-      "id": "ExprSeaLevel",
+      "id": "ExprSeaLevel-2",
       "name": "Sea Level",
       "since": "2.5.1",
       "description": [
@@ -9573,7 +9573,7 @@
       ]
     },
     {
-      "id": "ExprSeaPickles",
+      "id": "ExprSeaPickles-2",
       "name": "Sea Pickles",
       "since": "2.7",
       "description": [
@@ -9595,7 +9595,7 @@
       ]
     },
     {
-      "id": "ExprSeed",
+      "id": "ExprSeed-2",
       "name": "World Seed",
       "since": "2.2-dev35",
       "description": [
@@ -9610,7 +9610,7 @@
       ]
     },
     {
-      "id": "ExprServerIcon",
+      "id": "ExprServerIcon-2",
       "name": "Server Icon",
       "since": "2.3",
       "description": [
@@ -9628,7 +9628,7 @@
       ]
     },
     {
-      "id": "ExprSignText",
+      "id": "ExprSignText-2",
       "name": "Sign Text",
       "since": "1.3",
       "description": [
@@ -9646,7 +9646,7 @@
       ]
     },
     {
-      "id": "ExprSkull",
+      "id": "ExprSkull-2",
       "name": "Player Skull",
       "since": "2.0",
       "description": [
@@ -9662,7 +9662,7 @@
       ]
     },
     {
-      "id": "ExprSkullOwner",
+      "id": "ExprSkullOwner-2",
       "name": "Skull Owner",
       "since": "2.9.0, INSERT VERSION (of items)",
       "description": [
@@ -9679,7 +9679,7 @@
       ]
     },
     {
-      "id": "ExprSlotIndex",
+      "id": "ExprSlotIndex-2",
       "name": "Slot Index",
       "since": "2.2-dev35, 2.8.0 (raw index)",
       "description": [
@@ -9701,7 +9701,7 @@
       ]
     },
     {
-      "id": "ExprSpawn",
+      "id": "ExprSpawn-2",
       "name": "Spawn",
       "since": "1.4.2",
       "description": [
@@ -9717,7 +9717,7 @@
       ]
     },
     {
-      "id": "ExprSpawnEggEntity",
+      "id": "ExprSpawnEggEntity-2",
       "name": "Spawn Egg Entity",
       "since": "INSERT VERSION",
       "description": [
@@ -9745,7 +9745,7 @@
       ]
     },
     {
-      "id": "ExprSpawnerType",
+      "id": "ExprSpawnerType-2",
       "name": "Spawner Type",
       "since": "2.4, 2.9.2 (trial spawner)",
       "description": [
@@ -9762,7 +9762,7 @@
       ]
     },
     {
-      "id": "ExprSpectatorTarget",
+      "id": "ExprSpectatorTarget-2",
       "name": "Spectator Target",
       "since": "2.4-alpha4, 2.7 (Paper Spectator Event)",
       "description": [
@@ -9782,7 +9782,7 @@
       ]
     },
     {
-      "id": "ExprSpeed",
+      "id": "ExprSpeed-2",
       "name": "Speed",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -9799,7 +9799,7 @@
       ]
     },
     {
-      "id": "ExprTarget",
+      "id": "ExprTarget-2",
       "name": "Target",
       "since": "1.4.2, 2.7 (Reset), 2.8.0 (ignore blocks)",
       "description": [
@@ -9823,7 +9823,7 @@
       ]
     },
     {
-      "id": "ExprTemperature",
+      "id": "ExprTemperature-2",
       "name": "Temperature",
       "since": "2.2-dev35",
       "description": [
@@ -9838,7 +9838,7 @@
       ]
     },
     {
-      "id": "ExprTime",
+      "id": "ExprTime-2",
       "name": "Time",
       "since": "1.0",
       "description": [
@@ -9858,7 +9858,7 @@
       ]
     },
     {
-      "id": "ExprTimePlayed",
+      "id": "ExprTimePlayed-2",
       "name": "Time Played",
       "since": "2.5, 2.7 (offline players)",
       "description": [
@@ -9878,7 +9878,7 @@
       ]
     },
     {
-      "id": "ExprTimeSince",
+      "id": "ExprTimeSince-2",
       "name": "Time Since/Until",
       "since": "2.5, INSERT VERSION (time until)",
       "description": [
@@ -9895,7 +9895,7 @@
       ]
     },
     {
-      "id": "ExprTimespanDetails",
+      "id": "ExprTimespanDetails-2",
       "name": "Timespan Details",
       "since": "2.9.0",
       "description": [
@@ -9911,7 +9911,7 @@
       ]
     },
     {
-      "id": "ExprTimeState",
+      "id": "ExprTimeState-2",
       "name": "Former/Future State",
       "since": "1.1",
       "description": [
@@ -9938,7 +9938,7 @@
       ]
     },
     {
-      "id": "ExprTool",
+      "id": "ExprTool-2",
       "name": "Tool",
       "since": "1.0",
       "description": [
@@ -9956,7 +9956,7 @@
       ]
     },
     {
-      "id": "ExprTotalExperience",
+      "id": "ExprTotalExperience-2",
       "name": "Total Experience",
       "since": "2.7",
       "description": [
@@ -9978,7 +9978,7 @@
       ]
     },
     {
-      "id": "ExprTypeOf",
+      "id": "ExprTypeOf-2",
       "name": "Type of",
       "since": "1.4, 2.5.2 (potion effect), 2.7 (block datas)",
       "description": [
@@ -9998,7 +9998,7 @@
       ]
     },
     {
-      "id": "ExprUnbreakable",
+      "id": "ExprUnbreakable-2",
       "name": "Unbreakable Items",
       "since": "2.2-dev13b, 2.9.0 (breakable)",
       "description": [
@@ -10013,7 +10013,7 @@
       ]
     },
     {
-      "id": "ExprUnixDate",
+      "id": "ExprUnixDate-2",
       "name": "Unix Date",
       "since": "2.5",
       "description": [
@@ -10028,7 +10028,7 @@
       ]
     },
     {
-      "id": "ExprUnixTicks",
+      "id": "ExprUnixTicks-2",
       "name": "Unix Timestamp",
       "since": "2.2-dev31",
       "description": [
@@ -10043,7 +10043,7 @@
       ]
     },
     {
-      "id": "ExprUUID",
+      "id": "ExprUUID-2",
       "name": "UUID",
       "since": "2.1.2, 2.2 (offline players' UUIDs), 2.2-dev24 (other entities' UUIDs)",
       "description": [
@@ -10067,7 +10067,7 @@
       ]
     },
     {
-      "id": "ExprVectorFromDirection",
+      "id": "ExprVectorFromDirection-2",
       "name": "Vectors - Create from Direction",
       "since": "2.8.0",
       "description": [
@@ -10087,7 +10087,7 @@
       ]
     },
     {
-      "id": "ExprVectorLength",
+      "id": "ExprVectorLength-2",
       "name": "Vectors - Length",
       "since": "2.2-dev28",
       "description": [
@@ -10105,7 +10105,7 @@
       ]
     },
     {
-      "id": "ExprVectorOfLocation",
+      "id": "ExprVectorOfLocation-2",
       "name": "Vectors - Vector from Location",
       "since": "2.2-dev28",
       "description": [
@@ -10120,7 +10120,7 @@
       ]
     },
     {
-      "id": "ExprVectorSquaredLength",
+      "id": "ExprVectorSquaredLength-2",
       "name": "Vectors - Squared Length",
       "since": "2.2-dev28",
       "description": [
@@ -10135,7 +10135,7 @@
       ]
     },
     {
-      "id": "ExprVehicle",
+      "id": "ExprVehicle-2",
       "name": "Vehicle",
       "since": "2.0",
       "description": [
@@ -10151,7 +10151,7 @@
       ]
     },
     {
-      "id": "ExprVelocity",
+      "id": "ExprVelocity-2",
       "name": "Vectors - Velocity",
       "since": "2.2-dev31",
       "description": [
@@ -10166,7 +10166,7 @@
       ]
     },
     {
-      "id": "ExprVillagerLevel",
+      "id": "ExprVillagerLevel-2",
       "name": "Villager Level",
       "since": "INSERT VERSION",
       "description": [
@@ -10187,7 +10187,7 @@
       ]
     },
     {
-      "id": "ExprVillagerProfession",
+      "id": "ExprVillagerProfession-2",
       "name": "Villager Profession",
       "since": "INSERT VERSION",
       "description": [
@@ -10205,7 +10205,7 @@
       ]
     },
     {
-      "id": "ExprVillagerType",
+      "id": "ExprVillagerType-2",
       "name": "Villager Type",
       "since": "INSERT VERSION",
       "description": [
@@ -10222,7 +10222,7 @@
       ]
     },
     {
-      "id": "ExprWeather",
+      "id": "ExprWeather-2",
       "name": "Weather",
       "since": "1.0",
       "description": [
@@ -10238,7 +10238,7 @@
       ]
     },
     {
-      "id": "ExprWithFireResistance",
+      "id": "ExprWithFireResistance-2",
       "name": "With Fire Resistance",
       "since": "2.9.0",
       "description": [
@@ -10255,7 +10255,7 @@
       ]
     },
     {
-      "id": "ExprWorld",
+      "id": "ExprWorld-2",
       "name": "World",
       "since": "1.0",
       "description": [
@@ -10273,7 +10273,7 @@
       ]
     },
     {
-      "id": "ExprWorldEnvironment",
+      "id": "ExprWorldEnvironment-2",
       "name": "World Environment",
       "since": "2.7",
       "description": [
@@ -10289,7 +10289,7 @@
       ]
     },
     {
-      "id": "ExprXYZComponent",
+      "id": "ExprXYZComponent-2",
       "name": "Vector/Quaternion - WXYZ Component",
       "since": "2.2-dev28, INSERT VERSION (quaternions)",
       "description": [
@@ -10314,7 +10314,7 @@
       ]
     },
     {
-      "id": "ExprYawPitch",
+      "id": "ExprYawPitch-2",
       "name": "Yaw / Pitch",
       "since": "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)",
       "description": [
@@ -10336,7 +10336,7 @@
       ]
     },
     {
-      "id": "ExprItemOfEntity",
+      "id": "ExprItemOfEntity-2",
       "name": "Item of an Entity",
       "since": "2.2-dev35, 2.2-dev36 (improved), 2.5.2 (throwable projectiles), INSERT VERSION (item displays)",
       "description": [
@@ -10356,7 +10356,7 @@
       ]
     },
     {
-      "id": "ExprQuaternionAxisAngle",
+      "id": "ExprQuaternionAxisAngle-2",
       "name": "Rotation Axis/Angle",
       "since": "INSERT VERSION",
       "description": [
@@ -10376,7 +10376,7 @@
       ]
     },
     {
-      "id": "ExprTextOf",
+      "id": "ExprTextOf-2",
       "name": "Text Of",
       "since": "INSERT VERSION",
       "description": [
@@ -10392,7 +10392,7 @@
       ]
     },
     {
-      "id": "ExprLoveTime",
+      "id": "ExprLoveTime-2",
       "name": "Love Time",
       "since": "INSERT VERSION",
       "description": [
@@ -10409,7 +10409,7 @@
       ]
     },
     {
-      "id": "ExprDisplayBillboard",
+      "id": "ExprDisplayBillboard-2",
       "name": "Display Billboard",
       "since": "INSERT VERSION",
       "description": [
@@ -10426,7 +10426,7 @@
       ]
     },
     {
-      "id": "ExprDisplayBrightness",
+      "id": "ExprDisplayBrightness-2",
       "name": "Display Brightness",
       "since": "INSERT VERSION",
       "description": [
@@ -10447,7 +10447,7 @@
       ]
     },
     {
-      "id": "ExprDisplayGlowOverride",
+      "id": "ExprDisplayGlowOverride-2",
       "name": "Display Glow Color Override",
       "since": "INSERT VERSION",
       "description": [
@@ -10463,7 +10463,7 @@
       ]
     },
     {
-      "id": "ExprDisplayHeightWidth",
+      "id": "ExprDisplayHeightWidth-2",
       "name": "Display Height/Width",
       "since": "INSERT VERSION",
       "description": [
@@ -10480,7 +10480,7 @@
       ]
     },
     {
-      "id": "ExprDisplayInterpolation",
+      "id": "ExprDisplayInterpolation-2",
       "name": "Display Interpolation Delay/Duration",
       "since": "INSERT VERSION",
       "description": [
@@ -10498,7 +10498,7 @@
       ]
     },
     {
-      "id": "ExprDisplayShadow",
+      "id": "ExprDisplayShadow-2",
       "name": "Display Shadow Radius/Strength",
       "since": "INSERT VERSION",
       "description": [
@@ -10513,7 +10513,7 @@
       ]
     },
     {
-      "id": "ExprDisplayTeleportDuration",
+      "id": "ExprDisplayTeleportDuration-2",
       "name": "Display Teleport Delay/Duration",
       "since": "INSERT VERSION",
       "description": [
@@ -10534,7 +10534,7 @@
       ]
     },
     {
-      "id": "ExprDisplayTransformationRotation",
+      "id": "ExprDisplayTransformationRotation-2",
       "name": "Display Transformation Rotation",
       "since": "INSERT VERSION",
       "description": [
@@ -10550,7 +10550,7 @@
       ]
     },
     {
-      "id": "ExprDisplayTransformationScaleTranslation",
+      "id": "ExprDisplayTransformationScaleTranslation-2",
       "name": "Display Transformation Scale/Translation",
       "since": "INSERT VERSION",
       "description": [
@@ -10565,7 +10565,7 @@
       ]
     },
     {
-      "id": "ExprDisplayViewRange",
+      "id": "ExprDisplayViewRange-2",
       "name": "Display View Range",
       "since": "INSERT VERSION",
       "description": [
@@ -10582,7 +10582,7 @@
       ]
     },
     {
-      "id": "ExprItemDisplayTransform",
+      "id": "ExprItemDisplayTransform-2",
       "name": "Item Display Transform",
       "since": "INSERT VERSION",
       "description": [
@@ -10598,7 +10598,7 @@
       ]
     },
     {
-      "id": "ExprTextDisplayAlignment",
+      "id": "ExprTextDisplayAlignment-2",
       "name": "Text Display Alignment",
       "since": "INSERT VERSION",
       "description": [
@@ -10613,7 +10613,7 @@
       ]
     },
     {
-      "id": "ExprTextDisplayLineWidth",
+      "id": "ExprTextDisplayLineWidth-2",
       "name": "Text Display Line Width",
       "since": "INSERT VERSION",
       "description": [
@@ -10628,7 +10628,7 @@
       ]
     },
     {
-      "id": "ExprTextDisplayOpacity",
+      "id": "ExprTextDisplayOpacity-2",
       "name": "Text Display Opacity",
       "since": "INSERT VERSION",
       "description": [
@@ -10644,7 +10644,7 @@
       ]
     },
     {
-      "id": "ExprCurrentInputKeys",
+      "id": "ExprCurrentInputKeys-2",
       "name": "Player Input Keys",
       "since": "INSERT VERSION",
       "description": [
@@ -10659,7 +10659,7 @@
       ]
     },
     {
-      "id": "ExprFurnaceEventItems",
+      "id": "ExprFurnaceEventItems-2",
       "name": "Furnace Event Items",
       "since": "INSERT VERSION",
       "description": [
@@ -10686,7 +10686,7 @@
       ]
     },
     {
-      "id": "ExprFurnaceSlot",
+      "id": "ExprFurnaceSlot-2",
       "name": "Furnace Slot",
       "since": "1.0, 2.8.0 (syntax rework)",
       "description": [
@@ -10710,7 +10710,7 @@
       ]
     },
     {
-      "id": "ExprFurnaceTime",
+      "id": "ExprFurnaceTime-2",
       "name": "Furnace Times",
       "since": "INSERT VERSION",
       "description": [
@@ -10739,7 +10739,7 @@
       ]
     },
     {
-      "id": "ExprLootContextEntity",
+      "id": "ExprLootContextEntity-2",
       "name": "Looted Entity of Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -10759,7 +10759,7 @@
       ]
     },
     {
-      "id": "ExprLootContextLocation",
+      "id": "ExprLootContextLocation-2",
       "name": "Loot Location of Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -10778,7 +10778,7 @@
       ]
     },
     {
-      "id": "ExprLootContextLooter",
+      "id": "ExprLootContextLooter-2",
       "name": "Looter of Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -10798,7 +10798,7 @@
       ]
     },
     {
-      "id": "ExprLootContextLuck",
+      "id": "ExprLootContextLuck-2",
       "name": "Luck of Loot Context",
       "since": "INSERT VERSION",
       "description": [
@@ -10818,7 +10818,7 @@
       ]
     },
     {
-      "id": "ExprLootTable",
+      "id": "ExprLootTable-2",
       "name": "Loot Table",
       "since": "INSERT VERSION",
       "description": [
@@ -10838,7 +10838,7 @@
       ]
     },
     {
-      "id": "ExprLootTableSeed",
+      "id": "ExprLootTableSeed-2",
       "name": "Seed of Loot Table",
       "since": "INSERT VERSION",
       "description": [
@@ -10854,7 +10854,7 @@
       ]
     },
     {
-      "id": "ExprBalance",
+      "id": "ExprBalance-2",
       "name": "Money",
       "since": "2.0, 2.5 (offline players)",
       "description": [
@@ -10871,7 +10871,7 @@
       ]
     },
     {
-      "id": "ExprPrefixSuffix",
+      "id": "ExprPrefixSuffix-2",
       "name": "Prefix/Suffix",
       "since": "2.0, INSERT VERSION (delete)",
       "description": [
@@ -10892,7 +10892,7 @@
       ]
     },
     {
-      "id": "ExprGroup",
+      "id": "ExprGroup-2",
       "name": "Group",
       "since": "2.2-dev35",
       "description": [
@@ -10910,7 +10910,7 @@
       ]
     },
     {
-      "id": "ExprMembersOfRegion",
+      "id": "ExprMembersOfRegion-2",
       "name": "Region Members & Owners",
       "since": "2.1",
       "description": [
@@ -10927,7 +10927,7 @@
       ]
     },
     {
-      "id": "ExprRegionsAt",
+      "id": "ExprRegionsAt-2",
       "name": "Regions At",
       "since": "2.1",
       "description": [
@@ -10948,7 +10948,7 @@
       ]
     },
     {
-      "id": "ExprArithmetic",
+      "id": "ExprArithmetic-2",
       "name": "Arithmetic",
       "since": "1.4.2",
       "description": [
@@ -10984,7 +10984,7 @@
       ]
     },
     {
-      "id": "ExprEntities",
+      "id": "ExprEntities-2",
       "name": "Entities",
       "since": "1.2.1, 2.5 (chunks), INSERT VERSION (within)",
       "description": [
@@ -11008,7 +11008,7 @@
       ]
     },
     {
-      "id": "ExprEntity",
+      "id": "ExprEntity-2",
       "name": "Creature/Entity/Player/Projectile/Villager/Powered Creeper/etc.",
       "since": "1.0",
       "description": [
@@ -11026,7 +11026,7 @@
       ]
     },
     {
-      "id": "ExprSets",
+      "id": "ExprSets-2",
       "name": "Sets",
       "since": "1.0 pre-5, 2.7 (classinfo)",
       "description": [
@@ -11042,7 +11042,7 @@
       ]
     },
     {
-      "id": "ExprWhether",
+      "id": "ExprWhether-2",
       "name": "Whether",
       "since": "2.9.0",
       "description": [
@@ -11057,7 +11057,7 @@
       ]
     },
     {
-      "id": "ExprXOf",
+      "id": "ExprXOf-2",
       "name": "X of Item",
       "since": "1.2",
       "description": [
@@ -11073,7 +11073,7 @@
   ],
   "events": [
     {
-      "id": "at_time",
+      "id": "at_time-2",
       "name": "At Time",
       "since": "1.3.4",
       "description": [
@@ -11088,8 +11088,10 @@
       ]
     },
     {
-      "id": "beacon_effect",
+      "id": "beacon_effect-2",
       "name": "On Beacon Effect",
+      "description": [],
+      "examples": [],
       "patterns": [
         "[:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
         "application of [:primary|:secondary] beacon effect [of %-potioneffecttypes%]",
@@ -11097,8 +11099,10 @@
       ]
     },
     {
-      "id": "beacon_toggle",
+      "id": "beacon_toggle-2",
       "name": "On Beacon Toggle",
+      "description": [],
+      "examples": [],
       "patterns": [
         "beacon toggle",
         "beacon activat(e|ion)",
@@ -11106,7 +11110,7 @@
       ]
     },
     {
-      "id": "break_mine",
+      "id": "break_mine-2",
       "name": "On Break / Mine",
       "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
       "description": [
@@ -11124,7 +11128,7 @@
       ]
     },
     {
-      "id": "burn",
+      "id": "burn-2",
       "name": "On Burn",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11140,7 +11144,7 @@
       ]
     },
     {
-      "id": "place",
+      "id": "place-2",
       "name": "On Place",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11156,7 +11160,7 @@
       ]
     },
     {
-      "id": "fade",
+      "id": "fade-2",
       "name": "On Fade",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11171,7 +11175,7 @@
       ]
     },
     {
-      "id": "form",
+      "id": "form-2",
       "name": "On Form",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11186,7 +11190,7 @@
       ]
     },
     {
-      "id": "block_drop",
+      "id": "block_drop-2",
       "name": "On Block Drop",
       "since": "INSERT VERSION",
       "description": [
@@ -11215,7 +11219,7 @@
       ]
     },
     {
-      "id": "book_edit",
+      "id": "book_edit-2",
       "name": "On Book Edit",
       "since": "2.2-dev31",
       "description": [
@@ -11229,7 +11233,7 @@
       ]
     },
     {
-      "id": "book_sign",
+      "id": "book_sign-2",
       "name": "On Book Sign",
       "since": "2.2-dev31",
       "description": [
@@ -11243,7 +11247,7 @@
       ]
     },
     {
-      "id": "click",
+      "id": "click-2",
       "name": "On Click",
       "since": "1.0, INSERT VERSION (blockdata)",
       "description": [
@@ -11266,7 +11270,7 @@
       ]
     },
     {
-      "id": "command",
+      "id": "command-2",
       "name": "On Command",
       "since": "2.0",
       "description": [
@@ -11282,7 +11286,7 @@
       ]
     },
     {
-      "id": "damage",
+      "id": "damage-2",
       "name": "On Damage",
       "since": "1.0, 2.7 (by entity)",
       "description": [
@@ -11298,7 +11302,7 @@
       ]
     },
     {
-      "id": "death",
+      "id": "death-2",
       "name": "On Death",
       "since": "1.0",
       "description": [
@@ -11315,7 +11319,7 @@
       ]
     },
     {
-      "id": "spawn",
+      "id": "spawn-2",
       "name": "On Spawn",
       "since": "1.0, 2.5.1 (non-living entities)",
       "description": [
@@ -11331,7 +11335,7 @@
       ]
     },
     {
-      "id": "endermansheepsilverfishfalling_block",
+      "id": "endermansheepsilverfishfalling_block-2",
       "name": "On Enderman/Sheep/Silverfish/Falling Block",
       "since": "<i>unknown</i>, 2.5.2 (falling block), 2.8.0 (any entity support)",
       "description": [
@@ -11359,7 +11363,7 @@
       ]
     },
     {
-      "id": "entity_potion_effect",
+      "id": "entity_potion_effect-2",
       "name": "On Entity Potion Effect",
       "since": "INSERT VERSION",
       "description": [
@@ -11377,7 +11381,7 @@
       ]
     },
     {
-      "id": "target",
+      "id": "target-2",
       "name": "On Target",
       "since": "1.0",
       "description": [
@@ -11393,7 +11397,7 @@
       ]
     },
     {
-      "id": "entity_transform",
+      "id": "entity_transform-2",
       "name": "On Entity Transform",
       "since": "2.8.0",
       "description": [
@@ -11410,7 +11414,7 @@
       ]
     },
     {
-      "id": "experience_change",
+      "id": "experience_change-2",
       "name": "On Experience Change",
       "since": "2.7",
       "description": [
@@ -11426,7 +11430,7 @@
       ]
     },
     {
-      "id": "experience_spawn",
+      "id": "experience_spawn-2",
       "name": "On Experience Spawn",
       "since": "2.0",
       "description": [
@@ -11444,7 +11448,7 @@
       ]
     },
     {
-      "id": "firework_explode",
+      "id": "firework_explode-2",
       "name": "On Firework Explode",
       "since": "2.4",
       "description": [
@@ -11462,7 +11466,7 @@
       ]
     },
     {
-      "id": "first_join",
+      "id": "first_join-2",
       "name": "On First Join",
       "since": "1.3.7",
       "description": [
@@ -11477,7 +11481,7 @@
       ]
     },
     {
-      "id": "gamemode_change",
+      "id": "gamemode_change-2",
       "name": "On Gamemode Change",
       "since": "1.0",
       "description": [
@@ -11492,7 +11496,7 @@
       ]
     },
     {
-      "id": "grow",
+      "id": "grow-2",
       "name": "On Grow",
       "since": "1.0, 2.2-dev20 (plants), 2.8.0 (from, into, blockdata)",
       "description": [
@@ -11519,7 +11523,7 @@
       ]
     },
     {
-      "id": "heal",
+      "id": "heal-2",
       "name": "On Heal",
       "since": "1.0, 2.9.0 (by reason)",
       "description": [
@@ -11538,7 +11542,7 @@
       ]
     },
     {
-      "id": "dispense",
+      "id": "dispense-2",
       "name": "On Dispense",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -11553,7 +11557,7 @@
       ]
     },
     {
-      "id": "item_spawn",
+      "id": "item_spawn-2",
       "name": "On Item Spawn",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -11568,7 +11572,7 @@
       ]
     },
     {
-      "id": "drop",
+      "id": "drop-2",
       "name": "On Drop",
       "since": "<i>unknown</i> (before 2.1), 2.7 (entity)",
       "description": [
@@ -11588,7 +11592,7 @@
       ]
     },
     {
-      "id": "prepare_craft",
+      "id": "prepare_craft-2",
       "name": "On Prepare Craft",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -11602,7 +11606,7 @@
       ]
     },
     {
-      "id": "craft",
+      "id": "craft-2",
       "name": "On Craft",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -11616,7 +11620,7 @@
       ]
     },
     {
-      "id": "pick_up",
+      "id": "pick_up-2",
       "name": "On Pick Up",
       "since": "<i>unknown</i> (before 2.1), 2.5 (entity)",
       "description": [
@@ -11631,7 +11635,7 @@
       ]
     },
     {
-      "id": "consume",
+      "id": "consume-2",
       "name": "On Consume",
       "since": "2.0",
       "description": [
@@ -11645,7 +11649,7 @@
       ]
     },
     {
-      "id": "inventory_click",
+      "id": "inventory_click-2",
       "name": "On Inventory Click",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -11662,7 +11666,7 @@
       ]
     },
     {
-      "id": "item_despawn",
+      "id": "item_despawn-2",
       "name": "On Item Despawn",
       "since": "2.2-dev35",
       "description": [
@@ -11679,7 +11683,7 @@
       ]
     },
     {
-      "id": "item_merge",
+      "id": "item_merge-2",
       "name": "On Item Merge",
       "since": "2.2-dev35",
       "description": [
@@ -11695,7 +11699,7 @@
       ]
     },
     {
-      "id": "inventory_item_move",
+      "id": "inventory_item_move-2",
       "name": "On Inventory Item Move",
       "since": "2.8.0",
       "description": [
@@ -11713,7 +11717,7 @@
       ]
     },
     {
-      "id": "stonecutter_recipe_select",
+      "id": "stonecutter_recipe_select-2",
       "name": "On Stonecutter Recipe Select",
       "since": "2.8.0",
       "description": [
@@ -11731,7 +11735,7 @@
       ]
     },
     {
-      "id": "level_change",
+      "id": "level_change-2",
       "name": "On Level Change",
       "since": "1.0, 2.4 (level up/down)",
       "description": [
@@ -11745,7 +11749,7 @@
       ]
     },
     {
-      "id": "move_rotate",
+      "id": "move_rotate-2",
       "name": "On Move / Rotate",
       "since": "2.6, 2.8.0 (turn around)",
       "description": [
@@ -11770,7 +11774,7 @@
       ]
     },
     {
-      "id": "pressure_plate_trip",
+      "id": "pressure_plate_trip-2",
       "name": "On Pressure Plate / Trip",
       "since": "1.0 (pressure plate), 1.4.4 (tripwire)",
       "description": [
@@ -11785,7 +11789,7 @@
       ]
     },
     {
-      "id": "move_on",
+      "id": "move_on-2",
       "name": "On Move On",
       "since": "2.0",
       "description": [
@@ -11801,7 +11805,7 @@
       ]
     },
     {
-      "id": "periodical",
+      "id": "periodical-2",
       "name": "Periodical",
       "since": "1.0",
       "description": [
@@ -11818,7 +11822,7 @@
       ]
     },
     {
-      "id": "eventperiodical",
+      "id": "eventperiodical-2",
       "name": "Periodical",
       "since": "1.0",
       "description": [
@@ -11835,7 +11839,7 @@
       ]
     },
     {
-      "id": "block_growth",
+      "id": "block_growth-2",
       "name": "On Block Growth",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -11849,7 +11853,7 @@
       ]
     },
     {
-      "id": "player_chunk_enter",
+      "id": "player_chunk_enter-2",
       "name": "On Player Chunk Enter",
       "since": "2.7",
       "description": [
@@ -11857,14 +11861,14 @@
       ],
       "examples": [
         "on player enters a chunk:",
-        "\tsend \"You entered a chunk: %past event-chunk% -&amp;amp;amp;amp;gt; %event-chunk%!\" to player"
+        "\tsend \"You entered a chunk: %past event-chunk% -> %event-chunk%!\" to player"
       ],
       "patterns": [
         "[player] (enter[s] [a] chunk|chunk enter[ing])"
       ]
     },
     {
-      "id": "send_command_list",
+      "id": "send_command_list-2",
       "name": "On Send Command List",
       "since": "2.8.0",
       "description": [
@@ -11883,7 +11887,7 @@
       ]
     },
     {
-      "id": "resource_pack_request_response",
+      "id": "resource_pack_request_response-2",
       "name": "On Resource Pack Request Response",
       "since": "2.4",
       "description": [
@@ -11908,7 +11912,7 @@
       ]
     },
     {
-      "id": "script_loadunload",
+      "id": "script_loadunload-2",
       "name": "On Script Load/Unload",
       "since": "2.0",
       "description": [
@@ -11927,7 +11931,7 @@
       ]
     },
     {
-      "id": "server_startstop",
+      "id": "server_startstop-2",
       "name": "On Server Start/Stop",
       "since": "2.0",
       "description": [
@@ -11943,7 +11947,7 @@
       ]
     },
     {
-      "id": "spectate",
+      "id": "spectate-2",
       "name": "On Spectate",
       "since": "2.7",
       "description": [
@@ -11959,7 +11963,7 @@
       ]
     },
     {
-      "id": "teleport",
+      "id": "teleport-2",
       "name": "On Teleport",
       "since": "1.0, 2.9.0 (entity teleport)",
       "description": [
@@ -11977,7 +11981,7 @@
       ]
     },
     {
-      "id": "vehicle_collision",
+      "id": "vehicle_collision-2",
       "name": "On Vehicle Collision",
       "since": "INSERT VERSION",
       "description": [
@@ -11995,7 +11999,7 @@
       ]
     },
     {
-      "id": "weather_change",
+      "id": "weather_change-2",
       "name": "On Weather Change",
       "since": "1.0",
       "description": [
@@ -12010,7 +12014,7 @@
       ]
     },
     {
-      "id": "world_save",
+      "id": "world_save-2",
       "name": "On World Save",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12025,7 +12029,7 @@
       ]
     },
     {
-      "id": "world_init",
+      "id": "world_init-2",
       "name": "On World Init",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12041,7 +12045,7 @@
       ]
     },
     {
-      "id": "world_unload",
+      "id": "world_unload-2",
       "name": "On World Unload",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12056,7 +12060,7 @@
       ]
     },
     {
-      "id": "world_load",
+      "id": "world_load-2",
       "name": "On World Load",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12071,7 +12075,7 @@
       ]
     },
     {
-      "id": "can_build_check",
+      "id": "can_build_check-2",
       "name": "On Can Build Check",
       "since": "1.0 (basic), 2.0 ([un]cancellable)",
       "description": [
@@ -12087,7 +12091,7 @@
       ]
     },
     {
-      "id": "block_damage",
+      "id": "block_damage-2",
       "name": "On Block Damage",
       "since": "1.0",
       "description": [
@@ -12103,7 +12107,7 @@
       ]
     },
     {
-      "id": "flow",
+      "id": "flow-2",
       "name": "On Flow",
       "since": "1.0",
       "description": [
@@ -12120,7 +12124,7 @@
       ]
     },
     {
-      "id": "ignition",
+      "id": "ignition-2",
       "name": "On Ignition",
       "since": "1.0",
       "description": [
@@ -12137,7 +12141,7 @@
       ]
     },
     {
-      "id": "physics",
+      "id": "physics-2",
       "name": "On Physics",
       "since": "1.4.6",
       "description": [
@@ -12154,7 +12158,7 @@
       ]
     },
     {
-      "id": "piston_extend",
+      "id": "piston_extend-2",
       "name": "On Piston Extend",
       "since": "1.0",
       "description": [
@@ -12169,7 +12173,7 @@
       ]
     },
     {
-      "id": "piston_retract",
+      "id": "piston_retract-2",
       "name": "On Piston Retract",
       "since": "1.0",
       "description": [
@@ -12184,7 +12188,7 @@
       ]
     },
     {
-      "id": "redstone",
+      "id": "redstone-2",
       "name": "On Redstone",
       "since": "1.0",
       "description": [
@@ -12199,7 +12203,7 @@
       ]
     },
     {
-      "id": "spread",
+      "id": "spread-2",
       "name": "On Spread",
       "since": "1.0",
       "description": [
@@ -12213,7 +12217,7 @@
       ]
     },
     {
-      "id": "chunk_load",
+      "id": "chunk_load-2",
       "name": "On Chunk Load",
       "since": "1.0",
       "description": [
@@ -12227,7 +12231,7 @@
       ]
     },
     {
-      "id": "chunk_generate",
+      "id": "chunk_generate-2",
       "name": "On Chunk Generate",
       "since": "1.0",
       "description": [
@@ -12241,7 +12245,7 @@
       ]
     },
     {
-      "id": "chunk_unload",
+      "id": "chunk_unload-2",
       "name": "On Chunk Unload",
       "since": "1.0",
       "description": [
@@ -12255,7 +12259,7 @@
       ]
     },
     {
-      "id": "creeper_power",
+      "id": "creeper_power-2",
       "name": "On Creeper Power",
       "since": "1.0",
       "description": [
@@ -12269,7 +12273,7 @@
       ]
     },
     {
-      "id": "zombie_break_door",
+      "id": "zombie_break_door-2",
       "name": "On Zombie Break Door",
       "since": "1.0",
       "description": [
@@ -12283,7 +12287,7 @@
       ]
     },
     {
-      "id": "combust",
+      "id": "combust-2",
       "name": "On Combust",
       "since": "1.0",
       "description": [
@@ -12297,7 +12301,7 @@
       ]
     },
     {
-      "id": "explode",
+      "id": "explode-2",
       "name": "On Explode",
       "since": "1.0",
       "description": [
@@ -12311,7 +12315,7 @@
       ]
     },
     {
-      "id": "portal_enter",
+      "id": "portal_enter-2",
       "name": "On Portal Enter",
       "since": "1.0",
       "description": [
@@ -12326,7 +12330,7 @@
       ]
     },
     {
-      "id": "tame",
+      "id": "tame-2",
       "name": "On Tame",
       "since": "1.0",
       "description": [
@@ -12340,7 +12344,7 @@
       ]
     },
     {
-      "id": "explosion_prime",
+      "id": "explosion_prime-2",
       "name": "On Explosion Prime",
       "since": "1.0",
       "description": [
@@ -12354,7 +12358,7 @@
       ]
     },
     {
-      "id": "hunger_meter_change",
+      "id": "hunger_meter_change-2",
       "name": "On Hunger Meter Change",
       "since": "1.4.4",
       "description": [
@@ -12368,7 +12372,7 @@
       ]
     },
     {
-      "id": "leaves_decay",
+      "id": "leaves_decay-2",
       "name": "On Leaves Decay",
       "since": "1.0",
       "description": [
@@ -12382,7 +12386,7 @@
       ]
     },
     {
-      "id": "lightning_strike",
+      "id": "lightning_strike-2",
       "name": "On Lightning Strike",
       "since": "1.0",
       "description": [
@@ -12397,7 +12401,7 @@
       ]
     },
     {
-      "id": "pig_zap",
+      "id": "pig_zap-2",
       "name": "On Pig Zap",
       "since": "1.0",
       "description": [
@@ -12411,7 +12415,7 @@
       ]
     },
     {
-      "id": "bed_enter",
+      "id": "bed_enter-2",
       "name": "On Bed Enter",
       "since": "1.0",
       "description": [
@@ -12426,7 +12430,7 @@
       ]
     },
     {
-      "id": "bed_leave",
+      "id": "bed_leave-2",
       "name": "On Bed Leave",
       "since": "1.0",
       "description": [
@@ -12441,7 +12445,7 @@
       ]
     },
     {
-      "id": "bucket_empty",
+      "id": "bucket_empty-2",
       "name": "On Bucket Empty",
       "since": "1.0",
       "description": [
@@ -12456,7 +12460,7 @@
       ]
     },
     {
-      "id": "bucket_fill",
+      "id": "bucket_fill-2",
       "name": "On Bucket fill",
       "since": "1.0",
       "description": [
@@ -12471,7 +12475,7 @@
       ]
     },
     {
-      "id": "egg_throw",
+      "id": "egg_throw-2",
       "name": "On Egg Throw",
       "since": "1.0",
       "description": [
@@ -12486,7 +12490,7 @@
       ]
     },
     {
-      "id": "item_break",
+      "id": "item_break-2",
       "name": "On Item Break",
       "since": "2.1.1",
       "description": [
@@ -12502,7 +12506,7 @@
       ]
     },
     {
-      "id": "item_damage",
+      "id": "item_damage-2",
       "name": "On Item Damage",
       "since": "2.5",
       "description": [
@@ -12517,7 +12521,7 @@
       ]
     },
     {
-      "id": "tool_change",
+      "id": "tool_change-2",
       "name": "On Tool Change",
       "since": "1.0",
       "description": [
@@ -12531,7 +12535,7 @@
       ]
     },
     {
-      "id": "join",
+      "id": "join-2",
       "name": "On Join",
       "since": "1.0",
       "description": [
@@ -12547,7 +12551,7 @@
       ]
     },
     {
-      "id": "connect",
+      "id": "connect-2",
       "name": "On Connect",
       "since": "2.0",
       "description": [
@@ -12564,7 +12568,7 @@
       ]
     },
     {
-      "id": "kick",
+      "id": "kick-2",
       "name": "On Kick",
       "since": "1.0",
       "description": [
@@ -12578,7 +12582,7 @@
       ]
     },
     {
-      "id": "entity_portal",
+      "id": "entity_portal-2",
       "name": "On Entity Portal",
       "since": "2.5.3",
       "description": [
@@ -12593,7 +12597,7 @@
       ]
     },
     {
-      "id": "portal",
+      "id": "portal-2",
       "name": "On Portal",
       "since": "1.0",
       "description": [
@@ -12607,7 +12611,7 @@
       ]
     },
     {
-      "id": "quit",
+      "id": "quit-2",
       "name": "On Quit",
       "since": "1.0 (simple disconnection)",
       "description": [
@@ -12622,7 +12626,7 @@
       ]
     },
     {
-      "id": "respawn",
+      "id": "respawn-2",
       "name": "On Respawn",
       "since": "1.0",
       "description": [
@@ -12636,7 +12640,7 @@
       ]
     },
     {
-      "id": "sneak_toggle",
+      "id": "sneak_toggle-2",
       "name": "On Sneak Toggle",
       "since": "1.0",
       "description": [
@@ -12654,7 +12658,7 @@
       ]
     },
     {
-      "id": "sprint_toggle",
+      "id": "sprint_toggle-2",
       "name": "On Sprint Toggle",
       "since": "1.0",
       "description": [
@@ -12671,7 +12675,7 @@
       ]
     },
     {
-      "id": "portal_create",
+      "id": "portal_create-2",
       "name": "On Portal Create",
       "since": "1.0, 2.5.3 (event-entity support)",
       "description": [
@@ -12687,7 +12691,7 @@
       ]
     },
     {
-      "id": "projectile_hit",
+      "id": "projectile_hit-2",
       "name": "On Projectile Hit",
       "since": "1.0",
       "description": [
@@ -12695,7 +12699,7 @@
       ],
       "examples": [
         "on projectile hit:",
-        "\tif victim's health &amp;amp;amp;amp;lt;= 3:",
+        "\tif victim's health <= 3:",
         "\t\tdelete event-projectile"
       ],
       "patterns": [
@@ -12703,7 +12707,7 @@
       ]
     },
     {
-      "id": "projectile_collide",
+      "id": "projectile_collide-2",
       "name": "On Projectile Collide",
       "since": "2.5",
       "description": [
@@ -12718,7 +12722,7 @@
       ]
     },
     {
-      "id": "shoot",
+      "id": "shoot-2",
       "name": "On Shoot",
       "since": "1.0",
       "description": [
@@ -12734,7 +12738,7 @@
       ]
     },
     {
-      "id": "sign_change",
+      "id": "sign_change-2",
       "name": "On Sign Change",
       "since": "1.0",
       "description": [
@@ -12743,7 +12747,7 @@
       "examples": [
         "on sign change:",
         "\tline 2 is empty",
-        "\tset line 1 to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;%line 1%\""
+        "\tset line 1 to \"&lt;red&gt;%line 1%\""
       ],
       "patterns": [
         "sign (chang[e]|edit)[ing]",
@@ -12751,7 +12755,7 @@
       ]
     },
     {
-      "id": "spawn_change",
+      "id": "spawn_change-2",
       "name": "On Spawn Change",
       "since": "1.0",
       "description": [
@@ -12766,7 +12770,7 @@
       ]
     },
     {
-      "id": "vehicle_create",
+      "id": "vehicle_create-2",
       "name": "On Vehicle Create",
       "since": "1.0",
       "description": [
@@ -12781,7 +12785,7 @@
       ]
     },
     {
-      "id": "vehicle_damage",
+      "id": "vehicle_damage-2",
       "name": "On Vehicle Damage",
       "since": "1.0",
       "description": [
@@ -12796,7 +12800,7 @@
       ]
     },
     {
-      "id": "vehicle_destroy",
+      "id": "vehicle_destroy-2",
       "name": "On Vehicle Destroy",
       "since": "1.0",
       "description": [
@@ -12812,7 +12816,7 @@
       ]
     },
     {
-      "id": "vehicle_enter",
+      "id": "vehicle_enter-2",
       "name": "On Vehicle Enter",
       "since": "1.0",
       "description": [
@@ -12829,7 +12833,7 @@
       ]
     },
     {
-      "id": "vehicle_exit",
+      "id": "vehicle_exit-2",
       "name": "On Vehicle Exit",
       "since": "1.0",
       "description": [
@@ -12846,7 +12850,7 @@
       ]
     },
     {
-      "id": "entity_mount",
+      "id": "entity_mount-2",
       "name": "On Entity Mount",
       "since": "2.2-dev13b",
       "description": [
@@ -12861,7 +12865,7 @@
       ]
     },
     {
-      "id": "entity_dismount",
+      "id": "entity_dismount-2",
       "name": "On Entity Dismount",
       "since": "2.2-dev13b",
       "description": [
@@ -12876,7 +12880,7 @@
       ]
     },
     {
-      "id": "gliding_state_change",
+      "id": "gliding_state_change-2",
       "name": "On Gliding State Change",
       "since": "2.2-dev21",
       "description": [
@@ -12891,7 +12895,7 @@
       ]
     },
     {
-      "id": "aoe_cloud_effect",
+      "id": "aoe_cloud_effect-2",
       "name": "On AoE Cloud Effect",
       "since": "2.2-dev21",
       "description": [
@@ -12905,7 +12909,7 @@
       ]
     },
     {
-      "id": "sheep_regrow_wool",
+      "id": "sheep_regrow_wool-2",
       "name": "On Sheep Regrow Wool",
       "since": "2.2-dev21",
       "description": [
@@ -12920,7 +12924,7 @@
       ]
     },
     {
-      "id": "inventory_open",
+      "id": "inventory_open-2",
       "name": "On Inventory Open",
       "since": "2.2-dev21",
       "description": [
@@ -12935,7 +12939,7 @@
       ]
     },
     {
-      "id": "inventory_close",
+      "id": "inventory_close-2",
       "name": "On Inventory Close",
       "since": "2.2-dev21",
       "description": [
@@ -12951,7 +12955,7 @@
       ]
     },
     {
-      "id": "slime_split",
+      "id": "slime_split-2",
       "name": "On Slime Split",
       "since": "2.2-dev26",
       "description": [
@@ -12965,7 +12969,7 @@
       ]
     },
     {
-      "id": "resurrect_attempt",
+      "id": "resurrect_attempt-2",
       "name": "On Resurrect Attempt",
       "since": "2.2-dev28",
       "description": [
@@ -12982,7 +12986,7 @@
       ]
     },
     {
-      "id": "player_world_change",
+      "id": "player_world_change-2",
       "name": "On Player World Change",
       "since": "2.2-dev28",
       "description": [
@@ -12998,7 +13002,7 @@
       ]
     },
     {
-      "id": "flight_toggle",
+      "id": "flight_toggle-2",
       "name": "On Flight Toggle",
       "since": "2.2-dev36",
       "description": [
@@ -13015,7 +13019,7 @@
       ]
     },
     {
-      "id": "language_change",
+      "id": "language_change-2",
       "name": "On Language Change",
       "since": "2.3",
       "description": [
@@ -13033,7 +13037,7 @@
       ]
     },
     {
-      "id": "jump",
+      "id": "jump-2",
       "name": "On Jump",
       "since": "2.3",
       "description": [
@@ -13050,7 +13054,7 @@
       ]
     },
     {
-      "id": "hand_item_swap",
+      "id": "hand_item_swap-2",
       "name": "On Hand Item Swap",
       "since": "2.3",
       "description": [
@@ -13071,7 +13075,7 @@
       ]
     },
     {
-      "id": "server_list_ping",
+      "id": "server_list_ping-2",
       "name": "On Server List Ping",
       "since": "2.3",
       "description": [
@@ -13092,7 +13096,7 @@
       ]
     },
     {
-      "id": "swim_toggle",
+      "id": "swim_toggle-2",
       "name": "On Swim Toggle",
       "since": "2.3",
       "description": [
@@ -13109,7 +13113,7 @@
       ]
     },
     {
-      "id": "riptide",
+      "id": "riptide-2",
       "name": "On Riptide",
       "since": "2.5",
       "description": [
@@ -13125,7 +13129,7 @@
       ]
     },
     {
-      "id": "armor_change",
+      "id": "armor_change-2",
       "name": "On Armor Change",
       "since": "2.5",
       "description": [
@@ -13140,7 +13144,7 @@
       ]
     },
     {
-      "id": "sponge_absorb",
+      "id": "sponge_absorb-2",
       "name": "On Sponge Absorb",
       "since": "2.5",
       "description": [
@@ -13156,7 +13160,7 @@
       ]
     },
     {
-      "id": "enchant_prepare",
+      "id": "enchant_prepare-2",
       "name": "On Enchant Prepare",
       "since": "2.5",
       "description": [
@@ -13173,7 +13177,7 @@
       ]
     },
     {
-      "id": "enchant",
+      "id": "enchant-2",
       "name": "On Enchant",
       "since": "2.5",
       "description": [
@@ -13190,7 +13194,7 @@
       ]
     },
     {
-      "id": "inventory_pickup",
+      "id": "inventory_pickup-2",
       "name": "On Inventory Pickup",
       "since": "2.5.1",
       "description": [
@@ -13204,7 +13208,7 @@
       ]
     },
     {
-      "id": "horse_jump",
+      "id": "horse_jump-2",
       "name": "On Horse Jump",
       "since": "2.5.1",
       "description": [
@@ -13219,7 +13223,7 @@
       ]
     },
     {
-      "id": "block_fertilize",
+      "id": "block_fertilize-2",
       "name": "On Block Fertilize",
       "since": "2.5",
       "description": [
@@ -13234,7 +13238,7 @@
       ]
     },
     {
-      "id": "arm_swing",
+      "id": "arm_swing-2",
       "name": "On Arm Swing",
       "since": "2.5.1",
       "description": [
@@ -13249,7 +13253,7 @@
       ]
     },
     {
-      "id": "item_mend",
+      "id": "item_mend-2",
       "name": "On Item Mend",
       "since": "2.5.1",
       "description": [
@@ -13266,7 +13270,7 @@
       ]
     },
     {
-      "id": "anvil_prepare",
+      "id": "anvil_prepare-2",
       "name": "On Anvil Prepare",
       "since": "2.7",
       "description": [
@@ -13284,7 +13288,7 @@
       ]
     },
     {
-      "id": "player_trade",
+      "id": "player_trade-2",
       "name": "On Player Trade",
       "since": "2.7",
       "description": [
@@ -13301,7 +13305,7 @@
       ]
     },
     {
-      "id": "entity_jump",
+      "id": "entity_jump-2",
       "name": "On Entity Jump",
       "since": "2.7",
       "description": [
@@ -13317,7 +13321,7 @@
       ]
     },
     {
-      "id": "anvil_damage",
+      "id": "anvil_damage-2",
       "name": "On Anvil Damage",
       "since": "2.7",
       "description": [
@@ -13333,7 +13337,7 @@
       ]
     },
     {
-      "id": "stop_using_item",
+      "id": "stop_using_item-2",
       "name": "On Stop Using Item",
       "since": "2.8.0",
       "description": [
@@ -13349,7 +13353,7 @@
       ]
     },
     {
-      "id": "ready_arrow",
+      "id": "ready_arrow-2",
       "name": "On Ready Arrow",
       "since": "2.8.0",
       "description": [
@@ -13368,7 +13372,7 @@
       ]
     },
     {
-      "id": "inventory_slot_change",
+      "id": "inventory_slot_change-2",
       "name": "On Inventory Slot Change",
       "since": "2.7",
       "description": [
@@ -13385,7 +13389,7 @@
       ]
     },
     {
-      "id": "chat",
+      "id": "chat-2",
       "name": "On Chat",
       "since": "1.4.1",
       "description": [
@@ -13396,18 +13400,18 @@
       "examples": [
         "on chat:",
         "\tif player has permission \"owner\":",
-        "\t\tset chat format to \"&amp;amp;amp;amp;amp;lt;red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[message]\"",
+        "\t\tset chat format to \"&lt;red&gt;[player]&lt;light gray&gt;: &lt;light red&gt;[message]\"",
         "\telse if player has permission \"admin\":",
-        "\t\tset chat format to \"&amp;amp;amp;amp;amp;lt;light red&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[message]\"",
+        "\t\tset chat format to \"&lt;light red&gt;[player]&lt;light gray&gt;: &lt;orange&gt;[message]\"",
         "\telse: #default message format",
-        "\t\tset chat format to \"&amp;amp;amp;amp;amp;lt;orange&amp;amp;amp;amp;amp;gt;[player]&amp;amp;amp;amp;amp;lt;light gray&amp;amp;amp;amp;amp;gt;: &amp;amp;amp;amp;amp;lt;white&amp;amp;amp;amp;amp;gt;[message]\""
+        "\t\tset chat format to \"&lt;orange&gt;[player]&lt;light gray&gt;: &lt;white&gt;[message]\""
       ],
       "patterns": [
         "chat"
       ]
     },
     {
-      "id": "player_deep_sleep",
+      "id": "player_deep_sleep-2",
       "name": "On Player Deep Sleep",
       "since": "2.7",
       "description": [
@@ -13423,7 +13427,7 @@
       ]
     },
     {
-      "id": "player_pickup_arrow",
+      "id": "player_pickup_arrow-2",
       "name": "On Player Pickup Arrow",
       "since": "2.8.0",
       "description": [
@@ -13439,7 +13443,7 @@
       ]
     },
     {
-      "id": "inventory_drag",
+      "id": "inventory_drag-2",
       "name": "On Inventory Drag",
       "since": "2.7",
       "description": [
@@ -13456,7 +13460,7 @@
       ]
     },
     {
-      "id": "piglin_barter",
+      "id": "piglin_barter-2",
       "name": "On Piglin Barter",
       "since": "INSERT VERSION",
       "description": [
@@ -13474,7 +13478,7 @@
       ]
     },
     {
-      "id": "bell_ring",
+      "id": "bell_ring-2",
       "name": "On Bell Ring",
       "since": "2.9.0",
       "description": [
@@ -13482,14 +13486,14 @@
       ],
       "examples": [
         "on bell ring:",
-        "\tsend \"&amp;amp;amp;amp;lt;gold&amp;amp;amp;amp;gt;Ding-dong!&amp;amp;amp;amp;lt;reset&amp;amp;amp;amp;gt;\" to all players in radius 10 of event-block"
+        "\tsend \"<gold>Ding-dong!<reset>\" to all players in radius 10 of event-block"
       ],
       "patterns": [
         "bell ring[ing]"
       ]
     },
     {
-      "id": "bell_resonate",
+      "id": "bell_resonate-2",
       "name": "On Bell Resonate",
       "since": "2.9.0",
       "description": [
@@ -13497,14 +13501,14 @@
       ],
       "examples": [
         "on bell resonate:",
-        "\tsend \"&amp;amp;amp;amp;lt;red&amp;amp;amp;amp;gt;Raiders are nearby!\" to all players in radius 32 around event-block"
+        "\tsend \"<red>Raiders are nearby!\" to all players in radius 32 around event-block"
       ],
       "patterns": [
         "bell resonat(e|ing)"
       ]
     },
     {
-      "id": "enderman_enrage",
+      "id": "enderman_enrage-2",
       "name": "On Enderman Enrage",
       "since": "2.9.0",
       "description": [
@@ -13522,7 +13526,7 @@
       ]
     },
     {
-      "id": "beacon_change_effect",
+      "id": "beacon_change_effect-2",
       "name": "On Beacon Change Effect",
       "since": "INSERT VERSION",
       "description": [
@@ -13544,7 +13548,7 @@
       ]
     },
     {
-      "id": "broadcast",
+      "id": "broadcast-2",
       "name": "On Broadcast",
       "since": "INSERT VERSION",
       "description": [
@@ -13552,14 +13556,14 @@
       ],
       "examples": [
         "on broadcast:",
-        "\tset broadcast-message to \"&amp;amp;amp;amp;amp;c[BROADCAST] %broadcasted message%\""
+        "\tset broadcast-message to \"&c[BROADCAST] %broadcasted message%\""
       ],
       "patterns": [
         "broadcast"
       ]
     },
     {
-      "id": "experience_cooldown_change",
+      "id": "experience_cooldown_change-2",
       "name": "On Experience Cooldown Change",
       "since": "INSERT VERSION",
       "description": [
@@ -13578,7 +13582,7 @@
       ]
     },
     {
-      "id": "vehicle_move",
+      "id": "vehicle_move-2",
       "name": "On Vehicle Move",
       "since": "INSERT VERSION",
       "description": [
@@ -13595,7 +13599,7 @@
       ]
     },
     {
-      "id": "elytra_boost",
+      "id": "elytra_boost-2",
       "name": "On Elytra Boost",
       "since": "INSERT VERSION",
       "description": [
@@ -13611,15 +13615,19 @@
       ]
     },
     {
-      "id": "bucket_catch_entity",
+      "id": "bucket_catch_entity-2",
       "name": "On Bucket Catch Entity",
+      "description": [],
+      "examples": [],
       "patterns": [
         "bucket (catch[ing]|captur(e|ing)) [[of] %-entitydatas%]"
       ]
     },
     {
-      "id": "fishing",
+      "id": "fishing-2",
       "name": "On Fishing",
+      "description": [],
+      "examples": [],
       "patterns": [
         "[fishing] (line|rod) cast",
         "fish (caught|catch)",
@@ -13632,7 +13640,7 @@
       ]
     },
     {
-      "id": "entity_breed",
+      "id": "entity_breed-2",
       "name": "On Entity Breed",
       "since": "INSERT VERSION",
       "description": [
@@ -13647,7 +13655,7 @@
       ]
     },
     {
-      "id": "love_mode_enter",
+      "id": "love_mode_enter-2",
       "name": "On Love Mode Enter",
       "since": "INSERT VERSION",
       "description": [
@@ -13663,7 +13671,7 @@
       ]
     },
     {
-      "id": "player_input",
+      "id": "player_input-2",
       "name": "On Player Input",
       "since": "INSERT VERSION",
       "description": [
@@ -13680,7 +13688,7 @@
       ]
     },
     {
-      "id": "smelt",
+      "id": "smelt-2",
       "name": "On Smelt",
       "since": "1.0, INSERT VERSION (specific item)",
       "description": [
@@ -13699,7 +13707,7 @@
       ]
     },
     {
-      "id": "fuel_burn",
+      "id": "fuel_burn-2",
       "name": "On Fuel Burn",
       "since": "1.0, INSERT VERSION (specific item)",
       "description": [
@@ -13716,7 +13724,7 @@
       ]
     },
     {
-      "id": "furnace_item_extract",
+      "id": "furnace_item_extract-2",
       "name": "On Furnace Item Extract",
       "since": "INSERT VERSION",
       "description": [
@@ -13732,7 +13740,7 @@
       ]
     },
     {
-      "id": "start_smelt",
+      "id": "start_smelt-2",
       "name": "On Start Smelt",
       "since": "INSERT VERSION",
       "description": [
@@ -13751,7 +13759,7 @@
       ]
     },
     {
-      "id": "loot_generate",
+      "id": "loot_generate-2",
       "name": "On Loot Generate",
       "since": "2.7",
       "description": [
@@ -13769,7 +13777,7 @@
       ]
     },
     {
-      "id": "region_enterleave",
+      "id": "region_enterleave-2",
       "name": "On Region Enter/Leave",
       "since": "2.1",
       "description": [
@@ -13786,7 +13794,7 @@
       ]
     },
     {
-      "id": "test_case",
+      "id": "test_case-2",
       "name": "On Test Case",
       "since": "2.5",
       "description": [
@@ -14940,7 +14948,7 @@
   ],
   "structures": [
     {
-      "id": "StructAliases",
+      "id": "StructAliases-2",
       "name": "Aliases",
       "since": "1.0",
       "description": [
@@ -14956,7 +14964,7 @@
       ]
     },
     {
-      "id": "StructCommand",
+      "id": "StructCommand-2",
       "name": "Command",
       "since": "1.0",
       "description": [
@@ -14981,7 +14989,7 @@
       ]
     },
     {
-      "id": "StructFunction",
+      "id": "StructFunction-2",
       "name": "Function",
       "since": "2.2, 2.7 (local functions)",
       "description": [
@@ -15004,7 +15012,7 @@
       ]
     },
     {
-      "id": "StructOptions",
+      "id": "StructOptions-2",
       "name": "Options",
       "since": "1.0",
       "description": [
@@ -15033,7 +15041,7 @@
       ]
     },
     {
-      "id": "StructUsing",
+      "id": "StructUsing-2",
       "name": "Using Experimental Feature",
       "since": "2.9.0",
       "description": [
@@ -15049,7 +15057,7 @@
       ]
     },
     {
-      "id": "StructVariables",
+      "id": "StructVariables-2",
       "name": "Variables",
       "since": "1.0",
       "description": [
@@ -15073,7 +15081,7 @@
   ],
   "sections": [
     {
-      "id": "EffSecShoot",
+      "id": "EffSecShoot-2",
       "name": "Shoot",
       "since": "INSERT VERSION",
       "description": [
@@ -15090,7 +15098,7 @@
       ]
     },
     {
-      "id": "EffSecSpawn",
+      "id": "EffSecSpawn-2",
       "name": "Spawn",
       "since": "1.0, 2.6.1 (with section), 2.8.6 (dropped items), INSERT VERSION (entity snapshots)",
       "description": [
@@ -15119,7 +15127,7 @@
       ]
     },
     {
-      "id": "SecConditional",
+      "id": "SecConditional-2",
       "name": "Conditionals",
       "since": "1.0",
       "description": [
@@ -15158,7 +15166,7 @@
       ]
     },
     {
-      "id": "SecFilter",
+      "id": "SecFilter-2",
       "name": "Filter (Section)",
       "since": "INSERT VERSION",
       "description": [
@@ -15180,7 +15188,7 @@
       ]
     },
     {
-      "id": "SecLoop",
+      "id": "SecLoop-2",
       "name": "Loop",
       "since": "1.0",
       "description": [
@@ -15222,7 +15230,7 @@
       ]
     },
     {
-      "id": "SecFor",
+      "id": "SecFor-2",
       "name": "For Each Loop (Experimental)",
       "since": "INSERT VERSION",
       "description": [
@@ -15251,7 +15259,7 @@
       ]
     },
     {
-      "id": "SecWhile",
+      "id": "SecWhile-2",
       "name": "While Loop",
       "since": "2.0, 2.6 (do while)",
       "description": [
