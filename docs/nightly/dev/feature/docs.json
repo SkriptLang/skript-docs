@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-a0f3a5b",
+  "skriptVersion": "2.9.5-nightly-a18c5ae",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -131,7 +131,7 @@
       "name": "Contains",
       "since": "1.0",
       "description": [
-        "Checks whether an inventory contains an item, a text contains another piece of text, or a list (e.g. {list variable::*} or 'drops') contains another object."
+        "Checks whether an inventory contains an item, a text contains another piece of text, a container contains something, or a list (e.g. {list variable::*} or 'drops') contains another object."
       ],
       "examples": [
         "block contains 20 cobblestone",
@@ -1261,8 +1261,8 @@
         "player's inventory is empty"
       ],
       "patterns": [
-        "%inventories/slots/strings% (is|are) empty",
-        "%inventories/slots/strings% (isn't|is not|aren't|are not) empty"
+        "%inventories/slots/strings/numbered% (is|are) empty",
+        "%inventories/slots/strings/numbered% (isn't|is not|aren't|are not) empty"
       ]
     },
     {
@@ -7285,7 +7285,7 @@
       "name": "Amount",
       "since": "1.0",
       "description": [
-        "The amount of something.",
+        "The amount or size of something.",
         "Please note that <code>amount of %items%</code> will not return the number of items, but the number of stacks, e.g. 1 for a stack of 64 torches. To get the amount of items in a stack, see the <a href='#ExprItemAmount'>item amount</a> expression.",
         "",
         "Also, you can get the recursive size of a list, which will return the recursive size of the list with sublists included, e.g.",
@@ -7307,6 +7307,7 @@
         "message \"There are %number of all players% players online!\""
       ],
       "patterns": [
+        "[the] (amount|number|size) of %numbered%",
         "[the] (amount|number|size) of %objects%",
         "[the] recursive (amount|number|size) of %objects%"
       ]
@@ -9036,7 +9037,7 @@
       ]
     },
     {
-      "id": "ExprName-3",
+      "id": "ExprName-4",
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
@@ -9085,12 +9086,12 @@
         "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
       ],
       "patterns": [
-        "[the] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s]) of %offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/gamerules%",
-        "%offlineplayers/entities/blocks/itemtypes/inventories/slots/worlds/gamerules%'[s] (1¦name[s]|2¦(display|nick|chat|custom)[ ]name[s])"
+        "[the] (1:name[s]) of %offlineplayers/entities/inventories/named%",
+        "%offlineplayers/entities/inventories/named%'[s] (1:name[s])"
       ]
     },
     {
-      "id": "ExprName-3",
+      "id": "ExprName-4",
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
@@ -9139,8 +9140,62 @@
         "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
       ],
       "patterns": [
-        "[the] (3¦(player|tab)[ ]list name[s]) of %players%",
-        "%players%'[s] (3¦(player|tab)[ ]list name[s])"
+        "[the] (2:(display|nick|chat|custom)[ ]name[s]) of %offlineplayers/entities/inventories/named%",
+        "%offlineplayers/entities/inventories/named%'[s] (2:(display|nick|chat|custom)[ ]name[s])"
+      ]
+    },
+    {
+      "id": "ExprName-4",
+      "name": "Name / Display Name / Tab List Name",
+      "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
+      "description": [
+        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.",
+        "",
+        "<ul>",
+        "\t<li><strong>Players</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The Minecraft account name of the player. Can't be changed, but 'display name' can be changed.</li>",
+        "\t\t\t<li><strong>Display Name:</strong> The name of the player that is displayed in messages. This name can be changed freely and can include color codes, and is shared among all plugins (e.g. chat plugins will use the display name).</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Entities</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The custom name of the entity. Can be changed. But for living entities, the players will have to target the entity to see its name tag. For non-living entities, the name will not be visible at all. To prevent this, use 'display name'.</li>",
+        "\t\t\t<li><strong>Display Name:</strong> The custom name of the entity. Can be changed, which will also enable <em>custom name visibility</em> of the entity so name tag of the entity will be visible always.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Items</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name and Display Name:</strong> The <em>custom</em> name of the item (not the Minecraft locale name). Can be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Inventories</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name and Display Name:</strong> The name/title of the inventory. Changing name of an inventory means opening the same inventory with the same contents but with a different name to its current viewers.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Gamerules (1.13+)</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of the gamerule. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Worlds</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "</ul>"
+      ],
+      "examples": [
+        "on join:",
+        "\tplayer has permission \"name.red\"",
+        "\tset the player's display name to \"&lt;red&gt;[admin] &lt;gold&gt;%name of player%\"",
+        "\tset the player's tab list name to \"&lt;green&gt;%player's name%\"",
+        "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
+      ],
+      "patterns": [
+        "[the] (3:(player|tab)[ ]list name[s]) of %players%",
+        "%players%'[s] (3:(player|tab)[ ]list name[s])"
       ]
     },
     {
@@ -14017,6 +14072,20 @@
       ]
     },
     {
+      "id": "containing",
+      "name": "Anything with Contents",
+      "since": "INSERT VERSION",
+      "description": [
+        "Something that contains other things."
+      ],
+      "examples": [
+        "{a} contains {b}"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
       "id": "projectile",
       "name": "Projectile",
       "since": "1.0",
@@ -14754,6 +14823,35 @@
       ],
       "patterns": [
         "smoke, potion break, ender signal, mobspawner flames, arrow particles, jumping rabbit, hurt, wolf smoke, wolf hearts, wolf shaking, sheep eating, iron golem offering rose, witch magic, zombie turning to a villager, firework explosion, love hearts, squid rotation reset, entity poof, guardian target, block with shield, shield break, armor stand hit, hurt by thorns, iron golem sheathing rose, resurrection by totem, hurt by drowning, hurt by explosion, poof, large explosion, explosion emitter, firework, bubble, splash, water wake, underwater, critical hit, enchanted hit, smoke, large smoke, effect, instant effect, entity effect, witch, dripping water, dripping lava, angry villager, happy villager, mycelium, note, portal, enchant, flame, lava pop, cloud, dust, snowball, slime, heart, item, block, rain, elder guardian, dragon breath, end rod, damage indicator, sweep attack, falling dust, totem of undying, spit, squid ink, bubble pop, current down, bubble column up, nautilus, dolphin, sneeze, campfire cosy smoke, campfire signal smoke, composter, flash, falling lava, landing lava, falling water, dripping honey, falling honey, landing honey, falling nectar, soul fire flame, ash, crimson spore, warped spore, soul, dripping obsidian tear, falling obsidian tear, landing obsidian tear, reverse portal, white ash, dust color transition, vibration, falling spore blossom, spore blossom air, small flame, snowflake, dripping dripstone lava, falling dripstone lava, dripping dripstone water, falling dripstone water, glow squid ink, glow, wax on, wax off, electric spark, scrape, sonic boom, sculk soul, sculk charge, sculk charge pop, shriek, cherry leaves, egg crack, dust plume, white smoke, gust, small gust, large gust emitter, small gust emitter, trial spawner detection, ominous trial spawner detection, vault connection, infested, cobweb, dust pillar, ominous spawning, raid omen, block marker"
+      ]
+    },
+    {
+      "id": "named",
+      "name": "Any Named Thing",
+      "since": "INSERT VERSION",
+      "description": [
+        "Something that has a name (e.g. an item)."
+      ],
+      "examples": [
+        "{thing}'s name"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "numbered",
+      "name": "Any Numbered/Sized Thing",
+      "since": "INSERT VERSION",
+      "description": [
+        "Something that has an amount or size."
+      ],
+      "examples": [
+        "the size of {thing}",
+        "the amount of {thing}"
+      ],
+      "patterns": [
+        ""
       ]
     },
     {
