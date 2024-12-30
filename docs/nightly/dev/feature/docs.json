@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-b56d33d",
+  "skriptVersion": "2.9.5-nightly-86c4fcd",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -6054,6 +6054,23 @@
       ]
     },
     {
+      "id": "ExprBannerItem-2",
+      "name": "Banner Pattern Item",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets the item from a banner pattern type.",
+        "Note that not all banner pattern types have an item."
+      ],
+      "examples": [
+        "set {_item} to creeper charged banner pattern item",
+        "set {_item} to snout banner pattern item",
+        "set {_item} to thing banner pattern item"
+      ],
+      "patterns": [
+        "[a[n]] %*bannerpatterntypes% item[s]"
+      ]
+    },
+    {
       "id": "ExprBlock-3",
       "name": "Block",
       "since": "1.0",
@@ -7470,6 +7487,28 @@
       "patterns": [
         "[the] attack cooldown of %players%",
         "%players%'[s] attack cooldown"
+      ]
+    },
+    {
+      "id": "ExprBannerPatterns-2",
+      "name": "Banner Patterns",
+      "since": "INSERT VERSION",
+      "description": [
+        "Gets or sets the banner patterns of a banner.",
+        "In order to set a specific position of a banner, there needs to be that many patterns already on the banner.",
+        "This expression will add filler patterns to the banner to allow the specified position to be set.",
+        "For Example, setting the 3rd banner pattern of a banner that has no patterns on it, will internally add 3 base patterns, allowing the 3rd banner pattern to be set."
+      ],
+      "examples": [
+        "broadcast banner patterns of {_banneritem}",
+        "broadcast 1st banner pattern of block at location(0,0,0)",
+        "clear banner patterns of {_banneritem}"
+      ],
+      "patterns": [
+        "[all [[of] the]|the] banner pattern[s] of %itemstacks/itemtypes/slots/blocks%",
+        "%itemstacks/itemtypes/slots/blocks%'[s] banner pattern[s]",
+        "[the] %integer%[st|nd|rd|th] [banner] pattern of %itemstacks/itemtypes/slots/blocks%",
+        "%itemstacks/itemtypes/slots/blocks%'[s] %integer%[st|nd|rd|th] [banner] pattern"
       ]
     },
     {
@@ -11085,6 +11124,27 @@
       ]
     },
     {
+      "id": "ExprNewBannerPattern-2",
+      "name": "Banner Pattern",
+      "since": "INSERT VERSION",
+      "description": [
+        "Creates a new banner pattern."
+      ],
+      "examples": [
+        "set {_pattern} to a creeper banner pattern colored red",
+        "add {_pattern} to banner patterns of {_banneritem}",
+        "remove {_pattern} from banner patterns of {_banneritem}",
+        "set the 1st banner pattern of block at location(0,0,0) to {_pattern}",
+        "clear the 1st banner pattern of block at location(0,0,0)",
+        "",
+        "set {_pattern} to a red mojang banner pattern"
+      ],
+      "patterns": [
+        "[a] %bannerpatterntype% colo[u]red %color%",
+        "[a] %*color% %bannerpatterntype%"
+      ]
+    },
+    {
       "id": "ExprSets-2",
       "name": "Sets",
       "since": "1.0 pre-5, 2.7 (classinfo)",
@@ -14603,6 +14663,25 @@
         "Represents a snapshot of an entity's data.",
         "This includes all of the data associated with an entity (its name, health, attributes, etc.), at the time this expression is used. Essentially, these are a way to create templates for entities.",
         "Individual attributes of a snapshot cannot be modified or retrieved."
+      ]
+    },
+    {
+      "id": "bannerpattern",
+      "name": "Banner Pattern",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a banner pattern."
+      ]
+    },
+    {
+      "id": "bannerpatterntype",
+      "name": "Banner Pattern Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents the various banner patterns that can be applied to a banner."
+      ],
+      "patterns": [
+        "base, base banner pattern, border, border banner pattern, bordure banner pattern, bordure indented banner pattern, bottom left square banner pattern, bottom right square banner pattern, bottom stripe banner pattern, bottom triangle banner pattern, bricks, bricks banner pattern, center stripe banner pattern, circle, circle banner pattern, creeper, creeper banner pattern, creeper charged banner pattern, cross, cross banner pattern, curly border, curly border banner pattern, diagonal left, diagonal right, diagonal up left, diagonal up left banner pattern, diagonal up right, diagonal up right banner pattern, down left stripe banner pattern, down right stripe banner pattern, field masoned banner pattern, flow, flow banner pattern, flower, flower banner pattern, globe, globe banner pattern, gradient, gradient banner pattern, gradient up, gradient up banner pattern, guster, guster banner pattern, half horizontal, half horizontal bottom, half vertical, half vertical right, horizontal bottom half banner pattern, horizontal half banner pattern, left diagonal banner pattern, left stripe banner pattern, middle stripe banner pattern, mojang, mojang banner pattern, piglin, piglin banner pattern, rhombus, rhombus banner pattern, right diagonal banner pattern, right stripe banner pattern, right vertical half banner pattern, skull, skull banner pattern, small stripes, small stripes banner pattern, snout banner pattern, square bottom left, square bottom right, square top left, square top right, straight cross, straight cross banner pattern, stripe bottom, stripe center, stripe downleft, stripe downright, stripe left, stripe middle, stripe right, stripe top, tbottom triangles banner pattern, thing banner pattern, top left square banner pattern, top right square banner pattern, top stripe banner pattern, top triangle banner pattern, top triangles banner pattern, triangle bottom, triangle top, triangles bottom, triangles top, vertical half banner pattern"
       ]
     },
     {
