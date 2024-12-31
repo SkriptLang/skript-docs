@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-1235d8d",
+  "skriptVersion": "2.9.5-nightly-f69abdb",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -4556,6 +4556,21 @@
       "patterns": [
         "[the] (full|complete|whole) command",
         "[the] command [(label|alias)]"
+      ]
+    },
+    {
+      "id": "ExprConfig-2",
+      "name": "Config (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "The Skript config.",
+        "This can be reloaded, or navigated to retrieve options."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nif text value of {_node} is \"french\":\n\tbroadcast \"Bonjour!\"\n"
+      ],
+      "patterns": [
+        "[the] [skript] config"
       ]
     },
     {
@@ -9375,6 +9390,46 @@
       "patterns": [
         "[the] (invulnerability|invincibility|no damage) tick[s] of %livingentities%",
         "%livingentities%'[s] (invulnerability|invincibility|no damage) tick[s]"
+      ]
+    },
+    {
+      "id": "ExprNode-2",
+      "name": "Node (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a node inside a config (or another section-node).",
+        "Nodes in Skript configs are written in the format `key: value`.",
+        "Section nodes can contain other nodes."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nif text value of {_node} is \"french\":\n\tbroadcast \"Bonjour!\"\n",
+        "set {_script} to the current script\nloop nodes of the current script:\n\tbroadcast name of loop-value"
+      ],
+      "patterns": [
+        "[the] node %string% (of|in) %node%",
+        "%node%'[s] node %string%",
+        "[the] nodes (of|in) %nodes%",
+        "%node%'[s] nodes"
+      ]
+    },
+    {
+      "id": "ExprNodeValue-2",
+      "name": "Value (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the value of a node in a loaded config.",
+        "The value is automatically converted to the specified type (e.g. text, number) where possible."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
+        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
+      ],
+      "patterns": [
+        "[the] %*classinfo% value [at] %string% (from|in) %node%",
+        "[the] %*classinfo% value of %node%",
+        "[the] %*classinfo% values of %nodes%",
+        "%node%'s %*classinfo% value",
+        "%nodes%'[s] %*classinfo% values"
       ]
     },
     {
@@ -14237,6 +14292,36 @@
       ],
       "examples": [
         ""
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "config",
+      "name": "Config",
+      "since": "INSERT VERSION",
+      "description": [
+        "A configuration (or code) loaded by Skript, such as the config.sk or aliases.",
+        "Configs can be reloaded or navigated to find options."
+      ],
+      "examples": [
+        "the skript config"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "node",
+      "name": "Node",
+      "since": "INSERT VERSION",
+      "description": [
+        "A node (entry) from a script config file.",
+        "This may have navigable children."
+      ],
+      "examples": [
+        "the current script"
       ],
       "patterns": [
         ""
