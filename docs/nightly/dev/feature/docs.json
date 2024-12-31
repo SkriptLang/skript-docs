@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-7795331",
+  "skriptVersion": "2.9.5-nightly-bf32598",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -3189,7 +3189,7 @@
     {
       "id": "EffKill-2",
       "name": "Kill",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (ignoring totem of undying)",
       "description": [
         "Kills an entity.",
         "Note: This effect does not set the entity's health to 0 (which causes issues), but damages the entity by 100 times its maximum health."
