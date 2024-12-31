@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-70cbf82",
+  "skriptVersion": "2.9.5-nightly-7795331",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -593,6 +593,24 @@
         "[%livingentities%] (is not|isn't) holding %itemtypes% [in main hand]",
         "[%livingentities%] (ha(s|ve) not|do[es]n't have) %itemtypes% in off[(-| )]hand",
         "[%livingentities%] (is not|isn't) holding %itemtypes% in off[(-| )]hand"
+      ]
+    },
+    {
+      "id": "CondLeashWillDrop-2",
+      "name": "Leash Will Drop",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether the leash item will drop during the leash detaching in an unleash event."
+      ],
+      "examples": [
+        "on unleash:",
+        "\tif the leash will drop:",
+        "\t\tprevent the leash from dropping",
+        "\telse:",
+        "\t\tallow the leash to drop"
+      ],
+      "patterns": [
+        "[the] (lead|leash) [item] (will|not:(won't|will not)) (drop|be dropped)"
       ]
     },
     {
@@ -2746,6 +2764,25 @@
       ],
       "patterns": [
         "drop %itemtypes/experiences% [%directions% %locations%] [(1¦without velocity)]"
+      ]
+    },
+    {
+      "id": "EffDropLeash-2",
+      "name": "Allow / Prevent Leash Drop",
+      "since": "INSERT VERSION",
+      "description": [
+        "Allows or prevents the leash from being dropped in an unleash event."
+      ],
+      "examples": [
+        "on unleash:",
+        "\tif player is not set:",
+        "\t\tprevent the leash from dropping",
+        "\telse if player is op:",
+        "\t\tallow the leash to drop"
+      ],
+      "patterns": [
+        "(force|allow) [the] (lead|leash) [item] to drop",
+        "(block|disallow|prevent) [the] (lead|leash) [item] from dropping"
       ]
     },
     {
@@ -5515,6 +5552,21 @@
       ],
       "patterns": [
         "[the] transform[ing] (cause|reason|type)"
+      ]
+    },
+    {
+      "id": "ExprUnleashReason-2",
+      "name": "Unleash Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "The unleash reason in an unleash event."
+      ],
+      "examples": [
+        "if the unleash reason is distance:",
+        "\tbroadcast \"The leash was snapped in half.\""
+      ],
+      "patterns": [
+        "[the] unleash[ing] reason"
       ]
     },
     {
@@ -11854,6 +11906,30 @@
       ]
     },
     {
+      "id": "leash_unleash-2",
+      "name": "On Leash / Unleash",
+      "since": "INSERT VERSION",
+      "description": [
+        "Called when an entity is leashed or unleashed. Cancelling these events will prevent the leashing or unleashing from occurring."
+      ],
+      "examples": [
+        "on player leash of a sheep:",
+        "\tsend \"Baaaaa--\" to player",
+        "",
+        "on player leash:",
+        "\tsend \"<%event-entity%> Let me go!\" to player",
+        "",
+        "on unleash:",
+        "\tbroadcast \"<%event-entity%> I'm free\"",
+        "",
+        "on player unleash:",
+        "\tsend \"<%event-entity%> Thanks for freeing me!\" to player"
+      ],
+      "patterns": [
+        "[:player] [:un]leash[ing] [of %-entitydatas%]"
+      ]
+    },
+    {
       "id": "level_change-2",
       "name": "On Level Change",
       "since": "1.0, 2.4 (level up/down)",
@@ -14597,6 +14673,17 @@
       ],
       "patterns": [
         "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification"
+      ]
+    },
+    {
+      "id": "unleashreason",
+      "name": "Unleash Reason",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents an unleash reason of an unleash event."
+      ],
+      "patterns": [
+        "player unleashed, distance, unleashed by player, player unleash, holder (gone|disappeared), unknown"
       ]
     },
     {
