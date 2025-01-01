@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-91eb769",
+  "skriptVersion": "2.9.5-nightly-a972a6f",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -4041,6 +4041,32 @@
       ]
     },
     {
+      "id": "EffTransform-2",
+      "name": "Transform List",
+      "since": "INSERT VERSION",
+      "description": [
+        "Transforms (or 'maps') a list's values using a given expression. This is akin to looping over the list and setting each value to a modified version of itself.",
+        "Evaluates the given expression for each element in the list, replacing the original element with the expression's result.",
+        "If the given expression returns a single value, the indices of the list will not change. If the expression returns multiple values, then then indices will be reset as a single index cannot contain multiple values.",
+        "Only variable lists can be transformed with this effect. For other lists, see the transform expression."
+      ],
+      "examples": [
+        "set {_a::*} to 1, 2, and 3",
+        "transform {_a::*} using input * 2",
+        "# {_a::*} is now 2, 4, and 6",
+        "",
+        "# get a list of the sizes of all clans without manually looping",
+        "set {_clan-sizes::*} to indices of {clans::*}",
+        "transform {_clan-sizes::*} using {clans::%input%::size}",
+        "",
+        "# set all existing values of a list to 0:",
+        "transform {_list::*} to 0"
+      ],
+      "patterns": [
+        "(transform|map) %~objects% (using|with) <.+>"
+      ]
+    },
+    {
       "id": "EffTree-2",
       "name": "Tree",
       "since": "1.0",
@@ -6645,18 +6671,20 @@
     },
     {
       "id": "ExprFilter-2",
-      "name": "Filter (Expression)",
-      "since": "2.2-dev36",
+      "name": "Filter",
+      "since": "2.2-dev36, INSERT VERSION (parenthesis pattern)",
       "description": [
         "Filters a list based on a condition. ",
         "For example, if you ran 'broadcast \"something\" and \"something else\" where [string input is \"something\"]', ",
         "only \"something\" would be broadcast as it is the only string that matched the condition."
       ],
       "examples": [
-        "send \"congrats on being staff!\" to all players where [player input has permission \"staff\"]"
+        "send \"congrats on being staff!\" to all players where [player input has permission \"staff\"]",
+        "loop (all blocks in radius 5 of player) where [block input is not air]:"
       ],
       "patterns": [
-        "%objects% (where|that match) \\[<.+>\\]"
+        "%objects% (where|that match) \\[<.+>\\]",
+        "%objects% (where|that match) \\(<.+>\\)"
       ]
     },
     {
@@ -11566,6 +11594,26 @@
       ]
     },
     {
+      "id": "ExprTransform-2",
+      "name": "Transformed List",
+      "since": "INSERT VERSION",
+      "description": [
+        "Transforms (or 'maps') a list's values using a given expression. This is akin to looping over the list and getting a modified version of each value.",
+        "Indices cannot be retained with this expression. To retain indices, see the transform effect."
+      ],
+      "examples": [
+        "set {_a::*} to (1, 2, and 3) transformed using (input * 2 - 1, input * 2)",
+        "# {_a::*} is now 1, 2, 3, 4, 5, and 6",
+        "",
+        "# get a list of the sizes of all clans without manually looping",
+        "set {_clan-sizes::*} to indices of {clans::*} transformed using [{clans::%input%::size}]"
+      ],
+      "patterns": [
+        "%objects% (transformed|mapped) (using|with) \\[<.+>\\]",
+        "%objects% (transformed|mapped) (using|with) \\(<.+>\\)"
+      ]
+    },
+    {
       "id": "ExprWhether-2",
       "name": "Whether",
       "since": "2.9.0",
@@ -15879,7 +15927,7 @@
     },
     {
       "id": "SecFilter-2",
-      "name": "Filter (Section)",
+      "name": "Filter",
       "since": "INSERT VERSION",
       "description": [
         "Filters a variable list based on the supplied conditions. Unlike the filter expression, this effect maintains the indices of the filtered list.",
@@ -15896,7 +15944,7 @@
         "send {_a::*} # sends 2, 4, 6, 8, and 10"
       ],
       "patterns": [
-        "filter %objects% to match [:any|all]"
+        "filter %~objects% to match [:any|all]"
       ]
     },
     {
