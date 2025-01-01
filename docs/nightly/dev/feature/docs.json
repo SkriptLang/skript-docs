@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-9c6cae0",
+  "skriptVersion": "2.9.5-nightly-65f71a1",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -5572,7 +5572,7 @@
       "examples": [
         "on spread:",
         "\tif the source block is a grass block:",
-        "\t\tset the source block to a dirt block"
+        "\t\tset the source block to dirt"
       ],
       "patterns": [
         "[the] source block"
@@ -15733,7 +15733,7 @@
       "examples": [
         "aliases:",
         "\tblacklisted items = TNT, bedrock, obsidian, mob spawner, lava, lava bucket",
-        "\tshiny swords = gold sword, iron sword, diamond sword"
+        "\tshiny swords = golden sword, iron sword, diamond sword"
       ],
       "patterns": [
         "aliases"
