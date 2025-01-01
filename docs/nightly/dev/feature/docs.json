@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-65f71a1",
+  "skriptVersion": "2.9.5-nightly-e17b864",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -16513,7 +16513,7 @@
     {
       "id": "file_separator",
       "name": "file_separator",
-      "since": "INSERT_VERSION",
+      "since": "INSERT VERSION",
       "description": [
         "Returns the real (platform-dependent) file separator: typically / for UN*X or \\ for Windows."
       ],
@@ -16628,7 +16628,7 @@
     {
       "id": "line_separator",
       "name": "line_separator",
-      "since": "INSERT_VERSION",
+      "since": "INSERT VERSION",
       "description": [
         "Returns the real (platform-dependent) line separator:\ntypically line feed for UN*X or carriage return line feed for Windows."
       ],
