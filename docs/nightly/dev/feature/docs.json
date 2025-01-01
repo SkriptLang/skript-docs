@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-14d41a5",
+  "skriptVersion": "2.9.5-nightly-2730adb",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -1279,7 +1279,7 @@
       "name": "Is Empty",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
-        "Checks whether an inventory, an inventory slot, or a text is empty."
+        "Checks whether an inventory, an inventory slot, a queue, or a text is empty."
       ],
       "examples": [
         "player's inventory is empty"
@@ -6412,6 +6412,21 @@
       ]
     },
     {
+      "id": "ExprDequeuedQueue-2",
+      "name": "De-queue Queue (Experimental)",
+      "since": "INSERT VERSION (experimental)",
+      "description": [
+        "Requires the <code>using queues</code> experimental feature flag to be enabled.\n\nUnrolls a queue into a regular list of values, which can be stored in a list variable.\nThe order of the list will be the same as the order of the elements in the queue.\nIf a list variable is set to this, it will use numerical indices.\nThe original queue will not be changed."
+      ],
+      "examples": [
+        "set {queue} to a new queue\nadd \"hello\" and \"there\" to {queue}\nset {list::*} to dequeued {queue}"
+      ],
+      "patterns": [
+        "(de|un)queued %queue%",
+        "unrolled %queue%"
+      ]
+    },
+    {
       "id": "ExprDifference-2",
       "name": "Difference",
       "since": "1.4",
@@ -6968,6 +6983,21 @@
       ],
       "patterns": [
         "[the] [potion] (tier|amplifier|level) of %potioneffecttypes% (of|for|on) %livingentities%"
+      ]
+    },
+    {
+      "id": "ExprQueue-2",
+      "name": "Queue (Experimental)",
+      "since": "INSERT VERSION (experimental)",
+      "description": [
+        "Requires the <code>using queues</code> experimental feature flag to be enabled.\n\nCreates a new queue.\nA queue is a set of elements that can have things removed from the start and added to the end.\n\nAny value can be added to a queue. Adding a non-existent value (e.g. `{variable that isn't set}`) will have no effect.\nThis means that removing an element from the queue will always return a value <i>unless the queue is empty</i>.\n\nRequesting an element from a queue (e.g. `the 1st element of {queue}`) also removes it from the queue."
+      ],
+      "examples": [
+        "set {queue} to a new queue\nadd \"hello\" and \"there\" to {queue}\nbroadcast the first element of {queue} # hello\nbroadcast the first element of {queue} # there\n# queue is now empty",
+        "set {queue} to a new queue of \"hello\" and \"there\"\nbroadcast the last element of {queue} # removes 'there'\nadd \"world\" to {queue}\nbroadcast the first 2 elements of {queue} # removes 'hello', 'world'"
+      ],
+      "patterns": [
+        "[a] new queue [(of|with) %-objects%]"
       ]
     },
     {
@@ -8139,7 +8169,8 @@
       "name": "Elements",
       "since": "2.0, 2.7 (relative to last element), 2.8.0 (range of elements)",
       "description": [
-        "The first, last, range or a random element of a set, e.g. a list variable.",
+        "The first, last, range or a random element of a set, e.g. a list variable, or a queue.",
+        "Asking for elements from a queue will also remove them from the queue, see the new queue expression for more information.",
         "See also: <a href='#ExprRandom'>random expression</a>"
       ],
       "examples": [
@@ -8147,14 +8178,21 @@
         "set {_last} to last element of {top players::*}",
         "set {_random player} to random element out of all players",
         "send 2nd last element of {top players::*} to player",
-        "set {page2::*} to elements from 11 to 20 of {top players::*}"
+        "set {page2::*} to elements from 11 to 20 of {top players::*}",
+        "broadcast the 1st element in {queue}",
+        "broadcast the first 3 elements in {queue}"
       ],
       "patterns": [
         "[the] (first|1:last) element [out] of %objects%",
         "[the] (first|1:last) %integer% elements [out] of %objects%",
         "[a] random element [out] of %objects%",
         "[the] %integer%(st|nd|rd|th) [1:[to] last] element [out] of %objects%",
-        "[the] elements (from|between) %integer% (to|and) %integer% [out] of %objects%"
+        "[the] elements (from|between) %integer% (to|and) %integer% [out] of %objects%",
+        "[the] (first|next|1:last) element (of|in) %queue%",
+        "[the] (first|1:last) %integer% elements (of|in) %queue%",
+        "[a] random element (of|in) %queue%",
+        "[the] %integer%(st|nd|rd|th) [1:[to] last] element (of|in) %queue%",
+        "[the] elements (from|between) %integer% (to|and) %integer% (of|in) %queue%"
       ]
     },
     {
@@ -9740,6 +9778,21 @@
       "patterns": [
         "[the] (projectile|arrow) critical (state|ability|mode) of %projectiles%",
         "%projectiles%'[s] (projectile|arrow) critical (state|ability|mode)"
+      ]
+    },
+    {
+      "id": "ExprQueueStartEnd-2",
+      "name": "Queue Start/End (Experimental)",
+      "since": "INSERT VERSION (experimental)",
+      "description": [
+        "Requires the <code>using queues</code> experimental feature flag to be enabled.\n\nThe first or last element in a queue. Asking for this does <b>not</b> remove the element from the queue.\n\nThis is designed for use with the <code>add</code> changer: to add or remove elements from the start or the end of the queue.\n"
+      ],
+      "examples": [
+        "set {queue} to a new queue\nadd \"hello\" to {queue}\nadd \"foo\" to the start of {queue}\nbroadcast the first element of {queue} # foo\nbroadcast the first element of {queue} # hello\n# queue is now empty"
+      ],
+      "patterns": [
+        "[the] (:start|end) of %queue%",
+        "%queue%'[s] (:start|end)"
       ]
     },
     {
@@ -14371,6 +14424,19 @@
       ],
       "patterns": [
         ""
+      ]
+    },
+    {
+      "id": "queue",
+      "name": "Queue",
+      "since": "INSERT VERSION",
+      "description": [
+        "A queued list of values. Entries are removed from a queue when they are queried."
+      ],
+      "examples": [
+        "set {queue} to a new queue",
+        "add \"hello\" to {queue}",
+        "broadcast the 1st element of {queue}"
       ]
     },
     {
