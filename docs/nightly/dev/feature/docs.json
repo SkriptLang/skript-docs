@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-bc9666e",
+  "skriptVersion": "2.9.5-nightly-9c6cae0",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -10674,7 +10674,7 @@
       "name": "Villager Profession",
       "since": "INSERT VERSION",
       "description": [
-        "Represents the profession of a villager."
+        "Represents the profession of a villager/zombie villager."
       ],
       "examples": [
         "set {_p} to villager profession of event-entity",
@@ -10692,7 +10692,7 @@
       "name": "Villager Type",
       "since": "INSERT VERSION",
       "description": [
-        "Represents the type of a villager. This usually represents the biome the villager is from."
+        "Represents the type of a villager/zombie villager. This usually represents the biome the villager is from."
       ],
       "examples": [
         "set {_type} to villager type of {_villager}",
