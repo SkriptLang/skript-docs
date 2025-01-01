@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-b945e0c",
+  "skriptVersion": "2.9.5-nightly-c9ee3cc",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -1980,9 +1980,9 @@
     {
       "id": "CondIsValid-2",
       "name": "Is Valid",
-      "since": "2.7, INSERT VERSION (Scripts)",
+      "since": "2.7, INSERT VERSION (Scripts & Configs)",
       "description": [
-        "Checks whether something (an entity, a script) is valid.",
+        "Checks whether something (an entity, a script, a config, etc.) is valid.",
         "An invalid entity may have died or de-spawned for some other reason.",
         "An invalid script reference may have been reloaded, moved or disabled since."
       ],
