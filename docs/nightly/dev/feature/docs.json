@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-59f6dbd",
+  "skriptVersion": "2.9.5-nightly-e1ac6d0",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -2243,6 +2243,24 @@
       ]
     },
     {
+      "id": "CondIsTagged-2",
+      "name": "Is Tagged",
+      "since": "INSERT VERSION",
+      "description": [
+        "Checks whether an item, block, entity, or entitydata is tagged with the given tag."
+      ],
+      "examples": [
+        "if player's tool is tagged with minecraft tag \"enchantable/sharp_weapon\":",
+        "\tenchant player's tool with sharpness 1",
+        "",
+        "if all logs are tagged with tag \"minecraft:logs\""
+      ],
+      "patterns": [
+        "%itemtypes/entities/entitydatas% (is|are) tagged (as|with) %minecrafttags%",
+        "%itemtypes/entities/entitydatas% (isn't|is not|aren't|are not) tagged (as|with) %minecrafttags%"
+      ]
+    },
+    {
       "id": "CondHasLootTable-2",
       "name": "Has Loot Table",
       "since": "INSERT VERSION",
@@ -4260,6 +4278,30 @@
       ]
     },
     {
+      "id": "EffRegisterTag-2",
+      "name": "Register Tag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Registers a new tag containing either items or entity datas. Note that items will NOT keep any information other than their type, so adding `diamond sword named \"test\"` to a tag is the same as adding `diamond sword`",
+        "Item tags should be used for contexts where the item is not placed down, while block tags should be used for contexts where the item is placed. For example, and item tag could be \"skript:edible\", while a block tag would be \"skript:needs_water_above\".",
+        "All custom tags will be given the namespace \"skript\", followed by the name you give it. The name must only include the characters A to Z, 0 to 9, and '/', '.', '_', and '-'. Otherwise, the tag will not register.",
+        "",
+        "Please note that two tags can share a name if they are of different types. Registering a new tag of the same name and type will overwrite the existing tag. Tags will reset on server shutdown."
+      ],
+      "examples": [
+        "register a new custom entity tag named \"fish\" using cod, salmon, tropical fish, and pufferfish",
+        "register an item tag named \"skript:wasp_weapons/swords\" containing diamond sword and netherite sword",
+        "register block tag named \"pokey\" containing sweet berry bush and bamboo sapling",
+        "",
+        "on player move:",
+        "\tblock at player is tagged as tag \"skript:pokey\"",
+        "\tdamage the player by 1 heart"
+      ],
+      "patterns": [
+        "register [a[n]] [custom] (1:item|2:block|3:entity [type]) tag named %string% (containing|using) %entitydatas/itemtypes%"
+      ]
+    },
+    {
       "id": "EffGenerateLoot-2",
       "name": "Generate Loot",
       "since": "INSERT VERSION",
@@ -5856,6 +5898,24 @@
       ]
     },
     {
+      "id": "ExprTagsOfType-2",
+      "name": "All Tags of a Type",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns all the tags.",
+        "`minecraft tag` will return only the vanilla tags, `datapack tag` will return only datapack-provided tags, `paper tag` will return only Paper's custom tags (if you are running Paper), and `custom tag` will look in the \"skript\" namespace for custom tags you've registered.",
+        "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
+      ],
+      "examples": [
+        "broadcast minecraft tags",
+        "send paper entity tags",
+        "broadcast all block tags"
+      ],
+      "patterns": [
+        "[all [[of] the]|the] [:minecraft|:datapack|:paper|:custom] [1:item|2:block|3:entity [type]] tags"
+      ]
+    },
+    {
       "id": "ExprLoot-2",
       "name": "Loot",
       "since": "2.7",
@@ -7345,6 +7405,31 @@
       "patterns": [
         "%itemtypes% with [the] item flag[s] %itemflags%",
         "%itemtypes% with [the] %itemflags% item flag[s]"
+      ]
+    },
+    {
+      "id": "ExprTag-2",
+      "name": "Tag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a tag which can be used to classify items, blocks, or entities.",
+        "Tags are composed of a value and an optional namespace: \"minecraft:oak_logs\".",
+        "If you omit the namespace, one will be provided for you, depending on what kind of tag you're using. For example, `tag \"doors\"` will be the tag \"minecraft:doors\", while `paper tag \"doors\"` will be \"paper:doors\".",
+        "`minecraft tag` will search through the vanilla tags, `datapack tag` will search for datapack-provided tags (a namespace is required here!), `paper tag` will search for Paper's custom tags if you are running Paper, and `custom tag` will look in the \"skript\" namespace for custom tags you've registered.",
+        "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
+      ],
+      "examples": [
+        "minecraft tag \"dirt\" # minecraft:dirt",
+        "paper tag \"doors\" # paper:doors",
+        "tag \"skript:custom_dirt\" # skript:custom_dirt",
+        "custom tag \"dirt\" # skript:dirt",
+        "datapack block tag \"dirt\" # minecraft:dirt",
+        "datapack tag \"my_pack:custom_dirt\" # my_pack:custom_dirt",
+        "tag \"minecraft:mineable/pickaxe\" # minecraft:mineable/pickaxe",
+        "custom item tag \"blood_magic_sk/can_sacrifice_with\" # skript:blood_magic_sk/can_sacrifice_with"
+      ],
+      "patterns": [
+        "[:minecraft|:datapack|:paper|:custom] [1:item|2:block|3:entity [type]] tag %strings%"
       ]
     },
     {
@@ -11021,6 +11106,59 @@
       "patterns": [
         "[the] [current] (inputs|input keys) of %players%",
         "%players%'[s] [current] (inputs|input keys)"
+      ]
+    },
+    {
+      "id": "ExprTagContents-2",
+      "name": "Tags Contents",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns all the values that a tag contains.",
+        "For item and block tags, this will return items. For entity tags, it will return entity datas (a creeper, a zombie)."
+      ],
+      "examples": [
+        "broadcast tag values of minecraft tag \"dirt\"",
+        "broadcast (first element of player's tool's block tags)'s tag contents"
+      ],
+      "patterns": [
+        "[the] tag (contents|values) of %minecrafttag%",
+        "%minecrafttag%'[s] tag (contents|values)"
+      ]
+    },
+    {
+      "id": "ExprTagKey-2",
+      "name": "Tag Namespaced Key",
+      "since": "INSERT VERSION",
+      "description": [
+        "The namespaced key of a minecraft tag. This takes the form of \"namespace:key\", e.g. \"minecraft:dirt\"."
+      ],
+      "examples": [
+        "broadcast namespaced keys of the tags of player's tool",
+        "if the key of {_my-tag} is \"minecraft:stone\":",
+        "\treturn true"
+      ],
+      "patterns": [
+        "[the] [namespace[d]] key[s] of %minecrafttags%",
+        "%minecrafttags%'[s] [namespace[d]] key[s]"
+      ]
+    },
+    {
+      "id": "ExprTagsOf-2",
+      "name": "Tags of X",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns all the tags of an item, block, or entity.",
+        "`minecraft tag` will return only the vanilla tags, `datapack tag` will return only datapack-provided tags, `paper tag` will return only Paper's custom tags (if you are running Paper), and `custom tag` will look in the \"skript\" namespace for custom tags you've registered.",
+        "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
+      ],
+      "examples": [
+        "broadcast minecraft tags of dirt",
+        "send true if paper item tags of target block contains paper tag \"doors\"",
+        "broadcast the block tags of player's tool"
+      ],
+      "patterns": [
+        "[all [[of] the]|the] [:minecraft|:datapack|:paper|:custom] [1:item|2:block|3:entity [type]] tags of %itemtype/entity/entitydata%",
+        "%itemtype/entity/entitydata%'[s] [:minecraft|:datapack|:paper|:custom] [1:item|2:block|3:entity [type]] tags"
       ]
     },
     {
@@ -15107,6 +15245,14 @@
       ],
       "patterns": [
         "left movement key, forward movement key, right movement key, backward key, left key, sprint key, forward key, right key, jumping key, sneaking key, jump key, sneak key, sprinting key, backward movement key"
+      ]
+    },
+    {
+      "id": "minecrafttag",
+      "name": "Minecraft Tag",
+      "since": "INSERT VERSION",
+      "description": [
+        "A tag that classifies a material, or entity."
       ]
     },
     {
