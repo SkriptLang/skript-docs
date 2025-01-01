@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-bf32598",
+  "skriptVersion": "2.9.5-nightly-14d41a5",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -434,19 +434,23 @@
     {
       "id": "CondIsLoaded-2",
       "name": "Is Loaded",
-      "since": "2.3, 2.5 (revamp with chunk at location/coords)",
+      "since": "2.3, 2.5 (revamp with chunk at location/coords), INSERT VERSION (Scripts)",
       "description": [
-        "Checks whether or not a chunk/world is loaded. 'chunk at 1, 1' uses chunk coords, which are location coords divided by 16."
+        "Checks whether a world, chunk or script is loaded.",
+        "'chunk at 1, 1' uses chunk coordinates, which are location coords divided by 16."
       ],
       "examples": [
         "if chunk at {home::%player's uuid%} is loaded:",
         "if chunk 1, 10 in world \"world\" is loaded:",
-        "if world(\"lobby\") is loaded:"
+        "if world(\"lobby\") is loaded:",
+        "if script named \"MyScript.sk\" is loaded:"
       ],
       "patterns": [
         "chunk[s] %directions% [%locations%] (is|are)[(1¦(n't| not))] loaded",
         "chunk [at] %number%, %number% (in|of) [world] %world% is[(1¦(n't| not))] loaded",
-        "[world[s]] %worlds% (is|are)[(1¦(n't| not))] loaded"
+        "%scripts/worlds% (is|are)[1:(n't| not)] loaded",
+        "script[s] %scripts% (is|are)[1:(n't| not)] loaded",
+        "world[s] %worlds% (is|are)[1:(n't| not)] loaded"
       ]
     },
     {
@@ -525,8 +529,10 @@
         "\t\tbroadcast \"You're using an experimental feature!\""
       ],
       "patterns": [
-        "[the] [current] script is using %strings%",
-        "[the] [current] script is(n't| not) using %strings%"
+        "%script% is using %strings%",
+        "%scripts% are using %strings%",
+        "%script% is(n't| not) using %strings%",
+        "%scripts% are(n't| not) using %strings%"
       ]
     },
     {
@@ -1974,16 +1980,18 @@
     {
       "id": "CondIsValid-2",
       "name": "Is Valid",
-      "since": "2.7",
+      "since": "2.7, INSERT VERSION (Scripts & Configs)",
       "description": [
-        "Checks whether an entity has died or been despawned for some other reason."
+        "Checks whether something (an entity, a script, a config, etc.) is valid.",
+        "An invalid entity may have died or de-spawned for some other reason.",
+        "An invalid script reference may have been reloaded, moved or disabled since."
       ],
       "examples": [
         "if event-entity is valid"
       ],
       "patterns": [
-        "%entities% (is|are) valid",
-        "%entities% (isn't|is not|aren't|are not) valid"
+        "%entities/scripts% (is|are) valid",
+        "%entities/scripts% (isn't|is not|aren't|are not) valid"
       ]
     },
     {
@@ -3688,19 +3696,40 @@
       ]
     },
     {
-      "id": "EffScriptFile-2",
-      "name": "Enable/Disable/Reload Script File",
-      "since": "2.4",
+      "id": "EffRun-2",
+      "name": "Run (Experimental)",
+      "since": "INSERT VERSION",
       "description": [
-        "Enables, disables, or reloads a script file."
+        "Executes a task (a function). Any returned result is discarded."
+      ],
+      "examples": [
+        "set {_function} to the function named \"myFunction\"",
+        "run {_function}",
+        "run {_function} with arguments {_things::*}"
+      ],
+      "patterns": [
+        "run %executable% [arguments:with arg[ument]s %-objects%]",
+        "execute %executable% [arguments:with arg[ument]s %-objects%]"
+      ]
+    },
+    {
+      "id": "EffScriptFile-2",
+      "name": "Enable/Disable/Unload/Reload Script",
+      "since": "2.4, INSERT VERSION (unloading)",
+      "description": [
+        "Enables, disables, unloads, or reloads a script.\n\nDisabling a script unloads it and prepends - to its name so it will not be loaded the next time the server restarts.\nIf the script reflection experiment is enabled: unloading a script terminates it and removes it from memory, but does not alter the file."
       ],
       "examples": [
         "reload script \"test\"",
         "enable script file \"testing\"",
-        "unload script file \"script.sk\""
+        "unload script file \"script.sk\"",
+        "set {_script} to the script \"MyScript.sk\"",
+        "reload {_script}"
       ],
       "patterns": [
-        "(1:(enable|load)|2:reload|3:(disable|unload)) s(c|k)ript [file] %string%"
+        "(1:(enable|load)|2:reload|3:disable|4:unload) script [file|named] %string%",
+        "(1:(enable|load)|2:reload|3:disable|4:unload) skript file %string%",
+        "(1:(enable|load)|2:reload|3:disable|4:unload) %scripts%"
       ]
     },
     {
@@ -4567,6 +4596,21 @@
       ]
     },
     {
+      "id": "ExprConfig-2",
+      "name": "Config (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "The Skript config.",
+        "This can be reloaded, or navigated to retrieve options."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nif text value of {_node} is \"french\":\n\tbroadcast \"Bonjour!\"\n"
+      ],
+      "patterns": [
+        "[the] [skript] config"
+      ]
+    },
+    {
       "id": "ExprDamage-2",
       "name": "Damage",
       "since": "1.3.5, 2.8.0 (item damage event)",
@@ -5349,24 +5393,52 @@
     },
     {
       "id": "ExprScript-2",
-      "name": "Script Name",
+      "name": "Script",
       "since": "2.0",
       "description": [
-        "Holds the current script's name (the file name without '.sk')."
+        "The current script, or a script from its (file) name.",
+        "If the script is enabled or disabled (or reloaded) this reference will become invalid.",
+        "Therefore, it is recommended to obtain a script reference <em>when needed</em>."
       ],
       "examples": [
         "on script load:",
+        "\tbroadcast \"Loaded %the current script%\"",
+        "on script load:",
         "\tset {running::%script%} to true",
         "on script unload:",
-        "\tset {running::%script%} to false"
+        "\tset {running::%script%} to false",
+        "set {script} to the script named \"weather.sk\"",
+        "loop the scripts in directory \"quests/\":",
+        "\tenable loop-value"
       ],
       "patterns": [
-        "[the] script[['s] name]",
-        "name of [the] script"
+        "[the] [current] script",
+        "[the] script[s] [named] %strings%",
+        "[the] scripts in [directory|folder] %string%"
       ]
     },
     {
       "id": "ExprScripts-2",
+      "name": "All Scripts (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns all of the scripts, or just the enabled or disabled ones."
+      ],
+      "examples": [
+        "command /scripts:",
+        "\ttrigger:",
+        "\t\tsend \"All Scripts: %scripts%\" to player",
+        "\t\tsend \"Loaded Scripts: %enabled scripts%\" to player",
+        "\t\tsend \"Unloaded Scripts: %disabled scripts%\" to player"
+      ],
+      "patterns": [
+        "[all [[of] the]|the] scripts",
+        "[all [[of] the]|the] (enabled|loaded) scripts",
+        "[all [[of] the]|the] (disabled|unloaded) scripts"
+      ]
+    },
+    {
+      "id": "ExprScriptsOld-2",
       "name": "All Scripts",
       "since": "2.5",
       "description": [
@@ -6530,6 +6602,23 @@
       ]
     },
     {
+      "id": "ExprFunction-2",
+      "name": "Function (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Obtain a function by name, which can be executed."
+      ],
+      "examples": [
+        "set {_function} to the function named \"myFunction\"",
+        "run {_function} with arguments 13 and true"
+      ],
+      "patterns": [
+        "[the|a] function [named] %string% [(in|from) %-script%]",
+        "[the] functions [named] %strings% [(in|from) %-script%]",
+        "[all [[of] the]|the] functions (in|from) %script%"
+      ]
+    },
+    {
       "id": "ExprGameRule-2",
       "name": "Gamerule Value",
       "since": "2.5",
@@ -6960,6 +7049,24 @@
       ],
       "patterns": [
         "%strings% repeated %integer% time[s]"
+      ]
+    },
+    {
+      "id": "ExprResult-2",
+      "name": "Result (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Runs something (like a function) and returns its result.",
+        "If the thing is expected to return multiple values, use 'results' instead of 'result'."
+      ],
+      "examples": [
+        "set {_function} to the function named \"myFunction\"",
+        "set {_result} to the result of {_function}",
+        "set {_list::*} to the results of {_function}",
+        "set {_result} to the result of {_function} with arguments 13 and true"
+      ],
+      "patterns": [
+        "[the] result[plural:s] of [running|executing] %executable% [arguments:with arg[ument]s %-objects%]"
       ]
     },
     {
@@ -9132,7 +9239,7 @@
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
-        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.",
+        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule, world, script or function.",
         "",
         "<ul>",
         "\t<li><strong>Players</strong>",
@@ -9165,6 +9272,11 @@
         "\t<li><strong>Worlds</strong>",
         "\t\t<ul>",
         "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Scripts</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of a script, excluding its file extension.</li>",
         "\t\t</ul>",
         "\t</li>",
         "</ul>"
@@ -9186,7 +9298,7 @@
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
-        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.",
+        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule, world, script or function.",
         "",
         "<ul>",
         "\t<li><strong>Players</strong>",
@@ -9219,6 +9331,11 @@
         "\t<li><strong>Worlds</strong>",
         "\t\t<ul>",
         "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Scripts</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of a script, excluding its file extension.</li>",
         "\t\t</ul>",
         "\t</li>",
         "</ul>"
@@ -9240,7 +9357,7 @@
       "name": "Name / Display Name / Tab List Name",
       "since": "before 2.1, 2.2-dev20 (inventory name), 2.4 (non-living entity support, changeable inventory name), 2.7 (worlds)",
       "description": [
-        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule or world.",
+        "Represents the Minecraft account, display or tab list name of a player, or the custom name of an item, entity, block, inventory, gamerule, world, script or function.",
         "",
         "<ul>",
         "\t<li><strong>Players</strong>",
@@ -9273,6 +9390,11 @@
         "\t<li><strong>Worlds</strong>",
         "\t\t<ul>",
         "\t\t\t<li><strong>Name:</strong> The name of the world. Cannot be changed.</li>",
+        "\t\t</ul>",
+        "\t</li>",
+        "\t<li><strong>Scripts</strong>",
+        "\t\t<ul>",
+        "\t\t\t<li><strong>Name:</strong> The name of a script, excluding its file extension.</li>",
         "\t\t</ul>",
         "\t</li>",
         "</ul>"
@@ -9320,6 +9442,46 @@
       "patterns": [
         "[the] (invulnerability|invincibility|no damage) tick[s] of %livingentities%",
         "%livingentities%'[s] (invulnerability|invincibility|no damage) tick[s]"
+      ]
+    },
+    {
+      "id": "ExprNode-2",
+      "name": "Node (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a node inside a config (or another section-node).",
+        "Nodes in Skript configs are written in the format `key: value`.",
+        "Section nodes can contain other nodes."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nif text value of {_node} is \"french\":\n\tbroadcast \"Bonjour!\"\n",
+        "set {_script} to the current script\nloop nodes of the current script:\n\tbroadcast name of loop-value"
+      ],
+      "patterns": [
+        "[the] node %string% (of|in) %node%",
+        "%node%'[s] node %string%",
+        "[the] nodes (of|in) %nodes%",
+        "%node%'[s] nodes"
+      ]
+    },
+    {
+      "id": "ExprNodeValue-2",
+      "name": "Value (Experimental)",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns the value of a node in a loaded config.",
+        "The value is automatically converted to the specified type (e.g. text, number) where possible."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
+        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
+      ],
+      "patterns": [
+        "[the] %*classinfo% value [at] %string% (from|in) %node%",
+        "[the] %*classinfo% value of %node%",
+        "[the] %*classinfo% values of %nodes%",
+        "%node%'s %*classinfo% value",
+        "%nodes%'[s] %*classinfo% values"
       ]
     },
     {
@@ -14212,6 +14374,64 @@
       ]
     },
     {
+      "id": "config",
+      "name": "Config",
+      "since": "INSERT VERSION",
+      "description": [
+        "A configuration (or code) loaded by Skript, such as the config.sk or aliases.",
+        "Configs can be reloaded or navigated to find options."
+      ],
+      "examples": [
+        "the skript config"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "node",
+      "name": "Node",
+      "since": "INSERT VERSION",
+      "description": [
+        "A node (entry) from a script config file.",
+        "This may have navigable children."
+      ],
+      "examples": [
+        "the current script"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "script",
+      "name": "Script",
+      "since": "INSERT VERSION",
+      "description": [
+        "A script loaded by Skript.",
+        "Disabled scripts will report as being empty since their content has not been loaded."
+      ],
+      "examples": [
+        "the current script"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
+      "id": "function",
+      "name": "Function",
+      "since": "INSERT VERSION",
+      "description": [
+        "A function loaded by Skript.",
+        "This can be executed (with arguments) and may return a result."
+      ],
+      "examples": [
+        "run {_function} with arguments 1 and true",
+        "set {_result} to the result of {_function}"
+      ]
+    },
+    {
       "id": "containing",
       "name": "Anything with Contents",
       "since": "INSERT VERSION",
@@ -14925,6 +15145,18 @@
       ],
       "patterns": [
         "&lt;enchantment&gt; [&lt;level&gt;]"
+      ]
+    },
+    {
+      "id": "executable",
+      "name": "Executable",
+      "since": "INSERT VERSION",
+      "description": [
+        "Something that can be executed (run) and may accept arguments, e.g. a function.",
+        "This may also return a result."
+      ],
+      "examples": [
+        "run {_function} with arguments 1 and true"
       ]
     },
     {
