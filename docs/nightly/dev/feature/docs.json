@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.5-nightly-a972a6f",
+  "skriptVersion": "2.9.5-nightly-bc9666e",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -3953,19 +3953,24 @@
     {
       "id": "EffTeleport-2",
       "name": "Teleport",
-      "since": "1.0",
+      "since": "1.0, INSERT VERSION (flags)",
       "description": [
         "Teleport an entity to a specific location. ",
         "This effect is delayed by default on Paper, meaning certain syntax such as the return effect for functions cannot be used after this effect.",
         "The keyword 'force' indicates this effect will not be delayed, ",
-        "which may cause lag spikes or server crashes when using this effect to teleport entities to unloaded chunks."
+        "which may cause lag spikes or server crashes when using this effect to teleport entities to unloaded chunks.",
+        "Teleport flags are settings to retain during a teleport. Such as direction, passengers, x coordinate, etc."
       ],
       "examples": [
-        "teleport the player to {homes::%player%}",
-        "teleport the attacker to the victim"
+        "teleport the player to {home::%uuid of player%}",
+        "teleport the attacker to the victim",
+        "",
+        "on dismount:",
+        "\tcancel event",
+        "\tteleport the player to {server::spawn} retaining vehicle and passengers"
       ],
       "patterns": [
-        "[(1¦force)] teleport %entities% (to|%direction%) %location%"
+        "[:force] teleport %entities% (to|%direction%) %location% [[while] retaining %-teleportflags%]"
       ]
     },
     {
@@ -15241,6 +15246,17 @@
       ],
       "patterns": [
         "base, base banner pattern, border, border banner pattern, bordure banner pattern, bordure indented banner pattern, bottom left square banner pattern, bottom right square banner pattern, bottom stripe banner pattern, bottom triangle banner pattern, bricks, bricks banner pattern, center stripe banner pattern, circle, circle banner pattern, creeper, creeper banner pattern, creeper charged banner pattern, cross, cross banner pattern, curly border, curly border banner pattern, diagonal left, diagonal right, diagonal up left, diagonal up left banner pattern, diagonal up right, diagonal up right banner pattern, down left stripe banner pattern, down right stripe banner pattern, field masoned banner pattern, flow, flow banner pattern, flower, flower banner pattern, globe, globe banner pattern, gradient, gradient banner pattern, gradient up, gradient up banner pattern, guster, guster banner pattern, half horizontal, half horizontal bottom, half vertical, half vertical right, horizontal bottom half banner pattern, horizontal half banner pattern, left diagonal banner pattern, left stripe banner pattern, middle stripe banner pattern, mojang, mojang banner pattern, piglin, piglin banner pattern, rhombus, rhombus banner pattern, right diagonal banner pattern, right stripe banner pattern, right vertical half banner pattern, skull, skull banner pattern, small stripes, small stripes banner pattern, snout banner pattern, square bottom left, square bottom right, square top left, square top right, straight cross, straight cross banner pattern, stripe bottom, stripe center, stripe downleft, stripe downright, stripe left, stripe middle, stripe right, stripe top, tbottom triangles banner pattern, thing banner pattern, top left square banner pattern, top right square banner pattern, top stripe banner pattern, top triangle banner pattern, top triangles banner pattern, triangle bottom, triangle top, triangles bottom, triangles top, vertical half banner pattern"
+      ]
+    },
+    {
+      "id": "teleportflag",
+      "name": "Teleport Flag",
+      "since": "INSERT VERSION",
+      "description": [
+        "Teleport Flags are settings to retain during a teleport."
+      ],
+      "patterns": [
+        "passengers, xyz velocity, z velocity, yaw velocity, inventory, pitch velocity, vehicle, opened inventory, open inventory, x velocity, passenger, pitch and yaw velocity, yaw and pitch velocity, directional velocity, y velocity"
       ]
     },
     {
