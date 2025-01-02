@@ -88,25 +88,36 @@ document.querySelectorAll(".new-element").forEach((e) => {
 })
 
 // <> Search Bar
-const versionComparePattern = /.*?(\d\.\d(?:\.\d|))(\+|-|).*/gi;
-const versionPattern = / ?v(?:ersion|):(\d\.\d(?:\.\d|-(?:beta|alpha|dev)\d*|))(\+|-|)/gi;
+const versionComparePattern = /.*?(\d+).(\d+)(?:.(\d+))?.*/i;
+const versionPattern = / ?v(?:ersion|):(\d+.\d+(?:.\d+)?)(?:-[^+-]+)?([+-])?/gi;
 const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
 function versionCompare(base, target) { // Return -1, 0, 1
-  base = base.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
-  target = target.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+  let baseMatches = versionComparePattern.exec(base);
+  let targetMatches = versionComparePattern.exec(target);
 
-  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
-  target = parseInt(target) < 100 ? parseInt(target) * 10 : parseInt(target);
+  if (baseMatches === null || targetMatches === null) // unknown version, assume old!
+    return -1;
 
-  if (target > base)
-    return 1
-  if (target == base)
-    return 0
-  if (target < base)
-    return -1
+  // compare in order of major.minor.patch
+  for (let i = 1; i <= 3; i++) {
+    // parse versions
+    let baseVer = baseMatches[i];
+    baseVer = baseVer !== undefined ? parseInt(baseVer) : 0;
+    let targetVer = targetMatches[i];
+    targetVer = targetVer !== undefined ? parseInt(targetVer) : 0;
+    // compare versions (target in relation to base)
+    if (targetVer > baseVer)
+      return 1;
+    if (targetVer < baseVer)
+      return -1;
+    // equal, try next parts
+  }
+
+  // they must be equal
+  return 0;
 }
 
 var searchBar;
@@ -141,7 +152,7 @@ if (content) {
     let options = "<select id='search-version' name='versions' id='versions' onchange='checkVersionFilter()'></select>"
     content.insertAdjacentHTML('afterbegin', `<span>${options}</span>`);
     options = document.getElementById("search-version");
-    
+
     getApiValue(null, "skript-versions", "tags?per_page=83&page=2", (data, isCached) => { // 83 and page 2 matters to filter dev branches (temporary solution)
       if (isCached)
         data = data.split(",");
@@ -153,7 +164,7 @@ if (content) {
           } else {
             tag = data[i]["name"];
           }
-          tags.push(tag.replaceAll(/(.*)-(dev|beta|alpha).*/gi, "$1"));
+          tags.push(tag.replaceAll(/(.*?)-.*/gi, "$1"));
         }
 
       tags = [...new Set(tags)] // remove duplicates
@@ -195,7 +206,7 @@ function checkVersionFilter() {
 }
 
 function searchNow(value = "") {
-  if (value != "") // Update searchBar value
+  if (value !== "") // Update searchBar value
     searchBar.value = value;
 
   let allElements = document.querySelectorAll(".item-wrapper");
@@ -211,8 +222,8 @@ function searchNow(value = "") {
     let verExec = versionPattern.exec(searchValue);
     version = verExec[1];
     if (verExec.length > 2) {
-      versionAndUp = verExec[2] == "+" == true;
-      versionAndDown = verExec[2] == "-" == true;
+      versionAndUp = verExec[2] === "+";
+      versionAndDown = verExec[2] === "-";
     }
     searchValue = searchValue.replaceAll(versionPattern, "") // Don't include filters in the search
   }
@@ -227,7 +238,7 @@ function searchNow(value = "") {
   // News
   let filterNew;
   if (searchValue.match(newPattern)) {
-    filterNew = newPattern.exec(searchValue)[1] == "new";
+    filterNew = newPattern.exec(searchValue)[1] === "new";
     searchValue = searchValue.replaceAll(newPattern, "")
   }
 
@@ -247,22 +258,24 @@ function searchNow(value = "") {
 
       // Version check
       let versionFound;
-      if (version != "") {
-        versionFound = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent) == 0;
-
-        if (versionAndUp || versionAndDown) {
-          let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
-          for (const v in versions) { // split on ',' without space in case some version didn't have space and versionCompare will handle it
-            if (versionAndUp) {
-              if (versionCompare(version, versions[v]) == 1) {
-                versionFound = true;
-                break; // Performance
-              }
-            } else if (versionAndDown) {
-              if (versionCompare(version, versions[v]) == -1) {
-                versionFound = true;
-                break; // Performance
-              }
+      if (version !== "") {
+        let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
+        for (const v in versions) {
+          let result = versionCompare(version, versions[v]);
+          if (versionAndUp) {
+            if (result >= 0) {
+              versionFound = true;
+              break;
+            }
+          } else if (versionAndDown) {
+            if (result < 0) { // exclude current version
+              versionFound = true;
+              break;
+            }
+          } else {
+            if (result === 0) {
+              versionFound = true;
+              break;
             }
           }
         }
