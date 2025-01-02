@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.9.4-nightly-ffb0c05",
+  "skriptVersion": "2.9.4-nightly-3f2928a",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3705,7 +3705,8 @@
       "name": "Vehicle",
       "since": "2.0",
       "description": [
-        "Makes an entity ride another entity, e.g. a minecart, a saddled pig, an arrow, etc."
+        "Makes an entity ride another entity, e.g. a minecart, a saddled pig, an arrow, etc.",
+        "Will also call the last spawned entity expression if the syntax is required to spawn an entity."
       ],
       "examples": [
         "make the player ride a saddled pig",
@@ -8608,7 +8609,7 @@
     {
       "id": "ExprPassengers",
       "name": "Passengers",
-      "since": "2.0, 2.2-dev26 (Multiple passengers for 1.11.2+)",
+      "since": "2.0, 2.2-dev26",
       "description": [
         "The passengers of a vehicle, or the riders of a mob.",
         "See also: <a href='#ExprVehicle'>vehicle</a>"
@@ -9507,8 +9508,8 @@
         "vehicle of the player is a minecart"
       ],
       "patterns": [
-        "[the] vehicle[s] [of %entities%]",
-        "%entities%'[s] vehicle[s]"
+        "[the] vehicle[:s] [of %entities%]",
+        "%entities%'[s] vehicle[:s]"
       ]
     },
     {
