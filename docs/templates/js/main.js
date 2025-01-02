@@ -95,8 +95,8 @@ const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
 function versionCompare(base, target) { // Return -1, 0, 1
-  let baseMatches = versionComparePattern.exec(base);
-  let targetMatches = versionComparePattern.exec(target);
+  const baseMatches = versionComparePattern.exec(base);
+  const targetMatches = versionComparePattern.exec(target);
 
   if (baseMatches === null || targetMatches === null) // unknown version, assume old!
     return -1;
@@ -259,7 +259,7 @@ function searchNow(value = "") {
       // Version check
       let versionFound;
       if (version !== "") {
-        let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
+        const versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
         for (const v in versions) {
           let result = versionCompare(version, versions[v]);
           if (versionAndUp) {
