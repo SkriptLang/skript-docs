@@ -324,6 +324,17 @@
     to recognize it. For others, it can be any text you'd like (you can make
     player run invalid commands if you wish).
 </p>
+  <h2 class="title">Unicode</h2>
+  <p>
+    Skript supports Unicode characters in any text. To add them to your scripts,
+    simply paste the character inside the text, or use the provided Unicode tag.
+    The tag uses the character's codepoint to replace it with the actual character
+    when the text is loaded.
+  </p>
+  <div class="box skript-code-block left-margin">
+    "hello &lt;u:1F41B&gt;" # hello 🐛<br>
+    "bye &lt;unicode:1F41B&gt;" # bye 🐛
+  </div>
   <h2 class="title">Text and Variables</h2>
   <p class="subtitle">
     Variable names are text, but obviously formatting that text does no
