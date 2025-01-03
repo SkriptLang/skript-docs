@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-42037c2",
+  "skriptVersion": "2.10.0-pre1-nightly-74d5efe",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -11650,7 +11650,7 @@
   ],
   "events": [
     {
-      "id": "at_time-2",
+      "id": "at_time",
       "name": "At Time",
       "since": "1.3.4",
       "description": [
@@ -11665,7 +11665,7 @@
       ]
     },
     {
-      "id": "beacon_effect-2",
+      "id": "beacon_effect",
       "name": "On Beacon Effect",
       "description": [],
       "examples": [],
@@ -11676,7 +11676,7 @@
       ]
     },
     {
-      "id": "beacon_toggle-2",
+      "id": "beacon_toggle",
       "name": "On Beacon Toggle",
       "description": [],
       "examples": [],
@@ -11687,7 +11687,7 @@
       ]
     },
     {
-      "id": "break_mine-2",
+      "id": "break_mine",
       "name": "On Break / Mine",
       "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
       "description": [
@@ -11705,7 +11705,7 @@
       ]
     },
     {
-      "id": "burn-2",
+      "id": "burn",
       "name": "On Burn",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11721,7 +11721,7 @@
       ]
     },
     {
-      "id": "place-2",
+      "id": "place",
       "name": "On Place",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11737,7 +11737,7 @@
       ]
     },
     {
-      "id": "fade-2",
+      "id": "fade",
       "name": "On Fade",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11752,7 +11752,7 @@
       ]
     },
     {
-      "id": "form-2",
+      "id": "form",
       "name": "On Form",
       "since": "1.0, 2.6 (BlockData support)",
       "description": [
@@ -11767,7 +11767,7 @@
       ]
     },
     {
-      "id": "block_drop-2",
+      "id": "block_drop",
       "name": "On Block Drop",
       "since": "2.10",
       "description": [
@@ -11796,7 +11796,7 @@
       ]
     },
     {
-      "id": "book_edit-2",
+      "id": "book_edit",
       "name": "On Book Edit",
       "since": "2.2-dev31",
       "description": [
@@ -11810,7 +11810,7 @@
       ]
     },
     {
-      "id": "book_sign-2",
+      "id": "book_sign",
       "name": "On Book Sign",
       "since": "2.2-dev31",
       "description": [
@@ -11824,7 +11824,7 @@
       ]
     },
     {
-      "id": "click-2",
+      "id": "click",
       "name": "On Click",
       "since": "1.0, 2.10 (blockdata)",
       "description": [
@@ -11847,7 +11847,7 @@
       ]
     },
     {
-      "id": "command-2",
+      "id": "command",
       "name": "On Command",
       "since": "2.0",
       "description": [
@@ -11863,7 +11863,7 @@
       ]
     },
     {
-      "id": "damage-2",
+      "id": "damage",
       "name": "On Damage",
       "since": "1.0, 2.7 (by entity)",
       "description": [
@@ -11879,7 +11879,7 @@
       ]
     },
     {
-      "id": "death-2",
+      "id": "death",
       "name": "On Death",
       "since": "1.0",
       "description": [
@@ -11896,7 +11896,7 @@
       ]
     },
     {
-      "id": "spawn-2",
+      "id": "spawn",
       "name": "On Spawn",
       "since": "1.0, 2.5.1 (non-living entities)",
       "description": [
@@ -11912,7 +11912,7 @@
       ]
     },
     {
-      "id": "endermansheepsilverfishfalling_block-2",
+      "id": "endermansheepsilverfishfalling_block",
       "name": "On Enderman/Sheep/Silverfish/Falling Block",
       "since": "<i>unknown</i>, 2.5.2 (falling block), 2.8.0 (any entity support)",
       "description": [
@@ -11940,7 +11940,7 @@
       ]
     },
     {
-      "id": "entity_potion_effect-2",
+      "id": "entity_potion_effect",
       "name": "On Entity Potion Effect",
       "since": "2.10",
       "description": [
@@ -11958,7 +11958,7 @@
       ]
     },
     {
-      "id": "target-2",
+      "id": "target",
       "name": "On Target",
       "since": "1.0",
       "description": [
@@ -11974,7 +11974,7 @@
       ]
     },
     {
-      "id": "entity_transform-2",
+      "id": "entity_transform",
       "name": "On Entity Transform",
       "since": "2.8.0",
       "description": [
@@ -11991,7 +11991,7 @@
       ]
     },
     {
-      "id": "experience_change-2",
+      "id": "experience_change",
       "name": "On Experience Change",
       "since": "2.7",
       "description": [
@@ -12007,7 +12007,7 @@
       ]
     },
     {
-      "id": "experience_spawn-2",
+      "id": "experience_spawn",
       "name": "On Experience Spawn",
       "since": "2.0",
       "description": [
@@ -12025,7 +12025,7 @@
       ]
     },
     {
-      "id": "firework_explode-2",
+      "id": "firework_explode",
       "name": "On Firework Explode",
       "since": "2.4",
       "description": [
@@ -12043,7 +12043,7 @@
       ]
     },
     {
-      "id": "first_join-2",
+      "id": "first_join",
       "name": "On First Join",
       "since": "1.3.7",
       "description": [
@@ -12058,7 +12058,7 @@
       ]
     },
     {
-      "id": "gamemode_change-2",
+      "id": "gamemode_change",
       "name": "On Gamemode Change",
       "since": "1.0",
       "description": [
@@ -12073,7 +12073,7 @@
       ]
     },
     {
-      "id": "grow-2",
+      "id": "grow",
       "name": "On Grow",
       "since": "1.0, 2.2-dev20 (plants), 2.8.0 (from, into, blockdata)",
       "description": [
@@ -12100,7 +12100,7 @@
       ]
     },
     {
-      "id": "heal-2",
+      "id": "heal",
       "name": "On Heal",
       "since": "1.0, 2.9.0 (by reason)",
       "description": [
@@ -12119,7 +12119,7 @@
       ]
     },
     {
-      "id": "dispense-2",
+      "id": "dispense",
       "name": "On Dispense",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -12134,7 +12134,7 @@
       ]
     },
     {
-      "id": "item_spawn-2",
+      "id": "item_spawn",
       "name": "On Item Spawn",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -12149,7 +12149,7 @@
       ]
     },
     {
-      "id": "drop-2",
+      "id": "drop",
       "name": "On Drop",
       "since": "<i>unknown</i> (before 2.1), 2.7 (entity)",
       "description": [
@@ -12169,7 +12169,7 @@
       ]
     },
     {
-      "id": "prepare_craft-2",
+      "id": "prepare_craft",
       "name": "On Prepare Craft",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -12183,7 +12183,7 @@
       ]
     },
     {
-      "id": "craft-2",
+      "id": "craft",
       "name": "On Craft",
       "since": "<i>unknown</i> (before 2.1)",
       "description": [
@@ -12197,7 +12197,7 @@
       ]
     },
     {
-      "id": "pick_up-2",
+      "id": "pick_up",
       "name": "On Pick Up",
       "since": "<i>unknown</i> (before 2.1), 2.5 (entity)",
       "description": [
@@ -12212,7 +12212,7 @@
       ]
     },
     {
-      "id": "consume-2",
+      "id": "consume",
       "name": "On Consume",
       "since": "2.0",
       "description": [
@@ -12226,7 +12226,7 @@
       ]
     },
     {
-      "id": "inventory_click-2",
+      "id": "inventory_click",
       "name": "On Inventory Click",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -12243,7 +12243,7 @@
       ]
     },
     {
-      "id": "item_despawn-2",
+      "id": "item_despawn",
       "name": "On Item Despawn",
       "since": "2.2-dev35",
       "description": [
@@ -12260,7 +12260,7 @@
       ]
     },
     {
-      "id": "item_merge-2",
+      "id": "item_merge",
       "name": "On Item Merge",
       "since": "2.2-dev35",
       "description": [
@@ -12276,7 +12276,7 @@
       ]
     },
     {
-      "id": "inventory_item_move-2",
+      "id": "inventory_item_move",
       "name": "On Inventory Item Move",
       "since": "2.8.0",
       "description": [
@@ -12294,7 +12294,7 @@
       ]
     },
     {
-      "id": "stonecutter_recipe_select-2",
+      "id": "stonecutter_recipe_select",
       "name": "On Stonecutter Recipe Select",
       "since": "2.8.0",
       "description": [
@@ -12312,7 +12312,7 @@
       ]
     },
     {
-      "id": "leash_unleash-2",
+      "id": "leash_unleash",
       "name": "On Leash / Unleash",
       "since": "2.10",
       "description": [
@@ -12336,7 +12336,7 @@
       ]
     },
     {
-      "id": "level_change-2",
+      "id": "level_change",
       "name": "On Level Change",
       "since": "1.0, 2.4 (level up/down)",
       "description": [
@@ -12350,7 +12350,7 @@
       ]
     },
     {
-      "id": "move_rotate-2",
+      "id": "move_rotate",
       "name": "On Move / Rotate",
       "since": "2.6, 2.8.0 (turn around)",
       "description": [
@@ -12375,7 +12375,7 @@
       ]
     },
     {
-      "id": "pressure_plate_trip-2",
+      "id": "pressure_plate_trip",
       "name": "On Pressure Plate / Trip",
       "since": "1.0 (pressure plate), 1.4.4 (tripwire)",
       "description": [
@@ -12390,7 +12390,7 @@
       ]
     },
     {
-      "id": "move_on-2",
+      "id": "move_on",
       "name": "On Move On",
       "since": "2.0",
       "description": [
@@ -12406,7 +12406,7 @@
       ]
     },
     {
-      "id": "periodical-2",
+      "id": "periodical",
       "name": "Periodical",
       "since": "1.0",
       "description": [
@@ -12423,7 +12423,7 @@
       ]
     },
     {
-      "id": "eventperiodical-2",
+      "id": "eventperiodical",
       "name": "Periodical",
       "since": "1.0",
       "description": [
@@ -12440,7 +12440,7 @@
       ]
     },
     {
-      "id": "block_growth-2",
+      "id": "block_growth",
       "name": "On Block Growth",
       "since": "2.2-Fixes-V10",
       "description": [
@@ -12454,7 +12454,7 @@
       ]
     },
     {
-      "id": "player_chunk_enter-2",
+      "id": "player_chunk_enter",
       "name": "On Player Chunk Enter",
       "since": "2.7",
       "description": [
@@ -12469,7 +12469,7 @@
       ]
     },
     {
-      "id": "send_command_list-2",
+      "id": "send_command_list",
       "name": "On Send Command List",
       "since": "2.8.0",
       "description": [
@@ -12488,7 +12488,7 @@
       ]
     },
     {
-      "id": "resource_pack_request_response-2",
+      "id": "resource_pack_request_response",
       "name": "On Resource Pack Request Response",
       "since": "2.4",
       "description": [
@@ -12513,7 +12513,7 @@
       ]
     },
     {
-      "id": "script_loadunload-2",
+      "id": "script_loadunload",
       "name": "On Script Load/Unload",
       "since": "2.0",
       "description": [
@@ -12532,7 +12532,7 @@
       ]
     },
     {
-      "id": "server_startstop-2",
+      "id": "server_startstop",
       "name": "On Server Start/Stop",
       "since": "2.0",
       "description": [
@@ -12548,7 +12548,7 @@
       ]
     },
     {
-      "id": "spectate-2",
+      "id": "spectate",
       "name": "On Spectate",
       "since": "2.7",
       "description": [
@@ -12564,7 +12564,7 @@
       ]
     },
     {
-      "id": "teleport-2",
+      "id": "teleport",
       "name": "On Teleport",
       "since": "1.0, 2.9.0 (entity teleport)",
       "description": [
@@ -12582,7 +12582,7 @@
       ]
     },
     {
-      "id": "vehicle_collision-2",
+      "id": "vehicle_collision",
       "name": "On Vehicle Collision",
       "since": "2.10",
       "description": [
@@ -12600,7 +12600,7 @@
       ]
     },
     {
-      "id": "weather_change-2",
+      "id": "weather_change",
       "name": "On Weather Change",
       "since": "1.0",
       "description": [
@@ -12615,7 +12615,7 @@
       ]
     },
     {
-      "id": "world_save-2",
+      "id": "world_save",
       "name": "On World Save",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12630,7 +12630,7 @@
       ]
     },
     {
-      "id": "world_init-2",
+      "id": "world_init",
       "name": "On World Init",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12646,7 +12646,7 @@
       ]
     },
     {
-      "id": "world_unload-2",
+      "id": "world_unload",
       "name": "On World Unload",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12661,7 +12661,7 @@
       ]
     },
     {
-      "id": "world_load-2",
+      "id": "world_load",
       "name": "On World Load",
       "since": "1.0, 2.8.0 (defining worlds)",
       "description": [
@@ -12676,7 +12676,7 @@
       ]
     },
     {
-      "id": "can_build_check-2",
+      "id": "can_build_check",
       "name": "On Can Build Check",
       "since": "1.0 (basic), 2.0 ([un]cancellable)",
       "description": [
@@ -12692,7 +12692,7 @@
       ]
     },
     {
-      "id": "block_damage-2",
+      "id": "block_damage",
       "name": "On Block Damage",
       "since": "1.0",
       "description": [
@@ -12708,7 +12708,7 @@
       ]
     },
     {
-      "id": "flow-2",
+      "id": "flow",
       "name": "On Flow",
       "since": "1.0",
       "description": [
@@ -12725,7 +12725,7 @@
       ]
     },
     {
-      "id": "ignition-2",
+      "id": "ignition",
       "name": "On Ignition",
       "since": "1.0",
       "description": [
@@ -12742,7 +12742,7 @@
       ]
     },
     {
-      "id": "physics-2",
+      "id": "physics",
       "name": "On Physics",
       "since": "1.4.6",
       "description": [
@@ -12759,7 +12759,7 @@
       ]
     },
     {
-      "id": "piston_extend-2",
+      "id": "piston_extend",
       "name": "On Piston Extend",
       "since": "1.0",
       "description": [
@@ -12774,7 +12774,7 @@
       ]
     },
     {
-      "id": "piston_retract-2",
+      "id": "piston_retract",
       "name": "On Piston Retract",
       "since": "1.0",
       "description": [
@@ -12789,7 +12789,7 @@
       ]
     },
     {
-      "id": "redstone-2",
+      "id": "redstone",
       "name": "On Redstone",
       "since": "1.0",
       "description": [
@@ -12804,7 +12804,7 @@
       ]
     },
     {
-      "id": "spread-2",
+      "id": "spread",
       "name": "On Spread",
       "since": "1.0",
       "description": [
@@ -12818,7 +12818,7 @@
       ]
     },
     {
-      "id": "chunk_load-2",
+      "id": "chunk_load",
       "name": "On Chunk Load",
       "since": "1.0",
       "description": [
@@ -12832,7 +12832,7 @@
       ]
     },
     {
-      "id": "chunk_generate-2",
+      "id": "chunk_generate",
       "name": "On Chunk Generate",
       "since": "1.0",
       "description": [
@@ -12846,7 +12846,7 @@
       ]
     },
     {
-      "id": "chunk_unload-2",
+      "id": "chunk_unload",
       "name": "On Chunk Unload",
       "since": "1.0",
       "description": [
@@ -12860,7 +12860,7 @@
       ]
     },
     {
-      "id": "creeper_power-2",
+      "id": "creeper_power",
       "name": "On Creeper Power",
       "since": "1.0",
       "description": [
@@ -12874,7 +12874,7 @@
       ]
     },
     {
-      "id": "zombie_break_door-2",
+      "id": "zombie_break_door",
       "name": "On Zombie Break Door",
       "since": "1.0",
       "description": [
@@ -12888,7 +12888,7 @@
       ]
     },
     {
-      "id": "combust-2",
+      "id": "combust",
       "name": "On Combust",
       "since": "1.0",
       "description": [
@@ -12902,7 +12902,7 @@
       ]
     },
     {
-      "id": "explode-2",
+      "id": "explode",
       "name": "On Explode",
       "since": "1.0",
       "description": [
@@ -12916,7 +12916,7 @@
       ]
     },
     {
-      "id": "portal_enter-2",
+      "id": "portal_enter",
       "name": "On Portal Enter",
       "since": "1.0",
       "description": [
@@ -12931,7 +12931,7 @@
       ]
     },
     {
-      "id": "tame-2",
+      "id": "tame",
       "name": "On Tame",
       "since": "1.0",
       "description": [
@@ -12945,7 +12945,7 @@
       ]
     },
     {
-      "id": "explosion_prime-2",
+      "id": "explosion_prime",
       "name": "On Explosion Prime",
       "since": "1.0",
       "description": [
@@ -12959,7 +12959,7 @@
       ]
     },
     {
-      "id": "hunger_meter_change-2",
+      "id": "hunger_meter_change",
       "name": "On Hunger Meter Change",
       "since": "1.4.4",
       "description": [
@@ -12973,7 +12973,7 @@
       ]
     },
     {
-      "id": "leaves_decay-2",
+      "id": "leaves_decay",
       "name": "On Leaves Decay",
       "since": "1.0",
       "description": [
@@ -12987,7 +12987,7 @@
       ]
     },
     {
-      "id": "lightning_strike-2",
+      "id": "lightning_strike",
       "name": "On Lightning Strike",
       "since": "1.0",
       "description": [
@@ -13002,7 +13002,7 @@
       ]
     },
     {
-      "id": "pig_zap-2",
+      "id": "pig_zap",
       "name": "On Pig Zap",
       "since": "1.0",
       "description": [
@@ -13016,7 +13016,7 @@
       ]
     },
     {
-      "id": "bed_enter-2",
+      "id": "bed_enter",
       "name": "On Bed Enter",
       "since": "1.0",
       "description": [
@@ -13031,7 +13031,7 @@
       ]
     },
     {
-      "id": "bed_leave-2",
+      "id": "bed_leave",
       "name": "On Bed Leave",
       "since": "1.0",
       "description": [
@@ -13046,7 +13046,7 @@
       ]
     },
     {
-      "id": "bucket_empty-2",
+      "id": "bucket_empty",
       "name": "On Bucket Empty",
       "since": "1.0",
       "description": [
@@ -13061,7 +13061,7 @@
       ]
     },
     {
-      "id": "bucket_fill-2",
+      "id": "bucket_fill",
       "name": "On Bucket fill",
       "since": "1.0",
       "description": [
@@ -13076,7 +13076,7 @@
       ]
     },
     {
-      "id": "egg_throw-2",
+      "id": "egg_throw",
       "name": "On Egg Throw",
       "since": "1.0",
       "description": [
@@ -13091,7 +13091,7 @@
       ]
     },
     {
-      "id": "item_break-2",
+      "id": "item_break",
       "name": "On Item Break",
       "since": "2.1.1",
       "description": [
@@ -13107,7 +13107,7 @@
       ]
     },
     {
-      "id": "item_damage-2",
+      "id": "item_damage",
       "name": "On Item Damage",
       "since": "2.5",
       "description": [
@@ -13122,7 +13122,7 @@
       ]
     },
     {
-      "id": "tool_change-2",
+      "id": "tool_change",
       "name": "On Tool Change",
       "since": "1.0",
       "description": [
@@ -13136,7 +13136,7 @@
       ]
     },
     {
-      "id": "join-2",
+      "id": "join",
       "name": "On Join",
       "since": "1.0",
       "description": [
@@ -13152,7 +13152,7 @@
       ]
     },
     {
-      "id": "connect-2",
+      "id": "connect",
       "name": "On Connect",
       "since": "2.0",
       "description": [
@@ -13169,7 +13169,7 @@
       ]
     },
     {
-      "id": "kick-2",
+      "id": "kick",
       "name": "On Kick",
       "since": "1.0",
       "description": [
@@ -13183,7 +13183,7 @@
       ]
     },
     {
-      "id": "entity_portal-2",
+      "id": "entity_portal",
       "name": "On Entity Portal",
       "since": "2.5.3",
       "description": [
@@ -13198,7 +13198,7 @@
       ]
     },
     {
-      "id": "portal-2",
+      "id": "portal",
       "name": "On Portal",
       "since": "1.0",
       "description": [
@@ -13212,7 +13212,7 @@
       ]
     },
     {
-      "id": "quit-2",
+      "id": "quit",
       "name": "On Quit",
       "since": "1.0 (simple disconnection)",
       "description": [
@@ -13227,7 +13227,7 @@
       ]
     },
     {
-      "id": "respawn-2",
+      "id": "respawn",
       "name": "On Respawn",
       "since": "1.0",
       "description": [
@@ -13241,7 +13241,7 @@
       ]
     },
     {
-      "id": "sneak_toggle-2",
+      "id": "sneak_toggle",
       "name": "On Sneak Toggle",
       "since": "1.0",
       "description": [
@@ -13259,7 +13259,7 @@
       ]
     },
     {
-      "id": "sprint_toggle-2",
+      "id": "sprint_toggle",
       "name": "On Sprint Toggle",
       "since": "1.0",
       "description": [
@@ -13276,7 +13276,7 @@
       ]
     },
     {
-      "id": "portal_create-2",
+      "id": "portal_create",
       "name": "On Portal Create",
       "since": "1.0, 2.5.3 (event-entity support)",
       "description": [
@@ -13292,7 +13292,7 @@
       ]
     },
     {
-      "id": "projectile_hit-2",
+      "id": "projectile_hit",
       "name": "On Projectile Hit",
       "since": "1.0",
       "description": [
@@ -13308,7 +13308,7 @@
       ]
     },
     {
-      "id": "projectile_collide-2",
+      "id": "projectile_collide",
       "name": "On Projectile Collide",
       "since": "2.5",
       "description": [
@@ -13323,7 +13323,7 @@
       ]
     },
     {
-      "id": "shoot-2",
+      "id": "shoot",
       "name": "On Shoot",
       "since": "1.0",
       "description": [
@@ -13339,7 +13339,7 @@
       ]
     },
     {
-      "id": "sign_change-2",
+      "id": "sign_change",
       "name": "On Sign Change",
       "since": "1.0",
       "description": [
@@ -13356,7 +13356,7 @@
       ]
     },
     {
-      "id": "spawn_change-2",
+      "id": "spawn_change",
       "name": "On Spawn Change",
       "since": "1.0",
       "description": [
@@ -13371,7 +13371,7 @@
       ]
     },
     {
-      "id": "vehicle_create-2",
+      "id": "vehicle_create",
       "name": "On Vehicle Create",
       "since": "1.0",
       "description": [
@@ -13386,7 +13386,7 @@
       ]
     },
     {
-      "id": "vehicle_damage-2",
+      "id": "vehicle_damage",
       "name": "On Vehicle Damage",
       "since": "1.0",
       "description": [
@@ -13401,7 +13401,7 @@
       ]
     },
     {
-      "id": "vehicle_destroy-2",
+      "id": "vehicle_destroy",
       "name": "On Vehicle Destroy",
       "since": "1.0",
       "description": [
@@ -13417,7 +13417,7 @@
       ]
     },
     {
-      "id": "vehicle_enter-2",
+      "id": "vehicle_enter",
       "name": "On Vehicle Enter",
       "since": "1.0",
       "description": [
@@ -13434,7 +13434,7 @@
       ]
     },
     {
-      "id": "vehicle_exit-2",
+      "id": "vehicle_exit",
       "name": "On Vehicle Exit",
       "since": "1.0",
       "description": [
@@ -13451,7 +13451,7 @@
       ]
     },
     {
-      "id": "entity_mount-2",
+      "id": "entity_mount",
       "name": "On Entity Mount",
       "since": "2.2-dev13b",
       "description": [
@@ -13466,7 +13466,7 @@
       ]
     },
     {
-      "id": "entity_dismount-2",
+      "id": "entity_dismount",
       "name": "On Entity Dismount",
       "since": "2.2-dev13b",
       "description": [
@@ -13481,7 +13481,7 @@
       ]
     },
     {
-      "id": "gliding_state_change-2",
+      "id": "gliding_state_change",
       "name": "On Gliding State Change",
       "since": "2.2-dev21",
       "description": [
@@ -13496,7 +13496,7 @@
       ]
     },
     {
-      "id": "aoe_cloud_effect-2",
+      "id": "aoe_cloud_effect",
       "name": "On AoE Cloud Effect",
       "since": "2.2-dev21",
       "description": [
@@ -13510,7 +13510,7 @@
       ]
     },
     {
-      "id": "sheep_regrow_wool-2",
+      "id": "sheep_regrow_wool",
       "name": "On Sheep Regrow Wool",
       "since": "2.2-dev21",
       "description": [
@@ -13525,7 +13525,7 @@
       ]
     },
     {
-      "id": "inventory_open-2",
+      "id": "inventory_open",
       "name": "On Inventory Open",
       "since": "2.2-dev21",
       "description": [
@@ -13540,7 +13540,7 @@
       ]
     },
     {
-      "id": "inventory_close-2",
+      "id": "inventory_close",
       "name": "On Inventory Close",
       "since": "2.2-dev21",
       "description": [
@@ -13556,7 +13556,7 @@
       ]
     },
     {
-      "id": "slime_split-2",
+      "id": "slime_split",
       "name": "On Slime Split",
       "since": "2.2-dev26",
       "description": [
@@ -13570,7 +13570,7 @@
       ]
     },
     {
-      "id": "resurrect_attempt-2",
+      "id": "resurrect_attempt",
       "name": "On Resurrect Attempt",
       "since": "2.2-dev28",
       "description": [
@@ -13587,7 +13587,7 @@
       ]
     },
     {
-      "id": "player_world_change-2",
+      "id": "player_world_change",
       "name": "On Player World Change",
       "since": "2.2-dev28",
       "description": [
@@ -13603,7 +13603,7 @@
       ]
     },
     {
-      "id": "flight_toggle-2",
+      "id": "flight_toggle",
       "name": "On Flight Toggle",
       "since": "2.2-dev36",
       "description": [
@@ -13620,7 +13620,7 @@
       ]
     },
     {
-      "id": "language_change-2",
+      "id": "language_change",
       "name": "On Language Change",
       "since": "2.3",
       "description": [
@@ -13638,7 +13638,7 @@
       ]
     },
     {
-      "id": "jump-2",
+      "id": "jump",
       "name": "On Jump",
       "since": "2.3",
       "description": [
@@ -13655,7 +13655,7 @@
       ]
     },
     {
-      "id": "hand_item_swap-2",
+      "id": "hand_item_swap",
       "name": "On Hand Item Swap",
       "since": "2.3",
       "description": [
@@ -13676,7 +13676,7 @@
       ]
     },
     {
-      "id": "server_list_ping-2",
+      "id": "server_list_ping",
       "name": "On Server List Ping",
       "since": "2.3",
       "description": [
@@ -13697,7 +13697,7 @@
       ]
     },
     {
-      "id": "swim_toggle-2",
+      "id": "swim_toggle",
       "name": "On Swim Toggle",
       "since": "2.3",
       "description": [
@@ -13714,7 +13714,7 @@
       ]
     },
     {
-      "id": "riptide-2",
+      "id": "riptide",
       "name": "On Riptide",
       "since": "2.5",
       "description": [
@@ -13730,7 +13730,7 @@
       ]
     },
     {
-      "id": "armor_change-2",
+      "id": "armor_change",
       "name": "On Armor Change",
       "since": "2.5",
       "description": [
@@ -13745,7 +13745,7 @@
       ]
     },
     {
-      "id": "sponge_absorb-2",
+      "id": "sponge_absorb",
       "name": "On Sponge Absorb",
       "since": "2.5",
       "description": [
@@ -13761,7 +13761,7 @@
       ]
     },
     {
-      "id": "enchant_prepare-2",
+      "id": "enchant_prepare",
       "name": "On Enchant Prepare",
       "since": "2.5",
       "description": [
@@ -13778,7 +13778,7 @@
       ]
     },
     {
-      "id": "enchant-2",
+      "id": "enchant",
       "name": "On Enchant",
       "since": "2.5",
       "description": [
@@ -13795,7 +13795,7 @@
       ]
     },
     {
-      "id": "inventory_pickup-2",
+      "id": "inventory_pickup",
       "name": "On Inventory Pickup",
       "since": "2.5.1",
       "description": [
@@ -13809,7 +13809,7 @@
       ]
     },
     {
-      "id": "horse_jump-2",
+      "id": "horse_jump",
       "name": "On Horse Jump",
       "since": "2.5.1",
       "description": [
@@ -13824,7 +13824,7 @@
       ]
     },
     {
-      "id": "block_fertilize-2",
+      "id": "block_fertilize",
       "name": "On Block Fertilize",
       "since": "2.5",
       "description": [
@@ -13839,7 +13839,7 @@
       ]
     },
     {
-      "id": "arm_swing-2",
+      "id": "arm_swing",
       "name": "On Arm Swing",
       "since": "2.5.1",
       "description": [
@@ -13854,7 +13854,7 @@
       ]
     },
     {
-      "id": "item_mend-2",
+      "id": "item_mend",
       "name": "On Item Mend",
       "since": "2.5.1",
       "description": [
@@ -13871,7 +13871,7 @@
       ]
     },
     {
-      "id": "anvil_prepare-2",
+      "id": "anvil_prepare",
       "name": "On Anvil Prepare",
       "since": "2.7",
       "description": [
@@ -13889,7 +13889,7 @@
       ]
     },
     {
-      "id": "player_trade-2",
+      "id": "player_trade",
       "name": "On Player Trade",
       "since": "2.7",
       "description": [
@@ -13906,7 +13906,7 @@
       ]
     },
     {
-      "id": "entity_jump-2",
+      "id": "entity_jump",
       "name": "On Entity Jump",
       "since": "2.7",
       "description": [
@@ -13922,7 +13922,7 @@
       ]
     },
     {
-      "id": "anvil_damage-2",
+      "id": "anvil_damage",
       "name": "On Anvil Damage",
       "since": "2.7",
       "description": [
@@ -13938,7 +13938,7 @@
       ]
     },
     {
-      "id": "stop_using_item-2",
+      "id": "stop_using_item",
       "name": "On Stop Using Item",
       "since": "2.8.0",
       "description": [
@@ -13954,7 +13954,7 @@
       ]
     },
     {
-      "id": "ready_arrow-2",
+      "id": "ready_arrow",
       "name": "On Ready Arrow",
       "since": "2.8.0",
       "description": [
@@ -13973,7 +13973,7 @@
       ]
     },
     {
-      "id": "inventory_slot_change-2",
+      "id": "inventory_slot_change",
       "name": "On Inventory Slot Change",
       "since": "2.7",
       "description": [
@@ -13990,7 +13990,7 @@
       ]
     },
     {
-      "id": "chat-2",
+      "id": "chat",
       "name": "On Chat",
       "since": "1.4.1",
       "description": [
@@ -14012,7 +14012,7 @@
       ]
     },
     {
-      "id": "player_deep_sleep-2",
+      "id": "player_deep_sleep",
       "name": "On Player Deep Sleep",
       "since": "2.7",
       "description": [
@@ -14028,7 +14028,7 @@
       ]
     },
     {
-      "id": "player_pickup_arrow-2",
+      "id": "player_pickup_arrow",
       "name": "On Player Pickup Arrow",
       "since": "2.8.0",
       "description": [
@@ -14044,7 +14044,7 @@
       ]
     },
     {
-      "id": "inventory_drag-2",
+      "id": "inventory_drag",
       "name": "On Inventory Drag",
       "since": "2.7",
       "description": [
@@ -14061,7 +14061,7 @@
       ]
     },
     {
-      "id": "piglin_barter-2",
+      "id": "piglin_barter",
       "name": "On Piglin Barter",
       "since": "2.10",
       "description": [
@@ -14079,7 +14079,7 @@
       ]
     },
     {
-      "id": "bell_ring-2",
+      "id": "bell_ring",
       "name": "On Bell Ring",
       "since": "2.9.0",
       "description": [
@@ -14094,7 +14094,7 @@
       ]
     },
     {
-      "id": "bell_resonate-2",
+      "id": "bell_resonate",
       "name": "On Bell Resonate",
       "since": "2.9.0",
       "description": [
@@ -14109,7 +14109,7 @@
       ]
     },
     {
-      "id": "enderman_enrage-2",
+      "id": "enderman_enrage",
       "name": "On Enderman Enrage",
       "since": "2.9.0",
       "description": [
@@ -14127,7 +14127,7 @@
       ]
     },
     {
-      "id": "beacon_change_effect-2",
+      "id": "beacon_change_effect",
       "name": "On Beacon Change Effect",
       "since": "2.10",
       "description": [
@@ -14149,7 +14149,7 @@
       ]
     },
     {
-      "id": "broadcast-2",
+      "id": "broadcast",
       "name": "On Broadcast",
       "since": "2.10",
       "description": [
@@ -14164,7 +14164,7 @@
       ]
     },
     {
-      "id": "experience_cooldown_change-2",
+      "id": "experience_cooldown_change",
       "name": "On Experience Cooldown Change",
       "since": "2.10",
       "description": [
@@ -14183,7 +14183,7 @@
       ]
     },
     {
-      "id": "vehicle_move-2",
+      "id": "vehicle_move",
       "name": "On Vehicle Move",
       "since": "2.10",
       "description": [
@@ -14200,7 +14200,7 @@
       ]
     },
     {
-      "id": "elytra_boost-2",
+      "id": "elytra_boost",
       "name": "On Elytra Boost",
       "since": "2.10",
       "description": [
@@ -14216,7 +14216,7 @@
       ]
     },
     {
-      "id": "bucket_catch_entity-2",
+      "id": "bucket_catch_entity",
       "name": "On Bucket Catch Entity",
       "description": [],
       "examples": [],
@@ -14225,7 +14225,7 @@
       ]
     },
     {
-      "id": "fishing-2",
+      "id": "fishing",
       "name": "On Fishing",
       "description": [],
       "examples": [],
@@ -14241,7 +14241,7 @@
       ]
     },
     {
-      "id": "entity_breed-2",
+      "id": "entity_breed",
       "name": "On Entity Breed",
       "since": "2.10",
       "description": [
@@ -14256,7 +14256,7 @@
       ]
     },
     {
-      "id": "love_mode_enter-2",
+      "id": "love_mode_enter",
       "name": "On Love Mode Enter",
       "since": "2.10",
       "description": [
@@ -14272,7 +14272,7 @@
       ]
     },
     {
-      "id": "player_input-2",
+      "id": "player_input",
       "name": "On Player Input",
       "since": "2.10",
       "description": [
@@ -14289,7 +14289,7 @@
       ]
     },
     {
-      "id": "smelt-2",
+      "id": "smelt",
       "name": "On Smelt",
       "since": "1.0, 2.10 (specific item)",
       "description": [
@@ -14308,7 +14308,7 @@
       ]
     },
     {
-      "id": "fuel_burn-2",
+      "id": "fuel_burn",
       "name": "On Fuel Burn",
       "since": "1.0, 2.10 (specific item)",
       "description": [
@@ -14325,7 +14325,7 @@
       ]
     },
     {
-      "id": "furnace_item_extract-2",
+      "id": "furnace_item_extract",
       "name": "On Furnace Item Extract",
       "since": "2.10",
       "description": [
@@ -14341,7 +14341,7 @@
       ]
     },
     {
-      "id": "start_smelt-2",
+      "id": "start_smelt",
       "name": "On Start Smelt",
       "since": "2.10",
       "description": [
@@ -14360,7 +14360,7 @@
       ]
     },
     {
-      "id": "loot_generate-2",
+      "id": "loot_generate",
       "name": "On Loot Generate",
       "since": "2.7",
       "description": [
@@ -14378,7 +14378,7 @@
       ]
     },
     {
-      "id": "region_enterleave-2",
+      "id": "region_enterleave",
       "name": "On Region Enter/Leave",
       "since": "2.1",
       "description": [
@@ -14395,7 +14395,7 @@
       ]
     },
     {
-      "id": "test_case-2",
+      "id": "test_case",
       "name": "On Test Case",
       "since": "2.5",
       "description": [
