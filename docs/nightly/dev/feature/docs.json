@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-fde5de7",
+  "skriptVersion": "2.10.0-pre1-nightly-2dba82b",
   "conditions": [
     {
       "id": "CondAlphanumeric-2",
@@ -12997,7 +12997,7 @@
         "on command \"pm Njol \":"
       ],
       "patterns": [
-        "command [%-string%]"
+        "command [%-strings%]"
       ]
     },
     {
