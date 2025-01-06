@@ -229,6 +229,9 @@ function searchNow(value = "") {
     }
     searchValue = searchValue.replaceAll(versionPattern, "") // Don't include filters in the search
   }
+  let versionArr = null;
+  if (version !== "")
+    versionArr = versionParse(version);
 
   // Type
   let filterType;
@@ -260,9 +263,6 @@ function searchNow(value = "") {
 
       // Version check
       let versionFound;
-      let versionArr = null;
-      if (version !== "")
-        versionArr = versionParse(version);
       if (versionArr !== null) { // if we parsed a version
         const versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].innerHTML.split(/,|<br\/?>/i);
         for (const v of versions) {
