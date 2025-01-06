@@ -89,7 +89,7 @@ document.querySelectorAll(".new-element").forEach((e) => {
 
 // <> Search Bar
 const versionComparePattern = /.*?(\d+).(\d+)(?:.(\d+))?.*/i;
-const versionPattern = / ?v(?:ersion|):(\d+.\d+(?:.\d+)?)(?:-[^+-]+)?([+-])?/gi;
+const versionPattern = / ?v(?:ersion|):(\d+.\d+(?:.\d+)?)(?:-[^\s+-]+)?([+-])?/gi;
 const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
