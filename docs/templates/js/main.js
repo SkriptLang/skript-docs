@@ -1,4 +1,4 @@
-const siteVersion = "2.2.0"; // site version is different from skript version
+const siteVersion = "2.3.0"; // site version is different from skript version
 const ghAPI = "https://api.github.com/repos/SkriptLang/Skript";
 
 // ID Scroll
