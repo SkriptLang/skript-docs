@@ -94,20 +94,22 @@ const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
-function versionCompare(base, target) { // Return -1, 0, 1
-  const baseMatches = versionComparePattern.exec(base);
-  const targetMatches = versionComparePattern.exec(target);
+function versionParse(version) {
+  const matches = versionComparePattern.exec(version);
+  if (matches == null)
+    return null;
+  return [
+    parseInt(matches[1]), // major
+    parseInt(matches[2]), // minor
+    matches[3] !== undefined ? parseInt(matches[3]) : 0 // patch
+  ]
+}
 
-  if (baseMatches === null || targetMatches === null) // unknown version, assume old!
-    return -1;
-
+function versionCompare(baseArr, targetArr) { // Return -1, 0, 1
   // compare in order of major.minor.patch
-  for (let i = 1; i <= 3; i++) {
-    // parse versions
-    let baseVer = baseMatches[i];
-    baseVer = baseVer !== undefined ? parseInt(baseVer) : 0;
-    let targetVer = targetMatches[i];
-    targetVer = targetVer !== undefined ? parseInt(targetVer) : 0;
+  for (let i = 0; i <= 2; i++) {
+    let baseVer = baseArr[i];
+    let targetVer = targetArr[i];
     // compare versions (target in relation to base)
     if (targetVer > baseVer)
       return 1;
@@ -258,10 +260,16 @@ function searchNow(value = "") {
 
       // Version check
       let versionFound;
-      if (version !== "") {
-        const versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
-        for (const v in versions) {
-          let result = versionCompare(version, versions[v]);
+      let versionArr = null;
+      if (version !== "")
+        versionArr = versionParse(version);
+      if (versionArr !== null) { // if we parsed a version
+        const versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].innerHTML.split(/,|<br\/?>/i);
+        for (const v of versions) {
+          const targetArr = versionParse(v);
+          if (targetArr === null) // treat as version not matching
+            continue;
+          let result = versionCompare(versionArr, targetArr);
           if (versionAndUp) {
             if (result >= 0) {
               versionFound = true;
