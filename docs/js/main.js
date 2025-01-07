@@ -1,4 +1,4 @@
-const siteVersion = "2.2.0"; // site version is different from skript version
+const siteVersion = "2.3.0"; // site version is different from skript version
 const ghAPI = "https://api.github.com/repos/SkriptLang/Skript";
 
 // ID Scroll
@@ -88,25 +88,38 @@ document.querySelectorAll(".new-element").forEach((e) => {
 })
 
 // <> Search Bar
-const versionComparePattern = /.*?(\d\.\d(?:\.\d|))(\+|-|).*/gi;
-const versionPattern = / ?v(?:ersion|):(\d\.\d(?:\.\d|-(?:beta|alpha|dev)\d*|))(\+|-|)/gi;
+const versionComparePattern = /.*?(\d+).(\d+)(?:.(\d+))?.*/i;
+const versionPattern = / ?v(?:ersion|):(\d+.\d+(?:.\d+)?)(?:-[^\s+-]+)?([+-])?/gi;
 const typePattern = / ?t(?:ype|):(\w+)/gi;
 const newPattern = / ?is:(new)/gi;
 const resultsFoundText = "result(s) found";
 
-function versionCompare(base, target) { // Return -1, 0, 1
-  base = base.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
-  target = target.replaceAll(versionComparePattern, "$1").replaceAll(/[^0-9]/gi, "");
+function versionParse(version) {
+  const matches = versionComparePattern.exec(version);
+  if (matches == null)
+    return null;
+  return [
+    parseInt(matches[1]), // major
+    parseInt(matches[2]), // minor
+    matches[3] !== undefined ? parseInt(matches[3]) : 0 // patch
+  ]
+}
 
-  base = parseInt(base) < 100 ? parseInt(base) * 10 : parseInt(base); // convert ten's to hundred's to fix (2.5.1+ not triggering 2.6 by converting 26 -> 260)
-  target = parseInt(target) < 100 ? parseInt(target) * 10 : parseInt(target);
+function versionCompare(baseArr, targetArr) { // Return -1, 0, 1
+  // compare in order of major.minor.patch
+  for (let i = 0; i <= 2; i++) {
+    let baseVer = baseArr[i];
+    let targetVer = targetArr[i];
+    // compare versions (target in relation to base)
+    if (targetVer > baseVer)
+      return 1;
+    if (targetVer < baseVer)
+      return -1;
+    // equal, try next parts
+  }
 
-  if (target > base)
-    return 1
-  if (target == base)
-    return 0
-  if (target < base)
-    return -1
+  // they must be equal
+  return 0;
 }
 
 var searchBar;
@@ -141,7 +154,7 @@ if (content) {
     let options = "<select id='search-version' name='versions' id='versions' onchange='checkVersionFilter()'></select>"
     content.insertAdjacentHTML('afterbegin', `<span>${options}</span>`);
     options = document.getElementById("search-version");
-    
+
     getApiValue(null, "skript-versions", "tags?per_page=83&page=2", (data, isCached) => { // 83 and page 2 matters to filter dev branches (temporary solution)
       if (isCached)
         data = data.split(",");
@@ -153,7 +166,7 @@ if (content) {
           } else {
             tag = data[i]["name"];
           }
-          tags.push(tag.replaceAll(/(.*)-(dev|beta|alpha).*/gi, "$1"));
+          tags.push(tag.replaceAll(/(.*?)-.*/gi, "$1"));
         }
 
       tags = [...new Set(tags)] // remove duplicates
@@ -195,7 +208,7 @@ function checkVersionFilter() {
 }
 
 function searchNow(value = "") {
-  if (value != "") // Update searchBar value
+  if (value !== "") // Update searchBar value
     searchBar.value = value;
 
   let allElements = document.querySelectorAll(".item-wrapper");
@@ -211,11 +224,14 @@ function searchNow(value = "") {
     let verExec = versionPattern.exec(searchValue);
     version = verExec[1];
     if (verExec.length > 2) {
-      versionAndUp = verExec[2] == "+" == true;
-      versionAndDown = verExec[2] == "-" == true;
+      versionAndUp = verExec[2] === "+";
+      versionAndDown = verExec[2] === "-";
     }
     searchValue = searchValue.replaceAll(versionPattern, "") // Don't include filters in the search
   }
+  let versionArr = null;
+  if (version !== "")
+    versionArr = versionParse(version);
 
   // Type
   let filterType;
@@ -227,7 +243,7 @@ function searchNow(value = "") {
   // News
   let filterNew;
   if (searchValue.match(newPattern)) {
-    filterNew = newPattern.exec(searchValue)[1] == "new";
+    filterNew = newPattern.exec(searchValue)[1] === "new";
     searchValue = searchValue.replaceAll(newPattern, "")
   }
 
@@ -247,22 +263,27 @@ function searchNow(value = "") {
 
       // Version check
       let versionFound;
-      if (version != "") {
-        versionFound = versionCompare(version, document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent) == 0;
-
-        if (versionAndUp || versionAndDown) {
-          let versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].textContent.split(",");
-          for (const v in versions) { // split on ',' without space in case some version didn't have space and versionCompare will handle it
-            if (versionAndUp) {
-              if (versionCompare(version, versions[v]) == 1) {
-                versionFound = true;
-                break; // Performance
-              }
-            } else if (versionAndDown) {
-              if (versionCompare(version, versions[v]) == -1) {
-                versionFound = true;
-                break; // Performance
-              }
+      if (versionArr !== null) { // if we parsed a version
+        const versions = document.querySelectorAll(`#${e.id} .item-details:nth-child(2) td:nth-child(2)`)[0].innerHTML.split(/,|<br\/?>/i);
+        for (const v of versions) {
+          const targetArr = versionParse(v);
+          if (targetArr === null) // treat as version not matching
+            continue;
+          let result = versionCompare(versionArr, targetArr);
+          if (versionAndUp) {
+            if (result >= 0) {
+              versionFound = true;
+              break;
+            }
+          } else if (versionAndDown) {
+            if (result < 0) { // exclude current version
+              versionFound = true;
+              break;
+            }
+          } else {
+            if (result === 0) {
+              versionFound = true;
+              break;
             }
           }
         }
