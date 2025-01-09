@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-344e0af",
+  "skriptVersion": "2.10.0-pre1-nightly-b3924b0",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -8250,7 +8250,7 @@
     },
     {
       "id": "ExprVectorFromYawAndPitch",
-      "name": "Vectors - Vector from Pitch and Yaw",
+      "name": "Vectors - Vector from Yaw and Pitch",
       "since": [
         "2.2-dev28"
       ],
@@ -8261,7 +8261,8 @@
         "set {_v} to vector from yaw 45 and pitch 45"
       ],
       "patterns": [
-        "[a] [new] vector (from|with) yaw %number% and pitch %number%"
+        "[a] [new] vector (from|with) yaw %number% and pitch %number%",
+        "[a] [new] vector (from|with) pitch %number% and yaw %number%"
       ]
     },
     {
