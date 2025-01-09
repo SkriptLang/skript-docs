@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-42b6198",
+  "skriptVersion": "2.10.0-pre1-nightly-20f6c59",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2666,7 +2666,10 @@
       "id": "EffBan",
       "name": "Ban",
       "since": [
-        "1.4, 2.1.1 (ban reason), 2.5 (timespan), 2.9.0 (kick)"
+        "1.4",
+        "2.1.1 (ban reason)",
+        "2.5 (timespan)",
+        "2.9.0 (kick)"
       ],
       "description": [
         "Bans or unbans a player or an IP address.",
@@ -2721,8 +2724,7 @@
       ],
       "description": [
         "Breaks the block and spawns items as if a player had mined it",
-        "\nYou can add a tool, which will spawn items based on how that tool would break the block ",
-        "(ie: When using a hand to break stone, it drops nothing, whereas with a pickaxe it drops cobblestone)"
+        "You can add a tool, which will spawn items based on how that tool would break the block (i.e. using a hand to break stone drops nothing, whereas using a pickaxe drops cobblestone)"
       ],
       "examples": [
         "on right click:",
@@ -2786,7 +2788,8 @@
         "2.4"
       ],
       "description": [
-        "Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect."
+        "Cancels drops of items or experiences in a death or block break event.",
+        "Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect."
       ],
       "examples": [
         "on death of a zombie:",
@@ -2844,10 +2847,12 @@
       "id": "EffChange",
       "name": "Change: Set/Add/Remove/Delete/Reset",
       "since": [
-        "1.0 (set, add, remove, delete), 2.0 (remove all)"
+        "1.0 (set, add, remove, delete)",
+        "2.0 (remove all)"
       ],
       "description": [
-        "A very general effect that can change many <a href='./expressions'>expressions</a>. Many expressions can only be set and/or deleted, while some can have things added to or removed from them."
+        "A very general effect that can change many <a href='./expressions'>expressions</a>.",
+        "Many expressions can only be set and/or deleted, while some can have things added to or removed from them."
       ],
       "examples": [
         "# set:",
@@ -2891,7 +2896,8 @@
         "2.5, 2.10 (wither skulls)"
       ],
       "description": [
-        "Charges or uncharges a creeper or wither skull. A creeper is charged when it has been struck by lightning."
+        "Charges or uncharges a creeper or wither skull.",
+        "A creeper is charged when it has been struck by lightning."
       ],
       "examples": [
         "on spawn of creeper:",
@@ -2909,7 +2915,9 @@
         "2.0, 2.2-dev26 (maps and potions)"
       ],
       "description": [
-        "Colors items in a given <a href='classes.html#color'>color</a>. You can also use RGB codes if you feel limited with the 16 default colors. RGB codes are three numbers from 0 to 255 in the order <code>(red, green, blue)</code>, where <code>(0,0,0)</code> is black and <code>(255,255,255)</code> is white. Armor is colorable for all Minecraft versions. With Minecraft 1.11 or newer you can also color potions and maps. Note that the colors might not look exactly how you'd expect."
+        "Colors items in a given <a href='classes.html#color'>color</a>.",
+        "You can also use RGB codes if you feel limited with the 16 default colors.",
+        "Armor is colorable for all Minecraft versions. With Minecraft 1.11+ you can also color potions and maps. Note that the colors might not look exactly how you'd expect."
       ],
       "examples": [
         "dye player's helmet blue",
@@ -2987,7 +2995,8 @@
         "2.2-dev37, 2.7 (while loops), 2.8.0 (outer loops)"
       ],
       "description": [
-        "Moves the loop to the next iteration. You may also continue an outer loop from an inner one. The loops are labelled from 1 until the current loop, starting with the outermost one."
+        "Moves the loop to the next iteration. You may also continue an outer loop from an inner one.",
+        "The loops are labelled from 1 until the current loop, starting with the outermost one."
       ],
       "examples": [
         "# Broadcast online moderators",
@@ -2995,7 +3004,7 @@
         "\tif loop-value does not have permission \"moderator\":",
         "\t\tcontinue # filter out non moderators",
         "\tbroadcast \"%loop-player% is a moderator!\" # Only moderators get broadcast",
-        " ",
+        "",
         "# Game starting counter",
         "set {_counter} to 11",
         "while {_counter} > 0:",
@@ -3057,7 +3066,8 @@
         "2.10"
       ],
       "description": [
-        "Immediately detonates an entity. Accepted entities are fireworks, TNT minecarts, primed TNT, wind charges and creepers."
+        "Immediately detonates an entity.",
+        "Accepted entities are fireworks, TNT minecarts, primed TNT, wind charges and creepers."
       ],
       "examples": [
         "detonate last launched firework"
@@ -3097,7 +3107,7 @@
         "\tdrop 1 TNT"
       ],
       "patterns": [
-        "drop %itemtypes/experiences% [%directions% %locations%] [(1¦without velocity)]"
+        "drop %itemtypes/experiences% [%directions% %locations%] [(1:without velocity)]"
       ]
     },
     {
@@ -3128,7 +3138,7 @@
         "2.10"
       ],
       "description": [
-        "Prevent the firework used in an 'elytra boost' event to be consumed."
+        "Prevent the firework used in an 'elytra boost' event from being consumed."
       ],
       "examples": [
         "on elytra boost:",
@@ -3491,9 +3501,9 @@
         "\tmake the explosion fiery"
       ],
       "patterns": [
-        "make %entities% [(1¦not)] incendiary",
-        "make %entities%'[s] explosion [(1¦not)] (incendiary|fiery)",
-        "make [the] [event(-| )]explosion [(1¦not)] (incendiary|fiery)"
+        "make %entities% [(1:not)] incendiary",
+        "make %entities%'[s] explosion [(1:not)] (incendiary|fiery)",
+        "make [the] [event(-| )]explosion [(1:not)] (incendiary|fiery)"
       ]
     },
     {
@@ -3594,7 +3604,8 @@
         "2.7"
       ],
       "description": [
-        "Apply the same velocity as a knockback to living entities in a direction. Mechanics such as knockback resistance will be factored in."
+        "Apply the same velocity as a knockback to living entities in a direction.",
+        "Mechanics such as knockback resistance will be factored in."
       ],
       "examples": [
         "knockback player north",
@@ -3693,7 +3704,8 @@
       ],
       "description": [
         "Writes text into a .log file. Skript will write these files to /plugins/Skript/logs.",
-        "NB: Using 'server.log' as the log file will write to the default server log. Omitting the log file altogether will log the message as '[Skript] [&lt;script&gt;.sk] &lt;message&gt;' in the server log."
+        "NB: Using 'server.log' as the log file will write to the default server log.",
+        "Omitting the log file altogether will log the message as '[Skript] [&lt;script&gt;.sk] &lt;message&gt;' in the server log."
       ],
       "examples": [
         "on join:",
@@ -3714,7 +3726,8 @@
         "2.7"
       ],
       "description": [
-        "Forces the mob(s) or player(s) to look at an entity, vector or location. Vanilla max head pitches range from 10 to 50."
+        "Forces the mob(s) or player(s) to look at an entity, vector or location.",
+        "Vanilla max head pitches range from 10 to 50."
       ],
       "examples": [
         "force the player to look towards event-entity's feet",
@@ -3764,8 +3777,8 @@
         "force all players to stop flying"
       ],
       "patterns": [
-        "force %players% to [(start|1¦stop)] fly[ing]",
-        "make %players% (start|1¦stop) flying",
+        "force %players% to [(start|1:stop)] fly[ing]",
+        "make %players% (start|1:stop) flying",
         "make %players% fly"
       ]
     },
@@ -3776,7 +3789,8 @@
         "2.3"
       ],
       "description": [
-        "Forces a player to send a message to the chat. If the message starts with a slash it will force the player to use command."
+        "Forces a player to send a message to the chat.",
+        "If the message starts with a slash it will force the player to use command."
       ],
       "examples": [
         "make the player say \"Hello.\"",
@@ -3791,7 +3805,10 @@
       "id": "EffMessage",
       "name": "Message",
       "since": [
-        "1.0, 2.2-dev26 (advanced features), 2.5.2 (optional sender), 2.6 (sending objects)"
+        "1.0",
+        "2.2-dev26 (advanced features)",
+        "2.5.2 (optional sender)",
+        "2.6 (sending objects)"
       ],
       "description": [
         "Sends a message to the given player. Only styles written",
@@ -3851,10 +3868,13 @@
       "id": "EffOpenInventory",
       "name": "Open/Close Inventory",
       "since": [
-        "2.0, 2.1.1 (closing), 2.2-Fixes-V10 (anvil), 2.4 (hopper, dropper, dispenser"
+        "2.0",
+        "2.1.1 (closing)",
+        "2.2-Fixes-V10 (anvil)",
+        "2.4 (hopper, dropper, dispenser)"
       ],
       "description": [
-        "Opens an inventory to a player. The player can then access and modify the inventory as if it was a chest that he just opened.",
+        "Opens an inventory to a player. The player can then access and modify the inventory as if it was a chest that was just opened.",
         "Please note that currently 'show' and 'open' have the same effect, but 'show' will eventually show an unmodifiable view of the inventory in the future."
       ],
       "examples": [
@@ -3862,7 +3882,7 @@
         "open the player's inventory for the player"
       ],
       "patterns": [
-        "(open|show) ((0¦(crafting [table]|workbench)|1¦chest|2¦anvil|3¦hopper|4¦dropper|5¦dispenser) (view|window|inventory|)|%-inventory/inventorytype%) (to|for) %players%",
+        "(open|show) ((0:(crafting [table]|workbench)|1:chest|2:anvil|3:hopper|4:dropper|5:dispenser) (view|window|inventory|)|%-inventory/inventorytype%) (to|for) %players%",
         "close [the] inventory [view] (to|of|for) %players%",
         "close %players%'[s] inventory [view]"
       ]
@@ -3874,7 +3894,8 @@
         "2.7"
       ],
       "description": [
-        "Make an entity pathfind towards a location or another entity. Not all entities can pathfind. If the pathfinding target is another entity, the entities may or may not continuously follow the target."
+        "Make an entity pathfind towards a location or another entity. Not all entities can pathfind.",
+        "If the pathfinding target is another entity, the entities may or may not continuously follow the target."
       ],
       "examples": [
         "make all creepers pathfind towards player",
@@ -3946,7 +3967,7 @@
         "1.3.2"
       ],
       "description": [
-        "Poison or cure a creature."
+        "Poison or cure a living entity."
       ],
       "examples": [
         "poison the player",
@@ -3962,7 +3983,10 @@
       "id": "EffPotion",
       "name": "Potion Effects",
       "since": [
-        "2.0, 2.2-dev27 (ambient and particle-less potion effects), 2.5 (replacing existing effect), 2.5.2 (potion effects), 2.7 (icon and infinite)"
+        "2.0",
+        "2.2-dev27 (ambient and particle-less potion effects)",
+        "2.5 (replacing existing effect), 2.5.2 (potion effects)",
+        "2.7 (icon and infinite)"
       ],
       "description": [
         "Apply or remove potion effects to/from entities."
@@ -4023,10 +4047,14 @@
       "id": "EffReplace",
       "name": "Replace",
       "since": [
-        "2.0, 2.2-dev24 (multiple strings, items in inventory), 2.5 (replace first, case sensitivity), 2.10 (regex)"
+        "2.0",
+        "2.2-dev24 (multiple strings, items in inventory)",
+        "2.5 (replace first, case sensitivity)",
+        "2.10 (regex)"
       ],
       "description": [
-        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
+        "Replaces all occurrences of a given text or regex with another text.",
+        "Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
       ],
       "examples": [
         "replace \"<item>\" in {_msg} with \"[%name of player's tool%]\"",
@@ -4073,7 +4101,8 @@
         "2.2-dev21"
       ],
       "description": [
-        "Forces player(s) to respawn if they are dead. If this is called without delay from death event, one tick is waited before respawn attempt."
+        "Forces player(s) to respawn if they are dead.",
+        "If this is called without delay from death event, one tick is waited before respawn attempt."
       ],
       "examples": [
         "on death of player:",
@@ -4090,7 +4119,7 @@
         "2.2, 2.8.0 (returns aliases)"
       ],
       "description": [
-        "Makes a trigger or a section (e.g. a function) return a value"
+        "Makes a trigger or a section (e.g. a function) return a value."
       ],
       "examples": [
         "function double(i: number) :: number:",
@@ -4171,7 +4200,7 @@
         "2.2-dev37c, 2.5.1 (block data support)"
       ],
       "description": [
-        "Makes a player see a block as something it really isn't. BlockData support is only for MC 1.13+"
+        "Makes a player see a block as something it really isn't."
       ],
       "examples": [
         "make player see block at player as dirt",
@@ -4188,16 +4217,14 @@
         "2.4"
       ],
       "description": [
-        "Request that the player's client download and switch resource packs. The client will download ",
-        "the resource pack in the background, and will automatically switch to it once the download is complete. ",
+        "Request that the player's client download and switch resource packs.",
+        "The client will download the resource pack in the background, and will automatically switch to it once the download is complete.",
         "The URL must be a direct download link.",
         "",
-        "The hash is used for caching, the player won't have to re-download the resource pack that way. ",
-        "The hash must be SHA-1, you can get SHA-1 hash of your resource pack using ",
-        "<a href=\"https://emn178.github.io/online-tools/sha1_checksum.html\">this online tool</a>.",
+        "The hash is used for caching, the player won't have to re-download the resource pack that way.",
+        "The hash must be SHA-1, you can get SHA-1 hash of your resource pack using <a href=\"https://emn178.github.io/online-tools/sha1_checksum.html\">this online tool</a>.",
         "",
-        "The <a href='events.html#resource_pack_request_action'>resource pack request action</a> can be used to check ",
-        "status of the sent resource pack request."
+        "The <a href='events.html#resource_pack_request_action'>resource pack request action</a> can be used to check status of the sent resource pack request."
       ],
       "examples": [
         "on join:",
@@ -4240,10 +4267,10 @@
         "2.0 (cows, sheep & snowmen), 2.8.0 (all shearable entities)"
       ],
       "description": [
-        "Shears or un-shears a shearable entity with drops by shearing and a 'sheared' sound. Using with 'force' will force this effect despite the entity's 'shear state'.",
-        "\nPlease note that..:",
-        "\n- If your server is not running with Paper 1.19.4 or higher, this effect will only change its 'shear state', and the 'force' effect is unavailable",
-        "\n- Force-shearing or un-shearing on a sheared mushroom cow is not possible"
+        "Shears or un-shears a shearable entity with drops by shearing and a 'sheared' sound. Using 'force' will force this effect despite the entity's 'shear state'.",
+        "Please note that:",
+        "- If your server is not running with Paper 1.19.4 or higher, this effect will only change its 'shear state', and the 'force' effect is unavailable",
+        "- Force-shearing or un-shearing on a sheared mushroom cow is not possible"
       ],
       "examples": [
         "on rightclick on a sheep holding a sword:",
@@ -4302,7 +4329,8 @@
         "2.5"
       ],
       "description": [
-        "Stops or restarts the server. If restart is used when the restart-script spigot.yml option isn't defined, the server will stop instead."
+        "Stops or restarts the server.",
+        "If used when the 'restart-script' spigot.yml option isn't defined, the server will stop instead."
       ],
       "examples": [
         "stop the server",
@@ -4527,7 +4555,7 @@
       ],
       "description": [
         "Creates a tree.",
-        "This may require that there is enough space above the given location and that the block below is dirt/grass, but it is possible that the tree will just grow anyways, possibly replacing every block in its path."
+        "This may require that there is enough space above the given location and that the block below is dirt/grass,but it is possible that the tree will just grow anyways, possibly replacing every block in its path."
       ],
       "examples": [
         "grow a tall redwood tree above the clicked block"
@@ -4544,7 +4572,7 @@
         "2.0"
       ],
       "description": [
-        "Makes an entity ride another entity, e.g. a minecart, a saddled pig, an arrow, etc."
+        "Makes an entity ride another entity,"
       ],
       "examples": [
         "make the player ride a saddled pig",
