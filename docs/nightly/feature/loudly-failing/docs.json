@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-20f6c59",
+  "skriptVersion": "2.10.0-pre1-nightly-19bb8b4",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -8278,7 +8278,7 @@
     },
     {
       "id": "ExprVectorFromYawAndPitch",
-      "name": "Vectors - Vector from Pitch and Yaw",
+      "name": "Vectors - Vector from Yaw and Pitch",
       "since": [
         "2.2-dev28"
       ],
@@ -8289,7 +8289,8 @@
         "set {_v} to vector from yaw 45 and pitch 45"
       ],
       "patterns": [
-        "[a] [new] vector (from|with) yaw %number% and pitch %number%"
+        "[a] [new] vector (from|with) yaw %number% and pitch %number%",
+        "[a] [new] vector (from|with) pitch %number% and yaw %number%"
       ]
     },
     {
@@ -16076,7 +16077,7 @@
         "remove invisibility from the victim"
       ],
       "patterns": [
-        "null, speed, slowness, haste, mining fatigue, strength, instant health, instant damage, jump boost, nausea, regeneration, resistance, fire resistance, water breathing, invisibility, blindness, night vision, hunger, weakness, poison, wither, health boost, absorption, saturation, glowing, levitation, luck, bad luck, slow falling, conduit power, dolphins grace, bad omen, hero of the village, darkness, trial omen, bad omen, wind charged, weaving, oozing, infested"
+        "absorption, bad luck, bad omen, blindness, conduit power, confusion, damage, damage resistance, darkness, dolphin's grace, dolphins grace, fast digging, fast mining, fire immunity, fire resistance, floating, glowing, haste, health, health boost, hero of the village, hunger, increase damage, increased damage, infested, instant damage, instant health, invisibility, jump, jump boost, levitation, luck, max health boost, maximum health boost, mining fatigue, nausea, night vision, oozing, poison, raid omen, reduce damage, reduced damage, regeneration, resistance, saturation, slow, slow digging, slow fall, slow falling, slow mining, slowness, speed, strength, swiftness, trial omen, unluck, water breathing, weakness, weaving, wind charged, wither, wither effect, wither potion effect"
       ]
     },
     {
