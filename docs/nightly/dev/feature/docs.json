@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-aeddf54",
+  "skriptVersion": "2.10.0-pre1-nightly-8b40a35",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3575,8 +3575,7 @@
         "1.0, 2.10 (ignoring totem of undying)"
       ],
       "description": [
-        "Kills an entity.",
-        "Note: This effect does not set the entity's health to 0 (which causes issues), but damages the entity by 100 times its maximum health."
+        "Kills an entity."
       ],
       "examples": [
         "kill the player",
