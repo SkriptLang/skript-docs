@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-1fd0c93",
+  "skriptVersion": "2.10.0-pre1-nightly-469927a",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -10541,28 +10541,6 @@
       ]
     },
     {
-      "id": "ExprNodeValue",
-      "name": "Value (Experimental)",
-      "since": [
-        "2.10"
-      ],
-      "description": [
-        "Returns the value of a node in a loaded config.",
-        "The value is automatically converted to the specified type (e.g. text, number) where possible."
-      ],
-      "examples": [
-        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
-        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
-      ],
-      "patterns": [
-        "[the] %*classinfo% value [at] %string% (from|in) %node%",
-        "[the] %*classinfo% value of %node%",
-        "[the] %*classinfo% values of %nodes%",
-        "%node%'s %*classinfo% value",
-        "%nodes%'[s] %*classinfo% values"
-      ]
-    },
-    {
       "id": "ExprOnlinePlayersCount",
       "name": "Online Player Count",
       "since": [
@@ -11563,6 +11541,28 @@
       "patterns": [
         "[the] UUID of %offlineplayers/worlds/entities%",
         "%offlineplayers/worlds/entities%'[s] UUID"
+      ]
+    },
+    {
+      "id": "ExprValue",
+      "name": "Value",
+      "since": [
+        "2.10 (Nodes), INSERT VERSION (Any)"
+      ],
+      "description": [
+        "Returns the value of something that has a value, e.g. a node in a config.",
+        "The value is automatically converted to the specified type (e.g. text, number) where possible."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
+        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
+      ],
+      "patterns": [
+        "[the] %*classinfo% value [at] %string% (from|in) %node%",
+        "[the] %*classinfo% value of %valued%",
+        "[the] %*classinfo% values of %valueds%",
+        "%valued%'s %*classinfo% value",
+        "%valueds%'[s] %*classinfo% values"
       ]
     },
     {
@@ -15835,6 +15835,20 @@
       "examples": [
         "run {_function} with arguments 1 and true",
         "set {_result} to the result of {_function}"
+      ]
+    },
+    {
+      "id": "valued",
+      "name": "Any Valued Thing",
+      "since": "INSERT VERSION",
+      "description": [
+        "Something that has a value."
+      ],
+      "examples": [
+        "the text of {node}"
+      ],
+      "patterns": [
+        ""
       ]
     },
     {
