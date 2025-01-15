@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-1fab937",
+  "skriptVersion": "2.10.0-nightly-b57cec9",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -11448,7 +11448,7 @@
       "id": "ExprTypeOf",
       "name": "Type of",
       "since": [
-        "1.4, 2.5.2 (potion effect), 2.7 (block datas), INSERT VERSION (enchantment type)"
+        "1.4, 2.5.2 (potion effect), 2.7 (block datas), 2.10 (enchantment type)"
       ],
       "description": [
         "Type of a block, item, entity, inventory, potion effect or enchantment type.",
@@ -11548,7 +11548,7 @@
       "id": "ExprValue",
       "name": "Value",
       "since": [
-        "2.10 (Nodes), INSERT VERSION (Any)"
+        "2.10 (Nodes), 2.10 (Any)"
       ],
       "description": [
         "Returns the value of something that has a value, e.g. a node in a config.",
@@ -15841,7 +15841,7 @@
     {
       "id": "valued",
       "name": "Any Valued Thing",
-      "since": "INSERT VERSION",
+      "since": "2.10",
       "description": [
         "Something that has a value."
       ],
