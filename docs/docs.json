@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1",
+  "skriptVersion": "2.10.0",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -3575,8 +3575,7 @@
         "1.0, 2.10 (ignoring totem of undying)"
       ],
       "description": [
-        "Kills an entity.",
-        "Note: This effect does not set the entity's health to 0 (which causes issues), but damages the entity by 100 times its maximum health."
+        "Kills an entity."
       ],
       "examples": [
         "kill the player",
@@ -7923,7 +7922,7 @@
         "set {queue} to a new queue of \"hello\" and \"there\"\nbroadcast the last element of {queue} # removes 'there'\nadd \"world\" to {queue}\nbroadcast the first 2 elements of {queue} # removes 'hello', 'world'"
       ],
       "patterns": [
-        "[a] new queue [(of|with) %-objects%]"
+        "[a] [new] queue [(of|with) %-objects%]"
       ]
     },
     {
@@ -10542,28 +10541,6 @@
       ]
     },
     {
-      "id": "ExprNodeValue",
-      "name": "Value (Experimental)",
-      "since": [
-        "2.10"
-      ],
-      "description": [
-        "Returns the value of a node in a loaded config.",
-        "The value is automatically converted to the specified type (e.g. text, number) where possible."
-      ],
-      "examples": [
-        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
-        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
-      ],
-      "patterns": [
-        "[the] %*classinfo% value [at] %string% (from|in) %node%",
-        "[the] %*classinfo% value of %node%",
-        "[the] %*classinfo% values of %nodes%",
-        "%node%'s %*classinfo% value",
-        "%nodes%'[s] %*classinfo% values"
-      ]
-    },
-    {
       "id": "ExprOnlinePlayersCount",
       "name": "Online Player Count",
       "since": [
@@ -11471,22 +11448,23 @@
       "id": "ExprTypeOf",
       "name": "Type of",
       "since": [
-        "1.4, 2.5.2 (potion effect), 2.7 (block datas)"
+        "1.4, 2.5.2 (potion effect), 2.7 (block datas), 2.10 (enchantment type)"
       ],
       "description": [
-        "Type of a block, item, entity, inventory or potion effect.",
+        "Type of a block, item, entity, inventory, potion effect or enchantment type.",
         "Types of items, blocks and block datas are item types similar to them but have amounts",
         "of one, no display names and, on Minecraft 1.13 and newer versions, are undamaged.",
         "Types of entities and inventories are entity types and inventory types known to Skript.",
-        "Types of potion effects are potion effect types."
+        "Types of potion effects are potion effect types.",
+        "Types of enchantment types are enchantments."
       ],
       "examples": [
         "on rightclick on an entity:",
         "\tmessage \"This is a %type of clicked entity%!\""
       ],
       "patterns": [
-        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas%",
-        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas%'[s] type"
+        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%",
+        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%'[s] type"
       ]
     },
     {
@@ -11564,6 +11542,28 @@
       "patterns": [
         "[the] UUID of %offlineplayers/worlds/entities%",
         "%offlineplayers/worlds/entities%'[s] UUID"
+      ]
+    },
+    {
+      "id": "ExprValue",
+      "name": "Value",
+      "since": [
+        "2.10 (Nodes), 2.10 (Any)"
+      ],
+      "description": [
+        "Returns the value of something that has a value, e.g. a node in a config.",
+        "The value is automatically converted to the specified type (e.g. text, number) where possible."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
+        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
+      ],
+      "patterns": [
+        "[the] %*classinfo% value [at] %string% (from|in) %node%",
+        "[the] %*classinfo% value of %valued%",
+        "[the] %*classinfo% values of %valueds%",
+        "%valued%'s %*classinfo% value",
+        "%valueds%'[s] %*classinfo% values"
       ]
     },
     {
@@ -15836,6 +15836,20 @@
       "examples": [
         "run {_function} with arguments 1 and true",
         "set {_result} to the result of {_function}"
+      ]
+    },
+    {
+      "id": "valued",
+      "name": "Any Valued Thing",
+      "since": "2.10",
+      "description": [
+        "Something that has a value."
+      ],
+      "examples": [
+        "the text of {node}"
+      ],
+      "patterns": [
+        ""
       ]
     },
     {
