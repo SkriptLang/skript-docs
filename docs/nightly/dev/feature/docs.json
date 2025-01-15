@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-469927a",
+  "skriptVersion": "2.10.0-pre1-nightly-c9ae203",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -11448,22 +11448,23 @@
       "id": "ExprTypeOf",
       "name": "Type of",
       "since": [
-        "1.4, 2.5.2 (potion effect), 2.7 (block datas)"
+        "1.4, 2.5.2 (potion effect), 2.7 (block datas), INSERT VERSION (enchantment type)"
       ],
       "description": [
-        "Type of a block, item, entity, inventory or potion effect.",
+        "Type of a block, item, entity, inventory, potion effect or enchantment type.",
         "Types of items, blocks and block datas are item types similar to them but have amounts",
         "of one, no display names and, on Minecraft 1.13 and newer versions, are undamaged.",
         "Types of entities and inventories are entity types and inventory types known to Skript.",
-        "Types of potion effects are potion effect types."
+        "Types of potion effects are potion effect types.",
+        "Types of enchantment types are enchantments."
       ],
       "examples": [
         "on rightclick on an entity:",
         "\tmessage \"This is a %type of clicked entity%!\""
       ],
       "patterns": [
-        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas%",
-        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas%'[s] type"
+        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%",
+        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%'[s] type"
       ]
     },
     {
