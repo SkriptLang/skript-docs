@@ -13028,7 +13028,7 @@
         "on death:",
         "on death of player:",
         "on death of a wither or ender dragon:",
-        "\tbroadcast \"A %entity% has been slain in %world%!\""
+        "\tbroadcast \"A %victim% has been slain in %world%!\""
       ],
       "patterns": [
         "death [of %-entitydatas%]"
