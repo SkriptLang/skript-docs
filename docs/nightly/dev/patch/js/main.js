@@ -410,7 +410,7 @@ if (examples) {
 // Example Collapse </>
 
 // <> Cookies Accecpt
-if (!isCookiesAccepted) {
+if (isCookiesAccepted() === undefined) {
   document.body.insertAdjacentHTML('beforeend', `<div id="cookies-bar"> <p> We use cookies and local storage to enhance your browsing experience and store github related statistics. By clicking "Accept", you consent to our use of cookies and local storage. </p><div style="padding: 10px; white-space: nowrap;"> <button id="cookies-accept">Accept</button> <button id="cookies-deny">Deny</button> </div></div>`);
 }
 
@@ -423,6 +423,7 @@ if (cookiesAccept && cookiesDeny) {
     cookiesBar.remove();
   });
   cookiesDeny.addEventListener('click', () => {
+    setCookie('cookies-accepted', false, 99, true);
     cookiesBar.remove();
   });
 }
