@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-nightly-d14bc78",
+  "skriptVersion": "2.10.0-nightly-ff2efbe",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -7753,10 +7753,10 @@
         "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
       ],
       "patterns": [
-        "[the] name[s] of %offlineplayers/entities/inventories/nameds%",
-        "%offlineplayers/entities/inventories/nameds%'[s] name[s]",
-        "[the] (display|nick|chat|custom)[ ]name[s] of %offlineplayers/entities/inventories/nameds%",
-        "%offlineplayers/entities/inventories/nameds%'[s] (display|nick|chat|custom)[ ]name[s]",
+        "[the] name[s] of %offlineplayers/entities/nameds/inventories%",
+        "%offlineplayers/entities/nameds/inventories%'[s] name[s]",
+        "[the] (display|nick|chat|custom)[ ]name[s] of %offlineplayers/entities/nameds/inventories%",
+        "%offlineplayers/entities/nameds/inventories%'[s] (display|nick|chat|custom)[ ]name[s]",
         "[the] (player|tab)[ ]list name[s] of %players%",
         "%players%'[s] (player|tab)[ ]list name[s]"
       ]
