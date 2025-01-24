@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-pre1-nightly-cb4bdac",
+  "skriptVersion": "2.10.0-nightly-d14bc78",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -2976,7 +2976,7 @@
         "transfer player to server \"localhost\" on port 25566"
       ],
       "patterns": [
-        "(send|connect) %players% to [proxy|bungeecord] [server] %string%",
+        "(send|connect) %players% to [proxy|bungeecord] server %string%",
         "transfer %players% to server %string% [on port %-number%]"
       ]
     },
@@ -3575,8 +3575,7 @@
         "1.0, 2.10 (ignoring totem of undying)"
       ],
       "description": [
-        "Kills an entity.",
-        "Note: This effect does not set the entity's health to 0 (which causes issues), but damages the entity by 100 times its maximum health."
+        "Kills an entity."
       ],
       "examples": [
         "kill the player",
@@ -7923,7 +7922,7 @@
         "set {queue} to a new queue of \"hello\" and \"there\"\nbroadcast the last element of {queue} # removes 'there'\nadd \"world\" to {queue}\nbroadcast the first 2 elements of {queue} # removes 'hello', 'world'"
       ],
       "patterns": [
-        "[a] new queue [(of|with) %-objects%]"
+        "[a] [new] queue [(of|with) %-objects%]"
       ]
     },
     {
@@ -8250,7 +8249,7 @@
     },
     {
       "id": "ExprVectorFromYawAndPitch",
-      "name": "Vectors - Vector from Pitch and Yaw",
+      "name": "Vectors - Vector from Yaw and Pitch",
       "since": [
         "2.2-dev28"
       ],
@@ -8261,7 +8260,8 @@
         "set {_v} to vector from yaw 45 and pitch 45"
       ],
       "patterns": [
-        "[a] [new] vector (from|with) yaw %number% and pitch %number%"
+        "[a] [new] vector (from|with) yaw %number% and pitch %number%",
+        "[a] [new] vector (from|with) pitch %number% and yaw %number%"
       ]
     },
     {
@@ -10541,28 +10541,6 @@
       ]
     },
     {
-      "id": "ExprNodeValue",
-      "name": "Value (Experimental)",
-      "since": [
-        "2.10"
-      ],
-      "description": [
-        "Returns the value of a node in a loaded config.",
-        "The value is automatically converted to the specified type (e.g. text, number) where possible."
-      ],
-      "examples": [
-        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
-        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
-      ],
-      "patterns": [
-        "[the] %*classinfo% value [at] %string% (from|in) %node%",
-        "[the] %*classinfo% value of %node%",
-        "[the] %*classinfo% values of %nodes%",
-        "%node%'s %*classinfo% value",
-        "%nodes%'[s] %*classinfo% values"
-      ]
-    },
-    {
       "id": "ExprOnlinePlayersCount",
       "name": "Online Player Count",
       "since": [
@@ -11470,22 +11448,23 @@
       "id": "ExprTypeOf",
       "name": "Type of",
       "since": [
-        "1.4, 2.5.2 (potion effect), 2.7 (block datas)"
+        "1.4, 2.5.2 (potion effect), 2.7 (block datas), 2.10 (enchantment type)"
       ],
       "description": [
-        "Type of a block, item, entity, inventory or potion effect.",
+        "Type of a block, item, entity, inventory, potion effect or enchantment type.",
         "Types of items, blocks and block datas are item types similar to them but have amounts",
         "of one, no display names and, on Minecraft 1.13 and newer versions, are undamaged.",
         "Types of entities and inventories are entity types and inventory types known to Skript.",
-        "Types of potion effects are potion effect types."
+        "Types of potion effects are potion effect types.",
+        "Types of enchantment types are enchantments."
       ],
       "examples": [
         "on rightclick on an entity:",
         "\tmessage \"This is a %type of clicked entity%!\""
       ],
       "patterns": [
-        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas%",
-        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas%'[s] type"
+        "[the] type of %entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%",
+        "%entitydatas/itemtypes/inventories/potioneffects/blockdatas/enchantmenttypes%'[s] type"
       ]
     },
     {
@@ -11563,6 +11542,28 @@
       "patterns": [
         "[the] UUID of %offlineplayers/worlds/entities%",
         "%offlineplayers/worlds/entities%'[s] UUID"
+      ]
+    },
+    {
+      "id": "ExprValue",
+      "name": "Value",
+      "since": [
+        "2.10 (Nodes), 2.10 (Any)"
+      ],
+      "description": [
+        "Returns the value of something that has a value, e.g. a node in a config.",
+        "The value is automatically converted to the specified type (e.g. text, number) where possible."
+      ],
+      "examples": [
+        "set {_node} to node \"language\" in the skript config\nbroadcast the text value of {_node}",
+        "set {_node} to node \"update check interval\" in the skript config\n\nbroadcast text value of {_node}\n# text value of {_node} = \"12 hours\" (text)\n\nwait for {_node}'s timespan value\n# timespan value of {_node} = 12 hours (duration)"
+      ],
+      "patterns": [
+        "[the] %*classinfo% value [at] %string% (from|in) %node%",
+        "[the] %*classinfo% value of %valued%",
+        "[the] %*classinfo% values of %valueds%",
+        "%valued%'s %*classinfo% value",
+        "%valueds%'[s] %*classinfo% values"
       ]
     },
     {
@@ -15866,6 +15867,20 @@
       ]
     },
     {
+      "id": "valued",
+      "name": "Any Valued Thing",
+      "since": "2.10",
+      "description": [
+        "Something that has a value."
+      ],
+      "examples": [
+        "the text of {node}"
+      ],
+      "patterns": [
+        ""
+      ]
+    },
+    {
       "id": "containing",
       "name": "Anything with Contents",
       "since": "2.10",
@@ -15976,7 +15991,7 @@
         ""
       ],
       "patterns": [
-        "drop stack from slot, swap items with hotbar, swap cursor stack, pickup single item, pickup some, drop all from cursor, move to other inventory, drop cursor stack, pickup all, swap with hotbar, nothing, drop all from slot, swap cursor, drop cursor, pickup all items, drop slot item, place all, drop cursor item, drop slot stack, drop single item from slot, swap with cursor, place some, pickup one item, drop single item from cursor, collect items to cursor, unknown, clone stack, drop stack from cursor, drop one item from slot, drop one item from cursor, unsupported, do nothing, drop one from cursor, pickup half, drop items from slot, swap stack with cursor, place all items, collect to cursor, pickup some items, drop slot, drop items from cursor, hotbar move and readd, shift move, custom, pickup single, place one item, hotbar swap items, drop one from slot, place some items, place one, pickup half stack, instant move, hotbar swap"
+        "drop stack from slot, swap items with hotbar, swap cursor stack, pickup single item, pickup some, drop all from cursor, move to other inventory, pickup from bundle inventory actions, drop cursor stack, place all into bundle inventory actions, pickup all, swap with hotbar, pickup all into bundle inventory actions, nothing, drop all from slot, swap cursor, drop cursor, pickup all items, drop slot item, place from bundle inventory actions, place all, drop cursor item, drop slot stack, drop single item from slot, swap with cursor, place some, pickup one item, drop single item from cursor, collect items to cursor, unknown, clone stack, drop stack from cursor, drop one item from slot, drop one item from cursor, unsupported, do nothing, drop one from cursor, pickup half, drop items from slot, swap stack with cursor, place some into bundle inventory actions, place all items, collect to cursor, pickup some items, drop slot, drop items from cursor, hotbar move and readd, shift move, custom, pickup single, place one item, hotbar swap items, drop one from slot, place some items, place one, pickup half stack, instant move, hotbar swap, pickup some into bundle inventory actions"
       ]
     },
     {
@@ -16076,7 +16091,7 @@
         "remove invisibility from the victim"
       ],
       "patterns": [
-        "null, speed, slowness, haste, mining fatigue, strength, instant health, instant damage, jump boost, nausea, regeneration, resistance, fire resistance, water breathing, invisibility, blindness, night vision, hunger, weakness, poison, wither, health boost, absorption, saturation, glowing, levitation, luck, bad luck, slow falling, conduit power, dolphins grace, bad omen, hero of the village, darkness, trial omen, bad omen, wind charged, weaving, oozing, infested"
+        "absorption, bad luck, bad omen, blindness, conduit power, confusion, damage, damage resistance, darkness, dolphin's grace, dolphins grace, fast digging, fast mining, fire immunity, fire resistance, floating, glowing, haste, health, health boost, hero of the village, hunger, increase damage, increased damage, infested, instant damage, instant health, invisibility, jump, jump boost, levitation, luck, max health boost, maximum health boost, mining fatigue, nausea, night vision, oozing, poison, raid omen, reduce damage, reduced damage, regeneration, resistance, saturation, slow, slow digging, slow fall, slow falling, slow mining, slowness, speed, strength, swiftness, trial omen, unluck, water breathing, weakness, weaving, wind charged, wither, wither effect, wither potion effect"
       ]
     },
     {
@@ -16548,22 +16563,6 @@
       "patterns": [
         "\"region name\""
       ]
-    },
-    {
-      "id": "testgui",
-      "name": "Test -ui"
-    },
-    {
-      "id": "exemplus",
-      "name": "Test -i"
-    },
-    {
-      "id": "aardwolf",
-      "name": "Test -ves"
-    },
-    {
-      "id": "hoof",
-      "name": "Test -ves 2"
     },
     {
       "id": "timespan",
