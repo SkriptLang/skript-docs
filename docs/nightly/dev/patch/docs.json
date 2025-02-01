@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-nightly-e537836",
+  "skriptVersion": "2.10.0-nightly-c742acf",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -7785,6 +7785,26 @@
       ]
     },
     {
+      "id": "ExprNewBannerPattern",
+      "name": "Banner Pattern",
+      "since": [
+        "2.10"
+      ],
+      "description": [
+        "Creates a new banner pattern."
+      ],
+      "examples": [
+        "set {_pattern} to a creeper banner pattern colored red",
+        "add {_pattern} to banner patterns of {_banneritem}",
+        "remove {_pattern} from banner patterns of {_banneritem}",
+        "set the 1st banner pattern of block at location(0,0,0) to {_pattern}",
+        "clear the 1st banner pattern of block at location(0,0,0)"
+      ],
+      "patterns": [
+        "[a] %bannerpatterntype% colo[u]red %color%"
+      ]
+    },
+    {
       "id": "ExprNumbers",
       "name": "Numbers",
       "since": [
@@ -12689,29 +12709,6 @@
       ],
       "patterns": [
         "[the] [event-]<.+>"
-      ]
-    },
-    {
-      "id": "ExprNewBannerPattern",
-      "name": "Banner Pattern",
-      "since": [
-        "2.10"
-      ],
-      "description": [
-        "Creates a new banner pattern."
-      ],
-      "examples": [
-        "set {_pattern} to a creeper banner pattern colored red",
-        "add {_pattern} to banner patterns of {_banneritem}",
-        "remove {_pattern} from banner patterns of {_banneritem}",
-        "set the 1st banner pattern of block at location(0,0,0) to {_pattern}",
-        "clear the 1st banner pattern of block at location(0,0,0)",
-        "",
-        "set {_pattern} to a red mojang banner pattern"
-      ],
-      "patterns": [
-        "[a] %bannerpatterntype% colo[u]red %color%",
-        "[a] %*color% %bannerpatterntype%"
       ]
     },
     {
