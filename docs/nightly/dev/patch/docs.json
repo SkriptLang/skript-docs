@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0-nightly-54a5ba1",
+  "skriptVersion": "2.10.0-nightly-e537836",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6709,7 +6709,7 @@
         "\t\t#Changed by picking up xp orb"
       ],
       "patterns": [
-        "[the] [the] (experience|[e]xp) cooldown change (reason|cause|type)"
+        "[the] (experience|[e]xp) cooldown change (reason|cause|type)"
       ]
     },
     {
@@ -9451,8 +9451,8 @@
         "\tclear the experience pickup cooldown of player"
       ],
       "patterns": [
-        "[the] [the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
-        "%players%'[s] [the] (experience|[e]xp) [pickup|collection] cooldown"
+        "[the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
+        "%players%'[s] (experience|[e]xp) [pickup|collection] cooldown"
       ]
     },
     {
