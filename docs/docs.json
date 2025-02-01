@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.0",
+  "skriptVersion": "2.10.1",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -929,7 +929,7 @@
       ],
       "examples": [
         "on fishing line cast:",
-        "\tif lure enchantment is applied:",
+        "\tif lure enchantment bonus is applied:",
         "\t\tcancel event"
       ],
       "patterns": [
@@ -2976,7 +2976,8 @@
         "transfer player to server \"localhost\" on port 25566"
       ],
       "patterns": [
-        "(send|connect) %players% to [proxy|bungeecord] [server] %string%",
+        "connect %players% to [proxy|bungeecord] [server] %string%",
+        "send %players% to [proxy|bungeecord] server %string%",
         "transfer %players% to server %string% [on port %-number%]"
       ]
     },
@@ -6708,7 +6709,7 @@
         "\t\t#Changed by picking up xp orb"
       ],
       "patterns": [
-        "[the] [the] (experience|[e]xp) cooldown change (reason|cause|type)"
+        "[the] (experience|[e]xp) cooldown change (reason|cause|type)"
       ]
     },
     {
@@ -6831,7 +6832,10 @@
       ],
       "examples": [
         "on fish approach:",
-        "\tif fishing approach angle is bigger than 300.5 degrees or fishing approach angle is smaller than 59.5 degrees:",
+        "\tif any:",
+        "\t\tmaximum fishing approach angle is bigger than 300.5 degrees",
+        "\t\tmin fishing approach angle is smaller than 59.5 degrees",
+        "\tthen:",
         "\t\tcancel event"
       ],
       "patterns": [
@@ -6904,8 +6908,8 @@
       ],
       "examples": [
         "on fishing line cast:",
-        "\tset min waiting time to 10 seconds",
-        "\tset max waiting time to 20 seconds"
+        "\tset min fish waiting time to 10 seconds",
+        "\tset max fishing waiting time to 20 seconds"
       ],
       "patterns": [
         "(min:min[imum]|max[imum]) fish[ing] wait[ing] time"
@@ -7753,10 +7757,10 @@
         "set the name of the player's tool to \"Legendary Sword of Awesomeness\""
       ],
       "patterns": [
-        "[the] name[s] of %offlineplayers/entities/inventories/nameds%",
-        "%offlineplayers/entities/inventories/nameds%'[s] name[s]",
-        "[the] (display|nick|chat|custom)[ ]name[s] of %offlineplayers/entities/inventories/nameds%",
-        "%offlineplayers/entities/inventories/nameds%'[s] (display|nick|chat|custom)[ ]name[s]",
+        "[the] name[s] of %offlineplayers/entities/nameds/inventories%",
+        "%offlineplayers/entities/nameds/inventories%'[s] name[s]",
+        "[the] (display|nick|chat|custom)[ ]name[s] of %offlineplayers/entities/nameds/inventories%",
+        "%offlineplayers/entities/nameds/inventories%'[s] (display|nick|chat|custom)[ ]name[s]",
         "[the] (player|tab)[ ]list name[s] of %players%",
         "%players%'[s] (player|tab)[ ]list name[s]"
       ]
@@ -7781,6 +7785,26 @@
       "patterns": [
         "[the] nearest %*entitydatas% [[relative] to %entity/location%]",
         "[the] %*entitydatas% nearest [to %entity/location%]"
+      ]
+    },
+    {
+      "id": "ExprNewBannerPattern",
+      "name": "Banner Pattern",
+      "since": [
+        "2.10"
+      ],
+      "description": [
+        "Creates a new banner pattern."
+      ],
+      "examples": [
+        "set {_pattern} to a creeper banner pattern colored red",
+        "add {_pattern} to banner patterns of {_banneritem}",
+        "remove {_pattern} from banner patterns of {_banneritem}",
+        "set the 1st banner pattern of block at location(0,0,0) to {_pattern}",
+        "clear the 1st banner pattern of block at location(0,0,0)"
+      ],
+      "patterns": [
+        "[a] %bannerpatterntype% colo[u]red %color%"
       ]
     },
     {
@@ -9450,8 +9474,8 @@
         "\tclear the experience pickup cooldown of player"
       ],
       "patterns": [
-        "[the] [the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
-        "%players%'[s] [the] (experience|[e]xp) [pickup|collection] cooldown"
+        "[the] (experience|[e]xp) [pickup|collection] cooldown of %players%",
+        "%players%'[s] (experience|[e]xp) [pickup|collection] cooldown"
       ]
     },
     {
@@ -12688,29 +12712,6 @@
       ],
       "patterns": [
         "[the] [event-]<.+>"
-      ]
-    },
-    {
-      "id": "ExprNewBannerPattern",
-      "name": "Banner Pattern",
-      "since": [
-        "2.10"
-      ],
-      "description": [
-        "Creates a new banner pattern."
-      ],
-      "examples": [
-        "set {_pattern} to a creeper banner pattern colored red",
-        "add {_pattern} to banner patterns of {_banneritem}",
-        "remove {_pattern} from banner patterns of {_banneritem}",
-        "set the 1st banner pattern of block at location(0,0,0) to {_pattern}",
-        "clear the 1st banner pattern of block at location(0,0,0)",
-        "",
-        "set {_pattern} to a red mojang banner pattern"
-      ],
-      "patterns": [
-        "[a] %bannerpatterntype% colo[u]red %color%",
-        "[a] %*color% %bannerpatterntype%"
       ]
     },
     {
