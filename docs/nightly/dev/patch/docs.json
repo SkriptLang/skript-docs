@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.1-nightly-e336707",
+  "skriptVersion": "2.10.1-nightly-f32613d",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -12196,7 +12196,7 @@
         "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>."
       ],
       "examples": [
-        "set text alignment of the last spawned text display to left"
+        "set text alignment of the last spawned text display to left aligned"
       ],
       "patterns": [
         "[the] text alignment[s] [of %displays%]",
