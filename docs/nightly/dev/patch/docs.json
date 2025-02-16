@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.1-nightly-90822ec",
+  "skriptVersion": "2.10.1-nightly-e336707",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -9143,7 +9143,8 @@
         "2.0"
       ],
       "description": [
-        "The location a player's compass is pointing at."
+        "The location a player's compass is pointing at.",
+        "As of Minecraft 1.21.4, the compass is controlled by the resource pack and by default will not point to this compass target when used outside of the overworld dimension."
       ],
       "examples": [
         "# make all player's compasses target a player stored in {compass::target::%player%}",
