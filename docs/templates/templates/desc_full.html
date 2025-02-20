@@ -54,6 +54,12 @@
         <td class="item-table-label">Return Type:</td>
         <td><a href="classes.html#${element.return-type-linkcheck}">${element.return-type}</a></td>
       </tr>
+
+      ${end} ${if event-values}
+      <tr class="item-details">
+        <td class="item-table-label">Event values:</td>
+        <td>${element.event-values}</td>
+      </tr>
       ${end}
     </table>
 
