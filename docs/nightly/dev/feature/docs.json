@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.1-nightly-0bc7775",
+  "skriptVersion": "2.10.1-nightly-9af7c9e",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -6002,7 +6002,7 @@
       "id": "ExprRandomUUID",
       "name": "Random UUID",
       "since": [
-        "2.5.1"
+        "2.5.1, INSERT VERSION (return UUIDs)"
       ],
       "description": [
         "Returns a random UUID."
@@ -9667,6 +9667,28 @@
       ]
     },
     {
+      "id": "ExprFromUUID",
+      "name": "Entity/Player/World from UUID",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "description": [
+        "Get an entity, player, offline player or world from a UUID.",
+        "Unloaded entities or players that are offline (when using 'player from %uuid%') will return nothing."
+      ],
+      "examples": [
+        "set {_player} to player from \"a0789aeb-7b46-43f6-86fb-cb671fed5775\" parsed as uuid",
+        "set {_offline player} to offline player from {_some uuid}",
+        "set {_entity} to entity from {_some uuid}",
+        "set {_world} to world from {_some uuid}"
+      ],
+      "patterns": [
+        "[:offline[ ]]player[s] from %uuids%",
+        "entit(y|ies) from %uuids%",
+        "world[s] from %uuids%"
+      ]
+    },
+    {
       "id": "ExprGameMode",
       "name": "Game Mode",
       "since": [
@@ -11546,12 +11568,10 @@
       "id": "ExprUUID",
       "name": "UUID",
       "since": [
-        "2.1.2, 2.2 (offline players' UUIDs), 2.2-dev24 (other entities' UUIDs)"
+        "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)"
       ],
       "description": [
-        "The UUID of a player, entity or world.",
-        "In the future there will be an option to use a player's UUID instead of the name in variable names (i.e. when %player% is used), but for now this can be used.",
-        "<em>Please note that this expression does not work for offline players if you are under 1.8!</em>"
+        "The UUID of a player, entity or world."
       ],
       "examples": [
         "# prevents people from joining the server if they use the name of a player",
@@ -11561,7 +11581,12 @@
         "\t\t{uuid::%name of player%} is not uuid of player",
         "\t\tkick player due to \"Someone with your name has played on this server before\"",
         "\telse:",
-        "\t\tset {uuid::%name of player%} to uuid of player"
+        "\t\tset {uuid::%name of player%} to uuid of player",
+        "",
+        "command /what-is-my-uuid:",
+        "\ttrigger:",
+        "\t\tset {_uuid} to uuid of player",
+        "\t\tsend \"Your UUID is '%string within {_uuid}%'\""
       ],
       "patterns": [
         "[the] UUID of %offlineplayers/worlds/entities%",
@@ -15605,6 +15630,15 @@
       ]
     },
     {
+      "id": "uuid",
+      "name": "UUID",
+      "since": "INSERT VERSION",
+      "description": [
+        "UUIDs are unique identifiers that ensure things can be reliably distinguished from each other. They are generated in a way that makes it practically impossible for duplicates to occur.",
+        "Read more about UUIDs and how they are used in Minecraft in <a href='https://minecraft.wiki/w/UUID'>the wiki entry about UUIDs</a>."
+      ]
+    },
+    {
       "id": "weathertype",
       "name": "Weather Type",
       "since": "1.0",
@@ -17253,6 +17287,21 @@
       "return-type": "",
       "patterns": [
         "floor(n: number)"
+      ]
+    },
+    {
+      "id": "uuid",
+      "name": "uuid",
+      "since": "INSERT VERSION",
+      "description": [
+        "Returns a UUID from the given string. The string must be in the format of a UUID."
+      ],
+      "examples": [
+        "uuid(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")"
+      ],
+      "return-type": "UUID",
+      "patterns": [
+        "uuid(uuid: string)"
       ]
     },
     {
