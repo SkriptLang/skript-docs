@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.1-nightly-70b3ce6",
+  "skriptVersion": "2.10.1-nightly-f0ff9d2",
   "conditions": [
     {
       "id": "CondAlphanumeric",
@@ -16423,6 +16423,14 @@
       ],
       "patterns": [
         "passengers, xyz velocity, z velocity, yaw velocity, inventory, pitch velocity, vehicle, opened inventory, open inventory, x velocity, passenger, pitch and yaw velocity, yaw and pitch velocity, directional velocity, y velocity"
+      ]
+    },
+    {
+      "id": "vehicle",
+      "name": "Vehicle",
+      "since": "INSERT VERSION",
+      "description": [
+        "Represents a vehicle."
       ]
     },
     {
