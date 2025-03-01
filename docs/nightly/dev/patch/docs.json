@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.10.1-nightly-12c9f07",
+  "skriptVersion" : "2.10.1-nightly-5f737e1",
 
   "classes" : [
     {
@@ -7142,7 +7142,7 @@ the input expression can be used to refer to the current item being sorted.
     "pattern_end"
   ],
   "since" : "1.0, 2.5.1 (within/cuboid/chunk)",
-  "description" : "Blocks relative to other blocks or between other blocks. Can be used to get blocks relative to other blocks or for looping.<br>Blocks from/to and between will return a straight line whereas blocks within will return a cuboid.",
+  "description" : "Blocks relative to other blocks or between other blocks.<br>Can be used to get blocks relative to other blocks or for looping.<br>Blocks from/to and between will return a straight line whereas blocks within will return a cuboid.",
   "examples" : "loop blocks above the player:<br>loop blocks between the block below the player and the targeted block:<br>set the blocks below the player, the victim and the targeted block to air<br>set all blocks within {loc1} and {loc2} to stone<br>set all blocks within chunk at player to air"
 },
 {
