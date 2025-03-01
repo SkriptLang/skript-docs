@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.10.2-nightly-0fc4c8c",
+  "skriptVersion" : "2.10.2-nightly-518d43a",
 
   "classes" : [
     {
@@ -1053,6 +1053,18 @@
   "since" : "2.0",
   "description" : "Represents a type, e.g. number, object, item type, location, block, world, entity type, etc.<br>This is mostly used for expressions like 'event-&lt;type&gt;', '&lt;type&gt;-argument', 'loop-&lt;type&gt;', etc., e.g. event-world, number-argument and loop-player.",
   "examples" : "{variable} is a number # check whether the variable contains a number, e.g. -1 or 5.5<br>{variable} is a type # check whether the variable contains a type, e.g. number or player<br>{variable} is an object # will always succeed if the variable is set as everything is an object, even types.<br>disable PvP in the event-world<br>kill the loop-entity"
+},
+{
+  "id" : "uuid",
+  "name" : "UUID",
+  "patterns" : [
+    "Missing patterns.",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "UUIDs are unique identifiers that ensure things can be reliably distinguished from each other. They are generated in a way that makes it practically impossible for duplicates to occur.<br>Read more about UUIDs and how they are used in Minecraft in <a href='https://minecraft.wiki/w/UUID'>the wiki entry about UUIDs</a>.",
+  "examples" : "Missing examples."
 },
 {
   "id" : "unleashreason",
@@ -8073,6 +8085,20 @@ set {list::*} to dequeued {queue}"
   "examples" : "play sound (hurt sound of player) at player<br>set {_sounds::*} to death sounds of (all mobs in radius 10 of player)"
 },
 {
+  "id" : "ExprFromUUID",
+  "name" : "Entity/Player/World from UUID",
+  "patterns" : [
+    "[offline[ ]]player[s] from %<a href='./classes.html#uuid'>uuids</a>%",
+"entit(y|ies) from %<a href='./classes.html#uuid'>uuids</a>%",
+"world[s] from %<a href='./classes.html#uuid'>uuids</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Get an entity, player, offline player or world from a UUID.<br>Unloaded entities or players that are offline (when using 'player from %uuid%') will return nothing.",
+  "examples" : "set {_player} to player from \"a0789aeb-7b46-43f6-86fb-cb671fed5775\" parsed as uuid<br>set {_offline player} to offline player from {_some uuid}<br>set {_entity} to entity from {_some uuid}<br>set {_world} to world from {_some uuid}"
+},
+{
   "id" : "ExprExhaustion",
   "name" : "Exhaustion",
   "patterns" : [
@@ -10238,7 +10264,7 @@ broadcast the first element of {queue} # hello
 
     "pattern_end"
   ],
-  "since" : "2.5.1",
+  "since" : "2.5.1, INSERT VERSION (return UUIDs)",
   "description" : "Returns a random UUID.",
   "examples" : "set {_uuid} to random uuid"
 },
@@ -11107,9 +11133,9 @@ broadcast the first element of {queue} # hello
 
     "pattern_end"
   ],
-  "since" : "2.1.2, 2.2 (offline players' UUIDs), 2.2-dev24 (other entities' UUIDs)",
-  "description" : "The UUID of a player, entity or world.<br>In the future there will be an option to use a player's UUID instead of the name in variable names (i.e. when %player% is used), but for now this can be used.<br><em>Please note that this expression does not work for offline players if you are under 1.8!</em>",
-  "examples" : "# prevents people from joining the server if they use the name of a player<br># who has played on this server at least once since this script has been added<br>on login:<br>    if {uuid::%name of player%} exists:<br>        {uuid::%name of player%} is not uuid of player<br>        kick player due to \"Someone with your name has played on this server before\"<br>    else:<br>        set {uuid::%name of player%} to uuid of player"
+  "since" : "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)",
+  "description" : "The UUID of a player, entity or world.",
+  "examples" : "# prevents people from joining the server if they use the name of a player<br># who has played on this server at least once since this script has been added<br>on login:<br>    if {uuid::%name of player%} exists:<br>        {uuid::%name of player%} is not uuid of player<br>        kick player due to \"Someone with your name has played on this server before\"<br>    else:<br>        set {uuid::%name of player%} to uuid of player<br><br>command /what-is-my-uuid:<br>    trigger:<br>        set {_uuid} to uuid of player<br>        send \"Your UUID is '%string within {_uuid}%'\""
 },
 {
   "id" : "ExprUnbreakable",
@@ -12091,6 +12117,18 @@ wait for {_node}'s timespan value
   "since" : "2.2",
   "description" : "The tangent function. This is basically <code><a href='#sin'>sin</a>(arg)/<a href='#cos'>cos</a>(arg)</code>. Uses degrees, not radians.",
   "examples" : "tan(0) = 0<br>tan(45) = 1<br>tan(89.99) = 5729.5779"
+},
+{
+  "id" : "uuid",
+  "name" : "uuid",
+  "patterns" : [
+    "uuid(uuid: string)",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Returns a UUID from the given string. The string must be in the format of a UUID.",
+  "examples" : "uuid(\"069a79f4-44e9-4726-a5be-fca90e38aaf5\")"
 },
 {
   "id" : "vector",
