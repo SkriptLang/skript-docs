@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-0583201",
+  "skriptVersion": "2.10.2-nightly-0904b55",
   "version": {
     "major": 1,
     "minor": 0
@@ -2281,6 +2281,28 @@
       "requirements": [
         "Paper"
       ],
+      "keywords": null
+    },
+    {
+      "id": "CondIsPlayingDead",
+      "name": "Is Playing Dead",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an axolotl is playing dead."
+      ],
+      "patterns": [
+        "%living entities% (is|are) playing dead",
+        "%living entities% (isn't|is not|aren't|are not) playing dead"
+      ],
+      "examples": [
+        "if last spawned axolotl is playing dead:",
+        "\tmake last spawned axolotl stop playing dead"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -4940,6 +4962,29 @@
       "requirements": [
         "Paper 1.12.2 or newer"
       ],
+      "keywords": null
+    },
+    {
+      "id": "EffPlayingDead",
+      "name": "Play Dead",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an axolotl start or stop playing dead."
+      ],
+      "patterns": [
+        "make %living entities% (start playing|play) dead",
+        "force %living entities% to (start playing|play) dead",
+        "make %living entities% (stop playing|not play) dead",
+        "force %living entities% to (stop playing|not play) dead"
+      ],
+      "examples": [
+        "make last spawned axolotl play dead"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -16260,12 +16305,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17305,12 +17350,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -17352,12 +17397,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "string",
@@ -17487,12 +17532,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -17609,12 +17654,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "itemstack",
@@ -17699,12 +17744,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -17774,12 +17819,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17875,12 +17920,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18010,12 +18055,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18261,12 +18306,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -19641,12 +19686,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19661,12 +19706,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -19845,12 +19890,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20322,12 +20367,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21306,12 +21351,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21411,12 +21456,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -21457,12 +21502,12 @@
           "name": "past item"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
