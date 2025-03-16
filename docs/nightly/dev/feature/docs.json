@@ -1,5 +1,5 @@
 {
-  "skriptVersion" : "2.10.2-nightly-aea3176",
+  "skriptVersion" : "2.10.2-nightly-4aecded",
 
   "classes" : [
     {
@@ -931,7 +931,7 @@
   "id" : "spawnreason",
   "name" : "Spawn Reason",
   "patterns" : [
-    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
+    "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, bucket spawn reasons, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification",
 
     "pattern_end"
   ],
@@ -9081,19 +9081,6 @@ set {list::*} to dequeued {queue}"
   "examples" : "send \"%last attacker of event-entity%\""
 },
 {
-  "id" : "ExprLastColor",
-  "name" : "Last Color",
-  "patterns" : [
-    "[the] last color[s] of %<a href='./classes.html#string'>texts</a>%",
-"%<a href='./classes.html#string'>texts</a>%'[s] last color[s]",
-
-    "pattern_end"
-  ],
-  "since" : "2.6",
-  "description" : "The colors used at the end of a string. The colors of the returned string will be formatted with their symbols.",
-  "examples" : "set {_color} to the last colors of \"&amp;lt;red&amp;gt;hey&amp;lt;blue&amp;gt;yo\""
-},
-{
   "id" : "ExprLastDamage",
   "name" : "Last Damage",
   "patterns" : [
@@ -10787,6 +10774,20 @@ broadcast the first element of {queue} # hello
   "since" : "<i>unknown</i> (before 2.1)",
   "description" : "A player's walking or flying speed. Both can be changed, but values must be between -1 and 1 (excessive values will be changed to -1 or 1 respectively). Negative values reverse directions.<br>Please note that changing a player's speed will change their FOV just like potions do.",
   "examples" : "set the player's walk speed to 1<br>increase the argument's fly speed by 0.1"
+},
+{
+  "id" : "ExprStringColor",
+  "name" : "String Colors",
+  "patterns" : [
+    "[all [of the|the]|the] string colo[u]r[s] [code[s]] of %<a href='./classes.html#string'>texts</a>%",
+"[the] first string colo[u]r[s] [code[s]] of %<a href='./classes.html#string'>texts</a>%",
+"[the] last string colo[u]r[s] [code[s]] of %<a href='./classes.html#string'>texts</a>%",
+
+    "pattern_end"
+  ],
+  "since" : "INSERT VERSION",
+  "description" : "Retrieve the first, the last, or all of the color objects or color codes of a string.<br>The retrieved color codes of the string will be formatted with the color symbol.",
+  "examples" : "set {_colors::*} to the string colors of \"&amp;lt;red&amp;gt;hey&amp;lt;blue&amp;gt;yo\"<br><br>set {_color} to the first string color code of \"&amp;amp;aGoodbye!\"<br>send \"%{_color}%Howdy!\" to all players"
 },
 {
   "id" : "ExprSubstring",
