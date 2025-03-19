@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-094a23b",
+  "skriptVersion": "2.10.2-nightly-58f7ef5",
   "version": {
     "major": 1,
     "minor": 0
@@ -13624,36 +13624,6 @@
       "keywords": null
     },
     {
-      "id": "ExprPlayerViewDistance",
-      "name": "View Distance",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "The view distance of a player as set by the server. Can be changed.",
-        "NOTE: This is the view distance sent by the server to the player.",
-        "This has nothing to do with client side view distance settings",
-        "NOTE: This may not work on some versions (such as MC 1.14.x).",
-        "The return value in this case will be the view distance set in system.properties."
-      ],
-      "patterns": [
-        "[the] view distance[s] of %players%",
-        "%players%'[s] view distance[s]"
-      ],
-      "examples": [
-        "set view distance of player to 10",
-        "set {_view} to view distance of player",
-        "reset view distance of all players",
-        "add 2 to view distance of player"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper"
-      ],
-      "keywords": null
-    },
-    {
       "id": "ExprPlayerWeather",
       "name": "Player Weather",
       "since": [
@@ -14061,6 +14031,36 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSimulationDistance",
+      "name": "Simulation Distance",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The simulation distance of a world or a player.",
+        "Simulation distance is the minimum distance in chunks for entities to tick.",
+        "Simulation distance is capped to the current view distance of the world or player.",
+        "The view distance is capped between 2 and 32 chunks.",
+        "Paper is required to change the simulation distance for both worlds and players."
+      ],
+      "patterns": [
+        "[the] simulation distance[s] of %worlds/players%",
+        "%worlds/players%'[s] simulation distance[s]"
+      ],
+      "examples": [
+        "set simulation distance of player to 10",
+        "add 50 to the simulation distance of world \"world\"",
+        "reset the simulation distance of player",
+        "clear the simulation distance of world \"world\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (change for players), Paper 1.21+ (change for worlds)"
+      ],
       "keywords": null
     },
     {
@@ -14811,6 +14811,35 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprViewDistance",
+      "name": "View Distance",
+      "since": [
+        "2.4, INSERT VERSION (worlds)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The view distance of a world or a player.",
+        "The view distance of a player is the distance in chunks sent by the server to the player. This has nothing to do with client side view distance settings.",
+        "View distance is capped between 2 to 32 chunks.",
+        "Paper is required to change the view distance for both worlds and players."
+      ],
+      "patterns": [
+        "[the] view distance[s] of %players/worlds%",
+        "%players/worlds%'[s] view distance[s]"
+      ],
+      "examples": [
+        "set view distance of player to 10",
+        "add 50 to the view distance of world \"world\"",
+        "reset the view distance of player",
+        "clear the view distance of world \"world\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (change for players), Paper 1.21+ (change for worlds)"
+      ],
       "keywords": null
     },
     {
@@ -16537,12 +16566,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -16572,12 +16601,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17799,12 +17828,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -17874,12 +17903,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17975,12 +18004,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18110,12 +18139,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19741,12 +19770,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19797,12 +19826,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -19945,12 +19974,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20422,12 +20451,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21406,12 +21435,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21511,12 +21540,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -21823,12 +21852,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
