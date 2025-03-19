@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-df37d87",
+  "skriptVersion": "2.10.2-nightly-0465723",
   "version": {
     "major": 1,
     "minor": 0
@@ -8442,7 +8442,7 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[all [[of] the]|the] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags"
+        "[all [[of] the]|the] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags"
       ],
       "examples": [
         "broadcast minecraft tags",
@@ -10611,7 +10611,7 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[minecraft|datapack|paper|custom] [item|block|entity [type]] tag %texts%"
+        "[minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tag %texts%"
       ],
       "examples": [
         "minecraft tag \"dirt\" # minecraft:dirt",
@@ -15586,8 +15586,8 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[all [[of] the]|the] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags of %item type/entity/entity type%",
-        "%item type/entity/entity type%'[s] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags"
+        "[all [[of] the]|the] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags of %item type/entity/entity type%",
+        "%item type/entity/entity type%'[s] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags"
       ],
       "examples": [
         "broadcast minecraft tags of dirt",
@@ -16295,12 +16295,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -16433,12 +16433,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -16926,12 +16926,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -17616,12 +17616,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -17738,12 +17738,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "itemstack",
@@ -17903,12 +17903,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18004,12 +18004,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18139,12 +18139,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18587,12 +18587,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18704,12 +18704,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19770,12 +19770,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21435,12 +21435,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21582,20 +21582,20 @@
           "name": "world"
         },
         {
+          "id": "itemstack",
+          "name": "past item"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "item"
         },
         {
           "id": "clicktype",
           "name": "click type"
-        },
-        {
-          "id": "itemstack",
-          "name": "item"
         }
       ],
       "keywords": null
@@ -22315,12 +22315,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
