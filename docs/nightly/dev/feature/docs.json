@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-0465723",
+  "skriptVersion": "2.10.2-nightly-588885e",
   "version": {
     "major": 1,
     "minor": 0
@@ -16761,12 +16761,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -16926,12 +16926,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -17434,12 +17434,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -17481,16 +17481,16 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "itemstack",
           "name": "item"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -17828,12 +17828,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -17903,12 +17903,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18004,12 +18004,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18139,12 +18139,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18704,12 +18704,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19770,12 +19770,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19974,12 +19974,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20451,12 +20451,12 @@
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -21435,12 +21435,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -21540,12 +21540,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -21590,12 +21590,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
@@ -21856,12 +21856,12 @@
           "name": "past timespan"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -24299,6 +24299,30 @@
       ]
     },
     {
+      "id": "factorial",
+      "name": "factorial",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the factorial of a number.",
+        "Getting the factorial of any number above 21 will return an approximation, not an exact value.",
+        "Any number after 170 will always return Infinity.",
+        "Should not be used to calculate permutations or combinations manually."
+      ],
+      "examples": [
+        "factorial(0) = 1",
+        "factorial(3) = 3*2*1 = 6",
+        "factorial(5) = 5*4*3*2*1 = 120",
+        "factorial(171) = Infinity"
+      ],
+      "patterns": [
+        "factorial(number: number)"
+      ]
+    },
+    {
       "id": "concat",
       "name": "concat",
       "since": "2.9.0",
@@ -24396,6 +24420,31 @@
       ]
     },
     {
+      "id": "permutations",
+      "name": "permutations",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the number of possible ordered arrangements from 1 to 'options' with each arrangement having a size equal to 'selected'",
+        "For example, permutations with 3 options and an arrangement size of 1, returns 3: (1), (2), (3)",
+        "Permutations with 3 options and an arrangement size of 2 returns 6: (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)",
+        "Note that the bigger the 'options' and lower the 'selected' may result in approximations or even infinity values.",
+        "Permutations differ from combinations in that permutations account for the arrangement of elements within the set, whereas combinations focus on unique sets and ignore the order of elements.",
+        "Example: (1, 2) and (2, 1) are two distinct permutations because the positions of '1' and '2' are different, but they represent a single combination since order doesn't matter in combinations."
+      ],
+      "examples": [
+        "permutations(10, 2) = 90",
+        "permutations(10, 4) = 5040",
+        "permutations(size of {some list::*}, 2)"
+      ],
+      "patterns": [
+        "permutations(options: number, selected: number)"
+      ]
+    },
+    {
       "id": "mod",
       "name": "mod",
       "since": "2.2",
@@ -24476,6 +24525,31 @@
       ],
       "patterns": [
         "location(x: number, y: number, z: number, world: world = event-world, yaw: number = 0, pitch: number = 0)"
+      ]
+    },
+    {
+      "id": "combinations",
+      "name": "combinations",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the number of possible sets from 1 to 'options' with each set having a size equal to 'selected'",
+        "For example, a combination with 3 options and a set size of 1, returns 3: (1), (2), (3)",
+        "A combination of 3 options with a set size of 2 returns 3: (1, 2), (1, 3), (2, 3)",
+        "Note that the bigger the 'options' and lower the 'selected' may result in approximations or even infinity values.",
+        "Combinations differ from permutations in that combinations focus on unique sets, ignoring the order of elements, whereas permutations account for the arrangement of elements within the set.",
+        "Example: (1, 2) and (2, 1) represent a single combination since order doesn't matter in combinations, but they are two distinct permutations because permutations consider the order."
+      ],
+      "examples": [
+        "combinations(10, 8) = 45",
+        "combinations(5, 3) = 10",
+        "combinations(size of {some list::*}, 2)"
+      ],
+      "patterns": [
+        "combinations(options: number, selected: number)"
       ]
     },
     {
@@ -24614,6 +24688,47 @@
       ],
       "patterns": [
         "sum(ns: numbers)"
+      ]
+    },
+    {
+      "id": "root",
+      "name": "root",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Calculates the <i>n</i>th root of a number."
+      ],
+      "examples": [
+        "root(2, 4) = 2 # same as sqrt(4)",
+        "root(4, 16) = 2",
+        "root(-4, 16) = 0.5 # same as 16^(-1/4)"
+      ],
+      "patterns": [
+        "root(n: number, number: number)"
+      ]
+    },
+    {
+      "id": "median",
+      "name": "median",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the middle value of a sorted list of numbers. If the list has an even number of values, the median is the average of the two middle numbers.",
+        "You cannot get the median of a set of numbers that includes NaN."
+      ],
+      "examples": [
+        "median(1, 2, 3, 4, 5) = 3",
+        "median(1, 2, 3, 4, 5, 6) = 3.5",
+        "median(0, 123, 456, 789) = 289.5"
+      ],
+      "patterns": [
+        "median(numbers: numbers)"
       ]
     },
     {
@@ -24839,6 +24954,27 @@
       ],
       "patterns": [
         "max(ns: numbers)"
+      ]
+    },
+    {
+      "id": "mean",
+      "name": "mean",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the mean (average) of a list of numbers.",
+        "You cannot get the mean of a set of numbers that includes infinity or NaN."
+      ],
+      "examples": [
+        "mean(1, 2, 3) = 2",
+        "mean(0, 5, 10) = 5",
+        "mean(13, 97, 376, 709) = 298.75"
+      ],
+      "patterns": [
+        "mean(numbers: numbers)"
       ]
     },
     {
