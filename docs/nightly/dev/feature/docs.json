@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-1c2846f",
+  "skriptVersion": "2.10.2-nightly-c0f6ba4",
   "version": {
     "major": 1,
     "minor": 0
@@ -1498,6 +1498,29 @@
       "keywords": null
     },
     {
+      "id": "CondEntityUnload",
+      "name": "Can Despawn",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Check if an entity can despawn when the chunk they're located at is unloaded.",
+        "More information on what and when entities despawn can be found at <a href=\"https://minecraft.wiki/w/Mob_spawning#Despawning\">reference</a>."
+      ],
+      "patterns": [
+        "%living entities% can despawn (on chunk unload|when far away)",
+        "%living entities% (can't|cannot|can not) despawn (on chunk unload|when far away)"
+      ],
+      "examples": [
+        "if last spawned entity can despawn on chunk unload:",
+        "\tmake last spawned entity not despawn on chunk unload"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondGlowingText",
       "name": "Has Glowing Text",
       "since": [
@@ -2331,6 +2354,34 @@
       "requirements": [
         "Paper"
       ],
+      "keywords": null
+    },
+    {
+      "id": "CondIsPersistent",
+      "name": "Is Persistent",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether entities, players, or leaves are persistent.",
+        "Persistence of entities is whether they are retained through server restarts.",
+        "Persistence of leaves is whether they should decay when not connected to a log block within 6 meters.",
+        "Persistence of players is if the player's playerdata should be saved when they leave the server. Players' persistence is reset back to 'true' when they join the server.",
+        "Passengers inherit the persistence of their vehicle, meaning a persistent zombie put on a non-persistent chicken will become non-persistent. This does not apply to players.",
+        "By default, all entities are persistent."
+      ],
+      "patterns": [
+        "%entities/blocks% (is|are) persistent",
+        "%entities/blocks% (isn't|is not|aren't|are not) persistent"
+      ],
+      "examples": [
+        "on spawn:",
+        "\tif event-entity is persistent:",
+        "\t\tmake event-entity not persistent"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -4079,6 +4130,32 @@
       "keywords": null
     },
     {
+      "id": "EffEntityUnload",
+      "name": "Entity Despawn",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a living entity despawn when the chunk they're located at is unloaded.",
+        "Setting a custom name on a living entity automatically makes it not despawnable.",
+        "More information on what and when entities despawn can be found at <a href=\"https://minecraft.wiki/w/Mob_spawning#Despawning\">reference</a>."
+      ],
+      "patterns": [
+        "make %living entities% despawn[able] (on chunk unload|when far away)",
+        "force %living entities% to despawn (on chunk unload|when far away)",
+        "prevent %living entities% from despawning [on chunk unload|when far away]"
+      ],
+      "examples": [
+        "make all entities not despawnable on chunk unload",
+        "spawn zombie at location(0, 0, 0):",
+        "\tforce event-entity to not despawn when far away"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffEntityVisibility",
       "name": "Entity Visibility",
       "since": [
@@ -4983,6 +5060,40 @@
       "requirements": [
         "Paper"
       ],
+      "keywords": null
+    },
+    {
+      "id": "EffPersistent",
+      "name": "Persistent",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make entities, players, or leaves be persistent.",
+        "Persistence of entities is whether they are retained through server restarts.",
+        "Persistence of leaves is whether they should decay when not connected to a log block within 6 meters.",
+        "Persistence of players is if the player's playerdata should be saved when they leave the server. Players' persistence is reset back to 'true' when they join the server.",
+        "Passengers inherit the persistence of their vehicle, meaning a persistent zombie put on a non-persistent chicken will become non-persistent. This does not apply to players.",
+        "By default, all entities are persistent."
+      ],
+      "patterns": [
+        "make %entities/blocks% [not] persist[ent]",
+        "force %entities/blocks% to [not] persist",
+        "prevent %entities/blocks% from persisting"
+      ],
+      "examples": [
+        "prevent all entities from persisting",
+        "force {_leaves} to persist",
+        "",
+        "command /kickcheater <cheater: player>:",
+        "\tpermission: op",
+        "\ttrigger:",
+        "\t\tprevent {_cheater} from persisting",
+        "\t\tkick {_cheater}"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -16623,12 +16734,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -16658,12 +16769,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -16776,12 +16887,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -16912,20 +17023,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -16936,12 +17047,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -17491,12 +17602,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -17538,12 +17649,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "string",
@@ -17673,12 +17784,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -17885,12 +17996,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -17960,12 +18071,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18061,12 +18172,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18196,12 +18307,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18447,12 +18558,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -19077,20 +19188,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -19101,12 +19212,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -19827,12 +19938,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19847,12 +19958,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -19883,12 +19994,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21492,12 +21603,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21647,12 +21758,12 @@
           "name": "past item"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
@@ -21913,12 +22024,12 @@
           "name": "past timespan"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -22372,12 +22483,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
