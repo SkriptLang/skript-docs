@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-c0f6ba4",
+  "skriptVersion": "2.10.2-nightly-1e43779",
   "version": {
     "major": 1,
     "minor": 0
@@ -753,7 +753,7 @@
       "id": "CondIsWithin",
       "name": "Is Within",
       "since": [
-        "2.7, INSERT VERSION (multiple)"
+        "2.7, INSERT VERSION (world borders)"
       ],
       "deprecated": false,
       "description": [
@@ -763,8 +763,8 @@
       "patterns": [
         "%locations% (is|are) within %location% and %location%",
         "%locations% (isn't|is not|aren't|are not) within %location% and %location%",
-        "%locations% (is|are) (within|in[side [of]]) %entities/chunks/worlds/blocks%",
-        "%locations% (isn't|is not|aren't|are not) (within|in[side [of]]) %entities/chunks/worlds/blocks%"
+        "%locations% (is|are) (within|in[side [of]]) %entities/chunks/worlds/worldborders/blocks%",
+        "%locations% (isn't|is not|aren't|are not) (within|in[side [of]]) %entities/chunks/worlds/worldborders/blocks%"
       ],
       "examples": [
         "if player's location is within {_loc1} and {_loc2}:",
@@ -6023,6 +6023,32 @@
       "keywords": null
     },
     {
+      "id": "EffWorldBorderExpand",
+      "name": "Expand/Shrink World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Expand or shrink the size of a world border.",
+        "Using `by` adds/subtracts from the current size of the world border.",
+        "Using `to` sets to the specified size."
+      ],
+      "patterns": [
+        "(expand|grow) [[the] (diameter|radius) of] %worldborders% (by|to) %number% [over [a period of] %time span%]",
+        "(expand|grow) %worldborders%['s (diameter|radius)] (by|to) %number% [over [a period of] %time span%]",
+        "(contract|shrink) [[the] (diameter|radius) of] %worldborders% (by|to) %number% [over [a period of] %time span%]",
+        "(contract|shrink) %worldborders%['s (diameter|radius)] (by|to) %number% [over [a period of] %time span%]"
+      ],
+      "examples": [
+        "expand world border of player by 100 in 5 seconds",
+        "shrink world border of world \"world\" to 100 in 10 seconds"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffWorldLoad",
       "name": "Load World",
       "since": [
@@ -8017,6 +8043,32 @@
         "\t\tsend \"All Scripts: %scripts%\" to player",
         "\t\tsend \"Loaded Scripts: %enabled scripts%\" to player",
         "\t\tsend \"Unloaded Scripts: %disabled scripts%\" to player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSecCreateWorldBorder",
+      "name": "Create WorldBorder",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Create a virtual worldborder. You can make this a real border by setting a world's worldborder to a virtual border."
+      ],
+      "patterns": [
+        "a [virtual] world[ ]border"
+      ],
+      "examples": [
+        "set player's worldborder to a virtual worldborder",
+        "",
+        "on join:",
+        "\tset {_border} to a worldborder:",
+        "\t\tset worldborder radius to 25",
+        "\t\tset worldborder warning distance of event-worldborder to 5",
+        "\tset worldborder of player to {_border}"
       ],
       "events": null,
       "requirements": null,
@@ -15162,6 +15214,158 @@
       "keywords": null
     },
     {
+      "id": "ExprWorldBorder",
+      "name": "World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the border of a world or a player.",
+        "A player's world border is not persistent. Restarts, quitting, death or changing worlds will reset the border."
+      ],
+      "patterns": [
+        "[the] world[ ]border [of %worlds/players%]",
+        "%worlds/players%'[s] world[ ]border"
+      ],
+      "examples": [
+        "set {_border} to world border of player's world"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderCenter",
+      "name": "Center of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The center of a world border."
+      ],
+      "patterns": [
+        "[the] world[ ]border (center|middle) [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border (center|middle)"
+      ],
+      "examples": [
+        "set world border center of {_worldborder} to location(10, 0, 20)"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageAmount",
+      "name": "Damage Amount of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of damage a player takes per second for each block they are outside the border plus the border buffer.",
+        "Players only take damage when outside of the world's world border, and the damage value cannot be less than 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border damage amount [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage amount"
+      ],
+      "examples": [
+        "set world border damage amount of {_worldborder} to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageBuffer",
+      "name": "Damage Buffer of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of blocks a player may safely be outside the border before taking damage.",
+        "Players only take damage when outside of the world's world border, and the damage buffer distance cannot be less than 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border damage buffer [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage buffer"
+      ],
+      "examples": [
+        "set world border damage buffer of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderSize",
+      "name": "Size of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The size of a world border.",
+        "The size can not be smaller than 1."
+      ],
+      "patterns": [
+        "[the] world[ ]border (size|diameter|radius) [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border (size|diameter|radius)"
+      ],
+      "examples": [
+        "set world border radius of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderWarningDistance",
+      "name": "Warning Distance of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The warning distance of a world border. The player's screen will be tinted red when they are within this distance of the border.",
+        "Players only see a red tint when approaching a world's worldborder and the warning distance has to be an integer greater than or equal to 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border warning distance [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border warning distance"
+      ],
+      "examples": [
+        "set world border warning distance of {_worldborder} to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderWarningTime",
+      "name": "Warning Time of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The warning time of a world border. If the border is shrinking, the player's screen will be tinted red once the border will catch the player within this time period."
+      ],
+      "patterns": [
+        "[the] world[ ]border warning time [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border warning time"
+      ],
+      "examples": [
+        "set world border warning time of {_worldborder} to 1 second"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprWorldEnvironment",
       "name": "World Environment",
       "since": [
@@ -16887,12 +17091,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -16929,12 +17133,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17023,20 +17227,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -17047,12 +17251,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -17094,12 +17298,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -17996,12 +18200,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -18071,12 +18275,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18172,12 +18376,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18307,12 +18511,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19188,20 +19392,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -19212,12 +19416,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -19938,12 +20142,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20142,12 +20346,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20619,12 +20823,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21750,20 +21954,20 @@
           "name": "world"
         },
         {
+          "id": "itemstack",
+          "name": "past item"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "item"
         },
         {
           "id": "clicktype",
           "name": "click type"
-        },
-        {
-          "id": "itemstack",
-          "name": "item"
         }
       ],
       "keywords": null
@@ -22024,12 +22228,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -22111,6 +22315,131 @@
         {
           "id": "entity",
           "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_bounds_change",
+      "name": "On World Border Bounds Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "world[ ]border [bounds] chang(e|ing)"
+      ],
+      "description": [
+        "Called when a world border changes its bounds, either over time, or instantly.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder bounds change:",
+        "\tbroadcast \"The diameter of %event-worldborder% is changing from %past event-number% to %event-number% over the next %event-timespan%\""
+      ],
+      "eventValues": [
+        {
+          "id": "number",
+          "name": "number"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "number",
+          "name": "past number"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_bounds_finish_change",
+      "name": "On World Border Bounds Finish Change",
+      "since": "INSERT VERSION",
+      "cancellable": false,
+      "patterns": [
+        "world[ ]border [bounds] finish chang(e|ing)"
+      ],
+      "description": [
+        "Called when a moving world border has finished its move.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder bounds finish change:",
+        "\tbroadcast \"Over the past %event-timespan%, the diameter of %event-worldborder% went from %past event-number% to %event-number%\""
+      ],
+      "eventValues": [
+        {
+          "id": "number",
+          "name": "number"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "number",
+          "name": "past number"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_center_change",
+      "name": "On World Border Center Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "world[ ]border center chang(e|ing)"
+      ],
+      "description": [
+        "Called when a world border's center has changed.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder center change:",
+        "\tbroadcast \"The center of %event-worldborder% has moved from %past event-location% to %event-location%\""
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "location",
+          "name": "past location"
         }
       ],
       "keywords": null
@@ -22483,12 +22812,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -23460,6 +23789,17 @@
       "requirements": [
         "Minecraft 1.20.2+"
       ],
+      "examples": null
+    },
+    {
+      "id": "worldborder",
+      "name": "World Border",
+      "since": "INSERT VERSION",
+      "patterns": null,
+      "description": [
+        "Represents the border of a world or player."
+      ],
+      "requirements": null,
       "examples": null
     },
     {
