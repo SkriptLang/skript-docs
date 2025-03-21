@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-450fe04",
+  "skriptVersion": "2.10.2-nightly-526e454",
   "version": {
     "major": 1,
     "minor": 0
@@ -428,7 +428,7 @@
       ],
       "events": null,
       "requirements": [
-        "Paper 1.13 or newer"
+        "Paper"
       ],
       "keywords": null
     },
@@ -1446,7 +1446,7 @@
       ],
       "events": null,
       "requirements": [
-        "Minecraft 1.16+ (in water), Paper 1.16+ (in rain, lava and bubble column)"
+        "Paper (in rain, lava and bubble column)"
       ],
       "keywords": null
     },
@@ -2011,9 +2011,7 @@
         "\t\tcancel event"
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.11.2+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2079,9 +2077,7 @@
         "\t\tsend \"You cannot break interactable blocks!\""
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.13+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2322,9 +2318,7 @@
         "if player's targeted block is passable"
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.13.2+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2797,9 +2791,7 @@
         "player is swimming"
       ],
       "events": null,
-      "requirements": [
-        "1.13 or newer"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -16744,12 +16736,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -16788,12 +16780,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -16828,12 +16820,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17074,12 +17066,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17116,12 +17108,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17281,12 +17273,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -17789,12 +17781,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -17836,12 +17828,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "string",
@@ -17971,12 +17963,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18093,12 +18085,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "itemstack",
@@ -18458,12 +18450,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19224,12 +19216,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20329,12 +20321,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20806,12 +20798,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21790,12 +21782,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21895,12 +21887,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -21945,12 +21937,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         }
       ],
       "keywords": null
@@ -22211,12 +22203,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
