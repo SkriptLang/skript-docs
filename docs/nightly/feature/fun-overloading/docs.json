@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-54e2270",
+  "skriptVersion": "2.10.2-nightly-aa78c7b",
   "version": {
     "major": 1,
     "minor": 0
@@ -428,7 +428,7 @@
       ],
       "events": null,
       "requirements": [
-        "Paper 1.13 or newer"
+        "Paper"
       ],
       "keywords": null
     },
@@ -753,7 +753,7 @@
       "id": "CondIsWithin",
       "name": "Is Within",
       "since": [
-        "2.7"
+        "2.7, INSERT VERSION (world borders)"
       ],
       "deprecated": false,
       "description": [
@@ -763,8 +763,8 @@
       "patterns": [
         "%locations% (is|are) within %location% and %location%",
         "%locations% (isn't|is not|aren't|are not) within %location% and %location%",
-        "%locations% (is|are) (within|in[side [of]]) %entity/chunk/world/block%",
-        "%locations% (isn't|is not|aren't|are not) (within|in[side [of]]) %entity/chunk/world/block%"
+        "%locations% (is|are) (within|in[side [of]]) %entities/chunks/worlds/worldborders/blocks%",
+        "%locations% (isn't|is not|aren't|are not) (within|in[side [of]]) %entities/chunks/worlds/worldborders/blocks%"
       ],
       "examples": [
         "if player's location is within {_loc1} and {_loc2}:",
@@ -775,7 +775,13 @@
         "",
         "if attacker's location is inside of victim:",
         "\tcancel event",
-        "\tsend \"Back up!\" to attacker and victim"
+        "\tsend \"Back up!\" to attacker and victim",
+        "",
+        "if player is in world \"world1\" or world \"world2\":",
+        "\tkill player",
+        "",
+        "if player is in world \"world\" and chunk at location(0, 0, 0):",
+        "\tgive player 1 diamond"
       ],
       "events": null,
       "requirements": [
@@ -1440,7 +1446,7 @@
       ],
       "events": null,
       "requirements": [
-        "Minecraft 1.16+ (in water), Paper 1.16+ (in rain, lava and bubble column)"
+        "Paper (in rain, lava and bubble column)"
       ],
       "keywords": null
     },
@@ -1468,6 +1474,53 @@
       "keywords": null
     },
     {
+      "id": "CondEntityStorageIsFull",
+      "name": "Entity Storage Is Full",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if the an entity block storage (i.e beehive) is full."
+      ],
+      "patterns": [
+        "[the] entity storage of %blocks% (is|are) full",
+        "%blocks%'[s] entity storage (is|are) full",
+        "[the] entity storage of %blocks% (isn't|is not|aren't|are not) full",
+        "%blocks%'[s] entity storage (isn't|is not|aren't|are not) full"
+      ],
+      "examples": [
+        "if the entity storage of {_beehive} is full:",
+        "\trelease the entity storage of {_beehive}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondEntityUnload",
+      "name": "Can Despawn",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Check if an entity can despawn when the chunk they're located at is unloaded.",
+        "More information on what and when entities despawn can be found at <a href=\"https://minecraft.wiki/w/Mob_spawning#Despawning\">reference</a>."
+      ],
+      "patterns": [
+        "%living entities% can despawn (on chunk unload|when far away)",
+        "%living entities% (can't|cannot|can not) despawn (on chunk unload|when far away)"
+      ],
+      "examples": [
+        "if last spawned entity can despawn on chunk unload:",
+        "\tmake last spawned entity not despawn on chunk unload"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondGlowingText",
       "name": "Has Glowing Text",
       "since": [
@@ -1483,6 +1536,28 @@
       ],
       "examples": [
         "if target block has glowing text"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondGoatHasHorns",
+      "name": "Goat Has Horns",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if a goat has or does not have a left, right, or both horns."
+      ],
+      "patterns": [
+        "%living entities% (has|have) ((any|a) horn|[a] left horn[s]|[a] right horn[s]|both horns)",
+        "%living entities% (doesn't|does not|do not|don't) have ((any|a) horn|[a] left horn[s]|[a] right horn[s]|both horns)"
+      ],
+      "examples": [
+        "\tif last spawned goat does not have both horns:\n\t\tmake last spawned goat have both horns\n",
+        "\tif {_goat} has a right horn:\n\t\tforce {_goat} to not have a right horn\n"
       ],
       "events": null,
       "requirements": null,
@@ -1692,6 +1767,28 @@
       "keywords": null
     },
     {
+      "id": "CondIsChargingFireball",
+      "name": "Is Charging Fireball",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Check whether a ghast is charging a fireball."
+      ],
+      "patterns": [
+        "%living entities% (is|are) charging [a] fireball",
+        "%living entities% (isn't|is not|aren't|are not) charging [a] fireball"
+      ],
+      "examples": [
+        "if last spawned ghast is charging fireball:",
+        "\tkill last spawned ghast"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondIsClimbing",
       "name": "Is Climbing",
       "since": [
@@ -1734,6 +1831,28 @@
       "examples": [
         "if {_block} is conditional:",
         "\tmake {_block} unconditional"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondIsDashing",
+      "name": "Camel Is Dashing",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks whether a camel is currently using its dash ability."
+      ],
+      "patterns": [
+        "%living entities% (is|are) dashing",
+        "%living entities% (isn't|is not|aren't|are not) dashing"
+      ],
+      "examples": [
+        "if last spawned camel is dashing:",
+        "\tkill last spawned camel"
       ],
       "events": null,
       "requirements": null,
@@ -1914,9 +2033,7 @@
         "\t\tcancel event"
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.11.2+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -1982,9 +2099,7 @@
         "\t\tsend \"You cannot break interactable blocks!\""
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.13+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2225,9 +2340,7 @@
         "if player's targeted block is passable"
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.13.2+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2257,6 +2370,56 @@
       "requirements": [
         "Paper"
       ],
+      "keywords": null
+    },
+    {
+      "id": "CondIsPersistent",
+      "name": "Is Persistent",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether entities, players, or leaves are persistent.",
+        "Persistence of entities is whether they are retained through server restarts.",
+        "Persistence of leaves is whether they should decay when not connected to a log block within 6 meters.",
+        "Persistence of players is if the player's playerdata should be saved when they leave the server. Players' persistence is reset back to 'true' when they join the server.",
+        "Passengers inherit the persistence of their vehicle, meaning a persistent zombie put on a non-persistent chicken will become non-persistent. This does not apply to players.",
+        "By default, all entities are persistent."
+      ],
+      "patterns": [
+        "%entities/blocks% (is|are) persistent",
+        "%entities/blocks% (isn't|is not|aren't|are not) persistent"
+      ],
+      "examples": [
+        "on spawn:",
+        "\tif event-entity is persistent:",
+        "\t\tmake event-entity not persistent"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondIsPlayingDead",
+      "name": "Is Playing Dead",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an axolotl is playing dead."
+      ],
+      "patterns": [
+        "%living entities% (is|are) playing dead",
+        "%living entities% (isn't|is not|aren't|are not) playing dead"
+      ],
+      "examples": [
+        "if last spawned axolotl is playing dead:",
+        "\tmake last spawned axolotl stop playing dead"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -2310,18 +2473,21 @@
       "id": "CondIsRiding",
       "name": "Is Riding",
       "since": [
-        "2.0"
+        "2.0, INSERT VERSION (entities)"
       ],
       "deprecated": false,
       "description": [
-        "Tests whether an entity is riding another or is in a vehicle."
+        "Tests whether an entity is riding any entity, a specific entity type, or a specific entity."
       ],
       "patterns": [
-        "%entities% (is|are) riding [%entity types%]",
-        "%entities% (isn't|is not|aren't|are not) riding [%entity types%]"
+        "%entities% (is|are) riding [%entity types/entities%]",
+        "%entities% (isn't|is not|aren't|are not) riding [%entity types/entities%]"
       ],
       "examples": [
-        "player is riding a saddled pig"
+        "if player is riding:",
+        "if player is riding an entity:",
+        "if player is riding a saddled pig:",
+        "if player is riding last spawned horse:"
       ],
       "events": null,
       "requirements": null,
@@ -2388,6 +2554,51 @@
       ],
       "examples": [
         "send whether {_horse} is saddled"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondIsScreaming",
+      "name": "Is Screaming",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Check whether a goat or enderman is screaming."
+      ],
+      "patterns": [
+        "%living entities% (is|are) screaming",
+        "%living entities% (isn't|is not|aren't|are not) screaming"
+      ],
+      "examples": [
+        "\tif last spawned goat is not screaming:\n\t\tmake last spawned goat scream\n",
+        "\tif {_enderman} is screaming:\n\t\tforce {_enderman} to stop screaming\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (endermen)"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "CondIsSedated",
+      "name": "Beehive Is Sedated",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks if a beehive is sedated from a nearby campfire."
+      ],
+      "patterns": [
+        "%blocks% (is|are) sedated",
+        "%blocks% (isn't|is not|aren't|are not) sedated"
+      ],
+      "examples": [
+        "if {_beehive} is sedated:"
       ],
       "events": null,
       "requirements": null,
@@ -2626,9 +2837,7 @@
         "player is swimming"
       ],
       "events": null,
-      "requirements": [
-        "1.13 or newer"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -3594,6 +3803,28 @@
       "keywords": null
     },
     {
+      "id": "EffClearEntityStorage",
+      "name": "Clear Entity Storage",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Clear the stored entities of an entity block storage (i.e. beehive)."
+      ],
+      "patterns": [
+        "(clear|empty) the (stored entities|entity storage) of %blocks%"
+      ],
+      "examples": [
+        "clear the stored entities of {_beehive}"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
       "id": "EffColorItems",
       "name": "Color Items",
       "since": [
@@ -3937,6 +4168,32 @@
       "keywords": null
     },
     {
+      "id": "EffEntityUnload",
+      "name": "Entity Despawn",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a living entity despawn when the chunk they're located at is unloaded.",
+        "Setting a custom name on a living entity automatically makes it not despawnable.",
+        "More information on what and when entities despawn can be found at <a href=\"https://minecraft.wiki/w/Mob_spawning#Despawning\">reference</a>."
+      ],
+      "patterns": [
+        "make %living entities% despawn[able] (on chunk unload|when far away)",
+        "force %living entities% to despawn (on chunk unload|when far away)",
+        "prevent %living entities% from despawning [on chunk unload|when far away]"
+      ],
+      "examples": [
+        "make all entities not despawnable on chunk unload",
+        "spawn zombie at location(0, 0, 0):",
+        "\tforce event-entity to not despawn when far away"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffEntityVisibility",
       "name": "Entity Visibility",
       "since": [
@@ -4214,6 +4471,55 @@
       "keywords": null
     },
     {
+      "id": "EffGoatHorns",
+      "name": "Goat Horns",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a goat have or not have a left, right, or both horns."
+      ],
+      "patterns": [
+        "remove [the] (left horn[s]|right horn[s]|both horns) of %living entities%",
+        "remove %living entities%'[s] (left horn[s]|right horn[s]|horns)",
+        "(regrow|replace) [the] (left horn[s]|right horn[s]|both horns) of %living entities%",
+        "(regrow|replace) %living entities%'[s] (left horn[s]|right horn[s]|horns)"
+      ],
+      "examples": [
+        "remove the left horn of last spawned goat",
+        "regrow {_goat}'s horns",
+        "remove both horns of all goats"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffGoatRam",
+      "name": "Make Goat Ram",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a goat ram an entity.",
+        "Ramming does have a cooldown and currently no way to change it."
+      ],
+      "patterns": [
+        "make %living entities% ram %living entity%",
+        "force %living entities% to ram %living entity%"
+      ],
+      "examples": [
+        "make all goats ram player"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
       "id": "EffHandedness",
       "name": "Handedness",
       "since": [
@@ -4332,6 +4638,30 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffInsertEntityStorage",
+      "name": "Insert Entity Storage",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Add an entity into the entity storage of a block (e.g. beehive).",
+        "The entity must be of the right type for the block (e.g. bee for beehive).",
+        "Due to unstable behavior on older versions, adding entities to an entity storage requires Minecraft version 1.21+."
+      ],
+      "patterns": [
+        "(add|insert) %living entities% [in[ ]]to [the] (stored entities|entity storage) of %block%"
+      ],
+      "examples": [
+        "add last spawned bee into the entity storage of {_beehive}"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.21+"
+      ],
       "keywords": null
     },
     {
@@ -4820,6 +5150,40 @@
       "keywords": null
     },
     {
+      "id": "EffPersistent",
+      "name": "Persistent",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make entities, players, or leaves be persistent.",
+        "Persistence of entities is whether they are retained through server restarts.",
+        "Persistence of leaves is whether they should decay when not connected to a log block within 6 meters.",
+        "Persistence of players is if the player's playerdata should be saved when they leave the server. Players' persistence is reset back to 'true' when they join the server.",
+        "Passengers inherit the persistence of their vehicle, meaning a persistent zombie put on a non-persistent chicken will become non-persistent. This does not apply to players.",
+        "By default, all entities are persistent."
+      ],
+      "patterns": [
+        "make %entities/blocks% [not] persist[ent]",
+        "force %entities/blocks% to [not] persist",
+        "prevent %entities/blocks% from persisting"
+      ],
+      "examples": [
+        "prevent all entities from persisting",
+        "force {_leaves} to persist",
+        "",
+        "command /kickcheater <cheater: player>:",
+        "\tpermission: op",
+        "\ttrigger:",
+        "\t\tprevent {_cheater} from persisting",
+        "\t\tkick {_cheater}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffPlayerInfoVisibility",
       "name": "Player Info Visibility",
       "since": [
@@ -4849,6 +5213,29 @@
       "requirements": [
         "Paper 1.12.2 or newer"
       ],
+      "keywords": null
+    },
+    {
+      "id": "EffPlayingDead",
+      "name": "Play Dead",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an axolotl start or stop playing dead."
+      ],
+      "patterns": [
+        "make %living entities% (start playing|play) dead",
+        "force %living entities% to (start playing|play) dead",
+        "make %living entities% (stop playing|not play) dead",
+        "force %living entities% to (stop playing|not play) dead"
+      ],
+      "examples": [
+        "make last spawned axolotl play dead"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -4980,6 +5367,31 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffReleaseEntityStorage",
+      "name": "Release From Entity Storage",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Releases the stored entities in an entity block storage (i.e. beehive).",
+        "When using beehives, providing a timespan will prevent the released bees from re-entering the beehive for that amount of time.",
+        "Due to unstable behaviour on older versions, this effect requires Minecraft version 1.21+."
+      ],
+      "patterns": [
+        "(release|evict) [the] (stored entities|entity storage) of %blocks% [for %time span%]"
+      ],
+      "examples": [
+        "release the stored entities of {_beehive}",
+        "release the entity storage of {_hive} for 5 seconds"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.21"
+      ],
       "keywords": null
     },
     {
@@ -5135,6 +5547,32 @@
         "reflection",
         "function"
       ]
+    },
+    {
+      "id": "EffScreaming",
+      "name": "Make Entity Scream",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a goat or enderman start or stop screaming."
+      ],
+      "patterns": [
+        "make %living entities% (start screaming|scream)",
+        "force %living entities% to (start screaming|scream)",
+        "make %living entities% stop screaming",
+        "force %living entities% to stop screaming"
+      ],
+      "examples": [
+        "\tmake last spawned goat start screaming\n\tforce last spawned goat to stop screaming\n",
+        "\tmake {_enderman} scream\n\tforce {_enderman} to stop screaming\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (endermen)"
+      ],
+      "keywords": null
     },
     {
       "id": "EffScriptFile",
@@ -5320,6 +5758,36 @@
       "keywords": [
         "input"
       ]
+    },
+    {
+      "id": "EffSprinting",
+      "name": "Sprinting",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a player start or stop sprinting.",
+        "If the player is not moving when this effect is used, they will be put in sprint mode for a tick and then stopped (this causes the FOV to change). Using it a second time, without the player manually sprinting in between, causes the player to stay in sprint mode, with some quirks.",
+        " - Particles may not be produced under the player's feet.",
+        " - The player will not exit the sprinting state if they stop moving.",
+        " - Restrictions like low hunger will not prevent the player from sprinting",
+        " - The player pressing shift will stop them sprinting, and pressing sprint will re-assert normal sprinting behavior",
+        "Using this effect two or more consecutive times on a stationary player produces undefined behavior and should not be relied on."
+      ],
+      "patterns": [
+        "make %players% (start sprinting|sprint)",
+        "force %players% to (start sprinting|sprint)",
+        "make %players% (stop sprinting|not sprint)",
+        "force %players% to (stop sprinting|not sprint)"
+      ],
+      "examples": [
+        "make player start sprinting",
+        "force player to start sprinting"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
     },
     {
       "id": "EffStopServer",
@@ -5632,7 +6100,7 @@
         "Makes an entity ride another entity, e.g. a minecart, a saddled pig, an arrow, etc."
       ],
       "patterns": [
-        "(make|let|force) %entities% [to] (ride|mount) [(in|on)] %entities/entity types%",
+        "(make|let|force) %entities% [to] (ride|mount) [(in|on)] %entity/entity type%",
         "(make|let|force) %entities% [to] (dismount|(dismount|leave) [(from|of)] [(any|the[ir]|his|her)] vehicle[s])",
         "(eject|dismount) [(any|the)] passenger[s] (of|from) %entities%"
       ],
@@ -5662,6 +6130,32 @@
       "examples": [
         "play wolf hearts on the clicked wolf",
         "show mob spawner flames at the targeted block to the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffWorldBorderExpand",
+      "name": "Expand/Shrink World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Expand or shrink the size of a world border.",
+        "Using `by` adds/subtracts from the current size of the world border.",
+        "Using `to` sets to the specified size."
+      ],
+      "patterns": [
+        "(expand|grow) [[the] (diameter|radius) of] %worldborders% (by|to) %number% [over [a period of] %time span%]",
+        "(expand|grow) %worldborders%['s (diameter|radius)] (by|to) %number% [over [a period of] %time span%]",
+        "(contract|shrink) [[the] (diameter|radius) of] %worldborders% (by|to) %number% [over [a period of] %time span%]",
+        "(contract|shrink) %worldborders%['s (diameter|radius)] (by|to) %number% [over [a period of] %time span%]"
+      ],
+      "examples": [
+        "expand world border of player by 100 in 5 seconds",
+        "shrink world border of world \"world\" to 100 in 10 seconds"
       ],
       "events": null,
       "requirements": null,
@@ -5711,6 +6205,43 @@
       "examples": [
         "save \"world_nether\"",
         "save all worlds"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffZombify",
+      "name": "Zombify Villager",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Turn a villager into a zombie villager. Cure a zombie villager immediately or after specified amount of time.",
+        "This effect removes the old entity and creates a new entity.",
+        "Zombifying a villager stored in a variable will update the variable to the new zombie villager.",
+        "Curing a zombie villager does not update the variable."
+      ],
+      "patterns": [
+        "zombify %living entities%",
+        "unzombify %living entities% [(in|after) %time span%]"
+      ],
+      "examples": [
+        "zombify last spawned villager",
+        "",
+        "set {_villager} to last spawned villager",
+        "zombify {_villager}",
+        "if {_villager} is a zombie villager:",
+        "\t# This will pass because '{_villager}' gets changed to the new zombie villager",
+        "",
+        "set {_villager} to last spawned villager",
+        "zombify last spawned villager",
+        "if {_villager} is a zombie villager:",
+        "\t# This will fail because the variable was not provided when zombifying",
+        "",
+        "unzombify {_zombieVillager}",
+        "unzombify {_zombieVillager} after 2 seconds"
       ],
       "events": null,
       "requirements": null,
@@ -7631,6 +8162,32 @@
       "keywords": null
     },
     {
+      "id": "ExprSecCreateWorldBorder",
+      "name": "Create WorldBorder",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Create a virtual worldborder. You can make this a real border by setting a world's worldborder to a virtual border."
+      ],
+      "patterns": [
+        "a [virtual] world[ ]border"
+      ],
+      "examples": [
+        "set player's worldborder to a virtual worldborder",
+        "",
+        "on join:",
+        "\tset {_border} to a worldborder:",
+        "\t\tset worldborder radius to 25",
+        "\t\tset worldborder warning distance of event-worldborder to 5",
+        "\tset worldborder of player to {_border}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprSentCommands",
       "name": "Sent Command List",
       "since": [
@@ -8189,7 +8746,7 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[all [[of] the]|the] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags"
+        "[all [[of] the]|the] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags"
       ],
       "examples": [
         "broadcast minecraft tags",
@@ -10331,7 +10888,8 @@
       ],
       "patterns": [
         "%item types% with [the] item flag[s] %item flags%",
-        "%item types% with [the] %item flags% item flag[s]"
+        "%item types% with [the] %item flags% item flag[s]",
+        "%item types% with all [the] item flags"
       ],
       "examples": [
         "give player diamond sword with item flags hide enchants and hide attributes",
@@ -10358,7 +10916,7 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[minecraft|datapack|paper|custom] [item|block|entity [type]] tag %texts%"
+        "[minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tag %texts%"
       ],
       "examples": [
         "minecraft tag \"dirt\" # minecraft:dirt",
@@ -10924,6 +11482,50 @@
         "",
         "set the bed location of player to spawn location of world(\"world\") # unsafe/invalid bed location",
         "set the safe bed location of player to spawn location of world(\"world\") # safe/valid bed location"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBeehiveFlower",
+      "name": "Beehive Target Flower",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The flower a beehive has selected to pollinate from."
+      ],
+      "patterns": [
+        "[the] target flower [of %blocks%]",
+        "%blocks%'[s] target flower"
+      ],
+      "examples": [
+        "set the target flower of {_beehive} to location(0, 0, 0)",
+        "clear the target flower of {_beehive}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBeehiveHoneyLevel",
+      "name": "Beehive Honey Level",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The current or max honey level of a beehive.",
+        "The max level is 5, which cannot be changed."
+      ],
+      "patterns": [
+        "[the] [max[imum]] honey level [of %blocks%]",
+        "%blocks%'[s] [max[imum]] honey level"
+      ],
+      "examples": [
+        "set the honey level of {_beehive} to the max honey level of {_beehive}"
       ],
       "events": null,
       "requirements": null,
@@ -11664,6 +12266,29 @@
       "keywords": null
     },
     {
+      "id": "ExprEntityStorageEntityCount",
+      "name": "Entity Storage Entity Count",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The current number of entities stored inside an entity block storage (i.e. beehive).",
+        "The maximum amount of entities an entity block storage can hold."
+      ],
+      "patterns": [
+        "[the] [max[imum]] [stored] entity count [of %blocks%]",
+        "%blocks%'[s] [max[imum]] [stored] entity count"
+      ],
+      "examples": [
+        "broadcast the stored entity count of {_beehive}",
+        "set the maximum entity count of {_beehive} to 20"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprEntityTamer",
       "name": "Entity Owner",
       "since": [
@@ -11763,16 +12388,17 @@
       "id": "ExprExplosiveYield",
       "name": "Explosive Yield",
       "since": [
-        "2.5"
+        "2.5, INSERT VERSION (ghasts)"
       ],
       "deprecated": false,
       "description": [
-        "The yield of an explosive (creeper, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
-        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information"
+        "The yield of an explosive (creeper, ghast, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
+        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information.",
+        "The yield of ghasts can only be set to between 0 and 127."
       ],
       "patterns": [
-        "[the] explosive (yield|radius|size) of %entities%",
-        "%entities%'[s] explosive (yield|radius|size)"
+        "[the] explosive (yield|radius|size|power) of %entities%",
+        "%entities%'[s] explosive (yield|radius|size|power)"
       ],
       "examples": [
         "on spawn of a creeper:",
@@ -11780,7 +12406,7 @@
       ],
       "events": null,
       "requirements": [
-        "Minecraft 1.12 or newer for creepers"
+        "Paper (ghasts)"
       ],
       "keywords": null
     },
@@ -12429,27 +13055,6 @@
       "keywords": null
     },
     {
-      "id": "ExprLastColor",
-      "name": "Last Color",
-      "since": [
-        "2.6"
-      ],
-      "deprecated": false,
-      "description": [
-        "The colors used at the end of a string. The colors of the returned string will be formatted with their symbols."
-      ],
-      "patterns": [
-        "[the] last color[s] of %texts%",
-        "%texts%'[s] last color[s]"
-      ],
-      "examples": [
-        "set {_color} to the last colors of \"<red>hey<blue>yo\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprLastDamage",
       "name": "Last Damage",
       "since": [
@@ -13058,19 +13663,44 @@
       "id": "ExprNoDamageTicks",
       "name": "No Damage Ticks",
       "since": [
-        "2.5"
+        "2.5, INSERT VERSION (deprecated)"
       ],
-      "deprecated": false,
+      "deprecated": true,
       "description": [
         "The number of ticks that an entity is invulnerable to damage for."
       ],
       "patterns": [
-        "[the] (invulnerability|invincibility|no damage) tick[s] of %living entities%",
+        "[the] (invulnerability|invincibility|no damage) tick[s] [of %living entities%]",
         "%living entities%'[s] (invulnerability|invincibility|no damage) tick[s]"
       ],
       "examples": [
         "on damage:",
         "\tset victim's invulnerability ticks to 20 #Victim will not take damage for the next second"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprNoDamageTime",
+      "name": "No Damage Time",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of time an entity is invulnerable to any damage."
+      ],
+      "patterns": [
+        "[the] (invulnerability|invincibility|no damage) time[[ ]span] [of %living entities%]",
+        "%living entities%'[s] (invulnerability|invincibility|no damage) time[[ ]span]"
+      ],
+      "examples": [
+        "on damage:",
+        "\tset victim's invulnerability time to 20 ticks #Victim will not take damage for the next second",
+        "",
+        "if the no damage timespan of {_entity} is 0 seconds:",
+        "\tset the invincibility time span of {_entity} to 1 minute"
       ],
       "events": null,
       "requirements": null,
@@ -13325,59 +13955,6 @@
       "keywords": null
     },
     {
-      "id": "ExprPlayerViewDistance",
-      "name": "View Distance",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "The view distance of a player as set by the server. Can be changed.",
-        "NOTE: This is the view distance sent by the server to the player.",
-        "This has nothing to do with client side view distance settings",
-        "NOTE: This may not work on some versions (such as MC 1.14.x).",
-        "The return value in this case will be the view distance set in system.properties."
-      ],
-      "patterns": [
-        "[the] view distance[s] of %players%",
-        "%players%'[s] view distance[s]"
-      ],
-      "examples": [
-        "set view distance of player to 10",
-        "set {_view} to view distance of player",
-        "reset view distance of all players",
-        "add 2 to view distance of player"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprPlayerWeather",
-      "name": "Player Weather",
-      "since": [
-        "2.2-dev34"
-      ],
-      "deprecated": false,
-      "description": [
-        "The weather for a player."
-      ],
-      "patterns": [
-        "[the] [(client|custom)] weather of %players%",
-        "%players%'[s] [(client|custom)] weather"
-      ],
-      "examples": [
-        "set weather of arg-player to rainy",
-        "reset player's weather",
-        "if arg-player's weather is rainy"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprPortalCooldown",
       "name": "Portal Cooldown",
       "since": [
@@ -13578,9 +14155,12 @@
         "Rounds numbers normally, up (ceiling) or down (floor) respectively."
       ],
       "patterns": [
-        "[(a|the)] round[ed] down %number%",
-        "[(a|the)] round[ed] %number%",
-        "[(a|the)] round[ed] up %number%"
+        "[a|the] (round[ed] down|floored) %numbers%",
+        "%numbers% (round[ed] down|floored)",
+        "[a|the] round[ed] %numbers%",
+        "%numbers% round[ed]",
+        "[a|the] (round[ed] up|ceil[ing]ed) %numbers%",
+        "%numbers% (round[ed] up|ceil[ing]ed)"
       ],
       "examples": [
         "set {var} to rounded health of player",
@@ -13762,6 +14342,36 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSimulationDistance",
+      "name": "Simulation Distance",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The simulation distance of a world or a player.",
+        "Simulation distance is the minimum distance in chunks for entities to tick.",
+        "Simulation distance is capped to the current view distance of the world or player.",
+        "The view distance is capped between 2 and 32 chunks.",
+        "Paper is required to change the simulation distance for both worlds and players."
+      ],
+      "patterns": [
+        "[the] simulation distance[s] of %worlds/players%",
+        "%worlds/players%'[s] simulation distance[s]"
+      ],
+      "examples": [
+        "set simulation distance of player to 10",
+        "add 50 to the simulation distance of world \"world\"",
+        "reset the simulation distance of player",
+        "clear the simulation distance of world \"world\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (change for players), Paper 1.21+ (change for worlds)"
+      ],
       "keywords": null
     },
     {
@@ -13964,6 +14574,32 @@
       "examples": [
         "set the player's walk speed to 1",
         "increase the argument's fly speed by 0.1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprStringColor",
+      "name": "String Colors",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Retrieve the first, the last, or all of the color objects or color codes of a string.",
+        "The retrieved color codes of the string will be formatted with the color symbol."
+      ],
+      "patterns": [
+        "[all [of the|the]|the] string colo[u]r[s] [code[s]] of %texts%",
+        "[the] first string colo[u]r[s] [code[s]] of %texts%",
+        "[the] last string colo[u]r[s] [code[s]] of %texts%"
+      ],
+      "examples": [
+        "set {_colors::*} to the string colors of \"<red>hey<blue>yo\"",
+        "",
+        "set {_color} to the first string color code of \"&aGoodbye!\"",
+        "send \"%{_color}%Howdy!\" to all players"
       ],
       "events": null,
       "requirements": null,
@@ -14489,6 +15125,35 @@
       "keywords": null
     },
     {
+      "id": "ExprViewDistance",
+      "name": "View Distance",
+      "since": [
+        "2.4, INSERT VERSION (worlds)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The view distance of a world or a player.",
+        "The view distance of a player is the distance in chunks sent by the server to the player. This has nothing to do with client side view distance settings.",
+        "View distance is capped between 2 to 32 chunks.",
+        "Paper is required to change the view distance for both worlds and players."
+      ],
+      "patterns": [
+        "[the] view distance[s] of %players/worlds%",
+        "%players/worlds%'[s] view distance[s]"
+      ],
+      "examples": [
+        "set view distance of player to 10",
+        "add 50 to the view distance of world \"world\"",
+        "reset the view distance of player",
+        "clear the view distance of world \"world\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (change for players), Paper 1.21+ (change for worlds)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprVillagerLevel",
       "name": "Villager Level/Experience",
       "since": [
@@ -14574,15 +15239,21 @@
       ],
       "deprecated": false,
       "description": [
-        "The weather in the given or the current world."
+        "The weather of a world or player.",
+        "Clearing or resetting the weather of a player will make the player's weather match the weather of the world.",
+        "Clearing or resetting the weather of a world will make the weather clear."
       ],
       "patterns": [
-        "[the] weather [(in|of) %worlds%]",
-        "%worlds%'[s] weather"
+        "[the] weather [(in|of) %players/worlds%]",
+        "[the] (custom|client) weather [of %players%]",
+        "%players/worlds%'[s] weather",
+        "%players%'[s] (custom|client) weather"
       ],
       "examples": [
         "set weather to clear",
-        "weather in \"world\" is rainy"
+        "weather in \"world\" is rainy",
+        "reset custom weather of player",
+        "set weather of player to clear"
       ],
       "events": [
         "weather change"
@@ -14634,6 +15305,158 @@
         "teleport the player to the world's spawn",
         "set the weather in the player's world to rain",
         "set {_world} to world of event-chunk"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorder",
+      "name": "World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the border of a world or a player.",
+        "A player's world border is not persistent. Restarts, quitting, death or changing worlds will reset the border."
+      ],
+      "patterns": [
+        "[the] world[ ]border [of %worlds/players%]",
+        "%worlds/players%'[s] world[ ]border"
+      ],
+      "examples": [
+        "set {_border} to world border of player's world"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderCenter",
+      "name": "Center of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The center of a world border."
+      ],
+      "patterns": [
+        "[the] world[ ]border (center|middle) [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border (center|middle)"
+      ],
+      "examples": [
+        "set world border center of {_worldborder} to location(10, 0, 20)"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageAmount",
+      "name": "Damage Amount of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of damage a player takes per second for each block they are outside the border plus the border buffer.",
+        "Players only take damage when outside of the world's world border, and the damage value cannot be less than 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border damage amount [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage amount"
+      ],
+      "examples": [
+        "set world border damage amount of {_worldborder} to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageBuffer",
+      "name": "Damage Buffer of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of blocks a player may safely be outside the border before taking damage.",
+        "Players only take damage when outside of the world's world border, and the damage buffer distance cannot be less than 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border damage buffer [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage buffer"
+      ],
+      "examples": [
+        "set world border damage buffer of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderSize",
+      "name": "Size of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The size of a world border.",
+        "The size can not be smaller than 1."
+      ],
+      "patterns": [
+        "[the] world[ ]border (size|diameter|radius) [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border (size|diameter|radius)"
+      ],
+      "examples": [
+        "set world border radius of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderWarningDistance",
+      "name": "Warning Distance of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The warning distance of a world border. The player's screen will be tinted red when they are within this distance of the border.",
+        "Players only see a red tint when approaching a world's worldborder and the warning distance has to be an integer greater than or equal to 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border warning distance [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border warning distance"
+      ],
+      "examples": [
+        "set world border warning distance of {_worldborder} to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderWarningTime",
+      "name": "Warning Time of World Border",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The warning time of a world border. If the border is shrinking, the player's screen will be tinted red once the border will catch the player within this time period."
+      ],
+      "patterns": [
+        "[the] world[ ]border warning time [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border warning time"
+      ],
+      "examples": [
+        "set world border warning time of {_worldborder} to 1 second"
       ],
       "events": null,
       "requirements": null,
@@ -15232,8 +16055,8 @@
         "You can also filter by tag types using \"item\", \"block\", or \"entity\"."
       ],
       "patterns": [
-        "[all [[of] the]|the] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags of %item type/entity/entity type%",
-        "%item type/entity/entity type%'[s] [minecraft|datapack|paper|custom] [item|block|entity [type]] tags"
+        "[all [[of] the]|the] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags of %item type/entity/entity type%",
+        "%item type/entity/entity type%'[s] [minecraft|datapack|paper|(custom|skript)] [item|block|entity [type]] tags"
       ],
       "examples": [
         "broadcast minecraft tags of dirt",
@@ -15682,6 +16505,26 @@
         "loop (argument + 2) / 5 times:",
         "\tmessage \"Two useless numbers: %loop-num * 2 - 5%, %2^loop-num - 1%\"",
         "message \"You have %health of player * 2% half hearts of HP!\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprAnyOf",
+      "name": "Any Of",
+      "since": null,
+      "deprecated": false,
+      "description": [
+        "Returns an 'or list' composed of the given objects. For example, `any of (1, 2, and 3)` is equivalent to `1, 2, or 3`",
+        "Useful when doing comparisons with variable lists."
+      ],
+      "patterns": [
+        "(any [one]|one) of [the] %objects%"
+      ],
+      "examples": [
+        "if any of {_numbers::*} are 1:",
+        "if any of {teamA::*} are within location(0, 0, 0) and location(10, 10, 10):"
       ],
       "events": null,
       "requirements": null,
@@ -16212,12 +17055,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -16247,12 +17090,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17549,12 +18392,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17650,12 +18493,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17785,12 +18628,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17845,6 +18688,28 @@
           "name": "player"
         }
       ],
+      "keywords": null
+    },
+    {
+      "id": "system_time",
+      "name": "On System Time",
+      "since": "INSERT VERSION",
+      "cancellable": false,
+      "patterns": [
+        "at %times% [in] real time"
+      ],
+      "description": [
+        "Called when the local time of the system the server is running on reaches the provided real-life time."
+      ],
+      "requirements": null,
+      "examples": [
+        "at 14:20 in real time:",
+        "at 2:30am real time:",
+        "at 6:10 pm in real time:",
+        "at 5:00 am and 5:00 pm in real time:",
+        "at 5:00 and 17:00 in real time:"
+      ],
+      "eventValues": [],
       "keywords": null
     },
     {
@@ -19394,12 +20259,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21174,6 +22039,10 @@
         {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -21563,6 +22432,131 @@
         {
           "id": "entity",
           "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_bounds_change",
+      "name": "On World Border Bounds Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "world[ ]border [bounds] chang(e|ing)"
+      ],
+      "description": [
+        "Called when a world border changes its bounds, either over time, or instantly.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder bounds change:",
+        "\tbroadcast \"The diameter of %event-worldborder% is changing from %past event-number% to %event-number% over the next %event-timespan%\""
+      ],
+      "eventValues": [
+        {
+          "id": "number",
+          "name": "number"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
+        },
+        {
+          "id": "number",
+          "name": "past number"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_bounds_finish_change",
+      "name": "On World Border Bounds Finish Change",
+      "since": "INSERT VERSION",
+      "cancellable": false,
+      "patterns": [
+        "world[ ]border [bounds] finish chang(e|ing)"
+      ],
+      "description": [
+        "Called when a moving world border has finished its move.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder bounds finish change:",
+        "\tbroadcast \"Over the past %event-timespan%, the diameter of %event-worldborder% went from %past event-number% to %event-number%\""
+      ],
+      "eventValues": [
+        {
+          "id": "number",
+          "name": "number"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "number",
+          "name": "past number"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "world_border_center_change",
+      "name": "On World Border Center Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "world[ ]border center chang(e|ing)"
+      ],
+      "description": [
+        "Called when a world border's center has changed.",
+        "This event does not get called for virtual borders."
+      ],
+      "requirements": [
+        "Paper 1.16+"
+      ],
+      "examples": [
+        "on worldborder center change:",
+        "\tbroadcast \"The center of %event-worldborder% has moved from %past event-location% to %event-location%\""
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
+        },
+        {
+          "id": "location",
+          "name": "past location"
         }
       ],
       "keywords": null
@@ -22348,7 +23342,8 @@
       ],
       "requirements": null,
       "examples": [
-        ""
+        "teleport player to location at 0, 69, 0",
+        "set {home::%uuid of player%} to location of the player"
       ]
     },
     {
@@ -22911,6 +23906,17 @@
       "requirements": [
         "Minecraft 1.20.2+"
       ],
+      "examples": null
+    },
+    {
+      "id": "worldborder",
+      "name": "World Border",
+      "since": "INSERT VERSION",
+      "patterns": null,
+      "description": [
+        "Represents the border of a world or player."
+      ],
+      "requirements": null,
       "examples": null
     },
     {
@@ -23588,11 +24594,11 @@
         "For example, this might include "
       ],
       "patterns": [
-        "using <.+>"
+        "using [[the] experiment] <.+>"
       ],
       "examples": [
         "using 1.21",
-        "using my-cool-addon-feature"
+        "using the experiment my-cool-addon-feature"
       ],
       "events": null,
       "requirements": null,
@@ -23918,6 +24924,30 @@
       ]
     },
     {
+      "id": "factorial",
+      "name": "factorial",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the factorial of a number.",
+        "Getting the factorial of any number above 21 will return an approximation, not an exact value.",
+        "Any number after 170 will always return Infinity.",
+        "Should not be used to calculate permutations or combinations manually."
+      ],
+      "examples": [
+        "factorial(0) = 1",
+        "factorial(3) = 3*2*1 = 6",
+        "factorial(5) = 5*4*3*2*1 = 120",
+        "factorial(171) = Infinity"
+      ],
+      "patterns": [
+        "factorial(number: number)"
+      ]
+    },
+    {
       "id": "concat",
       "name": "concat",
       "since": "2.9.0",
@@ -24015,6 +25045,31 @@
       ]
     },
     {
+      "id": "permutations",
+      "name": "permutations",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the number of possible ordered arrangements from 1 to 'options' with each arrangement having a size equal to 'selected'",
+        "For example, permutations with 3 options and an arrangement size of 1, returns 3: (1), (2), (3)",
+        "Permutations with 3 options and an arrangement size of 2 returns 6: (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)",
+        "Note that the bigger the 'options' and lower the 'selected' may result in approximations or even infinity values.",
+        "Permutations differ from combinations in that permutations account for the arrangement of elements within the set, whereas combinations focus on unique sets and ignore the order of elements.",
+        "Example: (1, 2) and (2, 1) are two distinct permutations because the positions of '1' and '2' are different, but they represent a single combination since order doesn't matter in combinations."
+      ],
+      "examples": [
+        "permutations(10, 2) = 90",
+        "permutations(10, 4) = 5040",
+        "permutations(size of {some list::*}, 2)"
+      ],
+      "patterns": [
+        "permutations(options: number, selected: number)"
+      ]
+    },
+    {
       "id": "mod",
       "name": "mod",
       "since": "2.2",
@@ -24095,6 +25150,31 @@
       ],
       "patterns": [
         "location(x: number, y: number, z: number, world: world = event-world, yaw: number = 0, pitch: number = 0)"
+      ]
+    },
+    {
+      "id": "combinations",
+      "name": "combinations",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the number of possible sets from 1 to 'options' with each set having a size equal to 'selected'",
+        "For example, a combination with 3 options and a set size of 1, returns 3: (1), (2), (3)",
+        "A combination of 3 options with a set size of 2 returns 3: (1, 2), (1, 3), (2, 3)",
+        "Note that the bigger the 'options' and lower the 'selected' may result in approximations or even infinity values.",
+        "Combinations differ from permutations in that combinations focus on unique sets, ignoring the order of elements, whereas permutations account for the arrangement of elements within the set.",
+        "Example: (1, 2) and (2, 1) represent a single combination since order doesn't matter in combinations, but they are two distinct permutations because permutations consider the order."
+      ],
+      "examples": [
+        "combinations(10, 8) = 45",
+        "combinations(5, 3) = 10",
+        "combinations(size of {some list::*}, 2)"
+      ],
+      "patterns": [
+        "combinations(options: number, selected: number)"
       ]
     },
     {
@@ -24233,6 +25313,47 @@
       ],
       "patterns": [
         "sum(ns: numbers)"
+      ]
+    },
+    {
+      "id": "root",
+      "name": "root",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Calculates the <i>n</i>th root of a number."
+      ],
+      "examples": [
+        "root(2, 4) = 2 # same as sqrt(4)",
+        "root(4, 16) = 2",
+        "root(-4, 16) = 0.5 # same as 16^(-1/4)"
+      ],
+      "patterns": [
+        "root(n: number, number: number)"
+      ]
+    },
+    {
+      "id": "median",
+      "name": "median",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the middle value of a sorted list of numbers. If the list has an even number of values, the median is the average of the two middle numbers.",
+        "You cannot get the median of a set of numbers that includes NaN."
+      ],
+      "examples": [
+        "median(1, 2, 3, 4, 5) = 3",
+        "median(1, 2, 3, 4, 5, 6) = 3.5",
+        "median(0, 123, 456, 789) = 289.5"
+      ],
+      "patterns": [
+        "median(numbers: numbers)"
       ]
     },
     {
@@ -24458,6 +25579,27 @@
       ],
       "patterns": [
         "max(ns: numbers)"
+      ]
+    },
+    {
+      "id": "mean",
+      "name": "mean",
+      "since": "INSERT VERSION",
+      "returnType": {
+        "name": "Number",
+        "id": "number"
+      },
+      "description": [
+        "Get the mean (average) of a list of numbers.",
+        "You cannot get the mean of a set of numbers that includes infinity or NaN."
+      ],
+      "examples": [
+        "mean(1, 2, 3) = 2",
+        "mean(0, 5, 10) = 5",
+        "mean(13, 97, 376, 709) = 298.75"
+      ],
+      "patterns": [
+        "mean(numbers: numbers)"
       ]
     },
     {
