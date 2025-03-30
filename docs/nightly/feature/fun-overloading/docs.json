@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-4b253f3",
+  "skriptVersion": "2.10.2-nightly-54e2270",
   "version": {
     "major": 1,
     "minor": 0
@@ -9276,9 +9276,6 @@
       "patterns": [
         "[the|a] function [named] %text% [(in|from) %script%]",
         "[the] functions [named] %texts% [(in|from) %script%]",
-        "[all [[of] the]|the] functions (in|from) %script%",
-        "[the|a] function [named] %text% with param[eter]s %*types% [(in|from) %script%]",
-        "[the] functions [named] %texts% with param[eter]s %*types% [(in|from) %script%]",
         "[all [[of] the]|the] functions (in|from) %script%"
       ],
       "examples": [
@@ -16038,12 +16035,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -16410,12 +16407,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17130,12 +17127,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "string",
@@ -17265,12 +17262,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -17387,12 +17384,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "itemstack",
@@ -17477,12 +17474,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -18017,12 +18014,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -19417,12 +19414,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -19601,12 +19598,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20078,12 +20075,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21062,12 +21059,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -21167,12 +21164,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -21213,12 +21210,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
@@ -21479,12 +21476,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -21938,12 +21935,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
