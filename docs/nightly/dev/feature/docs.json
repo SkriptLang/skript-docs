@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-de0ee5e",
+  "skriptVersion": "2.10.2-nightly-5f2cc81",
   "version": {
     "major": 1,
     "minor": 0
@@ -2749,22 +2749,22 @@
       "id": "CondIsSleeping",
       "name": "Is Sleeping",
       "since": [
-        "1.4.4"
+        "1.4.4, INSERT VERSION (living entities)"
       ],
       "deprecated": false,
       "description": [
-        "Checks whether a player is sleeping."
+        "Checks whether an entity is sleeping."
       ],
       "patterns": [
-        "%players% (is|are) sleeping",
-        "%players% (isn't|is not|aren't|are not) sleeping"
+        "%living entities% (is|are) sleeping",
+        "%living entities% (isn't|is not|aren't|are not) sleeping"
       ],
       "examples": [
-        "# cut your enemies' throats in their sleep >=)",
-        "on attack:",
-        "\tattacker is holding a sword",
-        "\tvictim is sleeping",
-        "\tincrease the damage by 1000"
+        "if player is sleeping:",
+        "\tmake player wake up without spawn location update",
+        "",
+        "if last spawned fox is sleeping:",
+        "\tmake last spawned fox stop sleeping"
       ],
       "events": null,
       "requirements": null,
@@ -6303,6 +6303,40 @@
       "examples": [
         "play wolf hearts on the clicked wolf",
         "show mob spawner flames at the targeted block to the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffWakeupSleep",
+      "name": "Wake And Sleep",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make bats and foxes sleep or wake up.",
+        "Make villagers sleep by providing a location of a bed.",
+        "Make players sleep by providing a location of a bed. Using 'with force' will bypass \"nearby monsters\" ,the max distance, allowing players to sleep even if the bed is far away, and lets players sleep in the nether and end. Does not work if the location of the bed is not in the world the player is currently in.",
+        "Using 'without spawn location update' will make players wake up without setting their spawn location to the bed."
+      ],
+      "patterns": [
+        "make %living entities% (start sleeping|[go to] sleep) [%direction% %location%]",
+        "force %living entities% to (start sleeping|[go to] sleep) [%direction% %location%]",
+        "make %players% (start sleeping|[go to] sleep) %direction% %location% (with force)",
+        "force %players% to (start sleeping|[go to] sleep) %direction% %location% (with force)",
+        "make %living entities% (stop sleeping|wake up)",
+        "force %living entities% to (stop sleeping|wake up)",
+        "make %players% (stop sleeping|wake up) (without spawn [location] update)",
+        "force %players% to (stop sleeping|wake up) (without spawn [location] update)"
+      ],
+      "examples": [
+        "make {_fox} go to sleep",
+        "make {_bat} stop sleeping",
+        "make {_villager} start sleeping at location(0, 0, 0)",
+        "make player go to sleep at location(0, 0, 0) with force",
+        "make player wake up without spawn location update"
       ],
       "events": null,
       "requirements": null,
@@ -17726,20 +17760,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -17750,12 +17784,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -17797,12 +17831,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18348,12 +18382,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18399,12 +18433,12 @@
           "name": "item"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18530,12 +18564,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18742,12 +18776,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19934,20 +19968,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -19958,12 +19992,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -20740,12 +20774,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -22466,12 +22500,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -22865,6 +22899,41 @@
         {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "bat_toggle_sleep",
+      "name": "On Bat Toggle Sleep",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "bat toggle sleep"
+      ],
+      "description": [
+        "Called when a bat attempts to go to sleep or wakes up."
+      ],
+      "requirements": null,
+      "examples": [
+        "on bat toggle sleep:"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -23366,12 +23435,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
