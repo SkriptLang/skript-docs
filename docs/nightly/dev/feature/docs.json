@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-17617fc",
+  "skriptVersion": "2.10.2-nightly-cb531e7",
   "version": {
     "major": 1,
     "minor": 0
@@ -6977,6 +6977,27 @@
       "keywords": null
     },
     {
+      "id": "ExprConsumedItem",
+      "name": "Consumed Item",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the item consumed within an entity shoot bow and item consume event."
+      ],
+      "patterns": [
+        "[the] consumed item"
+      ],
+      "examples": [
+        "on player or skeleton shoot projectile:\n\tif the consumed item is an arrow:\n\t\tcancel event\n\t\tsend \"You're now allowed to shoot your arrows.\" to shooter\n",
+        "on player consume:\n\tif the consumed item is cooked porkchop:\n\t\tsend \"Well aren't you just a little piggy wiggly!\" to player\n\tif player has scoreboard tag \"vegetarian\":\n\t\tset the consumed item to a carrot\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprDamage",
       "name": "Damage",
       "since": [
@@ -7937,6 +7958,26 @@
       "keywords": null
     },
     {
+      "id": "ExprProjectileForce",
+      "name": "Projectile Force",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the force at which a projectile was shot within an entity shoot bow event."
+      ],
+      "patterns": [
+        "[the] projectile force"
+      ],
+      "examples": [
+        "on entity shoot projectile:\n\tset the velocity of shooter to vector(0,1,0) * projectile force\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprProtocolVersion",
       "name": "Protocol Version",
       "since": [
@@ -8217,7 +8258,7 @@
       "id": "ExprShooter",
       "name": "Shooter",
       "since": [
-        "1.3.7"
+        "1.3.7, INSERT VERSION (entity shoot bow event)"
       ],
       "deprecated": false,
       "description": [
@@ -16878,12 +16919,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17055,12 +17096,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17090,12 +17131,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17250,12 +17291,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17429,6 +17470,49 @@
         {
           "id": "potioneffect",
           "name": "past potion effect"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "entity_shoot_bow",
+      "name": "On Entity Shoot Bow",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "%entity types% shoot[ing] (bow|projectile)"
+      ],
+      "description": [
+        "Called when an entity shoots a bow.\nevent-entity refers to the shot projectile/entity.\n"
+      ],
+      "requirements": null,
+      "examples": [
+        "on player shoot bow:\n\tchance of 30%:\n\t\tdamage event-slot by 10\n\t\tsend \"Your bow has taken increased damage!\" to shooter\n\non stray shooting bow:\n\tset {_e} to event-entity\n\tspawn a cow at {_e}:\n\t\tset velocity of entity to velocity of {_e}\n\tset event-entity to last spawned entity\n"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
+        },
+        {
+          "id": "slot",
+          "name": "slot"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -17970,16 +18054,16 @@
           "name": "player"
         },
         {
+          "id": "clicktype",
+          "name": "click type"
+        },
+        {
           "id": "itemstack",
           "name": "item"
         },
         {
           "id": "string",
           "name": "text"
-        },
-        {
-          "id": "clicktype",
-          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18105,12 +18189,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18392,12 +18476,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18493,12 +18577,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18628,12 +18712,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18879,12 +18963,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -20259,12 +20343,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20279,12 +20363,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -20940,12 +21024,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21924,12 +22008,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22029,12 +22113,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22071,20 +22155,20 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         }
       ],
       "keywords": null
@@ -22345,12 +22429,12 @@
           "name": "past timespan"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -22508,12 +22592,12 @@
           "name": "world"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
-        },
-        {
           "id": "worldborder",
           "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
         },
         {
           "id": "number",
@@ -22929,12 +23013,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
