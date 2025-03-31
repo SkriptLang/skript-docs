@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-fcf14e1",
+  "skriptVersion": "2.10.2-nightly-71db13f",
   "version": {
     "major": 1,
     "minor": 0
@@ -16919,12 +16919,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17096,12 +17096,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17131,12 +17131,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17249,12 +17249,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -17385,20 +17385,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -17409,12 +17409,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -18007,12 +18007,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18476,12 +18476,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18577,12 +18577,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18712,12 +18712,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18963,12 +18963,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -19593,20 +19593,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -19617,12 +19617,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -20343,12 +20343,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20363,12 +20363,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20399,12 +20399,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -21024,12 +21024,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -22008,12 +22008,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22155,20 +22155,20 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         }
       ],
       "keywords": null
@@ -22592,12 +22592,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "timespan",
           "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
         },
         {
           "id": "number",
@@ -23816,7 +23816,7 @@
       "name": "Attribute Type",
       "since": "2.5",
       "patterns": [
-        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
+        "armor, armor toughness, armour, armour toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic armour, generic armour toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
       ],
       "description": [
         "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.",
@@ -23914,7 +23914,7 @@
       "name": "Item Flag",
       "since": "2.10",
       "patterns": [
-        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, unbreakable hidden, dye color hidden, hide enchantments, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
+        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hide armour trim, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, hidden armour trim, unbreakable hidden, dye color hidden, hide enchantments, armour trim hidden, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
       ],
       "description": [
         "Represents flags that may be applied to hide certain attributes of an item."
@@ -23969,7 +23969,7 @@
       "name": "Villager Profession",
       "since": "2.10",
       "patterns": [
-        "armorer, armorer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
+        "armorer, armorer profession, armourer, armourer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
       ],
       "description": [
         "Represents the different professions of villagers."
