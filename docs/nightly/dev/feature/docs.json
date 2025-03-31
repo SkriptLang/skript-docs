@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-bf0000f",
+  "skriptVersion": "2.10.2-nightly-de0ee5e",
   "version": {
     "major": 1,
     "minor": 0
@@ -1328,6 +1328,28 @@
       "keywords": null
     },
     {
+      "id": "CondAllayCanDuplicate",
+      "name": "Allay Can Duplicate",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an allay is able to duplicate naturally."
+      ],
+      "patterns": [
+        "%living entities% can (duplicate|clone)",
+        "%living entities% (can't|cannot|can not) (duplicate|clone)"
+      ],
+      "examples": [
+        "if last spawned allay can duplicate:",
+        "\tdisallow last spawned to duplicate"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondCanFly",
       "name": "Can Fly",
       "since": [
@@ -1858,6 +1880,30 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondIsDancing",
+      "name": "Is Dancing",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an entity is dancing, such as allays, parrots, or piglins."
+      ],
+      "patterns": [
+        "%living entities% (is|are) dancing",
+        "%living entities% (isn't|is not|aren't|are not) dancing"
+      ],
+      "examples": [
+        "if last spawned allay is dancing:",
+        "\tbroadcast \"Dance Party!\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper 1.20.1+ (piglins)"
+      ],
       "keywords": null
     },
     {
@@ -3518,6 +3564,50 @@
       "keywords": null
     },
     {
+      "id": "EffAllayCanDuplicate",
+      "name": "Allay Duplicate",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Set whether an allay can or cannot duplicate itself.",
+        "This is not the same as breeding allays."
+      ],
+      "patterns": [
+        "allow %living entities% to (duplicate|clone)",
+        "prevent %living entities% from (duplicating|cloning)"
+      ],
+      "examples": [
+        "allow all allays to duplicate",
+        "prevent all allays from duplicating"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffAllayDuplicate",
+      "name": "Make Allay Duplicate",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an allay duplicate itself.",
+        "This effect will always make an allay duplicate regardless of whether the duplicate attribute is disabled."
+      ],
+      "patterns": [
+        "make %living entities% (duplicate|clone)"
+      ],
+      "examples": [
+        "make all allays duplicate"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffApplyBoneMeal",
       "name": "Apply Bone Meal",
       "since": [
@@ -4027,6 +4117,37 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffDancing",
+      "name": "Dance",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an allay or piglin start or stop dancing.",
+        "Providing a location only applies to allays. They will check to see if the the block at the location is a jukebox and playing music. If it isn't, they will stop dancing. If no location is provided, the allay will dance indefinitely.",
+        "Providing a timespan only applies for piglins. It determines the length of time they will dance for. If no timespan is provided, they will dance indefinitely."
+      ],
+      "patterns": [
+        "make %living entities% (start dancing|dance) [%direction% %location%] [for %time span%]",
+        "make %living entities% (stop dancing|not dance)"
+      ],
+      "examples": [
+        "if last spawned allay is not dancing:",
+        "\tmake last spawned allay start dancing",
+        "if block at location(0, 0, 0) is a jukebox:",
+        "\tmake all allays dance at location(0, 0, 0)",
+        "",
+        "make last spawned piglin start dancing",
+        "make all piglins dance for 5 hours"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper 1.20.1+ (piglins)"
+      ],
       "keywords": null
     },
     {
@@ -11248,6 +11369,27 @@
       "keywords": null
     },
     {
+      "id": "ExprAllayJukebox",
+      "name": "Allay Target Jukebox",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The location of the jukebox an allay is set to."
+      ],
+      "patterns": [
+        "[the] target jukebox [of %living entities%]",
+        "%living entities%'[s] target jukebox"
+      ],
+      "examples": [
+        "set {_loc} to the target jukebox of last spawned allay"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprAltitude",
       "name": "Altitude",
       "since": [
@@ -12219,6 +12361,32 @@
         "\tif domestication level of {_horse} >= max domestication level of {_horse}:",
         "\t\ttame {_horse}",
         "\t\tset tamer of {_horse} to {_p}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprDuplicateCooldown",
+      "name": "Allay Duplication Cooldown",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The cooldown time until an allay can duplicate again naturally.",
+        "Resetting the cooldown time will set the cooldown time to the same amount of time after an allay has duplicated."
+      ],
+      "patterns": [
+        "[the] (duplicat(e|ing|ion)|clon(e|ing)) cool[ ]down [time] [of %living entities%]",
+        "%living entities%'[s] (duplicat(e|ing|ion)|clon(e|ing)) cool[ ]down [time]"
+      ],
+      "examples": [
+        "set {_time} to the duplicate cooldown of last spawned allay",
+        "add 5 seconds to the duplication cool down time of last spawned allay",
+        "remove 3 seconds from the duplicating cooldown time of last spawned allay",
+        "clear the clone cool down of last spawned allay",
+        "reset the cloning cool down time of last spawned allay"
       ],
       "events": null,
       "requirements": null,
@@ -17422,12 +17590,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -17464,12 +17632,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -17629,12 +17797,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -18227,16 +18395,16 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "itemstack",
           "name": "item"
         },
         {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -18484,12 +18652,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "itemstack",
@@ -18574,12 +18742,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19136,12 +19304,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20536,12 +20704,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20720,12 +20888,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21197,12 +21365,12 @@
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -21669,12 +21837,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22193,12 +22361,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22298,12 +22466,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22340,20 +22508,20 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
@@ -22614,12 +22782,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -22777,12 +22945,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "timespan",
           "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
         },
         {
           "id": "number",
