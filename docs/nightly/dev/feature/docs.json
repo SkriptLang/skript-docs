@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-3e1f338",
+  "skriptVersion": "2.10.2-nightly-d3acac0",
   "version": {
     "major": 1,
     "minor": 0
@@ -12357,6 +12357,30 @@
       "keywords": null
     },
     {
+      "id": "ExprEntitySize",
+      "name": "Entity Size",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Changes the entity size of slimes and phantoms. This is not the same as changing the scale attribute of an entity.",
+        "When changing the size of a slime, its health is fully resorted and will have changes done to its max health, movement speed and attack damage.",
+        "The default minecraft size of a slime is anywhere between 0 and 2, with a maximum of 126.",
+        "The default minecraft size of a phantom is 0 with a maximum size of 64."
+      ],
+      "patterns": [
+        "[the] entity size of %living entities%",
+        "%living entities%'[s] entity size"
+      ],
+      "examples": [
+        "spawn a slime at player:\n\tset entity size of event-entity to 5\n\tset name of event-entity to \"King Slime Jorg\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprEntitySnapshot",
       "name": "Entity Snapshot",
       "since": [
@@ -17370,12 +17394,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18086,12 +18110,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18133,12 +18157,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "string",
@@ -18268,12 +18292,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18390,12 +18414,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "itemstack",
@@ -20626,12 +20650,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21575,12 +21599,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22099,12 +22123,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22246,20 +22270,20 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         }
       ],
       "keywords": null
@@ -22520,12 +22544,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -23104,12 +23128,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
