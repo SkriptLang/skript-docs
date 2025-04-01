@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-b9ace2e",
+  "skriptVersion": "2.11.0-pre1-nightly-6b92970",
   "version": {
     "major": 1,
     "minor": 0
@@ -753,7 +753,7 @@
       "id": "CondIsWithin",
       "name": "Is Within",
       "since": [
-        "2.7, INSERT VERSION (world borders)"
+        "2.7, 2.11 (world borders)"
       ],
       "deprecated": false,
       "description": [
@@ -1331,7 +1331,7 @@
       "id": "CondAllayCanDuplicate",
       "name": "Allay Can Duplicate",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1450,7 +1450,7 @@
       "id": "CondEndermanStaredAt",
       "name": "Enderman Has Been Stared At",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1523,7 +1523,7 @@
       "id": "CondEntityStorageIsFull",
       "name": "Entity Storage Is Full",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1547,7 +1547,7 @@
       "id": "CondEntityUnload",
       "name": "Can Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1591,7 +1591,7 @@
       "id": "CondGoatHasHorns",
       "name": "Goat Has Horns",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1816,7 +1816,7 @@
       "id": "CondIsChargingFireball",
       "name": "Is Charging Fireball",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1886,7 +1886,7 @@
       "id": "CondIsDancing",
       "name": "Is Dancing",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1910,7 +1910,7 @@
       "id": "CondIsDashing",
       "name": "Camel Is Dashing",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1932,7 +1932,7 @@
       "id": "CondIsEating",
       "name": "Is Eating",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2469,7 +2469,7 @@
       "id": "CondIsPersistent",
       "name": "Is Persistent",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2497,7 +2497,7 @@
       "id": "CondIsPlayingDead",
       "name": "Is Playing Dead",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2566,7 +2566,7 @@
       "id": "CondIsRiding",
       "name": "Is Riding",
       "since": [
-        "2.0, INSERT VERSION (entities)"
+        "2.0, 2.11 (entities)"
       ],
       "deprecated": false,
       "description": [
@@ -2656,7 +2656,7 @@
       "id": "CondIsScreaming",
       "name": "Is Screaming",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2680,7 +2680,7 @@
       "id": "CondIsSedated",
       "name": "Beehive Is Sedated",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2772,7 +2772,7 @@
       "id": "CondIsSleeping",
       "name": "Is Sleeping",
       "since": [
-        "1.4.4, INSERT VERSION (living entities)"
+        "1.4.4, 2.11 (living entities)"
       ],
       "deprecated": false,
       "description": [
@@ -3117,7 +3117,7 @@
       "id": "CondItemDespawn",
       "name": "Will Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3139,7 +3139,7 @@
       "id": "CondItemDespawn-2",
       "name": "Will Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3268,7 +3268,7 @@
       "id": "CondPandaIsOnBack",
       "name": "Panda Is On Its Back",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3289,7 +3289,7 @@
       "id": "CondPandaIsRolling",
       "name": "Panda Is Rolling",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3310,7 +3310,7 @@
       "id": "CondPandaIsScared",
       "name": "Panda Is Scared",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3331,7 +3331,7 @@
       "id": "CondPandaIsSneezing",
       "name": "Panda Is Sneezing",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3718,7 +3718,7 @@
       "id": "EffAllayCanDuplicate",
       "name": "Allay Duplicate",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -3741,7 +3741,7 @@
       "id": "EffAllayDuplicate",
       "name": "Make Allay Duplicate",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4071,7 +4071,7 @@
       "id": "EffClearEntityStorage",
       "name": "Clear Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4274,7 +4274,7 @@
       "id": "EffDancing",
       "name": "Dance",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4396,7 +4396,7 @@
       "id": "EffEating",
       "name": "Force Eating",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4466,7 +4466,7 @@
       "id": "EffEndermanTeleport",
       "name": "Enderman Teleport",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4518,7 +4518,7 @@
       "id": "EffEntityUnload",
       "name": "Entity Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4821,7 +4821,7 @@
       "id": "EffGoatHorns",
       "name": "Goat Horns",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4846,7 +4846,7 @@
       "id": "EffGoatRam",
       "name": "Make Goat Ram",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4991,7 +4991,7 @@
       "id": "EffInsertEntityStorage",
       "name": "Insert Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5058,7 +5058,7 @@
       "id": "EffItemDespawn",
       "name": "Item Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5498,7 +5498,7 @@
       "id": "EffPandaOnBack",
       "name": "Force Panda On Back",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5519,7 +5519,7 @@
       "id": "EffPandaRolling",
       "name": "Make Panda Roll",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5540,7 +5540,7 @@
       "id": "EffPandaSneezing",
       "name": "Make Panda Sneeze",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5586,7 +5586,7 @@
       "id": "EffPersistent",
       "name": "Persistent",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5652,7 +5652,7 @@
       "id": "EffPlayingDead",
       "name": "Play Dead",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5806,7 +5806,7 @@
       "id": "EffReleaseEntityStorage",
       "name": "Release From Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5985,7 +5985,7 @@
       "id": "EffScreaming",
       "name": "Make Entity Scream",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6196,7 +6196,7 @@
       "id": "EffSprinting",
       "name": "Sprinting",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6572,7 +6572,7 @@
       "id": "EffWakeupSleep",
       "name": "Wake And Sleep",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6606,7 +6606,7 @@
       "id": "EffWardenDisturbance",
       "name": "Make Disturbance",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6628,7 +6628,7 @@
       "id": "EffWorldBorderExpand",
       "name": "Expand/Shrink World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6703,7 +6703,7 @@
       "id": "EffZombify",
       "name": "Zombify Villager",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -7469,7 +7469,7 @@
       "id": "ExprConsumedItem",
       "name": "Consumed Item",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -8450,7 +8450,7 @@
       "id": "ExprProjectileForce",
       "name": "Projectile Force",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -8525,7 +8525,7 @@
       "id": "ExprRandomUUID",
       "name": "Random UUID",
       "since": [
-        "2.5.1, INSERT VERSION (return UUIDs)"
+        "2.5.1, 2.11 (return UUIDs)"
       ],
       "deprecated": false,
       "description": [
@@ -8695,7 +8695,7 @@
       "id": "ExprSecCreateWorldBorder",
       "name": "Create WorldBorder",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -8747,7 +8747,7 @@
       "id": "ExprShooter",
       "name": "Shooter",
       "since": [
-        "1.3.7, INSERT VERSION (entity shoot bow event)"
+        "1.3.7, 2.11 (entity shoot bow event)"
       ],
       "deprecated": false,
       "description": [
@@ -9369,7 +9369,7 @@
       "id": "ExprArmorChangeItem",
       "name": "Armor Change Item",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -11435,7 +11435,7 @@
       "id": "ExprWardenEntityAnger",
       "name": "Warden Anger Level",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -11691,7 +11691,7 @@
       "id": "ExprAllayJukebox",
       "name": "Allay Target Jukebox",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12092,7 +12092,7 @@
       "id": "ExprBeehiveFlower",
       "name": "Beehive Target Flower",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12114,7 +12114,7 @@
       "id": "ExprBeehiveHoneyLevel",
       "name": "Beehive Honey Level",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12310,7 +12310,7 @@
       "id": "ExprCarryingBlockData",
       "name": "Enderman Carrying BlockData",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12689,7 +12689,7 @@
       "id": "ExprDuplicateCooldown",
       "name": "Allay Duplication Cooldown",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12915,7 +12915,7 @@
       "id": "ExprEntitySize",
       "name": "Entity Size",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12968,7 +12968,7 @@
       "id": "ExprEntityStorageEntityCount",
       "name": "Entity Storage Entity Count",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -13064,7 +13064,7 @@
       "id": "ExprExplosiveYield",
       "name": "Explosive Yield",
       "since": [
-        "2.5, INSERT VERSION (ghasts)"
+        "2.5, 2.11 (ghasts)"
       ],
       "deprecated": false,
       "description": [
@@ -13271,7 +13271,7 @@
       "id": "ExprFromUUID",
       "name": "Entity/Player/World from UUID",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -13598,7 +13598,7 @@
       "id": "ExprItemOwner",
       "name": "Dropped Item Owner",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -13644,7 +13644,7 @@
       "id": "ExprItemThrower",
       "name": "Dropped Item Thrower",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -14407,7 +14407,7 @@
       "id": "ExprNoDamageTicks",
       "name": "No Damage Ticks",
       "since": [
-        "2.5, INSERT VERSION (deprecated)"
+        "2.5, 2.11 (deprecated)"
       ],
       "deprecated": true,
       "description": [
@@ -14429,7 +14429,7 @@
       "id": "ExprNoDamageTime",
       "name": "No Damage Time",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -14528,7 +14528,7 @@
       "id": "ExprPandaGene",
       "name": "Panda Gene",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15113,7 +15113,7 @@
       "id": "ExprSimulationDistance",
       "name": "Simulation Distance",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15348,7 +15348,7 @@
       "id": "ExprStringColor",
       "name": "String Colors",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15893,7 +15893,7 @@
       "id": "ExprViewDistance",
       "name": "View Distance",
       "since": [
-        "2.4, INSERT VERSION (worlds)"
+        "2.4, 2.11 (worlds)"
       ],
       "deprecated": false,
       "description": [
@@ -16000,7 +16000,7 @@
       "id": "ExprWardenAngryAt",
       "name": "Warden Most Angered At",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16102,7 +16102,7 @@
       "id": "ExprWorldBorder",
       "name": "World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16124,7 +16124,7 @@
       "id": "ExprWorldBorderCenter",
       "name": "Center of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16145,7 +16145,7 @@
       "id": "ExprWorldBorderDamageAmount",
       "name": "Damage Amount of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16167,7 +16167,7 @@
       "id": "ExprWorldBorderDamageBuffer",
       "name": "Damage Buffer of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16189,7 +16189,7 @@
       "id": "ExprWorldBorderSize",
       "name": "Size of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16211,7 +16211,7 @@
       "id": "ExprWorldBorderWarningDistance",
       "name": "Warning Distance of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16233,7 +16233,7 @@
       "id": "ExprWorldBorderWarningTime",
       "name": "Warning Time of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -17730,12 +17730,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18016,12 +18016,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18058,12 +18058,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18223,12 +18223,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18244,7 +18244,7 @@
     {
       "id": "entity_shoot_bow",
       "name": "On Entity Shoot Bow",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "%entity types% shoot[ing] (bow|projectile)"
@@ -18821,16 +18821,16 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
         },
         {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18956,12 +18956,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19168,12 +19168,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19464,7 +19464,7 @@
     {
       "id": "armor_change",
       "name": "On Armor Change",
-      "since": "2.5, INSERT VERSION (equipment slots)",
+      "since": "2.5, 2.11 (equipment slots)",
       "cancellable": false,
       "patterns": [
         "[player] armo[u]r change[d]",
@@ -19491,12 +19491,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "equipmentslot",
@@ -19595,7 +19595,7 @@
     {
       "id": "system_time",
       "name": "On System Time",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": false,
       "patterns": [
         "at %times% [in] real time"
@@ -20095,12 +20095,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21365,12 +21365,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22790,12 +22790,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22937,20 +22937,20 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         }
       ],
       "keywords": null
@@ -23211,12 +23211,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -23305,7 +23305,7 @@
     {
       "id": "bat_toggle_sleep",
       "name": "On Bat Toggle Sleep",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "bat toggle sleep"
@@ -23340,7 +23340,7 @@
     {
       "id": "world_border_bounds_change",
       "name": "On World Border Bounds Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "world[ ]border [bounds] chang(e|ing)"
@@ -23383,7 +23383,7 @@
     {
       "id": "world_border_bounds_finish_change",
       "name": "On World Border Bounds Finish Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": false,
       "patterns": [
         "world[ ]border [bounds] finish chang(e|ing)"
@@ -23409,12 +23409,12 @@
           "name": "world"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
-        },
-        {
           "id": "worldborder",
           "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
         },
         {
           "id": "number",
@@ -23426,7 +23426,7 @@
     {
       "id": "world_border_center_change",
       "name": "On World Border Center Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "world[ ]border center chang(e|ing)"
@@ -23500,7 +23500,7 @@
     {
       "id": "fishing",
       "name": "On Fishing",
-      "since": "2.10, INSERT VERSION (state change)",
+      "since": "2.10, 2.11 (state change)",
       "cancellable": true,
       "patterns": [
         "[fishing] (line|rod) cast",
@@ -23938,7 +23938,7 @@
     {
       "id": "uuid",
       "name": "UUID",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": null,
       "description": [
         "UUIDs are unique identifiers that ensure things can be reliably distinguished from each other. They are generated in a way that makes it practically impossible for duplicates to occur.",
@@ -24821,7 +24821,7 @@
     {
       "id": "worldborder",
       "name": "World Border",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": null,
       "description": [
         "Represents the border of a world or player."
@@ -24882,7 +24882,7 @@
     {
       "id": "equipmentslot",
       "name": "Equipment Slot",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": [
         "off hand, chestplate slot, head slot, hand slot, main hand slot, boots slot, feet slot, body slot, body armour slot, leggings slot, helmet slot, off hand slot, chestplate, legs slot, helmet, boots, tool slot, main hand, body armor slot, leggings, chest slot"
       ],
@@ -24895,7 +24895,7 @@
     {
       "id": "fishingstate",
       "name": "Fishing State",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": [
         "lured, bobber in ground, fish escaped, entity caught, fishing, fish lured, fishing rod cast, reel in, caught fish, caught entity, fishing line cast, fish escape, fish bite, bite, rod cast, in ground, failed attempt, fish caught"
       ],
@@ -25844,7 +25844,7 @@
     {
       "id": "uuid",
       "name": "uuid",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "UUID",
         "id": "uuid"
@@ -25862,7 +25862,7 @@
     {
       "id": "factorial",
       "name": "factorial",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25983,7 +25983,7 @@
     {
       "id": "permutations",
       "name": "permutations",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -26091,7 +26091,7 @@
     {
       "id": "combinations",
       "name": "combinations",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -26254,7 +26254,7 @@
     {
       "id": "root",
       "name": "root",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -26274,7 +26274,7 @@
     {
       "id": "median",
       "name": "median",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -26520,7 +26520,7 @@
     {
       "id": "mean",
       "name": "mean",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
