@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-d944807",
+  "skriptVersion": "2.10.2-nightly-5b082f4",
   "version": {
     "major": 1,
     "minor": 0
@@ -1929,6 +1929,29 @@
       "keywords": null
     },
     {
+      "id": "CondIsEating",
+      "name": "Is Eating",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda or horse type (horse, camel, donkey, llama, mule) is eating."
+      ],
+      "patterns": [
+        "%living entities% (is|are) eating",
+        "%living entities% (isn't|is not|aren't|are not) eating"
+      ],
+      "examples": [
+        "if last spawned panda is eating:\n\tforce last spawned panda to stop eating\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (horse type)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondIsEdible",
       "name": "Is Edible",
       "since": [
@@ -3198,6 +3221,90 @@
       "keywords": null
     },
     {
+      "id": "CondPandaIsOnBack",
+      "name": "Panda Is On Its Back",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is on its back."
+      ],
+      "patterns": [
+        "%living entities% (is|are) on (its|their) back[s]",
+        "%living entities% (isn't|is not|aren't|are not) on (its|their) back[s]"
+      ],
+      "examples": [
+        "if last spawned panda is on its back:\n\tmake last spawned panda get off its back\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsRolling",
+      "name": "Panda Is Rolling",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is rolling."
+      ],
+      "patterns": [
+        "%living entities% (is|are) rolling",
+        "%living entities% (isn't|is not|aren't|are not) rolling"
+      ],
+      "examples": [
+        "if last spawned panda is rolling:\n\tmake last spawned panda stop rolling\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsScared",
+      "name": "Panda Is Scared",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is scared."
+      ],
+      "patterns": [
+        "%living entities% (is|are) scared",
+        "%living entities% (isn't|is not|aren't|are not) scared"
+      ],
+      "examples": [
+        "if last spawned panda is scared:"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsSneezing",
+      "name": "Panda Is Sneezing",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is sneezing."
+      ],
+      "patterns": [
+        "%living entities% (is|are) sneezing",
+        "%living entities% (isn't|is not|aren't|are not) sneezing"
+      ],
+      "examples": [
+        "if last spawned panda is sneezing:\n\tmake last spawned panda stop sneezing\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondWithinRadius",
       "name": "Is Within Radius",
       "since": [
@@ -4240,6 +4347,29 @@
       "keywords": [
         "lead"
       ]
+    },
+    {
+      "id": "EffEating",
+      "name": "Force Eating",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda or horse type (horse, camel, donkey, llama, mule) start/stop eating."
+      ],
+      "patterns": [
+        "make %living entities% (start|stop) eating",
+        "force %living entities% to (start|stop) eating"
+      ],
+      "examples": [
+        "if last spawned panda is eating:\n\tmake last spawned panda stop eating\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (horse type)"
+      ],
+      "keywords": null
     },
     {
       "id": "EffElytraBoostConsume",
@@ -5292,6 +5422,69 @@
       "examples": [
         "show the victim's inventory to the player",
         "open the player's inventory for the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffPandaOnBack",
+      "name": "Force Panda On Back",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda get on/off its back."
+      ],
+      "patterns": [
+        "make %living entities% get (on|off) (its|their) back[s]",
+        "force %living entities% to get (on|off) (its|their) back[s]"
+      ],
+      "examples": [
+        "if last spawned panda is on its back:\n\tmake last spawned panda get off its back\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffPandaRolling",
+      "name": "Make Panda Roll",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda start/stop rolling."
+      ],
+      "patterns": [
+        "make %living entities% ((start rolling|roll)|stop rolling)",
+        "force %living entities% to (start|stop) rolling"
+      ],
+      "examples": [
+        "if last spawned panda is not rolling:\n\tmake last spawned panda start rolling\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffPandaSneezing",
+      "name": "Make Panda Sneeze",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda start/stop sneezing."
+      ],
+      "patterns": [
+        "make %living entities% ((start sneezing|sneeze)|stop sneezing)",
+        "force %living entities% to (start|stop) sneezing"
+      ],
+      "examples": [
+        "if last spawned panda is not sneezing:\n\tmake last spawned panda start sneezing\n"
       ],
       "events": null,
       "requirements": null,
@@ -14174,6 +14367,27 @@
       "keywords": null
     },
     {
+      "id": "ExprPandaGene",
+      "name": "Panda Gene",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The main or hidden gene of a panda."
+      ],
+      "patterns": [
+        "[the] (main|hidden) gene[s] of %living entities%",
+        "%living entities%'[s] (main|hidden) gene[s]"
+      ],
+      "examples": [
+        "if the main gene of last spawned panda is lazy:\n\tset the main gene of last spawned panda to playful\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprPassenger",
       "name": "Passenger",
       "since": [
@@ -17624,12 +17838,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -17666,12 +17880,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -17760,20 +17974,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -17784,12 +17998,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -18433,12 +18647,12 @@
           "name": "item"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -18564,12 +18778,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18851,12 +19065,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18952,12 +19166,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19087,12 +19301,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19338,12 +19552,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -19968,20 +20182,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -19992,12 +20206,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -20718,12 +20932,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20738,12 +20952,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20774,12 +20988,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -20922,12 +21136,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21399,12 +21613,12 @@
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -22395,12 +22609,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -22500,12 +22714,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22550,12 +22764,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         }
       ],
       "keywords": null
@@ -22816,12 +23030,12 @@
           "name": "past timespan"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -22971,12 +23185,12 @@
           "name": "world"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
-        },
-        {
           "id": "worldborder",
           "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
         },
         {
           "id": "number",
@@ -23014,12 +23228,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "timespan",
           "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
         },
         {
           "id": "number",
