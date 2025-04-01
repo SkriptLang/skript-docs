@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-5b082f4",
+  "skriptVersion": "2.10.2-nightly-f4a67ab",
   "version": {
     "major": 1,
     "minor": 0
@@ -9299,6 +9299,31 @@
       "keywords": null
     },
     {
+      "id": "ExprArmorChangeItem",
+      "name": "Armor Change Item",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the unequipped or equipped armor item from a 'armor change' event."
+      ],
+      "patterns": [
+        "[the] (old|unequipped) armo[u]r item",
+        "[the] (new|equipped) armo[u]r item"
+      ],
+      "examples": [
+        "on armor change\n\tbroadcast the old armor item\n"
+      ],
+      "events": [
+        "Armor Change"
+      ],
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprCommandSender",
       "name": "Command Sender",
       "since": [
@@ -17508,12 +17533,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17685,12 +17710,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17720,12 +17745,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17880,12 +17905,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18647,12 +18672,12 @@
           "name": "item"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18990,12 +19015,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19282,6 +19307,57 @@
         }
       ],
       "keywords": null
+    },
+    {
+      "id": "armor_change",
+      "name": "On Armor Change",
+      "since": "2.5, INSERT VERSION (equipment slots)",
+      "cancellable": false,
+      "patterns": [
+        "[player] armo[u]r change[d]",
+        "[player] %equipment slot% change[d]"
+      ],
+      "description": [
+        "Called when armor pieces of a player are changed."
+      ],
+      "requirements": [
+        "Paper"
+      ],
+      "examples": [
+        "on armor change:",
+        "\tbroadcast the old armor item",
+        "on helmet change:"
+      ],
+      "eventValues": [
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "slot",
+          "name": "slot"
+        },
+        {
+          "id": "player",
+          "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
+        },
+        {
+          "id": "equipmentslot",
+          "name": "equipment slot"
+        },
+        {
+          "id": "itemstack",
+          "name": "future item"
+        }
+      ],
+      "keywords": [
+        "armor",
+        "armour"
+      ]
     },
     {
       "id": "player_chunk_enter",
@@ -20988,12 +21064,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -22058,54 +22134,6 @@
       "keywords": null
     },
     {
-      "id": "armor_change",
-      "name": "On Armor Change",
-      "since": "2.5",
-      "cancellable": false,
-      "patterns": [
-        "[player] armo[u]r change[d]"
-      ],
-      "description": [
-        "Called when armor pieces of a player are changed."
-      ],
-      "requirements": [
-        "Paper"
-      ],
-      "examples": [
-        "on armor change:",
-        "\tsend \"You equipped %event-item%!\""
-      ],
-      "eventValues": [
-        {
-          "id": "world",
-          "name": "world"
-        },
-        {
-          "id": "slot",
-          "name": "slot"
-        },
-        {
-          "id": "player",
-          "name": "player"
-        },
-        {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
-          "id": "itemstack",
-          "name": "future item"
-        }
-      ],
-      "keywords": [
-        "armour"
-      ]
-    },
-    {
       "id": "sponge_absorb",
       "name": "On Sponge Absorb",
       "since": "2.5",
@@ -22714,12 +22742,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -23030,12 +23058,12 @@
           "name": "past timespan"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         }
       ],
       "keywords": null
@@ -23228,12 +23256,12 @@
           "name": "world"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
-        },
-        {
           "id": "worldborder",
           "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
         },
         {
           "id": "number",
@@ -23649,12 +23677,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -24685,6 +24713,19 @@
       "patterns": null,
       "description": [
         "Represents a vehicle."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "equipmentslot",
+      "name": "Equipment Slot",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "off hand, chestplate slot, head slot, hand slot, main hand slot, boots slot, feet slot, body slot, body armour slot, leggings slot, helmet slot, off hand slot, chestplate, legs slot, helmet, boots, tool slot, main hand, body armor slot, leggings, chest slot"
+      ],
+      "description": [
+        "Represents an equipment slot of an entity."
       ],
       "requirements": null,
       "examples": null
