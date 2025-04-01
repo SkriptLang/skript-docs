@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-82189cf",
+  "skriptVersion": "2.10.2-nightly-22b2c03",
   "version": {
     "major": 1,
     "minor": 0
@@ -17641,12 +17641,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17818,12 +17818,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17853,12 +17853,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -18776,16 +18776,16 @@
           "name": "player"
         },
         {
+          "id": "string",
+          "name": "text"
+        },
+        {
           "id": "itemstack",
           "name": "item"
         },
         {
           "id": "clicktype",
           "name": "click type"
-        },
-        {
-          "id": "string",
-          "name": "text"
         },
         {
           "id": "inventory",
@@ -19123,12 +19123,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -21320,12 +21320,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21797,12 +21797,12 @@
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -22850,12 +22850,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22892,12 +22892,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23321,12 +23321,12 @@
           "name": "world"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
-        },
-        {
           "id": "worldborder",
           "name": "world border"
+        },
+        {
+          "id": "timespan",
+          "name": "timespan"
         },
         {
           "id": "number",
@@ -23455,7 +23455,7 @@
     {
       "id": "fishing",
       "name": "On Fishing",
-      "since": "2.10",
+      "since": "2.10, INSERT VERSION (state change)",
       "cancellable": true,
       "patterns": [
         "[fishing] (line|rod) cast",
@@ -23465,13 +23465,15 @@
         "fish (escape|get away)",
         "[fishing] (rod|line) reel in",
         "fish bit(e|ing)",
-        "(fish approach[ing]|(bobber|hook) lure[d])"
+        "(fish approach[ing]|(bobber|hook) lure[d])",
+        "fishing state change[d]"
       ],
       "description": [
         "Called when a player triggers a fishing event.",
         "An entity hooked event is triggered when an entity gets caught by a fishing rod.",
         "A fish escape event is called when the player fails to click on time, and the fish escapes.",
-        "A fish approaching event is when the bobber is waiting to be hooked, and a fish is approaching."
+        "A fish approaching event is when the bobber is waiting to be hooked, and a fish is approaching.",
+        "A fishing state change event is triggered whenever the fishing state changes."
       ],
       "requirements": [
         "Paper (bobber lured)"
@@ -23479,8 +23481,11 @@
       "examples": [
         "on fishing line cast:",
         "\tsend \"You caught a fish!\" to player",
-        "on fishing state of caught entity:",
-        "\tpush event-entity vector from entity to player"
+        "on entity caught:",
+        "\tpush event-entity vector from entity to player",
+        "on fishing state change:",
+        "\tif event-fishing state is fish caught:",
+        "\t\tbroadcast \"A fish has been caught!\""
       ],
       "eventValues": [
         {
@@ -23490,6 +23495,10 @@
         {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -23785,12 +23794,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -24834,6 +24843,19 @@
       ],
       "description": [
         "Represents an equipment slot of an entity."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "fishingstate",
+      "name": "Fishing State",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "lured, bobber in ground, fish escaped, entity caught, fishing, fish lured, fishing rod cast, reel in, caught fish, caught entity, fishing line cast, fish escape, fish bite, bite, rod cast, in ground, failed attempt, fish caught"
+      ],
+      "description": [
+        "Represents the different states of a fishing event."
       ],
       "requirements": null,
       "examples": null
