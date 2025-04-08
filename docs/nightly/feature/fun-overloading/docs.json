@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.10.2-nightly-7f34b51",
+  "skriptVersion": "2.11.0-pre1-nightly-ba0156c",
   "version": {
     "major": 1,
     "minor": 0
@@ -753,7 +753,7 @@
       "id": "CondIsWithin",
       "name": "Is Within",
       "since": [
-        "2.7, INSERT VERSION (world borders)"
+        "2.7, 2.11 (world borders)"
       ],
       "deprecated": false,
       "description": [
@@ -1328,6 +1328,28 @@
       "keywords": null
     },
     {
+      "id": "CondAllayCanDuplicate",
+      "name": "Allay Can Duplicate",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an allay is able to duplicate naturally."
+      ],
+      "patterns": [
+        "%living entities% can (duplicate|clone)",
+        "%living entities% (can't|cannot|can not) (duplicate|clone)"
+      ],
+      "examples": [
+        "if last spawned allay can duplicate:",
+        "\tdisallow last spawned to duplicate"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondCanFly",
       "name": "Can Fly",
       "since": [
@@ -1425,6 +1447,30 @@
       "keywords": null
     },
     {
+      "id": "CondEndermanStaredAt",
+      "name": "Enderman Has Been Stared At",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an enderman has been stared at.",
+        "This will return true as long as the entity that stared at the enderman is still alive."
+      ],
+      "patterns": [
+        "%living entities% (has|have) been stared at",
+        "%living entities% (doesn't|does not|do not|don't) have been stared at"
+      ],
+      "examples": [
+        "if last spawned enderman has been stared at:"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondEntityIsInLiquid",
       "name": "Entity is in Liquid",
       "since": [
@@ -1477,7 +1523,7 @@
       "id": "CondEntityStorageIsFull",
       "name": "Entity Storage Is Full",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1501,7 +1547,7 @@
       "id": "CondEntityUnload",
       "name": "Can Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1545,7 +1591,7 @@
       "id": "CondGoatHasHorns",
       "name": "Goat Has Horns",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1770,7 +1816,7 @@
       "id": "CondIsChargingFireball",
       "name": "Is Charging Fireball",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1837,10 +1883,34 @@
       "keywords": null
     },
     {
+      "id": "CondIsDancing",
+      "name": "Is Dancing",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks to see if an entity is dancing, such as allays, parrots, or piglins."
+      ],
+      "patterns": [
+        "%living entities% (is|are) dancing",
+        "%living entities% (isn't|is not|aren't|are not) dancing"
+      ],
+      "examples": [
+        "if last spawned allay is dancing:",
+        "\tbroadcast \"Dance Party!\""
+      ],
+      "events": null,
+      "requirements": [
+        "Paper 1.20.1+ (piglins)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondIsDashing",
       "name": "Camel Is Dashing",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -1856,6 +1926,29 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondIsEating",
+      "name": "Is Eating",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda or horse type (horse, camel, donkey, llama, mule) is eating."
+      ],
+      "patterns": [
+        "%living entities% (is|are) eating",
+        "%living entities% (isn't|is not|aren't|are not) eating"
+      ],
+      "examples": [
+        "if last spawned panda is eating:\n\tforce last spawned panda to stop eating\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (horse type)"
+      ],
       "keywords": null
     },
     {
@@ -2376,7 +2469,7 @@
       "id": "CondIsPersistent",
       "name": "Is Persistent",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2404,7 +2497,7 @@
       "id": "CondIsPlayingDead",
       "name": "Is Playing Dead",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2473,7 +2566,7 @@
       "id": "CondIsRiding",
       "name": "Is Riding",
       "since": [
-        "2.0, INSERT VERSION (entities)"
+        "2.0, 2.11 (entities)"
       ],
       "deprecated": false,
       "description": [
@@ -2563,7 +2656,7 @@
       "id": "CondIsScreaming",
       "name": "Is Screaming",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2587,7 +2680,7 @@
       "id": "CondIsSedated",
       "name": "Beehive Is Sedated",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -2679,22 +2772,22 @@
       "id": "CondIsSleeping",
       "name": "Is Sleeping",
       "since": [
-        "1.4.4"
+        "1.4.4, 2.11 (living entities)"
       ],
       "deprecated": false,
       "description": [
-        "Checks whether a player is sleeping."
+        "Checks whether an entity is sleeping."
       ],
       "patterns": [
-        "%players% (is|are) sleeping",
-        "%players% (isn't|is not|aren't|are not) sleeping"
+        "%living entities% (is|are) sleeping",
+        "%living entities% (isn't|is not|aren't|are not) sleeping"
       ],
       "examples": [
-        "# cut your enemies' throats in their sleep >=)",
-        "on attack:",
-        "\tattacker is holding a sword",
-        "\tvictim is sleeping",
-        "\tincrease the damage by 1000"
+        "if player is sleeping:",
+        "\tmake player wake up without spawn location update",
+        "",
+        "if last spawned fox is sleeping:",
+        "\tmake last spawned fox stop sleeping"
       ],
       "events": null,
       "requirements": null,
@@ -3021,6 +3114,50 @@
       "keywords": null
     },
     {
+      "id": "CondItemDespawn",
+      "name": "Will Despawn",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks if the dropped item will be despawned naturally through Minecraft's timer."
+      ],
+      "patterns": [
+        "%itementities% will (despawn naturally|naturally despawn)",
+        "%itementities% (will (not|neither)|won't) (despawn naturally|naturally despawn)"
+      ],
+      "examples": [
+        "if all dropped items can despawn naturally:",
+        "\tprevent all dropped items from naturally despawning"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondItemDespawn-2",
+      "name": "Will Despawn",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks if the dropped item will be despawned naturally through Minecraft's timer."
+      ],
+      "patterns": [
+        "%itementities% can (despawn naturally|naturally despawn)",
+        "%itementities% (can't|cannot|can not) (despawn naturally|naturally despawn)"
+      ],
+      "examples": [
+        "if all dropped items can despawn naturally:",
+        "\tprevent all dropped items from naturally despawning"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondItemEnchantmentGlint",
       "name": "Item Has Enchantment Glint Override",
       "since": [
@@ -3122,6 +3259,90 @@
       "examples": [
         "if the lid of {_chest} is closed:",
         "\topen the lid of {_block}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsOnBack",
+      "name": "Panda Is On Its Back",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is on its back."
+      ],
+      "patterns": [
+        "%living entities% (is|are) on (its|their) back[s]",
+        "%living entities% (isn't|is not|aren't|are not) on (its|their) back[s]"
+      ],
+      "examples": [
+        "if last spawned panda is on its back:\n\tmake last spawned panda get off its back\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsRolling",
+      "name": "Panda Is Rolling",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is rolling."
+      ],
+      "patterns": [
+        "%living entities% (is|are) rolling",
+        "%living entities% (isn't|is not|aren't|are not) rolling"
+      ],
+      "examples": [
+        "if last spawned panda is rolling:\n\tmake last spawned panda stop rolling\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsScared",
+      "name": "Panda Is Scared",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is scared."
+      ],
+      "patterns": [
+        "%living entities% (is|are) scared",
+        "%living entities% (isn't|is not|aren't|are not) scared"
+      ],
+      "examples": [
+        "if last spawned panda is scared:"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "CondPandaIsSneezing",
+      "name": "Panda Is Sneezing",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a panda is sneezing."
+      ],
+      "patterns": [
+        "%living entities% (is|are) sneezing",
+        "%living entities% (isn't|is not|aren't|are not) sneezing"
+      ],
+      "examples": [
+        "if last spawned panda is sneezing:\n\tmake last spawned panda stop sneezing\n"
       ],
       "events": null,
       "requirements": null,
@@ -3494,6 +3715,50 @@
       "keywords": null
     },
     {
+      "id": "EffAllayCanDuplicate",
+      "name": "Allay Duplicate",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Set whether an allay can or cannot duplicate itself.",
+        "This is not the same as breeding allays."
+      ],
+      "patterns": [
+        "allow %living entities% to (duplicate|clone)",
+        "prevent %living entities% from (duplicating|cloning)"
+      ],
+      "examples": [
+        "allow all allays to duplicate",
+        "prevent all allays from duplicating"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffAllayDuplicate",
+      "name": "Make Allay Duplicate",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an allay duplicate itself.",
+        "This effect will always make an allay duplicate regardless of whether the duplicate attribute is disabled."
+      ],
+      "patterns": [
+        "make %living entities% (duplicate|clone)"
+      ],
+      "examples": [
+        "make all allays duplicate"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffApplyBoneMeal",
       "name": "Apply Bone Meal",
       "since": [
@@ -3806,7 +4071,7 @@
       "id": "EffClearEntityStorage",
       "name": "Clear Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4006,6 +4271,37 @@
       "keywords": null
     },
     {
+      "id": "EffDancing",
+      "name": "Dance",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an allay or piglin start or stop dancing.",
+        "Providing a location only applies to allays. They will check to see if the the block at the location is a jukebox and playing music. If it isn't, they will stop dancing. If no location is provided, the allay will dance indefinitely.",
+        "Providing a timespan only applies for piglins. It determines the length of time they will dance for. If no timespan is provided, they will dance indefinitely."
+      ],
+      "patterns": [
+        "make %living entities% (start dancing|dance) [%direction% %location%] [for %time span%]",
+        "make %living entities% (stop dancing|not dance)"
+      ],
+      "examples": [
+        "if last spawned allay is not dancing:",
+        "\tmake last spawned allay start dancing",
+        "if block at location(0, 0, 0) is a jukebox:",
+        "\tmake all allays dance at location(0, 0, 0)",
+        "",
+        "make last spawned piglin start dancing",
+        "make all piglins dance for 5 hours"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper 1.20.1+ (piglins)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "EffDetonate",
       "name": "Detonate Entities",
       "since": [
@@ -4097,6 +4393,29 @@
       ]
     },
     {
+      "id": "EffEating",
+      "name": "Force Eating",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda or horse type (horse, camel, donkey, llama, mule) start/stop eating."
+      ],
+      "patterns": [
+        "make %living entities% (start|stop) eating",
+        "force %living entities% to (start|stop) eating"
+      ],
+      "examples": [
+        "if last spawned panda is eating:\n\tmake last spawned panda stop eating\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (horse type)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "EffElytraBoostConsume",
       "name": "Consume Boosting Firework",
       "since": [
@@ -4144,6 +4463,34 @@
       "keywords": null
     },
     {
+      "id": "EffEndermanTeleport",
+      "name": "Enderman Teleport",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make an enderman teleport randomly or towards an entity.",
+        "Teleporting towards an entity teleports in the direction to the entity and not to them."
+      ],
+      "patterns": [
+        "make %living entities% (randomly teleport|teleport randomly)",
+        "force %living entities% to (randomly teleport|teleport randomly)",
+        "make %living entities% teleport [randomly] towards %entity%",
+        "force %living entities% to teleport [randomly] towards %entity%"
+      ],
+      "examples": [
+        "make last spawned enderman teleport randomly",
+        "loop 10 times:",
+        "\tmake all endermen teleport towards player"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.1+"
+      ],
+      "keywords": null
+    },
+    {
       "id": "EffEnforceWhitelist",
       "name": "Enforce Whitelist",
       "since": [
@@ -4171,7 +4518,7 @@
       "id": "EffEntityUnload",
       "name": "Entity Despawn",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4474,7 +4821,7 @@
       "id": "EffGoatHorns",
       "name": "Goat Horns",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4499,7 +4846,7 @@
       "id": "EffGoatRam",
       "name": "Make Goat Ram",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4644,7 +4991,7 @@
       "id": "EffInsertEntityStorage",
       "name": "Insert Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -4702,6 +5049,29 @@
       ],
       "examples": [
         "make target entity invulnerable"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffItemDespawn",
+      "name": "Item Despawn",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Prevent a dropped item from naturally despawning through Minecraft's timer."
+      ],
+      "patterns": [
+        "(prevent|disallow) %itementities% from (naturally despawning|despawning naturally)",
+        "allow natural despawning of %itementities%",
+        "allow %itementities% to (naturally despawn|despawn naturally)"
+      ],
+      "examples": [
+        "prevent all dropped items from naturally despawning",
+        "allow all dropped items to naturally despawn"
       ],
       "events": null,
       "requirements": null,
@@ -5125,6 +5495,69 @@
       "keywords": null
     },
     {
+      "id": "EffPandaOnBack",
+      "name": "Force Panda On Back",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda get on/off its back."
+      ],
+      "patterns": [
+        "make %living entities% get (on|off) (its|their) back[s]",
+        "force %living entities% to get (on|off) (its|their) back[s]"
+      ],
+      "examples": [
+        "if last spawned panda is on its back:\n\tmake last spawned panda get off its back\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffPandaRolling",
+      "name": "Make Panda Roll",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda start/stop rolling."
+      ],
+      "patterns": [
+        "make %living entities% ((start rolling|roll)|stop rolling)",
+        "force %living entities% to (start|stop) rolling"
+      ],
+      "examples": [
+        "if last spawned panda is not rolling:\n\tmake last spawned panda start rolling\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffPandaSneezing",
+      "name": "Make Panda Sneeze",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a panda start/stop sneezing."
+      ],
+      "patterns": [
+        "make %living entities% ((start sneezing|sneeze)|stop sneezing)",
+        "force %living entities% to (start|stop) sneezing"
+      ],
+      "examples": [
+        "if last spawned panda is not sneezing:\n\tmake last spawned panda start sneezing\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffPathfind",
       "name": "Pathfind",
       "since": [
@@ -5153,7 +5586,7 @@
       "id": "EffPersistent",
       "name": "Persistent",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5219,7 +5652,7 @@
       "id": "EffPlayingDead",
       "name": "Play Dead",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5373,7 +5806,7 @@
       "id": "EffReleaseEntityStorage",
       "name": "Release From Entity Storage",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5552,7 +5985,7 @@
       "id": "EffScreaming",
       "name": "Make Entity Scream",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -5763,7 +6196,7 @@
       "id": "EffSprinting",
       "name": "Sprinting",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6136,10 +6569,66 @@
       "keywords": null
     },
     {
+      "id": "EffWakeupSleep",
+      "name": "Wake And Sleep",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make bats and foxes sleep or wake up.",
+        "Make villagers sleep by providing a location of a bed.",
+        "Make players sleep by providing a location of a bed. Using 'with force' will bypass \"nearby monsters\" ,the max distance, allowing players to sleep even if the bed is far away, and lets players sleep in the nether and end. Does not work if the location of the bed is not in the world the player is currently in.",
+        "Using 'without spawn location update' will make players wake up without setting their spawn location to the bed."
+      ],
+      "patterns": [
+        "make %living entities% (start sleeping|[go to] sleep) [%direction% %location%]",
+        "force %living entities% to (start sleeping|[go to] sleep) [%direction% %location%]",
+        "make %players% (start sleeping|[go to] sleep) %direction% %location% (with force)",
+        "force %players% to (start sleeping|[go to] sleep) %direction% %location% (with force)",
+        "make %living entities% (stop sleeping|wake up)",
+        "force %living entities% to (stop sleeping|wake up)",
+        "make %players% (stop sleeping|wake up) (without spawn [location] update)",
+        "force %players% to (stop sleeping|wake up) (without spawn [location] update)"
+      ],
+      "examples": [
+        "make {_fox} go to sleep",
+        "make {_bat} stop sleeping",
+        "make {_villager} start sleeping at location(0, 0, 0)",
+        "make player go to sleep at location(0, 0, 0) with force",
+        "make player wake up without spawn location update"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffWardenDisturbance",
+      "name": "Make Disturbance",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a warden sense a disturbance at a location, causing the warden to investigate that area.",
+        "The warden will not investigate if the warden is aggressive towards an entity.",
+        "This effect does not add anger to the warden."
+      ],
+      "patterns": [
+        "make %living entities% sense [a] disturbance %direction% %location%"
+      ],
+      "examples": [
+        "make last spawned warden sense a disturbance at location(0, 0, 0)"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "EffWorldBorderExpand",
       "name": "Expand/Shrink World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6214,7 +6703,7 @@
       "id": "EffZombify",
       "name": "Zombify Villager",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -6971,6 +7460,27 @@
       ],
       "examples": [
         "set {_node} to node \"language\" in the skript config\nif text value of {_node} is \"french\":\n\tbroadcast \"Bonjour!\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprConsumedItem",
+      "name": "Consumed Item",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the item consumed within an entity shoot bow and item consume event."
+      ],
+      "patterns": [
+        "[the] consumed item"
+      ],
+      "examples": [
+        "on player or skeleton shoot projectile:\n\tif the consumed item is an arrow:\n\t\tcancel event\n\t\tsend \"You're now allowed to shoot your arrows.\" to shooter\n",
+        "on player consume:\n\tif the consumed item is cooked porkchop:\n\t\tsend \"Well aren't you just a little piggy wiggly!\" to player\n\tif player has scoreboard tag \"vegetarian\":\n\t\tset the consumed item to a carrot\n"
       ],
       "events": null,
       "requirements": null,
@@ -7937,6 +8447,26 @@
       "keywords": null
     },
     {
+      "id": "ExprProjectileForce",
+      "name": "Projectile Force",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the force at which a projectile was shot within an entity shoot bow event."
+      ],
+      "patterns": [
+        "[the] projectile force"
+      ],
+      "examples": [
+        "on entity shoot projectile:\n\tset the velocity of shooter to vector(0,1,0) * projectile force\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprProtocolVersion",
       "name": "Protocol Version",
       "since": [
@@ -7995,7 +8525,7 @@
       "id": "ExprRandomUUID",
       "name": "Random UUID",
       "since": [
-        "2.5.1, INSERT VERSION (return UUIDs)"
+        "2.5.1, 2.11 (return UUIDs)"
       ],
       "deprecated": false,
       "description": [
@@ -8165,7 +8695,7 @@
       "id": "ExprSecCreateWorldBorder",
       "name": "Create WorldBorder",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -8217,7 +8747,7 @@
       "id": "ExprShooter",
       "name": "Shooter",
       "since": [
-        "1.3.7"
+        "1.3.7, 2.11 (entity shoot bow event)"
       ],
       "deprecated": false,
       "description": [
@@ -8833,6 +9363,31 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprArmorChangeItem",
+      "name": "Armor Change Item",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the unequipped or equipped armor item from a 'armor change' event."
+      ],
+      "patterns": [
+        "[the] (old|unequipped) armo[u]r item",
+        "[the] (new|equipped) armo[u]r item"
+      ],
+      "examples": [
+        "on armor change\n\tbroadcast the old armor item\n"
+      ],
+      "events": [
+        "Armor Change"
+      ],
+      "requirements": [
+        "Paper"
+      ],
       "keywords": null
     },
     {
@@ -10877,6 +11432,31 @@
       "keywords": null
     },
     {
+      "id": "ExprWardenEntityAnger",
+      "name": "Warden Anger Level",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The anger level a warden feels towards an entity.",
+        "A warden can be angry towards multiple entities with different anger levels.",
+        "If an entity reaches an anger level of 80+, the warden will pursue it.",
+        "Anger level maxes out at 150."
+      ],
+      "patterns": [
+        "[the] anger level [of] %living entities% towards %living entities%",
+        "%living entities%'[s] anger level towards %living entities%"
+      ],
+      "examples": [
+        "set the anger level of last spawned warden towards player to 20",
+        "clear the last spawned warden's anger level towards player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprWithItemFlags",
       "name": "Item with Item Flags",
       "since": [
@@ -11102,6 +11682,27 @@
       ],
       "examples": [
         "set artificial intelligence of target entity to false"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprAllayJukebox",
+      "name": "Allay Target Jukebox",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The location of the jukebox an allay is set to."
+      ],
+      "patterns": [
+        "[the] target jukebox [of %living entities%]",
+        "%living entities%'[s] target jukebox"
+      ],
+      "examples": [
+        "set {_loc} to the target jukebox of last spawned allay"
       ],
       "events": null,
       "requirements": null,
@@ -11491,7 +12092,7 @@
       "id": "ExprBeehiveFlower",
       "name": "Beehive Target Flower",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -11513,7 +12114,7 @@
       "id": "ExprBeehiveHoneyLevel",
       "name": "Beehive Honey Level",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -11700,6 +12301,33 @@
       "examples": [
         "on book sign:",
         "\tmessage \"Book Title: %title of event-item%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprCarryingBlockData",
+      "name": "Enderman Carrying BlockData",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The block data an enderman is carrying.",
+        "Custom attributes such as NBT or names do not transfer over.",
+        "Blocks, blockdatas and items are acceptable objects to change the carrying block."
+      ],
+      "patterns": [
+        "[the] carr(ied|ying) block[[ ]data] of %living entities%",
+        "%living entities%'[s] carr(ied|ying) block[[ ]data]"
+      ],
+      "examples": [
+        "broadcast the carrying blockdata of last spawned enderman",
+        "set the carried block of last spawned enderman to an oak log",
+        "set the carrying block data of {_enderman} to oak stairs[facing=north]",
+        "set the carried blockdata of {_enderman} to {_item}",
+        "clear the carried blockdata of {_enderman}"
       ],
       "events": null,
       "requirements": null,
@@ -12058,6 +12686,32 @@
       "keywords": null
     },
     {
+      "id": "ExprDuplicateCooldown",
+      "name": "Allay Duplication Cooldown",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The cooldown time until an allay can duplicate again naturally.",
+        "Resetting the cooldown time will set the cooldown time to the same amount of time after an allay has duplicated."
+      ],
+      "patterns": [
+        "[the] (duplicat(e|ing|ion)|clon(e|ing)) cool[ ]down [time] [of %living entities%]",
+        "%living entities%'[s] (duplicat(e|ing|ion)|clon(e|ing)) cool[ ]down [time]"
+      ],
+      "examples": [
+        "set {_time} to the duplicate cooldown of last spawned allay",
+        "add 5 seconds to the duplication cool down time of last spawned allay",
+        "remove 3 seconds from the duplicating cooldown time of last spawned allay",
+        "clear the clone cool down of last spawned allay",
+        "reset the cloning cool down time of last spawned allay"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprDurability",
       "name": "Damage Value/Durability",
       "since": [
@@ -12237,6 +12891,51 @@
       "keywords": null
     },
     {
+      "id": "ExprEntityOwner",
+      "name": "Entity Owner",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The owner of a tameable entity (i.e. horse or wolf)."
+      ],
+      "patterns": [
+        "[the] (owner|tamer) of %living entities%",
+        "%living entities%'[s] (owner|tamer)"
+      ],
+      "examples": [
+        "\tset owner of last spawned wolf to player\n\tif the owner of last spawned wolf is player:\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprEntitySize",
+      "name": "Entity Size",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Changes the entity size of slimes and phantoms. This is not the same as changing the scale attribute of an entity.",
+        "When changing the size of a slime, its health is fully resorted and will have changes done to its max health, movement speed and attack damage.",
+        "The default minecraft size of a slime is anywhere between 0 and 2, with a maximum of 126.",
+        "The default minecraft size of a phantom is 0 with a maximum size of 64."
+      ],
+      "patterns": [
+        "[the] entity size of %living entities%",
+        "%living entities%'[s] entity size"
+      ],
+      "examples": [
+        "spawn a slime at player:\n\tset entity size of event-entity to 5\n\tset name of event-entity to \"King Slime Jorg\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprEntitySnapshot",
       "name": "Entity Snapshot",
       "since": [
@@ -12269,7 +12968,7 @@
       "id": "ExprEntityStorageEntityCount",
       "name": "Entity Storage Entity Count",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12283,29 +12982,6 @@
       "examples": [
         "broadcast the stored entity count of {_beehive}",
         "set the maximum entity count of {_beehive} to 20"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprEntityTamer",
-      "name": "Entity Owner",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The owner of a tameable entity, such as a horse or wolf."
-      ],
-      "patterns": [
-        "[the] (owner|tamer) of %living entities%",
-        "%living entities%'[s] (owner|tamer)"
-      ],
-      "examples": [
-        "set owner of target entity to player",
-        "delete owner of target entity",
-        "set {_t} to uuid of tamer of target entity"
       ],
       "events": null,
       "requirements": null,
@@ -12388,7 +13064,7 @@
       "id": "ExprExplosiveYield",
       "name": "Explosive Yield",
       "since": [
-        "2.5, INSERT VERSION (ghasts)"
+        "2.5, 2.11 (ghasts)"
       ],
       "deprecated": false,
       "description": [
@@ -12595,7 +13271,7 @@
       "id": "ExprFromUUID",
       "name": "Entity/Player/World from UUID",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -12919,6 +13595,27 @@
       "keywords": null
     },
     {
+      "id": "ExprItemOwner",
+      "name": "Dropped Item Owner",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The uuid of the owner of the dropped item.\nSetting the owner of a dropped item means only that entity or player can pick it up.\nDropping an item does not automatically make the entity or player the owner.\n"
+      ],
+      "patterns": [
+        "[the] uuid of [the] [dropped] item owner [of %itementities%]",
+        "[the] [dropped] item owner's uuid [of %itementities%]"
+      ],
+      "examples": [
+        "\tset the uuid of the dropped item owner of last dropped item to player\n\tif the uuid of the dropped item owner of last dropped item is uuid of player:\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprItemsIn",
       "name": "Items In",
       "since": [
@@ -12938,6 +13635,28 @@
         "\tloop-item is enchanted",
         "\tremove loop-item from the player",
         "set {inventory::%uuid of player%::*} to items in the player's inventory"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprItemThrower",
+      "name": "Dropped Item Thrower",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The uuid of the entity or player that threw/dropped the dropped item."
+      ],
+      "patterns": [
+        "[the] uuid of [the] [dropped] item thrower [of %itementities%]",
+        "[the] [dropped] item thrower's uuid [of %itementities%]"
+      ],
+      "examples": [
+        "set the uuid of the dropped item thrower of {_dropped item} to player\nif the uuid of the dropped item thrower of {_dropped item} is uuid of player:\n",
+        "clear the item thrower of {_dropped item}"
       ],
       "events": null,
       "requirements": null,
@@ -13009,6 +13728,31 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprItemWithTooltip",
+      "name": "Item with Tooltip",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get an item with or without entire/additional tooltip.",
+        "If changing the 'entire' tooltip of an item, nothing will show up when a player hovers over it.",
+        "If changing the 'additional' tooltip, only specific parts (which change per item) will be hidden."
+      ],
+      "patterns": [
+        "%item types% with[out] [entire|additional] tool[ ]tip[s]"
+      ],
+      "examples": [
+        "set {_item with additional tooltip} to diamond with additional tooltip",
+        "set {_item without entire tooltip} to diamond without entire tooltip"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.5+"
+      ],
       "keywords": null
     },
     {
@@ -13663,7 +14407,7 @@
       "id": "ExprNoDamageTicks",
       "name": "No Damage Ticks",
       "since": [
-        "2.5, INSERT VERSION (deprecated)"
+        "2.5, 2.11 (deprecated)"
       ],
       "deprecated": true,
       "description": [
@@ -13685,7 +14429,7 @@
       "id": "ExprNoDamageTime",
       "name": "No Damage Time",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -13775,6 +14519,27 @@
       ],
       "examples": [
         "set slot 1 of player's current inventory to diamond sword"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprPandaGene",
+      "name": "Panda Gene",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The main or hidden gene of a panda."
+      ],
+      "patterns": [
+        "[the] (main|hidden) gene[s] of %living entities%",
+        "%living entities%'[s] (main|hidden) gene[s]"
+      ],
+      "examples": [
+        "if the main gene of last spawned panda is lazy:\n\tset the main gene of last spawned panda to playful\n"
       ],
       "events": null,
       "requirements": null,
@@ -14348,7 +15113,7 @@
       "id": "ExprSimulationDistance",
       "name": "Simulation Distance",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -14583,7 +15348,7 @@
       "id": "ExprStringColor",
       "name": "String Colors",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15128,7 +15893,7 @@
       "id": "ExprViewDistance",
       "name": "View Distance",
       "since": [
-        "2.4, INSERT VERSION (worlds)"
+        "2.4, 2.11 (worlds)"
       ],
       "deprecated": false,
       "description": [
@@ -15232,6 +15997,29 @@
       "keywords": null
     },
     {
+      "id": "ExprWardenAngryAt",
+      "name": "Warden Most Angered At",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The entity a warden is most angry at.",
+        "A warden can be angry towards multiple entities with different anger levels."
+      ],
+      "patterns": [
+        "[the] most angered entity of %living entities%",
+        "%living entities%'[s] most angered entity"
+      ],
+      "examples": [
+        "if the most angered entity of last spawned warden is not player:",
+        "\tset the most angered entity of last spawned warden to player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprWeather",
       "name": "Weather",
       "since": [
@@ -15314,7 +16102,7 @@
       "id": "ExprWorldBorder",
       "name": "World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15336,7 +16124,7 @@
       "id": "ExprWorldBorderCenter",
       "name": "Center of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15357,7 +16145,7 @@
       "id": "ExprWorldBorderDamageAmount",
       "name": "Damage Amount of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15379,7 +16167,7 @@
       "id": "ExprWorldBorderDamageBuffer",
       "name": "Damage Buffer of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15401,7 +16189,7 @@
       "id": "ExprWorldBorderSize",
       "name": "Size of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15423,7 +16211,7 @@
       "id": "ExprWorldBorderWarningDistance",
       "name": "Warning Distance of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -15445,7 +16233,7 @@
       "id": "ExprWorldBorderWarningTime",
       "name": "Warning Time of World Border",
       "since": [
-        "INSERT VERSION"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
@@ -16704,16 +17492,28 @@
     {
       "id": "beacon_effect",
       "name": "On Beacon Effect",
-      "since": null,
+      "since": "2.10",
       "cancellable": true,
       "patterns": [
         "[primary|secondary] beacon effect [of %potion effect types%]",
         "application of [primary|secondary] beacon effect [of %potion effect types%]",
         "[primary|secondary] beacon effect apply [of %potion effect types%]"
       ],
-      "description": null,
-      "requirements": null,
-      "examples": null,
+      "description": [
+        "Called when a player gets an effect from a beacon."
+      ],
+      "requirements": [
+        "Paper"
+      ],
+      "examples": [
+        "on beacon effect:",
+        "\tbroadcast applied effect",
+        "\tbroadcast event-player",
+        "\tbroadcast event-block",
+        "on primary beacon effect apply of haste:",
+        "on application of secondary beacon effect:",
+        "on beacon effect of speed:"
+      ],
       "eventValues": [
         {
           "id": "block",
@@ -16737,16 +17537,24 @@
     {
       "id": "beacon_toggle",
       "name": "On Beacon Toggle",
-      "since": null,
+      "since": "2.10",
       "cancellable": false,
       "patterns": [
         "beacon toggle",
         "beacon activat(e|ion)",
         "beacon deactivat(e|ion)"
       ],
-      "description": null,
-      "requirements": null,
-      "examples": null,
+      "description": [
+        "Called when a beacon is activated or deactivated."
+      ],
+      "requirements": [
+        "Paper"
+      ],
+      "examples": [
+        "on beacon toggle:",
+        "on beacon activate:",
+        "on beacon deactivate:"
+      ],
       "eventValues": [
         {
           "id": "block",
@@ -17434,6 +18242,49 @@
       "keywords": null
     },
     {
+      "id": "entity_shoot_bow",
+      "name": "On Entity Shoot Bow",
+      "since": "2.11",
+      "cancellable": true,
+      "patterns": [
+        "%entity types% shoot[ing] (bow|projectile)"
+      ],
+      "description": [
+        "Called when an entity shoots a bow.\nevent-entity refers to the shot projectile/entity.\n"
+      ],
+      "requirements": null,
+      "examples": [
+        "on player shoot bow:\n\tchance of 30%:\n\t\tdamage event-slot by 10\n\t\tsend \"Your bow has taken increased damage!\" to shooter\n\non stray shooting bow:\n\tset {_e} to event-entity\n\tspawn a cow at {_e}:\n\t\tset velocity of entity to velocity of {_e}\n\tset event-entity to last spawned entity\n"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
+        },
+        {
+          "id": "slot",
+          "name": "slot"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
       "id": "target",
       "name": "On Target",
       "since": "1.0",
@@ -18105,12 +18956,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18611,6 +19462,57 @@
       "keywords": null
     },
     {
+      "id": "armor_change",
+      "name": "On Armor Change",
+      "since": "2.5, 2.11 (equipment slots)",
+      "cancellable": false,
+      "patterns": [
+        "[player] armo[u]r change[d]",
+        "[player] %equipment slot% change[d]"
+      ],
+      "description": [
+        "Called when armor pieces of a player are changed."
+      ],
+      "requirements": [
+        "Paper"
+      ],
+      "examples": [
+        "on armor change:",
+        "\tbroadcast the old armor item",
+        "on helmet change:"
+      ],
+      "eventValues": [
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "slot",
+          "name": "slot"
+        },
+        {
+          "id": "player",
+          "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
+        },
+        {
+          "id": "equipmentslot",
+          "name": "equipment slot"
+        },
+        {
+          "id": "itemstack",
+          "name": "future item"
+        }
+      ],
+      "keywords": [
+        "armor",
+        "armour"
+      ]
+    },
+    {
       "id": "player_chunk_enter",
       "name": "On Player Chunk Enter",
       "since": "2.7",
@@ -18693,7 +19595,7 @@
     {
       "id": "system_time",
       "name": "On System Time",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": false,
       "patterns": [
         "at %times% [in] real time"
@@ -20463,12 +21365,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21385,42 +22287,6 @@
       "keywords": null
     },
     {
-      "id": "armor_change",
-      "name": "On Armor Change",
-      "since": "2.5",
-      "cancellable": false,
-      "patterns": [
-        "[player] armo[u]r change[d]"
-      ],
-      "description": [
-        "Called when armor pieces of a player are changed."
-      ],
-      "requirements": [
-        "Paper"
-      ],
-      "examples": [
-        "on armor change:",
-        "\tsend \"You equipped %event-item%!\""
-      ],
-      "eventValues": [
-        {
-          "id": "world",
-          "name": "world"
-        },
-        {
-          "id": "player",
-          "name": "player"
-        },
-        {
-          "id": "itemstack",
-          "name": "item"
-        }
-      ],
-      "keywords": [
-        "armour"
-      ]
-    },
-    {
       "id": "sponge_absorb",
       "name": "On Sponge Absorb",
       "since": "2.5",
@@ -21924,12 +22790,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22029,12 +22895,12 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "itemstack",
@@ -22071,12 +22937,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22437,9 +23303,44 @@
       "keywords": null
     },
     {
+      "id": "bat_toggle_sleep",
+      "name": "On Bat Toggle Sleep",
+      "since": "2.11",
+      "cancellable": true,
+      "patterns": [
+        "bat toggle sleep"
+      ],
+      "description": [
+        "Called when a bat attempts to go to sleep or wakes up."
+      ],
+      "requirements": null,
+      "examples": [
+        "on bat toggle sleep:"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
       "id": "world_border_bounds_change",
       "name": "On World Border Bounds Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "world[ ]border [bounds] chang(e|ing)"
@@ -22482,7 +23383,7 @@
     {
       "id": "world_border_bounds_finish_change",
       "name": "On World Border Bounds Finish Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": false,
       "patterns": [
         "world[ ]border [bounds] finish chang(e|ing)"
@@ -22525,7 +23426,7 @@
     {
       "id": "world_border_center_change",
       "name": "On World Border Center Change",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "cancellable": true,
       "patterns": [
         "world[ ]border center chang(e|ing)"
@@ -22599,7 +23500,7 @@
     {
       "id": "fishing",
       "name": "On Fishing",
-      "since": "2.10",
+      "since": "2.10, 2.11 (state change)",
       "cancellable": true,
       "patterns": [
         "[fishing] (line|rod) cast",
@@ -22609,13 +23510,15 @@
         "fish (escape|get away)",
         "[fishing] (rod|line) reel in",
         "fish bit(e|ing)",
-        "(fish approach[ing]|(bobber|hook) lure[d])"
+        "(fish approach[ing]|(bobber|hook) lure[d])",
+        "fishing state change[d]"
       ],
       "description": [
         "Called when a player triggers a fishing event.",
         "An entity hooked event is triggered when an entity gets caught by a fishing rod.",
         "A fish escape event is called when the player fails to click on time, and the fish escapes.",
-        "A fish approaching event is when the bobber is waiting to be hooked, and a fish is approaching."
+        "A fish approaching event is when the bobber is waiting to be hooked, and a fish is approaching.",
+        "A fishing state change event is triggered whenever the fishing state changes."
       ],
       "requirements": [
         "Paper (bobber lured)"
@@ -22623,8 +23526,11 @@
       "examples": [
         "on fishing line cast:",
         "\tsend \"You caught a fish!\" to player",
-        "on fishing state of caught entity:",
-        "\tpush event-entity vector from entity to player"
+        "on entity caught:",
+        "\tpush event-entity vector from entity to player",
+        "on fishing state change:",
+        "\tif event-fishing state is fish caught:",
+        "\t\tbroadcast \"A fish has been caught!\""
       ],
       "eventValues": [
         {
@@ -22634,6 +23540,10 @@
         {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -23028,7 +23938,7 @@
     {
       "id": "uuid",
       "name": "UUID",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": null,
       "description": [
         "UUIDs are unique identifiers that ensure things can be reliably distinguished from each other. They are generated in a way that makes it practically impossible for duplicates to occur.",
@@ -23395,7 +24305,7 @@
       "name": "Inventory Action",
       "since": "2.2-dev16",
       "patterns": [
-        "drop stack from slot, swap items with hotbar, swap cursor stack, pickup single item, pickup some, drop all from cursor, move to other inventory, pickup from bundle inventory actions, drop cursor stack, place all into bundle inventory actions, pickup all, swap with hotbar, pickup all into bundle inventory actions, nothing, drop all from slot, swap cursor, drop cursor, pickup all items, drop slot item, place from bundle inventory actions, place all, drop cursor item, drop slot stack, drop single item from slot, swap with cursor, place some, pickup one item, drop single item from cursor, collect items to cursor, unknown, clone stack, drop stack from cursor, drop one item from slot, drop one item from cursor, unsupported, do nothing, drop one from cursor, pickup half, drop items from slot, swap stack with cursor, place some into bundle inventory actions, place all items, collect to cursor, pickup some items, drop slot, drop items from cursor, hotbar move and readd, shift move, custom, pickup single, place one item, hotbar swap items, drop one from slot, place some items, place one, pickup half stack, instant move, hotbar swap, pickup some into bundle inventory actions"
+        "drop stack from slot, swap items with hotbar, pickup all into bundle, place items from bundle, swap cursor stack, pickup single item, pickup some, drop all from cursor, move to other inventory, drop cursor stack, pickup all items into bundle, pickup from bundle, pickup all, place some into bundle, swap with hotbar, nothing, drop all from slot, swap cursor, drop cursor, place from bundle, pickup all items, drop slot item, place all, drop cursor item, drop slot stack, drop single item from slot, swap with cursor, place some, pickup one item, drop single item from cursor, pickup some items into bundle, collect items to cursor, unknown, clone stack, drop stack from cursor, drop one item from slot, pickup some into bundle, drop one item from cursor, unsupported, do nothing, place some items into bundle, drop one from cursor, pickup half, drop items from slot, swap stack with cursor, place all items, place all items into bundle, collect to cursor, pickup some items, drop slot, drop items from cursor, hotbar move and readd, shift move, custom, place all into bundle, pickup single, pickup items from bundle, place one item, hotbar swap items, drop one from slot, place some items, place one, pickup half stack, instant move, hotbar swap"
       ],
       "description": [
         "What player just did in inventory event. Note that when in creative game mode, most actions do not work correctly."
@@ -23425,7 +24335,7 @@
       "name": "Inventory Type",
       "since": "2.2-dev32",
       "patterns": [
-        "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, a workbench inventory, hopper inventory, a merchant inventory, a hopper inventory, chiseled bookshelf, an ender chest inventory, new smithing table, bookshelf, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, grindstone inventory, a crafter inventory, a crafting table inventory, a player inventory, decorated pot, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a decorated pot, a lectern inventory, merchant inventory, cartography table inventory, a chiseled bookshelf, a new smithing table, a furnace inventory, anvil inventory, a dispenser inventory, a grindstone inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, a bookshelf, crafter inventory, creative inventory, crafting table inventory, an anvil inventory"
+        "barrel inventory, a loom inventory, a blast furnace inventory, workbench inventory, ender chest inventory, loom inventory, bookshelf inventory, a workbench inventory, hopper inventory, decorated pot inventory, a merchant inventory, a hopper inventory, an ender chest inventory, new smithing table, a jukebox, beacon inventory, shulker box inventory, a barrel inventory, a shulker box inventory, lectern inventory, chest inventory, a villager inventory, a smoker inventory, a brewing stand inventory, a smithing inventory, chiseled bookshelf inventory, grindstone inventory, a crafter inventory, a crafting table inventory, a player inventory, furnace inventory, a creative inventory, blast furnace inventory, upgrade gear, a composter inventory, an enchanting table inventory, jukebox, a dropper inventory, a cartography table inventory, a upgrade gear, smoker inventory, composter inventory, a chest inventory, upgrade gear table, a upgrade gear table, dispenser inventory, player inventory, stonecutter inventory, a stonecutter inventory, a lectern inventory, merchant inventory, cartography table inventory, a new smithing table, a chiseled bookshelf inventory, a furnace inventory, anvil inventory, a bookshelf inventory, a dispenser inventory, a grindstone inventory, a decorated pot inventory, smithing inventory, dropper inventory, brewing stand inventory, villager inventory, enchanting table inventory, a beacon inventory, crafter inventory, creative inventory, crafting table inventory, an anvil inventory"
       ],
       "description": [
         "Minecraft has several different inventory types with their own use cases."
@@ -23561,7 +24471,7 @@
       "name": "Spawn Reason",
       "since": "2.3",
       "patterns": [
-        "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, bucket spawn reasons, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification"
+        "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, release from bucket, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification"
       ],
       "description": [
         "The spawn reason in a <a href='events.html#spawn'>spawn</a> event."
@@ -23732,7 +24642,7 @@
       "name": "Attribute Type",
       "since": "2.5",
       "patterns": [
-        "armor, armor toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
+        "armor, armor toughness, armour, armour toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic armour, generic armour toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
       ],
       "description": [
         "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.",
@@ -23830,7 +24740,7 @@
       "name": "Item Flag",
       "since": "2.10",
       "patterns": [
-        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, unbreakable hidden, dye color hidden, hide enchantments, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
+        "hide unbreakable, hide unbreakable status, hide destroys, hide additional tooltip, destroys hidden, hide enchants, stored enchantments hidden, hidden destroys, hidden stored enchants, dye hidden, stored enchants hidden, hidden enchants, hidden unbreakable status, hide armour trim, hidden stored enchantments, hide stored enchants, hide stored enchantments, hide attributes, hidden additional tooltip, hidden armor trim, hidden placed on, additional tooltip hidden, enchants hidden, enchantments hidden, attributes hidden, unbreakable status hidden, hidden dye color, hidden armour trim, unbreakable hidden, dye color hidden, hide enchantments, armour trim hidden, hidden unbreakable, hide dye color, hidden attributes, armor trim hidden, hide destroyable blocks, hide placed on, hidden dye, hide armor trim, hide breakable blocks, placed on hidden, hide dye"
       ],
       "description": [
         "Represents flags that may be applied to hide certain attributes of an item."
@@ -23885,7 +24795,7 @@
       "name": "Villager Profession",
       "since": "2.10",
       "patterns": [
-        "armorer, armorer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
+        "armorer, armorer profession, armourer, armourer profession, butcher, butcher profession, cartographer, cartographer profession, cleric, cleric profession, farmer, farmer profession, fisherman, fisherman profession, fletcher, fletcher profession, leatherworker, leatherworker profession, librarian, librarian profession, mason, mason profession, nitwit, nitwit profession, no profession, none, none profession, shepherd, shepherd profession, toolsmith, toolsmith profession, unemployed, weaponsmith, weaponsmith profession"
       ],
       "description": [
         "Represents the different professions of villagers."
@@ -23911,7 +24821,7 @@
     {
       "id": "worldborder",
       "name": "World Border",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "patterns": null,
       "description": [
         "Represents the border of a world or player."
@@ -23965,6 +24875,32 @@
       "patterns": null,
       "description": [
         "Represents a vehicle."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "equipmentslot",
+      "name": "Equipment Slot",
+      "since": "2.11",
+      "patterns": [
+        "off hand, chestplate slot, head slot, hand slot, main hand slot, boots slot, feet slot, body slot, body armour slot, leggings slot, helmet slot, off hand slot, chestplate, legs slot, helmet, boots, tool slot, main hand, body armor slot, leggings, chest slot"
+      ],
+      "description": [
+        "Represents an equipment slot of an entity."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "fishingstate",
+      "name": "Fishing State",
+      "since": "2.11",
+      "patterns": [
+        "lured, bobber in ground, fish escaped, entity caught, fishing, fish lured, fishing rod cast, reel in, caught fish, caught entity, fishing line cast, fish escape, fish bite, bite, rod cast, in ground, failed attempt, fish caught"
+      ],
+      "description": [
+        "Represents the different states of a fishing event."
       ],
       "requirements": null,
       "examples": null
@@ -24908,7 +25844,7 @@
     {
       "id": "uuid",
       "name": "uuid",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "UUID",
         "id": "uuid"
@@ -24926,7 +25862,7 @@
     {
       "id": "factorial",
       "name": "factorial",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25047,7 +25983,7 @@
     {
       "id": "permutations",
       "name": "permutations",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25155,7 +26091,7 @@
     {
       "id": "combinations",
       "name": "combinations",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25318,7 +26254,7 @@
     {
       "id": "root",
       "name": "root",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25338,7 +26274,7 @@
     {
       "id": "median",
       "name": "median",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
@@ -25584,7 +26520,7 @@
     {
       "id": "mean",
       "name": "mean",
-      "since": "INSERT VERSION",
+      "since": "2.11",
       "returnType": {
         "name": "Number",
         "id": "number"
