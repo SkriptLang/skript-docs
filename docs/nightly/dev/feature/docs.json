@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.0-pre2-nightly-4cdf9c4",
+  "skriptVersion": "2.11.0-pre2-nightly-06a14a0",
   "version": {
     "major": 1,
     "minor": 1
@@ -18016,12 +18016,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18774,12 +18774,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -18821,16 +18821,16 @@
           "name": "player"
         },
         {
+          "id": "clicktype",
+          "name": "click type"
+        },
+        {
           "id": "itemstack",
           "name": "item"
         },
         {
           "id": "string",
           "name": "text"
-        },
-        {
-          "id": "clicktype",
-          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19078,12 +19078,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "itemstack",
@@ -19168,12 +19168,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -20095,12 +20095,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22790,12 +22790,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
