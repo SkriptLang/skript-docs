@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.0-nightly-6cbe291",
+  "skriptVersion": "2.11.0-nightly-1049923",
   "version": {
     "major": 1,
     "minor": 1
@@ -17733,12 +17733,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17910,12 +17910,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -17945,12 +17945,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item"
         },
         {
           "id": "itemstack",
@@ -18270,12 +18270,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18868,12 +18868,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "string",
@@ -19003,12 +19003,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19125,12 +19125,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "itemstack",
@@ -19538,12 +19538,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "equipmentslot",
@@ -21264,12 +21264,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21412,12 +21412,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21889,12 +21889,12 @@
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -22837,12 +22837,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23456,12 +23456,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "timespan",
           "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
         },
         {
           "id": "number",
@@ -25172,6 +25172,19 @@
       ],
       "description": [
         "Various game effects that can be played for players, like record disc songs, splash potions breaking, or fake bone meal effects."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "entityeffect",
+      "name": "Entity Effect",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "drown damage effect, villager angry effect, totem resurrect animation, ravager attack animation, firework explode animation, love hearts effect, shield block animation, cat tame fail animation, reset spawner minecart delay effect, ignite tnt minecart animation, fed dolphin animation, wolf smoke effect, zoglin attack animation, sheep eat grass animation, iron golem rose animation, player bad omen raid effect, thorns hurt animation, break equipment leggings effect, hurt animation, hoglin attack animation, taming succeeded effect, sheep eat animation, wolf shake animation, armor stand hit animation, ender teleport animation, honey block slide particles, iron golem attack animation, rabbit jump effect, tipped arrow particles effect, iron golem sheath animation, sniffer dig animation, zombie transform animation, break equipment helmet effect, villager happy effect, egg break animation, villager splash effect, wolf hearts effect, swap hand items effect, fox chew animation, wolf shake stop animation, spawn death smoke effect, cat tame success animation, death animation, snowball break animation, protected from death animation, witch magic effect, honey block fall particles, shield break animation, warden sonic attack animation, shake animation, explosion damage effect, armadillo peek animation, break equipment off hand effect, trusting succeeded, squid rotate animation, entity attack animation, hurt berry bush effect, break equipment main hand effect, break equipment body effect, entity poof effect, stunned ravager animation, warden attack animation, trusting failed, guardian target effect, goat lower head animation, break equipment chestplate effect, entity death animation, break body animation, projectile crack animation, fang attack animation, warden tendril shake animation, taming failed effect, goat raise head animation, break equipment boots effect, villager heart effect"
+      ],
+      "description": [
+        "Various entity effects that can be played for entities, like wolf howling, or villager happy."
       ],
       "requirements": null,
       "examples": null
