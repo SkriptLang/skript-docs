@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.0-nightly-b51a18e",
+  "skriptVersion": "2.11.0-nightly-b3d463a",
   "version": {
     "major": 1,
     "minor": 1
@@ -811,7 +811,7 @@
       ],
       "examples": [
         "player is holding a stick",
-        "victim isn't holding a sword of sharpness"
+        "victim isn't holding a diamond sword of sharpness"
       ],
       "events": null,
       "requirements": null,
@@ -1966,7 +1966,7 @@
         "%item types% (isn't|is not|aren't|are not) edible"
       ],
       "examples": [
-        "steak is edible",
+        "cooked beef is edible",
         "player's tool is edible"
       ],
       "events": null,
@@ -2055,7 +2055,7 @@
         "%item types% (isn't|is not|aren't|are not) flammable"
       ],
       "examples": [
-        "wood is flammable",
+        "send whether the tag contents of minecraft tag \"planks\" are flammable",
         "player's tool is flammable"
       ],
       "events": null,
@@ -3106,7 +3106,6 @@
       ],
       "examples": [
         "player is wearing an iron chestplate and iron leggings",
-        "player is wearing all diamond armour",
         "target is wearing wolf armor"
       ],
       "events": null,
@@ -3616,7 +3615,7 @@
         "if block at event-location is lootable:",
         "\tset loot table of block at event-location to \"minecraft:chests/simple_dungeon\"",
         "\t# the chest will now generate the loot of a simple dungeon when opened, because it is indeed a lootable block.",
-        "set block at event-location to wool block",
+        "set block at event-location to white wool",
         "if block at event-location is lootable:",
         "\t# uh oh, nothing will happen because a wool is not a lootable block."
       ],
@@ -4591,9 +4590,8 @@
       ],
       "examples": [
         "equip player with diamond helmet",
-        "equip player with all diamond armor",
+        "equip player with diamond leggings, diamond chestplate, and diamond boots",
         "unequip diamond chestplate from player",
-        "unequip all armor from player",
         "unequip player's armor"
       ],
       "events": null,
@@ -7264,8 +7262,8 @@
       ],
       "examples": [
         "on piglin barter:",
-        "\tif the bartering drops contain a jack-o-lantern:",
-        "\t\tremove jack-o-lantern from bartering output",
+        "\tif the bartering drops contain a jack o lantern:",
+        "\t\tremove jack o lantern from bartering output",
         "\t\tbroadcast \"it's not halloween yet!\""
       ],
       "events": null,
@@ -7309,7 +7307,7 @@
         "[the] [event-]block"
       ],
       "examples": [
-        "block is ore",
+        "block is iron ore",
         "set block below to air",
         "spawn a creeper above the block",
         "loop blocks in radius 4:",
@@ -9826,7 +9824,7 @@
         "[the] block %direction% [%location%]"
       ],
       "examples": [
-        "block is ore",
+        "block is iron ore",
         "set block below to air",
         "spawn a creeper above the block",
         "loop blocks in radius 4:",
@@ -10048,9 +10046,7 @@
         "give player diamond sword with damage value 100",
         "set player's tool to diamond hoe damaged by 250",
         "give player diamond sword with damage 700 named \"BROKEN SWORD\"",
-        "set {_item} to diamond hoe with damage value 50 named \"SAD HOE\"",
-        "set target block of player to wool with data value 1",
-        "set target block of player to potato plant with data value 7"
+        "set {_item} to diamond hoe with damage value 50 named \"SAD HOE\""
       ],
       "events": null,
       "requirements": null,
@@ -10566,7 +10562,7 @@
         "[all [[of] the]|the|every] item[s] of type[s] %item types%"
       ],
       "examples": [
-        "loop items of type ore and log:",
+        "loop tag values of tag \"diamond_ores\" and tag values of tag \"oak_logs\":",
         "\tblock contains loop-item",
         "\tmessage \"Theres at least one %loop-item% in this block\"",
         "drop all blocks at the player # drops one of every block at the player"
@@ -11780,7 +11776,7 @@
         "[the] (amount|number) of %item types% (in|of) %inventories%"
       ],
       "examples": [
-        "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
+        "message \"You have %number of tag values of minecraft tag \"diamond_ores\" in the player's inventory% diamond ores in your inventory.\""
       ],
       "events": null,
       "requirements": null,
@@ -11890,7 +11886,7 @@
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
-        "helmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
+        "helmet of player is neither tag values of tag \"paper:helmets\" nor air # player is wearing a block, e.g. from another plugin"
       ],
       "events": null,
       "requirements": null,
@@ -12461,6 +12457,7 @@
       ],
       "examples": [
         "on click on wool:",
+        "if event-block is tagged with minecraft tag \"wool\":",
         "\tmessage \"This wool block is <%color of block%>%color of block%<reset>!\"",
         "\tset the color of the block to black"
       ],
@@ -15565,7 +15562,7 @@
         "%living entities%'[s] ((tool|held item|weapon)|(off[ ]hand (tool|item)))"
       ],
       "examples": [
-        "player's tool is a pickaxe",
+        "player's tool is tagged with minecraft tag \"pickaxes\"",
         "player's off hand tool is a shield",
         "set tool of all players to a diamond sword",
         "set offhand tool of target entity to a bow"
@@ -17454,7 +17451,7 @@
         "%number% of %item stacks/item types/entity type%"
       ],
       "examples": [
-        "give level of player of pickaxes to the player"
+        "give level of player of iron pickaxes to the player"
       ],
       "events": null,
       "requirements": null,
@@ -17513,12 +17510,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17554,12 +17551,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17583,7 +17580,6 @@
       "examples": [
         "on mine:",
         "on break of stone:",
-        "on mine of any ore:",
         "on break of chest[facing=north]:",
         "on break of potatoes[age=7]:"
       ],
@@ -17633,17 +17629,17 @@
       "requirements": null,
       "examples": [
         "on burn:",
-        "on burn of wood, fences, or chests:",
+        "on burn of oak wood, oak fences, or chests:",
         "on burn of oak_log[axis=y]:"
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17666,17 +17662,17 @@
       "requirements": null,
       "examples": [
         "on place:",
-        "on place of a furnace, workbench or chest:",
+        "on place of a furnace, crafting table or chest:",
         "on break of chest[type=right] or chest[type=left]"
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17722,7 +17718,7 @@
       ],
       "requirements": null,
       "examples": [
-        "on fade of snow or ice:",
+        "on fade of snow or blue ice:",
         "on fade of snow[layers=2]"
       ],
       "eventValues": [
@@ -17762,8 +17758,7 @@
       ],
       "requirements": null,
       "examples": [
-        "on form of snow:",
-        "on form of a mushroom:"
+        "on form of snow:"
       ],
       "eventValues": [
         {
@@ -17817,12 +17812,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18013,12 +18008,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18639,12 +18634,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18771,12 +18766,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -18818,12 +18813,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "clicktype",
@@ -18953,12 +18948,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "itemstack",
+          "name": "item"
         },
         {
           "id": "inventory",
@@ -19975,12 +19970,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20011,17 +20006,17 @@
       "requirements": null,
       "examples": [
         "on block damaging:",
-        "\tif block is log:",
+        "\tif block is tagged with minecraft tag \"logs\":",
         "\t\tsend \"You can't break the holy log!\""
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20054,12 +20049,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20130,12 +20125,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20162,12 +20157,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20194,12 +20189,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20226,12 +20221,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20670,12 +20665,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21495,12 +21490,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22304,12 +22299,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22477,12 +22472,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22950,12 +22945,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "itemstack",
           "name": "item"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -23025,12 +23020,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23067,12 +23062,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23375,12 +23370,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "timespan",
           "name": "timespan"
+        },
+        {
+          "id": "worldborder",
+          "name": "world border"
         },
         {
           "id": "number",
@@ -23696,12 +23691,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23730,12 +23725,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23763,12 +23758,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23803,12 +23798,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23848,12 +23843,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
@@ -25150,16 +25145,14 @@
         "[&lt;number&gt; [of]] [all/every] &lt;alias&gt; [of &lt;enchantment&gt; [&lt;level&gt;] [,/and &lt;more enchantments...&gt;]]"
       ],
       "description": [
-        "An item type is an alias, e.g. 'a pickaxe', 'all plants', etc., and can result in different items when added to an inventory, and unlike <a href='#itemstack'>items</a> they are well suited for checking whether an inventory contains a certain item or whether a certain item is of a certain type.",
+        "An item type is an alias that can result in different items when added to an inventory, and unlike <a href='#itemstack'>items</a> they are well suited for checking whether an inventory contains a certain item or whether a certain item is of a certain type.",
         "An item type can also have one or more <a href='#enchantmenttype'>enchantments</a> with or without a specific level defined, and can optionally start with 'all' or 'every' to make this item type represent <i>all</i> types that the alias represents, including data ranges."
       ],
       "requirements": null,
       "examples": [
         "give 4 torches to the player",
-        "add all slabs to the inventory of the block",
+        "add oak slab to the inventory of the block",
         "player's tool is a diamond sword of sharpness",
-        "remove a pickaxes of fortune 4 from {stored items::*}",
-        "set {_item} to 10 of every upside-down stair",
         "block is dirt or farmland"
       ]
     },
