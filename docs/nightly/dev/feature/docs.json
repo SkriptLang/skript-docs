@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.0-nightly-c8b61b7",
+  "skriptVersion": "2.11.1-nightly-904640d",
   "version": {
     "major": 1,
     "minor": 1
@@ -811,7 +811,7 @@
       ],
       "examples": [
         "player is holding a stick",
-        "victim isn't holding a sword of sharpness"
+        "victim isn't holding a diamond sword of sharpness"
       ],
       "events": null,
       "requirements": null,
@@ -1966,7 +1966,7 @@
         "%item types% (isn't|is not|aren't|are not) edible"
       ],
       "examples": [
-        "steak is edible",
+        "cooked beef is edible",
         "player's tool is edible"
       ],
       "events": null,
@@ -2055,7 +2055,7 @@
         "%item types% (isn't|is not|aren't|are not) flammable"
       ],
       "examples": [
-        "wood is flammable",
+        "send whether the tag contents of minecraft tag \"planks\" are flammable",
         "player's tool is flammable"
       ],
       "events": null,
@@ -3106,7 +3106,6 @@
       ],
       "examples": [
         "player is wearing an iron chestplate and iron leggings",
-        "player is wearing all diamond armour",
         "target is wearing wolf armor"
       ],
       "events": null,
@@ -3616,7 +3615,7 @@
         "if block at event-location is lootable:",
         "\tset loot table of block at event-location to \"minecraft:chests/simple_dungeon\"",
         "\t# the chest will now generate the loot of a simple dungeon when opened, because it is indeed a lootable block.",
-        "set block at event-location to wool block",
+        "set block at event-location to white wool",
         "if block at event-location is lootable:",
         "\t# uh oh, nothing will happen because a wool is not a lootable block."
       ],
@@ -4591,9 +4590,8 @@
       ],
       "examples": [
         "equip player with diamond helmet",
-        "equip player with all diamond armor",
+        "equip player with diamond leggings, diamond chestplate, and diamond boots",
         "unequip diamond chestplate from player",
-        "unequip all armor from player",
         "unequip player's armor"
       ],
       "events": null,
@@ -7264,8 +7262,8 @@
       ],
       "examples": [
         "on piglin barter:",
-        "\tif the bartering drops contain a jack-o-lantern:",
-        "\t\tremove jack-o-lantern from bartering output",
+        "\tif the bartering drops contain a jack o lantern:",
+        "\t\tremove jack o lantern from bartering output",
         "\t\tbroadcast \"it's not halloween yet!\""
       ],
       "events": null,
@@ -7309,7 +7307,7 @@
         "[the] [event-]block"
       ],
       "examples": [
-        "block is ore",
+        "block is iron ore",
         "set block below to air",
         "spawn a creeper above the block",
         "loop blocks in radius 4:",
@@ -8716,32 +8714,6 @@
       "keywords": null
     },
     {
-      "id": "ExprSecCreateWorldBorder",
-      "name": "Create WorldBorder",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "Create a virtual worldborder. You can make this a real border by setting a world's worldborder to a virtual border."
-      ],
-      "patterns": [
-        "a [virtual] world[ ]border"
-      ],
-      "examples": [
-        "set player's worldborder to a virtual worldborder",
-        "",
-        "on join:",
-        "\tset {_border} to a worldborder:",
-        "\t\tset worldborder radius to 25",
-        "\t\tset worldborder warning distance of event-worldborder to 5",
-        "\tset worldborder of player to {_border}"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprSentCommands",
       "name": "Sent Command List",
       "since": [
@@ -9227,6 +9199,29 @@
       ],
       "examples": [
         "set {_tau} to pi * 2"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSecCreateWorldBorder",
+      "name": "Create WorldBorder",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "Creates a new, unused world border. World borders can be assigned to either worlds or specific players.",
+        "Borders assigned to worlds apply to all players in that world.",
+        "Borders assigned to players apply only to those players, and different players can have different borders."
+      ],
+      "patterns": [
+        "a [virtual] world[ ]border"
+      ],
+      "examples": [
+        "on join:\n\tset {_location} to location of player\n\tset worldborder of player to a virtual worldborder:\n\t\tset worldborder radius to 25\n\t\tset world border center of event-worldborder to {_location}\n",
+        "on load:\n\tset worldborder of world \"world\" to a worldborder:\n\t\tset worldborder radius of event-worldborder to 200\n\t\tset worldborder center of event-worldborder to location(0, 64, 0)\n\t\tset worldborder warning distance of event-worldborder to 5\n"
       ],
       "events": null,
       "requirements": null,
@@ -9853,7 +9848,7 @@
         "[the] block %direction% [%location%]"
       ],
       "examples": [
-        "block is ore",
+        "block is iron ore",
         "set block below to air",
         "spawn a creeper above the block",
         "loop blocks in radius 4:",
@@ -10075,9 +10070,7 @@
         "give player diamond sword with damage value 100",
         "set player's tool to diamond hoe damaged by 250",
         "give player diamond sword with damage 700 named \"BROKEN SWORD\"",
-        "set {_item} to diamond hoe with damage value 50 named \"SAD HOE\"",
-        "set target block of player to wool with data value 1",
-        "set target block of player to potato plant with data value 7"
+        "set {_item} to diamond hoe with damage value 50 named \"SAD HOE\""
       ],
       "events": null,
       "requirements": null,
@@ -10593,7 +10586,7 @@
         "[all [[of] the]|the|every] item[s] of type[s] %item types%"
       ],
       "examples": [
-        "loop items of type ore and log:",
+        "loop tag values of tag \"diamond_ores\" and tag values of tag \"oak_logs\":",
         "\tblock contains loop-item",
         "\tmessage \"Theres at least one %loop-item% in this block\"",
         "drop all blocks at the player # drops one of every block at the player"
@@ -11807,7 +11800,7 @@
         "[the] (amount|number) of %item types% (in|of) %inventories%"
       ],
       "examples": [
-        "message \"You have %number of ores in the player's inventory% ores in your inventory.\""
+        "message \"You have %number of tag values of minecraft tag \"diamond_ores\" in the player's inventory% diamond ores in your inventory.\""
       ],
       "events": null,
       "requirements": null,
@@ -11917,7 +11910,7 @@
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
-        "helmet of player is neither a helmet nor air # player is wearing a block, e.g. from another plugin"
+        "helmet of player is neither tag values of tag \"paper:helmets\" nor air # player is wearing a block, e.g. from another plugin"
       ],
       "events": null,
       "requirements": null,
@@ -12488,6 +12481,7 @@
       ],
       "examples": [
         "on click on wool:",
+        "if event-block is tagged with minecraft tag \"wool\":",
         "\tmessage \"This wool block is <%color of block%>%color of block%<reset>!\"",
         "\tset the color of the block to black"
       ],
@@ -15615,7 +15609,7 @@
         "%living entities%'[s] off[ ]hand (tool|item)"
       ],
       "examples": [
-        "player's tool is a pickaxe",
+        "player's tool is tagged with minecraft tag \"pickaxes\"",
         "player's off hand tool is a shield",
         "set tool of all players to a diamond sword",
         "set offhand tool of target entity to a bow"
@@ -17504,7 +17498,7 @@
         "%number% of %item stacks/item types/entity type%"
       ],
       "examples": [
-        "give level of player of pickaxes to the player"
+        "give level of player of iron pickaxes to the player"
       ],
       "events": null,
       "requirements": null,
@@ -17563,12 +17557,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17604,12 +17598,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17633,7 +17627,6 @@
       "examples": [
         "on mine:",
         "on break of stone:",
-        "on mine of any ore:",
         "on break of chest[facing=north]:",
         "on break of potatoes[age=7]:"
       ],
@@ -17683,17 +17676,17 @@
       "requirements": null,
       "examples": [
         "on burn:",
-        "on burn of wood, fences, or chests:",
+        "on burn of oak wood, oak fences, or chests:",
         "on burn of oak_log[axis=y]:"
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17716,25 +17709,21 @@
       "requirements": null,
       "examples": [
         "on place:",
-        "on place of a furnace, workbench or chest:",
+        "on place of a furnace, crafting table or chest:",
         "on break of chest[type=right] or chest[type=left]"
       ],
       "eventValues": [
-        {
-          "id": "block",
-          "name": "block"
-        },
         {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "block",
+          "name": "block"
         },
         {
-          "id": "itemstack",
-          "name": "past item"
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "player",
@@ -17742,7 +17731,11 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "past item stack"
+        },
+        {
+          "id": "itemstack",
+          "name": "future item stack"
         },
         {
           "id": "direction",
@@ -17754,7 +17747,7 @@
         },
         {
           "id": "itemstack",
-          "name": "future item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -17772,17 +17765,17 @@
       ],
       "requirements": null,
       "examples": [
-        "on fade of snow or ice:",
+        "on fade of snow or blue ice:",
         "on fade of snow[layers=2]"
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17812,8 +17805,7 @@
       ],
       "requirements": null,
       "examples": [
-        "on form of snow:",
-        "on form of a mushroom:"
+        "on form of snow:"
       ],
       "eventValues": [
         {
@@ -17867,16 +17859,24 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
+        },
+        {
+          "id": "entity",
+          "name": "entities"
         },
         {
           "id": "player",
@@ -17910,16 +17910,24 @@
           "name": "world"
         },
         {
+          "id": "string",
+          "name": "texts"
+        },
+        {
+          "id": "string",
+          "name": "past texts"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -17945,16 +17953,24 @@
           "name": "world"
         },
         {
+          "id": "string",
+          "name": "texts"
+        },
+        {
+          "id": "string",
+          "name": "past texts"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -17997,16 +18013,16 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "direction",
           "name": "direction"
         },
         {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18063,12 +18079,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18105,16 +18121,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
         },
         {
+          "id": "location",
+          "name": "location"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
         },
         {
           "id": "commandsender",
@@ -18199,20 +18219,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -18223,12 +18243,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -18270,12 +18290,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -18321,12 +18341,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18400,6 +18420,10 @@
           "name": "command sender"
         },
         {
+          "id": "entity",
+          "name": "entities"
+        },
+        {
           "id": "transformreason",
           "name": "transform reason"
         },
@@ -18435,12 +18459,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
+          "id": "experience",
+          "name": "experience point"
         },
         {
-          "id": "experience",
-          "name": "experience"
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -18471,7 +18495,7 @@
         },
         {
           "id": "experience",
-          "name": "experience"
+          "name": "experience point"
         }
       ],
       "keywords": null
@@ -18511,6 +18535,10 @@
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "color",
+          "name": "colors"
         },
         {
           "id": "entity",
@@ -18622,6 +18650,14 @@
         },
         {
           "id": "block",
+          "name": "blocks"
+        },
+        {
+          "id": "block",
+          "name": "future blocks"
+        },
+        {
+          "id": "block",
           "name": "past block"
         }
       ],
@@ -18689,12 +18725,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18702,7 +18738,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18737,12 +18773,12 @@
           "name": "command sender"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18782,16 +18818,20 @@
           "name": "command sender"
         },
         {
+          "id": "itementity",
+          "name": "dropped item"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18821,16 +18861,16 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "string",
           "name": "text"
         },
         {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18868,20 +18908,20 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "clicktype",
           "name": "click type"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -18916,12 +18956,12 @@
           "name": "command sender"
         },
         {
-          "id": "player",
-          "name": "player"
+          "id": "itementity",
+          "name": "dropped item"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemtype",
@@ -18930,6 +18970,10 @@
         {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": [
@@ -18962,7 +19006,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19003,16 +19047,16 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
         },
         {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19049,12 +19093,16 @@
           "name": "command sender"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "itementity",
+          "name": "dropped item"
         },
         {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19086,16 +19134,24 @@
           "name": "world"
         },
         {
+          "id": "itementity",
+          "name": "future dropped item"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "itementity",
+          "name": "dropped item"
         },
         {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19133,12 +19189,12 @@
           "name": "future inventory"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19175,7 +19231,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19290,12 +19346,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19362,12 +19418,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "direction",
           "name": "direction"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -19391,12 +19447,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19543,15 +19599,15 @@
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "past item stack"
+        },
+        {
+          "id": "itemstack",
+          "name": "future item stack"
         },
         {
           "id": "equipmentslot",
           "name": "equipment slot"
-        },
-        {
-          "id": "itemstack",
-          "name": "future item"
         }
       ],
       "keywords": [
@@ -19577,12 +19633,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20025,12 +20081,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20061,17 +20117,17 @@
       "requirements": null,
       "examples": [
         "on block damaging:",
-        "\tif block is log:",
+        "\tif block is tagged with minecraft tag \"logs\":",
         "\t\tsend \"You can't break the holy log!\""
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20104,12 +20160,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20180,12 +20236,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20212,12 +20268,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20244,12 +20300,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20276,12 +20332,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20458,20 +20514,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -20482,12 +20538,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -20720,12 +20776,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20789,6 +20845,10 @@
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "entity",
+          "name": "entities"
         },
         {
           "id": "transformreason",
@@ -20993,7 +21053,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -21025,7 +21085,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -21208,12 +21268,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21264,12 +21324,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21387,6 +21447,10 @@
           "name": "world"
         },
         {
+          "id": "block",
+          "name": "blocks"
+        },
+        {
           "id": "entity",
           "name": "entity"
         }
@@ -21412,12 +21476,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21545,16 +21609,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -21881,6 +21949,10 @@
       ],
       "eventValues": [
         {
+          "id": "livingentity",
+          "name": "living entities"
+        },
+        {
           "id": "location",
           "name": "location"
         },
@@ -21889,12 +21961,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -21987,7 +22059,7 @@
       "eventValues": [
         {
           "id": "inventoryclosereason",
-          "name": "inventory close reasons"
+          "name": "inventory close reason"
         },
         {
           "id": "player",
@@ -22328,7 +22400,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22354,12 +22426,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22396,12 +22468,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22430,16 +22502,20 @@
           "name": "block"
         },
         {
+          "id": "enchantmenttype",
+          "name": "enchantment types"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22461,12 +22537,16 @@
       ],
       "eventValues": [
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "itementity",
+          "name": "dropped item"
         },
         {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22527,16 +22607,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "block",
+          "name": "blocks"
         },
         {
           "id": "player",
@@ -22603,12 +22687,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22634,12 +22718,12 @@
       ],
       "eventValues": [
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22768,7 +22852,7 @@
         },
         {
           "id": "timespan",
-          "name": "timespan"
+          "name": "time span"
         },
         {
           "id": "player",
@@ -22845,16 +22929,16 @@
           "name": "slot"
         },
         {
+          "id": "itemstack",
+          "name": "past item stack"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
-        },
-        {
-          "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22950,20 +23034,24 @@
           "name": "world"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
+          "id": "itementity",
+          "name": "dropped item"
         },
         {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -22992,16 +23080,24 @@
           "name": "world"
         },
         {
+          "id": "inventory",
+          "name": "inventories"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
+        },
+        {
           "id": "player",
           "name": "player"
         },
         {
           "id": "itemstack",
-          "name": "past item"
+          "name": "past item stack"
         },
         {
-          "id": "itemstack",
-          "name": "item"
+          "id": "slot",
+          "name": "slots"
         },
         {
           "id": "clicktype",
@@ -23010,6 +23106,10 @@
         {
           "id": "inventory",
           "name": "inventory"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -23075,12 +23175,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23117,16 +23217,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entity",
+          "name": "entities"
         }
       ],
       "keywords": null
@@ -23263,19 +23367,19 @@
         },
         {
           "id": "timespan",
-          "name": "timespan"
+          "name": "time span"
         },
         {
-          "id": "timespan",
-          "name": "past timespan"
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "player",
           "name": "player"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
+          "id": "timespan",
+          "name": "past time span"
         }
       ],
       "keywords": null
@@ -23351,12 +23455,12 @@
           "name": "player"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -23425,12 +23529,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
+          "id": "timespan",
+          "name": "time span"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
+          "id": "worldborder",
+          "name": "worldborder"
         },
         {
           "id": "number",
@@ -23468,12 +23572,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
+          "id": "timespan",
+          "name": "time span"
         },
         {
-          "id": "timespan",
-          "name": "timespan"
+          "id": "worldborder",
+          "name": "worldborder"
         },
         {
           "id": "number",
@@ -23511,12 +23615,12 @@
           "name": "world"
         },
         {
-          "id": "worldborder",
-          "name": "world border"
-        },
-        {
           "id": "location",
           "name": "past location"
+        },
+        {
+          "id": "worldborder",
+          "name": "worldborder"
         }
       ],
       "keywords": null
@@ -23540,12 +23644,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23553,7 +23657,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -23580,7 +23684,7 @@
         },
         {
           "id": "itemstack",
-          "name": "item"
+          "name": "future item stack"
         },
         {
           "id": "entity",
@@ -23588,7 +23692,7 @@
         },
         {
           "id": "itemstack",
-          "name": "future item"
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -23634,12 +23738,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -23678,12 +23782,12 @@
           "name": "command sender"
         },
         {
-          "id": "itemstack",
-          "name": "item"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stack"
         }
       ],
       "keywords": null
@@ -23755,6 +23859,14 @@
           "name": "world"
         },
         {
+          "id": "inputkey",
+          "name": "past input keys"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
+        },
+        {
           "id": "player",
           "name": "player"
         }
@@ -23783,12 +23895,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23817,12 +23929,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23850,16 +23962,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
         },
         {
           "id": "player",
@@ -23890,12 +24006,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23935,12 +24051,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -25237,16 +25353,14 @@
         "[&lt;number&gt; [of]] [all/every] &lt;alias&gt; [of &lt;enchantment&gt; [&lt;level&gt;] [,/and &lt;more enchantments...&gt;]]"
       ],
       "description": [
-        "An item type is an alias, e.g. 'a pickaxe', 'all plants', etc., and can result in different items when added to an inventory, and unlike <a href='#itemstack'>items</a> they are well suited for checking whether an inventory contains a certain item or whether a certain item is of a certain type.",
+        "An item type is an alias that can result in different items when added to an inventory, and unlike <a href='#itemstack'>items</a> they are well suited for checking whether an inventory contains a certain item or whether a certain item is of a certain type.",
         "An item type can also have one or more <a href='#enchantmenttype'>enchantments</a> with or without a specific level defined, and can optionally start with 'all' or 'every' to make this item type represent <i>all</i> types that the alias represents, including data ranges."
       ],
       "requirements": null,
       "examples": [
         "give 4 torches to the player",
-        "add all slabs to the inventory of the block",
+        "add oak slab to the inventory of the block",
         "player's tool is a diamond sword of sharpness",
-        "remove a pickaxes of fortune 4 from {stored items::*}",
-        "set {_item} to 10 of every upside-down stair",
         "block is dirt or farmland"
       ]
     },
@@ -25623,7 +25737,8 @@
       "deprecated": false,
       "description": [
         "Place at the top of a script file to enable an optional experimental feature.",
-        "For example, this might include "
+        "Experimental features may change behavior in Skript and may contain bugs. Use at your own discretion.",
+        "A list of the available experimental features can be found in the changelog for your version of Skript."
       ],
       "patterns": [
         "using [[the] experiment] <.+>"
@@ -25922,8 +26037,8 @@
       "name": "floor",
       "since": "2.2",
       "returnType": {
-        "name": "",
-        "id": "long"
+        "id": "long",
+        "name": ""
       },
       "description": [
         "Rounds a number down, i.e. returns the closest integer smaller than or equal to the argument."
@@ -25942,8 +26057,8 @@
       "name": "uuid",
       "since": "2.11",
       "returnType": {
-        "name": "UUID",
-        "id": "uuid"
+        "id": "uuid",
+        "name": "UUID"
       },
       "description": [
         "Returns a UUID from the given string. The string must be in the format of a UUID."
@@ -25960,8 +26075,8 @@
       "name": "factorial",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Get the factorial of a number.",
@@ -25984,8 +26099,8 @@
       "name": "concat",
       "since": "2.9.0",
       "returnType": {
-        "name": "Text",
-        "id": "string"
+        "id": "string",
+        "name": "Text"
       },
       "description": [
         "Joins the provided texts (and other things) into a single text."
@@ -26003,8 +26118,8 @@
       "name": "asin",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The inverse of the <a href='#sin'>sine</a>, also called arcsin. Returns result in degrees, not radians. Only returns values from -90 to 90."
@@ -26023,8 +26138,8 @@
       "name": "tan",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The tangent function. This is basically <code><a href='#sin'>sin</a>(arg)/<a href='#cos'>cos</a>(arg)</code>. Uses degrees, not radians."
@@ -26043,8 +26158,8 @@
       "name": "isNaN",
       "since": "2.8.0",
       "returnType": {
-        "name": "Boolean",
-        "id": "boolean"
+        "id": "boolean",
+        "name": "Boolean"
       },
       "description": [
         "Returns true if the input is NaN (not a number)."
@@ -26063,8 +26178,8 @@
       "name": "world",
       "since": "2.2",
       "returnType": {
-        "name": "World",
-        "id": "world"
+        "id": "world",
+        "name": "World"
       },
       "description": [
         "Gets a world from its name."
@@ -26081,8 +26196,8 @@
       "name": "permutations",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Get the number of possible ordered arrangements from 1 to 'options' with each arrangement having a size equal to 'selected'",
@@ -26106,8 +26221,8 @@
       "name": "mod",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Returns the modulo of the given arguments, i.e. the remainder of the division <code>d/m</code>, where d and m are the arguments of this function.",
@@ -26127,8 +26242,8 @@
       "name": "log",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "A logarithm, with base 10 if none is specified. This is the inverse operation to exponentiation (for positive bases only), i.e. <code>log(base ^ exponent, base) = exponent</code> for any positive number 'base' and any number 'exponent'.",
@@ -26149,8 +26264,8 @@
       "name": "location",
       "since": "2.2",
       "returnType": {
-        "name": "Location",
-        "id": "location"
+        "id": "location",
+        "name": "Location"
       },
       "description": [
         "Creates a location from a world and 3 coordinates, with an optional yaw and pitch.",
@@ -26189,8 +26304,8 @@
       "name": "combinations",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Get the number of possible sets from 1 to 'options' with each set having a size equal to 'selected'",
@@ -26214,8 +26329,8 @@
       "name": "axisAngle",
       "since": "2.10",
       "returnType": {
-        "name": "Quaternion",
-        "id": "quaternion"
+        "id": "quaternion",
+        "name": "Quaternion"
       },
       "description": [
         "Returns a quaternion from the given angle (in degrees) and axis (as a vector). This represents a rotation around the given axis by the given angle."
@@ -26232,8 +26347,8 @@
       "name": "ceiling",
       "since": "2.2",
       "returnType": {
-        "name": "",
-        "id": "long"
+        "id": "long",
+        "name": ""
       },
       "description": [
         "Alias of <a href='#ceil'>ceil</a>."
@@ -26252,8 +26367,8 @@
       "name": "product",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Calculates the product of a list of numbers."
@@ -26273,8 +26388,8 @@
       "name": "sin",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The sine function. It starts at 0° with a value of 0, goes to 1 at 90°, back to 0 at 180°, to -1 at 270° and then repeats every 360°. Uses degrees, not radians."
@@ -26292,8 +26407,8 @@
       "name": "min",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Returns the minimum number from a list of numbers."
@@ -26312,8 +26427,8 @@
       "name": "abs",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Returns the absolute value of the argument, i.e. makes the argument positive."
@@ -26331,8 +26446,8 @@
       "name": "sum",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Sums a list of numbers."
@@ -26352,8 +26467,8 @@
       "name": "root",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Calculates the <i>n</i>th root of a number."
@@ -26372,8 +26487,8 @@
       "name": "median",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Get the middle value of a sorted list of numbers. If the list has an even number of values, the median is the average of the two middle numbers.",
@@ -26393,8 +26508,8 @@
       "name": "rgb",
       "since": "2.5, 2.10 (alpha)",
       "returnType": {
-        "name": "Color",
-        "id": "color"
+        "id": "color",
+        "name": "Color"
       },
       "description": [
         "Returns a RGB color from the given red, green and blue parameters. Alpha values can be added optionally, but these only take affect in certain situations, like text display backgrounds."
@@ -26412,8 +26527,8 @@
       "name": "offlineplayer",
       "since": "2.8.0, 2.9.0 (prevent lookups)",
       "returnType": {
-        "name": "Offline Player",
-        "id": "offlineplayer"
+        "id": "offlineplayer",
+        "name": "Offline Player"
       },
       "description": [
         "Returns a offline player from their name or UUID. This function will still return the player if they're online. If Paper 1.16.5+ is used, the 'allowLookup' parameter can be set to false to prevent this function from doing a web lookup for players who have not joined before. Lookups can cause lag spikes of up to multiple seconds, so use offline players with caution."
@@ -26432,8 +26547,8 @@
       "name": "round",
       "since": "2.2, 2.7 (decimal placement)",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Rounds a number, i.e. returns the closest integer to the argument. Place a second argument to define the decimal placement."
@@ -26453,8 +26568,8 @@
       "name": "sqrt",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The square root, which is the inverse operation to squaring a number (for positive numbers only). This is the same as <code>(argument) ^ (1/2)</code> – other roots can be calculated via <code>number ^ (1/root)</code>, e.g. <code>set {_l} to {_volume}^(1/3)</code>.",
@@ -26474,8 +26589,8 @@
       "name": "formatNumber",
       "since": "2.10",
       "returnType": {
-        "name": "Text",
-        "id": "string"
+        "id": "string",
+        "name": "Text"
       },
       "description": [
         "Converts numbers to human-readable format. By default, '###,###' (e.g. '123,456,789') will be used for whole numbers and '###,###.##' (e.g. '123,456,789.00) will be used for decimal numbers. A hashtag '#' represents a digit, a comma ',' is used to separate numbers, and a period '.' is used for decimals. ",
@@ -26499,8 +26614,8 @@
       "name": "clamp",
       "since": "2.8.0",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Clamps one or more values between two numbers."
@@ -26522,8 +26637,8 @@
       "name": "calcExperience",
       "since": "2.2-dev32",
       "returnType": {
-        "name": "",
-        "id": "long"
+        "id": "long",
+        "name": ""
       },
       "description": [
         "Calculates the total amount of experience needed to achieve given level from scratch in Minecraft."
@@ -26538,8 +26653,8 @@
       "name": "player",
       "since": "2.8.0",
       "returnType": {
-        "name": "Player",
-        "id": "player"
+        "id": "player",
+        "name": "Player"
       },
       "description": [
         "Returns an online player from their name or UUID, if player is offline function will return nothing.",
@@ -26559,8 +26674,8 @@
       "name": "exp",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The exponential function. You probably don't need this if you don't know what this is."
@@ -26578,8 +26693,8 @@
       "name": "atan",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The inverse of the <a href='#tan'>tangent</a>, also called arctan. Returns result in degrees, not radians. Only returns values from -90 to 90."
@@ -26598,8 +26713,8 @@
       "name": "max",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Returns the maximum number from a list of numbers."
@@ -26618,8 +26733,8 @@
       "name": "mean",
       "since": "2.11",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Get the mean (average) of a list of numbers.",
@@ -26639,8 +26754,8 @@
       "name": "quaternion",
       "since": "2.10",
       "returnType": {
-        "name": "Quaternion",
-        "id": "quaternion"
+        "id": "quaternion",
+        "name": "Quaternion"
       },
       "description": [
         "Returns a quaternion from the given W, X, Y and Z parameters. "
@@ -26657,8 +26772,8 @@
       "name": "cos",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The cosine function. This is basically the <a href='#sin'>sine</a> shifted by 90°, i.e. <code>cos(a) = sin(a + 90°)</code>, for any number a. Uses degrees, not radians."
@@ -26676,8 +26791,8 @@
       "name": "atan2",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "Similar to <a href='#atan'>atan</a>, but requires two coordinates and returns values from -180 to 180.",
@@ -26697,8 +26812,8 @@
       "name": "ceil",
       "since": "2.2",
       "returnType": {
-        "name": "",
-        "id": "long"
+        "id": "long",
+        "name": ""
       },
       "description": [
         "Rounds a number up, i.e. returns the closest integer larger than or equal to the argument."
@@ -26717,8 +26832,8 @@
       "name": "date",
       "since": "2.2",
       "returnType": {
-        "name": "Date",
-        "id": "date"
+        "id": "date",
+        "name": "Date"
       },
       "description": [
         "Creates a date from a year, month, and day, and optionally also from hour, minute, second and millisecond.",
@@ -26738,8 +26853,8 @@
       "name": "ln",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The natural logarithm. You probably don't need this if you don't know what this is.",
@@ -26759,8 +26874,8 @@
       "name": "acos",
       "since": "2.2",
       "returnType": {
-        "name": "Number",
-        "id": "number"
+        "id": "number",
+        "name": "Number"
       },
       "description": [
         "The inverse of the <a href='#cos'>cosine</a>, also called arccos. Returns result in degrees, not radians. Only returns values from 0 to 180."
@@ -26779,8 +26894,8 @@
       "name": "vector",
       "since": "2.2-dev23",
       "returnType": {
-        "name": "Vector",
-        "id": "vector"
+        "id": "vector",
+        "name": "Vector"
       },
       "description": [
         "Creates a new vector, which can be used with various expressions, effects and functions."
