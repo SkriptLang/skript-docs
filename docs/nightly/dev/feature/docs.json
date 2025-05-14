@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.1-nightly-5178ac2",
+  "skriptVersion": "2.11.1-nightly-fc51c90",
   "version": {
     "major": 1,
     "minor": 1
@@ -10441,28 +10441,6 @@
       "keywords": null
     },
     {
-      "id": "ExprIndexOf",
-      "name": "Index Of",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The first or last index of a character (or text) in a text, or -1 if it doesn't occur in the text. Indices range from 1 to the <a href='#ExprIndexOf'>length</a> of the text."
-      ],
-      "patterns": [
-        "[the] [(first|last)] index of %text% in %text%"
-      ],
-      "examples": [
-        "set {_first} to the first index of \"@\" in the text argument",
-        "if {_s} contains \"abc\":",
-        "\tset {_s} to the first (index of \"abc\" in {_s} + 3) characters of {_s} # removes everything after the first \"abc\" from {_s}"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprIndices",
       "name": "Indices of List",
       "since": [
@@ -10492,6 +10470,59 @@
         "broadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth",
         "set {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order",
         "broadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprIndicesOf",
+      "name": "Indices Of",
+      "since": [
+        "2.1, INSERT VERSION (indices, positions of list)"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the first, last or all positions of a character (or text) in another text using 'positions of %text% in %text%'. Nothing is returned when the value does not occur in the text. Positions range from 1 to the <a href='#ExprIndicesOf'>length</a> of the text (inclusive).",
+        "",
+        "Using 'indices/positions of %objects% in %objects%', you can get the indices or positions of a list where the value at that index is the provided value. Indices are only supported for variable lists and will return the string indices of the given value. Positions can be used with any list and will return the numerical position of the value in the list, counting up from 1. As well, nothing is returned if the value is not found in the list."
+      ],
+      "patterns": [
+        "[the] [first|last|all] (position[s]|indices|index[es]) of [[the] value] %text% in %text%",
+        "[the] [first|last|all] position[s] of [[the] value] %object% in %~objects%",
+        "[the] [first|last|all] (indices|index[es]) of [[the] value] %object% in %~objects%"
+      ],
+      "examples": [
+        "set {_first} to the first position of \"@\" in the text argument",
+        "if {_s} contains \"abc\":",
+        "\tset {_s} to the first (position of \"abc\" in {_s} + 3) characters of {_s}",
+        "\t# removes everything after the first \"abc\" from {_s}",
+        "",
+        "set {_list::*} to 1, 2, 3, 1, 2, 3",
+        "set {_indices::*} to indices of the value 1 in {_list::*}",
+        "# {_indices::*} is now \"1\" and \"4\"",
+        "",
+        "set {_indices::*} to all indices of the value 2 in {_list::*}",
+        "# {_indices::*} is now \"2\" and \"5\"",
+        "",
+        "set {_positions::*} to all positions of the value 3 in {_list::*}",
+        "# {_positions::*} is now 3 and 6",
+        "",
+        "set {_otherlist::bar} to 100",
+        "set {_otherlist::hello} to \"hi\"",
+        "set {_otherlist::burb} to 100",
+        "set {_otherlist::tud} to \"hi\"",
+        "set {_otherlist::foo} to 100",
+        "",
+        "set {_indices::*} to the first index of the value 100 in {_otherlist::*}",
+        "# {_indices::*} is now \"bar\"",
+        "set {_indices::*} to the last index of the value 100 in {_otherlist::*}",
+        "# {_indices::*} is now \"foo\"",
+        "",
+        "set {_positions::*} to all positions of the value 100 in {_otherlist::*}",
+        "# {_positions::*} is now 1, 3 and 5",
+        "set {_positions::*} to all positions of the value \"hi\" in {_otherlist::*}",
+        "# {_positions::*} is now 2 and 4"
       ],
       "events": null,
       "requirements": null,
@@ -17580,12 +17611,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17621,12 +17652,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17704,12 +17735,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17737,12 +17768,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17882,12 +17913,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18748,12 +18779,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19294,12 +19325,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19369,12 +19400,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19470,12 +19501,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19617,12 +19648,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -19656,12 +19687,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20104,12 +20135,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20145,12 +20176,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20183,12 +20214,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20221,12 +20252,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20259,12 +20290,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20291,12 +20322,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20323,12 +20354,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20355,12 +20386,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20799,12 +20830,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21291,12 +21322,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21347,12 +21378,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21632,20 +21663,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "string",
-          "name": "texts"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -21972,24 +22003,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -22449,12 +22480,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22630,12 +22661,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22952,12 +22983,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23111,12 +23142,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23198,12 +23229,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23240,12 +23271,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23393,12 +23424,12 @@
           "name": "time span"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "timespan",
@@ -23667,12 +23698,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23761,12 +23792,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -23886,12 +23917,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23918,12 +23949,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23952,12 +23983,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23985,12 +24016,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24029,12 +24060,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
