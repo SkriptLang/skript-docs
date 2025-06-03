@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-cbe81ea",
+  "skriptVersion": "2.11.2-nightly-b39b5f0",
   "version": {
     "major": 1,
     "minor": 1
@@ -17679,12 +17679,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17856,12 +17856,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18126,12 +18126,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18337,12 +18337,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -18955,12 +18955,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19318,12 +19318,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19593,12 +19593,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19641,12 +19641,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -20245,12 +20245,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20410,12 +20410,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21371,12 +21371,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -21664,12 +21664,12 @@
           "name": "block"
         },
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -21996,24 +21996,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -22976,12 +22976,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -23710,6 +23710,53 @@
       "keywords": null
     },
     {
+      "id": "villager_career_change",
+      "name": "On Villager Career Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "villager career chang(e[d]|ing)"
+      ],
+      "description": [
+        "Called when a villager changes its career. Can be caused by being employed or losing their job."
+      ],
+      "requirements": null,
+      "examples": [
+        "on villager career change:\n\tif all:\n\t\tevent-career change reason is employment\n\t\tevent-villager profession is armorer profession\n\tthen:\n\t\tcancel event\n"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "past villager profession"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
+        },
+        {
+          "id": "villagercareerchangereason",
+          "name": "villager career change reason"
+        }
+      ],
+      "keywords": null
+    },
+    {
       "id": "bucket_catch_entity",
       "name": "On Bucket Catch Entity",
       "since": null,
@@ -23785,12 +23832,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -23910,12 +23957,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
@@ -25165,6 +25212,19 @@
       "requirements": [
         "Minecraft 1.21.5+"
       ],
+      "examples": null
+    },
+    {
+      "id": "villagercareerchangereason",
+      "name": "Villager Career Change Reason",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "losing job, employment"
+      ],
+      "description": [
+        "Represents a reason why a villager changed its career."
+      ],
+      "requirements": null,
       "examples": null
     },
     {
