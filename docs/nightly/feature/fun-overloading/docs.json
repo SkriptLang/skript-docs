@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.1-nightly-6cd7f83",
+  "skriptVersion": "2.11.2-nightly-d3812b9",
   "version": {
     "major": 1,
     "minor": 1
@@ -6370,22 +6370,25 @@
       "id": "EffToggle",
       "name": "Toggle",
       "since": [
-        "1.4"
+        "1.4, INSERT VERSION (booleans)"
       ],
       "deprecated": false,
       "description": [
-        "Toggle the state of a block."
+        "Toggle the state of a block or boolean."
       ],
       "patterns": [
+        "(open|turn on|activate) %blocks%",
         "(close|turn off|de[-]activate) %blocks%",
-        "(toggle|switch) [[the] state of] %blocks%",
-        "(open|turn on|activate) %blocks%"
+        "(toggle|switch) [[the] state of] %blocks/booleans (yes/no)%"
       ],
       "examples": [
         "# use arrows to toggle switches, doors, etc.",
         "on projectile hit:",
         "\tprojectile is arrow",
-        "\ttoggle the block at the arrow"
+        "\ttoggle the block at the arrow",
+        "",
+        "# With booleans",
+        "toggle gravity of player"
       ],
       "events": null,
       "requirements": null,
@@ -7793,39 +7796,6 @@
         "\t\tcancel event",
         "\t\tif hanging remover is a player:",
         "\t\t\tsend \"You can't break that item frame!\" to hanging remover"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprHash",
-      "name": "Hash",
-      "since": [
-        "2.0, 2.2-dev32 (SHA-256 algorithm)"
-      ],
-      "deprecated": false,
-      "description": [
-        "Hashes the given text using the MD5 or SHA-256 algorithms. Each algorithm is suitable for different use cases.<p>",
-        "MD5 is provided mostly for backwards compatibility, as it is outdated and not secure. ",
-        "SHA-256 is more secure, and can used to hash somewhat confidental data like IP addresses and even passwords. ",
-        "It is not <i>that</i> secure out of the box, so please consider using salt when dealing with passwords! ",
-        "When hashing data, you <strong>must</strong> specify algorithms that will be used for security reasons! ",
-        "<p>Please note that a hash cannot be reversed under normal circumstanses. You will not be able to get original value from a hash with Skript."
-      ],
-      "patterns": [
-        "%texts% hash[ed] with (MD5|SHA-256)"
-      ],
-      "examples": [
-        "command /setpass &lt;text&gt;:",
-        "\ttrigger:",
-        "\t\tset {password::%uuid of player%} to text-argument hashed with SHA-256",
-        "command /login &lt;text&gt;:",
-        "\ttrigger:",
-        "\t\tif text-argument hashed with SHA-256 is {password::%uuid of player%}:",
-        "\t\t\tmessage \"Login successful.\"",
-        "\t\telse:",
-        "\t\t\tmessage \"Wrong password!\""
       ],
       "events": null,
       "requirements": null,
@@ -10438,22 +10408,26 @@
       "keywords": null
     },
     {
-      "id": "ExprIndexOf",
-      "name": "Index Of",
+      "id": "ExprHash",
+      "name": "Hash",
       "since": [
-        "2.1"
+        "2.0, 2.2-dev32 (SHA-256 algorithm), INSERT VERSION (SHA-384, SHA-512)"
       ],
       "deprecated": false,
       "description": [
-        "The first or last index of a character (or text) in a text, or -1 if it doesn't occur in the text. Indices range from 1 to the <a href='#ExprIndexOf'>length</a> of the text."
+        "Hashes the given text using the MD5 or SHA algorithms. Each algorithm is suitable for different use cases.",
+        "These hashing algorithms are not suitable for hashing passwords.",
+        "If handling passwords, use a <a href='https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#password-hashing-algorithms'>hashing algorithm specifically designed for passwords</a>.",
+        "MD5 is deprecated and may be removed in a future release. It is provided mostly for backwards compatibility, as it is outdated and not secure. ",
+        "SHA is more secure, but is not suitable for hashing passwords (even with salting). ",
+        "When hashing data, you <strong>must</strong> specify algorithms that will be used for security reasons! ",
+        "Please note that a hash cannot be reversed under normal circumstances. You will not be able to get original value from a hash with Skript."
       ],
       "patterns": [
-        "[the] [(first|last)] index of %text% in %text%"
+        "%texts% hash[ed] with ((MD5|SHA-256|SHA-384|SHA-512))"
       ],
       "examples": [
-        "set {_first} to the first index of \"@\" in the text argument",
-        "if {_s} contains \"abc\":",
-        "\tset {_s} to the first (index of \"abc\" in {_s} + 3) characters of {_s} # removes everything after the first \"abc\" from {_s}"
+        "set {_hash} to \"hello world\" hashed with SHA-256"
       ],
       "events": null,
       "requirements": null,
@@ -10489,6 +10463,59 @@
         "broadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth",
         "set {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order",
         "broadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprIndicesOf",
+      "name": "Indices Of",
+      "since": [
+        "2.1, INSERT VERSION (indices, positions of list)"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the first, last or all positions of a character (or text) in another text using 'positions of %text% in %text%'. Nothing is returned when the value does not occur in the text. Positions range from 1 to the <a href='#ExprIndicesOf'>length</a> of the text (inclusive).",
+        "",
+        "Using 'indices/positions of %objects% in %objects%', you can get the indices or positions of a list where the value at that index is the provided value. Indices are only supported for variable lists and will return the string indices of the given value. Positions can be used with any list and will return the numerical position of the value in the list, counting up from 1. As well, nothing is returned if the value is not found in the list."
+      ],
+      "patterns": [
+        "[the] [first|last|all] (position[s]|indices|index[es]) of [[the] value] %text% in %text%",
+        "[the] [first|last|all] position[s] of [[the] value] %object% in %~objects%",
+        "[the] [first|last|all] (indices|index[es]) of [[the] value] %object% in %~objects%"
+      ],
+      "examples": [
+        "set {_first} to the first position of \"@\" in the text argument",
+        "if {_s} contains \"abc\":",
+        "\tset {_s} to the first (position of \"abc\" in {_s} + 3) characters of {_s}",
+        "\t# removes everything after the first \"abc\" from {_s}",
+        "",
+        "set {_list::*} to 1, 2, 3, 1, 2, 3",
+        "set {_indices::*} to indices of the value 1 in {_list::*}",
+        "# {_indices::*} is now \"1\" and \"4\"",
+        "",
+        "set {_indices::*} to all indices of the value 2 in {_list::*}",
+        "# {_indices::*} is now \"2\" and \"5\"",
+        "",
+        "set {_positions::*} to all positions of the value 3 in {_list::*}",
+        "# {_positions::*} is now 3 and 6",
+        "",
+        "set {_otherlist::bar} to 100",
+        "set {_otherlist::hello} to \"hi\"",
+        "set {_otherlist::burb} to 100",
+        "set {_otherlist::tud} to \"hi\"",
+        "set {_otherlist::foo} to 100",
+        "",
+        "set {_indices::*} to the first index of the value 100 in {_otherlist::*}",
+        "# {_indices::*} is now \"bar\"",
+        "set {_indices::*} to the last index of the value 100 in {_otherlist::*}",
+        "# {_indices::*} is now \"foo\"",
+        "",
+        "set {_positions::*} to all positions of the value 100 in {_otherlist::*}",
+        "# {_positions::*} is now 1, 3 and 5",
+        "set {_positions::*} to all positions of the value \"hi\" in {_otherlist::*}",
+        "# {_positions::*} is now 2 and 4"
       ],
       "events": null,
       "requirements": null,
@@ -10540,6 +10567,26 @@
         "\tremove 1 stone from slot 0 of player",
         "\tadd 2 stones to slot 0 of player",
         "\tclear slot 1 of player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprInverse",
+      "name": "Inverse Boolean",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "An expression to obtain the inverse value of a boolean"
+      ],
+      "patterns": [
+        "[the] (inverse|opposite)[s] of %booleans (yes/no)%"
+      ],
+      "examples": [
+        "set {_gravity} to inverse of player's flight mode"
       ],
       "events": null,
       "requirements": null,
@@ -12324,6 +12371,31 @@
       "keywords": null
     },
     {
+      "id": "ExprBrushableItem",
+      "name": "Buried Item",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the item that is uncovered when dusting.",
+        "The only blocks that can currently be \"dusted\" are Suspicious Gravel and Suspicious Sand."
+      ],
+      "patterns": [
+        "[the] (brushable|buried) item of %blocks%",
+        "%blocks%'[s] (brushable|buried) item"
+      ],
+      "examples": [
+        "send target block's brushable item",
+        "set {_gravel}'s brushable item to emerald"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20+"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprCarryingBlockData",
       "name": "Enderman Carrying BlockData",
       "since": [
@@ -12750,6 +12822,31 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprDustedStage",
+      "name": "Dusted Stage",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents how far the block has been uncovered.",
+        "The only blocks that can currently be \"dusted\" are Suspicious Gravel and Suspicious Sand."
+      ],
+      "patterns": [
+        "[the] [max[imum]] dust[ed|ing] (value|stage|progress[ion]) of %blocks/block datas%",
+        "%blocks/block datas%'[s] [max[imum]] dust[ed|ing] (value|stage|progress[ion])"
+      ],
+      "examples": [
+        "send target block's maximum dusted stage",
+        "set {_sand}'s dusted stage to 2"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20+"
+      ],
       "keywords": null
     },
     {
@@ -18908,12 +19005,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -23038,12 +23135,12 @@
           "name": "dropped item"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -23658,6 +23755,53 @@
         {
           "id": "itemstack",
           "name": "item stack"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "villager_career_change",
+      "name": "On Villager Career Change",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "villager career chang(e[d]|ing)"
+      ],
+      "description": [
+        "Called when a villager changes its career. Can be caused by being employed or losing their job."
+      ],
+      "requirements": null,
+      "examples": [
+        "on villager career change:\n\tif all:\n\t\tevent-career change reason is employment\n\t\tevent-villager profession is armorer profession\n\tthen:\n\t\tcancel event\n"
+      ],
+      "eventValues": [
+        {
+          "id": "location",
+          "name": "location"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "past villager profession"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
+        },
+        {
+          "id": "villagercareerchangereason",
+          "name": "villager career change reason"
         }
       ],
       "keywords": null
@@ -25100,6 +25244,35 @@
       ],
       "description": [
         "Represents an equipment slot of an entity."
+      ],
+      "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "PigVariant",
+      "name": "Pig Variant",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "cold, temperate, warm"
+      ],
+      "description": [
+        "Represents the variant of a pig entity.",
+        "NOTE: Minecraft namespaces are supported, ex: 'minecraft:warm'."
+      ],
+      "requirements": [
+        "Minecraft 1.21.5+"
+      ],
+      "examples": null
+    },
+    {
+      "id": "villagercareerchangereason",
+      "name": "Villager Career Change Reason",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "losing job, employment"
+      ],
+      "description": [
+        "Represents a reason why a villager changed its career."
       ],
       "requirements": null,
       "examples": null
