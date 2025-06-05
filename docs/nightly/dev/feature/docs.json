@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-ecb7b39",
+  "skriptVersion": "2.11.2-nightly-e2d8a36",
   "version": {
     "major": 1,
     "minor": 1
@@ -6038,9 +6038,9 @@
         "Enables, disables, unloads, or reloads a script.\n\nDisabling a script unloads it and prepends - to its name so it will not be loaded the next time the server restarts.\nIf the script reflection experiment is enabled: unloading a script terminates it and removes it from memory, but does not alter the file."
       ],
       "patterns": [
-        "((enable|load)|reload|disable|unload) script [file|named] %text%",
-        "((enable|load)|reload|disable|unload) skript file %text%",
-        "((enable|load)|reload|disable|unload) %scripts%"
+        "((enable|load)|reload|disable|unload) script [file|named] %text% [with errors]",
+        "((enable|load)|reload|disable|unload) skript file %text% [with errors]",
+        "((enable|load)|reload|disable|unload) %scripts% [with errors]"
       ],
       "examples": [
         "reload script \"test\"",
@@ -17917,12 +17917,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18270,12 +18270,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18422,20 +18422,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "entitydata",
@@ -18450,12 +18450,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -18493,20 +18493,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "potioneffect",
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -18920,12 +18920,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "healreason",
           "name": "heal reason"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19526,12 +19526,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19601,12 +19601,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19706,12 +19706,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19892,12 +19892,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20781,20 +20781,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "entitydata",
@@ -20809,12 +20809,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -21571,12 +21571,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21627,12 +21627,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -21932,12 +21932,12 @@
           "name": "location"
         },
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "player",
@@ -22970,12 +22970,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23393,12 +23393,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23443,12 +23443,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23733,12 +23733,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -24156,12 +24156,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
