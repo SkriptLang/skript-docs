@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-748ce2e",
+  "skriptVersion": "2.11.2-nightly-133952d",
   "version": {
     "major": 1,
     "minor": 1
@@ -13380,6 +13380,35 @@
       "keywords": null
     },
     {
+      "id": "ExprFirstEmptySlot",
+      "name": "First Empty Slot in Inventory",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the first empty slot in an inventory. If no empty slot is found, it returns nothing."
+      ],
+      "patterns": [
+        "[the] first empty slot[s] of %inventories%",
+        "%inventories%'[s] first empty slot[s]",
+        "[the] first empty slot[s] in %inventories%"
+      ],
+      "examples": [
+        "set the first empty slot in player's inventory to 5 diamonds",
+        "if the first empty slot in player's inventory is not set:\n\tmessage \"No empty slot available in your inventory!\" to player\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "full",
+        "inventory",
+        "empty",
+        "air",
+        "slot"
+      ]
+    },
+    {
       "id": "ExprFlightMode",
       "name": "Flight Mode",
       "since": [
@@ -17971,12 +18000,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18068,24 +18097,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18111,24 +18140,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18241,12 +18270,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18381,20 +18410,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -18405,12 +18434,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -19070,12 +19099,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19343,12 +19372,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19433,12 +19462,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19708,12 +19737,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20243,12 +20272,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20525,12 +20554,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20676,20 +20705,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -20700,12 +20729,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -21486,12 +21515,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21638,12 +21667,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23849,12 +23878,12 @@
           "name": "world"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -23947,12 +23976,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -24072,12 +24101,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
