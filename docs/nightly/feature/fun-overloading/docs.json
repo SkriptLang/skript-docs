@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-ed21d84",
+  "skriptVersion": "2.11.2-nightly-db5a308",
   "version": {
     "major": 1,
     "minor": 1
@@ -3348,6 +3348,27 @@
       "keywords": null
     },
     {
+      "id": "CondStriderIsShivering",
+      "name": "Strider Is Shivering",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether a strider is shivering."
+      ],
+      "patterns": [
+        "%living entities% (is|are) shivering",
+        "%living entities% (isn't|is not|aren't|are not) shivering"
+      ],
+      "examples": [
+        "if last spawned strider is shivering:\n\tmake last spawned strider stop shivering\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "CondWithinRadius",
       "name": "Is Within Radius",
       "since": [
@@ -5768,11 +5789,12 @@
         "Push entities around."
       ],
       "patterns": [
-        "(push|thrust) %entities% %direction% [(at|with) (speed|velocity|force) %number%]"
+        "(push|thrust) %entities% [along] %direction% [(at|with) (speed|velocity|force) %number%]"
       ],
       "examples": [
         "push the player upwards",
-        "push the victim downwards at speed 0.5"
+        "push the victim downwards at speed 0.5",
+        "push player along vector from player to player's target at speed 2"
       ],
       "events": null,
       "requirements": null,
@@ -6016,9 +6038,9 @@
         "Enables, disables, unloads, or reloads a script.\n\nDisabling a script unloads it and prepends - to its name so it will not be loaded the next time the server restarts.\nIf the script reflection experiment is enabled: unloading a script terminates it and removes it from memory, but does not alter the file."
       ],
       "patterns": [
-        "((enable|load)|reload|disable|unload) script [file|named] %text%",
-        "((enable|load)|reload|disable|unload) skript file %text%",
-        "((enable|load)|reload|disable|unload) %scripts%"
+        "((enable|load)|reload|disable|unload) script [file|named] %text% [with errors]",
+        "((enable|load)|reload|disable|unload) skript file %text% [with errors]",
+        "((enable|load)|reload|disable|unload) %scripts% [with errors]"
       ],
       "examples": [
         "reload script \"test\"",
@@ -6268,6 +6290,29 @@
       "requirements": [
         "MC 1.17.1 (stop all sounds)"
       ],
+      "keywords": null
+    },
+    {
+      "id": "EffStriderShivering",
+      "name": "Strider Shivering",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Make a strider start/stop shivering."
+      ],
+      "patterns": [
+        "make %living entities% start shivering",
+        "force %living entities% to start shivering",
+        "make %living entities% stop shivering",
+        "force %living entities% to stop shivering"
+      ],
+      "examples": [
+        "if last spawned strider is shivering:\n\tmake last spawned strider stop shivering\n"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -7318,6 +7363,26 @@
         "\tset loop-block to water",
         "block is a chest:",
         "\tclear the inventory of the block"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprCaughtErrors",
+      "name": "Last Caught Errors",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the last caught runtime errors from a 'catch runtime errors' section."
+      ],
+      "patterns": [
+        "[the] last caught [run[ ]time] errors"
+      ],
+      "examples": [
+        "catch runtime errors:\n\tset worldborder center of {_border} to location(0, 0, NaN value)\nif last caught runtime errors contains \"Your location can't have a NaN value as one of its components\":\n\tset worldborder center of {_border} to location(0, 0, 0)\n"
       ],
       "events": null,
       "requirements": null,
@@ -13315,6 +13380,35 @@
       "keywords": null
     },
     {
+      "id": "ExprFirstEmptySlot",
+      "name": "First Empty Slot in Inventory",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the first empty slot in an inventory. If no empty slot is found, it returns nothing."
+      ],
+      "patterns": [
+        "[the] first empty slot[s] of %inventories%",
+        "%inventories%'[s] first empty slot[s]",
+        "[the] first empty slot[s] in %inventories%"
+      ],
+      "examples": [
+        "set the first empty slot in player's inventory to 5 diamonds",
+        "if the first empty slot in player's inventory is not set:\n\tmessage \"No empty slot available in your inventory!\" to player\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "full",
+        "inventory",
+        "empty",
+        "air",
+        "slot"
+      ]
+    },
+    {
       "id": "ExprFlightMode",
       "name": "Flight Mode",
       "since": [
@@ -17823,12 +17917,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18188,6 +18282,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -18218,24 +18316,28 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -18273,6 +18375,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -18332,6 +18438,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -18383,16 +18493,20 @@
           "name": "entity potion cause"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "potioneffect",
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18428,6 +18542,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -18475,6 +18593,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -18511,6 +18633,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -18628,6 +18754,10 @@
         {
           "id": "fireworkeffect",
           "name": "firework effect"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -18790,6 +18920,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "healreason",
           "name": "heal reason"
         },
@@ -18866,6 +19000,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -18909,6 +19047,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19005,12 +19147,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19047,6 +19189,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19186,6 +19332,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -19233,6 +19383,10 @@
         {
           "id": "itementity",
           "name": "future dropped item"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19368,12 +19522,16 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19457,6 +19615,10 @@
         {
           "id": "location",
           "name": "future location"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "chunk",
@@ -19967,6 +20129,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -20584,6 +20750,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -20625,6 +20795,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -20670,6 +20844,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -20703,6 +20881,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -20741,6 +20923,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -20774,6 +20960,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -20811,6 +21001,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -20844,6 +21038,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -20938,6 +21136,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -21334,6 +21536,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -21573,16 +21779,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
+          "id": "block",
+          "name": "block"
+        },
+        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -21631,6 +21841,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -21670,6 +21884,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -21947,6 +22165,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -21983,6 +22205,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -22017,6 +22243,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -22058,6 +22288,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "potioneffecttype",
           "name": "potion effect type"
         },
@@ -22096,6 +22330,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -22194,6 +22432,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -22230,6 +22472,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -22459,6 +22705,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -22674,6 +22924,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -22884,6 +23138,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -23135,12 +23393,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23240,6 +23498,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -23361,6 +23623,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -23587,6 +23853,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -23784,12 +24054,16 @@
           "name": "world"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -23922,6 +24196,10 @@
           "name": "world"
         },
         {
+          "id": "entitydata",
+          "name": "entity type"
+        },
+        {
           "id": "commandsender",
           "name": "command sender"
         },
@@ -23961,6 +24239,10 @@
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "livingentity",
@@ -26012,6 +26294,26 @@
       "requirements": [
         "Minecraft 1.20.2+ (entity snapshots)"
       ],
+      "keywords": null
+    },
+    {
+      "id": "SecCatchErrors",
+      "name": "Catch Runtime Errors",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Catch any runtime errors produced by code within the section. This is an in progress feature."
+      ],
+      "patterns": [
+        "catch [run[ ]time] error[s]"
+      ],
+      "examples": [
+        "catch runtime errors:\n\tset worldborder center of {_border} to location(0, 0, NaN value)\nif last caught runtime errors contains \"Your location can't have a NaN value as one of its components\":\n\tset worldborder center of {_border} to location(0, 0, 0)\n"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
