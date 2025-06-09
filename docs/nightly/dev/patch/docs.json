@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-a5f34ac",
+  "skriptVersion": "2.11.2-nightly-841f61f",
   "version": {
     "major": 1,
     "minor": 1
@@ -211,7 +211,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Tests what kind of damage caused a <a href='events.html#damage'>damage event</a>. Refer to the <a href='classes.html#damagecause'>Damage Cause</a> type for a list of all possible causes."
+        "Tests what kind of damage caused a <a href='#damage'>damage event</a>. Refer to the <a href='#damagecause'>Damage Cause</a> type for a list of all possible causes."
       ],
       "patterns": [
         "[the] damage (was|is|has)[n('|o)t] [been] (caused|done|made) by %damage cause%"
@@ -243,7 +243,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Tests whether a given <a href='classes.html#date'>real time</a> was more or less than some <a href='classes.html#timespan'>time span</a> ago."
+        "Tests whether a given <a href='#date'>real time</a> was more or less than some <a href='#timespan'>time span</a> ago."
       ],
       "patterns": [
         "%date% (was|were)( more|(n't| not) less) than %time span% [ago]",
@@ -758,7 +758,7 @@
       "deprecated": false,
       "description": [
         "Whether a location is within something else. The \"something\" can be a block, an entity, a chunk, a world, or a cuboid formed by two other locations.",
-        "Note that using the <a href='conditions.html#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations."
+        "Note that using the <a href='#CondCompare'>is between</a> condition will refer to a straight line between locations, while this condition will refer to the cuboid between locations."
       ],
       "patterns": [
         "%locations% (is|are) within %location% and %location%",
@@ -957,7 +957,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Checks whether a player has played on this server before. You can also use <a href='events.html#first_join'>on first join</a> if you want to make triggers for new players."
+        "Checks whether a player has played on this server before. You can also use <a href='#first_join'>on first join</a> if you want to make triggers for new players."
       ],
       "patterns": [
         "%offline players% [(has|have|did)] [already] play[ed] [on (this|the) server] (before|already)",
@@ -1001,7 +1001,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Checks state of the resource pack in a <a href='events.html#resource_pack_request_action'>resource pack request response</a> event."
+        "Checks state of the resource pack in a <a href='#resource_pack_request_action'>resource pack request response</a> event."
       ],
       "patterns": [
         "[the] resource pack (was|is|has) [been] %resource pack state%",
@@ -1228,7 +1228,7 @@
       "deprecated": false,
       "description": [
         "Tests whether a player is allowed to build at a certain location.",
-        "This condition requires a supported <a href='./classes.html#region'>regions</a> plugin to be installed."
+        "This condition requires a supported <a href='#region'>regions</a> plugin to be installed."
       ],
       "patterns": [
         "%players% (can|(is|are) allowed to) build %directions% %locations%",
@@ -1284,7 +1284,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Checks whether a location is contained in a particular <a href='./classes.html#region'>region</a>.",
+        "Checks whether a location is contained in a particular <a href='#region'>region</a>.",
         "This condition requires a supported regions plugin to be installed."
       ],
       "patterns": [
@@ -1685,7 +1685,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Checks whether the given entities has the given <a href='expressions.html#ExprScoreboardTags'>scoreboard tags</a>."
+        "Checks whether the given entities has the given <a href='#ExprScoreboardTags'>scoreboard tags</a>."
       ],
       "patterns": [
         "%entities% (has|have) [the] score[ ]board tag[s] %texts%",
@@ -1748,7 +1748,7 @@
       "id": "CondIsBlocking",
       "name": "Is Blocking",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -1977,7 +1977,7 @@
       "id": "CondIsEmpty",
       "name": "Is Empty",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -3632,7 +3632,7 @@
       "deprecated": false,
       "description": [
         "A very general condition, it simply compares two values. Usually you can only compare for equality (e.g. block is/isn't of &lt;type&gt;), but some values can also be compared using greater than/less than. In that case you can also test for whether an object is between two others.",
-        "Note: This is the only element where not all patterns are shown. It has actually another two sets of similar patters, but with <code>(was|were)</code> or <code>will be</code> instead of <code>(is|are)</code> respectively, which check different <a href='expressions.html#ExprTimeState'>time states</a> of the first expression."
+        "Note: This is the only element where not all patterns are shown. It has actually another two sets of similar patters, but with <code>(was|were)</code> or <code>will be</code> instead of <code>(is|are)</code> respectively, which check different <a href='#ExprTimeState'>time states</a> of the first expression."
       ],
       "patterns": [
         "[(neither)] %objects% ((is|are)[(n't| not| neither)] ((greater|more|higher|bigger|larger) than|above)|>) %objects%",
@@ -3793,7 +3793,7 @@
         "We recommend that you test your scripts so that no accidental permanent bans are applied.",
         "",
         "Note that banning people does not kick them from the server.",
-        "You can optionally use 'and kick' or consider using the <a href='effects.html#EffKick'>kick effect</a> after applying a ban."
+        "You can optionally use 'and kick' or consider using the <a href='#EffKick'>kick effect</a> after applying a ban."
       ],
       "patterns": [
         "ban [and kick] %texts/offline players% [(by reason of|because [of]|on account of|due to) %text%] [for %time span%]",
@@ -3924,7 +3924,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect."
+        "Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='#EffKeepInventory'>Keep Inventory / Experience</a> effect."
       ],
       "patterns": [
         "(cancel|clear|delete) [the] drops [of (items|[e]xp[erience][s])]",
@@ -4096,7 +4096,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Colors items in a given <a href='classes.html#color'>color</a>. You can also use RGB codes if you feel limited with the 16 default colors. RGB codes are three numbers from 0 to 255 in the order <code>(red, green, blue)</code>, where <code>(0,0,0)</code> is black and <code>(255,255,255)</code> is white. Armor is colorable for all Minecraft versions. With Minecraft 1.11 or newer you can also color potions and maps. Note that the colors might not look exactly how you'd expect."
+        "Colors items in a given <a href='#color'>color</a>. You can also use RGB codes if you feel limited with the 16 default colors. RGB codes are three numbers from 0 to 255 in the order <code>(red, green, blue)</code>, where <code>(0,0,0)</code> is black and <code>(255,255,255)</code> is white. Armor is colorable for all Minecraft versions. With Minecraft 1.11 or newer you can also color potions and maps. Note that the colors might not look exactly how you'd expect."
       ],
       "patterns": [
         "(dye|colo[u]r|paint) %item types% %color%",
@@ -4550,7 +4550,7 @@
         "Change visibility of the given entities for the given players.",
         "If no players are given, will hide the entities from all online players.",
         "",
-        "When reveal is used in combination of the <a href='expressions.html#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
+        "When reveal is used in combination of the <a href='#ExprHiddenPlayers'>hidden players</a> expression and the viewers are not specified, this will default it to the given player in the hidden players expression.",
         "",
         "Note: all previously hidden entities (including players) will be visible when a player leaves and rejoins."
       ],
@@ -4602,7 +4602,7 @@
       "id": "EffExit",
       "name": "Exit",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -4925,7 +4925,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Hides a player from the <a href='expressions.html#ExprHoverList'>hover list</a> and decreases the <a href='expressions.html#ExprOnlinePlayersCount'>online players count</a> (only if the player count wasn't changed before)."
+        "Hides a player from the <a href='#ExprHoverList'>hover list</a> and decreases the <a href='#ExprOnlinePlayersCount'>online players count</a> (only if the player count wasn't changed before)."
       ],
       "patterns": [
         "hide %players% (in|on|from) [the] server list",
@@ -5244,7 +5244,7 @@
       "deprecated": false,
       "description": [
         "Loads server icons from the given files. You can get the loaded icon using the",
-        "<a href='expressions.html#ExprLastLoadedServerIcon'>last loaded server icon</a> expression.",
+        "<a href='#ExprLastLoadedServerIcon'>last loaded server icon</a> expression.",
         "Please note that the image must be 64x64 and the file path starts from the server folder."
       ],
       "patterns": [
@@ -5401,7 +5401,7 @@
       "deprecated": false,
       "description": [
         "Sends a message to the given player. Only styles written",
-        "in given string or in <a href=expressions.html#ExprColored>formatted expressions</a> will be parsed.",
+        "in given string or in <a href=#ExprColored>formatted expressions</a> will be parsed.",
         "Adding an optional sender allows the messages to be sent as if a specific player sent them.",
         "This is useful with Minecraft 1.16.4's new chat ignore system, in which players can choose to ignore other players,",
         "but for this to work, the message needs to be sent from a player."
@@ -5624,10 +5624,10 @@
       "description": [
         "Sets whether all player related information is hidden in the server list.",
         "The Vanilla Minecraft client will display ??? (dark gray) instead of player counts and will not show the",
-        "<a href='expressions.html#ExprHoverList'>hover hist</a> when hiding player info.",
-        "<a href='expressions.html#ExprVersionString'>The version string</a> can override the ???.",
-        "Also the <a href='expressions.html#ExprOnlinePlayersCount'>Online Players Count</a> and",
-        "<a href='expressions.html#ExprMaxPlayers'>Max Players</a> expressions will return -1 when hiding player info."
+        "<a href='#ExprHoverList'>hover hist</a> when hiding player info.",
+        "<a href='#ExprVersionString'>The version string</a> can override the ???.",
+        "Also the <a href='#ExprOnlinePlayersCount'>Online Players Count</a> and",
+        "<a href='#ExprMaxPlayers'>Max Players</a> expressions will return -1 when hiding player info."
       ],
       "patterns": [
         "hide [all] player [related] info[rmation] [(in|on|from) [the] server list]",
@@ -5833,7 +5833,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/expressions.html#ExprMessage'>message</a> or a line of a sign."
+        "Replaces all occurrences of a given text or regex with another text. Please note that you can only change variables and a few expressions, e.g. a <a href='/#ExprMessage'>message</a> or a line of a sign."
       ],
       "patterns": [
         "replace [(all|every)|[the] first] %texts% in %texts% with %text% [with case sensitivity]",
@@ -6068,7 +6068,7 @@
         "The hash must be SHA-1, you can get SHA-1 hash of your resource pack using ",
         "<a href=\"https://emn178.github.io/online-tools/sha1_checksum.html\">this online tool</a>.",
         "",
-        "The <a href='events.html#resource_pack_request_action'>resource pack request action</a> can be used to check ",
+        "The <a href='#resource_pack_request_action'>resource pack request action</a> can be used to check ",
         "status of the sent resource pack request."
       ],
       "patterns": [
@@ -6095,7 +6095,7 @@
         "",
         "If you're sending only the subtitle, it will be shown only if there's a title displayed at the moment, otherwise it will be sent with the next title. To show only the subtitle, use: <code>send title \" \" with subtitle \"yourtexthere\" to player</code>.",
         "",
-        "Note: if no input is given for the times, it will keep the ones from the last title sent, use the <a href='effects.html#EffResetTitle'>reset title</a> effect to restore the default values."
+        "Note: if no input is given for the times, it will keep the ones from the last title sent, use the <a href='#EffResetTitle'>reset title</a> effect to restore the default values."
       ],
       "patterns": [
         "send title %text% [with subtitle %text%] [to %players%] [for %time span%] [with fade[(-| )]in %time span%] [[and] [with] fade[(-| )]out %time span%]",
@@ -6425,7 +6425,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Toggle the <a href='expressions.html#ExprFlightMode'>flight mode</a> of a player."
+        "Toggle the <a href='#ExprFlightMode'>flight mode</a> of a player."
       ],
       "patterns": [
         "(allow|enable) (fly|flight) (for|to) %players%",
@@ -6551,7 +6551,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Plays a <a href='classes.html#visualeffect'>visual effect</a> at a given location or on a given entity.",
+        "Plays a <a href='#visualeffect'>visual effect</a> at a given location or on a given entity.",
         "Please note that some effects can only be played on entities, e.g. wolf hearts or the hurt effect, and that these are always visible to all players."
       ],
       "patterns": [
@@ -7025,7 +7025,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The affected entities in the <a href='events.html#aoe_cloud_effect'>area cloud effect</a> event."
+        "The affected entities in the <a href='#aoe_cloud_effect'>area cloud effect</a> event."
       ],
       "patterns": [
         "[the] affected entities"
@@ -7646,7 +7646,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns the initiator inventory in an on <a href=\"./events.html?search=#inventory_item_move\">inventory item move</a> event."
+        "Returns the initiator inventory in an on <a href=\"?search=#inventory_item_move\">inventory item move</a> event."
       ],
       "patterns": [
         "[the] [event-]initiator[( |-)inventory]"
@@ -7782,7 +7782,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns the hanging entity or remover in hanging <a href='./events.html#break_mine'>break</a> and <a href='./events.html#place'>place</a> events."
+        "Returns the hanging entity or remover in hanging <a href='#break_mine'>break</a> and <a href='#place'>place</a> events."
       ],
       "patterns": [
         "[the] hanging (entity|remover)"
@@ -7886,7 +7886,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The amount of health healed in a <a href='/events.html#heal'>heal event</a>."
+        "The amount of health healed in a <a href='/#heal'>heal event</a>."
       ],
       "patterns": [
         "[the] heal[ing] amount"
@@ -7910,7 +7910,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The hostname used by the connecting player to connect to the server in a <a href='events.html#connect'>connect</a> event."
+        "The hostname used by the connecting player to connect to the server in a <a href='#connect'>connect</a> event."
       ],
       "patterns": [
         "[the] (host|domain)[ ][name]"
@@ -7932,7 +7932,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The hotbar button clicked in an <a href='events.html#inventory_click'>inventory click</a> event."
+        "The hotbar button clicked in an <a href='#inventory_click'>inventory click</a> event."
       ],
       "patterns": [
         "[the] hotbar button"
@@ -7954,7 +7954,7 @@
       "deprecated": false,
       "description": [
         "The list when you hover on the player counts of the server in the server list.",
-        "This can be changed using texts or players in a <a href='events.html#server_list_ping'>server list ping</a> event only. Adding players to the list means adding the name of the players.",
+        "This can be changed using texts or players in a <a href='#server_list_ping'>server list ping</a> event only. Adding players to the list means adding the name of the players.",
         "And note that, for example if there are 5 online players (includes <a href='#ExprOnlinePlayersCount'>fake online count</a>) in the server and the hover list is set to 3 values, Minecraft will show \"... and 2 more ...\" at end of the list."
       ],
       "patterns": [
@@ -7984,7 +7984,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='/classes.html#inventoryclosereason'>inventory close reason</a> of an <a href='/events.html#inventory_close'>inventory close event</a>."
+        "The <a href='/#inventoryclosereason'>inventory close reason</a> of an <a href='/#inventory_close'>inventory close event</a>."
       ],
       "patterns": [
         "[the] inventory clos(e|ing) (reason|cause)"
@@ -8010,7 +8010,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns the last loaded server icon with the <a href='effects.html#EffLoadServerIcon'>load server icon</a> effect."
+        "Returns the last loaded server icon with the <a href='#EffLoadServerIcon'>load server icon</a> effect."
       ],
       "patterns": [
         "[the] [last[ly]] loaded server icon"
@@ -8271,7 +8271,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The message of the day in the server list. This can be changed in a <a href='events.html#server_list_ping'>server list ping</a> event only.",
+        "The message of the day in the server list. This can be changed in a <a href='#server_list_ping'>server list ping</a> event only.",
         "'default MOTD' returns the default MOTD always and can't be changed."
       ],
       "patterns": [
@@ -8293,7 +8293,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The current <a href='classes.html#date'>system time</a> of the server. Use <a href='#ExprTime'>time</a> to get the <a href='classes.html#time'>Minecraft time</a> of a world."
+        "The current <a href='#date'>system time</a> of the server. Use <a href='#ExprTime'>time</a> to get the <a href='#time'>Minecraft time</a> of a world."
       ],
       "patterns": [
         "now"
@@ -8480,7 +8480,7 @@
         "Also if the protocol version of the player is higher than protocol version of the server, it will say",
         "\"Server out of date!\", and if vice-versa \"Client out of date!\" when you hover on the ping bars.",
         "",
-        "This can be set in a <a href='events.html#server_list_ping'>server list ping</a> event only",
+        "This can be set in a <a href='#server_list_ping'>server list ping</a> event only",
         "(increase and decrease effects cannot be used because that wouldn't make sense)."
       ],
       "patterns": [
@@ -8567,7 +8567,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The bow or arrow in a <a href='events.html#ready_arrow'>Ready Arrow event</a>."
+        "The bow or arrow in a <a href='#ready_arrow'>Ready Arrow event</a>."
       ],
       "patterns": [
         "[the] (readied|selected|drawn) (arrow|bow)"
@@ -8697,7 +8697,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The commands that will be sent to the player in a <a href='events.html#send_command_list'>send commands to player event</a>.",
+        "The commands that will be sent to the player in a <a href='#send_command_list'>send commands to player event</a>.",
         "Modifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.",
         "Adding new commands to the list is illegal behavior and will be ignored."
       ],
@@ -8903,7 +8903,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#transformreason'>transform reason</a> within an entity <a href='events.html#entity transform'>entity transform</a> event."
+        "The <a href='#transformreason'>transform reason</a> within an entity <a href='#entity transform'>entity transform</a> event."
       ],
       "patterns": [
         "[the] transform[ing] (cause|reason|type)"
@@ -9033,7 +9033,7 @@
       "deprecated": false,
       "description": [
         "The text to show if the protocol version of the server doesn't match with protocol version of the client. You can check the <a href='#ExprProtocolVersion'>protocol version</a> expression for more information about this.",
-        "This can only be set in a <a href='events.html#server_list_ping'>server list ping</a> event."
+        "This can only be set in a <a href='#server_list_ping'>server list ping</a> event."
       ],
       "patterns": [
         "[the] [shown|custom] version [string|text]"
@@ -9348,7 +9348,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='./classes.html#damagecause'>damage cause</a> of a damage event. Please click on the link for more information."
+        "The <a href='#damagecause'>damage cause</a> of a damage event. Please click on the link for more information."
       ],
       "patterns": [
         "[the] damage (cause|type)"
@@ -9393,7 +9393,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The player or the console who sent a command. Mostly useful in <a href='commands'>commands</a> and <a href='events.html#command'>command events</a>.",
+        "The player or the console who sent a command. Mostly useful in <a href='commands'>commands</a> and <a href='#command'>command events</a>.",
         "If the command sender is a command block, its location can be retrieved by using %block's location%"
       ],
       "patterns": [
@@ -9441,7 +9441,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#experiencechangereason'>experience change reason</a> within an <a href='events.html#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
+        "The <a href='#experiencechangereason'>experience change reason</a> within an <a href='#experience%20cooldown%20change%20event'>experience cooldown change event</a>."
       ],
       "patterns": [
         "[the] (experience|[e]xp) cooldown change (reason|cause|type)"
@@ -9465,7 +9465,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='./classes.html#healreason'>heal reason</a> of a <a href='./events.html#heal'>heal event</a>."
+        "The <a href='#healreason'>heal reason</a> of a <a href='#heal'>heal event</a>."
       ],
       "patterns": [
         "[the] (regen|health regain|heal[ing]) (reason|cause)"
@@ -9489,7 +9489,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='./classes.html#inventoryaction'>inventory action</a> of an inventory event. Please click on the link for more information."
+        "The <a href='#inventoryaction'>inventory action</a> of an inventory event. Please click on the link for more information."
       ],
       "patterns": [
         "[the] inventory action"
@@ -9505,7 +9505,7 @@
       "id": "ExprItem",
       "name": "Item",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -9531,7 +9531,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#quitreason'>quit reason</a> as to why a player disconnected in a <a href='events.html#quit'>quit</a> event."
+        "The <a href='#quitreason'>quit reason</a> as to why a player disconnected in a <a href='#quit'>quit</a> event."
       ],
       "patterns": [
         "[the] (quit|disconnect) (cause|reason)"
@@ -9556,7 +9556,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#spawnreason'>spawn reason</a> in a <a href='events.html#spawn'>spawn</a> event."
+        "The <a href='#spawnreason'>spawn reason</a> in a <a href='#spawn'>spawn</a> event."
       ],
       "patterns": [
         "[the] spawn[ing] reason"
@@ -9578,7 +9578,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#teleportcause'>teleport cause</a> within a player <a href='events.html#teleport'>teleport</a> event."
+        "The <a href='#teleportcause'>teleport cause</a> within a player <a href='#teleport'>teleport</a> event."
       ],
       "patterns": [
         "[the] teleport (cause|reason|type)"
@@ -9655,7 +9655,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#entity'>fishing hook</a> in a fishing event."
+        "The <a href='#entity'>fishing hook</a> in a fishing event."
       ],
       "patterns": [
         "[the] fish[ing] (hook|bobber)"
@@ -9749,7 +9749,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='./classes.html#region'>region</a> involved in an event.",
+        "The <a href='#region'>region</a> involved in an event.",
         "This expression requires a supported regions plugin to be installed."
       ],
       "patterns": [
@@ -9952,7 +9952,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns a chest inventory with the given amount of rows and the name. Use the <a href=effects.html#EffOpenInventory>open inventory</a> effect to open it."
+        "Returns a chest inventory with the given amount of rows and the name. Use the <a href=#EffOpenInventory>open inventory</a> effect to open it."
       ],
       "patterns": [
         "[a] [new] chest inventory (named|with name) %text% [with %number% row[s]]",
@@ -9981,7 +9981,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns the <a href='./classes.html#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world."
+        "Returns the <a href='#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world."
       ],
       "patterns": [
         "[(all [[of] the]|the)] chunk[s] (of|%directions%) %locations%",
@@ -10007,7 +10007,7 @@
         "Parses &lt;color&gt;s and, optionally, chat styles in a message or removes",
         "any colors <i>and</i> chat styles from the message. Parsing all",
         "chat styles requires this expression to be used in same line with",
-        "the <a href=effects.html#EffSend>send effect</a>."
+        "the <a href=#EffSend>send effect</a>."
       ],
       "patterns": [
         "(colo[u]r-|colo[u]red )%texts%",
@@ -10125,7 +10125,7 @@
       "deprecated": false,
       "description": [
         "The difference between two values",
-        "Supported types include <a href='./classes.html#number'>numbers</a>, <a href='./classes/#date'>dates</a> and <a href='./classes/#time'>times</a>."
+        "Supported types include <a href='#number'>numbers</a>, <a href='./classes/#date'>dates</a> and <a href='./classes/#time'>times</a>."
       ],
       "patterns": [
         "difference (between|of) %object% and %object%"
@@ -10146,7 +10146,7 @@
       ],
       "deprecated": false,
       "description": [
-        "A helper expression for the <a href='classes.html#direction'>direction type</a>."
+        "A helper expression for the <a href='#direction'>direction type</a>."
       ],
       "patterns": [
         "[%number% [(block|met(er|re))[s]] [to the]] (north[[(-| )](east|west)][(ward[(s|ly)]|er[(n|ly)])] [of]|south[[(-| )](east|west)][(ward[(s|ly)]|er[(n|ly)])] [of]|(east|west)[(ward[(s|ly)]|er[(n|ly)])] [of]|above|over|(up|down)[ward[(s|ly)]]|below|under[neath]|beneath) [%direction%]",
@@ -10353,7 +10353,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Represents a 'firework effect' which can be used in the <a href='effects.html#EffFireworkLaunch'>launch firework</a> effect."
+        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
       ],
       "patterns": [
         "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
@@ -10529,7 +10529,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Change the cooldown of a specific material to a certain amount of <a href='./classes.html#timespan'>Timespan</a>."
+        "Change the cooldown of a specific material to a certain amount of <a href='#timespan'>Timespan</a>."
       ],
       "patterns": [
         "[the] [item] cooldown of %item types% for %players%",
@@ -10625,7 +10625,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Allows to create a <a href='./classes.html#location'>location</a> from three coordinates and a world."
+        "Allows to create a <a href='#location'>location</a> from three coordinates and a world."
       ],
       "patterns": [
         "[the] (location|position) [at] [\\(][x[ ][=[ ]]]%number%, [y[ ][=[ ]]]%number%, [and] [z[ ][=[ ]]]%number%[\\)] [[(in|of) [[the] world]] %world%]"
@@ -11590,7 +11590,7 @@
       ],
       "deprecated": false,
       "description": [
-        "All blocks in a <a href='./classes.html#region'>region</a>.",
+        "All blocks in a <a href='#region'>region</a>.",
         "This expression requires a supported regions plugin to be installed."
       ],
       "patterns": [
@@ -11770,7 +11770,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Counts how many of a particular <a href='./classes.html#itemtype'>item type</a> are in a given inventory."
+        "Counts how many of a particular <a href='#itemtype'>item type</a> are in a given inventory."
       ],
       "patterns": [
         "[the] (amount|number) of %item types% (in|of) %inventories%"
@@ -12160,7 +12160,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Get the <a href='classes.html#blockdata'>block data</a> associated with a block.",
+        "Get the <a href='#blockdata'>block data</a> associated with a block.",
         "This data can also be used to set blocks."
       ],
       "patterns": [
@@ -12447,7 +12447,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='./classes.html#color'>color</a> of an item, entity, block, firework effect, or text display.",
+        "The <a href='#color'>color</a> of an item, entity, block, firework effect, or text display.",
         "This can also be used to color chat messages with \"&lt;%color of ...%&gt;this text is colored!\".",
         "Do note that firework effects support setting, adding, removing, resetting, and deleting; text displays support setting and resetting; and items, entities, and blocks only support setting, and only for very few items/blocks."
       ],
@@ -12773,7 +12773,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The level of a particular <a href='classes.html#enchantment'>enchantment</a> on an item."
+        "The level of a particular <a href='#enchantment'>enchantment</a> on an item."
       ],
       "patterns": [
         "[the] [enchant[ment]] level[s] of %enchantments% (on|of) %item types%",
@@ -12823,7 +12823,7 @@
       ],
       "deprecated": false,
       "description": [
-        "All the enchantments an <a href='classes.html#itemtype'>item type</a> has."
+        "All the enchantments an <a href='#itemtype'>item type</a> has."
       ],
       "patterns": [
         "[the] enchantments of %item types%",
@@ -13180,7 +13180,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Whether the player(s) are allowed to fly. Use <a href=effects.html#EffMakeFly>Make Fly</a> effect to force player(s) to fly."
+        "Whether the player(s) are allowed to fly. Use <a href=#EffMakeFly>Make Fly</a> effect to force player(s) to fly."
       ],
       "patterns": [
         "[the] fl(y[ing]|ight) (mode|state) of %players%",
@@ -13295,7 +13295,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The gamemode of a player. (<a href=\"classes.html#gamemode\">Gamemodes</a>)"
+        "The gamemode of a player. (<a href=\"#gamemode\">Gamemodes</a>)"
       ],
       "patterns": [
         "[the] game[ ]mode of %players%",
@@ -13403,7 +13403,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The players hidden from a player that were hidden using the <a href='effects.html#EffEntityVisibility'>entity visibility</a> effect."
+        "The players hidden from a player that were hidden using the <a href='#EffEntityVisibility'>entity visibility</a> effect."
       ],
       "patterns": [
         "[(all [[of] the]|the)] hidden players (of|for) %players%",
@@ -13424,7 +13424,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The currently selected hotbar <a href='./classes.html#slot'>slot</a>.",
+        "The currently selected hotbar <a href='#slot'>slot</a>.",
         "To retrieve its number use <a href='#ExprSlotIndex'>Slot Index</a> expression.",
         "Use future and past tense to grab the previous slot in an item change event, see example."
       ],
@@ -13523,7 +13523,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The IP address of a player, or the connected player in a <a href='events.html#connect'>connect</a> event, or the pinger in a <a href='events.html#server_list_ping'>server list ping</a> event."
+        "The IP address of a player, or the connected player in a <a href='#connect'>connect</a> event, or the pinger in a <a href='#server_list_ping'>server list ping</a> event."
       ],
       "patterns": [
         "IP[s][( |-)address[es]] of %players%",
@@ -13552,7 +13552,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The amount of an <a href='classes.html#itemstack'>item stack</a>."
+        "The amount of an <a href='#itemstack'>item stack</a>."
       ],
       "patterns": [
         "[the] item[[ ]stack] (amount|size|number) of %slots/item types/item stacks%",
@@ -13950,7 +13950,7 @@
       "id": "ExprLevel",
       "name": "Level",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -14236,7 +14236,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The count of max players. This can be changed in a <a href='events.html#server_list_ping'>server list ping</a> event only.",
+        "The count of max players. This can be changed in a <a href='#server_list_ping'>server list ping</a> event only.",
         "'real max players' returns the real count of max players of the server and can be modified on Paper 1.16 or later."
       ],
       "patterns": [
@@ -14478,7 +14478,7 @@
       ],
       "deprecated": false,
       "description": [
-        "The amount of online players. This can be changed in a <a href='events.html#server_list_ping'>server list ping</a> event only to show fake online player amount.",
+        "The amount of online players. This can be changed in a <a href='#server_list_ping'>server list ping</a> event only to show fake online player amount.",
         "<code>real online player count</code> always return the real count of online players and can't be changed."
       ],
       "patterns": [
@@ -14959,9 +14959,9 @@
       ],
       "deprecated": false,
       "description": [
-        "Scoreboard tags are simple list of texts stored directly in the data of an <a href='classes.html#entity'>entity</a>.",
+        "Scoreboard tags are simple list of texts stored directly in the data of an <a href='#entity'>entity</a>.",
         "So this is a Minecraft related thing, not Bukkit, so the tags will not get removed when the server stops. You can visit <a href='https://minecraft.wiki/w/Scoreboard#Tags'>visit Minecraft Wiki</a> for more info.",
-        "This is changeable and valid for any type of entity. Also you can use use the <a href='conditions.html#CondHasScoreboardTag'>Has Scoreboard Tag</a> condition to check whether an entity has the given tags.",
+        "This is changeable and valid for any type of entity. Also you can use use the <a href='#CondHasScoreboardTag'>Has Scoreboard Tag</a> condition to check whether an entity has the given tags.",
         "",
         "Requires Minecraft 1.11+ (actually added in 1.9 to the game, but added in 1.11 to Spigot)."
       ],
@@ -15062,8 +15062,8 @@
       "deprecated": false,
       "description": [
         "Icon of the server in the server list. Can be set to an icon that loaded using the",
-        "<a href='effects.html#EffLoadServerIcon'>load server icon</a> effect,",
-        "or can be reset to the default icon in a <a href='events.html#server_list_ping'>server list ping</a>.",
+        "<a href='#EffLoadServerIcon'>load server icon</a> effect,",
+        "or can be reset to the default icon in a <a href='#server_list_ping'>server list ping</a>.",
         "'default server icon' returns the default server icon (server-icon.png) always and cannot be changed."
       ],
       "patterns": [
@@ -15319,7 +15319,7 @@
       "id": "ExprSpeed",
       "name": "Speed",
       "since": [
-        "<i>unknown</i> (before 2.1)"
+        "unknown (before 2.1)"
       ],
       "deprecated": false,
       "description": [
@@ -15423,8 +15423,8 @@
       ],
       "deprecated": false,
       "description": [
-        "The <a href='classes.html#time'>time</a> of a world.",
-        "Use the \"minecraft <a href='classes.html#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.",
+        "The <a href='#time'>time</a> of a world.",
+        "Use the \"minecraft <a href='#timespan'>timespan</a>\" syntax to change the time according to Minecraft's time intervals.",
         "Since Minecraft uses discrete intervals for time (ticks), changing the time by real-world minutes or real-world seconds only changes it approximately.",
         "Removing an amount of time from a world's time will move the clock forward a day."
       ],
@@ -15500,7 +15500,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Retrieve specific information of a <a href=\"/classes.html#timespan\">timespan</a> such as hours/minutes/etc."
+        "Retrieve specific information of a <a href=\"/#timespan\">timespan</a> such as hours/minutes/etc."
       ],
       "patterns": [
         "[the] ((tick|second|minute|hour|day|week|month|year))s of %time spans%",
@@ -15522,7 +15522,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Represents the value of an expression before an event happened or the value it will have directly after the event, e.g. the old or new level respectively in a <a href='./events.html#level_change'>level change event</a>.",
+        "Represents the value of an expression before an event happened or the value it will have directly after the event, e.g. the old or new level respectively in a <a href='#level_change'>level change event</a>.",
         "Note: The past, future and present states of an expression are sometimes called 'time states' of an expression.",
         "Note 2: If you don't specify whether to use the past or future state of an expression that has different values, its default value will be used which is usually the value after the event."
       ],
@@ -16274,7 +16274,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Gets or changes the W, X, Y or Z component of <a href='classes.html#vector'>vectors</a>/<a href='classes.html#quaternion'>quaternions</a>.",
+        "Gets or changes the W, X, Y or Z component of <a href='#vector'>vectors</a>/<a href='#quaternion'>quaternions</a>.",
         "You cannot use the W component with vectors; it is for quaternions only."
       ],
       "patterns": [
@@ -16387,7 +16387,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the <a href='classes.html#string'>text/string</a> of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the <a href='#string'>text/string</a> of <a href='#display'>displays</a>.",
         "Note that currently you can only use Skript chat codes when running Paper."
       ],
       "patterns": [
@@ -16432,7 +16432,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the <a href='classes.html#billboard'>billboard</a> setting of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the <a href='#billboard'>billboard</a> setting of <a href='#display'>displays</a>.",
         "This describes the axes/points around which the display can pivot.",
         "Displays spawn with the 'fixed' billboard by default. Resetting this expression will also set it to 'fixed'."
       ],
@@ -16455,7 +16455,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the brightness override of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the brightness override of <a href='#display'>displays</a>.",
         "Unmodified displays will not have a brightness override value set. Resetting or deleting this value will remove the override.",
         "Use the 'block' or 'sky' options to get/change specific values or get both values as a list by using neither option.",
         "NOTE: setting only one of the sky/block light overrides of a display without an existing override will set both sky and block light to the given value. Make sure to set both block and sky levels to your desired values for the best results. Likewise, you can only clear the brightness override, you cannot clear/reset the sky/block values individually."
@@ -16482,7 +16482,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the glowing color override of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the glowing color override of <a href='#display'>displays</a>.",
         "This overrides whatever color is already set for the scoreboard team of the displays."
       ],
       "patterns": [
@@ -16504,7 +16504,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the height or width of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the height or width of <a href='#display'>displays</a>.",
         "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
         "If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0."
       ],
@@ -16527,7 +16527,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the interpolation delay/duration of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the interpolation delay/duration of <a href='#display'>displays</a>.",
         "Interpolation duration is the amount of time a display will take to interpolate, or shift, between its current state and a new state.",
         "Interpolation delay is the amount of ticks before client-side interpolation will commence.Setting to 0 seconds will make it immediate.",
         "Resetting either value will return that value to 0."
@@ -16551,7 +16551,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the shadow radius/strength of <a href='classes.html#display'>displays</a>."
+        "Returns or changes the shadow radius/strength of <a href='#display'>displays</a>."
       ],
       "patterns": [
         "[the] shadow (radius|strength) [of %displays%]",
@@ -16601,7 +16601,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the transformation rotation of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
         "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
       ],
       "patterns": [
@@ -16623,7 +16623,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the transformation scale or translation of <a href='classes.html#display'>displays</a>."
+        "Returns or changes the transformation scale or translation of <a href='#display'>displays</a>."
       ],
       "patterns": [
         "[the] (display|[display] transformation) (scale|translation) of %displays%",
@@ -16644,7 +16644,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the view range of <a href='classes.html#display'>displays</a>.",
+        "Returns or changes the view range of <a href='#display'>displays</a>.",
         "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
         "For example, a player with 150% entity view distance will see a block display with a view range of 1.2 at 1.2 * 64 * 150% = 115.2 blocks away."
       ],
@@ -16667,7 +16667,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the <a href='classes.html#itemdisplaytransform'>item display transform</a> of <a href='classes.html#display'>item displays</a>."
+        "Returns or changes the <a href='#itemdisplaytransform'>item display transform</a> of <a href='#display'>item displays</a>."
       ],
       "patterns": [
         "[the] item [display] transform [of %displays%]",
@@ -16689,7 +16689,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the <a href='classes.html#textalignment'>alignment</a> setting of <a href='classes.html#display'>text displays</a>."
+        "Returns or changes the <a href='#textalignment'>alignment</a> setting of <a href='#display'>text displays</a>."
       ],
       "patterns": [
         "[the] text alignment[s] [of %displays%]",
@@ -16710,7 +16710,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the line width of <a href='classes.html#display'>text displays</a>. Default is 200."
+        "Returns or changes the line width of <a href='#display'>text displays</a>. Default is 200."
       ],
       "patterns": [
         "[the] line width [of %displays%]",
@@ -16731,7 +16731,7 @@
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the opacity of <a href='classes.html#display'>text displays</a>.",
+        "Returns or changes the opacity of <a href='#display'>text displays</a>.",
         "Values are between -127 and 127. The value of 127 represents it being completely opaque."
       ],
       "patterns": [
@@ -17204,7 +17204,7 @@
       ],
       "deprecated": false,
       "description": [
-        "A list of members or owners of a <a href='./classes.html#region'>region</a>.",
+        "A list of members or owners of a <a href='#region'>region</a>.",
         "This expression requires a supported regions plugin to be installed."
       ],
       "patterns": [
@@ -17229,7 +17229,7 @@
       ],
       "deprecated": false,
       "description": [
-        "All <a href='./classes.html#region'>regions</a> at a particular <a href='./classes/#location'>location</a>.",
+        "All <a href='#region'>regions</a> at a particular <a href='./classes/#location'>location</a>.",
         "This expression requires a supported regions plugin to be installed."
       ],
       "patterns": [
@@ -17468,7 +17468,7 @@
         "at %time% [in %worlds%]"
       ],
       "description": [
-        "An event that occurs at a given <a href='./classes.html#time'>minecraft time</a> in every world or only in specific worlds."
+        "An event that occurs at a given <a href='#time'>minecraft time</a> in every world or only in specific worlds."
       ],
       "requirements": null,
       "examples": [
@@ -17510,12 +17510,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17551,12 +17551,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17568,7 +17568,7 @@
     {
       "id": "break_mine",
       "name": "On Break / Mine",
-      "since": "1.0 (break), <i>unknown</i> (mine), 2.6 (BlockData support)",
+      "since": "1.0 (break), unknown (mine), 2.6 (BlockData support)",
       "cancellable": true,
       "patterns": [
         "[block] (break[ing]|min(e|ing)) [[of] %item types/block datas%]"
@@ -17634,12 +17634,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17667,24 +17667,24 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17812,12 +17812,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17859,24 +17859,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17902,24 +17902,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17989,7 +17989,7 @@
         "command [%texts%]"
       ],
       "description": [
-        "Called when a player enters a command (not necessarily a Skript command) but you can check if command is a skript command, see <a href='conditions.html#CondIsSkriptCommand'>Is a Skript command condition</a>."
+        "Called when a player enters a command (not necessarily a Skript command) but you can check if command is a skript command, see <a href='#CondIsSkriptCommand'>Is a Skript command condition</a>."
       ],
       "requirements": null,
       "examples": [
@@ -18032,12 +18032,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18144,7 +18144,7 @@
     {
       "id": "endermansheepsilverfishfalling_block",
       "name": "On Enderman/Sheep/Silverfish/Falling Block",
-      "since": "<i>unknown</i>, 2.5.2 (falling block), 2.8.0 (any entity support)",
+      "since": "unknown, 2.5.2 (falling block), 2.8.0 (any entity support)",
       "cancellable": true,
       "patterns": [
         "enderman place",
@@ -18172,20 +18172,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -18196,12 +18196,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -18243,12 +18243,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18537,7 +18537,7 @@
         "game[ ]mode change [to %gamemode%]"
       ],
       "description": [
-        "Called when a player's <a href='./classes.html#gamemode'>gamemode</a> changes."
+        "Called when a player's <a href='#gamemode'>gamemode</a> changes."
       ],
       "requirements": null,
       "examples": [
@@ -18663,7 +18663,7 @@
     {
       "id": "dispense",
       "name": "On Dispense",
-      "since": "<i>unknown</i> (before 2.1)",
+      "since": "unknown (before 2.1)",
       "cancellable": true,
       "patterns": [
         "dispens(e|ing) [[of] %item types%]"
@@ -18678,12 +18678,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18699,7 +18699,7 @@
     {
       "id": "item_spawn",
       "name": "On Item Spawn",
-      "since": "<i>unknown</i> (before 2.1)",
+      "since": "unknown (before 2.1)",
       "cancellable": true,
       "patterns": [
         "item spawn[ing] [[of] %item types%]"
@@ -18739,7 +18739,7 @@
     {
       "id": "drop",
       "name": "On Drop",
-      "since": "<i>unknown</i> (before 2.1), 2.7 (entity)",
+      "since": "unknown (before 2.1), 2.7 (entity)",
       "cancellable": true,
       "patterns": [
         "[player|entity] drop[ping] [[of] %item types%]"
@@ -18831,7 +18831,7 @@
     {
       "id": "craft",
       "name": "On Craft",
-      "since": "<i>unknown</i> (before 2.1)",
+      "since": "unknown (before 2.1)",
       "cancellable": true,
       "patterns": [
         "[player] craft[ing] [[of] %item types%]"
@@ -18861,12 +18861,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -18882,7 +18882,7 @@
     {
       "id": "pick_up",
       "name": "On Pick Up",
-      "since": "<i>unknown</i> (before 2.1), 2.5 (entity)",
+      "since": "unknown (before 2.1), 2.5 (entity)",
       "cancellable": true,
       "patterns": [
         "[(player|entity)] (pick[ ]up|picking up) [[of] %item types%]"
@@ -19134,12 +19134,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19224,12 +19224,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19251,7 +19251,7 @@
         "[player] level (change|up|down)"
       ],
       "description": [
-        "Called when a player's <a href='expressions.html#ExprLevel'>level</a> changes, e.g. by gathering experience or by enchanting something."
+        "Called when a player's <a href='#ExprLevel'>level</a> changes, e.g. by gathering experience or by enchanting something."
       ],
       "requirements": null,
       "examples": [
@@ -19547,12 +19547,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -19626,7 +19626,7 @@
         "[server] command list send"
       ],
       "description": [
-        "Called when the server sends a list of commands to the player. This usually happens on join. The sent commands can be modified via the <a href='expressions.html#ExprSentCommands'>sent commands expression</a>.",
+        "Called when the server sends a list of commands to the player. This usually happens on join. The sent commands can be modified via the <a href='#ExprSentCommands'>sent commands expression</a>.",
         "Modifications will affect what commands show up for the player to tab complete. They will not affect what commands the player can actually run.",
         "Adding new commands to the list is illegal behavior and will be ignored."
       ],
@@ -19681,8 +19681,8 @@
       ],
       "description": [
         "Called when a player takes action on a resource pack request sent via the ",
-        "<a href='effects.html#EffSendResourcePack'>send resource pack</a> effect. ",
-        "The <a href='conditions.html#CondResourcePack'>resource pack</a> condition can be used ",
+        "<a href='#EffSendResourcePack'>send resource pack</a> effect. ",
+        "The <a href='#CondResourcePack'>resource pack</a> condition can be used ",
         "to check the resource pack state.",
         "",
         "This event will be triggered once when the player accepts or declines the resource pack request, ",
@@ -20025,7 +20025,7 @@
       ],
       "description": [
         "Called when a player rightclicks on a block while holding a block or a placeable item. You can either cancel the event to prevent the block from being built, or uncancel it to allow it.",
-        "Please note that the <a href='expressions.html#ExprDurability'>data value</a> of the block to be placed is not available in this event, only its <a href='expressions.html#ExprIdOf'>ID</a>."
+        "Please note that the <a href='#ExprDurability'>data value</a> of the block to be placed is not available in this event, only its <a href='#ExprIdOf'>ID</a>."
       ],
       "requirements": null,
       "examples": [
@@ -20075,12 +20075,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20113,12 +20113,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20151,12 +20151,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20189,12 +20189,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20221,12 +20221,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20253,12 +20253,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20285,12 +20285,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20467,20 +20467,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "commandsender",
@@ -20491,12 +20491,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -20729,12 +20729,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21146,7 +21146,7 @@
         "[player] (kick|being kicked)"
       ],
       "description": [
-        "Called when a player is kicked from the server. You can change the <a href='expressions.html#ExprMessage'>kick message</a> or <a href='effects.html#EffCancelEvent'>cancel the event</a> entirely."
+        "Called when a player is kicked from the server. You can change the <a href='#ExprMessage'>kick message</a> or <a href='#EffCancelEvent'>cancel the event</a> entirely."
       ],
       "requirements": null,
       "examples": [
@@ -21173,7 +21173,7 @@
         "entity portal"
       ],
       "description": [
-        "Called when an entity uses a nether or end portal. <a href='effects.html#EffCancelEvent'>Cancel the event</a> to prevent the entity from teleporting."
+        "Called when an entity uses a nether or end portal. <a href='#EffCancelEvent'>Cancel the event</a> to prevent the entity from teleporting."
       ],
       "requirements": null,
       "examples": [
@@ -21213,7 +21213,7 @@
         "[player] portal"
       ],
       "description": [
-        "Called when a player uses a nether or end portal. <a href='effects.html#EffCancelEvent'>Cancel the event</a> to prevent the player from teleporting."
+        "Called when a player uses a nether or end portal. <a href='#EffCancelEvent'>Cancel the event</a> to prevent the player from teleporting."
       ],
       "requirements": null,
       "examples": [
@@ -21277,12 +21277,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21324,7 +21324,7 @@
         "[player] sneak toggl(e|ing)"
       ],
       "description": [
-        "Called when a player starts or stops sneaking. Use <a href='conditions.html#CondIsSneaking'>is sneaking</a> to get whether the player was sneaking before the event was called."
+        "Called when a player starts or stops sneaking. Use <a href='#CondIsSneaking'>is sneaking</a> to get whether the player was sneaking before the event was called."
       ],
       "requirements": null,
       "examples": [
@@ -21355,7 +21355,7 @@
         "[player] sprint toggl(e|ing)"
       ],
       "description": [
-        "Called when a player starts or stops sprinting. Use <a href='conditions.html#CondIsSprinting'>is sprinting</a> to get whether the player was sprinting before the event was called."
+        "Called when a player starts or stops sprinting. Use <a href='#CondIsSprinting'>is sprinting</a> to get whether the player was sprinting before the event was called."
       ],
       "requirements": null,
       "examples": [
@@ -21385,7 +21385,7 @@
       ],
       "description": [
         "Called when a portal is created, either by a player or mob lighting an obsidian frame on fire, or by a nether portal creating its teleportation target in the nether/overworld.",
-        "In Minecraft 1.14+, you can use <a href='expressions.html#ExprEntity'>the player</a> in this event.",
+        "In Minecraft 1.14+, you can use <a href='#ExprEntity'>the player</a> in this event.",
         "Please note that there may not always be a player (or other entity) in this event."
       ],
       "requirements": [
@@ -21429,12 +21429,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21510,7 +21510,7 @@
         "[projectile] shoot"
       ],
       "description": [
-        "Called whenever a <a href='classes.html#projectile'>projectile</a> is shot. Use the <a href='expressions.html#ExprShooter'>shooter expression</a> to get who shot the projectile."
+        "Called whenever a <a href='#projectile'>projectile</a> is shot. Use the <a href='#ExprShooter'>shooter expression</a> to get who shot the projectile."
       ],
       "requirements": null,
       "examples": [
@@ -21562,20 +21562,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "player",
@@ -21682,7 +21682,7 @@
         "destr(oy[ing]|uction of) [a] vehicle"
       ],
       "description": [
-        "Called when a vehicle is destroyed. Any <a href='expressions.html#ExprPassenger'>passenger</a> will be ejected and the vehicle might drop some item(s)."
+        "Called when a vehicle is destroyed. Any <a href='#ExprPassenger'>passenger</a> will be ejected and the vehicle might drop some item(s)."
       ],
       "requirements": null,
       "examples": [
@@ -21715,7 +21715,7 @@
         "enter[ing] [a] vehicle"
       ],
       "description": [
-        "Called when an <a href='classes.html#entity'>entity</a> enters a vehicle, either deliberately (players) or by falling into them (mobs)."
+        "Called when an <a href='#entity'>entity</a> enters a vehicle, either deliberately (players) or by falling into them (mobs)."
       ],
       "requirements": null,
       "examples": [
@@ -21902,24 +21902,24 @@
       ],
       "eventValues": [
         {
-          "id": "livingentity",
-          "name": "living entities"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entities"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -22175,7 +22175,7 @@
         "[player] chang(e|ing) (language|locale)"
       ],
       "description": [
-        "Called after a player changed their language in the game settings. You can use the <a href='expressions.html#ExprLanguage'>language</a> expression to get the current language of the player.",
+        "Called after a player changed their language in the game settings. You can use the <a href='#ExprLanguage'>language</a> expression to get the current language of the player.",
         "This event requires Minecraft 1.12+."
       ],
       "requirements": null,
@@ -22270,10 +22270,10 @@
       ],
       "description": [
         "Called when a server list ping is coming in, generally when a Minecraft client pings the server to show its information in the server list.",
-        "The <a href='expressions.html#ExprIP'>IP</a> expression can be used to get the IP adress of the pinger.",
+        "The <a href='#ExprIP'>IP</a> expression can be used to get the IP adress of the pinger.",
         "This event can be cancelled on PaperSpigot 1.12.2+ only and this means the player will see the server as offline (but still can join).",
         "",
-        "Also you can use <a href='expressions.html#ExprMOTD'>MOTD</a>, <a href='expressions.html#ExprMaxPlayers'>Max Players</a>, <a href='expressions.html#ExprOnlinePlayersCount'>Online Players Count</a>, <a href='expressions.html#ExprProtocolVersion'>Protocol Version</a>, <a href='expressions.html#ExprVersionString'>Version String</a>, <a href='expressions.html#ExprHoverList'>Hover List</a> and <a href='expressions.html#ExprServerIcon'>Server Icon</a> expressions, and <a href='effects.html#EffPlayerInfoVisibility'>Player Info Visibility</a> and <a href='effects.html#EffHidePlayerFromServerList'>Hide Player from Server List</a> effects to modify the server list."
+        "Also you can use <a href='#ExprMOTD'>MOTD</a>, <a href='#ExprMaxPlayers'>Max Players</a>, <a href='#ExprOnlinePlayersCount'>Online Players Count</a>, <a href='#ExprProtocolVersion'>Protocol Version</a>, <a href='#ExprVersionString'>Version String</a>, <a href='#ExprHoverList'>Hover List</a> and <a href='#ExprServerIcon'>Server Icon</a> expressions, and <a href='#EffPlayerInfoVisibility'>Player Info Visibility</a> and <a href='#EffHidePlayerFromServerList'>Hide Player from Server List</a> effects to modify the server list."
       ],
       "requirements": null,
       "examples": [
@@ -22379,12 +22379,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22403,7 +22403,7 @@
       ],
       "description": [
         "Called when a player puts an item into enchantment table. This event may be called multiple times.",
-        " To get the enchant item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
+        " To get the enchant item, see the <a href='#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
       ],
       "requirements": null,
       "examples": [
@@ -22441,7 +22441,7 @@
       ],
       "description": [
         "Called when a player successfully enchants an item.",
-        " To get the enchanted item, see the <a href='expressions.html#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
+        " To get the enchanted item, see the <a href='#ExprEnchantEventsEnchantItem'>enchant item expression</a>"
       ],
       "requirements": null,
       "examples": [
@@ -22560,12 +22560,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22906,8 +22906,8 @@
       ],
       "description": [
         "Called whenever a player chats.",
-        "Use <a href='./expressions.html#ExprChatFormat'>chat format</a> to change message format.",
-        "Use <a href='./expressions.html#ExprChatRecipients'>chat recipients</a> to edit chat recipients."
+        "Use <a href='#ExprChatFormat'>chat format</a> to change message format.",
+        "Use <a href='#ExprChatRecipients'>chat recipients</a> to edit chat recipients."
       ],
       "requirements": null,
       "examples": [
@@ -23041,12 +23041,12 @@
           "name": "item stacks"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "slot",
@@ -23128,12 +23128,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23170,12 +23170,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23654,12 +23654,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -23779,12 +23779,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23799,7 +23799,7 @@
         "[furnace] smelt[ed|ing] of ore"
       ],
       "description": [
-        "Called when a furnace smelts an item in its <a href='expressions.html#ExprFurnaceSlot'>input slot</a>."
+        "Called when a furnace smelts an item in its <a href='#ExprFurnaceSlot'>input slot</a>."
       ],
       "requirements": null,
       "examples": [
@@ -23811,12 +23811,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23834,7 +23834,7 @@
         "[furnace] fuel burn[ing] [of %item types%]"
       ],
       "description": [
-        "Called when a furnace burns an item from its <a href='expressions.html#ExprFurnaceSlot'>fuel slot</a>."
+        "Called when a furnace burns an item from its <a href='#ExprFurnaceSlot'>fuel slot</a>."
       ],
       "requirements": null,
       "examples": [
@@ -23845,12 +23845,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23878,12 +23878,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23922,12 +23922,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23967,12 +23967,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -23991,7 +23991,7 @@
         "region (enter[ing]|leav(e|ing)|exit[ing])"
       ],
       "description": [
-        "Called when a player enters or leaves a <a href='./classes.html#region'>region</a>.",
+        "Called when a player enters or leaves a <a href='#region'>region</a>.",
         "This event requires a supported regions plugin to be installed."
       ],
       "requirements": [
@@ -24134,7 +24134,7 @@
       "since": "1.4",
       "patterns": null,
       "description": [
-        "A date is a certain point in the real world's time which can be obtained with <a href='./expressions.html#ExprNow'>now expression</a>, <a href='./expressions.html#ExprUnixDate'>unix date expression</a> and <a href='./functions.html#date'>date function</a>.",
+        "A date is a certain point in the real world's time which can be obtained with <a href='#ExprNow'>now expression</a>, <a href='#ExprUnixDate'>unix date expression</a> and <a href='#date'>date function</a>.",
         "See <a href='#time'>time</a> and <a href='#timespan'>timespan</a> for the other time types of Skript."
       ],
       "requirements": null,
@@ -24149,7 +24149,7 @@
       "name": "Direction",
       "since": "2.0",
       "patterns": [
-        "see <a href='./expressions.html#ExprDirection'>direction (expression)</a>"
+        "see <a href='#ExprDirection'>direction (expression)</a>"
       ],
       "description": [
         "A direction, e.g. north, east, behind, 5 south east, 1.3 meters to the right, etc.",
@@ -24169,9 +24169,9 @@
       "since": "",
       "patterns": null,
       "description": [
-        "Represents a single slot of an <a href='#inventory'>inventory</a>. Notable slots are the <a href='./expressions.html#ExprArmorSlot'>armour slots</a> and <a href='./expressions/#ExprFurnaceSlot'>furnace slots</a>. ",
+        "Represents a single slot of an <a href='#inventory'>inventory</a>. Notable slots are the <a href='#ExprArmorSlot'>armour slots</a> and <a href='./expressions/#ExprFurnaceSlot'>furnace slots</a>. ",
         "The most important property that distinguishes a slot from an <a href='#itemstack'>item</a> is its ability to be changed, e.g. it can be set, deleted, enchanted, etc. (Some item expressions can be changed as well, e.g. items stored in variables. For that matter: slots are never saved to variables, only the items they represent at the time when the variable is set).",
-        "Please note that <a href='./expressions.html#ExprTool'>tool</a> can be regarded a slot, but it can actually change it's position, i.e. doesn't represent always the same slot."
+        "Please note that <a href='#ExprTool'>tool</a> can be regarded a slot, but it can actually change it's position, i.e. doesn't represent always the same slot."
       ],
       "requirements": null,
       "examples": [
@@ -24203,11 +24203,11 @@
       "name": "Tree Type",
       "since": "",
       "patterns": [
-        "[any] &lt;general tree/mushroom type&gt;, e.g. tree/any jungle tree/etc.",
-        "&lt;specific tree/mushroom species&gt;, e.g. red mushroom/small jungle tree/big regular tree/etc."
+        "[any] <general tree/mushroom type>, e.g. tree/any jungle tree/etc.",
+        "<specific tree/mushroom species>, e.g. red mushroom/small jungle tree/big regular tree/etc."
       ],
       "description": [
-        "A tree type represents a tree species or a huge mushroom species. These can be generated in a world with the <a href='./effects.html#EffTree'>generate tree</a> effect."
+        "A tree type represents a tree species or a huge mushroom species. These can be generated in a world with the <a href='#EffTree'>generate tree</a> effect."
       ],
       "requirements": null,
       "examples": [
@@ -24220,10 +24220,10 @@
       "name": "Experience",
       "since": "2.0",
       "patterns": [
-        "[&lt;number&gt;] ([e]xp|experience [point[s]])"
+        "[<number>] ([e]xp|experience [point[s]])"
       ],
       "description": [
-        "Experience points. Please note that Bukkit only allows to give XP, but not remove XP from players. You can however change a player's <a href='./expressions.html#ExprLevel'>level</a> and <a href='./expressions/#ExprLevelProgress'>level progress</a> freely."
+        "Experience points. Please note that Bukkit only allows to give XP, but not remove XP from players. You can however change a player's <a href='#ExprLevel'>level</a> and <a href='./expressions/#ExprLevelProgress'>level progress</a> freely."
       ],
       "requirements": null,
       "examples": [
@@ -24363,7 +24363,7 @@
       "since": "1.0",
       "patterns": null,
       "description": [
-        "A block in a <a href='#world'>world</a>. It has a <a href='#location'>location</a> and a <a href='#itemstack'>type</a>, and can also have a <a href='#direction'>direction</a> (mostly a <a href='expressions.html#ExprFacing'>facing</a>), an <a href='#inventory'>inventory</a>, or other special properties."
+        "A block in a <a href='#world'>world</a>. It has a <a href='#location'>location</a> and a <a href='#itemstack'>type</a>, and can also have a <a href='#direction'>direction</a> (mostly a <a href='#ExprFacing'>facing</a>), an <a href='#inventory'>inventory</a>, or other special properties."
       ],
       "requirements": null,
       "examples": [
@@ -24421,7 +24421,7 @@
       "patterns": null,
       "description": [
         "An inventory of a <a href='#player'>player</a> or <a href='#block'>block</a>. Inventories have many effects and conditions regarding the items contained.",
-        "An inventory has a fixed amount of <a href='#slot'>slots</a> which represent a specific place in the inventory, e.g. the <a href='expressions.html#ExprArmorSlot'>helmet slot</a> for players (Please note that slot support is still very limited but will be improved eventually)."
+        "An inventory has a fixed amount of <a href='#slot'>slots</a> which represent a specific place in the inventory, e.g. the <a href='#ExprArmorSlot'>helmet slot</a> for players (Please note that slot support is still very limited but will be improved eventually)."
       ],
       "requirements": null,
       "examples": [
@@ -24482,7 +24482,7 @@
       ],
       "description": [
         "A player. Depending on whether a player is online or offline several actions can be performed with them, though you won't get any errors when using effects that only work if the player is online (e.g. changing their inventory) on an offline player.",
-        "You have two possibilities to use players as command arguments: &lt;player&gt; and &lt;offline player&gt;. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly."
+        "You have two possibilities to use players as command arguments: <player> and <offline player>. The first requires that the player is online and also accepts only part of the name, while the latter doesn't require that the player is online, but the player's name has to be entered exactly."
       ],
       "requirements": null,
       "examples": [
@@ -24589,7 +24589,7 @@
         "consumable effect teleport causes, bed exit, nether portal, ender gateway, exiting bed, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, exit bed, gateway, dismount, end portal"
       ],
       "description": [
-        "The teleport cause in a <a href='events.html#teleport'>teleport</a> event."
+        "The teleport cause in a <a href='#teleport'>teleport</a> event."
       ],
       "requirements": null,
       "examples": null
@@ -24602,7 +24602,7 @@
         "dispense egg, egg, village defense, ocelot baby, silverfish trap, village invading, trap, dispensing egg, shoulder, drowned, metamorphosis, lightning, silverfish reveal, spell, built iron golem, natural, trial mob spawner, village invasion, frozen, mount, build wither, built wither, iron golem defense, ender pearl, creature spawner, reinforcements, build snowman, build iron golem, breeding, raid, ominous item spawner, infection, customized, potion effect, spawn egg, jockey, beehive, default, release from bucket, golem defense, patrol, slime split, infected, sheared, mob spawner, nether portal, trial spawner, shear, perching, custom, built snowman, chunk generation, breed, command, duplication, explosion, spawner, cured, enchantment, trial creature spawner, customised, piglin zombification"
       ],
       "description": [
-        "The spawn reason in a <a href='events.html#spawn'>spawn</a> event."
+        "The spawn reason in a <a href='#spawn'>spawn</a> event."
       ],
       "requirements": null,
       "examples": null
@@ -24613,7 +24613,7 @@
       "since": "2.3",
       "patterns": null,
       "description": [
-        "A server icon that was loaded using the <a href='effects.html#EffLoadServerIcon'>load server icon</a> effect."
+        "A server icon that was loaded using the <a href='#EffLoadServerIcon'>load server icon</a> effect."
       ],
       "requirements": null,
       "examples": [
@@ -24638,12 +24638,12 @@
       "name": "Firework Effect",
       "since": "2.4",
       "patterns": [
-        "See <a href='/classes.html#FireworkType'>Firework Types</a>"
+        "See <a href='/#FireworkType'>Firework Types</a>"
       ],
       "description": [
         "A configuration of effects that defines the firework when exploded",
-        "which can be used in the <a href='effects.html#EffFireworkLaunch'>launch firework</a> effect.",
-        "See the <a href='expressions.html#ExprFireworkEffect'>firework effect</a> expression for detailed patterns."
+        "which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect.",
+        "See the <a href='#ExprFireworkEffect'>firework effect</a> expression for detailed patterns."
       ],
       "requirements": null,
       "examples": [
@@ -24673,7 +24673,7 @@
         "discarded, refused, rejected, failed reload, accepted, failed, failed to reload, failed to download, downloaded, successfully loaded, accept, fail, successfully load, refuse, declined, successfully install, success, reject, decline, successfully installed, download fail, invalid url"
       ],
       "description": [
-        "The state in a <a href='events.html#resource_pack_request_action'>resource pack request response</a> event."
+        "The state in a <a href='#resource_pack_request_action'>resource pack request response</a> event."
       ],
       "requirements": null,
       "examples": null
@@ -24686,7 +24686,7 @@
         "hostile creatures category, speech category, records category, friendly creature category, noteblock category, hostile creature category, note block category, voice category, ambient category, noteblocks category, note blocks category, weather category, block category, friendly mob category, jukebox category, hostile mob category, master category, master volume category, hostile category, record category, blocks category, environment category, jukeboxes category, player category, players category, hostile mobs category, friendly mobs category, music category, friendly creatures category, neutral category"
       ],
       "description": [
-        "The category of a sound, they are used for sound options of Minecraft. See the <a href='effects.html#EffPlaySound'>play sound</a> and <a href='effects.html#EffStopSound'>stop sound</a> effects."
+        "The category of a sound, they are used for sound options of Minecraft. See the <a href='#EffPlaySound'>play sound</a> and <a href='#EffStopSound'>stop sound</a> effects."
       ],
       "requirements": null,
       "examples": null
@@ -24714,7 +24714,7 @@
         "an ender crystal, magic, a magic regeneration, magic regeneration, fed, sated, a magic regen, regen potion, a wither spawn, peaceful, unknown, a regeneration potion, consuming, a wither effect, peaceful regeneration, wither summoning, healing potion, wither potion, an end crystal, satiated, regeneration potion, potion, satisfied, ingesting, withered, custom, a wither spawning, end crystal, eating, wither spawning, a wither summoning, wither effect, a plugin, a regen potion, plugin, withering, a potion, wither spawn, a healing potion, ender crystal, magic regen, wither, peaceful regen"
       ],
       "description": [
-        "The health regain reason in a <a href='events.html#heal'>heal</a> event."
+        "The health regain reason in a <a href='#heal'>heal</a> event."
       ],
       "requirements": null,
       "examples": null
@@ -24815,7 +24815,7 @@
         "disconnected, erroneous state, kicked, quit, timed out, erroneous"
       ],
       "description": [
-        "Represents a quit reason from a <a href='/events.html#quit'>player quit server event</a>."
+        "Represents a quit reason from a <a href='/#quit'>player quit server event</a>."
       ],
       "requirements": [
         "Paper 1.16.5+"
@@ -24830,7 +24830,7 @@
         "disconnect, death, teleport, cannot use, new opened, unknown, can't use, unloaded, disconnected, plugin, can not use, open new, player"
       ],
       "description": [
-        "The inventory close reason in an <a href='/events.html#inventory_close'>inventory close event</a>."
+        "The inventory close reason in an <a href='/#inventory_close'>inventory close event</a>."
       ],
       "requirements": [
         "Paper"
@@ -24845,7 +24845,7 @@
         "infection, magma slime split, villager infection, tadpole metamorphosis, drowning, creeper super charge, unknown, split, tadpole converting, metamorphosis, skeleton converting to stray, lightning, slime split, entity drowning, slime splitting, zombie drowning, zombie curing, skeleton freeze, entity freezing, zombie converting to drowned, curing, entity freeze, skeleton freezing, mooshroom shear, zombie cure, tadpole converting to frog, mooshroom shearing, magma slime splitting, piglin zombification"
       ],
       "description": [
-        "Represents a transform reason of an <a href='events.html#entity transform'>entity transform event</a>."
+        "Represents a transform reason of an <a href='#entity transform'>entity transform event</a>."
       ],
       "requirements": null,
       "examples": null
@@ -24913,7 +24913,7 @@
         "plugin, pickup orb, orb pickup"
       ],
       "description": [
-        "Represents a change reason of an <a href='events.html#experience cooldown change event'>experience cooldown change event</a>."
+        "Represents a change reason of an <a href='#experience cooldown change event'>experience cooldown change event</a>."
       ],
       "requirements": null,
       "examples": null
@@ -25180,7 +25180,7 @@
       "name": "Timespan",
       "since": "1.0, 2.6.1 (weeks, months, years)",
       "patterns": [
-        "&lt;number&gt; [minecraft/mc/real/rl/irl] ticks/seconds/minutes/hours/days/weeks/months/years [[,/and] &lt;more...&gt;]",
+        "<number> [minecraft/mc/real/rl/irl] ticks/seconds/minutes/hours/days/weeks/months/years [[,/and] <more...>]",
         "[]##:##[.####] ([]minutes:seconds[.milliseconds])"
       ],
       "description": [
@@ -25201,7 +25201,7 @@
       "name": "Enchantment Type",
       "since": "1.4.6",
       "patterns": [
-        "&lt;enchantment&gt; [&lt;level&gt;]"
+        "<enchantment> [<level>]"
       ],
       "description": [
         "An enchantment with an optional level, e.g. 'sharpness 2' or 'fortune'."
@@ -25266,7 +25266,7 @@
       "name": "Item Type",
       "since": "1.0",
       "patterns": [
-        "[&lt;number&gt; [of]] [all/every] &lt;alias&gt; [of &lt;enchantment&gt; [&lt;level&gt;] [,/and &lt;more enchantments...&gt;]]"
+        "[<number> [of]] [all/every] <alias> [of <enchantment> [<level>] [,/and <more enchantments...>]]"
       ],
       "description": [
         "An item type is an alias that can result in different items when added to an inventory, and unlike <a href='#itemstack'>items</a> they are well suited for checking whether an inventory contains a certain item or whether a certain item is of a certain type.",
@@ -25364,7 +25364,7 @@
       "name": "Command Sender",
       "since": "1.0",
       "patterns": [
-        "use <a href='expressions.html#LitConsole'>the console</a> for the console",
+        "use <a href='#LitConsole'>the console</a> for the console",
         "see <a href='#player'>player</a> for players."
       ],
       "description": [
@@ -25372,7 +25372,7 @@
       ],
       "requirements": null,
       "examples": [
-        "command /push [&lt;player&gt;]:",
+        "command /push [<player>]:",
         "\ttrigger:",
         "\t\tif arg-1 is not set:",
         "\t\t\tif command sender is console:",
@@ -25390,7 +25390,7 @@
       "name": "Item",
       "since": "1.0",
       "patterns": [
-        "<code>[&lt;number&gt; [of]] &lt;alias&gt; [of &lt;enchantment&gt; &lt;level&gt;]</code>, Where &lt;alias&gt; must be an alias that represents exactly one item (i.e cannot be a general alias like 'sword' or 'plant')"
+        "<code>[<number> [of]] <alias> [of <enchantment> <level>]</code>, Where <alias> must be an alias that represents exactly one item (i.e cannot be a general alias like 'sword' or 'plant')"
       ],
       "description": [
         "An item, e.g. a stack of torches, a furnace, or a wooden sword of sharpness 2. Unlike <a href='#itemtype'>item type</a> an item can only represent exactly one item (e.g. an upside-down cobblestone stair facing west), while an item type can represent a whole range of items (e.g. any cobble stone stairs regardless of direction).",
@@ -25456,7 +25456,7 @@
       ],
       "description": [
         "Represents a type, e.g. number, object, item type, location, block, world, entity type, etc.",
-        "This is mostly used for expressions like 'event-&lt;type&gt;', '&lt;type&gt;-argument', 'loop-&lt;type&gt;', etc., e.g. event-world, number-argument and loop-player."
+        "This is mostly used for expressions like 'event-<type>', '<type>-argument', 'loop-<type>', etc., e.g. event-world, number-argument and loop-player."
       ],
       "requirements": null,
       "examples": [
@@ -25475,7 +25475,7 @@
         "sweep attack, thorns, the void, magma, a lightning, drowning, dragonfire, an attack, drown, an entity attack, melt, freeze, falling block, contact, fire, campfire, an entity explosion, lightning, a fall, entity explosion, void, a lightning strike, suffocation, suicide, wither effect, a plugin, lightning strike, entity attack, a potion, a wither, sweeping, melting, a falling block, unknown, starvation, lava, fall, hot floor, attack, a block explosion, dryout, burn, hitting wall while flying, potion, world border, flying into a wall, cramming, poison, sonic boom, suffocate, custom, kill, killed, a fire, burning, a projectile, plugin, wither potion effect, block explosion, projectile, wither, dragon's breath"
       ],
       "description": [
-        "The cause/type of a <a href='events.html#damage'>damage event</a>, e.g. lava, fall, fire, drowning, explosion, poison, etc.",
+        "The cause/type of a <a href='#damage'>damage event</a>, e.g. lava, fall, fire, drowning, explosion, poison, etc.",
         "Please note that support for this type is very rudimentary, e.g. lava, fire and burning, as well as projectile and attack are considered different types."
       ],
       "requirements": null,
@@ -25843,7 +25843,7 @@
         "A loop will loop through all elements of the given expression, e.g. all players, worlds, items, etc. The conditions & effects inside the loop will be executed for every of those elements, which can be accessed with ‘loop-<what>’, e.g. <code>send \"hello\" to loop-player</code>. When a condition inside a loop is not fulfilled the loop will start over with the next element of the loop. You can however use <code>stop loop</code> to exit the loop completely and resume code execution after the end of the loop.",
         "",
         "<b>Loopable Values</b>",
-        "All <a href=\"/expressions.html\">expressions</a> that represent more than one value, e.g. ‘all players’, ‘worlds’, etc., as well as list variables, can be looped. You can also use a list of expressions, e.g. <code>loop the victim and the attacker</code>, to execute the same code for only a few values.",
+        "All expressions that represent more than one value, e.g. ‘all players’, ‘worlds’, etc., as well as list variables, can be looped. You can also use a list of expressions, e.g. <code>loop the victim and the attacker</code>, to execute the same code for only a few values.",
         "",
         "<b>List Variables</b>",
         "When looping list variables, you can also use <code>loop-index</code> in addition to <code>loop-value</code> inside the loop. <code>loop-value</code> is the value of the currently looped variable, and <code>loop-index</code> is the last part of the variable's name (the part where the list variable has its asterisk *)."
