@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-64cd442",
+  "skriptVersion": "2.11.2-nightly-c002efa",
   "version": {
     "major": 1,
     "minor": 1
@@ -18000,12 +18000,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18270,12 +18270,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18493,20 +18493,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "potioneffect",
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -18920,12 +18920,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "healreason",
           "name": "heal reason"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19805,12 +19805,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20626,12 +20626,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23443,12 +23443,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
