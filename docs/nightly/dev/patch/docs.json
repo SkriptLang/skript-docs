@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-fe4f4a1",
+  "skriptVersion": "2.11.2-nightly-aa84c88",
   "version": {
     "major": 1,
     "minor": 1
@@ -6641,8 +6641,8 @@
         "(contract|shrink) %worldborders%['s (diameter|radius)] (by|to) %number% [over [a period of] %time span%]"
       ],
       "examples": [
-        "expand world border of player by 100 in 5 seconds",
-        "shrink world border of world \"world\" to 100 in 10 seconds"
+        "expand world border of player by 100 over 5 seconds",
+        "shrink world border of world \"world\" to 100 over 10 seconds"
       ],
       "events": null,
       "requirements": null,
@@ -17679,12 +17679,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18032,12 +18032,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18074,24 +18074,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -18172,20 +18172,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -18196,12 +18196,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -19224,12 +19224,12 @@
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19547,12 +19547,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -19837,12 +19837,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -20467,20 +20467,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "commandsender",
@@ -20491,12 +20491,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -21241,12 +21241,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -21429,12 +21429,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21902,24 +21902,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -22991,12 +22991,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23041,12 +23041,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23967,12 +23967,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
