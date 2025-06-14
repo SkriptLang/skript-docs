@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-b7875a5",
+  "skriptVersion": "2.11.2-nightly-c17d8f5",
   "version": {
     "major": 1,
     "minor": 1
@@ -3941,27 +3941,28 @@
       "id": "EffCancelDrops",
       "name": "Cancel Drops",
       "since": [
-        "2.4"
+        "2.4, INSERT VERSION (harvest event)"
       ],
       "deprecated": false,
       "description": [
-        "Cancels drops of items or experiences in a death or block break event. Please note that this doesn't keep items or experiences of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect."
+        "Cancels drops of items in a death, block break, block drop, and block harvest events.",
+        "The dropped experience can be cancelled in a death and block break events.",
+        "Please note that using this in a death event doesn't keep items or experience of a dead player. If you want to do that, use the <a href='effects.html#EffKeepInventory'>Keep Inventory / Experience</a> effect."
       ],
       "patterns": [
         "(cancel|clear|delete) [the] drops [of (items|[e]xp[erience][s])]",
         "(cancel|clear|delete) [the] (item|[e]xp[erience]) drops"
       ],
       "examples": [
-        "on death of a zombie:",
-        "\tif name of the entity is \"&cSpecial\":",
-        "\t\tcancel drops of items",
-        "",
-        "on break of a coal ore:",
-        "\tcancel the experience drops"
+        "on death of a zombie:\n\tif name of the entity is \"&cSpecial\":\n\t\tcancel drops of items\n",
+        "on break of a coal ore:\n\tcancel the experience drops\n",
+        "on player block harvest:\n\tcancel the item drops\n"
       ],
       "events": [
         "death",
-        "break / mine"
+        "break / mine",
+        "block drop",
+        "harvest"
       ],
       "requirements": [
         "1.12.2 or newer (cancelling item drops of blocks)"
@@ -7591,7 +7592,9 @@
       ],
       "deprecated": false,
       "description": [
-        "Only works in death events. Holds the drops of the dying creature. Drops can be prevented by removing them with \"remove ... from drops\", e.g. \"remove all pickaxes from the drops\", or \"clear drops\" if you don't want any drops at all."
+        "This expression only works in death and harvest events.",
+        "In a death event, will hold the drops of the dying creature.",
+        "Drops can be prevented by removing them with \"remove ... from drops\", e.g. \"remove all pickaxes from the drops\", or \"clear drops\" if you don't want any drops at all."
       ],
       "patterns": [
         "[the] drops"
@@ -18098,24 +18101,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18141,24 +18144,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18892,6 +18895,49 @@
       "keywords": null
     },
     {
+      "id": "harvest_block",
+      "name": "On Harvest Block",
+      "since": "INSERT VERSION",
+      "cancellable": true,
+      "patterns": [
+        "[player] [block|crop] harvest[ing] [of %item types/block datas%]"
+      ],
+      "description": [
+        "Called when a player harvests a block.\nA block being harvested is when a block drops items and the state of the block is changed, but the block is not broken.\nAn example is harvesting berries from a berry bush.\n"
+      ],
+      "requirements": null,
+      "examples": [
+        "on player block harvest:\n\tsend \"You have harvested %event-block% that dropped %event-items% using your %item of event-slot% in your %event-equipment slot%\"\n\non crop harvesting of sweet berry bush:\n\tchance 5%:\n\t\tset drops to a diamond\n\tchance 1%\n\t\tcancel the drops\n"
+      ],
+      "eventValues": [
+        {
+          "id": "block",
+          "name": "block"
+        },
+        {
+          "id": "world",
+          "name": "world"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
+        },
+        {
+          "id": "slot",
+          "name": "slot"
+        },
+        {
+          "id": "player",
+          "name": "player"
+        },
+        {
+          "id": "equipmentslot",
+          "name": "equipment slot"
+        }
+      ],
+      "keywords": null
+    },
+    {
       "id": "heal",
       "name": "On Heal",
       "since": "1.0, 2.9.0 (by reason)",
@@ -19433,12 +19479,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -19854,12 +19900,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -21933,12 +21979,12 @@
           "name": "location"
         },
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -22971,12 +23017,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23394,12 +23440,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23734,12 +23780,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -24290,12 +24336,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
