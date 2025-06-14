@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-e15eb9d",
+  "skriptVersion": "2.11.2-nightly-116c766",
   "version": {
     "major": 1,
     "minor": 1
@@ -6266,9 +6266,7 @@
         "stop sound in the record category"
       ],
       "events": null,
-      "requirements": [
-        "MC 1.17.1 (stop all sounds)"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -17681,12 +17679,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17861,24 +17859,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -17904,24 +17902,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18245,12 +18243,12 @@
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -19136,12 +19134,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19301,12 +19299,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19402,12 +19400,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19549,12 +19547,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -19588,12 +19586,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21223,12 +21221,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21279,12 +21277,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21431,12 +21429,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21572,12 +21570,12 @@
           "name": "location"
         },
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -22177,8 +22175,7 @@
         "[player] chang(e|ing) (language|locale)"
       ],
       "description": [
-        "Called after a player changed their language in the game settings. You can use the <a href='#ExprLanguage'>language</a> expression to get the current language of the player.",
-        "This event requires Minecraft 1.12+."
+        "Called after a player changed their language in the game settings. You can use the <a href='#ExprLanguage'>language</a> expression to get the current language of the player."
       ],
       "requirements": null,
       "examples": [
@@ -22794,7 +22791,7 @@
         "Note that event-timespan will return the time the item was used for."
       ],
       "requirements": [
-        "Paper 1.18.2+"
+        "Paper"
       ],
       "examples": [
         "on player stop using item:",
@@ -22884,12 +22881,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -22993,12 +22990,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23325,12 +23322,12 @@
           "name": "time span"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "timespan",
@@ -23656,12 +23653,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -23781,12 +23778,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
@@ -23969,12 +23966,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
