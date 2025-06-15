@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-2cb151d",
+  "skriptVersion": "2.11.2-nightly-3f0337c",
   "version": {
     "major": 1,
     "minor": 1
@@ -10734,7 +10734,7 @@
       ],
       "deprecated": false,
       "description": [
-        "This expression is used to explicitly pass the values of an expression alongside its keys.",
+        "This expression is used to explicitly pass the keys of an expression alongside its values.",
         "For example, when setting a list variable or passing an expression to a function."
       ],
       "patterns": [
@@ -18283,12 +18283,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18329,12 +18329,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18345,12 +18345,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -23340,12 +23340,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -24114,12 +24114,12 @@
           "name": "entity type"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
