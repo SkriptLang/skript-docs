@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-3186fc6",
+  "skriptVersion": "2.11.2-nightly-c1c24f0",
   "version": {
     "major": 1,
     "minor": 1
@@ -17114,6 +17114,60 @@
       "keywords": null
     },
     {
+      "id": "ExprMembersOfRegion",
+      "name": "Region Members & Owners",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "A list of members or owners of a <a href='#region'>region</a>.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
+        "[[the] region[s]] %regions%'[s] (members|owner[s])"
+      ],
+      "examples": [
+        "on entering of a region:",
+        "\tmessage \"You're entering %region% whose owners are %owners of region%\""
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprRegionsAt",
+      "name": "Regions At",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "All <a href='#region'>regions</a> at a particular <a href='./classes/#location'>location</a>.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[the] region[(s)] %direction% %locations%"
+      ],
+      "examples": [
+        "On click on a sign:",
+        "\tline 1 of the clicked block is \"[region info]\"",
+        "\tset {_regions::*} to regions at the clicked block",
+        "\tif {_regions::*} is empty:",
+        "\t\tmessage \"No regions exist at this sign.\"",
+        "\telse:",
+        "\t\tmessage \"Regions containing this sign: &lt;gold&gt;%{_regions::*}%<r>.\""
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprBalance",
       "name": "Money",
       "since": [
@@ -17193,60 +17247,6 @@
       "requirements": [
         "Vault",
         "a permission plugin that supports Vault"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprMembersOfRegion",
-      "name": "Region Members & Owners",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "A list of members or owners of a <a href='#region'>region</a>.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
-        "[[the] region[s]] %regions%'[s] (members|owner[s])"
-      ],
-      "examples": [
-        "on entering of a region:",
-        "\tmessage \"You're entering %region% whose owners are %owners of region%\""
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprRegionsAt",
-      "name": "Regions At",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "All <a href='#region'>regions</a> at a particular <a href='./classes/#location'>location</a>.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[the] region[(s)] %direction% %locations%"
-      ],
-      "examples": [
-        "On click on a sign:",
-        "\tline 1 of the clicked block is \"[region info]\"",
-        "\tset {_regions::*} to regions at the clicked block",
-        "\tif {_regions::*} is empty:",
-        "\t\tmessage \"No regions exist at this sign.\"",
-        "\telse:",
-        "\t\tmessage \"Regions containing this sign: &lt;gold&gt;%{_regions::*}%<r>.\""
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
       ],
       "keywords": null
     },
@@ -17679,12 +17679,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -17859,24 +17859,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -17902,24 +17902,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18032,12 +18032,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18074,24 +18074,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -18243,12 +18243,12 @@
           "name": "potion effect"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18861,12 +18861,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19224,12 +19224,12 @@
           "name": "world"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19547,12 +19547,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -19837,12 +19837,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -21241,12 +21241,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -22571,12 +22571,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23040,12 +23040,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23653,12 +23653,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -23778,12 +23778,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23966,12 +23966,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
@@ -24585,7 +24585,7 @@
       "name": "Teleport Cause",
       "since": "2.2-dev35",
       "patterns": [
-        "consumable effect teleport causes, bed exit, nether portal, ender gateway, exiting bed, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, exit bed, gateway, dismount, end portal"
+        "bed exit, nether portal, ender gateway, exiting bed, consumable effect, ender portal, command, unknown, plugin, dismounted, ender pearl, spectator, spectate, end gateway, exit bed, gateway, dismount, end portal"
       ],
       "description": [
         "The teleport cause in a <a href='#teleport'>teleport</a> event."
@@ -24682,7 +24682,7 @@
       "name": "Sound Category",
       "since": "2.4",
       "patterns": [
-        "hostile creatures category, speech category, records category, friendly creature category, noteblock category, hostile creature category, note block category, voice category, ambient category, noteblocks category, note blocks category, weather category, block category, friendly mob category, jukebox category, hostile mob category, master category, master volume category, hostile category, record category, blocks category, environment category, jukeboxes category, player category, players category, hostile mobs category, friendly mobs category, music category, friendly creatures category, neutral category"
+        "hostile creatures category, speech category, records category, friendly creature category, noteblock category, hostile creature category, note block category, voice category, ambient category, ui, noteblocks category, note blocks category, weather category, block category, friendly mob category, jukebox category, hostile mob category, master category, master volume category, hostile category, record category, user interface, blocks category, environment category, jukeboxes category, player category, players category, hostile mobs category, friendly mobs category, music category, friendly creatures category, neutral category"
       ],
       "description": [
         "The category of a sound, they are used for sound options of Minecraft. See the <a href='#EffPlaySound'>play sound</a> and <a href='#EffStopSound'>stop sound</a> effects."
@@ -24739,7 +24739,7 @@
       "name": "Gamerule",
       "since": "2.5",
       "patterns": [
-        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, tntExplodes, allowFireTicksAwayFromPlayer, universalAnger, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, disablePlayerMovementCheck, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, minecartMaxSpeed, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
+        "tntExplosionDropDecay, globalSoundEvents, enderPearlsVanishOnDeath, doFireTick, maxCommandChainLength, doVinesSpread, disableElytraMovementCheck, lavaSourceConversion, commandBlockOutput, forgiveDeadPlayers, playersNetherPortalCreativeDelay, doMobSpawning, maxEntityCramming, tntExplodes, allowFireTicksAwayFromPlayer, universalAnger, locatorBar, playersSleepingPercentage, snowAccumulationHeight, doImmediateRespawn, blockExplosionDropDecay, naturalRegeneration, doMobLoot, fallDamage, doEntityDrops, randomTickSpeed, playersNetherPortalDefaultDelay, spawnRadius, freezeDamage, sendCommandFeedback, doWardenSpawning, fireDamage, reducedDebugInfo, waterSourceConversion, projectilesCanBreakBlocks, announceAdvancements, drowningDamage, spawnChunkRadius, disableRaids, doWeatherCycle, mobExplosionDropDecay, doDaylightCycle, showDeathMessages, doTileDrops, doInsomnia, keepInventory, disablePlayerMovementCheck, doLimitedCrafting, mobGriefing, doTraderSpawning, commandModificationBlockLimit, logAdminCommands, minecartMaxSpeed, spectatorsGenerateChunks, doPatrolSpawning, maxCommandForkCount"
       ],
       "description": [
         "A gamerule"
@@ -24769,7 +24769,7 @@
       "name": "Attribute Type",
       "since": "2.5",
       "patterns": [
-        "armor, armor toughness, armour, armour toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic armour, generic armour toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, zombie spawn reinforcements"
+        "armor, armor toughness, armour, armour toughness, attack damage, attack knockback, attack speed, block break speed, block interaction range, burning time, camera distance, entity interaction range, explosion knockback resistance, fall damage multiplier, flying speed, follow range, generic armor, generic armor toughness, generic armour, generic armour toughness, generic attack damage, generic attack knockback, generic attack speed, generic burning time, generic explosion knockback resistance, generic fall damage multiplier, generic flying speed, generic follow range, generic gravity, generic jump strength, generic knockback resistance, generic luck, generic max absorption, generic max health, generic movement efficiency, generic movement speed, generic oxygen bonus, generic safe fall distance, generic scale, generic step height, generic tempt range, generic water movement efficiency, gravity, horse jump strength, jump strength, knockback resistance, luck, max absorption, max health, mining efficiency, movement efficiency, movement speed, oxygen bonus, player block break speed, player block interaction range, player entity interaction range, player mining efficiency, player sneaking speed, player submerged mining speed, player sweeping damage ratio, safe fall distance, scale, sneaking speed, spawn reinforcements, step height, submerged mining speed, sweeping damage ratio, tempt range, water movement efficiency, waypoint receive range, waypoint transmit range, zombie spawn reinforcements"
       ],
       "description": [
         "Represents the type of an attribute. Note that this type does not contain any numerical values.See <a href='https://minecraft.wiki/w/Attribute#Attributes'>attribute types</a> for more info.",
@@ -25136,6 +25136,24 @@
       "examples": null
     },
     {
+      "id": "region",
+      "name": "Region",
+      "since": "2.1",
+      "patterns": [
+        "\"region name\""
+      ],
+      "description": [
+        "A region of a regions plugin. Skript currently supports WorldGuard, Factions, GriefPrevention and PreciousStones.",
+        "Please note that some regions plugins do not have named regions, some use numerical ids to identify regions, and some may have regions with the same name in different worlds, thus using regions like \"region name\" in scripts may or may not work."
+      ],
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "examples": [
+        ""
+      ]
+    },
+    {
       "id": "money",
       "name": "Money",
       "since": "2.0",
@@ -25154,24 +25172,6 @@
         "remove Fr. 9.95 from the player's money",
         "set the victim's money to 0",
         "increase the attacker's balance by the level of the victim * 100"
-      ]
-    },
-    {
-      "id": "region",
-      "name": "Region",
-      "since": "2.1",
-      "patterns": [
-        "\"region name\""
-      ],
-      "description": [
-        "A region of a regions plugin. Skript currently supports WorldGuard, Factions, GriefPrevention and PreciousStones.",
-        "Please note that some regions plugins do not have named regions, some use numerical ids to identify regions, and some may have regions with the same name in different worlds, thus using regions like \"region name\" in scripts may or may not work."
-      ],
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "examples": [
-        ""
       ]
     },
     {
