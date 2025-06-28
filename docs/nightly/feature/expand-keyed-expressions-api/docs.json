@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-c062aa7",
+  "skriptVersion": "2.11.2-nightly-54e6c99",
   "version": {
     "major": 1,
     "minor": 1
@@ -17930,12 +17930,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18283,12 +18283,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18329,12 +18329,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18345,12 +18345,12 @@
           "name": "entity type"
         },
         {
-          "id": "itemstack",
-          "name": "item stacks"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
         },
         {
           "id": "projectile",
@@ -18435,20 +18435,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -18463,12 +18463,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -19203,12 +19203,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19657,12 +19657,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19762,12 +19762,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19948,12 +19948,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20203,12 +20203,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -20517,12 +20517,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20837,20 +20837,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -20865,12 +20865,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -21627,12 +21627,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21647,12 +21647,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -22332,12 +22332,12 @@
       ],
       "eventValues": [
         {
-          "id": "livingentity",
-          "name": "living entities"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entities"
         },
         {
           "id": "world",
@@ -22348,12 +22348,12 @@
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -23026,12 +23026,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23340,12 +23340,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -23789,12 +23789,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -24114,12 +24114,12 @@
           "name": "entity type"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -24212,12 +24212,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -24297,12 +24297,12 @@
           "name": "world"
         },
         {
-          "id": "livingentity",
-          "name": "living entity"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entity"
         },
         {
           "id": "commandsender",
@@ -24345,12 +24345,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
@@ -24533,12 +24533,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
@@ -27149,7 +27149,8 @@
         "name": "Number"
       },
       "description": [
-        "Clamps one or more values between two numbers."
+        "Clamps one or more values between two numbers.",
+        "This function retains indices"
       ],
       "examples": [
         "clamp(5, 0, 10) = 5",
