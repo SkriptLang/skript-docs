@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-fa2ba88",
+  "skriptVersion": "2.11.2-nightly-f599007",
   "version": {
     "major": 1,
     "minor": 1
@@ -17921,12 +17921,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18101,24 +18101,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18144,24 +18144,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18320,12 +18320,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18336,12 +18336,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -18497,20 +18497,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18967,12 +18967,12 @@
           "name": "world"
         },
         {
-          "id": "healreason",
-          "name": "heal reason"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "healreason",
+          "name": "heal reason"
         },
         {
           "id": "commandsender",
@@ -19194,12 +19194,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19479,12 +19479,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -21674,12 +21674,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -21826,12 +21826,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21979,12 +21979,12 @@
           "name": "location"
         },
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -23490,12 +23490,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -24203,12 +24203,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -24336,12 +24336,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
