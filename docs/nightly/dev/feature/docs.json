@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-6ab2948",
+  "skriptVersion": "2.11.2-nightly-80ed254",
   "version": {
     "major": 1,
     "minor": 1
@@ -5788,19 +5788,22 @@
       "id": "EffPush",
       "name": "Push",
       "since": [
-        "1.4.6"
+        "1.4.6",
+        "INSERT VERSION (push towards)"
       ],
       "deprecated": false,
       "description": [
-        "Push entities around."
+        "Push entities in a given direction or towards a specific location."
       ],
       "patterns": [
-        "(push|thrust) %entities% [along] %direction% [(at|with) (speed|velocity|force) %number%]"
+        "(push|thrust) %entities% [along] %direction% [(at|with) [a] (speed|velocity|force) [of] %number%]",
+        "(push|thrust|pull) %entities% (towards|away from) %location% [(at|with) [a] (speed|velocity|force) [of] %number%]"
       ],
       "examples": [
         "push the player upwards",
         "push the victim downwards at speed 0.5",
-        "push player along vector from player to player's target at speed 2"
+        "push player towards player's target at speed 2",
+        "pull player along vector(1,1,1) at speed 1.5"
       ],
       "events": null,
       "requirements": null,
@@ -18014,12 +18017,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19204,12 +19207,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19489,12 +19492,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19658,12 +19661,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19763,12 +19766,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19862,12 +19865,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19910,12 +19913,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -19949,12 +19952,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20204,12 +20207,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20401,12 +20404,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20683,12 +20686,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21628,12 +21631,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21648,12 +21651,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -21836,12 +21839,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21989,12 +21992,12 @@
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "player",
@@ -22333,12 +22336,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22349,12 +22352,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -23789,12 +23792,12 @@
           "name": "time span"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "timespan",
@@ -24114,12 +24117,12 @@
           "name": "entity type"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -24297,12 +24300,12 @@
           "name": "world"
         },
         {
-          "id": "livingentity",
-          "name": "living entity"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entity"
         },
         {
           "id": "commandsender",
@@ -24533,12 +24536,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
