@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-1ca06f4",
+  "skriptVersion": "2.11.2-nightly-b16480f",
   "version": {
     "major": 1,
     "minor": 1
@@ -17879,8 +17879,10 @@
     {
       "id": "at_time",
       "name": "At Time",
-      "since": "1.3.4",
       "cancellable": false,
+      "since": [
+        "1.3.4"
+      ],
       "patterns": [
         "at %time% [in %worlds%]"
       ],
@@ -17903,8 +17905,10 @@
     {
       "id": "beacon_effect",
       "name": "On Beacon Effect",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[primary|secondary] beacon effect [of %potion effect types%]",
         "application of [primary|secondary] beacon effect [of %potion effect types%]",
@@ -17948,8 +17952,10 @@
     {
       "id": "beacon_toggle",
       "name": "On Beacon Toggle",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "beacon toggle",
         "beacon activat(e|ion)",
@@ -17985,8 +17991,10 @@
     {
       "id": "break_mine",
       "name": "On Break / Mine",
-      "since": "1.0 (break), unknown (mine), 2.6 (BlockData support)",
       "cancellable": true,
+      "since": [
+        "1.0 (break), unknown (mine), 2.6 (BlockData support)"
+      ],
       "patterns": [
         "[block] (break[ing]|min(e|ing)) [[of] %item types/block datas%]"
       ],
@@ -18035,8 +18043,10 @@
     {
       "id": "burn",
       "name": "On Burn",
-      "since": "1.0, 2.6 (BlockData support)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.6 (BlockData support)"
+      ],
       "patterns": [
         "[block] burn[ing] [[of] %item types/block datas%]"
       ],
@@ -18068,8 +18078,10 @@
     {
       "id": "place",
       "name": "On Place",
-      "since": "1.0, 2.6 (BlockData support)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.6 (BlockData support)"
+      ],
       "patterns": [
         "[block] (plac(e|ing)|build[ing]) [[of] %item types/block datas%]"
       ],
@@ -18125,8 +18137,10 @@
     {
       "id": "fade",
       "name": "On Fade",
-      "since": "1.0, 2.6 (BlockData support)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.6 (BlockData support)"
+      ],
       "patterns": [
         "[block] fad(e|ing) [[of] %item types/block datas%]"
       ],
@@ -18165,8 +18179,10 @@
     {
       "id": "form",
       "name": "On Form",
-      "since": "1.0, 2.6 (BlockData support)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.6 (BlockData support)"
+      ],
       "patterns": [
         "[block] form[ing] [[of] %item types/block datas%]"
       ],
@@ -18200,8 +18216,10 @@
     {
       "id": "block_drop",
       "name": "On Block Drop",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "block drop[ping] [[of] %item types/block datas%]"
       ],
@@ -18262,8 +18280,10 @@
     {
       "id": "book_edit",
       "name": "On Book Edit",
-      "since": "2.2-dev31",
       "cancellable": true,
+      "since": [
+        "2.2-dev31"
+      ],
       "patterns": [
         "book (edit|change|write)"
       ],
@@ -18276,24 +18296,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18305,8 +18325,10 @@
     {
       "id": "book_sign",
       "name": "On Book Sign",
-      "since": "2.2-dev31",
       "cancellable": true,
+      "since": [
+        "2.2-dev31"
+      ],
       "patterns": [
         "book sign[ing]"
       ],
@@ -18319,24 +18341,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18348,8 +18370,10 @@
     {
       "id": "click",
       "name": "On Click",
-      "since": "1.0, 2.10 (blockdata)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.10 (blockdata)"
+      ],
       "patterns": [
         "[(right|left)[( |-)]][mouse[( |-)]]click[ing] [on %entity type/item type/block data%] [(with|using|holding) %item type%]",
         "[(right|left)[( |-)]][mouse[( |-)]]click[ing] (with|using|holding) %item type% on %entity type/item type/block data%"
@@ -18400,8 +18424,10 @@
     {
       "id": "command",
       "name": "On Command",
-      "since": "2.0",
       "cancellable": true,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "command [%texts%]"
       ],
@@ -18433,8 +18459,10 @@
     {
       "id": "damage",
       "name": "On Damage",
-      "since": "1.0, 2.7 (by entity)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.7 (by entity)"
+      ],
       "patterns": [
         "damag(e|ing) [of %entity type%] [by %entity type%]"
       ],
@@ -18449,12 +18477,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18478,8 +18506,10 @@
     {
       "id": "death",
       "name": "On Death",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "death [of %entity types%]"
       ],
@@ -18532,8 +18562,10 @@
     {
       "id": "spawn",
       "name": "On Spawn",
-      "since": "1.0, 2.5.1 (non-living entities)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.5.1 (non-living entities)"
+      ],
       "patterns": [
         "spawn[ing] [of %entity types%]"
       ],
@@ -18573,8 +18605,10 @@
     {
       "id": "endermansheepsilverfishfalling_block",
       "name": "On Enderman/Sheep/Silverfish/Falling Block",
-      "since": "unknown, 2.5.2 (falling block), 2.8.0 (any entity support)",
       "cancellable": true,
+      "since": [
+        "unknown, 2.5.2 (falling block), 2.8.0 (any entity support)"
+      ],
       "patterns": [
         "enderman place",
         "enderman pickup",
@@ -18601,20 +18635,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "entitydata",
@@ -18629,12 +18663,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -18642,8 +18676,10 @@
     {
       "id": "entity_potion_effect",
       "name": "On Entity Potion Effect",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "entity potion effect [modif[y|ication]] [[of] %potion effect types%] [due to %entity potion cause%]"
       ],
@@ -18701,8 +18737,10 @@
     {
       "id": "entity_shoot_bow",
       "name": "On Entity Shoot Bow",
-      "since": "2.11",
       "cancellable": true,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "%entity types% shoot[ing] (bow|projectile)"
       ],
@@ -18748,8 +18786,10 @@
     {
       "id": "target",
       "name": "On Target",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[entity] target",
         "[entity] un[-]target"
@@ -18789,8 +18829,10 @@
     {
       "id": "entity_transform",
       "name": "On Entity Transform",
-      "since": "2.8.0",
       "cancellable": true,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "(entit(y|ies)|%*-entitydatas%) transform[ing] [due to %transform reasons%]"
       ],
@@ -18841,8 +18883,10 @@
     {
       "id": "experience_change",
       "name": "On Experience Change",
-      "since": "2.7",
       "cancellable": false,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "[player] (level progress|[e]xp|experience) (change|update|increase|decrease)"
       ],
@@ -18874,8 +18918,10 @@
     {
       "id": "experience_spawn",
       "name": "On Experience Spawn",
-      "since": "2.0",
       "cancellable": true,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "[e]xp[erience] [orb] spawn",
         "spawn of [a[n]] [e]xp[erience] [orb]"
@@ -18905,8 +18951,10 @@
     {
       "id": "firework_explode",
       "name": "On Firework Explode",
-      "since": "2.4",
       "cancellable": true,
+      "since": [
+        "2.4"
+      ],
       "patterns": [
         "[a] firework explo(d(e|ing)|sion) [colo[u]red %colors%]"
       ],
@@ -18956,8 +19004,10 @@
     {
       "id": "first_join",
       "name": "On First Join",
-      "since": "1.3.7",
       "cancellable": false,
+      "since": [
+        "1.3.7"
+      ],
       "patterns": [
         "first (join|login)"
       ],
@@ -18984,8 +19034,10 @@
     {
       "id": "gamemode_change",
       "name": "On Gamemode Change",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "game[ ]mode change [to %gamemode%]"
       ],
@@ -19012,8 +19064,10 @@
     {
       "id": "grow",
       "name": "On Grow",
-      "since": "1.0, 2.2-dev20 (plants), 2.8.0 (from, into, blockdata)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.2-dev20 (plants), 2.8.0 (from, into, blockdata)"
+      ],
       "patterns": [
         "grow[th] [of (%tree types%|%item types/block datas%)]",
         "grow[th] from %item types/block datas%",
@@ -19072,8 +19126,10 @@
     {
       "id": "harvest_block",
       "name": "On Harvest Block",
-      "since": "INSERT VERSION",
       "cancellable": true,
+      "since": [
+        "INSERT VERSION"
+      ],
       "patterns": [
         "[player] [block|crop] harvest[ing] [of %item types/block datas%]"
       ],
@@ -19115,8 +19171,10 @@
     {
       "id": "heal",
       "name": "On Heal",
-      "since": "1.0, 2.9.0 (by reason)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.9.0 (by reason)"
+      ],
       "patterns": [
         "heal[ing] [of %entity types%] [(from|due to|by) %heal reasons%]",
         "%entity types% heal[ing] [(from|due to|by) %heal reasons%]"
@@ -19163,8 +19221,10 @@
     {
       "id": "dispense",
       "name": "On Dispense",
-      "since": "unknown (before 2.1)",
       "cancellable": true,
+      "since": [
+        "unknown (before 2.1)"
+      ],
       "patterns": [
         "dispens(e|ing) [[of] %item types%]"
       ],
@@ -19199,8 +19259,10 @@
     {
       "id": "item_spawn",
       "name": "On Item Spawn",
-      "since": "unknown (before 2.1)",
       "cancellable": true,
+      "since": [
+        "unknown (before 2.1)"
+      ],
       "patterns": [
         "item spawn[ing] [[of] %item types%]"
       ],
@@ -19243,8 +19305,10 @@
     {
       "id": "drop",
       "name": "On Drop",
-      "since": "unknown (before 2.1), 2.7 (entity)",
       "cancellable": true,
+      "since": [
+        "unknown (before 2.1), 2.7 (entity)"
+      ],
       "patterns": [
         "[player|entity] drop[ping] [[of] %item types%]"
       ],
@@ -19300,8 +19364,10 @@
     {
       "id": "prepare_craft",
       "name": "On Prepare Craft",
-      "since": "2.2-Fixes-V10",
       "cancellable": false,
+      "since": [
+        "2.2-Fixes-V10"
+      ],
       "patterns": [
         "[player] (preparing|beginning) craft[ing] [[of] %item types%]"
       ],
@@ -19339,8 +19405,10 @@
     {
       "id": "craft",
       "name": "On Craft",
-      "since": "unknown (before 2.1)",
       "cancellable": true,
+      "since": [
+        "unknown (before 2.1)"
+      ],
       "patterns": [
         "[player] craft[ing] [[of] %item types%]"
       ],
@@ -19369,12 +19437,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19390,8 +19458,10 @@
     {
       "id": "pick_up",
       "name": "On Pick Up",
-      "since": "unknown (before 2.1), 2.5 (entity)",
       "cancellable": true,
+      "since": [
+        "unknown (before 2.1), 2.5 (entity)"
+      ],
       "patterns": [
         "[(player|entity)] (pick[ ]up|picking up) [[of] %item types%]"
       ],
@@ -19448,8 +19518,10 @@
     {
       "id": "consume",
       "name": "On Consume",
-      "since": "2.0",
       "cancellable": true,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "[player] ((eat|drink)[ing]|consum(e|ing)) [[of] %item types%]"
       ],
@@ -19479,8 +19551,10 @@
     {
       "id": "inventory_click",
       "name": "On Inventory Click",
-      "since": "2.2-Fixes-V10",
       "cancellable": true,
+      "since": [
+        "2.2-Fixes-V10"
+      ],
       "patterns": [
         "[player] inventory(-| )click[ing] [[at] %item types%]"
       ],
@@ -19529,8 +19603,10 @@
     {
       "id": "item_despawn",
       "name": "On Item Despawn",
-      "since": "2.2-dev35",
       "cancellable": true,
+      "since": [
+        "2.2-dev35"
+      ],
       "patterns": [
         "(item[ ][stack]|[item] %item types%) despawn[ing]",
         "[item[ ][stack]] despawn[ing] [[of] %item types%]"
@@ -19579,8 +19655,10 @@
     {
       "id": "item_merge",
       "name": "On Item Merge",
-      "since": "2.2-dev35",
       "cancellable": true,
+      "since": [
+        "2.2-dev35"
+      ],
       "patterns": [
         "(item[ ][stack]|[item] %item types%) merg(e|ing)",
         "item[ ][stack] merg(e|ing) [[of] %item types%]"
@@ -19632,8 +19710,10 @@
     {
       "id": "inventory_item_move",
       "name": "On Inventory Item Move",
-      "since": "2.8.0",
       "cancellable": true,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "inventory item (move|transport)",
         "inventory (mov(e|ing)|transport[ing]) [an] item"
@@ -19654,12 +19734,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19675,8 +19755,10 @@
     {
       "id": "stonecutter_recipe_select",
       "name": "On Stonecutter Recipe Select",
-      "since": "2.8.0",
       "cancellable": true,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "stonecutting [[of] %item types%]"
       ],
@@ -19712,8 +19794,10 @@
     {
       "id": "leash_unleash",
       "name": "On Leash / Unleash",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[player] [un]leash[ing] [of %entity types%]"
       ],
@@ -19748,12 +19832,12 @@
           "name": "entity type"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19769,8 +19853,10 @@
     {
       "id": "level_change",
       "name": "On Level Change",
-      "since": "1.0, 2.4 (level up/down)",
       "cancellable": false,
+      "since": [
+        "1.0, 2.4 (level up/down)"
+      ],
       "patterns": [
         "[player] level (change|up|down)"
       ],
@@ -19796,8 +19882,10 @@
     {
       "id": "move_rotate",
       "name": "On Move / Rotate",
-      "since": "2.6, 2.8.0 (turn around)",
       "cancellable": true,
+      "since": [
+        "2.6, 2.8.0 (turn around)"
+      ],
       "patterns": [
         "%entity type% (move|walk|step|(turn[ing] around|rotate))",
         "%entity type% (move|walk|step) or (turn[ing] around|rotate)",
@@ -19823,24 +19911,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "location",
           "name": "future location"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "chunk",
@@ -19872,8 +19960,10 @@
     {
       "id": "pressure_plate_trip",
       "name": "On Pressure Plate / Trip",
-      "since": "1.0 (pressure plate), 1.4.4 (tripwire)",
       "cancellable": true,
+      "since": [
+        "1.0 (pressure plate), 1.4.4 (tripwire)"
+      ],
       "patterns": [
         "[step[ping] on] [a] [pressure] plate",
         "(trip|[step[ping] on] [a] tripwire)"
@@ -19912,8 +20002,10 @@
     {
       "id": "move_on",
       "name": "On Move On",
-      "since": "2.0",
       "cancellable": true,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "(step|walk)[ing] (on|over) %*item types%"
       ],
@@ -19928,12 +20020,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19961,8 +20053,10 @@
     {
       "id": "periodical",
       "name": "Periodical",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "every %time span%"
       ],
@@ -19987,8 +20081,10 @@
     {
       "id": "eventperiodical",
       "name": "Periodical",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "every %time span% in [world[s]] %worlds%"
       ],
@@ -20013,8 +20109,10 @@
     {
       "id": "block_growth",
       "name": "On Block Growth",
-      "since": "2.2-Fixes-V10",
       "cancellable": true,
+      "since": [
+        "2.2-Fixes-V10"
+      ],
       "patterns": [
         "(plant|crop|block) grow[(th|ing)] [[of] %item types%]"
       ],
@@ -20048,8 +20146,10 @@
     {
       "id": "armor_change",
       "name": "On Armor Change",
-      "since": "2.5, 2.11 (equipment slots)",
       "cancellable": false,
+      "since": [
+        "2.5, 2.11 (equipment slots)"
+      ],
       "patterns": [
         "[player] armo[u]r change[d]",
         "[player] %equipment slot% change[d]"
@@ -20099,8 +20199,10 @@
     {
       "id": "player_chunk_enter",
       "name": "On Player Chunk Enter",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "[player] (enter[s] [a] chunk|chunk enter[ing])"
       ],
@@ -20114,12 +20216,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20147,8 +20249,10 @@
     {
       "id": "send_command_list",
       "name": "On Send Command List",
-      "since": "2.8.0",
       "cancellable": false,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "send[ing] [of [the]] [server] command[s] list",
         "[server] command list send"
@@ -20179,8 +20283,10 @@
     {
       "id": "system_time",
       "name": "On System Time",
-      "since": "2.11",
       "cancellable": false,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "at %times% [in] real time"
       ],
@@ -20201,8 +20307,10 @@
     {
       "id": "resource_pack_request_response",
       "name": "On Resource Pack Request Response",
-      "since": "2.4",
       "cancellable": false,
+      "since": [
+        "2.4"
+      ],
       "patterns": [
         "resource pack [request] response",
         "resource pack [request] %resource pack states%"
@@ -20239,8 +20347,10 @@
     {
       "id": "script_loadunload",
       "name": "On Script Load/Unload",
-      "since": "2.0",
       "cancellable": false,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "[async] [script] (load|init|enable)",
         "[async] [script] (unload|stop|disable)"
@@ -20267,8 +20377,10 @@
     {
       "id": "server_startstop",
       "name": "On Server Start/Stop",
-      "since": "2.0",
       "cancellable": false,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "(server|skript) (start|load|enable)",
         "(server|skript) (stop|unload|disable)"
@@ -20292,8 +20404,10 @@
     {
       "id": "spectate",
       "name": "On Spectate",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "[player] stop spectating [(of|from) %*entity types%]",
         "[player] (swap|switch) spectating [(of|from) %*entity types%]",
@@ -20323,8 +20437,10 @@
     {
       "id": "teleport",
       "name": "On Teleport",
-      "since": "1.0, 2.9.0 (entity teleport)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.9.0 (entity teleport)"
+      ],
       "patterns": [
         "[%entity types%] teleport[ing]"
       ],
@@ -20390,8 +20506,10 @@
     {
       "id": "vehicle_collision",
       "name": "On Vehicle Collision",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "vehicle collision [(with|of) [a[n]] %item types/block datas/entity types%]",
         "vehicle block collision [(with|of) [a[n]] %item types/block datas%]",
@@ -20429,8 +20547,10 @@
     {
       "id": "weather_change",
       "name": "On Weather Change",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "weather change [to %weather types%]"
       ],
@@ -20453,8 +20573,10 @@
     {
       "id": "world_save",
       "name": "On World Save",
-      "since": "1.0, 2.8.0 (defining worlds)",
       "cancellable": false,
+      "since": [
+        "1.0, 2.8.0 (defining worlds)"
+      ],
       "patterns": [
         "world sav(e|ing) [of %worlds%]"
       ],
@@ -20477,8 +20599,10 @@
     {
       "id": "world_init",
       "name": "On World Init",
-      "since": "1.0, 2.8.0 (defining worlds)",
       "cancellable": false,
+      "since": [
+        "1.0, 2.8.0 (defining worlds)"
+      ],
       "patterns": [
         "world init[ialization] [of %worlds%]"
       ],
@@ -20502,8 +20626,10 @@
     {
       "id": "world_unload",
       "name": "On World Unload",
-      "since": "1.0, 2.8.0 (defining worlds)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.8.0 (defining worlds)"
+      ],
       "patterns": [
         "world unload[ing] [of %worlds%]"
       ],
@@ -20526,8 +20652,10 @@
     {
       "id": "world_load",
       "name": "On World Load",
-      "since": "1.0, 2.8.0 (defining worlds)",
       "cancellable": false,
+      "since": [
+        "1.0, 2.8.0 (defining worlds)"
+      ],
       "patterns": [
         "world load[ing] [of %worlds%]"
       ],
@@ -20550,8 +20678,10 @@
     {
       "id": "can_build_check",
       "name": "On Can Build Check",
-      "since": "1.0 (basic), 2.0 ([un]cancellable)",
       "cancellable": true,
+      "since": [
+        "1.0 (basic), 2.0 ([un]cancellable)"
+      ],
       "patterns": [
         "[block] can build check"
       ],
@@ -20591,8 +20721,10 @@
     {
       "id": "block_damage",
       "name": "On Block Damage",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "block damag(ing|e)"
       ],
@@ -20628,8 +20760,10 @@
     {
       "id": "flow",
       "name": "On Flow",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[block] flow[ing]",
         "block mov(e|ing)"
@@ -20666,8 +20800,10 @@
     {
       "id": "ignition",
       "name": "On Ignition",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[block] ignit(e|ion)"
       ],
@@ -20704,8 +20840,10 @@
     {
       "id": "physics",
       "name": "On Physics",
-      "since": "1.4.6",
       "cancellable": true,
+      "since": [
+        "1.4.6"
+      ],
       "patterns": [
         "[block] physics"
       ],
@@ -20738,8 +20876,10 @@
     {
       "id": "piston_extend",
       "name": "On Piston Extend",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "piston extend[ing]"
       ],
@@ -20770,8 +20910,10 @@
     {
       "id": "piston_retract",
       "name": "On Piston Retract",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "piston retract[ing]"
       ],
@@ -20802,8 +20944,10 @@
     {
       "id": "redstone",
       "name": "On Redstone",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "redstone [current] [chang(e|ing)]"
       ],
@@ -20834,8 +20978,10 @@
     {
       "id": "spread",
       "name": "On Spread",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "spread[ing]"
       ],
@@ -20869,8 +21015,10 @@
     {
       "id": "chunk_load",
       "name": "On Chunk Load",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "chunk load[ing]"
       ],
@@ -20896,8 +21044,10 @@
     {
       "id": "chunk_generate",
       "name": "On Chunk Generate",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "chunk (generat|populat)(e|ing)"
       ],
@@ -20923,8 +21073,10 @@
     {
       "id": "chunk_unload",
       "name": "On Chunk Unload",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "chunk unload[ing]"
       ],
@@ -20950,8 +21102,10 @@
     {
       "id": "creeper_power",
       "name": "On Creeper Power",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "creeper power"
       ],
@@ -20989,8 +21143,10 @@
     {
       "id": "zombie_break_door",
       "name": "On Zombie Break Door",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "zombie break[ing] [a] [wood[en]] door"
       ],
@@ -21003,20 +21159,20 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "blockdata",
           "name": "future block data"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "entitydata",
@@ -21031,12 +21187,12 @@
           "name": "block data"
         },
         {
-          "id": "entity",
-          "name": "entity"
-        },
-        {
           "id": "block",
           "name": "past block"
+        },
+        {
+          "id": "entity",
+          "name": "entity"
         }
       ],
       "keywords": null
@@ -21044,8 +21200,10 @@
     {
       "id": "combust",
       "name": "On Combust",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "combust[ing]"
       ],
@@ -21083,8 +21241,10 @@
     {
       "id": "explode",
       "name": "On Explode",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "explo(d(e|ing)|sion)"
       ],
@@ -21122,8 +21282,10 @@
     {
       "id": "portal_enter",
       "name": "On Portal Enter",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "portal enter[ing]",
         "entering [a] portal"
@@ -21162,8 +21324,10 @@
     {
       "id": "tame",
       "name": "On Tame",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[entity] tam(e|ing)"
       ],
@@ -21201,8 +21365,10 @@
     {
       "id": "explosion_prime",
       "name": "On Explosion Prime",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "explosion prime"
       ],
@@ -21240,8 +21406,10 @@
     {
       "id": "hunger_meter_change",
       "name": "On Hunger Meter Change",
-      "since": "1.4.4",
       "cancellable": true,
+      "since": [
+        "1.4.4"
+      ],
       "patterns": [
         "(food|hunger) (level|met(er|re)|bar) chang(e|ing)"
       ],
@@ -21279,8 +21447,10 @@
     {
       "id": "leaves_decay",
       "name": "On Leaves Decay",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "leaves decay[ing]"
       ],
@@ -21310,8 +21480,10 @@
     {
       "id": "lightning_strike",
       "name": "On Lightning Strike",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "lightning [strike]"
       ],
@@ -21338,8 +21510,10 @@
     {
       "id": "pig_zap",
       "name": "On Pig Zap",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "pig[ ]zap"
       ],
@@ -21385,8 +21559,10 @@
     {
       "id": "bed_enter",
       "name": "On Bed Enter",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "bed enter[ing]",
         "[player] enter[ing] [a] bed"
@@ -21417,8 +21593,10 @@
     {
       "id": "bed_leave",
       "name": "On Bed Leave",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "bed leav(e|ing)",
         "[player] leav(e|ing) [a] bed"
@@ -21449,8 +21627,10 @@
     {
       "id": "bucket_empty",
       "name": "On Bucket Empty",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "bucket empty[ing]",
         "[player] empty[ing] [a] bucket"
@@ -21485,8 +21665,10 @@
     {
       "id": "bucket_fill",
       "name": "On Bucket fill",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "bucket fill[ing]",
         "[player] fill[ing] [a] bucket"
@@ -21521,8 +21703,10 @@
     {
       "id": "egg_throw",
       "name": "On Egg Throw",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "throw[ing] [of] [an] egg",
         "[player] egg throw"
@@ -21549,8 +21733,10 @@
     {
       "id": "item_break",
       "name": "On Item Break",
-      "since": "2.1.1",
       "cancellable": false,
+      "since": [
+        "2.1.1"
+      ],
       "patterns": [
         "[player] tool break[ing]",
         "[player] break[ing] [(a|the)] tool"
@@ -21582,8 +21768,10 @@
     {
       "id": "item_damage",
       "name": "On Item Damage",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "item damag(e|ing)"
       ],
@@ -21614,8 +21802,10 @@
     {
       "id": "tool_change",
       "name": "On Tool Change",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player['s]] (tool|item held|held item) chang(e|ing)"
       ],
@@ -21649,8 +21839,10 @@
     {
       "id": "join",
       "name": "On Join",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] (login|logging in|join[ing])"
       ],
@@ -21678,8 +21870,10 @@
     {
       "id": "connect",
       "name": "On Connect",
-      "since": "2.0",
       "cancellable": false,
+      "since": [
+        "2.0"
+      ],
       "patterns": [
         "[player] connect[ing]"
       ],
@@ -21708,8 +21902,10 @@
     {
       "id": "kick",
       "name": "On Kick",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] (kick|being kicked)"
       ],
@@ -21735,8 +21931,10 @@
     {
       "id": "entity_portal",
       "name": "On Entity Portal",
-      "since": "2.5.3",
       "cancellable": true,
+      "since": [
+        "2.5.3"
+      ],
       "patterns": [
         "entity portal"
       ],
@@ -21779,8 +21977,10 @@
     {
       "id": "portal",
       "name": "On Portal",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] portal"
       ],
@@ -21793,12 +21993,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21830,8 +22030,10 @@
     {
       "id": "quit",
       "name": "On Quit",
-      "since": "1.0 (simple disconnection)",
       "cancellable": false,
+      "since": [
+        "1.0 (simple disconnection)"
+      ],
       "patterns": [
         "(quit[ting]|disconnect[ing]|log[ ]out|logging out|leav(e|ing))"
       ],
@@ -21849,12 +22051,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -21862,8 +22064,10 @@
     {
       "id": "respawn",
       "name": "On Respawn",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] respawn[ing]"
       ],
@@ -21889,8 +22093,10 @@
     {
       "id": "sneak_toggle",
       "name": "On Sneak Toggle",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] toggl(e|ing) sneak",
         "[player] sneak toggl(e|ing)"
@@ -21920,8 +22126,10 @@
     {
       "id": "sprint_toggle",
       "name": "On Sprint Toggle",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[player] toggl(e|ing) sprint",
         "[player] sprint toggl(e|ing)"
@@ -21950,8 +22158,10 @@
     {
       "id": "portal_create",
       "name": "On Portal Create",
-      "since": "1.0, 2.5.3 (event-entity support)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.5.3 (event-entity support)"
+      ],
       "patterns": [
         "portal creat(e|ion)"
       ],
@@ -21985,8 +22195,10 @@
     {
       "id": "projectile_hit",
       "name": "On Projectile Hit",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "projectile hit"
       ],
@@ -22038,8 +22250,10 @@
     {
       "id": "projectile_collide",
       "name": "On Projectile Collide",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "projectile collide"
       ],
@@ -22084,8 +22298,10 @@
     {
       "id": "shoot",
       "name": "On Shoot",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[projectile] shoot"
       ],
@@ -22129,8 +22345,10 @@
     {
       "id": "sign_change",
       "name": "On Sign Change",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "sign (chang[e]|edit)[ing]",
         "[player] (chang[e]|edit)[ing] [a] sign"
@@ -22154,12 +22372,12 @@
           "name": "location"
         },
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "player",
@@ -22171,8 +22389,10 @@
     {
       "id": "spawn_change",
       "name": "On Spawn Change",
-      "since": "1.0",
       "cancellable": false,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "[world] spawn change"
       ],
@@ -22195,8 +22415,10 @@
     {
       "id": "vehicle_create",
       "name": "On Vehicle Create",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "vehicle create",
         "creat(e|ing|ion of) [a] vehicle"
@@ -22227,8 +22449,10 @@
     {
       "id": "vehicle_damage",
       "name": "On Vehicle Damage",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "vehicle damage",
         "damag(e|ing) [a] vehicle"
@@ -22259,8 +22483,10 @@
     {
       "id": "vehicle_destroy",
       "name": "On Vehicle Destroy",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "vehicle destroy",
         "destr(oy[ing]|uction of) [a] vehicle"
@@ -22292,8 +22518,10 @@
     {
       "id": "vehicle_enter",
       "name": "On Vehicle Enter",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "vehicle enter",
         "enter[ing] [a] vehicle"
@@ -22326,8 +22554,10 @@
     {
       "id": "vehicle_exit",
       "name": "On Vehicle Exit",
-      "since": "1.0",
       "cancellable": true,
+      "since": [
+        "1.0"
+      ],
       "patterns": [
         "vehicle exit",
         "exit[ing] [a] vehicle"
@@ -22364,8 +22594,10 @@
     {
       "id": "entity_mount",
       "name": "On Entity Mount",
-      "since": "2.2-dev13b",
       "cancellable": true,
+      "since": [
+        "2.2-dev13b"
+      ],
       "patterns": [
         "mount[ing]"
       ],
@@ -22404,8 +22636,10 @@
     {
       "id": "entity_dismount",
       "name": "On Entity Dismount",
-      "since": "2.2-dev13b",
       "cancellable": true,
+      "since": [
+        "2.2-dev13b"
+      ],
       "patterns": [
         "dismount[ing]"
       ],
@@ -22444,8 +22678,10 @@
     {
       "id": "gliding_state_change",
       "name": "On Gliding State Change",
-      "since": "2.2-dev21",
       "cancellable": true,
+      "since": [
+        "2.2-dev21"
+      ],
       "patterns": [
         "(gliding state change|toggl(e|ing) gliding)"
       ],
@@ -22484,8 +22720,10 @@
     {
       "id": "aoe_cloud_effect",
       "name": "On AoE Cloud Effect",
-      "since": "2.2-dev21",
       "cancellable": true,
+      "since": [
+        "2.2-dev21"
+      ],
       "patterns": [
         "(area|AoE) [cloud] effect"
       ],
@@ -22498,12 +22736,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22514,12 +22752,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -22531,8 +22769,10 @@
     {
       "id": "sheep_regrow_wool",
       "name": "On Sheep Regrow Wool",
-      "since": "2.2-dev21",
       "cancellable": true,
+      "since": [
+        "2.2-dev21"
+      ],
       "patterns": [
         "sheep [re]grow[ing] wool"
       ],
@@ -22571,8 +22811,10 @@
     {
       "id": "inventory_open",
       "name": "On Inventory Open",
-      "since": "2.2-dev21",
       "cancellable": true,
+      "since": [
+        "2.2-dev21"
+      ],
       "patterns": [
         "inventory open[ed]"
       ],
@@ -22599,8 +22841,10 @@
     {
       "id": "inventory_close",
       "name": "On Inventory Close",
-      "since": "2.2-dev21",
       "cancellable": false,
+      "since": [
+        "2.2-dev21"
+      ],
       "patterns": [
         "inventory clos(ing|e[d])"
       ],
@@ -22632,8 +22876,10 @@
     {
       "id": "slime_split",
       "name": "On Slime Split",
-      "since": "2.2-dev26",
       "cancellable": true,
+      "since": [
+        "2.2-dev26"
+      ],
       "patterns": [
         "slime split[ting]"
       ],
@@ -22671,8 +22917,10 @@
     {
       "id": "resurrect_attempt",
       "name": "On Resurrect Attempt",
-      "since": "2.2-dev28",
       "cancellable": true,
+      "since": [
+        "2.2-dev28"
+      ],
       "patterns": [
         "[entity] resurrect[ion] [attempt]"
       ],
@@ -22717,8 +22965,10 @@
     {
       "id": "player_world_change",
       "name": "On Player World Change",
-      "since": "2.2-dev28",
       "cancellable": false,
+      "since": [
+        "2.2-dev28"
+      ],
       "patterns": [
         "[player] world chang(ing|e[d])"
       ],
@@ -22750,8 +23000,10 @@
     {
       "id": "flight_toggle",
       "name": "On Flight Toggle",
-      "since": "2.2-dev36",
       "cancellable": true,
+      "since": [
+        "2.2-dev36"
+      ],
       "patterns": [
         "[player] flight toggl(e|ing)",
         "[player] toggl(e|ing) flight"
@@ -22780,8 +23032,10 @@
     {
       "id": "language_change",
       "name": "On Language Change",
-      "since": "2.3",
       "cancellable": false,
+      "since": [
+        "2.3"
+      ],
       "patterns": [
         "[player] (language|locale) chang(e|ing)",
         "[player] chang(e|ing) (language|locale)"
@@ -22810,8 +23064,10 @@
     {
       "id": "jump",
       "name": "On Jump",
-      "since": "2.3",
       "cancellable": true,
+      "since": [
+        "2.3"
+      ],
       "patterns": [
         "[player] jump[ing]"
       ],
@@ -22840,8 +23096,10 @@
     {
       "id": "hand_item_swap",
       "name": "On Hand Item Swap",
-      "since": "2.3",
       "cancellable": true,
+      "since": [
+        "2.3"
+      ],
       "patterns": [
         "swap[ping of] [(hand|held)] item[s]"
       ],
@@ -22874,8 +23132,10 @@
     {
       "id": "server_list_ping",
       "name": "On Server List Ping",
-      "since": "2.3",
       "cancellable": true,
+      "since": [
+        "2.3"
+      ],
       "patterns": [
         "server [list] ping"
       ],
@@ -22899,8 +23159,10 @@
     {
       "id": "swim_toggle",
       "name": "On Swim Toggle",
-      "since": "2.3",
       "cancellable": true,
+      "since": [
+        "2.3"
+      ],
       "patterns": [
         "[entity] toggl(e|ing) swim",
         "[entity] swim toggl(e|ing)"
@@ -22943,8 +23205,10 @@
     {
       "id": "riptide",
       "name": "On Riptide",
-      "since": "2.5",
       "cancellable": false,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "[use of] riptide [enchant[ment]]"
       ],
@@ -22976,8 +23240,10 @@
     {
       "id": "sponge_absorb",
       "name": "On Sponge Absorb",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "sponge absorb"
       ],
@@ -23011,8 +23277,10 @@
     {
       "id": "enchant_prepare",
       "name": "On Enchant Prepare",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "[item] enchant prepare"
       ],
@@ -23049,8 +23317,10 @@
     {
       "id": "enchant",
       "name": "On Enchant",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "[item] enchant"
       ],
@@ -23091,8 +23361,10 @@
     {
       "id": "inventory_pickup",
       "name": "On Inventory Pickup",
-      "since": "2.5.1",
       "cancellable": true,
+      "since": [
+        "2.5.1"
+      ],
       "patterns": [
         "inventory pick[ ]up"
       ],
@@ -23122,8 +23394,10 @@
     {
       "id": "horse_jump",
       "name": "On Horse Jump",
-      "since": "2.5.1",
       "cancellable": true,
+      "since": [
+        "2.5.1"
+      ],
       "patterns": [
         "horse jump"
       ],
@@ -23162,8 +23436,10 @@
     {
       "id": "block_fertilize",
       "name": "On Block Fertilize",
-      "since": "2.5",
       "cancellable": true,
+      "since": [
+        "2.5"
+      ],
       "patterns": [
         "[block] fertilize"
       ],
@@ -23204,8 +23480,10 @@
     {
       "id": "arm_swing",
       "name": "On Arm Swing",
-      "since": "2.5.1",
       "cancellable": true,
+      "since": [
+        "2.5.1"
+      ],
       "patterns": [
         "[player] arm swing"
       ],
@@ -23232,8 +23510,10 @@
     {
       "id": "item_mend",
       "name": "On Item Mend",
-      "since": "2.5.1",
       "cancellable": true,
+      "since": [
+        "2.5.1"
+      ],
       "patterns": [
         "item mend[ing]"
       ],
@@ -23272,8 +23552,10 @@
     {
       "id": "anvil_prepare",
       "name": "On Anvil Prepare",
-      "since": "2.7",
       "cancellable": false,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "anvil prepar(e|ing)"
       ],
@@ -23303,8 +23585,10 @@
     {
       "id": "player_trade",
       "name": "On Player Trade",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "player trad(e|ing)"
       ],
@@ -23335,8 +23619,10 @@
     {
       "id": "entity_jump",
       "name": "On Entity Jump",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "entity jump[ing]"
       ],
@@ -23378,8 +23664,10 @@
     {
       "id": "anvil_damage",
       "name": "On Anvil Damage",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "anvil damag(e|ing)"
       ],
@@ -23405,8 +23693,10 @@
     {
       "id": "stop_using_item",
       "name": "On Stop Using Item",
-      "since": "2.8.0",
       "cancellable": false,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "[player] (stop|end) (using item|item use)"
       ],
@@ -23444,8 +23734,10 @@
     {
       "id": "ready_arrow",
       "name": "On Ready Arrow",
-      "since": "2.8.0",
       "cancellable": true,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "[player] ((ready|choose|draw|load) arrow|arrow (choose|draw|load))"
       ],
@@ -23478,8 +23770,10 @@
     {
       "id": "inventory_slot_change",
       "name": "On Inventory Slot Change",
-      "since": "2.7",
       "cancellable": false,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "[player] inventory slot chang(e|ing)"
       ],
@@ -23522,8 +23816,10 @@
     {
       "id": "chat",
       "name": "On Chat",
-      "since": "1.4.1",
       "cancellable": true,
+      "since": [
+        "1.4.1"
+      ],
       "patterns": [
         "chat"
       ],
@@ -23557,8 +23853,10 @@
     {
       "id": "player_deep_sleep",
       "name": "On Player Deep Sleep",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "[player] deep sleep[ing]"
       ],
@@ -23588,8 +23886,10 @@
     {
       "id": "player_pickup_arrow",
       "name": "On Player Pickup Arrow",
-      "since": "2.8.0",
       "cancellable": true,
+      "since": [
+        "2.8.0"
+      ],
       "patterns": [
         "[player] (pick[ing| ]up [an] arrow|arrow pick[ing| ]up)"
       ],
@@ -23635,8 +23935,10 @@
     {
       "id": "inventory_drag",
       "name": "On Inventory Drag",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "inventory drag[ging]"
       ],
@@ -23664,12 +23966,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23693,8 +23995,10 @@
     {
       "id": "piglin_barter",
       "name": "On Piglin Barter",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "piglin (barter[ing]|trad(e|ing))"
       ],
@@ -23738,8 +24042,10 @@
     {
       "id": "bell_ring",
       "name": "On Bell Ring",
-      "since": "2.9.0",
       "cancellable": true,
+      "since": [
+        "2.9.0"
+      ],
       "patterns": [
         "bell ring[ing]"
       ],
@@ -23780,8 +24086,10 @@
     {
       "id": "bell_resonate",
       "name": "On Bell Resonate",
-      "since": "2.9.0",
       "cancellable": false,
+      "since": [
+        "2.9.0"
+      ],
       "patterns": [
         "bell resonat(e|ing)"
       ],
@@ -23818,8 +24126,10 @@
     {
       "id": "enderman_enrage",
       "name": "On Enderman Enrage",
-      "since": "2.9.0",
       "cancellable": true,
+      "since": [
+        "2.9.0"
+      ],
       "patterns": [
         "enderman (enrage|anger)"
       ],
@@ -23867,8 +24177,10 @@
     {
       "id": "beacon_change_effect",
       "name": "On Beacon Change Effect",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "beacon change effect",
         "beacon effect change",
@@ -23908,8 +24220,10 @@
     {
       "id": "broadcast",
       "name": "On Broadcast",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "broadcast"
       ],
@@ -23927,8 +24241,10 @@
     {
       "id": "experience_cooldown_change",
       "name": "On Experience Cooldown Change",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "player (experience|[e]xp) cooldown change"
       ],
@@ -23954,12 +24270,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -23971,8 +24287,10 @@
     {
       "id": "vehicle_move",
       "name": "On Vehicle Move",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "vehicle move"
       ],
@@ -24013,8 +24331,10 @@
     {
       "id": "elytra_boost",
       "name": "On Elytra Boost",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "elytra boost"
       ],
@@ -24052,8 +24372,10 @@
     {
       "id": "bat_toggle_sleep",
       "name": "On Bat Toggle Sleep",
-      "since": "2.11",
       "cancellable": true,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "bat toggle sleep"
       ],
@@ -24091,8 +24413,10 @@
     {
       "id": "world_border_bounds_change",
       "name": "On World Border Bounds Change",
-      "since": "2.11",
       "cancellable": true,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "world[ ]border [bounds] chang(e|ing)"
       ],
@@ -24134,8 +24458,10 @@
     {
       "id": "world_border_bounds_finish_change",
       "name": "On World Border Bounds Finish Change",
-      "since": "2.11",
       "cancellable": false,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "world[ ]border [bounds] finish chang(e|ing)"
       ],
@@ -24177,8 +24503,10 @@
     {
       "id": "world_border_center_change",
       "name": "On World Border Center Change",
-      "since": "2.11",
       "cancellable": true,
+      "since": [
+        "2.11"
+      ],
       "patterns": [
         "world[ ]border center chang(e|ing)"
       ],
@@ -24216,8 +24544,10 @@
     {
       "id": "vault_display_item",
       "name": "On Vault Display Item",
-      "since": "INSERT VERSION",
       "cancellable": true,
+      "since": [
+        "INSERT VERSION"
+      ],
       "patterns": [
         "vault display[ing] item"
       ],
@@ -24253,8 +24583,10 @@
     {
       "id": "villager_career_change",
       "name": "On Villager Career Change",
-      "since": "INSERT VERSION",
       "cancellable": true,
+      "since": [
+        "INSERT VERSION"
+      ],
       "patterns": [
         "villager career chang(e[d]|ing)"
       ],
@@ -24279,12 +24611,12 @@
           "name": "entity type"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -24304,8 +24636,8 @@
     {
       "id": "bucket_catch_entity",
       "name": "On Bucket Catch Entity",
-      "since": null,
       "cancellable": true,
+      "since": null,
       "patterns": [
         "bucket (catch[ing]|captur(e|ing)) [[of] %entity types%]"
       ],
@@ -24339,8 +24671,10 @@
     {
       "id": "fishing",
       "name": "On Fishing",
-      "since": "2.10, 2.11 (state change)",
       "cancellable": true,
+      "since": [
+        "2.10, 2.11 (state change)"
+      ],
       "patterns": [
         "[fishing] (line|rod) cast",
         "fish (caught|catch)",
@@ -24377,12 +24711,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
@@ -24394,8 +24728,10 @@
     {
       "id": "entity_breed",
       "name": "On Entity Breed",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[entity] breed[ing] [of %entity types%]"
       ],
@@ -24438,8 +24774,10 @@
     {
       "id": "love_mode_enter",
       "name": "On Love Mode Enter",
-      "since": "2.10",
       "cancellable": true,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[entity] enter[s] love mode",
         "[entity] love mode [enter]"
@@ -24462,12 +24800,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "livingentity",
           "name": "living entity"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -24483,8 +24821,10 @@
     {
       "id": "player_input",
       "name": "On Player Input",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[player] (toggle|toggling|press[ing]|release|releasing) of (%input keys%|(an|any) input key)",
         "([player] %input keys%|[an|player] input key) (toggle|toggling|press[ing]|release|releasing)"
@@ -24510,12 +24850,12 @@
           "name": "past input keys"
         },
         {
-          "id": "inputkey",
-          "name": "input keys"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "inputkey",
+          "name": "input keys"
         }
       ],
       "keywords": null
@@ -24523,8 +24863,10 @@
     {
       "id": "smelt",
       "name": "On Smelt",
-      "since": "1.0, 2.10 (specific item)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.10 (specific item)"
+      ],
       "patterns": [
         "[furnace] [ore] smelt[ed|ing] [of %item types%]",
         "[furnace] smelt[ed|ing] of ore"
@@ -24559,8 +24901,10 @@
     {
       "id": "fuel_burn",
       "name": "On Fuel Burn",
-      "since": "1.0, 2.10 (specific item)",
       "cancellable": true,
+      "since": [
+        "1.0, 2.10 (specific item)"
+      ],
       "patterns": [
         "[furnace] fuel burn[ing] [of %item types%]"
       ],
@@ -24593,8 +24937,10 @@
     {
       "id": "furnace_item_extract",
       "name": "On Furnace Item Extract",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "furnace [item] extract[ion] [of %item types%]"
       ],
@@ -24634,8 +24980,10 @@
     {
       "id": "start_smelt",
       "name": "On Start Smelt",
-      "since": "2.10",
       "cancellable": false,
+      "since": [
+        "2.10"
+      ],
       "patterns": [
         "[furnace] start [of] smelt[ing] [[of] %item types%]",
         "[furnace] smelt[ing] start [of %item types%]"
@@ -24670,8 +25018,10 @@
     {
       "id": "loot_generate",
       "name": "On Loot Generate",
-      "since": "2.7",
       "cancellable": true,
+      "since": [
+        "2.7"
+      ],
       "patterns": [
         "loot generat(e|ing)"
       ],
@@ -24698,12 +25048,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -24715,8 +25065,10 @@
     {
       "id": "region_enterleave",
       "name": "On Region Enter/Leave",
-      "since": "2.1",
       "cancellable": true,
+      "since": [
+        "2.1"
+      ],
       "patterns": [
         "(enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %regions%)",
         "region (enter[ing]|leav(e|ing)|exit[ing])"
