@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-24fc3fa",
+  "skriptVersion": "2.11.2-nightly-f05c5a3",
   "version": {
     "major": 1,
     "minor": 1
@@ -10717,17 +10717,7 @@
         "[sorted] %~objects%'[s] (indices|indexes) in (ascending|descending) order"
       ],
       "examples": [
-        "set {l::*} to \"some\", \"cool\" and \"values\"",
-        "broadcast \"%indices of {l::*}%\" # result is 1, 2 and 3",
-        "",
-        "set {_leader-board::first} to 17",
-        "set {_leader-board::third} to 30",
-        "set {_leader-board::second} to 25",
-        "set {_leader-board::fourth} to 42",
-        "set {_ascending-indices::*} to sorted indices of {_leader-board::*} in ascending order",
-        "broadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth",
-        "set {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order",
-        "broadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first"
+        "set {l::*} to \"some\", \"cool\" and \"values\"\nbroadcast \"%indices of {l::*}%\" # result is 1, 2 and 3\", \"\nset {_leader-board::first} to 17\nset {_leader-board::third} to 30\nset {_leader-board::second} to 25\nset {_leader-board::fourth} to 42\nset {_ascending-indices::*} to sorted indices of {_leader-board::*} in ascending order\nbroadcast \"%{_ascending-indices::*}%\" #result is first, second, third, fourth\nset {_descending-indices::*} to sorted indices of {_leader-board::*} in descending order\nbroadcast \"%{_descending-indices::*}%\" #result is fourth, third, second, first\n"
       ],
       "events": null,
       "requirements": null,
@@ -10743,7 +10733,7 @@
       "description": [
         "Get the first, last or all positions of a character (or text) in another text using 'positions of %text% in %text%'. Nothing is returned when the value does not occur in the text. Positions range from 1 to the <a href='#ExprIndicesOf'>length</a> of the text (inclusive).",
         "",
-        "Using 'indices/positions of %objects% in %objects%', you can get the indices or positions of a list where the value at that index is the provided value. Indices are only supported for variable lists and will return the string indices of the given value. Positions can be used with any list and will return the numerical position of the value in the list, counting up from 1. As well, nothing is returned if the value is not found in the list."
+        "Using 'indices/positions of %objects% in %objects%', you can get the indices or positions of a list where the value at that index is the provided value. Indices are only supported for keyed expressions (e.g. variable lists) and will return the string indices of the given value. Positions can be used with any list and will return the numerical position of the value in the list, counting up from 1. As well, nothing is returned if the value is not found in the list."
       ],
       "patterns": [
         "[the] [first|last|all] (position[s]|indices|index[es]) of [[the] value] %text% in %text%",
@@ -10934,6 +10924,31 @@
       "events": null,
       "requirements": null,
       "keywords": null
+    },
+    {
+      "id": "ExprKeyed",
+      "name": "Keyed",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "This expression is used to explicitly pass the keys of an expression alongside its values.",
+        "For example, when setting a list variable or passing an expression to a function."
+      ],
+      "patterns": [
+        "(keyed|indexed) %~objects%"
+      ],
+      "examples": [
+        "set {_first::foo} to \"value1\"\nset {_first::bar} to \"value2\"\nset {_second::*} to keyed {_first::*}\n# {_second::foo} is \"value1\" and {_second::bar} is \"value2\"\n",
+        "function indices(objects: objects) returns strings:\n\treturn indices of {_objects::*}\n\non load:\n\tset {_list::foo} to \"value1\"\n\tset {_list::bar} to \"value2\"\n\tset {_list::baz} to \"value3\"\n\n\tbroadcast indices({_list::*}) # \"1\", \"2\", \"3\"\n\tbroadcast indices(keyed {_list::*}) # \"foo\", \"bar\", \"baz\"\n",
+        "function plusOne(numbers: numbers) returns numbers:\n\tloop {_numbers::*}:\n\t\tset {_numbers::%loop-index%} to loop-value + 1\n\treturn {_numbers::*}\n\non load:\n\tset {_numbers::foo} to 1\n\tset {_numbers::bar} to 2\n\tset {_numbers::baz} to 3\n\n\tset {_result::*} to keyed plusOne(keyed {_numbers::*})\n\t# {_result::foo} is 2, {_result::bar} is 3, {_result::baz} is 4\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "indexed"
+      ]
     },
     {
       "id": "ExprLocation-2",
@@ -11591,11 +11606,8 @@
         "[the] (%*type%|value[s]) (within|in) %~objects%"
       ],
       "examples": [
-        "set {_entity} to a random entity out of all entities",
-        "delete entity within {_entity} # This deletes the entity itself and not the value stored in the variable",
-        "",
-        "set {_list::*} to \"something\", 10, \"test\" and a zombie",
-        "broadcast the strings within {_list::*} # \"something\", \"test\""
+        "set {_entity} to a random entity out of all entities\ndelete entity within {_entity} # This deletes the entity itself and not the value stored in the variable\n",
+        "set {_list::*} to \"something\", 10, \"test\" and a zombie\nbroadcast the strings within {_list::*} # \"something\", \"test\"\n"
       ],
       "events": null,
       "requirements": null,
@@ -18063,18 +18075,15 @@
       "deprecated": false,
       "description": [
         "Transforms (or 'maps') a list's values using a given expression. This is akin to looping over the list and getting a modified version of each value.",
-        "Indices cannot be retained with this expression. To retain indices, see the transform effect."
+        "If the given expression returns a single value, the indices of the list will not change. If the expression returns multiple values, then then indices will be reset as a single index cannot contain multiple values."
       ],
       "patterns": [
         "%objects% (transformed|mapped) (using|with) \\[<.+>\\]",
         "%objects% (transformed|mapped) (using|with) \\(<.+>\\)"
       ],
       "examples": [
-        "set {_a::*} to (1, 2, and 3) transformed using (input * 2 - 1, input * 2)",
-        "# {_a::*} is now 1, 2, 3, 4, 5, and 6",
-        "",
-        "# get a list of the sizes of all clans without manually looping",
-        "set {_clan-sizes::*} to indices of {clans::*} transformed using [{clans::%input%::size}]"
+        "set {_a::*} to (1, 2, and 3) transformed using (input * 2 - 1, input * 2)\n# {_a::*} is now 1, 2, 3, 4, 5, and 6\n",
+        "# get a list of the sizes of all clans without manually looping\nset {_clan-sizes::*} to keyed {clans::*} transformed using [{clans::%input index%::size}]\n# using the 'keyed' expression retains the indices of the clans list\n"
       ],
       "events": null,
       "requirements": null,
@@ -18259,12 +18268,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18357,12 +18366,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18444,12 +18453,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18545,24 +18554,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18590,24 +18599,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18726,16 +18735,16 @@
       ],
       "eventValues": [
         {
+          "id": "location",
+          "name": "location"
+        },
+        {
           "id": "damagecause",
           "name": "damage cause"
         },
         {
           "id": "damagesource",
           "name": "damage source"
-        },
-        {
-          "id": "location",
-          "name": "location"
         },
         {
           "id": "world",
@@ -18778,16 +18787,16 @@
       ],
       "eventValues": [
         {
+          "id": "location",
+          "name": "location"
+        },
+        {
           "id": "damagecause",
           "name": "damage cause"
         },
         {
           "id": "damagesource",
           "name": "damage source"
-        },
-        {
-          "id": "location",
-          "name": "location"
         },
         {
           "id": "world",
@@ -18798,12 +18807,12 @@
           "name": "entity type"
         },
         {
-          "id": "itemstack",
-          "name": "item stacks"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
         },
         {
           "id": "projectile",
@@ -18892,20 +18901,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -18920,12 +18929,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -18965,20 +18974,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -19457,12 +19466,12 @@
           "name": "world"
         },
         {
-          "id": "healreason",
-          "name": "heal reason"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "healreason",
+          "name": "heal reason"
         },
         {
           "id": "commandsender",
@@ -19694,12 +19703,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -20089,12 +20098,12 @@
           "name": "entity type"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -20382,12 +20391,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20742,12 +20751,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -20953,12 +20962,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21251,12 +21260,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21416,20 +21425,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -21444,12 +21453,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -22270,12 +22279,12 @@
           "name": "past location"
         },
         {
-          "id": "teleportcause",
-          "name": "teleport cause"
-        },
-        {
           "id": "chunk",
           "name": "chunk"
+        },
+        {
+          "id": "teleportcause",
+          "name": "teleport cause"
         },
         {
           "id": "player",
@@ -22308,12 +22317,12 @@
           "name": "world"
         },
         {
-          "id": "quitreason",
-          "name": "quit reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "quitreason",
+          "name": "quit reason"
         }
       ],
       "keywords": null
@@ -22470,12 +22479,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22993,12 +23002,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "livingentity",
           "name": "living entities"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23009,12 +23018,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -24527,12 +24536,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -24868,12 +24877,12 @@
           "name": "entity type"
         },
         {
-          "id": "villagerprofession",
-          "name": "villager profession"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "villagerprofession",
+          "name": "villager profession"
         },
         {
           "id": "villagerprofession",
@@ -24968,12 +24977,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -25057,12 +25066,12 @@
           "name": "world"
         },
         {
-          "id": "livingentity",
-          "name": "living entity"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entity"
         },
         {
           "id": "commandsender",
@@ -25305,12 +25314,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
@@ -27984,7 +27993,8 @@
         "name": "Number"
       },
       "description": [
-        "Clamps one or more values between two numbers."
+        "Clamps one or more values between two numbers.",
+        "This function retains indices"
       ],
       "examples": [
         "clamp(5, 0, 10) = 5",
