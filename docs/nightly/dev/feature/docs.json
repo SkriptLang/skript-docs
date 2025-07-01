@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-5edd3bb",
+  "skriptVersion": "2.11.2-nightly-d725212",
   "version": {
     "major": 1,
     "minor": 1
@@ -11882,16 +11882,14 @@
       ],
       "deprecated": false,
       "description": [
-        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some object above bedrock."
+        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
       ],
       "patterns": [
         "[the] altitude[s] of %locations%",
         "%locations%'[s] altitude[s]"
       ],
       "examples": [
-        "on damage:",
-        "\taltitude of the attacker is higher than the altitude of the victim",
-        "\tset damage to damage * 1.2"
+        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
       ],
       "events": null,
       "requirements": null,
@@ -17959,12 +17957,12 @@
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18139,24 +18137,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18182,24 +18180,24 @@
       ],
       "eventValues": [
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18312,12 +18310,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18358,12 +18356,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "world",
@@ -18374,12 +18372,12 @@
           "name": "entity type"
         },
         {
-          "id": "itemstack",
-          "name": "item stacks"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "itemstack",
+          "name": "item stacks"
         },
         {
           "id": "projectile",
@@ -18535,20 +18533,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -19232,12 +19230,12 @@
           "name": "player"
         },
         {
-          "id": "clicktype",
-          "name": "click type"
-        },
-        {
           "id": "string",
           "name": "text"
+        },
+        {
+          "id": "clicktype",
+          "name": "click type"
         },
         {
           "id": "inventory",
@@ -19517,12 +19515,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -19938,12 +19936,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -20232,12 +20230,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -21676,12 +21674,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -21864,12 +21862,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23054,12 +23052,12 @@
           "name": "world"
         },
         {
-          "id": "block",
-          "name": "blocks"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "block",
+          "name": "blocks"
         }
       ],
       "keywords": null
@@ -23368,12 +23366,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23477,12 +23475,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -23527,12 +23525,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23817,12 +23815,12 @@
           "name": "time span"
         },
         {
-          "id": "experiencecooldownchangereason",
-          "name": "experience cooldown change reason"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "experiencecooldownchangereason",
+          "name": "experience cooldown change reason"
         },
         {
           "id": "timespan",
@@ -24142,12 +24140,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "villagerprofession",
           "name": "villager profession"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "villagerprofession",
@@ -24240,12 +24238,12 @@
           "name": "world"
         },
         {
-          "id": "fishingstate",
-          "name": "fishing state"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "fishingstate",
+          "name": "fishing state"
         },
         {
           "id": "entity",
