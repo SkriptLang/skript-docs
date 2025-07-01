@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-3f0c62b",
+  "skriptVersion": "2.11.2-nightly-fd75a47",
   "version": {
     "major": 1,
     "minor": 1
@@ -2162,14 +2162,15 @@
       ],
       "deprecated": false,
       "description": [
-        "Checks whether potion effects are infinite."
+        "Checks whether potion effects or timespans are infinite."
       ],
       "patterns": [
-        "%potion effects% (is|are) infinite",
-        "%potion effects% (isn't|is not|aren't|are not) infinite"
+        "%potion effects/time spans% (is|are) infinite",
+        "%potion effects/time spans% (isn't|is not|aren't|are not) infinite"
       ],
       "examples": [
-        "all of the active potion effects of the player are infinite"
+        "all of the active potion effects of the player are infinite",
+        "if timespan argument is infinite:"
       ],
       "events": null,
       "requirements": null,
@@ -5788,19 +5789,22 @@
       "id": "EffPush",
       "name": "Push",
       "since": [
-        "1.4.6"
+        "1.4.6",
+        "INSERT VERSION (push towards)"
       ],
       "deprecated": false,
       "description": [
-        "Push entities around."
+        "Push entities in a given direction or towards a specific location."
       ],
       "patterns": [
-        "(push|thrust) %entities% [along] %direction% [(at|with) (speed|velocity|force) %number%]"
+        "(push|thrust) %entities% [along] %direction% [(at|with) [a] (speed|velocity|force) [of] %number%]",
+        "(push|thrust|pull) %entities% (towards|away from) %location% [(at|with) [a] (speed|velocity|force) [of] %number%]"
       ],
       "examples": [
         "push the player upwards",
         "push the victim downwards at speed 0.5",
-        "push player along vector from player to player's target at speed 2"
+        "push player towards player's target at speed 2",
+        "pull player along vector(1,1,1) at speed 1.5"
       ],
       "events": null,
       "requirements": null,
@@ -6314,6 +6318,28 @@
       ],
       "examples": [
         "if last spawned strider is shivering:\n\tmake last spawned strider stop shivering\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "EffSuppressTypeHints",
+      "name": "Suppress Type Hints (Experimental)",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "An effect to suppress local variable type hint errors for the syntax lines that follow this effect.",
+        "NOTE: Suppressing type hints also prevents syntax from providing new type hints. For example, with type hints suppressed, 'set {_x} to true' would not provide 'boolean' as a type hint for '{_x}'"
+      ],
+      "patterns": [
+        "[un]suppress [local variable] type hints",
+        "(start|stop) suppressing [local variable] type hints"
+      ],
+      "examples": [
+        "\tstart suppressing local variable type hints\n\t# potentially unsafe code goes here\n\tstop suppressing local variable type hints\n"
       ],
       "events": null,
       "requirements": null,
@@ -8825,27 +8851,6 @@
       "keywords": null
     },
     {
-      "id": "ExprSpecialNumber",
-      "name": "Special Number",
-      "since": [
-        "2.2-dev32d"
-      ],
-      "deprecated": false,
-      "description": [
-        "Special number values, namely NaN, Infinity and -Infinity"
-      ],
-      "patterns": [
-        "(NaN|[(-|minus)](infinity|∞)) value",
-        "value of (NaN|[(-|minus)](infinity|∞))"
-      ],
-      "examples": [
-        "if {_number} is infinity value:"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprStringCase",
       "name": "Case Text",
       "since": [
@@ -9198,6 +9203,97 @@
       "examples": [
         "execute console command \"/stop\"",
         "send \"message to console\" to the console"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitEternity",
+      "name": "An Eternity",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents a timespan with an infinite duration. An eternity is also created when arithmetic results in a timespan larger than about 292 million years.",
+        "Infinite timespans generally follow the rules of infinity, where most math operations do nothing. However, operations that would return NaN with numbers will instead return a timespan of 0 seconds.",
+        "Note that an eternity will often be treated as the longest duration something supports, rather than a true eternity."
+      ],
+      "patterns": [
+        "[an] eternity",
+        "forever",
+        "[an] (indefinite|infinite) (duration|timespan)"
+      ],
+      "examples": [
+        "set fire to the player for an eternity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitInfinity",
+      "name": "Infinity",
+      "since": [
+        "2.2-dev32d"
+      ],
+      "deprecated": false,
+      "description": [
+        "A number representing positive infinity."
+      ],
+      "patterns": [
+        "positive (infinity|∞) [value]",
+        "∞ [value]",
+        "infinity value",
+        "value of [positive] (infinity|∞)"
+      ],
+      "examples": [
+        "if {_number} is infinity:"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitNaN",
+      "name": "NaN",
+      "since": [
+        "2.2-dev32d"
+      ],
+      "deprecated": false,
+      "description": [
+        "A number representing an undefined value. NaN occurs as a result of illegal math, like dividing 0 by 0.",
+        "NaN is deliberately not equal to any other number, including itself."
+      ],
+      "patterns": [
+        "NaN [value]",
+        "value of NaN"
+      ],
+      "examples": [
+        "if {_number} is not {_number}:",
+        "if isNaN({_number}) is true:"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitNegativeInfinity",
+      "name": "Negative Infinity",
+      "since": [
+        "2.2-dev32d"
+      ],
+      "deprecated": false,
+      "description": [
+        "A number representing negative infinity."
+      ],
+      "patterns": [
+        "(-|minus |negative )(infinity|∞) [value]",
+        "value of (-|minus |negative )(infinity|∞)"
+      ],
+      "examples": [
+        "if {_number} is -infinity:"
       ],
       "events": null,
       "requirements": null,
@@ -10349,6 +10445,27 @@
       "keywords": null
     },
     {
+      "id": "ExprExcept",
+      "name": "Except",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Filter a list by providing objects to be excluded."
+      ],
+      "patterns": [
+        "%objects% (except|excluding|not including) %objects%"
+      ],
+      "examples": [
+        "spawn zombie at location(0, 0, 0):\n\thide entity from all players except {_player}\n",
+        "set {_items::*} to a copper ingot, an iron ingot and a gold ingot\nset {_except::*} to {_items::*} excluding copper ingot\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprExplodedBlocks",
       "name": "Exploded Blocks",
       "since": [
@@ -11050,8 +11167,8 @@
         "to tipped arrows/lingering potions, Minecraft reduces the timespan."
       ],
       "patterns": [
-        "[new] potion effect of %potion effect type% [potion] [[[of] tier] %number%] [without particles] [for %time span%]",
-        "[new] ambient potion effect of %potion effect type% [potion] [[[of] tier] %number%] [without particles] [for %time span%]"
+        "[a] [new] potion effect of %potion effect type% [potion] [[[of] tier] %number%] [without particles] [for %time span%]",
+        "[a] [new] ambient potion effect of %potion effect type% [potion] [[[of] tier] %number%] [without particles] [for %time span%]"
       ],
       "examples": [
         "set {_p} to potion effect of speed of tier 1 without particles for 10 minutes",
@@ -11854,16 +11971,14 @@
       ],
       "deprecated": false,
       "description": [
-        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some object above bedrock."
+        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
       ],
       "patterns": [
         "[the] altitude[s] of %locations%",
         "%locations%'[s] altitude[s]"
       ],
       "examples": [
-        "on damage:",
-        "\taltitude of the attacker is higher than the altitude of the victim",
-        "\tset damage to damage * 1.2"
+        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
       ],
       "events": null,
       "requirements": null,
@@ -12013,7 +12128,7 @@
       "id": "ExprArmorSlot",
       "name": "Armor Slot",
       "since": [
-        "1.0, 2.8.0 (armor), 2.10 (body armor)"
+        "1.0, 2.8.0 (armor), 2.10 (body armor), INSERT VERSION (saddle)"
       ],
       "deprecated": false,
       "description": [
@@ -12023,11 +12138,12 @@
         "<li>Horses: Horse armour (doesn't work on zombie or skeleton horses)</li>",
         "<li>Wolves: Wolf Armor</li>",
         "<li>Llamas (regular or trader): Carpet</li>",
-        "</ul>"
+        "</ul>",
+        "Saddle is a special slot that can only be used for: pigs, striders and horse types (horse, camel, llama, mule, donkey)."
       ],
       "patterns": [
-        "[the] (((boots|shoes)|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]|body armo[u]r) of %living entities%",
-        "%living entities%'[s] (((boots|shoes)|leg[ging]s|chestplate[s]|helmet[s]) [(item|slot)]|armo[u]r[s]|body armo[u]r)"
+        "[the] (%*equipment slots%|[the] armo[u]r[s]) [item[s]] of %living entities%",
+        "%living entities%'[s] (%*equipment slots%|[the] armo[u]r[s]) [item[s]]"
       ],
       "examples": [
         "set chestplate of the player to a diamond chestplate",
@@ -12086,21 +12202,25 @@
       "id": "ExprAttachedBlock",
       "name": "Arrow Attached Block",
       "since": [
-        "2.8.0"
+        "2.8.0, INSERT VERSION (multiple blocks)"
       ],
       "deprecated": false,
       "description": [
-        "Returns the attached block of an arrow."
+        "Returns the attached block of an arrow.",
+        "If running Paper 1.21.4+, the plural version of the expression should be used as it is more reliable compared to the single version."
       ],
       "patterns": [
-        "[the] (attached|hit) block of %projectiles%",
-        "%projectiles%'[s] (attached|hit) block"
+        "[the] (attached|hit) block[s] of %projectiles%",
+        "%projectiles%'[s] (attached|hit) block[s]"
       ],
       "examples": [
-        "set hit block of last shot arrow to diamond block"
+        "set hit block of last shot arrow to diamond block",
+        "on projectile hit:\n\twait 1 tick\n\tbreak attached blocks of event-projectile\n\tkill event-projectile\n"
       ],
       "events": null,
-      "requirements": null,
+      "requirements": [
+        "Paper 1.21.4+ (multiple blocks)"
+      ],
       "keywords": null
     },
     {
@@ -12159,7 +12279,7 @@
       "keywords": null
     },
     {
-      "id": "ExprBeaconValues",
+      "id": "ExprBeaconEffects",
       "name": "Beacon Effects",
       "since": [
         "2.10"
@@ -12169,32 +12289,65 @@
         "The active effects of a beacon.",
         "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
         "The secondary effect can only be set when the beacon is at max tier.",
-        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared.",
-        "You can only change the range on Paper."
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
       ],
       "patterns": [
-        "%blocks%['s] primary [beacon] effect",
-        "[the] primary [beacon] effect [of %blocks%]",
-        "%blocks%['s] secondary [beacon] effect",
-        "[the] secondary [beacon] effect [of %blocks%]",
-        "%blocks%['s] [beacon] range",
-        "[the] [beacon] range [of %blocks%]",
-        "%blocks%['s] [beacon] tier",
-        "[the] [beacon] tier [of %blocks%]"
+        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
+        "%blocks%'[s] (primary|secondary) [beacon] effect"
       ],
       "examples": [
-        "broadcast tier of {_block}",
-        "set primary beacon effect of {_block} to haste",
-        "add 1 to range of {_block}"
+        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
       ],
       "events": [
         "Beacon Effect",
         "Beacon Toggle",
         "Beacon Change Effect"
       ],
-      "requirements": [
-        "Paper (range)"
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBeaconRange",
+      "name": "Beacon Range",
+      "since": [
+        "2.10"
       ],
+      "deprecated": false,
+      "description": [
+        "The range of a beacon's effects, in blocks."
+      ],
+      "patterns": [
+        "[the] beacon [effect] range of %blocks%",
+        "%blocks%'[s] beacon [effect] range"
+      ],
+      "examples": [
+        "if the beacon tier of the clicked block is 4:\n\tset the beacon effect range of the clicked block to 100\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprBeaconTier",
+      "name": "Beacon Tier",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The tier of a beacon. Ranges from 0 to 4."
+      ],
+      "patterns": [
+        "[the] beacon tier of %blocks%",
+        "%blocks%'[s] beacon tier"
+      ],
+      "examples": [
+        "if the beacon tier of the clicked block is 4:\n\tsend \"This is a max tier beacon!\"\n"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -17761,12 +17914,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17802,12 +17955,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17836,12 +17989,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17885,12 +18038,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17918,12 +18071,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17974,12 +18127,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18013,12 +18166,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18063,12 +18216,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18110,24 +18263,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18153,24 +18306,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18435,20 +18588,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -18463,12 +18616,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -18506,20 +18659,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -18976,12 +19129,12 @@
           "name": "world"
         },
         {
-          "id": "healreason",
-          "name": "heal reason"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "healreason",
+          "name": "heal reason"
         },
         {
           "id": "commandsender",
@@ -19012,12 +19165,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19488,12 +19641,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -19582,12 +19735,12 @@
           "name": "entity type"
         },
         {
-          "id": "unleashreason",
-          "name": "unleash reason"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "unleashreason",
+          "name": "unleash reason"
         },
         {
           "id": "player",
@@ -19861,12 +20014,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19909,12 +20062,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -20203,12 +20356,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -20400,12 +20553,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20441,12 +20594,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20479,12 +20632,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20517,12 +20670,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20555,12 +20708,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20587,12 +20740,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20619,12 +20772,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20651,12 +20804,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20682,12 +20835,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20837,20 +20990,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -20865,12 +21018,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -21127,12 +21280,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21647,12 +21800,12 @@
           "name": "past location"
         },
         {
-          "id": "chunk",
-          "name": "chunk"
-        },
-        {
           "id": "teleportcause",
           "name": "teleport cause"
+        },
+        {
+          "id": "chunk",
+          "name": "chunk"
         },
         {
           "id": "player",
@@ -21835,12 +21988,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21980,12 +22133,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22828,12 +22981,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23013,24 +23166,24 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23339,12 +23492,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -23498,12 +23651,12 @@
           "name": "item stacks"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "slot",
@@ -23589,12 +23742,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23631,12 +23784,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24066,12 +24219,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24211,12 +24364,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -24344,12 +24497,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -24376,12 +24529,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24410,12 +24563,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24443,12 +24596,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24487,12 +24640,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24532,12 +24685,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -25577,7 +25730,7 @@
       "name": "Equipment Slot",
       "since": "2.11",
       "patterns": [
-        "off hand, chestplate slot, head slot, hand slot, main hand slot, boots slot, feet slot, body slot, body armour slot, leggings slot, helmet slot, off hand slot, saddle equipment slots, chestplate, legs slot, helmet, boots, tool slot, main hand, body armor slot, leggings, chest slot"
+        "feet, chestplate slot, saddle slot, body slots, body armors, boots slot, body slot, leggings slots, off hand slot, helmet slots, legs slot, legs, body armour slots, body armor slot, body armor slots, leggings, helmets, chestplates, hand slot, body armour slot, helmet slot, boots slots, chest slots, tool slot, main hand slots, off hand slots, main hands, head slot, saddle slots, head slots, feet slots, shoes slot, hand slots, chestplate slots, helmet, body armours, boots, legs slots, off haands, chest slot, off hand, main hand slot, feet slot, leggings slot, shoes, chestplate, tool slots, body armor, main hand, body armour"
       ],
       "description": [
         "Represents an equipment slot of an entity."
