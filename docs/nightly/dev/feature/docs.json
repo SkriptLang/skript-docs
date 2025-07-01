@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-89e3d71",
+  "skriptVersion": "2.11.2-nightly-1ca06f4",
   "version": {
     "major": 1,
     "minor": 1
@@ -15555,8 +15555,8 @@
         "Gets a skull item representing a player. Skulls for other entities are provided by the aliases."
       ],
       "patterns": [
-        "[the] (head|skull) of %offline players%",
-        "%offline players%'[s] (head|skull)"
+        "[the] skull of %offline players%",
+        "%offline players%'[s] skull"
       ],
       "examples": [
         "give the victim's skull to the attacker",
@@ -18096,12 +18096,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18276,24 +18276,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18319,24 +18319,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18601,20 +18601,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -18629,12 +18629,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -18672,20 +18672,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -19654,12 +19654,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -19748,12 +19748,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19823,12 +19823,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19928,12 +19928,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20075,12 +20075,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -20114,12 +20114,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21003,20 +21003,20 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
         },
         {
-          "id": "blockdata",
-          "name": "future block data"
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "blockdata",
+          "name": "future block data"
         },
         {
           "id": "entitydata",
@@ -21031,12 +21031,12 @@
           "name": "block data"
         },
         {
-          "id": "block",
-          "name": "past block"
-        },
-        {
           "id": "entity",
           "name": "entity"
+        },
+        {
+          "id": "block",
+          "name": "past block"
         }
       ],
       "keywords": null
@@ -21793,12 +21793,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22154,12 +22154,12 @@
           "name": "location"
         },
         {
-          "id": "string",
-          "name": "texts"
-        },
-        {
           "id": "world",
           "name": "world"
+        },
+        {
+          "id": "string",
+          "name": "texts"
         },
         {
           "id": "player",
@@ -22498,12 +22498,12 @@
       ],
       "eventValues": [
         {
-          "id": "livingentity",
-          "name": "living entities"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entities"
         },
         {
           "id": "world",
@@ -22514,12 +22514,12 @@
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -23191,12 +23191,12 @@
           "name": "world"
         },
         {
-          "id": "block",
-          "name": "blocks"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "block",
+          "name": "blocks"
         }
       ],
       "keywords": null
@@ -23505,12 +23505,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -23614,12 +23614,12 @@
           "name": "dropped item"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -24279,12 +24279,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "villagerprofession",
           "name": "villager profession"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "villagerprofession",
@@ -24462,12 +24462,12 @@
           "name": "world"
         },
         {
-          "id": "livingentity",
-          "name": "living entity"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entity"
         },
         {
           "id": "commandsender",
@@ -24510,12 +24510,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
