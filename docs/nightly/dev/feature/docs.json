@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-f6c19be",
+  "skriptVersion": "2.11.2-nightly-4d8ff11",
   "version": {
     "major": 1,
     "minor": 1
@@ -12279,7 +12279,7 @@
       "keywords": null
     },
     {
-      "id": "ExprBeaconValues",
+      "id": "ExprBeaconEffects",
       "name": "Beacon Effects",
       "since": [
         "2.10"
@@ -12289,32 +12289,65 @@
         "The active effects of a beacon.",
         "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
         "The secondary effect can only be set when the beacon is at max tier.",
-        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared.",
-        "You can only change the range on Paper."
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
       ],
       "patterns": [
-        "%blocks%['s] primary [beacon] effect",
-        "[the] primary [beacon] effect [of %blocks%]",
-        "%blocks%['s] secondary [beacon] effect",
-        "[the] secondary [beacon] effect [of %blocks%]",
-        "%blocks%['s] [beacon] range",
-        "[the] [beacon] range [of %blocks%]",
-        "%blocks%['s] [beacon] tier",
-        "[the] [beacon] tier [of %blocks%]"
+        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
+        "%blocks%'[s] (primary|secondary) [beacon] effect"
       ],
       "examples": [
-        "broadcast tier of {_block}",
-        "set primary beacon effect of {_block} to haste",
-        "add 1 to range of {_block}"
+        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
       ],
       "events": [
         "Beacon Effect",
         "Beacon Toggle",
         "Beacon Change Effect"
       ],
-      "requirements": [
-        "Paper (range)"
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBeaconRange",
+      "name": "Beacon Range",
+      "since": [
+        "2.10"
       ],
+      "deprecated": false,
+      "description": [
+        "The range of a beacon's effects, in blocks."
+      ],
+      "patterns": [
+        "[the] beacon [effect] range of %blocks%",
+        "%blocks%'[s] beacon [effect] range"
+      ],
+      "examples": [
+        "if the beacon tier of the clicked block is 4:\n\tset the beacon effect range of the clicked block to 100\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprBeaconTier",
+      "name": "Beacon Tier",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The tier of a beacon. Ranges from 0 to 4."
+      ],
+      "patterns": [
+        "[the] beacon tier of %blocks%",
+        "%blocks%'[s] beacon tier"
+      ],
+      "examples": [
+        "if the beacon tier of the clicked block is 4:\n\tsend \"This is a max tier beacon!\"\n"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -17881,12 +17914,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17922,12 +17955,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -17956,12 +17989,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18005,12 +18038,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18038,24 +18071,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -18094,12 +18127,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18133,12 +18166,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18183,12 +18216,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18230,24 +18263,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18273,24 +18306,24 @@
       ],
       "eventValues": [
         {
-          "id": "world",
-          "name": "world"
-        },
-        {
           "id": "string",
           "name": "texts"
+        },
+        {
+          "id": "world",
+          "name": "world"
         },
         {
           "id": "string",
           "name": "past texts"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -18403,12 +18436,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18626,20 +18659,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "potioneffect",
-          "name": "potion effect"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
+          "id": "potioneffect",
+          "name": "potion effect"
         },
         {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -19096,12 +19129,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "healreason",
           "name": "heal reason"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19132,12 +19165,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -19702,12 +19735,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19981,12 +20014,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20029,12 +20062,12 @@
           "name": "slot"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "itemstack",
@@ -20520,12 +20553,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20561,12 +20594,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20599,12 +20632,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20675,12 +20708,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20707,12 +20740,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20739,12 +20772,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20771,12 +20804,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -20802,12 +20835,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21247,12 +21280,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -21803,12 +21836,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -21955,12 +21988,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22100,12 +22133,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22948,12 +22981,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23133,24 +23166,24 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "block",
           "name": "blocks"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -23459,12 +23492,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23618,12 +23651,12 @@
           "name": "item stacks"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "slot",
@@ -23709,12 +23742,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23751,12 +23784,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24186,12 +24219,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24233,12 +24266,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "villagerprofession",
           "name": "villager profession"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "villagerprofession",
@@ -24331,12 +24364,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -24416,12 +24449,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "livingentity",
           "name": "living entity"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -24496,12 +24529,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24530,12 +24563,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24563,12 +24596,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24607,12 +24640,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24652,12 +24685,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
