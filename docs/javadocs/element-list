@@ -14,12 +14,14 @@ ch.njol.skript.entity
 ch.njol.skript.lang
 ch.njol.skript.lang.function
 ch.njol.skript.lang.parser
+ch.njol.skript.lang.simplification
 ch.njol.skript.lang.util
 ch.njol.skript.lang.util.common
 ch.njol.skript.localization
 ch.njol.skript.log
 ch.njol.skript.patterns
 ch.njol.skript.registrations
+ch.njol.skript.registrations.experiments
 ch.njol.skript.timings
 ch.njol.skript.update
 ch.njol.skript.util
@@ -36,6 +38,8 @@ org.skriptlang.skript.addon
 org.skriptlang.skript.bukkit
 org.skriptlang.skript.bukkit.breeding
 org.skriptlang.skript.bukkit.breeding.elements
+org.skriptlang.skript.bukkit.damagesource
+org.skriptlang.skript.bukkit.damagesource.elements
 org.skriptlang.skript.bukkit.displays
 org.skriptlang.skript.bukkit.displays.generic
 org.skriptlang.skript.bukkit.displays.item
