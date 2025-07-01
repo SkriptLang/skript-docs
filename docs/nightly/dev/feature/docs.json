@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.11.2-nightly-b16480f",
+  "skriptVersion": "2.11.2-nightly-24fc3fa",
   "version": {
     "major": 1,
     "minor": 1
@@ -1221,6 +1221,31 @@
         "press",
         "input"
       ]
+    },
+    {
+      "id": "CondScalesWithDifficulty",
+      "name": "Damage Source - Does Scale With Difficulty",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether the damage from a damage source scales with the difficulty of the server."
+      ],
+      "patterns": [
+        "%damage sources% ((does|do) scale|scales) damage with difficulty",
+        "%damage sources% (do not|don't|does not|doesn't) scale damage with difficulty",
+        "%damage sources%'[s] damage ((does|do) scale|scales) with difficulty",
+        "%damage sources%'[s] damage (do not|don't|does not|doesn't) scale with difficulty"
+      ],
+      "examples": [
+        "on death:\n\tif event-damage source scales damage with difficulty:\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
     },
     {
       "id": "CondCanBuild",
@@ -3652,6 +3677,30 @@
       "keywords": null
     },
     {
+      "id": "CondWasIndirect",
+      "name": "Damage Source - Was Indirectly Caused",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Whether the damage from a damage source was indirectly caused.",
+        "Vanilla damage sources are considered indirect if the 'causing entity' and the 'direct entity' are not the same. For example, taking damage from an arrow that was shot by an entity."
+      ],
+      "patterns": [
+        "%damage sources% (was|were) ([in]directly caused|caused [in]directly)",
+        "%damage sources% (was not|wasn't|were not|weren't) ([in]directly caused|caused [in]directly)"
+      ],
+      "examples": [
+        "on damage:\n\tif event-damage source was indirectly caused:\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondCompare",
       "name": "Comparison",
       "since": [
@@ -4931,7 +4980,9 @@
         "Servers running Spigot 1.20.4+ can optionally choose to specify a fake damage cause."
       ],
       "patterns": [
-        "damage %living entities/item types/slots% by %number% [heart[s]] [with [fake] [damage] cause %damage cause%]",
+        "damage %living entities/item types/slots% by %number% [heart[s]]",
+        "damage %living entities% by %number% [heart[s]] with [fake] [damage] cause %damage cause%",
+        "damage %living entities% by %number% [heart[s]] (using|with) %damage source% [as the source]",
         "heal %living entities% [by %number% [heart[s]]]",
         "repair %item types/slots% [by %number%]"
       ],
@@ -9516,7 +9567,7 @@
         "The <a href='#damagecause'>damage cause</a> of a damage event. Please click on the link for more information."
       ],
       "patterns": [
-        "[the] damage (cause|type)"
+        "[the] damage cause"
       ],
       "examples": [
         "damage cause is lava, fire or burning"
@@ -9904,6 +9955,28 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprCreatedDamageSource",
+      "name": "Created Damage Source",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get the created damage source being created/modified in a 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] created damage source"
+      ],
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type of the created damage source to magic\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
       "keywords": null
     },
     {
@@ -11846,6 +11919,31 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSecDamageSource",
+      "name": "Damage Source",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "Create a custom damage source and change the attributes.",
+        "When setting a 'causing entity' you must also set a 'direct entity'.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[a] custom damage source [(with|using) [the|a] [damage type [of]] %damage type%]"
+      ],
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on damage:\n\tif the damage type of event-damage source is magic:\n\t\tset the damage to damage * 2\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
       "keywords": null
     },
     {
@@ -17531,6 +17629,157 @@
       "keywords": null
     },
     {
+      "id": "ExprCausingEntity",
+      "name": "Damage Source - Causing Entity",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The causing entity of a damage source.",
+        "The causing entity is the entity that ultimately caused the damage. (e.g. the entity that shot an arrow)",
+        "When setting a 'causing entity' you must also set a 'direct entity'.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] (causing|responsible) entity [of %damage sources%]",
+        "%damage sources%'[s] (causing|responsible) entity"
+      ],
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\n",
+        "on damage:\n\tset {_causing} to the causing entity of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprDamageLocation",
+      "name": "Damage Source - Damage Location",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The location where the damage was originated from.",
+        "The 'damage location' on vanilla damage sources will be set if an entity did not cause the damage.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] damage location [of %damage sources%]",
+        "%damage sources%'[s] damage location"
+      ],
+      "examples": [
+        "damage all players by 5 using a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\n",
+        "on death:\n\tset {_location} to the damage location of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprDamageType",
+      "name": "Damage Source - Damage Type",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The type of damage of a damage source.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] damage type [of %damage sources%]",
+        "%damage sources%'[s] damage type"
+      ],
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on death:\n\tset {_type} to the damage type of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprDirectEntity",
+      "name": "Damage Source - Direct Entity",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The direct entity of a damage source.",
+        "The direct entity is the entity that directly caused the damage. (e.g. the arrow that was shot)",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] direct entity [of %damage sources%]",
+        "%damage sources%'[s] direct entity"
+      ],
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on death:\n\tset {_direct} to the direct entity of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprFoodExhaustion",
+      "name": "Damage Source - Food Exhaustion",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of hunger exhaustion caused by a damage source."
+      ],
+      "patterns": [
+        "[the] food exhaustion [of %damage sources%]",
+        "%damage sources%'[s] food exhaustion"
+      ],
+      "examples": [
+        "on damage:\n\tif the food exhaustion of event-damage source is 10:\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprSourceLocation",
+      "name": "Damage Source - Source Location",
+      "since": [
+        "INSERT VERSION"
+      ],
+      "deprecated": false,
+      "description": [
+        "The final location where the damage was originated from.",
+        "The 'source location' for vanilla damage sources will retrieve the 'damage location' if set. If 'damage location' is not set, will attempt to grab the location of the 'causing entity', otherwise, null."
+      ],
+      "patterns": [
+        "[the] source location [of %damage sources%]",
+        "%damage sources%'[s] source location"
+      ],
+      "examples": [
+        "on death:\n\tset {_location} to the source location of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprBalance",
       "name": "Money",
       "since": [
@@ -17931,12 +18180,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -17974,12 +18223,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18010,12 +18259,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18061,12 +18310,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18096,12 +18345,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18195,12 +18444,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18247,12 +18496,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -18481,6 +18730,10 @@
           "name": "damage cause"
         },
         {
+          "id": "damagesource",
+          "name": "damage source"
+        },
+        {
           "id": "location",
           "name": "location"
         },
@@ -18525,12 +18778,16 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "damagesource",
+          "name": "damage source"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -18541,12 +18798,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "itemstack",
           "name": "item stacks"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "projectile",
@@ -18708,20 +18965,20 @@
           "name": "entity potion cause"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "potioneffect",
           "name": "potion effect"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "potioneffecttype",
           "name": "potion effect type"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "entity",
@@ -19200,12 +19457,12 @@
           "name": "world"
         },
         {
-          "id": "entitydata",
-          "name": "entity type"
-        },
-        {
           "id": "healreason",
           "name": "heal reason"
+        },
+        {
+          "id": "entitydata",
+          "name": "entity type"
         },
         {
           "id": "commandsender",
@@ -19238,12 +19495,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -19437,12 +19694,12 @@
           "name": "player"
         },
         {
-          "id": "string",
-          "name": "text"
-        },
-        {
           "id": "clicktype",
           "name": "click type"
+        },
+        {
+          "id": "string",
+          "name": "text"
         },
         {
           "id": "inventory",
@@ -19734,12 +19991,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -19832,12 +20089,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "unleashreason",
           "name": "unleash reason"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "player",
@@ -19911,24 +20168,24 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
           "name": "world"
         },
         {
-          "id": "location",
-          "name": "future location"
-        },
-        {
           "id": "entitydata",
           "name": "entity type"
+        },
+        {
+          "id": "location",
+          "name": "future location"
         },
         {
           "id": "chunk",
@@ -20020,12 +20277,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20125,12 +20382,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20216,12 +20473,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20696,12 +20953,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20739,12 +20996,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20779,12 +21036,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20859,12 +21116,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20893,12 +21150,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20927,12 +21184,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20961,12 +21218,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -20994,12 +21251,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21463,12 +21720,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -21993,12 +22250,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -22051,12 +22308,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "quitreason",
           "name": "quit reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -22213,12 +22470,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -22364,12 +22621,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "string",
@@ -22736,12 +22993,12 @@
       ],
       "eventValues": [
         {
-          "id": "livingentity",
-          "name": "living entities"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "livingentity",
+          "name": "living entities"
         },
         {
           "id": "world",
@@ -22752,12 +23009,12 @@
           "name": "entity type"
         },
         {
-          "id": "potioneffecttype",
-          "name": "potion effect type"
-        },
-        {
           "id": "commandsender",
           "name": "command sender"
+        },
+        {
+          "id": "potioneffecttype",
+          "name": "potion effect type"
         },
         {
           "id": "entity",
@@ -23260,12 +23517,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23455,12 +23712,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -23799,12 +24056,12 @@
           "name": "slot"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
@@ -23914,12 +24171,12 @@
           "name": "dropped item"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "projectile",
           "name": "projectile"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "entity",
@@ -24061,12 +24318,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24105,12 +24362,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24270,12 +24527,12 @@
           "name": "time span"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "experiencecooldownchangereason",
           "name": "experience cooldown change reason"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "timespan",
@@ -24562,12 +24819,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24611,12 +24868,12 @@
           "name": "entity type"
         },
         {
-          "id": "commandsender",
-          "name": "command sender"
-        },
-        {
           "id": "villagerprofession",
           "name": "villager profession"
+        },
+        {
+          "id": "commandsender",
+          "name": "command sender"
         },
         {
           "id": "villagerprofession",
@@ -24850,12 +25107,12 @@
           "name": "past input keys"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "inputkey",
           "name": "input keys"
+        },
+        {
+          "id": "player",
+          "name": "player"
         }
       ],
       "keywords": null
@@ -24884,12 +25141,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24920,12 +25177,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -24955,12 +25212,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -25001,12 +25258,12 @@
       ],
       "eventValues": [
         {
-          "id": "block",
-          "name": "block"
-        },
-        {
           "id": "location",
           "name": "location"
+        },
+        {
+          "id": "block",
+          "name": "block"
         },
         {
           "id": "world",
@@ -26278,6 +26535,35 @@
         "You can find more information about this in https://minecraft.wiki/w/Loot_context"
       ],
       "requirements": null,
+      "examples": null
+    },
+    {
+      "id": "damagesource",
+      "name": "Damage Source",
+      "since": "INSERT VERSION",
+      "patterns": null,
+      "description": [
+        "Represents the source from which an entity was damaged.",
+        "Cannot change any attributes of the damage source from an 'on damage' or 'on death' event."
+      ],
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "examples": null
+    },
+    {
+      "id": "damagetype",
+      "name": "Damage Type",
+      "since": "INSERT VERSION",
+      "patterns": [
+        "arrow, bad respawn point, cactus, campfire, cramming, dragon breath, drown, drowning, dry out, ender pearl, entity cramming, explosion, fall, falling anvil, falling block, falling stalactite, fireball, fireworks, fly into wall, freeze, generic, generic kill, hot floor, in fire, in wall, indirect magic, lava, lightning, lightning bolt, llama spit, mace smash, magic, mob attack, mob attack no aggro, mob projectile, on fire, out of world, outside border, player attack, player explosion, sonic boom, spit, stalagmite, starve, sting, suffocation, sweet berry bush, thorns, thrown, trident, unattributed fireball, void, wind charge, wither, wither skull"
+      ],
+      "description": [
+        "References a damage type of a damage source."
+      ],
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
       "examples": null
     },
     {
