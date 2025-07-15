@@ -1,5 +1,5 @@
 {
-  "skriptVersion": "2.12.0-pre2-nightly-174ff06",
+  "skriptVersion": "2.12.0-pre2-nightly-12662f3",
   "version": {
     "major": 1,
     "minor": 1
@@ -7129,30 +7129,6 @@
   ],
   "expressions": [
     {
-      "id": "ExprEnchantingExpCost",
-      "name": "Enchanting Experience Cost",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The cost of enchanting in an enchant event.",
-        "This is number that was displayed in the enchantment table, not the actual number of levels removed."
-      ],
-      "patterns": [
-        "[the] [displayed] ([e]xp[erience]|enchanting) cost"
-      ],
-      "examples": [
-        "on enchant:",
-        "\tsend \"Cost: %the displayed enchanting cost%\" to player"
-      ],
-      "events": [
-        "enchant"
-      ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprDrops",
       "name": "Drops",
       "since": [
@@ -7222,6 +7198,29 @@
       "keywords": null
     },
     {
+      "id": "LitNaN",
+      "name": "NaN",
+      "since": [
+        "2.2-dev32d"
+      ],
+      "deprecated": false,
+      "description": [
+        "A number representing an undefined value. NaN occurs as a result of illegal math, like dividing 0 by 0.",
+        "NaN is deliberately not equal to any other number, including itself."
+      ],
+      "patterns": [
+        "NaN [value]",
+        "value of NaN"
+      ],
+      "examples": [
+        "if {_number} is not {_number}:",
+        "if isNaN({_number}) is true:"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprHanging",
       "name": "Hanging Entity/Remover",
       "since": [
@@ -7267,51 +7266,6 @@
       "keywords": null
     },
     {
-      "id": "LitNaN",
-      "name": "NaN",
-      "since": [
-        "2.2-dev32d"
-      ],
-      "deprecated": false,
-      "description": [
-        "A number representing an undefined value. NaN occurs as a result of illegal math, like dividing 0 by 0.",
-        "NaN is deliberately not equal to any other number, including itself."
-      ],
-      "patterns": [
-        "NaN [value]",
-        "value of NaN"
-      ],
-      "examples": [
-        "if {_number} is not {_number}:",
-        "if isNaN({_number}) is true:"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprMendingRepairAmount",
-      "name": "Mending Repair Amount",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The number of durability points an item is to be repaired in a mending event.",
-        " Modifying the repair amount will affect how much experience is given to the player after mending."
-      ],
-      "patterns": [
-        "[the] [mending] repair amount"
-      ],
-      "examples": [
-        "on item mend:",
-        "\tset the mending repair amount to 100"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "LitInfinity",
       "name": "Infinity",
       "since": [
@@ -7332,6 +7286,34 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprAppliedEffect",
+      "name": "Applied Beacon Effect",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The type of effect applied by a beacon."
+      ],
+      "patterns": [
+        "[the] applied [beacon] effect"
+      ],
+      "examples": [
+        "on beacon effect:",
+        "\tif the applied effect is primary beacon effect:",
+        "\t\tbroadcast \"Is Primary\"",
+        "\telse if applied effect = secondary effect:",
+        "\t\tbroadcast \"Is Secondary\""
+      ],
+      "events": [
+        "Beacon Effect"
+      ],
+      "requirements": [
+        "Paper"
+      ],
       "keywords": null
     },
     {
@@ -7464,34 +7446,6 @@
       "keywords": null
     },
     {
-      "id": "ExprAppliedEffect",
-      "name": "Applied Beacon Effect",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The type of effect applied by a beacon."
-      ],
-      "patterns": [
-        "[the] applied [beacon] effect"
-      ],
-      "examples": [
-        "on beacon effect:",
-        "\tif the applied effect is primary beacon effect:",
-        "\t\tbroadcast \"Is Primary\"",
-        "\telse if applied effect = secondary effect:",
-        "\t\tbroadcast \"Is Secondary\""
-      ],
-      "events": [
-        "Beacon Effect"
-      ],
-      "requirements": [
-        "Paper"
-      ],
-      "keywords": null
-    },
-    {
       "id": "ExprBarterInput",
       "name": "Barter Input",
       "since": [
@@ -7534,6 +7488,30 @@
         "reset the whitelist"
       ],
       "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprHealAmount",
+      "name": "Heal Amount",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of health healed in a <a href='/#heal'>heal event</a>."
+      ],
+      "patterns": [
+        "[the] heal[ing] amount"
+      ],
+      "examples": [
+        "on player healing:",
+        "\tincrease the heal amount by 2",
+        "\tremove 0.5 from the healing amount"
+      ],
+      "events": [
+        "heal"
+      ],
       "requirements": null,
       "keywords": null
     },
@@ -7589,25 +7567,23 @@
       "keywords": null
     },
     {
-      "id": "ExprHealAmount",
-      "name": "Heal Amount",
+      "id": "ExprFinalDamage",
+      "name": "Final Damage",
       "since": [
-        "2.5.1"
+        "2.2-dev19"
       ],
       "deprecated": false,
       "description": [
-        "The amount of health healed in a <a href='/#heal'>heal event</a>."
+        "How much damage is done in a damage event, considering all types of damage reduction. Can NOT be changed."
       ],
       "patterns": [
-        "[the] heal[ing] amount"
+        "[the] final damage"
       ],
       "examples": [
-        "on player healing:",
-        "\tincrease the heal amount by 2",
-        "\tremove 0.5 from the healing amount"
+        "send \"%final damage%\" to victim"
       ],
       "events": [
-        "heal"
+        "damage"
       ],
       "requirements": null,
       "keywords": null
@@ -7727,28 +7703,6 @@
         "on player consume:\n\tif the consumed item is cooked porkchop:\n\t\tsend \"Well aren't you just a little piggy wiggly!\" to player\n\tif player has scoreboard tag \"vegetarian\":\n\t\tset the consumed item to a carrot\n"
       ],
       "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprFinalDamage",
-      "name": "Final Damage",
-      "since": [
-        "2.2-dev19"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much damage is done in a damage event, considering all types of damage reduction. Can NOT be changed."
-      ],
-      "patterns": [
-        "[the] final damage"
-      ],
-      "examples": [
-        "send \"%final damage%\" to victim"
-      ],
-      "events": [
-        "damage"
-      ],
       "requirements": null,
       "keywords": null
     },
@@ -7919,38 +7873,27 @@
       "keywords": null
     },
     {
-      "id": "ExprProtocolVersion",
-      "name": "Protocol Version",
+      "id": "ExprEnchantingExpCost",
+      "name": "Enchanting Experience Cost",
       "since": [
-        "2.3"
+        "2.5"
       ],
       "deprecated": false,
       "description": [
-        "The protocol version that will be sent as the protocol version of the server in a server list ping event. For more information and list of protocol versions <a href='https://wiki.vg/Protocol_version_numbers'>visit wiki.vg</a>.",
-        "If this protocol version doesn't match with the protocol version of the client, the client will see the <a href='#ExprVersionString'>version string</a>.",
-        "But please note that, this expression has no visual effect over the version string. For example if the server uses PaperSpigot 1.12.2, and you make the protocol version 107 (1.9),",
-        "the version string will not be \"Paper 1.9\", it will still be \"Paper 1.12.2\".",
-        "But then you can customize the <a href='#ExprVersionString'>version string</a> as you wish.",
-        "Also if the protocol version of the player is higher than protocol version of the server, it will say",
-        "\"Server out of date!\", and if vice-versa \"Client out of date!\" when you hover on the ping bars.",
-        "",
-        "This can be set in a <a href='#server_list_ping'>server list ping</a> event only",
-        "(increase and decrease effects cannot be used because that wouldn't make sense)."
+        "The cost of enchanting in an enchant event.",
+        "This is number that was displayed in the enchantment table, not the actual number of levels removed."
       ],
       "patterns": [
-        "[the] [server] [(sent|required|fake)] protocol version [number]"
+        "[the] [displayed] ([e]xp[erience]|enchanting) cost"
       ],
       "examples": [
-        "on server list ping:",
-        "\tset the version string to \"&lt;light green&gt;Version: &lt;orange&gt;%minecraft version%\"",
-        "\tset the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
+        "on enchant:",
+        "\tsend \"Cost: %the displayed enchanting cost%\" to player"
       ],
       "events": [
-        "server list ping"
+        "enchant"
       ],
-      "requirements": [
-        "Paper 1.12.2 or newer"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -7975,32 +7918,6 @@
       "events": [
         "portal_create"
       ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprNumberOfCharacters",
-      "name": "Number of Characters",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The number of uppercase, lowercase, or digit characters in a string."
-      ],
-      "patterns": [
-        "number of upper[ ]case char(acters|s) in %text%",
-        "number of lower[ ]case char(acters|s) in %text%",
-        "number of digit char(acters|s) in %text%"
-      ],
-      "examples": [
-        "#Simple Chat Filter",
-        "on chat:",
-        "\tif number of uppercase chars in message / length of message > 0.5",
-        "\t\tcancel event",
-        "\t\tsend \"&lt;red&gt;Your message has to many caps!\" to player"
-      ],
-      "events": null,
       "requirements": null,
       "keywords": null
     },
@@ -8056,6 +7973,36 @@
       "keywords": null
     },
     {
+      "id": "ExprDamage",
+      "name": "Damage",
+      "since": [
+        "1.3.5, 2.8.0 (item damage event)"
+      ],
+      "deprecated": false,
+      "description": [
+        "How much damage is done in a entity/vehicle/item damage events.",
+        "For entity damage events, possibly ignoring armour, criticals and/or enchantments (remember that in Skript '1' is one full heart, not half a heart).",
+        "For items, it's the amount of durability damage the item will be taking."
+      ],
+      "patterns": [
+        "[the] damage"
+      ],
+      "examples": [
+        "on item damage:",
+        "\tevent-item is any tool",
+        "\tclear damage # unbreakable tools as the damage will be 0",
+        "on damage:",
+        "\tincrease the damage by 2"
+      ],
+      "events": [
+        "Damage",
+        "Vehicle Damage",
+        "Item Damage"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprLoot",
       "name": "Loot",
       "since": [
@@ -8105,6 +8052,51 @@
       "keywords": null
     },
     {
+      "id": "ExprMendingRepairAmount",
+      "name": "Mending Repair Amount",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The number of durability points an item is to be repaired in a mending event.",
+        " Modifying the repair amount will affect how much experience is given to the player after mending."
+      ],
+      "patterns": [
+        "[the] [mending] repair amount"
+      ],
+      "examples": [
+        "on item mend:",
+        "\tset the mending repair amount to 100"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprTPS",
+      "name": "TPS (ticks per second)",
+      "since": [
+        "2.2-dev36"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the 3 most recent TPS readings, like the /tps command. This expression is only supported on some server software (PaperSpigot)."
+      ],
+      "patterns": [
+        "tps from [the] last ([1] minute|1[ ]m[inute])",
+        "tps from [the] last 5[ ]m[inutes]",
+        "tps from [the] last 15[ ]m[inutes]",
+        "[the] tps"
+      ],
+      "examples": [
+        "broadcast \"%tps%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprWorlds",
       "name": "Worlds",
       "since": [
@@ -8146,64 +8138,6 @@
       "keywords": null
     },
     {
-      "id": "ExprDamage",
-      "name": "Damage",
-      "since": [
-        "1.3.5, 2.8.0 (item damage event)"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much damage is done in a entity/vehicle/item damage events.",
-        "For entity damage events, possibly ignoring armour, criticals and/or enchantments (remember that in Skript '1' is one full heart, not half a heart).",
-        "For items, it's the amount of durability damage the item will be taking."
-      ],
-      "patterns": [
-        "[the] damage"
-      ],
-      "examples": [
-        "on item damage:",
-        "\tevent-item is any tool",
-        "\tclear damage # unbreakable tools as the damage will be 0",
-        "on damage:",
-        "\tincrease the damage by 2"
-      ],
-      "events": [
-        "Damage",
-        "Vehicle Damage",
-        "Item Damage"
-      ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprLoopIteration",
-      "name": "Loop Iteration",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loop's current iteration count (for both normal and while loops)."
-      ],
-      "patterns": [
-        "[the] loop(-| )(counter|iteration)[-%*number%]"
-      ],
-      "examples": [
-        "while player is online:",
-        "\tgive player 1 stone",
-        "\twait 5 ticks",
-        "\tif loop-counter > 30:",
-        "\t\tstop loop",
-        "",
-        "loop {top-balances::*}:",
-        "\tif loop-iteration <= 10:",
-        "\t\tbroadcast \"#%loop-iteration% %loop-index% has $%loop-value%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprAllBannedEntries",
       "name": "All Banned Players/IPs",
       "since": [
@@ -8220,29 +8154,6 @@
         "command /banlist:",
         "\ttrigger:",
         "\t\tsend all the banned players"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprTPS",
-      "name": "TPS (ticks per second)",
-      "since": [
-        "2.2-dev36"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the 3 most recent TPS readings, like the /tps command. This expression is only supported on some server software (PaperSpigot)."
-      ],
-      "patterns": [
-        "tps from [the] last ([1] minute|1[ ]m[inute])",
-        "tps from [the] last 5[ ]m[inutes]",
-        "tps from [the] last 15[ ]m[inutes]",
-        "[the] tps"
-      ],
-      "examples": [
-        "broadcast \"%tps%\""
       ],
       "events": null,
       "requirements": null,
@@ -8355,27 +8266,6 @@
       "keywords": null
     },
     {
-      "id": "ExprHotbarButton",
-      "name": "Hotbar Button",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The hotbar button clicked in an <a href='#inventory_click'>inventory click</a> event."
-      ],
-      "patterns": [
-        "[the] hotbar button"
-      ],
-      "examples": [
-        "on inventory click:",
-        "\tsend \"You clicked the hotbar button %hotbar button%!\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprOfflinePlayers",
       "name": "Offline players",
       "since": [
@@ -8390,6 +8280,27 @@
       ],
       "examples": [
         "send \"Size of all players who have joined the server: %size of all offline players%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitNegativeInfinity",
+      "name": "Negative Infinity",
+      "since": [
+        "2.2-dev32d"
+      ],
+      "deprecated": false,
+      "description": [
+        "A number representing negative infinity."
+      ],
+      "patterns": [
+        "(-|minus |negative )(infinity|∞) [value]",
+        "value of (-|minus |negative )(infinity|∞)"
+      ],
+      "examples": [
+        "if {_number} is -infinity:"
       ],
       "events": null,
       "requirements": null,
@@ -8437,21 +8348,20 @@
       "keywords": null
     },
     {
-      "id": "LitNegativeInfinity",
-      "name": "Negative Infinity",
+      "id": "ExprProjectileForce",
+      "name": "Projectile Force",
       "since": [
-        "2.2-dev32d"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
-        "A number representing negative infinity."
+        "Returns the force at which a projectile was shot within an entity shoot bow event."
       ],
       "patterns": [
-        "(-|minus |negative )(infinity|∞) [value]",
-        "value of (-|minus |negative )(infinity|∞)"
+        "[the] projectile force"
       ],
       "examples": [
-        "if {_number} is -infinity:"
+        "on entity shoot projectile:\n\tset the velocity of shooter to vector(0,1,0) * projectile force\n"
       ],
       "events": null,
       "requirements": null,
@@ -8516,26 +8426,6 @@
       "examples": [
         "execute console command \"/stop\"",
         "send \"message to console\" to the console"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprProjectileForce",
-      "name": "Projectile Force",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the force at which a projectile was shot within an entity shoot bow event."
-      ],
-      "patterns": [
-        "[the] projectile force"
-      ],
-      "examples": [
-        "on entity shoot projectile:\n\tset the velocity of shooter to vector(0,1,0) * projectile force\n"
       ],
       "events": null,
       "requirements": null,
@@ -8654,6 +8544,63 @@
       "keywords": null
     },
     {
+      "id": "ExprProtocolVersion",
+      "name": "Protocol Version",
+      "since": [
+        "2.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "The protocol version that will be sent as the protocol version of the server in a server list ping event. For more information and list of protocol versions <a href='https://wiki.vg/Protocol_version_numbers'>visit wiki.vg</a>.",
+        "If this protocol version doesn't match with the protocol version of the client, the client will see the <a href='#ExprVersionString'>version string</a>.",
+        "But please note that, this expression has no visual effect over the version string. For example if the server uses PaperSpigot 1.12.2, and you make the protocol version 107 (1.9),",
+        "the version string will not be \"Paper 1.9\", it will still be \"Paper 1.12.2\".",
+        "But then you can customize the <a href='#ExprVersionString'>version string</a> as you wish.",
+        "Also if the protocol version of the player is higher than protocol version of the server, it will say",
+        "\"Server out of date!\", and if vice-versa \"Client out of date!\" when you hover on the ping bars.",
+        "",
+        "This can be set in a <a href='#server_list_ping'>server list ping</a> event only",
+        "(increase and decrease effects cannot be used because that wouldn't make sense)."
+      ],
+      "patterns": [
+        "[the] [server] [(sent|required|fake)] protocol version [number]"
+      ],
+      "examples": [
+        "on server list ping:",
+        "\tset the version string to \"&lt;light green&gt;Version: &lt;orange&gt;%minecraft version%\"",
+        "\tset the protocol version to 0 # 13w41a (1.7) - so the player will see the custom version string almost always"
+      ],
+      "events": [
+        "server list ping"
+      ],
+      "requirements": [
+        "Paper 1.12.2 or newer"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprMemory",
+      "name": "Free / Max / Total Memory",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The free, max or total memory of the server in Megabytes."
+      ],
+      "patterns": [
+        "[the] [server] (free|max[imum]|total) (memory|ram)"
+      ],
+      "examples": [
+        "while player is online:",
+        "\tsend action bar \"Memory left: %free memory%/%max memory%MB\" to player",
+        "\twait 5 ticks"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "LitNewLine",
       "name": "New Line",
       "since": [
@@ -8670,6 +8617,32 @@
       ],
       "examples": [
         "send \"Hello%nl%Goodbye!\" to player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprNumberOfCharacters",
+      "name": "Number of Characters",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The number of uppercase, lowercase, or digit characters in a string."
+      ],
+      "patterns": [
+        "number of upper[ ]case char(acters|s) in %text%",
+        "number of lower[ ]case char(acters|s) in %text%",
+        "number of digit char(acters|s) in %text%"
+      ],
+      "examples": [
+        "#Simple Chat Filter",
+        "on chat:",
+        "\tif number of uppercase chars in message / length of message > 0.5",
+        "\t\tcancel event",
+        "\t\tsend \"&lt;red&gt;Your message has to many caps!\" to player"
       ],
       "events": null,
       "requirements": null,
@@ -8700,47 +8673,26 @@
       "keywords": null
     },
     {
-      "id": "ExprEnchantmentBonus",
-      "name": "Enchantment Bonus",
+      "id": "ExprHatchingNumber",
+      "name": "Hatching Number",
       "since": [
-        "2.5"
+        "2.7"
       ],
       "deprecated": false,
       "description": [
-        "The enchantment bonus in an enchant prepare event. This represents the number of bookshelves affecting/surrounding the enchantment table."
+        "The number of entities that will be hatched in a Player Egg Throw event.",
+        "Please note that no more than 127 entities can be hatched at once."
       ],
       "patterns": [
-        "[the] enchantment bonus"
+        "[the] hatching number"
       ],
       "examples": [
-        "on enchant:",
-        "\tsend \"There are %enchantment bonus% bookshelves surrounding this enchantment table!\" to player"
+        "on player egg throw:",
+        "\tset the hatching number to 10"
       ],
       "events": [
-        "enchant prepare"
+        "Egg Throw"
       ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprMemory",
-      "name": "Free / Max / Total Memory",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The free, max or total memory of the server in Megabytes."
-      ],
-      "patterns": [
-        "[the] [server] (free|max[imum]|total) (memory|ram)"
-      ],
-      "examples": [
-        "while player is online:",
-        "\tsend action bar \"Memory left: %free memory%/%max memory%MB\" to player",
-        "\twait 5 ticks"
-      ],
-      "events": null,
       "requirements": null,
       "keywords": null
     },
@@ -8813,31 +8765,6 @@
       "keywords": null
     },
     {
-      "id": "ExprTimes",
-      "name": "X Times",
-      "since": [
-        "1.4.6"
-      ],
-      "deprecated": false,
-      "description": [
-        "Integers between 1 and X, used in loops to loop X times."
-      ],
-      "patterns": [
-        "%number% time[s]",
-        "once",
-        "twice",
-        "thrice"
-      ],
-      "examples": [
-        "loop 20 times:",
-        "\tbroadcast \"%21 - loop-number% seconds left..\"",
-        "\twait 1 second"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprTransformReason",
       "name": "Transform Reason",
       "since": [
@@ -8853,6 +8780,54 @@
       "examples": [
         "on entity transform:",
         "\ttransform reason is infection, drowned or frozen"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprLoopIteration",
+      "name": "Loop Iteration",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loop's current iteration count (for both normal and while loops)."
+      ],
+      "patterns": [
+        "[the] loop(-| )(counter|iteration)[-%*number%]"
+      ],
+      "examples": [
+        "while player is online:",
+        "\tgive player 1 stone",
+        "\twait 5 ticks",
+        "\tif loop-counter > 30:",
+        "\t\tstop loop",
+        "",
+        "loop {top-balances::*}:",
+        "\tif loop-iteration <= 10:",
+        "\t\tbroadcast \"#%loop-iteration% %loop-index% has $%loop-value%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "LitPi",
+      "name": "Pi",
+      "since": [
+        "2.7"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the mathematical constant pi. (approx. 3.1415926535)"
+      ],
+      "patterns": [
+        "(pi|π)"
+      ],
+      "examples": [
+        "set {_tau} to pi * 2"
       ],
       "events": null,
       "requirements": null,
@@ -8883,26 +8858,6 @@
         "push last dropped item upwards",
         "teleport player to last struck lightning",
         "delete last launched firework"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "LitPi",
-      "name": "Pi",
-      "since": [
-        "2.7"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the mathematical constant pi. (approx. 3.1415926535)"
-      ],
-      "patterns": [
-        "(pi|π)"
-      ],
-      "examples": [
-        "set {_tau} to pi * 2"
       ],
       "events": null,
       "requirements": null,
@@ -8963,6 +8918,54 @@
       "keywords": null
     },
     {
+      "id": "ExprHotbarButton",
+      "name": "Hotbar Button",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The hotbar button clicked in an <a href='#inventory_click'>inventory click</a> event."
+      ],
+      "patterns": [
+        "[the] hotbar button"
+      ],
+      "examples": [
+        "on inventory click:",
+        "\tsend \"You clicked the hotbar button %hotbar button%!\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprAngle",
+      "name": "Angle",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the passed number value in degrees.",
+        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
+      ],
+      "patterns": [
+        "%number% [in] deg[ree][s]",
+        "%number% [in] rad[ian][s]",
+        "%numbers% in deg[ree][s]",
+        "%numbers% in rad[ian][s]"
+      ],
+      "examples": [
+        "set {_angle} to 90 degrees",
+        "{_angle} is 90 # true",
+        "180 degrees is pi # true",
+        "pi radians is 180 degrees # true"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprScripts",
       "name": "All Scripts (Experimental)",
       "since": [
@@ -8985,30 +8988,6 @@
         "\t\tsend \"Unloaded Scripts: %disabled scripts%\" to player"
       ],
       "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprHatchingNumber",
-      "name": "Hatching Number",
-      "since": [
-        "2.7"
-      ],
-      "deprecated": false,
-      "description": [
-        "The number of entities that will be hatched in a Player Egg Throw event.",
-        "Please note that no more than 127 entities can be hatched at once."
-      ],
-      "patterns": [
-        "[the] hatching number"
-      ],
-      "examples": [
-        "on player egg throw:",
-        "\tset the hatching number to 10"
-      ],
-      "events": [
-        "Egg Throw"
-      ],
       "requirements": null,
       "keywords": null
     },
@@ -9078,33 +9057,6 @@
       ],
       "examples": [
         "set {_v} to a random vector"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprAngle",
-      "name": "Angle",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the passed number value in degrees.",
-        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
-      ],
-      "patterns": [
-        "%number% [in] deg[ree][s]",
-        "%number% [in] rad[ian][s]",
-        "%numbers% in deg[ree][s]",
-        "%numbers% in rad[ian][s]"
-      ],
-      "examples": [
-        "set {_angle} to 90 degrees",
-        "{_angle} is 90 # true",
-        "180 degrees is pi # true",
-        "pi radians is 180 degrees # true"
       ],
       "events": null,
       "requirements": null,
@@ -9402,6 +9354,32 @@
       "keywords": null
     },
     {
+      "id": "ExprExplosionYield",
+      "name": "Explosion Yield",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The yield of the explosion in an explosion prime event. This is how big the explosion is.",
+        " When changing the yield, values less than 0 will be ignored.",
+        " Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information"
+      ],
+      "patterns": [
+        "[the] explosion (yield|radius|size)",
+        "[the] (yield|radius|size) of [the] explosion"
+      ],
+      "examples": [
+        "on explosion prime:",
+        "\tset the yield of the explosion to 10"
+      ],
+      "events": [
+        "explosion prime"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprScript",
       "name": "Script",
       "since": [
@@ -9452,6 +9430,29 @@
         "\t\tsend \"someone tamed something!\" to console"
       ],
       "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprEnchantmentBonus",
+      "name": "Enchantment Bonus",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The enchantment bonus in an enchant prepare event. This represents the number of bookshelves affecting/surrounding the enchantment table."
+      ],
+      "patterns": [
+        "[the] enchantment bonus"
+      ],
+      "examples": [
+        "on enchant:",
+        "\tsend \"There are %enchantment bonus% bookshelves surrounding this enchantment table!\" to player"
+      ],
+      "events": [
+        "enchant prepare"
+      ],
       "requirements": null,
       "keywords": null
     },
@@ -9507,32 +9508,6 @@
       "keywords": null
     },
     {
-      "id": "ExprExplosionYield",
-      "name": "Explosion Yield",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The yield of the explosion in an explosion prime event. This is how big the explosion is.",
-        " When changing the yield, values less than 0 will be ignored.",
-        " Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information"
-      ],
-      "patterns": [
-        "[the] explosion (yield|radius|size)",
-        "[the] (yield|radius|size) of [the] explosion"
-      ],
-      "examples": [
-        "on explosion prime:",
-        "\tset the yield of the explosion to 10"
-      ],
-      "events": [
-        "explosion prime"
-      ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "LitEternity",
       "name": "An Eternity",
       "since": [
@@ -9551,6 +9526,31 @@
       ],
       "examples": [
         "set fire to the player for an eternity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprTimes",
+      "name": "X Times",
+      "since": [
+        "1.4.6"
+      ],
+      "deprecated": false,
+      "description": [
+        "Integers between 1 and X, used in loops to loop X times."
+      ],
+      "patterns": [
+        "%number% time[s]",
+        "once",
+        "twice",
+        "thrice"
+      ],
+      "examples": [
+        "loop 20 times:",
+        "\tbroadcast \"%21 - loop-number% seconds left..\"",
+        "\twait 1 second"
       ],
       "events": null,
       "requirements": null,
@@ -9774,6 +9774,28 @@
       "keywords": null
     },
     {
+      "id": "ExprSpawnReason",
+      "name": "Spawn Reason",
+      "since": [
+        "2.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "The <a href='#spawnreason'>spawn reason</a> in a <a href='#spawn'>spawn</a> event."
+      ],
+      "patterns": [
+        "[the] spawn[ing] reason"
+      ],
+      "examples": [
+        "on spawn:",
+        "\tspawn reason is reinforcements or breeding",
+        "\tcancel event"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprFishingBiteTime",
       "name": "Fishing Bite Time",
       "since": [
@@ -9797,28 +9819,6 @@
       "requirements": [
         "Paper 1.20.6"
       ],
-      "keywords": null
-    },
-    {
-      "id": "ExprSpawnReason",
-      "name": "Spawn Reason",
-      "since": [
-        "2.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "The <a href='#spawnreason'>spawn reason</a> in a <a href='#spawn'>spawn</a> event."
-      ],
-      "patterns": [
-        "[the] spawn[ing] reason"
-      ],
-      "examples": [
-        "on spawn:",
-        "\tspawn reason is reinforcements or breeding",
-        "\tcancel event"
-      ],
-      "events": null,
-      "requirements": null,
       "keywords": null
     },
     {
@@ -10080,26 +10080,6 @@
       "keywords": null
     },
     {
-      "id": "ExprVectorAngleBetween",
-      "name": "Vectors - Angle Between",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the angle between two vectors."
-      ],
-      "patterns": [
-        "[the] angle between [[the] vectors] %vector% and %vector%"
-      ],
-      "examples": [
-        "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprBlock-2",
       "name": "Block",
       "since": [
@@ -10333,6 +10313,31 @@
       "keywords": null
     },
     {
+      "id": "ExprBreakSpeed",
+      "name": "Block Break Speed",
+      "since": [
+        "2.7"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the speed at which the given player would break this block, taking into account tools, potion effects, whether or not the player is in water, enchantments, etc. The returned value is the amount of progress made in breaking the block each tick. When the total breaking progress reaches 1.0, the block is broken. Note that the break speed can change in the course of breaking a block, e.g. if a potion effect is applied or expires, or the player jumps/enters water."
+      ],
+      "patterns": [
+        "[the] break speed[s] [of %blocks%] [for %players%]",
+        "%block%'[s] break speed[s] [for %players%]"
+      ],
+      "examples": [
+        "on left click using diamond pickaxe:",
+        "\tevent-block is set",
+        "\tsend \"Break Speed: %break speed for player%\" to player"
+      ],
+      "events": null,
+      "requirements": [
+        "1.17+"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprRepeat",
       "name": "Repeat String",
       "since": [
@@ -10373,6 +10378,31 @@
       "examples": [
         "set {_function} to the function named \"myFunction\"",
         "run {_function} with arguments 13 and true"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprNumbers",
+      "name": "Numbers",
+      "since": [
+        "1.4.6 (integers & numbers), 2.5.1 (decimals)"
+      ],
+      "deprecated": false,
+      "description": [
+        "All numbers between two given numbers, useful for looping.",
+        "Use 'numbers' if your start is not an integer and you want to keep the fractional part of the start number constant, or use 'integers' if you only want to loop integers.",
+        "You may also use 'decimals' if you want to use the decimal precision of the start number.",
+        "You may want to use the 'times' expression instead, for instance 'loop 5 times:'"
+      ],
+      "patterns": [
+        "[(all [[of] the]|the)] (numbers|integers|decimals) (between|from) %number% (and|to) %number%"
+      ],
+      "examples": [
+        "loop numbers from 2.5 to 5.5: # loops 2.5, 3.5, 4.5, 5.5",
+        "loop integers from 2.9 to 5.1: # same as '3 to 5', i.e. loops 3, 4, 5",
+        "loop decimals from 3.94 to 4: # loops 3.94, 3.95, 3.96, 3.97, 3.98, 3.99, 4"
       ],
       "events": null,
       "requirements": null,
@@ -10443,31 +10473,6 @@
       "keywords": null
     },
     {
-      "id": "ExprBreakSpeed",
-      "name": "Block Break Speed",
-      "since": [
-        "2.7"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the speed at which the given player would break this block, taking into account tools, potion effects, whether or not the player is in water, enchantments, etc. The returned value is the amount of progress made in breaking the block each tick. When the total breaking progress reaches 1.0, the block is broken. Note that the break speed can change in the course of breaking a block, e.g. if a potion effect is applied or expires, or the player jumps/enters water."
-      ],
-      "patterns": [
-        "[the] break speed[s] [of %blocks%] [for %players%]",
-        "%block%'[s] break speed[s] [for %players%]"
-      ],
-      "examples": [
-        "on left click using diamond pickaxe:",
-        "\tevent-block is set",
-        "\tsend \"Break Speed: %break speed for player%\" to player"
-      ],
-      "events": null,
-      "requirements": [
-        "1.17+"
-      ],
-      "keywords": null
-    },
-    {
       "id": "ExprVectorBetweenLocations",
       "name": "Vectors - Vector Between Locations",
       "since": [
@@ -10488,25 +10493,21 @@
       "keywords": null
     },
     {
-      "id": "ExprNumbers",
-      "name": "Numbers",
+      "id": "ExprDistance",
+      "name": "Distance",
       "since": [
-        "1.4.6 (integers & numbers), 2.5.1 (decimals)"
+        "1.0"
       ],
       "deprecated": false,
       "description": [
-        "All numbers between two given numbers, useful for looping.",
-        "Use 'numbers' if your start is not an integer and you want to keep the fractional part of the start number constant, or use 'integers' if you only want to loop integers.",
-        "You may also use 'decimals' if you want to use the decimal precision of the start number.",
-        "You may want to use the 'times' expression instead, for instance 'loop 5 times:'"
+        "The distance between two points."
       ],
       "patterns": [
-        "[(all [[of] the]|the)] (numbers|integers|decimals) (between|from) %number% (and|to) %number%"
+        "[the] distance between %location% and %location%"
       ],
       "examples": [
-        "loop numbers from 2.5 to 5.5: # loops 2.5, 3.5, 4.5, 5.5",
-        "loop integers from 2.9 to 5.1: # same as '3 to 5', i.e. loops 3, 4, 5",
-        "loop decimals from 3.94 to 4: # loops 3.94, 3.95, 3.96, 3.97, 3.98, 3.99, 4"
+        "if the distance between the player and {home::%uuid of player%} is smaller than 20:",
+        "\tmessage \"You're very close to your home!\""
       ],
       "events": null,
       "requirements": null,
@@ -10570,27 +10571,6 @@
       "examples": [
         "if difference between {command::%player%::lastuse} and now is smaller than a minute:",
         "\tmessage \"You have to wait a minute before using this command again!\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprDistance",
-      "name": "Distance",
-      "since": [
-        "1.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The distance between two points."
-      ],
-      "patterns": [
-        "[the] distance between %location% and %location%"
-      ],
-      "examples": [
-        "if the distance between the player and {home::%uuid of player%} is smaller than 20:",
-        "\tmessage \"You're very close to your home!\""
       ],
       "events": null,
       "requirements": null,
@@ -10692,6 +10672,30 @@
       "examples": [
         "spawn zombie at location(0, 0, 0):\n\thide entity from all players except {_player}\n",
         "set {_items::*} to a copper ingot, an iron ingot and a gold ingot\nset {_except::*} to {_items::*} excluding copper ingot\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprPercent",
+      "name": "Percent of",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns a percentage of one or more numbers."
+      ],
+      "patterns": [
+        "%number%(\\%| percent) of %numbers%"
+      ],
+      "examples": [
+        "set damage to 10% of victim's health",
+        "set damage to 125 percent of damage",
+        "set {_result} to {_percent} percent of 999",
+        "set {_result::*} to 10% of {_numbers::*}",
+        "set experience to 50% of player's total experience"
       ],
       "events": null,
       "requirements": null,
@@ -10831,30 +10835,6 @@
       "keywords": null
     },
     {
-      "id": "ExprPercent",
-      "name": "Percent of",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns a percentage of one or more numbers."
-      ],
-      "patterns": [
-        "%number%(\\%| percent) of %numbers%"
-      ],
-      "examples": [
-        "set damage to 10% of victim's health",
-        "set damage to 125 percent of damage",
-        "set {_result} to {_percent} percent of 999",
-        "set {_result::*} to 10% of {_numbers::*}",
-        "set experience to 50% of player's total experience"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprGameRule",
       "name": "Gamerule Value",
       "since": [
@@ -10900,6 +10880,26 @@
       "keywords": null
     },
     {
+      "id": "ExprVectorDotProduct",
+      "name": "Vectors - Dot Product",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the dot product between two vectors."
+      ],
+      "patterns": [
+        "%vector% dot %vector%"
+      ],
+      "examples": [
+        "set {_dot} to {_v1} dot {_v2}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprInput",
       "name": "Input",
       "since": [
@@ -10920,29 +10920,6 @@
       "examples": [
         "send \"congrats on being staff!\" to all players where [input has permission \"staff\"]",
         "sort {_list::*} based on length of input index"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprFireworkEffect",
-      "name": "Firework Effect",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
-      ],
-      "patterns": [
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
-      ],
-      "examples": [
-        "launch flickering trailing burst firework colored blue and green at player",
-        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
-        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
       ],
       "events": null,
       "requirements": null,
@@ -11051,6 +11028,29 @@
       ]
     },
     {
+      "id": "ExprFireworkEffect",
+      "name": "Firework Effect",
+      "since": [
+        "2.4"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
+      ],
+      "patterns": [
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
+      ],
+      "examples": [
+        "launch flickering trailing burst firework colored blue and green at player",
+        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
+        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprCharacters",
       "name": "Characters Between",
       "since": [
@@ -11074,26 +11074,6 @@
         "",
         "# 0123456789ABC... ...uvwxyz",
         "send alphanumeric characters between \"0\" and \"z\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprVectorDotProduct",
-      "name": "Vectors - Dot Product",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the dot product between two vectors."
-      ],
-      "patterns": [
-        "%vector% dot %vector%"
-      ],
-      "examples": [
-        "set {_dot} to {_v1} dot {_v2}"
       ],
       "events": null,
       "requirements": null,
@@ -11232,6 +11212,30 @@
       "keywords": null
     },
     {
+      "id": "ExprRandomNumber",
+      "name": "Random Numbers",
+      "since": [
+        "1.4, 2.10 (Multiple random numbers)"
+      ],
+      "deprecated": false,
+      "description": [
+        "A given amount of random numbers or integers between two given numbers. Use 'number' if you want any number with decimal parts, or use use 'integer' if you only want whole numbers.",
+        "Please note that the order of the numbers doesn't matter, i.e. <code>random number between 2 and 1</code> will work as well as <code>random number between 1 and 2</code>."
+      ],
+      "patterns": [
+        "[a|%integer%] random (integer|number)[s] (from|between) %number% (to|and) %number%"
+      ],
+      "examples": [
+        "set the player's health to a random number between 5 and 10",
+        "send \"You rolled a %random integer from 1 to 6%!\" to the player",
+        "set {_chances::*} to 5 random integers between 5 and 96",
+        "set {_decimals::*} to 3 random numbers between 2.7 and -1.5"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprKeyed",
       "name": "Keyed",
       "since": [
@@ -11255,30 +11259,6 @@
       "keywords": [
         "indexed"
       ]
-    },
-    {
-      "id": "ExprRandomNumber",
-      "name": "Random Numbers",
-      "since": [
-        "1.4, 2.10 (Multiple random numbers)"
-      ],
-      "deprecated": false,
-      "description": [
-        "A given amount of random numbers or integers between two given numbers. Use 'number' if you want any number with decimal parts, or use use 'integer' if you only want whole numbers.",
-        "Please note that the order of the numbers doesn't matter, i.e. <code>random number between 2 and 1</code> will work as well as <code>random number between 1 and 2</code>."
-      ],
-      "patterns": [
-        "[a|%integer%] random (integer|number)[s] (from|between) %number% (to|and) %number%"
-      ],
-      "examples": [
-        "set the player's health to a random number between 5 and 10",
-        "send \"You rolled a %random integer from 1 to 6%!\" to the player",
-        "set {_chances::*} to 5 random integers between 5 and 96",
-        "set {_decimals::*} to 3 random numbers between 2.7 and -1.5"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
     },
     {
       "id": "ExprReversedList",
@@ -11829,6 +11809,26 @@
       "keywords": null
     },
     {
+      "id": "ExprVectorAngleBetween",
+      "name": "Vectors - Angle Between",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the angle between two vectors."
+      ],
+      "patterns": [
+        "[the] angle between [[the] vectors] %vector% and %vector%"
+      ],
+      "examples": [
+        "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprVectorFromYawAndPitch",
       "name": "Vectors - Vector from Yaw and Pitch",
       "since": [
@@ -11922,39 +11922,6 @@
       "keywords": null
     },
     {
-      "id": "ExprUUID",
-      "name": "UUID",
-      "since": [
-        "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The UUID of a player, entity or world."
-      ],
-      "patterns": [
-        "[the] UUID of %offline players/worlds/entities%",
-        "%offline players/worlds/entities%'[s] UUID"
-      ],
-      "examples": [
-        "# prevents people from joining the server if they use the name of a player",
-        "# who has played on this server at least once since this script has been added",
-        "on login:",
-        "\tif {uuid::%name of player%} exists:",
-        "\t\t{uuid::%name of player%} is not uuid of player",
-        "\t\tkick player due to \"Someone with your name has played on this server before\"",
-        "\telse:",
-        "\t\tset {uuid::%name of player%} to uuid of player",
-        "",
-        "command /what-is-my-uuid:",
-        "\ttrigger:",
-        "\t\tset {_uuid} to uuid of player",
-        "\t\tsend \"Your UUID is '%string within {_uuid}%'\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprHiddenPlayers",
       "name": "Hidden Players",
       "since": [
@@ -11973,30 +11940,6 @@
       ],
       "events": null,
       "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprBlockHardness",
-      "name": "Block Hardness",
-      "since": [
-        "2.6"
-      ],
-      "deprecated": false,
-      "description": [
-        "Obtains the block's hardness level (also known as \"strength\"). This number is used to calculate the time required to break each block."
-      ],
-      "patterns": [
-        "[the] [block] hardness of %item types%",
-        "%item types%'[s] [block] hardness"
-      ],
-      "examples": [
-        "set {_hard} to block hardness of target block",
-        "if block hardness of target block > 5:"
-      ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.13+"
-      ],
       "keywords": null
     },
     {
@@ -12050,23 +11993,33 @@
       "keywords": null
     },
     {
-      "id": "ExprArrowKnockbackStrength",
-      "name": "Arrow Knockback Strength",
+      "id": "ExprUUID",
+      "name": "UUID",
       "since": [
-        "2.5.1"
+        "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)"
       ],
       "deprecated": false,
       "description": [
-        "An arrow's knockback strength."
+        "The UUID of a player, entity or world."
       ],
       "patterns": [
-        "[the] arrow knockback strength of %projectiles%",
-        "%projectiles%'[s] arrow knockback strength"
+        "[the] UUID of %offline players/worlds/entities%",
+        "%offline players/worlds/entities%'[s] UUID"
       ],
       "examples": [
-        "on shoot:",
-        "\tevent-projectile is an arrow",
-        "\tset arrow knockback strength of event-projectile to 10"
+        "# prevents people from joining the server if they use the name of a player",
+        "# who has played on this server at least once since this script has been added",
+        "on login:",
+        "\tif {uuid::%name of player%} exists:",
+        "\t\t{uuid::%name of player%} is not uuid of player",
+        "\t\tkick player due to \"Someone with your name has played on this server before\"",
+        "\telse:",
+        "\t\tset {uuid::%name of player%} to uuid of player",
+        "",
+        "command /what-is-my-uuid:",
+        "\ttrigger:",
+        "\t\tset {_uuid} to uuid of player",
+        "\t\tsend \"Your UUID is '%string within {_uuid}%'\""
       ],
       "events": null,
       "requirements": null,
@@ -12266,6 +12219,72 @@
       ]
     },
     {
+      "id": "ExprSeaLevel",
+      "name": "Sea Level",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the sea level of a world."
+      ],
+      "patterns": [
+        "[the] sea level of %worlds%",
+        "%worlds%'[s] sea level"
+      ],
+      "examples": [
+        "send \"The sea level in your world is %sea level in player's world%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSpeed",
+      "name": "Speed",
+      "since": [
+        "unknown (before 2.1)"
+      ],
+      "deprecated": false,
+      "description": [
+        "A player's walking or flying speed. Both can be changed, but values must be between -1 and 1 (excessive values will be changed to -1 or 1 respectively). Negative values reverse directions.",
+        "Please note that changing a player's speed will change their FOV just like potions do."
+      ],
+      "patterns": [
+        "[the] (walk[ing]|fl(y[ing]|ight))[( |-)]speed of %players%",
+        "%players%'[s] (walk[ing]|fl(y[ing]|ight))[( |-)]speed"
+      ],
+      "examples": [
+        "set the player's walk speed to 1",
+        "increase the argument's fly speed by 0.1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprMaxMinecartSpeed",
+      "name": "Max Minecart Speed",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The maximum speed of a minecart."
+      ],
+      "patterns": [
+        "[the] max[imum] minecart (speed|velocity) of %entities%",
+        "%entities%'[s] max[imum] minecart (speed|velocity)"
+      ],
+      "examples": [
+        "on right click on minecart:",
+        "\tset max minecart speed of event-entity to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprMiddleOfLocation",
       "name": "Middle of Location",
       "since": [
@@ -12399,6 +12418,29 @@
       "keywords": null
     },
     {
+      "id": "ExprBeaconRange",
+      "name": "Beacon Range",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The range of a beacon's effects, in blocks."
+      ],
+      "patterns": [
+        "[the] beacon [effect] range of %blocks%",
+        "%blocks%'[s] beacon [effect] range"
+      ],
+      "examples": [
+        "if the beacon tier of the clicked block is 4:\n\tset the beacon effect range of the clicked block to 100\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprWorldBorderWarningTime",
       "name": "Warning Time of World Border",
       "since": [
@@ -12514,74 +12556,6 @@
       "keywords": null
     },
     {
-      "id": "ExprSpeed",
-      "name": "Speed",
-      "since": [
-        "unknown (before 2.1)"
-      ],
-      "deprecated": false,
-      "description": [
-        "A player's walking or flying speed. Both can be changed, but values must be between -1 and 1 (excessive values will be changed to -1 or 1 respectively). Negative values reverse directions.",
-        "Please note that changing a player's speed will change their FOV just like potions do."
-      ],
-      "patterns": [
-        "[the] (walk[ing]|fl(y[ing]|ight))[( |-)]speed of %players%",
-        "%players%'[s] (walk[ing]|fl(y[ing]|ight))[( |-)]speed"
-      ],
-      "examples": [
-        "set the player's walk speed to 1",
-        "increase the argument's fly speed by 0.1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprBeaconRange",
-      "name": "Beacon Range",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The range of a beacon's effects, in blocks."
-      ],
-      "patterns": [
-        "[the] beacon [effect] range of %blocks%",
-        "%blocks%'[s] beacon [effect] range"
-      ],
-      "examples": [
-        "if the beacon tier of the clicked block is 4:\n\tset the beacon effect range of the clicked block to 100\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprMaxMinecartSpeed",
-      "name": "Max Minecart Speed",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The maximum speed of a minecart."
-      ],
-      "patterns": [
-        "[the] max[imum] minecart (speed|velocity) of %entities%",
-        "%entities%'[s] max[imum] minecart (speed|velocity)"
-      ],
-      "examples": [
-        "on right click on minecart:",
-        "\tset max minecart speed of event-entity to 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprMembersOfRegion",
       "name": "Region Members & Owners",
       "since": [
@@ -12673,6 +12647,30 @@
       "keywords": null
     },
     {
+      "id": "ExprVectorLength",
+      "name": "Vectors - Length",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets or sets the length of a vector."
+      ],
+      "patterns": [
+        "[the] (vector|standard|normal) length[s] of %vectors%",
+        "%vectors%'[s] (vector|standard|normal) length[s]"
+      ],
+      "examples": [
+        "send \"%standard length of vector 1, 2, 3%\"",
+        "set {_v} to vector 1, 2, 3",
+        "set standard length of {_v} to 2",
+        "send \"%standard length of {_v}%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprTarget",
       "name": "Target",
       "since": [
@@ -12704,6 +12702,36 @@
       "keywords": null
     },
     {
+      "id": "ExprYawPitch",
+      "name": "Yaw / Pitch",
+      "since": [
+        "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The yaw or pitch of a location or vector.",
+        "A yaw of 0 or 360 represents the positive z direction. Adding a positive number to the yaw of a player will rotate it clockwise.",
+        "A pitch of 90 represents the negative y direction, or downward facing. A pitch of -90 represents upward facing. Adding a positive number to the pitch will rotate the direction downwards.",
+        "Only Paper 1.19+ users may directly change the yaw/pitch of players."
+      ],
+      "patterns": [
+        "[the] (yaw|pitch) of %entities/locations/vectors%",
+        "%entities/locations/vectors%'[s] (yaw|pitch)"
+      ],
+      "examples": [
+        "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"",
+        "set {_yaw} to yaw of player",
+        "set {_p} to pitch of target entity",
+        "set pitch of player to -90 # Makes the player look upwards, Paper 1.19+ only",
+        "add 180 to yaw of target of player # Makes the target look behind themselves"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper 1.19+ (player changers)"
+      ],
+      "keywords": null
+    },
+    {
       "id": "ExprBeehiveHoneyLevel",
       "name": "Beehive Honey Level",
       "since": [
@@ -12723,6 +12751,33 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprAttackCooldown",
+      "name": "Attack Cooldown",
+      "since": [
+        "2.6.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the current cooldown for a player's attack. This is used to calculate damage, with 1.0 representing a fully charged attack and 0.0 representing a non-charged attack.",
+        "NOTE: Currently this can not be set to anything."
+      ],
+      "patterns": [
+        "[the] attack cooldown of %players%",
+        "%players%'[s] attack cooldown"
+      ],
+      "examples": [
+        "on damage:",
+        "\tif attack cooldown of attacker < 1:",
+        "\t\tset damage to 0",
+        "\t\tsend \"Your hit was too weak! wait until your weapon is fully charged next time.\" to attacker"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.15+"
+      ],
       "keywords": null
     },
     {
@@ -12909,84 +12964,24 @@
       "keywords": null
     },
     {
-      "id": "ExprYawPitch",
-      "name": "Yaw / Pitch",
+      "id": "ExprItemAmount",
+      "name": "Item Amount",
       "since": [
-        "2.0, 2.2-dev28 (vector yaw/pitch), 2.9.0 (entity changers)"
+        "2.2-dev24"
       ],
       "deprecated": false,
       "description": [
-        "The yaw or pitch of a location or vector.",
-        "A yaw of 0 or 360 represents the positive z direction. Adding a positive number to the yaw of a player will rotate it clockwise.",
-        "A pitch of 90 represents the negative y direction, or downward facing. A pitch of -90 represents upward facing. Adding a positive number to the pitch will rotate the direction downwards.",
-        "Only Paper 1.19+ users may directly change the yaw/pitch of players."
+        "The amount of an <a href='#itemstack'>item stack</a>."
       ],
       "patterns": [
-        "[the] (yaw|pitch) of %entities/locations/vectors%",
-        "%entities/locations/vectors%'[s] (yaw|pitch)"
+        "[the] item[[ ]stack] (amount|size|number) of %slots/item types/item stacks%",
+        "%slots/item types/item stacks%'[s] item[[ ]stack] (amount|size|number)"
       ],
       "examples": [
-        "log \"%player%: %location of player%, %player's yaw%, %player's pitch%\" to \"playerlocs.log\"",
-        "set {_yaw} to yaw of player",
-        "set {_p} to pitch of target entity",
-        "set pitch of player to -90 # Makes the player look upwards, Paper 1.19+ only",
-        "add 180 to yaw of target of player # Makes the target look behind themselves"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper 1.19+ (player changers)"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprVectorLength",
-      "name": "Vectors - Length",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets or sets the length of a vector."
-      ],
-      "patterns": [
-        "[the] (vector|standard|normal) length[s] of %vectors%",
-        "%vectors%'[s] (vector|standard|normal) length[s]"
-      ],
-      "examples": [
-        "send \"%standard length of vector 1, 2, 3%\"",
-        "set {_v} to vector 1, 2, 3",
-        "set standard length of {_v} to 2",
-        "send \"%standard length of {_v}%\""
+        "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
       ],
       "events": null,
       "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprAttackCooldown",
-      "name": "Attack Cooldown",
-      "since": [
-        "2.6.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the current cooldown for a player's attack. This is used to calculate damage, with 1.0 representing a fully charged attack and 0.0 representing a non-charged attack.",
-        "NOTE: Currently this can not be set to anything."
-      ],
-      "patterns": [
-        "[the] attack cooldown of %players%",
-        "%players%'[s] attack cooldown"
-      ],
-      "examples": [
-        "on damage:",
-        "\tif attack cooldown of attacker < 1:",
-        "\t\tset damage to 0",
-        "\t\tsend \"Your hit was too weak! wait until your weapon is fully charged next time.\" to attacker"
-      ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.15+"
-      ],
       "keywords": null
     },
     {
@@ -13064,25 +13059,63 @@
       "keywords": null
     },
     {
-      "id": "ExprPing",
-      "name": "Ping",
+      "id": "ExprDamageType",
+      "name": "Damage Source - Damage Type",
       "since": [
-        "2.2-dev36"
+        "2.12"
       ],
       "deprecated": false,
       "description": [
-        "Pings of players, as Minecraft server knows them. Note that they will almost certainly be different from the ones you'd get from using ICMP echo requests. This expression is only supported on some server software (PaperSpigot)."
+        "The type of damage of a damage source.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
       ],
       "patterns": [
-        "[the] ping of %players%",
-        "%players%'[s] ping"
+        "[the] damage type [of %damage sources%]",
+        "%damage sources%'[s] damage type"
       ],
       "examples": [
-        "command /ping <player=%player%>:",
-        "\ttrigger:",
-        "\t\tsend \"%arg-1%'s ping is %arg-1's ping%\""
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on death:\n\tset {_type} to the damage type of event-damage source\n"
       ],
       "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprLevelProgress",
+      "name": "Level Progress",
+      "since": [
+        "2.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The player's progress in reaching the next level, this represents the experience bar in the game. Please note that this value is between 0 and 1 (e.g. 0.5 = half experience bar).",
+        "Changing this value can cause the player's level to change if the resulting level progess is negative or larger than 1, e.g. <code>increase the player's level progress by 0.5</code> will make the player gain a level if their progress was more than 50%."
+      ],
+      "patterns": [
+        "[the] level progress of %players%",
+        "%players%'[s] level progress"
+      ],
+      "examples": [
+        "# use the exp bar as mana",
+        "on rightclick with a blaze rod:",
+        "\tplayer's level progress is larger than 0.2",
+        "\tshoot a fireball from the player",
+        "\treduce the player's level progress by 0.2",
+        "every 2 seconds:",
+        "\tloop all players:",
+        "\t\tlevel progress of loop-player is smaller than 0.9:",
+        "\t\t\tincrease level progress of the loop-player by 0.1",
+        "\t\telse:",
+        "\t\t\tset level progress of the loop-player to 0.99",
+        "on xp spawn:",
+        "\tcancel event"
+      ],
+      "events": [
+        "level change"
+      ],
       "requirements": null,
       "keywords": null
     },
@@ -13129,6 +13162,50 @@
       "examples": [
         "player's freeze time is less than 3 seconds:",
         "\tsend \"you're about to freeze!\" to the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageBuffer",
+      "name": "Damage Buffer of World Border",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of blocks a player may safely be outside the border before taking damage.",
+        "Players only take damage when outside of the world's world border, and the damage buffer distance cannot be less than 0."
+      ],
+      "patterns": [
+        "[the] world[ ]border damage buffer [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage buffer"
+      ],
+      "examples": [
+        "set world border damage buffer of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprRedstoneBlockPower",
+      "name": "Redstone Block Power",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "Power of a redstone block"
+      ],
+      "patterns": [
+        "[the] redstone power of %blocks%",
+        "%blocks%'[s] redstone power"
+      ],
+      "examples": [
+        "if redstone power of targeted block is 15:",
+        "\tsend \"This block is very powerful!\""
       ],
       "events": null,
       "requirements": null,
@@ -13241,22 +13318,21 @@
       "keywords": null
     },
     {
-      "id": "ExprWorldBorderDamageBuffer",
-      "name": "Damage Buffer of World Border",
+      "id": "ExprFoodLevel",
+      "name": "Food Level",
       "since": [
-        "2.11"
+        "1.0"
       ],
       "deprecated": false,
       "description": [
-        "The amount of blocks a player may safely be outside the border before taking damage.",
-        "Players only take damage when outside of the world's world border, and the damage buffer distance cannot be less than 0."
+        "The food level of a player from 0 to 10. Has several aliases: food/hunger level/meter/bar. "
       ],
       "patterns": [
-        "[the] world[ ]border damage buffer [of %worldborders%]",
-        "%worldborders%'[s] world[ ]border damage buffer"
+        "[the] (food|hunger)[[ ](level|met(er|re)|bar)] [of %players%]",
+        "%players%'[s] (food|hunger)[[ ](level|met(er|re)|bar)]"
       ],
       "examples": [
-        "set world border damage buffer of {_worldborder} to 10"
+        "set the player's food level to 10"
       ],
       "events": null,
       "requirements": null,
@@ -13288,42 +13364,6 @@
         "set the safe bed location of player to spawn location of world(\"world\") # safe/valid bed location"
       ],
       "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprLevelProgress",
-      "name": "Level Progress",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The player's progress in reaching the next level, this represents the experience bar in the game. Please note that this value is between 0 and 1 (e.g. 0.5 = half experience bar).",
-        "Changing this value can cause the player's level to change if the resulting level progess is negative or larger than 1, e.g. <code>increase the player's level progress by 0.5</code> will make the player gain a level if their progress was more than 50%."
-      ],
-      "patterns": [
-        "[the] level progress of %players%",
-        "%players%'[s] level progress"
-      ],
-      "examples": [
-        "# use the exp bar as mana",
-        "on rightclick with a blaze rod:",
-        "\tplayer's level progress is larger than 0.2",
-        "\tshoot a fireball from the player",
-        "\treduce the player's level progress by 0.2",
-        "every 2 seconds:",
-        "\tloop all players:",
-        "\t\tlevel progress of loop-player is smaller than 0.9:",
-        "\t\t\tincrease level progress of the loop-player by 0.1",
-        "\t\telse:",
-        "\t\t\tset level progress of the loop-player to 0.99",
-        "on xp spawn:",
-        "\tcancel event"
-      ],
-      "events": [
-        "level change"
-      ],
       "requirements": null,
       "keywords": null
     },
@@ -13443,6 +13483,27 @@
       "keywords": null
     },
     {
+      "id": "ExprExhaustion",
+      "name": "Exhaustion",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "The exhaustion of a player. This is mainly used to determine the rate of hunger depletion."
+      ],
+      "patterns": [
+        "[the] exhaustion of %players%",
+        "%players%'[s] exhaustion"
+      ],
+      "examples": [
+        "set exhaustion of all players to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprDustedStage",
       "name": "Dusted Stage",
       "since": [
@@ -13468,67 +13529,31 @@
       "keywords": null
     },
     {
-      "id": "ExprFoodLevel",
-      "name": "Food Level",
+      "id": "ExprVillagerLevel",
+      "name": "Villager Level/Experience",
       "since": [
-        "1.0"
+        "2.10"
       ],
       "deprecated": false,
       "description": [
-        "The food level of a player from 0 to 10. Has several aliases: food/hunger level/meter/bar. "
+        "Represents the level/experience of a villager.",
+        "The level will determine which trades are available to players (value between 1 and 5, defaults to 1).",
+        "When a villager's level is 1, they may lose their profession if they don't have a workstation.",
+        "Experience works along with the leveling system, determining which level the villager will move to.",
+        "Experience must be greater than or equal to 0.",
+        "Learn more about villager levels on <a href='https://minecraft.wiki/w/Trading#Level'>Minecraft Wiki</a>"
       ],
       "patterns": [
-        "[the] (food|hunger)[[ ](level|met(er|re)|bar)] [of %players%]",
-        "%players%'[s] (food|hunger)[[ ](level|met(er|re)|bar)]"
+        "[the] villager (level|experience) of %living entities%",
+        "%living entities%'[s] villager (level|experience)"
       ],
       "examples": [
-        "set the player's food level to 10"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprTimespanDetails",
-      "name": "Timespan Details",
-      "since": [
-        "2.9.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "Retrieve specific information of a <a href=\"/#timespan\">timespan</a> such as hours/minutes/etc."
-      ],
-      "patterns": [
-        "[the] ((tick|second|minute|hour|day|week|month|year))s of %time spans%",
-        "%time spans%'[s] ((tick|second|minute|hour|day|week|month|year))s"
-      ],
-      "examples": [
-        "set {_t} to difference between now and {Payouts::players::%uuid of player%::last-date}",
-        "send \"It has been %days of {_t}% day(s) since last payout.\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprEnchantmentLevel",
-      "name": "Enchantment Level",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The level of a particular <a href='#enchantment'>enchantment</a> on an item."
-      ],
-      "patterns": [
-        "[the] [enchant[ment]] level[s] of %enchantments% (on|of) %item types%",
-        "[the] %enchantments% [enchant[ment]] level[s] (on|of) %item types%",
-        "%item types%'[s] %enchantments% [enchant[ment]] level[s]",
-        "%item types%'[s] [enchant[ment]] level[s] of %enchantments%"
-      ],
-      "examples": [
-        "player's tool is a sword of sharpness:",
-        "\tmessage \"You have a sword of sharpness %level of sharpness of the player's tool% equipped\""
+        "set {_level} to villager level of {_villager}",
+        "set villager level of last spawned villager to 2",
+        "add 1 to villager level of target entity",
+        "remove 1 from villager level of event-entity",
+        "reset villager level of event-entity",
+        "set villager experience of last spawned entity to 100"
       ],
       "events": null,
       "requirements": null,
@@ -13557,27 +13582,6 @@
       "requirements": [
         "Paper 1.12.2 or newer"
       ],
-      "keywords": null
-    },
-    {
-      "id": "ExprLength",
-      "name": "Length",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The length of a text, in number of characters."
-      ],
-      "patterns": [
-        "[the] length of %texts%",
-        "%texts%'[s] length"
-      ],
-      "examples": [
-        "set {_l} to length of the string argument"
-      ],
-      "events": null,
-      "requirements": null,
       "keywords": null
     },
     {
@@ -13629,6 +13633,29 @@
       "requirements": [
         "Minecraft 1.20.0+ (delete)"
       ],
+      "keywords": null
+    },
+    {
+      "id": "ExprArrowKnockbackStrength",
+      "name": "Arrow Knockback Strength",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "An arrow's knockback strength."
+      ],
+      "patterns": [
+        "[the] arrow knockback strength of %projectiles%",
+        "%projectiles%'[s] arrow knockback strength"
+      ],
+      "examples": [
+        "on shoot:",
+        "\tevent-projectile is an arrow",
+        "\tset arrow knockback strength of event-projectile to 10"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -13701,58 +13728,6 @@
       "requirements": [
         "Paper 1.21.4+ (multiple blocks)"
       ],
-      "keywords": null
-    },
-    {
-      "id": "ExprExhaustion",
-      "name": "Exhaustion",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "The exhaustion of a player. This is mainly used to determine the rate of hunger depletion."
-      ],
-      "patterns": [
-        "[the] exhaustion of %players%",
-        "%players%'[s] exhaustion"
-      ],
-      "examples": [
-        "set exhaustion of all players to 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprVillagerLevel",
-      "name": "Villager Level/Experience",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the level/experience of a villager.",
-        "The level will determine which trades are available to players (value between 1 and 5, defaults to 1).",
-        "When a villager's level is 1, they may lose their profession if they don't have a workstation.",
-        "Experience works along with the leveling system, determining which level the villager will move to.",
-        "Experience must be greater than or equal to 0.",
-        "Learn more about villager levels on <a href='https://minecraft.wiki/w/Trading#Level'>Minecraft Wiki</a>"
-      ],
-      "patterns": [
-        "[the] villager (level|experience) of %living entities%",
-        "%living entities%'[s] villager (level|experience)"
-      ],
-      "examples": [
-        "set {_level} to villager level of {_villager}",
-        "set villager level of last spawned villager to 2",
-        "add 1 to villager level of target entity",
-        "remove 1 from villager level of event-entity",
-        "reset villager level of event-entity",
-        "set villager experience of last spawned entity to 100"
-      ],
-      "events": null,
-      "requirements": null,
       "keywords": null
     },
     {
@@ -13859,26 +13834,6 @@
       "keywords": null
     },
     {
-      "id": "ExprAmountOfItems",
-      "name": "Amount of Items",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "Counts how many of a particular <a href='#itemtype'>item type</a> are in a given inventory."
-      ],
-      "patterns": [
-        "[the] (amount|number) of %item types% (in|of) %inventories%"
-      ],
-      "examples": [
-        "message \"You have %number of tag values of minecraft tag \"diamond_ores\" in the player's inventory% diamond ores in your inventory.\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprNoDamageTime",
       "name": "No Damage Time",
       "since": [
@@ -13898,28 +13853,6 @@
         "",
         "if the no damage timespan of {_entity} is 0 seconds:",
         "\tset the invincibility time span of {_entity} to 1 minute"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprNoDamageTicks",
-      "name": "No Damage Ticks",
-      "since": [
-        "2.5, 2.11 (deprecated)"
-      ],
-      "deprecated": true,
-      "description": [
-        "The number of ticks that an entity is invulnerable to damage for."
-      ],
-      "patterns": [
-        "[the] (invulnerability|invincibility|no damage) tick[s] [of %living entities%]",
-        "%living entities%'[s] (invulnerability|invincibility|no damage) tick[s]"
-      ],
-      "examples": [
-        "on damage:",
-        "\tset victim's invulnerability ticks to 20 #Victim will not take damage for the next second"
       ],
       "events": null,
       "requirements": null,
@@ -14016,6 +13949,49 @@
       ],
       "examples": [
         "set gliding of player to off"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprCoordinate",
+      "name": "Coordinate",
+      "since": [
+        "1.4.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents a given coordinate of a location. "
+      ],
+      "patterns": [
+        "[the] (x|y|z)(-| )(coord[inate]|pos[ition]|loc[ation])[s] of %locations%",
+        "%locations%'[s] (x|y|z)(-| )(coord[inate]|pos[ition]|loc[ation])[s]"
+      ],
+      "examples": [
+        "player's y-coordinate is smaller than 40:",
+        "\tmessage \"Watch out for lava!\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprHumidity",
+      "name": "Humidity",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "Humidity of given blocks."
+      ],
+      "patterns": [
+        "[the] humidit(y|ies) of %blocks%",
+        "%blocks%'[s] humidit(y|ies)"
+      ],
+      "examples": [
+        "set {_humidity} to event-block's humidity"
       ],
       "events": null,
       "requirements": null,
@@ -14129,6 +14105,49 @@
       "keywords": null
     },
     {
+      "id": "ExprTextDisplayOpacity",
+      "name": "Text Display Opacity",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the opacity of <a href='#display'>text displays</a>.",
+        "Values are between -127 and 127. The value of 127 represents it being completely opaque."
+      ],
+      "patterns": [
+        "[the] [display] opacity [of %displays%]",
+        "%displays%'[s] [display] opacity"
+      ],
+      "examples": [
+        "set the opacity of the last spawned text display to -1 # Reset"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprVectorSquaredLength",
+      "name": "Vectors - Squared Length",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the squared length of a vector."
+      ],
+      "patterns": [
+        "[the] squared length[s] of %vectors%",
+        "%vectors%'[s] squared length[s]"
+      ],
+      "examples": [
+        "send \"%squared length of vector 1, 2, 3%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprLootTable",
       "name": "Loot Table",
       "since": [
@@ -14235,50 +14254,6 @@
       "keywords": null
     },
     {
-      "id": "ExprLootTableSeed",
-      "name": "Seed of Loot Table",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the seed of a loot table. Setting the seed of a block or entity that does not have a loot table will not do anything."
-      ],
-      "patterns": [
-        "[the] loot[[ ]table] seed[s] of %entities/blocks%",
-        "%entities/blocks%'[s] loot[[ ]table] seed[s]"
-      ],
-      "examples": [
-        "set {_seed} loot table seed of block",
-        "set loot table seed of entity to 123456789"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprCoordinate",
-      "name": "Coordinate",
-      "since": [
-        "1.4.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents a given coordinate of a location. "
-      ],
-      "patterns": [
-        "[the] (x|y|z)(-| )(coord[inate]|pos[ition]|loc[ation])[s] of %locations%",
-        "%locations%'[s] (x|y|z)(-| )(coord[inate]|pos[ition]|loc[ation])[s]"
-      ],
-      "examples": [
-        "player's y-coordinate is smaller than 40:",
-        "\tmessage \"Watch out for lava!\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprMaxItemUseTime",
       "name": "Max Item Use Time",
       "since": [
@@ -14301,27 +14276,6 @@
       "requirements": [
         "Paper"
       ],
-      "keywords": null
-    },
-    {
-      "id": "ExprHumidity",
-      "name": "Humidity",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "Humidity of given blocks."
-      ],
-      "patterns": [
-        "[the] humidit(y|ies) of %blocks%",
-        "%blocks%'[s] humidit(y|ies)"
-      ],
-      "examples": [
-        "set {_humidity} to event-block's humidity"
-      ],
-      "events": null,
-      "requirements": null,
       "keywords": null
     },
     {
@@ -14594,27 +14548,6 @@
       "keywords": null
     },
     {
-      "id": "ExprVectorSquaredLength",
-      "name": "Vectors - Squared Length",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the squared length of a vector."
-      ],
-      "patterns": [
-        "[the] squared length[s] of %vectors%",
-        "%vectors%'[s] squared length[s]"
-      ],
-      "examples": [
-        "send \"%squared length of vector 1, 2, 3%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprEntityStorageEntityCount",
       "name": "Entity Storage Entity Count",
       "since": [
@@ -14687,6 +14620,28 @@
         "air",
         "slot"
       ]
+    },
+    {
+      "id": "ExprWorldBorderSize",
+      "name": "Size of World Border",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The size of a world border.",
+        "The size can not be smaller than 1."
+      ],
+      "patterns": [
+        "[the] world[ ]border (size|diameter|radius) [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border (size|diameter|radius)"
+      ],
+      "examples": [
+        "set world border radius of {_worldborder} to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
     },
     {
       "id": "ExprVectorOfLocation",
@@ -14782,22 +14737,133 @@
       "keywords": null
     },
     {
-      "id": "ExprWorldBorderSize",
-      "name": "Size of World Border",
+      "id": "ExprAmount",
+      "name": "Amount",
+      "since": [
+        "1.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount or size of something.",
+        "Please note that <code>amount of %items%</code> will not return the number of items, but the number of stacks, e.g. 1 for a stack of 64 torches. To get the amount of items in a stack, see the <a href='#ExprItemAmount'>item amount</a> expression.",
+        "",
+        "Also, you can get the recursive size of a list, which will return the recursive size of the list with sublists included, e.g.",
+        "",
+        "<pre>",
+        "{list::*} Structure<br>",
+        "  ├──── {list::1}: 1<br>",
+        "  ├──── {list::2}: 2<br>",
+        "  │     ├──── {list::2::1}: 3<br>",
+        "  │     │    └──── {list::2::1::1}: 4<br>",
+        "  │     └──── {list::2::2}: 5<br>",
+        "  └──── {list::3}: 6",
+        "</pre>",
+        "",
+        "Where using %size of {list::*}% will only return 3 (the first layer of indices only), while %recursive size of {list::*}% will return 6 (the entire list)",
+        "Please note that getting a list's recursive size can cause lag if the list is large, so only use this expression if you need to!"
+      ],
+      "patterns": [
+        "[the] (amount|number|size) of %numbered thing%",
+        "[the] (amount|number|size) of %objects%",
+        "[the] recursive (amount|number|size) of %objects%"
+      ],
+      "examples": [
+        "message \"There are %number of all players% players online!\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprVillagerProfession",
+      "name": "Villager Profession",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the profession of a villager/zombie villager."
+      ],
+      "patterns": [
+        "[the] villager profession of %living entities%",
+        "%living entities%'[s] villager profession"
+      ],
+      "examples": [
+        "set {_p} to villager profession of event-entity",
+        "villager profession of event-entity = nitwit profession",
+        "set villager profession of {_villager} to librarian profession",
+        "delete villager profession of event-entity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprWorldBorderDamageAmount",
+      "name": "Damage Amount of World Border",
       "since": [
         "2.11"
       ],
       "deprecated": false,
       "description": [
-        "The size of a world border.",
-        "The size can not be smaller than 1."
+        "The amount of damage a player takes per second for each block they are outside the border plus the border buffer.",
+        "Players only take damage when outside of the world's world border, and the damage value cannot be less than 0."
       ],
       "patterns": [
-        "[the] world[ ]border (size|diameter|radius) [of %worldborders%]",
-        "%worldborders%'[s] world[ ]border (size|diameter|radius)"
+        "[the] world[ ]border damage amount [of %worldborders%]",
+        "%worldborders%'[s] world[ ]border damage amount"
       ],
       "examples": [
-        "set world border radius of {_worldborder} to 10"
+        "set world border damage amount of {_worldborder} to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprExplosiveYield",
+      "name": "Explosive Yield",
+      "since": [
+        "2.5, 2.11 (ghasts)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The yield of an explosive (creeper, ghast, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
+        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information.",
+        "The yield of ghasts can only be set to between 0 and 127."
+      ],
+      "patterns": [
+        "[the] explosive (yield|radius|size|power) of %entities%",
+        "%entities%'[s] explosive (yield|radius|size|power)"
+      ],
+      "examples": [
+        "on spawn of a creeper:",
+        "\tset the explosive yield of the event-entity to 10"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (ghasts)"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprDisplayViewRange",
+      "name": "Display View Range",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the view range of <a href='#display'>displays</a>.",
+        "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
+        "For example, a player with 150% entity view distance will see a block display with a view range of 1.2 at 1.2 * 64 * 150% = 115.2 blocks away."
+      ],
+      "patterns": [
+        "[the] [display] view (range|radius) [of %displays%]",
+        "%displays%'[s] [display] view (range|radius)"
+      ],
+      "examples": [
+        "set view range of the last spawned text display to 2.9"
       ],
       "events": null,
       "requirements": null,
@@ -14825,22 +14891,23 @@
       "keywords": null
     },
     {
-      "id": "ExprWorldBorderDamageAmount",
-      "name": "Damage Amount of World Border",
+      "id": "ExprPing",
+      "name": "Ping",
       "since": [
-        "2.11"
+        "2.2-dev36"
       ],
       "deprecated": false,
       "description": [
-        "The amount of damage a player takes per second for each block they are outside the border plus the border buffer.",
-        "Players only take damage when outside of the world's world border, and the damage value cannot be less than 0."
+        "Pings of players, as Minecraft server knows them. Note that they will almost certainly be different from the ones you'd get from using ICMP echo requests. This expression is only supported on some server software (PaperSpigot)."
       ],
       "patterns": [
-        "[the] world[ ]border damage amount [of %worldborders%]",
-        "%worldborders%'[s] world[ ]border damage amount"
+        "[the] ping of %players%",
+        "%players%'[s] ping"
       ],
       "examples": [
-        "set world border damage amount of {_worldborder} to 1"
+        "command /ping <player=%player%>:",
+        "\ttrigger:",
+        "\t\tsend \"%arg-1%'s ping is %arg-1's ping%\""
       ],
       "events": null,
       "requirements": null,
@@ -14952,119 +15019,6 @@
       "keywords": null
     },
     {
-      "id": "ExprAmount",
-      "name": "Amount",
-      "since": [
-        "1.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The amount or size of something.",
-        "Please note that <code>amount of %items%</code> will not return the number of items, but the number of stacks, e.g. 1 for a stack of 64 torches. To get the amount of items in a stack, see the <a href='#ExprItemAmount'>item amount</a> expression.",
-        "",
-        "Also, you can get the recursive size of a list, which will return the recursive size of the list with sublists included, e.g.",
-        "",
-        "<pre>",
-        "{list::*} Structure<br>",
-        "  ├──── {list::1}: 1<br>",
-        "  ├──── {list::2}: 2<br>",
-        "  │     ├──── {list::2::1}: 3<br>",
-        "  │     │    └──── {list::2::1::1}: 4<br>",
-        "  │     └──── {list::2::2}: 5<br>",
-        "  └──── {list::3}: 6",
-        "</pre>",
-        "",
-        "Where using %size of {list::*}% will only return 3 (the first layer of indices only), while %recursive size of {list::*}% will return 6 (the entire list)",
-        "Please note that getting a list's recursive size can cause lag if the list is large, so only use this expression if you need to!"
-      ],
-      "patterns": [
-        "[the] (amount|number|size) of %numbered thing%",
-        "[the] (amount|number|size) of %objects%",
-        "[the] recursive (amount|number|size) of %objects%"
-      ],
-      "examples": [
-        "message \"There are %number of all players% players online!\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprOnlinePlayersCount",
-      "name": "Online Player Count",
-      "since": [
-        "2.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "The amount of online players. This can be changed in a <a href='#server_list_ping'>server list ping</a> event only to show fake online player amount.",
-        "<code>real online player count</code> always return the real count of online players and can't be changed."
-      ],
-      "patterns": [
-        "[the] [((real|default)|(fake|shown|displayed))] [online] player (count|amount|number)",
-        "[the] [((real|default)|(fake|shown|displayed))] (count|amount|number|size) of online players"
-      ],
-      "examples": [
-        "on server list ping:",
-        "\t# This will make the max players count 5 if there are 4 players online.",
-        "\tset the fake max players count to (online player count + 1)"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper (fake count)"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprDisplayViewRange",
-      "name": "Display View Range",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns or changes the view range of <a href='#display'>displays</a>.",
-        "Default value is 1.0. This value is then multiplied by 64 and the player's entity view distance setting to determine the actual range.",
-        "For example, a player with 150% entity view distance will see a block display with a view range of 1.2 at 1.2 * 64 * 150% = 115.2 blocks away."
-      ],
-      "patterns": [
-        "[the] [display] view (range|radius) [of %displays%]",
-        "%displays%'[s] [display] view (range|radius)"
-      ],
-      "examples": [
-        "set view range of the last spawned text display to 2.9"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprExplosiveYield",
-      "name": "Explosive Yield",
-      "since": [
-        "2.5, 2.11 (ghasts)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The yield of an explosive (creeper, ghast, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
-        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information.",
-        "The yield of ghasts can only be set to between 0 and 127."
-      ],
-      "patterns": [
-        "[the] explosive (yield|radius|size|power) of %entities%",
-        "%entities%'[s] explosive (yield|radius|size|power)"
-      ],
-      "examples": [
-        "on spawn of a creeper:",
-        "\tset the explosive yield of the event-entity to 10"
-      ],
-      "events": null,
-      "requirements": [
-        "Paper (ghasts)"
-      ],
-      "keywords": null
-    },
-    {
       "id": "ExprOpenedInventory",
       "name": "Opened Inventory",
       "since": [
@@ -15108,28 +15062,6 @@
       "keywords": null
     },
     {
-      "id": "ExprTextDisplayOpacity",
-      "name": "Text Display Opacity",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns or changes the opacity of <a href='#display'>text displays</a>.",
-        "Values are between -127 and 127. The value of 127 represents it being completely opaque."
-      ],
-      "patterns": [
-        "[the] [display] opacity [of %displays%]",
-        "%displays%'[s] [display] opacity"
-      ],
-      "examples": [
-        "set the opacity of the last spawned text display to -1 # Reset"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprDifficulty",
       "name": "Difficulty",
       "since": [
@@ -15151,48 +15083,23 @@
       "keywords": null
     },
     {
-      "id": "ExprRound",
-      "name": "Rounding",
+      "id": "ExprFallDistance",
+      "name": "Fall Distance",
       "since": [
-        "2.0"
+        "2.5"
       ],
       "deprecated": false,
       "description": [
-        "Rounds numbers normally, up (ceiling) or down (floor) respectively."
+        "The distance an entity has fallen for."
       ],
       "patterns": [
-        "[a|the] (round[ed] down|floored) %numbers%",
-        "%numbers% (round[ed] down|floored)",
-        "[a|the] round[ed] %numbers%",
-        "%numbers% round[ed]",
-        "[a|the] (round[ed] up|ceil[ing]ed) %numbers%",
-        "%numbers% (round[ed] up|ceil[ing]ed)"
+        "[the] fall[en] (distance|height) of %entities%",
+        "%entities%'[s] fall[en] (distance|height)"
       ],
       "examples": [
-        "set {var} to rounded health of player",
-        "set line 1 of the block to rounded \"%(1.5 * player's level)%\"",
-        "add rounded down argument to the player's health"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprSeed",
-      "name": "World Seed",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "The seed of given world. Note that it will be returned as Minecraft internally treats seeds, not as you specified it in world configuration."
-      ],
-      "patterns": [
-        "[the] seed[s] (from|of) %worlds%",
-        "%worlds%'[s] seed[s]"
-      ],
-      "examples": [
-        "broadcast \"Seed: %seed of player's world%\""
+        "set all entities' fall distance to 10",
+        "on damage:",
+        "\tsend \"%victim's fall distance%\" to victim"
       ],
       "events": null,
       "requirements": null,
@@ -15317,34 +15224,6 @@
       "keywords": null
     },
     {
-      "id": "ExprSlotIndex",
-      "name": "Slot Index",
-      "since": [
-        "2.2-dev35, 2.8.0 (raw index)"
-      ],
-      "deprecated": false,
-      "description": [
-        "Index of an an inventory slot. Other types of slots may or may not have indices. Note that comparing slots with numbers is also possible; if index of slot is same as the number, comparisonsucceeds. This expression is mainly for the cases where you must for some reason save the slot numbers.",
-        "",
-        "Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventory\">Minecraft Wiki</a>"
-      ],
-      "patterns": [
-        "[the] [(raw|unique)] index of %slots%",
-        "%slots%'[s] [(raw|unique)] index"
-      ],
-      "examples": [
-        "if index of event-slot is 10:",
-        "\tsend \"You bought a pie!\"",
-        "",
-        "if display name of player's top inventory is \"Custom Menu\": # 3 rows inventory",
-        "\tif raw index of event-slot > 27: # outside custom inventory",
-        "\t\tcancel event"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprCausingEntity",
       "name": "Damage Source - Causing Entity",
       "since": [
@@ -15399,73 +15278,117 @@
       "keywords": null
     },
     {
-      "id": "ExprClientViewDistance",
-      "name": "View Distance of Client",
+      "id": "ExprLastDamage",
+      "name": "Last Damage",
       "since": [
-        "2.5"
+        "2.5.1"
       ],
       "deprecated": false,
       "description": [
-        "The view distance of the client. Can not be changed. This differs from the server side view distance of player as this will retrieve the view distance the player has set on their client."
+        "The last damage that was done to an entity. Note that changing it doesn't deal more/less damage."
       ],
       "patterns": [
-        "[the] client view distance[s] of %players%",
-        "%players%'[s] client view distance[s]"
+        "[the] last damage of %living entities%",
+        "%living entities%'[s] last damage"
       ],
       "examples": [
-        "set {_clientView} to the client view distance of player",
-        "set view distance of player to client view distance of player"
+        "set last damage of event-entity to 2"
       ],
       "events": null,
-      "requirements": [
-        "1.13.2+"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprEnchantmentOfferCost",
-      "name": "Enchantment Offer Cost",
+      "id": "ExprTimespanDetails",
+      "name": "Timespan Details",
       "since": [
-        "2.5"
+        "2.9.0"
       ],
       "deprecated": false,
       "description": [
-        "The cost of an enchantment offer. This is displayed to the right of an enchantment offer.",
-        "If the cost is changed, it will always be at least 1.",
-        "This changes how many levels are required to enchant, but does not change the number of levels removed.",
-        "To change the number of levels removed, use the enchant event."
+        "Retrieve specific information of a <a href=\"/#timespan\">timespan</a> such as hours/minutes/etc."
       ],
       "patterns": [
-        "[the] [enchant[ment]] cost of %enchantment offers%",
-        "%enchantment offers%'[s] [enchant[ment]] cost"
+        "[the] ((tick|second|minute|hour|day|week|month|year))s of %time spans%",
+        "%time spans%'[s] ((tick|second|minute|hour|day|week|month|year))s"
       ],
       "examples": [
-        "set cost of enchantment offer 1 to 50"
+        "set {_t} to difference between now and {Payouts::players::%uuid of player%::last-date}",
+        "send \"It has been %days of {_t}% day(s) since last payout.\""
       ],
       "events": null,
-      "requirements": [
-        "1.11 or newer"
-      ],
+      "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprFallDistance",
-      "name": "Fall Distance",
+      "id": "ExprEnchantmentLevel",
+      "name": "Enchantment Level",
       "since": [
-        "2.5"
+        "2.0"
       ],
       "deprecated": false,
       "description": [
-        "The distance an entity has fallen for."
+        "The level of a particular <a href='#enchantment'>enchantment</a> on an item."
       ],
       "patterns": [
-        "[the] fall[en] (distance|height) of %entities%",
-        "%entities%'[s] fall[en] (distance|height)"
+        "[the] [enchant[ment]] level[s] of %enchantments% (on|of) %item types%",
+        "[the] %enchantments% [enchant[ment]] level[s] (on|of) %item types%",
+        "%item types%'[s] %enchantments% [enchant[ment]] level[s]",
+        "%item types%'[s] [enchant[ment]] level[s] of %enchantments%"
       ],
       "examples": [
-        "set all entities' fall distance to 10",
-        "on damage:",
-        "\tsend \"%victim's fall distance%\" to victim"
+        "player's tool is a sword of sharpness:",
+        "\tmessage \"You have a sword of sharpness %level of sharpness of the player's tool% equipped\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBeaconEffects",
+      "name": "Beacon Effects",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
+      ],
+      "patterns": [
+        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
+        "%blocks%'[s] (primary|secondary) [beacon] effect"
+      ],
+      "examples": [
+        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
+      ],
+      "events": [
+        "Beacon Effect",
+        "Beacon Toggle",
+        "Beacon Change Effect"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprDisplayTransformationRotation",
+      "name": "Display Transformation Rotation",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
+        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+      ],
+      "patterns": [
+        "[the] (left|right) [transformation] rotation [of %displays%]",
+        "%displays%'[s] (left|right) [transformation] rotation"
+      ],
+      "examples": [
+        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
       ],
       "events": null,
       "requirements": null,
@@ -15516,6 +15439,27 @@
       "keywords": null
     },
     {
+      "id": "ExprLength",
+      "name": "Length",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The length of a text, in number of characters."
+      ],
+      "patterns": [
+        "[the] length of %texts%",
+        "%texts%'[s] length"
+      ],
+      "examples": [
+        "set {_l} to length of the string argument"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprBookTitle",
       "name": "Book Title",
       "since": [
@@ -15538,6 +15482,27 @@
       "keywords": null
     },
     {
+      "id": "ExprAltitude",
+      "name": "Altitude",
+      "since": [
+        "1.4.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
+      ],
+      "patterns": [
+        "[the] altitude[s] of %locations%",
+        "%locations%'[s] altitude[s]"
+      ],
+      "examples": [
+        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprGlowing",
       "name": "Glowing",
       "since": [
@@ -15553,6 +15518,37 @@
       ],
       "examples": [
         "set glowing of player to true"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprXYZComponent",
+      "name": "Vector/Quaternion - WXYZ Component",
+      "since": [
+        "2.2-dev28, 2.10 (quaternions)"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets or changes the W, X, Y or Z component of <a href='#vector'>vectors</a>/<a href='#quaternion'>quaternions</a>.",
+        "You cannot use the W component with vectors; it is for quaternions only."
+      ],
+      "patterns": [
+        "[the] [vector|quaternion] (w|x|y|z) [component[s]] of %vectors/quaternions%",
+        "%vectors/quaternions%'[s] [vector|quaternion] (w|x|y|z) [component[s]]"
+      ],
+      "examples": [
+        "set {_v} to vector 1, 2, 3",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "add 1 to x of {_v}",
+        "add 2 to y of {_v}",
+        "add 3 to z of {_v}",
+        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
+        "set x component of {_v} to 1",
+        "set y component of {_v} to 2",
+        "set z component of {_v} to 3",
+        "send \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
       ],
       "events": null,
       "requirements": null,
@@ -15667,74 +15663,6 @@
       "keywords": null
     },
     {
-      "id": "ExprArrowsStuck",
-      "name": "Arrows Stuck",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The number of arrows stuck in a living entity."
-      ],
-      "patterns": [
-        "[number of] arrow[s] stuck in %living entities%"
-      ],
-      "examples": [
-        "set arrows stuck in player to 5"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprBiome",
-      "name": "Biome",
-      "since": [
-        "1.4.4, 2.6.1 (3D biomes)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The biome at a certain location. Please note that biomes are only defined for x/z-columns",
-        "(i.e. the <a href='#ExprAltitude'>altitude</a> (y-coordinate) doesn't matter), up until Minecraft 1.15.x.",
-        "As of Minecraft 1.16, biomes are now 3D (per block vs column)."
-      ],
-      "patterns": [
-        "[the] biome [(of|%direction%) %locations%]",
-        "%locations%'[s] biome"
-      ],
-      "examples": [
-        "# damage player in deserts constantly",
-        "every real minute:",
-        "\tloop all players:",
-        "\t\tbiome at loop-player is desert",
-        "\t\tdamage the loop-player by 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprLastDamage",
-      "name": "Last Damage",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The last damage that was done to an entity. Note that changing it doesn't deal more/less damage."
-      ],
-      "patterns": [
-        "[the] last damage of %living entities%",
-        "%living entities%'[s] last damage"
-      ],
-      "examples": [
-        "set last damage of event-entity to 2"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprPortalCooldown",
       "name": "Portal Cooldown",
       "since": [
@@ -15756,34 +15684,6 @@
         "\tset portal cooldown of event-entity to 5 seconds"
       ],
       "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprBeaconEffects",
-      "name": "Beacon Effects",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The active effects of a beacon.",
-        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
-        "The secondary effect can only be set when the beacon is at max tier.",
-        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
-      ],
-      "patterns": [
-        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
-        "%blocks%'[s] (primary|secondary) [beacon] effect"
-      ],
-      "examples": [
-        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
-      ],
-      "events": [
-        "Beacon Effect",
-        "Beacon Toggle",
-        "Beacon Change Effect"
-      ],
       "requirements": null,
       "keywords": null
     },
@@ -15865,52 +15765,20 @@
       "keywords": null
     },
     {
-      "id": "ExprAltitude",
-      "name": "Altitude",
+      "id": "ExprAmountOfItems",
+      "name": "Amount of Items",
       "since": [
-        "1.4.3"
+        "2.0"
       ],
       "deprecated": false,
       "description": [
-        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
+        "Counts how many of a particular <a href='#itemtype'>item type</a> are in a given inventory."
       ],
       "patterns": [
-        "[the] altitude[s] of %locations%",
-        "%locations%'[s] altitude[s]"
+        "[the] (amount|number) of %item types% (in|of) %inventories%"
       ],
       "examples": [
-        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprXYZComponent",
-      "name": "Vector/Quaternion - WXYZ Component",
-      "since": [
-        "2.2-dev28, 2.10 (quaternions)"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets or changes the W, X, Y or Z component of <a href='#vector'>vectors</a>/<a href='#quaternion'>quaternions</a>.",
-        "You cannot use the W component with vectors; it is for quaternions only."
-      ],
-      "patterns": [
-        "[the] [vector|quaternion] (w|x|y|z) [component[s]] of %vectors/quaternions%",
-        "%vectors/quaternions%'[s] [vector|quaternion] (w|x|y|z) [component[s]]"
-      ],
-      "examples": [
-        "set {_v} to vector 1, 2, 3",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "add 1 to x of {_v}",
-        "add 2 to y of {_v}",
-        "add 3 to z of {_v}",
-        "send \"%x of {_v}%, %y of {_v}%, %z of {_v}%\"",
-        "set x component of {_v} to 1",
-        "set y component of {_v} to 2",
-        "set z component of {_v} to 3",
-        "send \"%x component of {_v}%, %y component of {_v}%, %z component of {_v}%\""
+        "message \"You have %number of tag values of minecraft tag \"diamond_ores\" in the player's inventory% diamond ores in your inventory.\""
       ],
       "events": null,
       "requirements": null,
@@ -15987,46 +15855,22 @@
       "keywords": null
     },
     {
-      "id": "ExprLevel",
-      "name": "Level",
+      "id": "ExprNoDamageTicks",
+      "name": "No Damage Ticks",
       "since": [
-        "unknown (before 2.1)"
+        "2.5, 2.11 (deprecated)"
       ],
-      "deprecated": false,
+      "deprecated": true,
       "description": [
-        "The level of a player."
+        "The number of ticks that an entity is invulnerable to damage for."
       ],
       "patterns": [
-        "[the] level of %players%",
-        "%players%'[s] level"
+        "[the] (invulnerability|invincibility|no damage) tick[s] [of %living entities%]",
+        "%living entities%'[s] (invulnerability|invincibility|no damage) tick[s]"
       ],
       "examples": [
-        "reduce the victim's level by 1",
-        "set the player's level to 0"
-      ],
-      "events": [
-        "level change"
-      ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprItemThrower",
-      "name": "Dropped Item Thrower",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "The uuid of the entity or player that threw/dropped the dropped item."
-      ],
-      "patterns": [
-        "[the] uuid of [the] [dropped] item thrower [of %itementities%]",
-        "[the] [dropped] item thrower's uuid [of %itementities%]"
-      ],
-      "examples": [
-        "set the uuid of the dropped item thrower of {_dropped item} to player\nif the uuid of the dropped item thrower of {_dropped item} is uuid of player:\n",
-        "clear the item thrower of {_dropped item}"
+        "on damage:",
+        "\tset victim's invulnerability ticks to 20 #Victim will not take damage for the next second"
       ],
       "events": null,
       "requirements": null,
@@ -16109,6 +15953,28 @@
       "keywords": null
     },
     {
+      "id": "ExprItemThrower",
+      "name": "Dropped Item Thrower",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The uuid of the entity or player that threw/dropped the dropped item."
+      ],
+      "patterns": [
+        "[the] uuid of [the] [dropped] item thrower [of %itementities%]",
+        "[the] [dropped] item thrower's uuid [of %itementities%]"
+      ],
+      "examples": [
+        "set the uuid of the dropped item thrower of {_dropped item} to player\nif the uuid of the dropped item thrower of {_dropped item} is uuid of player:\n",
+        "clear the item thrower of {_dropped item}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprNamed",
       "name": "Named Item/Inventory",
       "since": [
@@ -16129,6 +15995,52 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprHealth",
+      "name": "Health",
+      "since": [
+        "1.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The health of a creature, e.g. a player, mob, villager, etc. The minimum value is 0, and the maximum is the creature's max health (e.g. 10 for players)."
+      ],
+      "patterns": [
+        "[the] health of %living entities%",
+        "%living entities%'[s] health"
+      ],
+      "examples": [
+        "message \"You have %health% HP left.\""
+      ],
+      "events": [
+        "damage"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprFoodExhaustion",
+      "name": "Damage Source - Food Exhaustion",
+      "since": [
+        "2.12"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of hunger exhaustion caused by a damage source."
+      ],
+      "patterns": [
+        "[the] food exhaustion [of %damage sources%]",
+        "%damage sources%'[s] food exhaustion"
+      ],
+      "examples": [
+        "on damage:\n\tif the food exhaustion of event-damage source is 10:\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
       "keywords": null
     },
     {
@@ -16210,46 +16122,72 @@
       "keywords": null
     },
     {
-      "id": "ExprVillagerProfession",
-      "name": "Villager Profession",
+      "id": "ExprLootTableSeed",
+      "name": "Seed of Loot Table",
       "since": [
         "2.10"
       ],
       "deprecated": false,
       "description": [
-        "Represents the profession of a villager/zombie villager."
+        "Returns the seed of a loot table. Setting the seed of a block or entity that does not have a loot table will not do anything."
       ],
       "patterns": [
-        "[the] villager profession of %living entities%",
-        "%living entities%'[s] villager profession"
+        "[the] loot[[ ]table] seed[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[[ ]table] seed[s]"
       ],
       "examples": [
-        "set {_p} to villager profession of event-entity",
-        "villager profession of event-entity = nitwit profession",
-        "set villager profession of {_villager} to librarian profession",
-        "delete villager profession of event-entity"
+        "set {_seed} loot table seed of block",
+        "set loot table seed of entity to 123456789"
       ],
       "events": null,
       "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprDisplayTransformationRotation",
-      "name": "Display Transformation Rotation",
+      "id": "ExprDisplayHeightWidth",
+      "name": "Display Height/Width",
       "since": [
         "2.10"
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
-        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+        "Returns or changes the height or width of <a href='#display'>displays</a>.",
+        "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
+        "If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0."
       ],
       "patterns": [
-        "[the] (left|right) [transformation] rotation [of %displays%]",
-        "%displays%'[s] (left|right) [transformation] rotation"
+        "[the] display (height|width) [of %displays%]",
+        "%displays%'[s] display (height|width)"
       ],
       "examples": [
-        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+        "set display height of the last spawned text display to 2.5"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprBiome",
+      "name": "Biome",
+      "since": [
+        "1.4.4, 2.6.1 (3D biomes)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The biome at a certain location. Please note that biomes are only defined for x/z-columns",
+        "(i.e. the <a href='#ExprAltitude'>altitude</a> (y-coordinate) doesn't matter), up until Minecraft 1.15.x.",
+        "As of Minecraft 1.16, biomes are now 3D (per block vs column)."
+      ],
+      "patterns": [
+        "[the] biome [(of|%direction%) %locations%]",
+        "%locations%'[s] biome"
+      ],
+      "examples": [
+        "# damage player in deserts constantly",
+        "every real minute:",
+        "\tloop all players:",
+        "\t\tbiome at loop-player is desert",
+        "\t\tdamage the loop-player by 1"
       ],
       "events": null,
       "requirements": null,
@@ -16482,69 +16420,28 @@
       "keywords": null
     },
     {
-      "id": "ExprFoodExhaustion",
-      "name": "Damage Source - Food Exhaustion",
+      "id": "ExprLightLevel",
+      "name": "Light Level",
       "since": [
-        "2.12"
+        "1.3.4"
       ],
       "deprecated": false,
       "description": [
-        "The amount of hunger exhaustion caused by a damage source."
+        "Gets the light level at a certain location which ranges from 0 to 15.",
+        "It can be separated into sunlight (15 = direct sunlight, 1-14 = indirect) and block light (torches, glowstone, etc.). The total light level of a block is the maximum of the two different light types."
       ],
       "patterns": [
-        "[the] food exhaustion [of %damage sources%]",
-        "%damage sources%'[s] food exhaustion"
+        "[(sky|sun|block)[ ]]light[ ]level [(of|%direction%) %location%]"
       ],
       "examples": [
-        "on damage:\n\tif the food exhaustion of event-damage source is 10:\n"
+        "# set vampire players standing in bright sunlight on fire",
+        "every 5 seconds:",
+        "\tloop all players:",
+        "\t\t{vampire::%uuid of loop-player%} is true",
+        "\t\tsunlight level at the loop-player is greater than 10",
+        "\t\tignite the loop-player for 5 seconds"
       ],
       "events": null,
-      "requirements": [
-        "Minecraft 1.20.4+"
-      ],
-      "keywords": null
-    },
-    {
-      "id": "ExprSeaLevel",
-      "name": "Sea Level",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the sea level of a world."
-      ],
-      "patterns": [
-        "[the] sea level of %worlds%",
-        "%worlds%'[s] sea level"
-      ],
-      "examples": [
-        "send \"The sea level in your world is %sea level in player's world%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprHealth",
-      "name": "Health",
-      "since": [
-        "1.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The health of a creature, e.g. a player, mob, villager, etc. The minimum value is 0, and the maximum is the creature's max health (e.g. 10 for players)."
-      ],
-      "patterns": [
-        "[the] health of %living entities%",
-        "%living entities%'[s] health"
-      ],
-      "examples": [
-        "message \"You have %health% HP left.\""
-      ],
-      "events": [
-        "damage"
-      ],
       "requirements": null,
       "keywords": null
     },
@@ -16642,29 +16539,6 @@
       "examples": [
         "set {_item} to unbreakable iron sword",
         "give breakable {_weapon} to all players"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprDisplayHeightWidth",
-      "name": "Display Height/Width",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns or changes the height or width of <a href='#display'>displays</a>.",
-        "The rendering culling bounding box spans horizontally width/2 from entity position, which determines the point at which the display will be frustum culled (no longer rendered because the game determines you are no longer able to see it).",
-        "If set to 0, no culling will occur on both the vertical and horizontal directions. Default is 0.0."
-      ],
-      "patterns": [
-        "[the] display (height|width) [of %displays%]",
-        "%displays%'[s] display (height|width)"
-      ],
-      "examples": [
-        "set display height of the last spawned text display to 2.5"
       ],
       "events": null,
       "requirements": null,
@@ -16817,6 +16691,74 @@
       "keywords": null
     },
     {
+      "id": "ExprTemperature",
+      "name": "Temperature",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "Temperature at given block."
+      ],
+      "patterns": [
+        "[the] temperature[s] of %blocks%",
+        "%blocks%'[s] temperature[s]"
+      ],
+      "examples": [
+        "message \"%temperature of the targeted block%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprExplosionBlockYield",
+      "name": "Explosion Block Yield",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The percentage of exploded blocks dropped in an explosion event.",
+        "When changing the yield, a value greater than 1 will function the same as using 1.",
+        "Attempting to change the yield to a value less than 0 will have no effect."
+      ],
+      "patterns": [
+        "[the] [explosion['s]] block (yield|amount)",
+        "[the] percentage of blocks dropped"
+      ],
+      "examples": [
+        "on explode:",
+        "set the explosion's block yield to 10%"
+      ],
+      "events": [
+        "explosion"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprSaturation",
+      "name": "Saturation",
+      "since": [
+        "2.2-Fixes-v10, 2.2-dev35 (fully modifiable), 2.6.2 (syntax pattern changed)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The saturation of a player. If used in a player event, it can be omitted and will default to event-player."
+      ],
+      "patterns": [
+        "[the] saturation of %players%",
+        "%players%'[s] saturation"
+      ],
+      "examples": [
+        "set saturation of player to 20"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprElement",
       "name": "Elements",
       "since": [
@@ -16905,6 +16847,32 @@
       ],
       "events": null,
       "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprOnlinePlayersCount",
+      "name": "Online Player Count",
+      "since": [
+        "2.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "The amount of online players. This can be changed in a <a href='#server_list_ping'>server list ping</a> event only to show fake online player amount.",
+        "<code>real online player count</code> always return the real count of online players and can't be changed."
+      ],
+      "patterns": [
+        "[the] [((real|default)|(fake|shown|displayed))] [online] player (count|amount|number)",
+        "[the] [((real|default)|(fake|shown|displayed))] (count|amount|number|size) of online players"
+      ],
+      "examples": [
+        "on server list ping:",
+        "\t# This will make the max players count 5 if there are 4 players online.",
+        "\tset the fake max players count to (online player count + 1)"
+      ],
+      "events": null,
+      "requirements": [
+        "Paper (fake count)"
+      ],
       "keywords": null
     },
     {
@@ -17032,68 +17000,69 @@
       "keywords": null
     },
     {
-      "id": "ExprTemperature",
-      "name": "Temperature",
+      "id": "ExprUnixTicks",
+      "name": "Unix Timestamp",
       "since": [
-        "2.2-dev35"
+        "2.2-dev31"
       ],
       "deprecated": false,
       "description": [
-        "Temperature at given block."
+        "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970."
       ],
       "patterns": [
-        "[the] temperature[s] of %blocks%",
-        "%blocks%'[s] temperature[s]"
+        "[the] unix timestamp of %dates%",
+        "%dates%'[s] unix timestamp"
       ],
       "examples": [
-        "message \"%temperature of the targeted block%\""
+        "unix timestamp of now"
       ],
       "events": null,
       "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprExplosionBlockYield",
-      "name": "Explosion Block Yield",
+      "id": "ExprRound",
+      "name": "Rounding",
       "since": [
-        "2.5"
+        "2.0"
       ],
       "deprecated": false,
       "description": [
-        "The percentage of exploded blocks dropped in an explosion event.",
-        "When changing the yield, a value greater than 1 will function the same as using 1.",
-        "Attempting to change the yield to a value less than 0 will have no effect."
+        "Rounds numbers normally, up (ceiling) or down (floor) respectively."
       ],
       "patterns": [
-        "[the] [explosion['s]] block (yield|amount)",
-        "[the] percentage of blocks dropped"
+        "[a|the] (round[ed] down|floored) %numbers%",
+        "%numbers% (round[ed] down|floored)",
+        "[a|the] round[ed] %numbers%",
+        "%numbers% round[ed]",
+        "[a|the] (round[ed] up|ceil[ing]ed) %numbers%",
+        "%numbers% (round[ed] up|ceil[ing]ed)"
       ],
       "examples": [
-        "on explode:",
-        "set the explosion's block yield to 10%"
+        "set {var} to rounded health of player",
+        "set line 1 of the block to rounded \"%(1.5 * player's level)%\"",
+        "add rounded down argument to the player's health"
       ],
-      "events": [
-        "explosion"
-      ],
+      "events": null,
       "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprSaturation",
-      "name": "Saturation",
+      "id": "ExprSeed",
+      "name": "World Seed",
       "since": [
-        "2.2-Fixes-v10, 2.2-dev35 (fully modifiable), 2.6.2 (syntax pattern changed)"
+        "2.2-dev35"
       ],
       "deprecated": false,
       "description": [
-        "The saturation of a player. If used in a player event, it can be omitted and will default to event-player."
+        "The seed of given world. Note that it will be returned as Minecraft internally treats seeds, not as you specified it in world configuration."
       ],
       "patterns": [
-        "[the] saturation of %players%",
-        "%players%'[s] saturation"
+        "[the] seed[s] (from|of) %worlds%",
+        "%worlds%'[s] seed[s]"
       ],
       "examples": [
-        "set saturation of player to 20"
+        "broadcast \"Seed: %seed of player's world%\""
       ],
       "events": null,
       "requirements": null,
@@ -17121,6 +17090,32 @@
       "examples": [
         "on rightclick on an entity:",
         "\tmessage \"This is a %type of clicked entity%!\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
+      "id": "ExprLootContextLuck",
+      "name": "Luck of Loot Context",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the luck of a loot context as a float. This represents the luck potion effect that an entity can have."
+      ],
+      "patterns": [
+        "[the] loot[ing] [context] luck [value|factor] [of %loot contexts%]",
+        "%loot contexts%'[s] loot[ing] [context] luck [value|factor]"
+      ],
+      "examples": [
+        "set {_luck} to loot luck value of {_context}",
+        "",
+        "set {_context} to a loot context at player:",
+        "\tset loot luck value to 10",
+        "\tset looter to player",
+        "\tset looted entity to last spawned pig"
       ],
       "events": null,
       "requirements": null,
@@ -17174,45 +17169,81 @@
       "keywords": null
     },
     {
-      "id": "ExprItemAmount",
-      "name": "Item Amount",
+      "id": "ExprSlotIndex",
+      "name": "Slot Index",
       "since": [
-        "2.2-dev24"
+        "2.2-dev35, 2.8.0 (raw index)"
       ],
       "deprecated": false,
       "description": [
-        "The amount of an <a href='#itemstack'>item stack</a>."
+        "Index of an an inventory slot. Other types of slots may or may not have indices. Note that comparing slots with numbers is also possible; if index of slot is same as the number, comparisonsucceeds. This expression is mainly for the cases where you must for some reason save the slot numbers.",
+        "",
+        "Raw index of slot is unique for the view, see <a href=\"https://wiki.vg/Inventory\">Minecraft Wiki</a>"
       ],
       "patterns": [
-        "[the] item[[ ]stack] (amount|size|number) of %slots/item types/item stacks%",
-        "%slots/item types/item stacks%'[s] item[[ ]stack] (amount|size|number)"
+        "[the] [(raw|unique)] index of %slots%",
+        "%slots%'[s] [(raw|unique)] index"
       ],
       "examples": [
-        "send \"You have got %item amount of player's tool% %player's tool% in your hand!\" to player"
+        "if index of event-slot is 10:",
+        "\tsend \"You bought a pie!\"",
+        "",
+        "if display name of player's top inventory is \"Custom Menu\": # 3 rows inventory",
+        "\tif raw index of event-slot > 27: # outside custom inventory",
+        "\t\tcancel event"
       ],
       "events": null,
       "requirements": null,
       "keywords": null
     },
     {
-      "id": "ExprUnixTicks",
-      "name": "Unix Timestamp",
+      "id": "ExprClientViewDistance",
+      "name": "View Distance of Client",
       "since": [
-        "2.2-dev31"
+        "2.5"
       ],
       "deprecated": false,
       "description": [
-        "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970."
+        "The view distance of the client. Can not be changed. This differs from the server side view distance of player as this will retrieve the view distance the player has set on their client."
       ],
       "patterns": [
-        "[the] unix timestamp of %dates%",
-        "%dates%'[s] unix timestamp"
+        "[the] client view distance[s] of %players%",
+        "%players%'[s] client view distance[s]"
       ],
       "examples": [
-        "unix timestamp of now"
+        "set {_clientView} to the client view distance of player",
+        "set view distance of player to client view distance of player"
       ],
       "events": null,
-      "requirements": null,
+      "requirements": [
+        "1.13.2+"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprEnchantmentOfferCost",
+      "name": "Enchantment Offer Cost",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The cost of an enchantment offer. This is displayed to the right of an enchantment offer.",
+        "If the cost is changed, it will always be at least 1.",
+        "This changes how many levels are required to enchant, but does not change the number of levels removed.",
+        "To change the number of levels removed, use the enchant event."
+      ],
+      "patterns": [
+        "[the] [enchant[ment]] cost of %enchantment offers%",
+        "%enchantment offers%'[s] [enchant[ment]] cost"
+      ],
+      "examples": [
+        "set cost of enchantment offer 1 to 50"
+      ],
+      "events": null,
+      "requirements": [
+        "1.11 or newer"
+      ],
       "keywords": null
     },
     {
@@ -17231,32 +17262,6 @@
       ],
       "examples": [
         "set gravity of player off"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprLootContextLuck",
-      "name": "Luck of Loot Context",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the luck of a loot context as a float. This represents the luck potion effect that an entity can have."
-      ],
-      "patterns": [
-        "[the] loot[ing] [context] luck [value|factor] [of %loot contexts%]",
-        "%loot contexts%'[s] loot[ing] [context] luck [value|factor]"
-      ],
-      "examples": [
-        "set {_luck} to loot luck value of {_context}",
-        "",
-        "set {_context} to a loot context at player:",
-        "\tset loot luck value to 10",
-        "\tset looter to player",
-        "\tset looted entity to last spawned pig"
       ],
       "events": null,
       "requirements": null,
@@ -17312,32 +17317,6 @@
       "keywords": null
     },
     {
-      "id": "ExprLightLevel",
-      "name": "Light Level",
-      "since": [
-        "1.3.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the light level at a certain location which ranges from 0 to 15.",
-        "It can be separated into sunlight (15 = direct sunlight, 1-14 = indirect) and block light (torches, glowstone, etc.). The total light level of a block is the maximum of the two different light types."
-      ],
-      "patterns": [
-        "[(sky|sun|block)[ ]]light[ ]level [(of|%direction%) %location%]"
-      ],
-      "examples": [
-        "# set vampire players standing in bright sunlight on fire",
-        "every 5 seconds:",
-        "\tloop all players:",
-        "\t\t{vampire::%uuid of loop-player%} is true",
-        "\t\tsunlight level at the loop-player is greater than 10",
-        "\t\tignite the loop-player for 5 seconds"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprWeather",
       "name": "Weather",
       "since": [
@@ -17364,28 +17343,6 @@
       "events": [
         "weather change"
       ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprRedstoneBlockPower",
-      "name": "Redstone Block Power",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "Power of a redstone block"
-      ],
-      "patterns": [
-        "[the] redstone power of %blocks%",
-        "%blocks%'[s] redstone power"
-      ],
-      "examples": [
-        "if redstone power of targeted block is 15:",
-        "\tsend \"This block is very powerful!\""
-      ],
-      "events": null,
       "requirements": null,
       "keywords": null
     },
@@ -17420,28 +17377,30 @@
       "keywords": null
     },
     {
-      "id": "ExprDamageType",
-      "name": "Damage Source - Damage Type",
+      "id": "ExprMaxHealth",
+      "name": "Max Health",
       "since": [
-        "2.12"
+        "2.0"
       ],
       "deprecated": false,
       "description": [
-        "The type of damage of a damage source.",
-        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+        "The maximum health of an entity, e.g. 10 for a player."
       ],
       "patterns": [
-        "[the] damage type [of %damage sources%]",
-        "%damage sources%'[s] damage type"
+        "[the] max[imum] health of %living entities%",
+        "%living entities%'[s] max[imum] health"
       ],
       "examples": [
-        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
-        "on death:\n\tset {_type} to the damage type of event-damage source\n"
+        "on join:",
+        "\tset the maximum health of the player to 100",
+        "spawn a giant",
+        "set the last spawned entity's max health to 1000"
       ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.20.4+"
+      "events": [
+        "damage",
+        "death"
       ],
+      "requirements": null,
       "keywords": null
     },
     {
@@ -17469,6 +17428,26 @@
       "requirements": [
         "Spigot 1.20.5+ (changeable)"
       ],
+      "keywords": null
+    },
+    {
+      "id": "ExprArrowsStuck",
+      "name": "Arrows Stuck",
+      "since": [
+        "2.5"
+      ],
+      "deprecated": false,
+      "description": [
+        "The number of arrows stuck in a living entity."
+      ],
+      "patterns": [
+        "[number of] arrow[s] stuck in %living entities%"
+      ],
+      "examples": [
+        "set arrows stuck in player to 5"
+      ],
+      "events": null,
+      "requirements": null,
       "keywords": null
     },
     {
@@ -17516,6 +17495,27 @@
       "keywords": null
     },
     {
+      "id": "ExprPandaGene",
+      "name": "Panda Gene",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The main or hidden gene of a panda."
+      ],
+      "patterns": [
+        "[the] (main|hidden) gene[s] of %living entities%",
+        "%living entities%'[s] (main|hidden) gene[s]"
+      ],
+      "examples": [
+        "if the main gene of last spawned panda is lazy:\n\tset the main gene of last spawned panda to playful\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprItemOwner",
       "name": "Dropped Item Owner",
       "since": [
@@ -17537,21 +17537,21 @@
       "keywords": null
     },
     {
-      "id": "ExprPandaGene",
-      "name": "Panda Gene",
+      "id": "ExprDisplayShadow",
+      "name": "Display Shadow Radius/Strength",
       "since": [
-        "2.11"
+        "2.10"
       ],
       "deprecated": false,
       "description": [
-        "The main or hidden gene of a panda."
+        "Returns or changes the shadow radius/strength of <a href='#display'>displays</a>."
       ],
       "patterns": [
-        "[the] (main|hidden) gene[s] of %living entities%",
-        "%living entities%'[s] (main|hidden) gene[s]"
+        "[the] shadow (radius|strength) [of %displays%]",
+        "%displays%'[s] shadow (radius|strength)"
       ],
       "examples": [
-        "if the main gene of last spawned panda is lazy:\n\tset the main gene of last spawned panda to playful\n"
+        "set shadow radius of the last spawned text display to 1.75"
       ],
       "events": null,
       "requirements": null,
@@ -17606,33 +17606,6 @@
       "keywords": null
     },
     {
-      "id": "ExprMaxHealth",
-      "name": "Max Health",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The maximum health of an entity, e.g. 10 for a player."
-      ],
-      "patterns": [
-        "[the] max[imum] health of %living entities%",
-        "%living entities%'[s] max[imum] health"
-      ],
-      "examples": [
-        "on join:",
-        "\tset the maximum health of the player to 100",
-        "spawn a giant",
-        "set the last spawned entity's max health to 1000"
-      ],
-      "events": [
-        "damage",
-        "death"
-      ],
-      "requirements": null,
-      "keywords": null
-    },
-    {
       "id": "ExprPermissions",
       "name": "All Permissions",
       "since": [
@@ -17679,6 +17652,30 @@
       "keywords": null
     },
     {
+      "id": "ExprLevel",
+      "name": "Level",
+      "since": [
+        "unknown (before 2.1)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The level of a player."
+      ],
+      "patterns": [
+        "[the] level of %players%",
+        "%players%'[s] level"
+      ],
+      "examples": [
+        "reduce the victim's level by 1",
+        "set the player's level to 0"
+      ],
+      "events": [
+        "level change"
+      ],
+      "requirements": null,
+      "keywords": null
+    },
+    {
       "id": "ExprGroup",
       "name": "Group",
       "since": [
@@ -17702,6 +17699,30 @@
       "requirements": [
         "Vault",
         "a permission plugin that supports Vault"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ExprBlockHardness",
+      "name": "Block Hardness",
+      "since": [
+        "2.6"
+      ],
+      "deprecated": false,
+      "description": [
+        "Obtains the block's hardness level (also known as \"strength\"). This number is used to calculate the time required to break each block."
+      ],
+      "patterns": [
+        "[the] [block] hardness of %item types%",
+        "%item types%'[s] [block] hardness"
+      ],
+      "examples": [
+        "set {_hard} to block hardness of target block",
+        "if block hardness of target block > 5:"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.13+"
       ],
       "keywords": null
     },
@@ -17808,27 +17829,6 @@
         "item of event-entity",
         "",
         "set the item inside of event-entity to a diamond sword named \"Example\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "ExprDisplayShadow",
-      "name": "Display Shadow Radius/Strength",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns or changes the shadow radius/strength of <a href='#display'>displays</a>."
-      ],
-      "patterns": [
-        "[the] shadow (radius|strength) [of %displays%]",
-        "%displays%'[s] shadow (radius|strength)"
-      ],
-      "examples": [
-        "set shadow radius of the last spawned text display to 1.75"
       ],
       "events": null,
       "requirements": null,
