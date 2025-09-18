@@ -5,7 +5,7 @@
   },
   "source": {
     "name": "Skript",
-    "version": "2.12.2-nightly-dad3605"
+    "version": "2.12.2-nightly-de25c8c"
   },
   "conditions": [
     {
@@ -924,6 +924,33 @@
       "keywords": null
     },
     {
+      "id": "CondIsMember",
+      "name": "Is Member/Owner of Region",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks whether a player is a member or owner of a particular region.",
+        "This condition requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "%offline players% (is|are) ([a] member|[(the|an)] owner) of [[the] region] %regions%",
+        "%offline players% (is|are)(n't| not) ([a] member|[(the|an)] owner) of [[the] region] %regions%"
+      ],
+      "examples": [
+        "on region enter:",
+        "\tplayer is the owner of the region",
+        "\tmessage \"Welcome back to %region%!\"",
+        "\tsend \"%player% just entered %region%!\" to all members of the region"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondPermission",
       "name": "Has Permission",
       "since": [
@@ -1169,33 +1196,6 @@
       "keywords": null
     },
     {
-      "id": "CondIsMember",
-      "name": "Is Member/Owner of Region",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Checks whether a player is a member or owner of a particular region.",
-        "This condition requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "%offline players% (is|are) ([a] member|[(the|an)] owner) of [[the] region] %regions%",
-        "%offline players% (is|are)(n't| not) ([a] member|[(the|an)] owner) of [[the] region] %regions%"
-      ],
-      "examples": [
-        "on region enter:",
-        "\tplayer is the owner of the region",
-        "\tmessage \"Welcome back to %region%!\"",
-        "\tsend \"%player% just entered %region%!\" to all members of the region"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null
-    },
-    {
       "id": "CondIsDivisibleBy",
       "name": "Is Evenly Divisible By",
       "since": [
@@ -1261,36 +1261,6 @@
       "keywords": null
     },
     {
-      "id": "CondRegionContains",
-      "name": "Region Contains",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Checks whether a location is contained in a particular <a href='#region'>region</a>.",
-        "This condition requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[[the] region] %regions% contain[s] %directions% %locations%",
-        "%locations% (is|are) ([contained] in|part of) [[the] region] %regions%",
-        "[[the] region] %regions% (do|does)(n't| not) contain %directions% %locations%",
-        "%locations% (is|are)(n't| not) (contained in|part of) [[the] region] %regions%"
-      ],
-      "examples": [
-        "player is in the region {regions::3}",
-        "",
-        "on region enter:",
-        "\tregion contains {flags.%world%.red}",
-        "\tmessage \"The red flag is near!\""
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null
-    },
-    {
       "id": "CondIsLoaded",
       "name": "Is Loaded",
       "since": [
@@ -1341,6 +1311,36 @@
         "\t\t\tmessage \"You do not have permission to change blocks there!\"",
         "\t\t\tstop",
         "\t\tset the targeted block to argument"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "CondRegionContains",
+      "name": "Region Contains",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks whether a location is contained in a particular <a href='#region'>region</a>.",
+        "This condition requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[[the] region] %regions% contain[s] %directions% %locations%",
+        "%locations% (is|are) ([contained] in|part of) [[the] region] %regions%",
+        "[[the] region] %regions% (do|does)(n't| not) contain %directions% %locations%",
+        "%locations% (is|are)(n't| not) (contained in|part of) [[the] region] %regions%"
+      ],
+      "examples": [
+        "player is in the region {regions::3}",
+        "",
+        "on region enter:",
+        "\tregion contains {flags.%world%.red}",
+        "\tmessage \"The red flag is near!\""
       ],
       "events": null,
       "requirements": [
@@ -9557,36 +9557,6 @@
       }
     },
     {
-      "id": "ExprAllGroups",
-      "name": "All Groups",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "All the groups a player can have. This expression requires Vault and a compatible permissions plugin to be installed."
-      ],
-      "patterns": [
-        "all groups"
-      ],
-      "examples": [
-        "command /group &lt;text&gt;:",
-        "\ttrigger:",
-        "\t\tif argument is \"list\":",
-        "\t\t\tsend \"%all groups%\""
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "a permission plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "text"
-      }
-    },
-    {
       "id": "LitInfinity",
       "name": "Infinity",
       "since": [
@@ -9708,6 +9678,36 @@
       "returns": {
         "id": "entity",
         "name": "entity"
+      }
+    },
+    {
+      "id": "ExprAllGroups",
+      "name": "All Groups",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "All the groups a player can have. This expression requires Vault and a compatible permissions plugin to be installed."
+      ],
+      "patterns": [
+        "all groups"
+      ],
+      "examples": [
+        "command /group &lt;text&gt;:",
+        "\ttrigger:",
+        "\t\tif argument is \"list\":",
+        "\t\t\tsend \"%all groups%\""
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "a permission plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "text"
       }
     },
     {
@@ -10440,6 +10440,61 @@
       }
     },
     {
+      "id": "ExprRegion",
+      "name": "Region",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The <a href='#region'>region</a> involved in an event.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[the] [event-]region"
+      ],
+      "examples": [
+        "on region enter:",
+        "\tregion is {forbidden region}",
+        "\tcancel the event"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "region",
+        "name": "region"
+      }
+    },
+    {
+      "id": "ExprSpawnReason",
+      "name": "Spawn Reason",
+      "since": [
+        "2.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "The <a href='#spawnreason'>spawn reason</a> in a <a href='#spawn'>spawn</a> event."
+      ],
+      "patterns": [
+        "[the] spawn[ing] reason"
+      ],
+      "examples": [
+        "on spawn:",
+        "\tspawn reason is reinforcements or breeding",
+        "\tcancel event"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "spawnreason",
+        "name": "spawn reason"
+      }
+    },
+    {
       "id": "ExprHealReason",
       "name": "Heal Reason",
       "since": [
@@ -10504,35 +10559,6 @@
       "returns": {
         "id": "float",
         "name": "number"
-      }
-    },
-    {
-      "id": "ExprRegion",
-      "name": "Region",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The <a href='#region'>region</a> involved in an event.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[the] [event-]region"
-      ],
-      "examples": [
-        "on region enter:",
-        "\tregion is {forbidden region}",
-        "\tcancel the event"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "region",
-        "name": "region"
       }
     },
     {
@@ -10647,32 +10673,6 @@
       "returns": {
         "id": "timespan",
         "name": "time span"
-      }
-    },
-    {
-      "id": "ExprSpawnReason",
-      "name": "Spawn Reason",
-      "since": [
-        "2.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "The <a href='#spawnreason'>spawn reason</a> in a <a href='#spawn'>spawn</a> event."
-      ],
-      "patterns": [
-        "[the] spawn[ing] reason"
-      ],
-      "examples": [
-        "on spawn:",
-        "\tspawn reason is reinforcements or breeding",
-        "\tcancel event"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "spawnreason",
-        "name": "spawn reason"
       }
     },
     {
@@ -13334,6 +13334,36 @@
       }
     },
     {
+      "id": "ExprBalance",
+      "name": "Money",
+      "since": [
+        "2.0, 2.5 (offline players)"
+      ],
+      "deprecated": false,
+      "description": [
+        "How much virtual money a player has (can be changed)."
+      ],
+      "patterns": [
+        "[the] (money|balance|[bank] account) of %offline players%",
+        "%offline players%'[s] (money|balance|[bank] account)"
+      ],
+      "examples": [
+        "message \"You have %player's money%\" # the currency name will be added automatically",
+        "remove 20$ from the player's balance # replace '$' by whatever currency you use",
+        "add 200 to the player's account # or omit the currency altogether"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "an economy plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "money",
+        "name": "money"
+      }
+    },
+    {
       "id": "ExprDisplayBrightness",
       "name": "Display Brightness",
       "since": [
@@ -13550,35 +13580,6 @@
       "returns": {
         "id": "string",
         "name": "text"
-      }
-    },
-    {
-      "id": "ExprMembersOfRegion",
-      "name": "Region Members & Owners",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "A list of members or owners of a <a href='#region'>region</a>.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
-        "[[the] region[s]] %regions%'[s] (members|owner[s])"
-      ],
-      "examples": [
-        "on entering of a region:",
-        "\tmessage \"You're entering %region% whose owners are %owners of region%\""
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "offlineplayer",
-        "name": "offline player"
       }
     },
     {
@@ -14622,6 +14623,35 @@
       }
     },
     {
+      "id": "ExprMembersOfRegion",
+      "name": "Region Members & Owners",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "A list of members or owners of a <a href='#region'>region</a>.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
+        "[[the] region[s]] %regions%'[s] (members|owner[s])"
+      ],
+      "examples": [
+        "on entering of a region:",
+        "\tmessage \"You're entering %region% whose owners are %owners of region%\""
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "offlineplayer",
+        "name": "offline player"
+      }
+    },
+    {
       "id": "ExprBlockHardness",
       "name": "Block Hardness",
       "since": [
@@ -15015,6 +15045,40 @@
       "returns": {
         "id": "player",
         "name": "player"
+      }
+    },
+    {
+      "id": "ExprPrefixSuffix",
+      "name": "Prefix/Suffix",
+      "since": [
+        "2.0, 2.10 (delete)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The prefix or suffix as defined in the server's chat plugin."
+      ],
+      "patterns": [
+        "[the] [chat] (prefix|suffix) of %players%",
+        "%players%'[s] [chat] (prefix|suffix)"
+      ],
+      "examples": [
+        "on chat:",
+        "\tcancel event",
+        "\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world",
+        "",
+        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \"",
+        "",
+        "clear player's prefix"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "a chat plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "text"
       }
     },
     {
@@ -16474,37 +16538,6 @@
       }
     },
     {
-      "id": "ExprGroup",
-      "name": "Group",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.",
-        "If you have LuckPerms, ensure you have vault integration enabled in the luck perms configurations."
-      ],
-      "patterns": [
-        "[the] group[s] of %offline players%",
-        "%offline players%'[s] group[s]"
-      ],
-      "examples": [
-        "on join:",
-        "\tbroadcast \"%group of player%\" # this is the player's primary group",
-        "\tbroadcast \"%groups of player%\" # this is all of the player's groups"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "a permission plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "text"
-      }
-    },
-    {
       "id": "ExprPickupDelay",
       "name": "Pickup Delay",
       "since": [
@@ -16703,6 +16736,37 @@
       "returns": {
         "id": "uuid",
         "name": "uuid"
+      }
+    },
+    {
+      "id": "ExprGroup",
+      "name": "Group",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.",
+        "If you have LuckPerms, ensure you have vault integration enabled in the luck perms configurations."
+      ],
+      "patterns": [
+        "[the] group[s] of %offline players%",
+        "%offline players%'[s] group[s]"
+      ],
+      "examples": [
+        "on join:",
+        "\tbroadcast \"%group of player%\" # this is the player's primary group",
+        "\tbroadcast \"%groups of player%\" # this is all of the player's groups"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "a permission plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "text"
       }
     },
     {
@@ -18801,70 +18865,6 @@
       }
     },
     {
-      "id": "ExprPrefixSuffix",
-      "name": "Prefix/Suffix",
-      "since": [
-        "2.0, 2.10 (delete)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The prefix or suffix as defined in the server's chat plugin."
-      ],
-      "patterns": [
-        "[the] [chat] (prefix|suffix) of %players%",
-        "%players%'[s] [chat] (prefix|suffix)"
-      ],
-      "examples": [
-        "on chat:",
-        "\tcancel event",
-        "\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world",
-        "",
-        "set the player's prefix to \"[&lt;red&gt;Admin<reset>] \"",
-        "",
-        "clear player's prefix"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "a chat plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "text"
-      }
-    },
-    {
-      "id": "ExprBalance",
-      "name": "Money",
-      "since": [
-        "2.0, 2.5 (offline players)"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much virtual money a player has (can be changed)."
-      ],
-      "patterns": [
-        "[the] (money|balance|[bank] account) of %offline players%",
-        "%offline players%'[s] (money|balance|[bank] account)"
-      ],
-      "examples": [
-        "message \"You have %player's money%\" # the currency name will be added automatically",
-        "remove 20$ from the player's balance # replace '$' by whatever currency you use",
-        "add 200 to the player's account # or omit the currency altogether"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "an economy plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "money",
-        "name": "money"
-      }
-    },
-    {
       "id": "ExprLanguage",
       "name": "Language",
       "since": [
@@ -20235,32 +20235,6 @@
       }
     },
     {
-      "id": "ExprXOf",
-      "name": "X of Item/Entity Type",
-      "since": [
-        "1.2"
-      ],
-      "deprecated": false,
-      "description": [
-        "An expression for using an item or entity type with a different amount."
-      ],
-      "patterns": [
-        "%number% of %item stacks/item types/entity type%"
-      ],
-      "examples": [
-        "give level of player of iron pickaxes to the player"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": [
-        "amount"
-      ],
-      "returns": {
-        "id": "object",
-        "name": "object"
-      }
-    },
-    {
       "id": "ExprArithmetic",
       "name": "Arithmetic",
       "since": [
@@ -20317,6 +20291,32 @@
       "events": null,
       "requirements": null,
       "keywords": null,
+      "returns": {
+        "id": "object",
+        "name": "object"
+      }
+    },
+    {
+      "id": "ExprXOf",
+      "name": "X of Item/Entity Type",
+      "since": [
+        "1.2"
+      ],
+      "deprecated": false,
+      "description": [
+        "An expression for using an item or entity type with a different amount."
+      ],
+      "patterns": [
+        "%number% of %item stacks/item types/entity type%"
+      ],
+      "examples": [
+        "give level of player of iron pickaxes to the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "amount"
+      ],
       "returns": {
         "id": "object",
         "name": "object"
@@ -21284,12 +21284,12 @@
           "name": "item stacks"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "slot",
@@ -23933,12 +23933,12 @@
           "name": "world"
         },
         {
-          "id": "block",
-          "name": "blocks"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "block",
+          "name": "blocks"
         }
       ],
       "keywords": null
@@ -24778,12 +24778,12 @@
           "name": "block"
         },
         {
-          "id": "inventory",
-          "name": "future inventory"
-        },
-        {
           "id": "block",
           "name": "future block"
+        },
+        {
+          "id": "inventory",
+          "name": "future inventory"
         },
         {
           "id": "inventory",
@@ -25351,6 +25351,40 @@
         {
           "id": "entity",
           "name": "entity"
+        }
+      ],
+      "keywords": null
+    },
+    {
+      "id": "EvtRegionBorder",
+      "name": "On Region Enter/Leave",
+      "cancellable": true,
+      "since": [
+        "2.1"
+      ],
+      "patterns": [
+        "(enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %regions%)",
+        "region (enter[ing]|leav(e|ing)|exit[ing])"
+      ],
+      "description": [
+        "Called when a player enters or leaves a <a href='#region'>region</a>.",
+        "This event requires a supported regions plugin to be installed."
+      ],
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "examples": [
+        "on region exit:",
+        "\tmessage \"Leaving %region%.\""
+      ],
+      "eventValues": [
+        {
+          "id": "player",
+          "name": "player"
+        },
+        {
+          "id": "region",
+          "name": "region"
         }
       ],
       "keywords": null
@@ -26204,40 +26238,6 @@
         {
           "id": "entity",
           "name": "entity"
-        }
-      ],
-      "keywords": null
-    },
-    {
-      "id": "EvtRegionBorder",
-      "name": "On Region Enter/Leave",
-      "cancellable": true,
-      "since": [
-        "2.1"
-      ],
-      "patterns": [
-        "(enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %regions%)",
-        "region (enter[ing]|leav(e|ing)|exit[ing])"
-      ],
-      "description": [
-        "Called when a player enters or leaves a <a href='#region'>region</a>.",
-        "This event requires a supported regions plugin to be installed."
-      ],
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "examples": [
-        "on region exit:",
-        "\tmessage \"Leaving %region%.\""
-      ],
-      "eventValues": [
-        {
-          "id": "player",
-          "name": "player"
-        },
-        {
-          "id": "region",
-          "name": "region"
         }
       ],
       "keywords": null
