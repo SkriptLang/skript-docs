@@ -17,6 +17,7 @@ ch.njol.skript.lang.parser
 ch.njol.skript.lang.simplification
 ch.njol.skript.lang.util
 ch.njol.skript.lang.util.common
+ch.njol.skript.literals
 ch.njol.skript.localization
 ch.njol.skript.log
 ch.njol.skript.patterns
@@ -36,8 +37,11 @@ ch.njol.yggdrasil
 org.skriptlang.skript
 org.skriptlang.skript.addon
 org.skriptlang.skript.bukkit
+org.skriptlang.skript.bukkit.base.types
 org.skriptlang.skript.bukkit.breeding
 org.skriptlang.skript.bukkit.breeding.elements
+org.skriptlang.skript.bukkit.brewing
+org.skriptlang.skript.bukkit.brewing.elements
 org.skriptlang.skript.bukkit.damagesource
 org.skriptlang.skript.bukkit.damagesource.elements
 org.skriptlang.skript.bukkit.displays
@@ -52,6 +56,10 @@ org.skriptlang.skript.bukkit.input
 org.skriptlang.skript.bukkit.input.elements.conditions
 org.skriptlang.skript.bukkit.input.elements.events
 org.skriptlang.skript.bukkit.input.elements.expressions
+org.skriptlang.skript.bukkit.itemcomponents
+org.skriptlang.skript.bukkit.itemcomponents.equippable
+org.skriptlang.skript.bukkit.itemcomponents.equippable.elements
+org.skriptlang.skript.bukkit.itemcomponents.generic
 org.skriptlang.skript.bukkit.log.runtime
 org.skriptlang.skript.bukkit.loottables
 org.skriptlang.skript.bukkit.loottables.elements.conditions
@@ -64,6 +72,13 @@ org.skriptlang.skript.bukkit.registration
 org.skriptlang.skript.bukkit.tags
 org.skriptlang.skript.bukkit.tags.elements
 org.skriptlang.skript.bukkit.tags.sources
+org.skriptlang.skript.common
+org.skriptlang.skript.common.expressions
+org.skriptlang.skript.common.function
+org.skriptlang.skript.common.properties
+org.skriptlang.skript.common.properties.conditions
+org.skriptlang.skript.common.properties.expressions
+org.skriptlang.skript.common.types
 org.skriptlang.skript.lang.arithmetic
 org.skriptlang.skript.lang.comparator
 org.skriptlang.skript.lang.condition
@@ -71,6 +86,7 @@ org.skriptlang.skript.lang.converter
 org.skriptlang.skript.lang.entry
 org.skriptlang.skript.lang.entry.util
 org.skriptlang.skript.lang.experiment
+org.skriptlang.skript.lang.properties
 org.skriptlang.skript.lang.script
 org.skriptlang.skript.lang.structure
 org.skriptlang.skript.lang.util
