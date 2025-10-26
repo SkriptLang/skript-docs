@@ -5,7 +5,7 @@
   },
   "source": {
     "name": "Skript",
-    "version": "2.13.0-nightly-36ec5f5"
+    "version": "2.13.0-nightly-910bc5f"
   },
   "conditions": [
     {
@@ -14022,35 +14022,6 @@
       }
     },
     {
-      "id": "ExprFireworkEffect",
-      "name": "Firework Effect",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
-      ],
-      "patterns": [
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "launch flickering trailing burst firework colored blue and green at player",
-        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
-        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "fireworkeffect",
-        "name": "firework effect"
-      }
-    },
-    {
       "id": "ExprRandomCharacter",
       "name": "Random Character",
       "since": [
@@ -14077,6 +14048,35 @@
       "returns": {
         "id": "string",
         "name": "text"
+      }
+    },
+    {
+      "id": "ExprFireworkEffect",
+      "name": "Firework Effect",
+      "since": [
+        "2.4"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
+      ],
+      "patterns": [
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "launch flickering trailing burst firework colored blue and green at player",
+        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
+        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "fireworkeffect",
+        "name": "firework effect"
       }
     },
     {
