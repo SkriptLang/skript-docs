@@ -28,7 +28,6 @@ ch.njol.skript.update
 ch.njol.skript.util
 ch.njol.skript.util.chat
 ch.njol.skript.util.slot
-ch.njol.skript.util.visual
 ch.njol.skript.variables
 ch.njol.util
 ch.njol.util.coll
@@ -48,6 +47,8 @@ org.skriptlang.skript.bukkit.displays
 org.skriptlang.skript.bukkit.displays.generic
 org.skriptlang.skript.bukkit.displays.item
 org.skriptlang.skript.bukkit.displays.text
+org.skriptlang.skript.bukkit.entity
+org.skriptlang.skript.bukkit.entity.nautilus
 org.skriptlang.skript.bukkit.fishing
 org.skriptlang.skript.bukkit.fishing.elements
 org.skriptlang.skript.bukkit.furnace
@@ -56,6 +57,10 @@ org.skriptlang.skript.bukkit.input
 org.skriptlang.skript.bukkit.input.elements.conditions
 org.skriptlang.skript.bukkit.input.elements.events
 org.skriptlang.skript.bukkit.input.elements.expressions
+org.skriptlang.skript.bukkit.interactions
+org.skriptlang.skript.bukkit.interactions.elements.conditions
+org.skriptlang.skript.bukkit.interactions.elements.effects
+org.skriptlang.skript.bukkit.interactions.elements.expressions
 org.skriptlang.skript.bukkit.itemcomponents
 org.skriptlang.skript.bukkit.itemcomponents.equippable
 org.skriptlang.skript.bukkit.itemcomponents.equippable.elements
@@ -68,6 +73,17 @@ org.skriptlang.skript.bukkit.loottables.elements.expressions
 org.skriptlang.skript.bukkit.misc.effects
 org.skriptlang.skript.bukkit.misc.expressions
 org.skriptlang.skript.bukkit.misc.rotation
+org.skriptlang.skript.bukkit.particles
+org.skriptlang.skript.bukkit.particles.elements.effects
+org.skriptlang.skript.bukkit.particles.elements.expressions
+org.skriptlang.skript.bukkit.particles.particleeffects
+org.skriptlang.skript.bukkit.particles.registration
+org.skriptlang.skript.bukkit.potion
+org.skriptlang.skript.bukkit.potion.elements.conditions
+org.skriptlang.skript.bukkit.potion.elements.effects
+org.skriptlang.skript.bukkit.potion.elements.events
+org.skriptlang.skript.bukkit.potion.elements.expressions
+org.skriptlang.skript.bukkit.potion.util
 org.skriptlang.skript.bukkit.registration
 org.skriptlang.skript.bukkit.tags
 org.skriptlang.skript.bukkit.tags.elements
@@ -79,6 +95,7 @@ org.skriptlang.skript.common.properties
 org.skriptlang.skript.common.properties.conditions
 org.skriptlang.skript.common.properties.expressions
 org.skriptlang.skript.common.types
+org.skriptlang.skript.docs
 org.skriptlang.skript.lang.arithmetic
 org.skriptlang.skript.lang.comparator
 org.skriptlang.skript.lang.condition
@@ -87,6 +104,8 @@ org.skriptlang.skript.lang.entry
 org.skriptlang.skript.lang.entry.util
 org.skriptlang.skript.lang.experiment
 org.skriptlang.skript.lang.properties
+org.skriptlang.skript.lang.properties.handlers
+org.skriptlang.skript.lang.properties.handlers.base
 org.skriptlang.skript.lang.script
 org.skriptlang.skript.lang.structure
 org.skriptlang.skript.lang.util
