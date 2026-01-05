@@ -5,7 +5,7 @@
   },
   "source": {
     "name": "Skript",
-    "version": "2.14.0-pre1-nightly-51f53eb"
+    "version": "2.14.0-pre1-nightly-4360e91"
   },
   "conditions": [
     {
@@ -864,6 +864,32 @@
       "keywords": null
     },
     {
+      "id": "CondIsMember",
+      "name": "Is Member/Owner of Region",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Checks whether a player is a member or owner of a particular region.",
+        "This condition requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "%offline players% (is|are) ([a] member|[(the|an)] owner) of [[the] region] %regions%",
+        "%offline players% (is|are)(n't| not) ([a] member|[(the|an)] owner) of [[the] region] %regions%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on region enter:\n\tplayer is the owner of the region\n\tmessage \"Welcome back to %region%!\"\n\tsend \"%player% just entered %region%!\" to all members of the region\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null
+    },
+    {
       "id": "CondCanHold",
       "name": "Can Hold",
       "since": [
@@ -908,32 +934,6 @@
       ],
       "events": null,
       "requirements": null,
-      "keywords": null
-    },
-    {
-      "id": "CondIsMember",
-      "name": "Is Member/Owner of Region",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Checks whether a player is a member or owner of a particular region.",
-        "This condition requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "%offline players% (is|are) ([a] member|[(the|an)] owner) of [[the] region] %regions%",
-        "%offline players% (is|are)(n't| not) ([a] member|[(the|an)] owner) of [[the] region] %regions%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on region enter:\n\tplayer is the owner of the region\n\tmessage \"Welcome back to %region%!\"\n\tsend \"%player% just entered %region%!\" to all members of the region\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
       "keywords": null
     },
     {
@@ -8442,35 +8442,6 @@
       }
     },
     {
-      "id": "ExprAllGroups",
-      "name": "All Groups",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "All the groups a player can have. This expression requires Vault and a compatible permissions plugin to be installed."
-      ],
-      "patterns": [
-        "all groups"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "command /group &lt;text&gt;:\n\ttrigger:\n\t\tif argument is \"list\":\n\t\t\tsend \"%all groups%\"\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "a permission plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "Text"
-      }
-    },
-    {
       "id": "LitEternity",
       "name": "An Eternity",
       "since": [
@@ -8990,35 +8961,6 @@
       }
     },
     {
-      "id": "ExprTPS",
-      "name": "TPS (ticks per second)",
-      "since": [
-        "2.2-dev36"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the 3 most recent TPS readings, like the /tps command. This expression is only supported on some server software (PaperSpigot)."
-      ],
-      "patterns": [
-        "tps from [the] last ([1] minute|1[ ]m[inute])",
-        "tps from [the] last 5[ ]m[inutes]",
-        "tps from [the] last 15[ ]m[inutes]",
-        "[the] tps"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "broadcast \"%tps%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprMessage",
       "name": "Message",
       "since": [
@@ -9185,71 +9127,27 @@
       }
     },
     {
-      "id": "ExprAppliedEffect",
-      "name": "Applied Beacon Effect",
+      "id": "ExprTPS",
+      "name": "TPS (ticks per second)",
       "since": [
-        "2.10"
+        "2.2-dev36"
       ],
       "deprecated": false,
       "description": [
-        "The type of effect applied by a beacon."
+        "Returns the 3 most recent TPS readings, like the /tps command. This expression is only supported on some server software (PaperSpigot)."
       ],
       "patterns": [
-        "[the] applied [beacon] effect"
+        "tps from [the] last ([1] minute|1[ ]m[inute])",
+        "tps from [the] last 5[ ]m[inutes]",
+        "tps from [the] last 15[ ]m[inutes]",
+        "[the] tps"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on beacon effect:\n\tif the applied effect is primary beacon effect:\n\t\tbroadcast \"Is Primary\"\n\telse if applied effect = secondary effect:\n\t\tbroadcast \"Is Secondary\"\n"
+        "broadcast \"%tps%\""
       ],
-      "events": [
-        {
-          "id": "beacon_effect",
-          "name": "On Beacon Effect"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "potioneffecttype",
-        "name": "Potion Effect Type"
-      }
-    },
-    {
-      "id": "ExprDamage",
-      "name": "Damage",
-      "since": [
-        "1.3.5, 2.8.0 (item damage event)"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much damage is done in a entity/vehicle/item damage events.",
-        "For entity damage events, possibly ignoring armour, criticals and/or enchantments (remember that in Skript '1' is one full heart, not half a heart).",
-        "For items, it's the amount of durability damage the item will be taking."
-      ],
-      "patterns": [
-        "[the] damage"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on item damage:\n\tevent-item is any tool\n\tclear damage # unbreakable tools as the damage will be 0\n",
-        "on damage:\n\tincrease the damage by 2\n"
-      ],
-      "events": [
-        {
-          "id": "damage",
-          "name": "On Damage"
-        },
-        {
-          "id": "vehicle_damage",
-          "name": "On Vehicle Damage"
-        },
-        {
-          "id": "item_damage",
-          "name": "On Item Damage"
-        }
-      ],
+      "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
@@ -9350,6 +9248,48 @@
       "returns": {
         "id": "block",
         "name": "Block"
+      }
+    },
+    {
+      "id": "ExprDamage",
+      "name": "Damage",
+      "since": [
+        "1.3.5, 2.8.0 (item damage event)"
+      ],
+      "deprecated": false,
+      "description": [
+        "How much damage is done in a entity/vehicle/item damage events.",
+        "For entity damage events, possibly ignoring armour, criticals and/or enchantments (remember that in Skript '1' is one full heart, not half a heart).",
+        "For items, it's the amount of durability damage the item will be taking."
+      ],
+      "patterns": [
+        "[the] damage"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on item damage:\n\tevent-item is any tool\n\tclear damage # unbreakable tools as the damage will be 0\n",
+        "on damage:\n\tincrease the damage by 2\n"
+      ],
+      "events": [
+        {
+          "id": "damage",
+          "name": "On Damage"
+        },
+        {
+          "id": "vehicle_damage",
+          "name": "On Vehicle Damage"
+        },
+        {
+          "id": "item_damage",
+          "name": "On Item Damage"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -9675,6 +9615,35 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprAllGroups",
+      "name": "All Groups",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "All the groups a player can have. This expression requires Vault and a compatible permissions plugin to be installed."
+      ],
+      "patterns": [
+        "all groups"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "command /group &lt;text&gt;:\n\ttrigger:\n\t\tif argument is \"list\":\n\t\t\tsend \"%all groups%\"\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "a permission plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "Text"
       }
     },
     {
@@ -10022,6 +9991,37 @@
       "returns": {
         "id": "entity",
         "name": "Entity"
+      }
+    },
+    {
+      "id": "ExprAppliedEffect",
+      "name": "Applied Beacon Effect",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The type of effect applied by a beacon."
+      ],
+      "patterns": [
+        "[the] applied [beacon] effect"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on beacon effect:\n\tif the applied effect is primary beacon effect:\n\t\tbroadcast \"Is Primary\"\n\telse if applied effect = secondary effect:\n\t\tbroadcast \"Is Secondary\"\n"
+      ],
+      "events": [
+        {
+          "id": "beacon_effect",
+          "name": "On Beacon Effect"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "potioneffecttype",
+        "name": "Potion Effect Type"
       }
     },
     {
@@ -10426,37 +10426,6 @@
       }
     },
     {
-      "id": "ExprFinalDamage",
-      "name": "Final Damage",
-      "since": [
-        "2.2-dev19"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much damage is done in a damage event, considering all types of damage reduction. Can NOT be changed."
-      ],
-      "patterns": [
-        "[the] final damage"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "send \"%final damage%\" to victim"
-      ],
-      "events": [
-        {
-          "id": "damage",
-          "name": "On Damage"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprTransformReason",
       "name": "Transform Reason",
       "since": [
@@ -10544,6 +10513,37 @@
       "returns": {
         "id": "block",
         "name": "Block"
+      }
+    },
+    {
+      "id": "ExprFinalDamage",
+      "name": "Final Damage",
+      "since": [
+        "2.2-dev19"
+      ],
+      "deprecated": false,
+      "description": [
+        "How much damage is done in a damage event, considering all types of damage reduction. Can NOT be changed."
+      ],
+      "patterns": [
+        "[the] final damage"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "send \"%final damage%\" to victim"
+      ],
+      "events": [
+        {
+          "id": "damage",
+          "name": "On Damage"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -10924,39 +10924,6 @@
       }
     },
     {
-      "id": "ExprAngle",
-      "name": "Angle",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the passed number value in degrees.",
-        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
-      ],
-      "patterns": [
-        "%number% [in] deg[ree][s]",
-        "%number% [in] rad[ian][s]",
-        "%numbers% in deg[ree][s]",
-        "%numbers% in rad[ian][s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_angle} to 90 degrees",
-        "{_angle} is 90 # true",
-        "180 degrees is pi # true",
-        "pi radians is 180 degrees # true"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprLastSpawnedEntity",
       "name": "Last Spawned Entity",
       "since": [
@@ -11022,6 +10989,39 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprAngle",
+      "name": "Angle",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the passed number value in degrees.",
+        "If radians is specified, converts the passed value to degrees. This conversion may not be entirely accurate, due to floating point precision."
+      ],
+      "patterns": [
+        "%number% [in] deg[ree][s]",
+        "%number% [in] rad[ian][s]",
+        "%numbers% in deg[ree][s]",
+        "%numbers% in rad[ian][s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_angle} to 90 degrees",
+        "{_angle} is 90 # true",
+        "180 degrees is pi # true",
+        "pi radians is 180 degrees # true"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -11113,35 +11113,6 @@
       "returns": {
         "id": "object",
         "name": "Object"
-      }
-    },
-    {
-      "id": "ExprRegion",
-      "name": "Region",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The <a href='#region'>region</a> involved in an event.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[the] [event-]region"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on region enter:\n\tregion is {forbidden region}\n\tcancel the event\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "region",
-        "name": "Region"
       }
     },
     {
@@ -11255,6 +11226,35 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprRegion",
+      "name": "Region",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The <a href='#region'>region</a> involved in an event.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[the] [event-]region"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on region enter:\n\tregion is {forbidden region}\n\tcancel the event\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "region",
+        "name": "Region"
       }
     },
     {
@@ -11993,35 +11993,6 @@
       }
     },
     {
-      "id": "ExprBlocksInRegion",
-      "name": "Blocks in Region",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "All blocks in a <a href='#region'>region</a>.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[(all|the)] blocks (in|of) [[the] region[s]] %regions%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "loop all blocks in the region {arena.%{faction.%player%}%}:\n\tclear the loop-block\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "block",
-        "name": "Block"
-      }
-    },
-    {
       "id": "ExprSecDamageSource",
       "name": "Damage Source",
       "since": [
@@ -12081,6 +12052,35 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprBlocksInRegion",
+      "name": "Blocks in Region",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "All blocks in a <a href='#region'>region</a>.",
+        "This expression requires a supported regions plugin to be installed."
+      ],
+      "patterns": [
+        "[(all|the)] blocks (in|of) [[the] region[s]] %regions%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "loop all blocks in the region {arena.%{faction.%player%}%}:\n\tclear the loop-block\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "block",
+        "name": "Block"
       }
     },
     {
@@ -12332,32 +12332,6 @@
       }
     },
     {
-      "id": "ExprLootTableFromString",
-      "name": "Loot Table from Key",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loot table from a namespaced key."
-      ],
-      "patterns": [
-        "[the] loot[ ]table[s] %texts%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
-      }
-    },
-    {
       "id": "ExprAlphabetList",
       "name": "Alphabetical Sort",
       "since": [
@@ -12440,6 +12414,32 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprLootTableFromString",
+      "name": "Loot Table from Key",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loot table from a namespaced key."
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] %texts%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "loottable",
+        "name": "Loot Table"
       }
     },
     {
@@ -13747,32 +13747,6 @@
       }
     },
     {
-      "id": "ExprVectorAngleBetween",
-      "name": "Vectors - Angle Between",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the angle between two vectors."
-      ],
-      "patterns": [
-        "[the] angle between [[the] vectors] %vector% and %vector%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprGameRule",
       "name": "Gamerule Value",
       "since": [
@@ -13796,6 +13770,32 @@
       "returns": {
         "id": "gamerulevalue",
         "name": "Gamerule Value"
+      }
+    },
+    {
+      "id": "ExprVectorAngleBetween",
+      "name": "Vectors - Angle Between",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets the angle between two vectors."
+      ],
+      "patterns": [
+        "[the] angle between [[the] vectors] %vector% and %vector%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "send \"%the angle between vector 1, 0, 0 and vector 0, 1, 1%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -13898,35 +13898,6 @@
       }
     },
     {
-      "id": "ExprRandomCharacter",
-      "name": "Random Character",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "One or more random characters between two given characters. Use 'alphanumeric' if you want only alphanumeric characters.",
-        "This expression uses the Unicode numerical code of a character to determine which characters are between the two given characters.",
-        "If strings of more than one character are given, only the first character of each is used."
-      ],
-      "patterns": [
-        "[a|%integer%] random [alphanumeric] character[s] (from|between) %text% (to|and) %text%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_captcha} to join (5 random characters between \"a\" and \"z\") with \"\"",
-        "send 3 random alphanumeric characters between \"0\" and \"z\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "Text"
-      }
-    },
-    {
       "id": "ExprFireworkEffect",
       "name": "Firework Effect",
       "since": [
@@ -13953,6 +13924,35 @@
       "returns": {
         "id": "fireworkeffect",
         "name": "Firework Effect"
+      }
+    },
+    {
+      "id": "ExprRandomCharacter",
+      "name": "Random Character",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "One or more random characters between two given characters. Use 'alphanumeric' if you want only alphanumeric characters.",
+        "This expression uses the Unicode numerical code of a character to determine which characters are between the two given characters.",
+        "If strings of more than one character are given, only the first character of each is used."
+      ],
+      "patterns": [
+        "[a|%integer%] random [alphanumeric] character[s] (from|between) %text% (to|and) %text%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_captcha} to join (5 random characters between \"a\" and \"z\") with \"\"",
+        "send 3 random alphanumeric characters between \"0\" and \"z\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "Text"
       }
     },
     {
@@ -14525,6 +14525,38 @@
       }
     },
     {
+      "id": "ExprPrefixSuffix",
+      "name": "Prefix/Suffix",
+      "since": [
+        "2.0, 2.10 (delete)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The prefix or suffix as defined in the server's chat plugin."
+      ],
+      "patterns": [
+        "[the] [chat] (prefix|suffix) of %players%",
+        "%players%'[s] [chat] (prefix|suffix)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on chat:\n\tcancel event\n\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world\n",
+        "set the player's prefix to \"[<red>Admin<reset>] \"",
+        "clear player's prefix"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "a chat plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "string",
+        "name": "Text"
+      }
+    },
+    {
       "id": "PropExprName",
       "name": "Name",
       "since": [
@@ -14677,6 +14709,33 @@
       }
     },
     {
+      "id": "ExprLastDamage",
+      "name": "Last Damage",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The last damage that was done to an entity. Note that changing it doesn't deal more/less damage."
+      ],
+      "patterns": [
+        "[the] last damage of %living entities%",
+        "%living entities%'[s] last damage"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set last damage of event-entity to 2"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprNoDamageTicks",
       "name": "No Damage Ticks",
       "since": [
@@ -14761,62 +14820,6 @@
       "returns": {
         "id": "location",
         "name": "Location"
-      }
-    },
-    {
-      "id": "ExprVectorSquaredLength",
-      "name": "Vectors - Squared Length",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets the squared length of a vector."
-      ],
-      "patterns": [
-        "[the] squared length[s] of %vectors%",
-        "%vectors%'[s] squared length[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "send \"%squared length of vector 1, 2, 3%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprVillagerType",
-      "name": "Villager Type",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the type of a villager/zombie villager. This usually represents the biome the villager is from."
-      ],
-      "patterns": [
-        "[the] villager type of %living entities%",
-        "%living entities%'[s] villager type"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_type} to villager type of {_villager}",
-        "villager type of {_villager} = plains",
-        "set villager type of event-entity to plains"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "villagertype",
-        "name": "Villager Type"
       }
     },
     {
@@ -14960,31 +14963,30 @@
       }
     },
     {
-      "id": "ExprDisplayTransformationRotation",
-      "name": "Display Transformation Rotation",
+      "id": "ExprVectorSquaredLength",
+      "name": "Vectors - Squared Length",
       "since": [
-        "2.10"
+        "2.2-dev28"
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
-        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+        "Gets the squared length of a vector."
       ],
       "patterns": [
-        "[the] (left|right) [transformation] rotation [of %displays%]",
-        "%displays%'[s] (left|right) [transformation] rotation"
+        "[the] squared length[s] of %vectors%",
+        "%vectors%'[s] squared length[s]"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+        "send \"%squared length of vector 1, 2, 3%\""
       ],
       "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "quaternion",
-        "name": "Quaternion"
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -15048,6 +15050,37 @@
       }
     },
     {
+      "id": "ExprDamageType",
+      "name": "Damage Source - Damage Type",
+      "since": [
+        "2.12"
+      ],
+      "deprecated": false,
+      "description": [
+        "The type of damage of a damage source.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
+      ],
+      "patterns": [
+        "[the] damage type [of %damage sources%]",
+        "%damage sources%'[s] damage type"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on death:\n\tset {_type} to the damage type of event-damage source\n"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20.4+"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "damagetype",
+        "name": "Damage Type"
+      }
+    },
+    {
       "id": "ExprLastAttacker",
       "name": "Last Attacker",
       "since": [
@@ -15092,34 +15125,6 @@
       "propertyTypes": null,
       "examples": [
         "command /protocolversion <player>:\n\ttrigger:\n\t\tsend \"Protocol version of %arg-1%: %protocol version of arg-1%\"\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprParticleSpeed",
-      "name": "Particle Speed/Extra Value",
-      "since": [
-        "2.14"
-      ],
-      "deprecated": false,
-      "description": [
-        "Determines the specific 'speed' or 'extra' value of a particle.\nThis value is used in different ways depending on the particle, but in general it:\n* acts as the speed at which the particle moves if the particle count is greater than 0.\n* acts as a multiplier to the particle's offset if the particle count is 0.\n\nMore detailed information on particle behavior can be found at <a href=\"https://docs.papermc.io/paper/dev/particles/#count-argument-behavior\">Paper's particle documentation</a>.\n"
-      ],
-      "patterns": [
-        "[the] (particle speed [value]|extra value) of %particle effects%",
-        "%particle effects%'[s] (particle speed [value]|extra value)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set the extra value of {_my-flame-particle} to 2",
-        "set the particle speed of {_my-flame-particle} to 0"
       ],
       "events": null,
       "requirements": null,
@@ -15191,6 +15196,34 @@
       }
     },
     {
+      "id": "ExprDisplayTransformationRotation",
+      "name": "Display Transformation Rotation",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
+        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+      ],
+      "patterns": [
+        "[the] (left|right) [transformation] rotation [of %displays%]",
+        "%displays%'[s] (left|right) [transformation] rotation"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "quaternion",
+        "name": "Quaternion"
+      }
+    },
+    {
       "id": "ExprPotionAmplifier",
       "name": "Potion Effect - Amplifier",
       "since": [
@@ -15220,33 +15253,31 @@
       }
     },
     {
-      "id": "ExprVillagerProfession",
-      "name": "Villager Profession",
+      "id": "ExprParticleSpeed",
+      "name": "Particle Speed/Extra Value",
       "since": [
-        "2.10"
+        "2.14"
       ],
       "deprecated": false,
       "description": [
-        "Represents the profession of a villager/zombie villager."
+        "Determines the specific 'speed' or 'extra' value of a particle.\nThis value is used in different ways depending on the particle, but in general it:\n* acts as the speed at which the particle moves if the particle count is greater than 0.\n* acts as a multiplier to the particle's offset if the particle count is 0.\n\nMore detailed information on particle behavior can be found at <a href=\"https://docs.papermc.io/paper/dev/particles/#count-argument-behavior\">Paper's particle documentation</a>.\n"
       ],
       "patterns": [
-        "[the] villager profession of %living entities%",
-        "%living entities%'[s] villager profession"
+        "[the] (particle speed [value]|extra value) of %particle effects%",
+        "%particle effects%'[s] (particle speed [value]|extra value)"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set {_p} to villager profession of event-entity",
-        "villager profession of event-entity = nitwit profession",
-        "set villager profession of {_villager} to librarian profession",
-        "delete villager profession of event-entity"
+        "set the extra value of {_my-flame-particle} to 2",
+        "set the particle speed of {_my-flame-particle} to 0"
       ],
       "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "villagerprofession",
-        "name": "Villager Profession"
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -15421,37 +15452,6 @@
       }
     },
     {
-      "id": "ExprGroup",
-      "name": "Group",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.",
-        "If you have LuckPerms, ensure you have vault integration enabled in the luck perms configurations."
-      ],
-      "patterns": [
-        "[the] group[s] of %offline players%",
-        "%offline players%'[s] group[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on join:\n\tbroadcast \"%group of player%\" # this is the player's primary group\n\tbroadcast \"%groups of player%\" # this is all of the player's groups\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "a permission plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "string",
-        "name": "Text"
-      }
-    },
-    {
       "id": "ExprBookTitle",
       "name": "Book Title",
       "since": [
@@ -15535,6 +15535,38 @@
       }
     },
     {
+      "id": "ExprBalance",
+      "name": "Money",
+      "since": [
+        "2.0, 2.5 (offline players)"
+      ],
+      "deprecated": false,
+      "description": [
+        "How much virtual money a player has (can be changed)."
+      ],
+      "patterns": [
+        "[the] (money|balance|[bank] account) of %offline players%",
+        "%offline players%'[s] (money|balance|[bank] account)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "message \"You have %player's money%\" # the currency name will be added automatically",
+        "remove 20$ from the player's balance # replace '$' by whatever currency you use",
+        "add 200 to the player's account # or omit the currency altogether"
+      ],
+      "events": null,
+      "requirements": [
+        "Vault",
+        "an economy plugin that supports Vault"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "money",
+        "name": "Money"
+      }
+    },
+    {
       "id": "ExprTool",
       "name": "Tool",
       "since": [
@@ -15567,36 +15599,6 @@
       }
     },
     {
-      "id": "ExprMembersOfRegion",
-      "name": "Region Members & Owners",
-      "since": [
-        "2.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "A list of members or owners of a <a href='#region'>region</a>.",
-        "This expression requires a supported regions plugin to be installed."
-      ],
-      "patterns": [
-        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
-        "[[the] region[s]] %regions%'[s] (members|owner[s])"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on entering of a region:\n\tmessage \"You're entering %region% whose owners are %owners of region%\"\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "offlineplayer",
-        "name": "Offline Player"
-      }
-    },
-    {
       "id": "ExprEntityItemUseTime",
       "name": "Active Item Use Time",
       "since": [
@@ -15622,33 +15624,6 @@
       "returns": {
         "id": "timespan",
         "name": "Timespan"
-      }
-    },
-    {
-      "id": "ExprMaxMinecartSpeed",
-      "name": "Max Minecart Speed",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The maximum speed of a minecart."
-      ],
-      "patterns": [
-        "[the] max[imum] minecart (speed|velocity) of %entities%",
-        "%entities%'[s] max[imum] minecart (speed|velocity)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on right click on minecart:\n\tset max minecart speed of event-entity to 1\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
       }
     },
     {
@@ -15871,49 +15846,6 @@
       }
     },
     {
-      "id": "ExprBeaconEffects",
-      "name": "Beacon Effects",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The active effects of a beacon.",
-        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
-        "The secondary effect can only be set when the beacon is at max tier.",
-        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
-      ],
-      "patterns": [
-        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
-        "%blocks%'[s] (primary|secondary) [beacon] effect"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
-      ],
-      "events": [
-        {
-          "id": "beacon_effect",
-          "name": "On Beacon Effect"
-        },
-        {
-          "id": "beacon_toggle",
-          "name": "On Beacon Toggle"
-        },
-        {
-          "id": "beacon_change_effect",
-          "name": "On Beacon Change Effect"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "potioneffecttype",
-        "name": "Potion Effect Type"
-      }
-    },
-    {
       "id": "ExprDisplayInterpolation",
       "name": "Display Interpolation Delay/Duration",
       "since": [
@@ -15941,6 +15873,33 @@
       "returns": {
         "id": "timespan",
         "name": "Timespan"
+      }
+    },
+    {
+      "id": "ExprMaxMinecartSpeed",
+      "name": "Max Minecart Speed",
+      "since": [
+        "2.5.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The maximum speed of a minecart."
+      ],
+      "patterns": [
+        "[the] max[imum] minecart (speed|velocity) of %entities%",
+        "%entities%'[s] max[imum] minecart (speed|velocity)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on right click on minecart:\n\tset max minecart speed of event-entity to 1\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -16341,34 +16300,6 @@
       }
     },
     {
-      "id": "ExprInteractionDimensions",
-      "name": "Interaction Height/Width",
-      "since": [
-        "2.14"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the height or width of an interaction entity's hitbox. Both default to 1.\nThe width of the hitbox determines the x/z widths\n"
-      ],
-      "patterns": [
-        "[the] interaction (height|width)[s] [of %entities%]",
-        "%entities%'[s] interaction (height|width)[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set interaction height of last spawned interaction to 5.3",
-        "set interaction width of last spawned interaction to 2"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprVelocity",
       "name": "Velocity",
       "since": [
@@ -16512,6 +16443,36 @@
       }
     },
     {
+      "id": "ExprVillagerProfession",
+      "name": "Villager Profession",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the profession of a villager/zombie villager."
+      ],
+      "patterns": [
+        "[the] villager profession of %living entities%",
+        "%living entities%'[s] villager profession"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_p} to villager profession of event-entity",
+        "villager profession of event-entity = nitwit profession",
+        "set villager profession of {_villager} to librarian profession",
+        "delete villager profession of event-entity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "villagerprofession",
+        "name": "Villager Profession"
+      }
+    },
+    {
       "id": "ExprArrowKnockbackStrength",
       "name": "Arrow Knockback Strength",
       "since": [
@@ -16590,6 +16551,34 @@
       "returns": {
         "id": "itemstack",
         "name": "Item"
+      }
+    },
+    {
+      "id": "ExprInteractionDimensions",
+      "name": "Interaction Height/Width",
+      "since": [
+        "2.14"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the height or width of an interaction entity's hitbox. Both default to 1.\nThe width of the hitbox determines the x/z widths\n"
+      ],
+      "patterns": [
+        "[the] interaction (height|width)[s] [of %entities%]",
+        "%entities%'[s] interaction (height|width)[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set interaction height of last spawned interaction to 5.3",
+        "set interaction width of last spawned interaction to 2"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -16846,36 +16835,6 @@
       }
     },
     {
-      "id": "ExprBlockHardness",
-      "name": "Block Hardness",
-      "since": [
-        "2.6"
-      ],
-      "deprecated": false,
-      "description": [
-        "Obtains the block's hardness level (also known as \"strength\"). This number is used to calculate the time required to break each block."
-      ],
-      "patterns": [
-        "[the] [block] hardness of %item types%",
-        "%item types%'[s] [block] hardness"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_hard} to block hardness of target block",
-        "if block hardness of target block > 5:"
-      ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.13+"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprCompassTarget",
       "name": "Compass Target",
       "since": [
@@ -16901,43 +16860,6 @@
       "returns": {
         "id": "location",
         "name": "Location"
-      }
-    },
-    {
-      "id": "ExprVillagerLevel",
-      "name": "Villager Level/Experience",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the level/experience of a villager.",
-        "The level will determine which trades are available to players (value between 1 and 5, defaults to 1).",
-        "When a villager's level is 1, they may lose their profession if they don't have a workstation.",
-        "Experience works along with the leveling system, determining which level the villager will move to.",
-        "Experience must be greater than or equal to 0.",
-        "Learn more about villager levels on <a href='https://minecraft.wiki/w/Trading#Level'>Minecraft Wiki</a>"
-      ],
-      "patterns": [
-        "[the] villager (level|experience) of %living entities%",
-        "%living entities%'[s] villager (level|experience)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_level} to villager level of {_villager}",
-        "set villager level of last spawned villager to 2",
-        "add 1 to villager level of target entity",
-        "remove 1 from villager level of event-entity",
-        "reset villager level of event-entity",
-        "set villager experience of last spawned entity to 100"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
       }
     },
     {
@@ -17026,39 +16948,6 @@
       }
     },
     {
-      "id": "ExprLevelProgress",
-      "name": "Level Progress",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The player's progress in reaching the next level, this represents the experience bar in the game. Please note that this value is between 0 and 1 (e.g. 0.5 = half experience bar).",
-        "Changing this value can cause the player's level to change if the resulting level progess is negative or larger than 1, e.g. <code>increase the player's level progress by 0.5</code> will make the player gain a level if their progress was more than 50%."
-      ],
-      "patterns": [
-        "[the] level progress of %players%",
-        "%players%'[s] level progress"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "# use the exp bar as mana\non rightclick with a blaze rod:\n\tplayer's level progress is larger than 0.2\n\tshoot a fireball from the player\n\treduce the player's level progress by 0.2\nevery 2 seconds:\n\tloop all players:\n\t\tlevel progress of loop-player is smaller than 0.9:\n\t\t\tincrease level progress of the loop-player by 0.1\n\t\telse:\n\t\t\tset level progress of the loop-player to 0.99\non xp spawn:\n\tcancel event\n"
-      ],
-      "events": [
-        {
-          "id": "level_change",
-          "name": "On Level Change"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprPotionEffects",
       "name": "Potion Effects of Entity/Item",
       "since": [
@@ -17122,30 +17011,29 @@
       }
     },
     {
-      "id": "ExprPrefixSuffix",
-      "name": "Prefix/Suffix",
+      "id": "ExprGroup",
+      "name": "Group",
       "since": [
-        "2.0, 2.10 (delete)"
+        "2.2-dev35"
       ],
       "deprecated": false,
       "description": [
-        "The prefix or suffix as defined in the server's chat plugin."
+        "The primary group or all groups of a player. This expression requires Vault and a compatible permissions plugin to be installed.",
+        "If you have LuckPerms, ensure you have vault integration enabled in the luck perms configurations."
       ],
       "patterns": [
-        "[the] [chat] (prefix|suffix) of %players%",
-        "%players%'[s] [chat] (prefix|suffix)"
+        "[the] group[s] of %offline players%",
+        "%offline players%'[s] group[s]"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on chat:\n\tcancel event\n\tbroadcast \"%player's prefix%%player's display name%%player's suffix%: %message%\" to the player's world\n",
-        "set the player's prefix to \"[<red>Admin<reset>] \"",
-        "clear player's prefix"
+        "on join:\n\tbroadcast \"%group of player%\" # this is the player's primary group\n\tbroadcast \"%groups of player%\" # this is all of the player's groups\n"
       ],
       "events": null,
       "requirements": [
         "Vault",
-        "a chat plugin that supports Vault"
+        "a permission plugin that supports Vault"
       ],
       "keywords": null,
       "returns": {
@@ -17238,6 +17126,36 @@
       }
     },
     {
+      "id": "ExprBlockHardness",
+      "name": "Block Hardness",
+      "since": [
+        "2.6"
+      ],
+      "deprecated": false,
+      "description": [
+        "Obtains the block's hardness level (also known as \"strength\"). This number is used to calculate the time required to break each block."
+      ],
+      "patterns": [
+        "[the] [block] hardness of %item types%",
+        "%item types%'[s] [block] hardness"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_hard} to block hardness of target block",
+        "if block hardness of target block > 5:"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.13+"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprItemFlags",
       "name": "Item Flags",
       "since": [
@@ -17264,6 +17182,43 @@
       "returns": {
         "id": "itemflag",
         "name": "Item Flag"
+      }
+    },
+    {
+      "id": "ExprVillagerLevel",
+      "name": "Villager Level/Experience",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the level/experience of a villager.",
+        "The level will determine which trades are available to players (value between 1 and 5, defaults to 1).",
+        "When a villager's level is 1, they may lose their profession if they don't have a workstation.",
+        "Experience works along with the leveling system, determining which level the villager will move to.",
+        "Experience must be greater than or equal to 0.",
+        "Learn more about villager levels on <a href='https://minecraft.wiki/w/Trading#Level'>Minecraft Wiki</a>"
+      ],
+      "patterns": [
+        "[the] villager (level|experience) of %living entities%",
+        "%living entities%'[s] villager (level|experience)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_level} to villager level of {_villager}",
+        "set villager level of last spawned villager to 2",
+        "add 1 to villager level of target entity",
+        "remove 1 from villager level of event-entity",
+        "reset villager level of event-entity",
+        "set villager experience of last spawned entity to 100"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -17358,25 +17313,31 @@
       }
     },
     {
-      "id": "ExprFoodLevel",
-      "name": "Food Level",
+      "id": "ExprLevelProgress",
+      "name": "Level Progress",
       "since": [
-        "1.0"
+        "2.0"
       ],
       "deprecated": false,
       "description": [
-        "The food level of a player from 0 to 10. Has several aliases: food/hunger level/meter/bar. "
+        "The player's progress in reaching the next level, this represents the experience bar in the game. Please note that this value is between 0 and 1 (e.g. 0.5 = half experience bar).",
+        "Changing this value can cause the player's level to change if the resulting level progess is negative or larger than 1, e.g. <code>increase the player's level progress by 0.5</code> will make the player gain a level if their progress was more than 50%."
       ],
       "patterns": [
-        "[the] (food|hunger)[[ ](level|met(er|re)|bar)] [of %players%]",
-        "%players%'[s] (food|hunger)[[ ](level|met(er|re)|bar)]"
+        "[the] level progress of %players%",
+        "%players%'[s] level progress"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set the player's food level to 10"
+        "# use the exp bar as mana\non rightclick with a blaze rod:\n\tplayer's level progress is larger than 0.2\n\tshoot a fireball from the player\n\treduce the player's level progress by 0.2\nevery 2 seconds:\n\tloop all players:\n\t\tlevel progress of loop-player is smaller than 0.9:\n\t\t\tincrease level progress of the loop-player by 0.1\n\t\telse:\n\t\t\tset level progress of the loop-player to 0.99\non xp spawn:\n\tcancel event\n"
       ],
-      "events": null,
+      "events": [
+        {
+          "id": "level_change",
+          "name": "On Level Change"
+        }
+      ],
       "requirements": null,
       "keywords": null,
       "returns": {
@@ -17472,33 +17433,6 @@
       "returns": {
         "id": "object",
         "name": "Object"
-      }
-    },
-    {
-      "id": "ExprTemperature",
-      "name": "Temperature",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "Temperature at given block."
-      ],
-      "patterns": [
-        "[the] temperature[s] of %blocks%",
-        "%blocks%'[s] temperature[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "message \"%temperature of the targeted block%\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
       }
     },
     {
@@ -17620,6 +17554,33 @@
       }
     },
     {
+      "id": "ExprFoodLevel",
+      "name": "Food Level",
+      "since": [
+        "1.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The food level of a player from 0 to 10. Has several aliases: food/hunger level/meter/bar. "
+      ],
+      "patterns": [
+        "[the] (food|hunger)[[ ](level|met(er|re)|bar)] [of %players%]",
+        "%players%'[s] (food|hunger)[[ ](level|met(er|re)|bar)]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set the player's food level to 10"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprSkullOwner",
       "name": "Skull Owner",
       "since": [
@@ -17678,6 +17639,33 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprTemperature",
+      "name": "Temperature",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "Temperature at given block."
+      ],
+      "patterns": [
+        "[the] temperature[s] of %blocks%",
+        "%blocks%'[s] temperature[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "message \"%temperature of the targeted block%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -17988,33 +17976,6 @@
       }
     },
     {
-      "id": "ExprExhaustion",
-      "name": "Exhaustion",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "The exhaustion of a player. This is mainly used to determine the rate of hunger depletion."
-      ],
-      "patterns": [
-        "[the] exhaustion of %players%",
-        "%players%'[s] exhaustion"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set exhaustion of all players to 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprLoveTime",
       "name": "Love Time",
       "since": [
@@ -18277,6 +18238,33 @@
       }
     },
     {
+      "id": "ExprExhaustion",
+      "name": "Exhaustion",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "The exhaustion of a player. This is mainly used to determine the rate of hunger depletion."
+      ],
+      "patterns": [
+        "[the] exhaustion of %players%",
+        "%players%'[s] exhaustion"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set exhaustion of all players to 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprLootTableSeed",
       "name": "Seed of Loot Table",
       "since": [
@@ -18374,62 +18362,46 @@
       }
     },
     {
-      "id": "ExprHealth",
-      "name": "Health",
+      "id": "ExprBeaconEffects",
+      "name": "Beacon Effects",
       "since": [
-        "1.0"
+        "2.10"
       ],
       "deprecated": false,
       "description": [
-        "The health of a creature, e.g. a player, mob, villager, etc. The minimum value is 0, and the maximum is the creature's max health (e.g. 10 for players)."
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
       ],
       "patterns": [
-        "[the] health of %living entities%",
-        "%living entities%'[s] health"
+        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
+        "%blocks%'[s] (primary|secondary) [beacon] effect"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "message \"You have %health% HP left.\""
+        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
       ],
       "events": [
         {
-          "id": "damage",
-          "name": "On Damage"
+          "id": "beacon_effect",
+          "name": "On Beacon Effect"
+        },
+        {
+          "id": "beacon_toggle",
+          "name": "On Beacon Toggle"
+        },
+        {
+          "id": "beacon_change_effect",
+          "name": "On Beacon Change Effect"
         }
       ],
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprHumidity",
-      "name": "Humidity",
-      "since": [
-        "2.2-dev35"
-      ],
-      "deprecated": false,
-      "description": [
-        "Humidity of given blocks."
-      ],
-      "patterns": [
-        "[the] humidit(y|ies) of %blocks%",
-        "%blocks%'[s] humidit(y|ies)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_humidity} to event-block's humidity"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
+        "id": "potioneffecttype",
+        "name": "Potion Effect Type"
       }
     },
     {
@@ -18591,6 +18563,38 @@
       }
     },
     {
+      "id": "ExprHealth",
+      "name": "Health",
+      "since": [
+        "1.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The health of a creature, e.g. a player, mob, villager, etc. The minimum value is 0, and the maximum is the creature's max health (e.g. 10 for players)."
+      ],
+      "patterns": [
+        "[the] health of %living entities%",
+        "%living entities%'[s] health"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "message \"You have %health% HP left.\""
+      ],
+      "events": [
+        {
+          "id": "damage",
+          "name": "On Damage"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprTextDisplayAlignment",
       "name": "Text Display Alignment",
       "since": [
@@ -18707,6 +18711,33 @@
       }
     },
     {
+      "id": "ExprHumidity",
+      "name": "Humidity",
+      "since": [
+        "2.2-dev35"
+      ],
+      "deprecated": false,
+      "description": [
+        "Humidity of given blocks."
+      ],
+      "patterns": [
+        "[the] humidit(y|ies) of %blocks%",
+        "%blocks%'[s] humidit(y|ies)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_humidity} to event-block's humidity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprScoreboardTags",
       "name": "Scoreboard Tags",
       "since": [
@@ -18782,65 +18813,6 @@
       "propertyTypes": null,
       "examples": [
         "set the line width of the last spawned text display to 300"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprExplosiveYield",
-      "name": "Explosive Yield",
-      "since": [
-        "2.5, 2.11 (ghasts)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The yield of an explosive (creeper, ghast, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
-        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information.",
-        "The yield of ghasts can only be set to between 0 and 127."
-      ],
-      "patterns": [
-        "[the] explosive (yield|radius|size|power) of %entities%",
-        "%entities%'[s] explosive (yield|radius|size|power)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on spawn of a creeper:\n\tset the explosive yield of the event-entity to 10\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprVectorLength",
-      "name": "Vectors - Length",
-      "since": [
-        "2.2-dev28"
-      ],
-      "deprecated": false,
-      "description": [
-        "Gets or sets the length of a vector."
-      ],
-      "patterns": [
-        "[the] (vector|standard|normal) length[s] of %vectors%",
-        "%vectors%'[s] (vector|standard|normal) length[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "send \"%standard length of vector 1, 2, 3%\"",
-        "set {_v} to vector 1, 2, 3",
-        "set standard length of {_v} to 2",
-        "send \"%standard length of {_v}%\""
       ],
       "events": null,
       "requirements": null,
@@ -18963,33 +18935,6 @@
       }
     },
     {
-      "id": "ExprAltitude",
-      "name": "Altitude",
-      "since": [
-        "1.4.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
-      ],
-      "patterns": [
-        "[the] altitude[s] of %locations%",
-        "%locations%'[s] altitude[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprEquipCompCameraOverlay",
       "name": "Equippable Component - Camera Overlay",
       "since": [
@@ -19017,6 +18962,65 @@
       "returns": {
         "id": "string",
         "name": "Text"
+      }
+    },
+    {
+      "id": "ExprExplosiveYield",
+      "name": "Explosive Yield",
+      "since": [
+        "2.5, 2.11 (ghasts)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The yield of an explosive (creeper, ghast, primed tnt, fireball, etc.). This is how big of an explosion is caused by the entity.",
+        "Read <a href='https://minecraft.wiki/w/Explosion'>this wiki page</a> for more information.",
+        "The yield of ghasts can only be set to between 0 and 127."
+      ],
+      "patterns": [
+        "[the] explosive (yield|radius|size|power) of %entities%",
+        "%entities%'[s] explosive (yield|radius|size|power)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on spawn of a creeper:\n\tset the explosive yield of the event-entity to 10\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
+      "id": "ExprVectorLength",
+      "name": "Vectors - Length",
+      "since": [
+        "2.2-dev28"
+      ],
+      "deprecated": false,
+      "description": [
+        "Gets or sets the length of a vector."
+      ],
+      "patterns": [
+        "[the] (vector|standard|normal) length[s] of %vectors%",
+        "%vectors%'[s] (vector|standard|normal) length[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "send \"%standard length of vector 1, 2, 3%\"",
+        "set {_v} to vector 1, 2, 3",
+        "set standard length of {_v} to 2",
+        "send \"%standard length of {_v}%\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -19130,6 +19134,33 @@
       "returns": {
         "id": "string",
         "name": "Text"
+      }
+    },
+    {
+      "id": "ExprAltitude",
+      "name": "Altitude",
+      "since": [
+        "1.4.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "Effectively an alias of 'y-<a href='#ExprCoordinate'>coordinate</a> of …', it represents the height of some location within the world."
+      ],
+      "patterns": [
+        "[the] altitude[s] of %locations%",
+        "%locations%'[s] altitude[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on damage:\n\taltitude of the attacker is higher than the altitude of the victim\n\tset damage to damage * 1.2\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -19578,43 +19609,6 @@
       }
     },
     {
-      "id": "ExprMaxHealth",
-      "name": "Max Health",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The maximum health of an entity, e.g. 10 for a player."
-      ],
-      "patterns": [
-        "[the] max[imum] health of %living entities%",
-        "%living entities%'[s] max[imum] health"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on join:\n\tset the maximum health of the player to 100\n",
-        "spawn a giant\nset the last spawned entity's max health to 1000\n"
-      ],
-      "events": [
-        {
-          "id": "damage",
-          "name": "On Damage"
-        },
-        {
-          "id": "death",
-          "name": "On Death"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprSourceLocation",
       "name": "Damage Source - Source Location",
       "since": [
@@ -19828,6 +19822,43 @@
       }
     },
     {
+      "id": "ExprMaxHealth",
+      "name": "Max Health",
+      "since": [
+        "2.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The maximum health of an entity, e.g. 10 for a player."
+      ],
+      "patterns": [
+        "[the] max[imum] health of %living entities%",
+        "%living entities%'[s] max[imum] health"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on join:\n\tset the maximum health of the player to 100\n",
+        "spawn a giant\nset the last spawned entity's max health to 1000\n"
+      ],
+      "events": [
+        {
+          "id": "damage",
+          "name": "On Damage"
+        },
+        {
+          "id": "death",
+          "name": "On Death"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprAttachedBlock",
       "name": "Arrow Attached Block",
       "since": [
@@ -19886,30 +19917,33 @@
       }
     },
     {
-      "id": "ExprUnixTicks",
-      "name": "Unix Timestamp",
+      "id": "ExprMembersOfRegion",
+      "name": "Region Members & Owners",
       "since": [
-        "2.2-dev31"
+        "2.1"
       ],
       "deprecated": false,
       "description": [
-        "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970."
+        "A list of members or owners of a <a href='#region'>region</a>.",
+        "This expression requires a supported regions plugin to be installed."
       ],
       "patterns": [
-        "[the] unix timestamp of %dates%",
-        "%dates%'[s] unix timestamp"
+        "[(all|the)] (members|owner[s]) of [[the] region[s]] %regions%",
+        "[[the] region[s]] %regions%'[s] (members|owner[s])"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "unix timestamp of now"
+        "on entering of a region:\n\tmessage \"You're entering %region% whose owners are %owners of region%\"\n"
       ],
       "events": null,
-      "requirements": null,
+      "requirements": [
+        "Supported regions plugin"
+      ],
       "keywords": null,
       "returns": {
-        "id": "number",
-        "name": "Number"
+        "id": "offlineplayer",
+        "name": "Offline Player"
       }
     },
     {
@@ -20030,38 +20064,6 @@
       }
     },
     {
-      "id": "ExprBalance",
-      "name": "Money",
-      "since": [
-        "2.0, 2.5 (offline players)"
-      ],
-      "deprecated": false,
-      "description": [
-        "How much virtual money a player has (can be changed)."
-      ],
-      "patterns": [
-        "[the] (money|balance|[bank] account) of %offline players%",
-        "%offline players%'[s] (money|balance|[bank] account)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "message \"You have %player's money%\" # the currency name will be added automatically",
-        "remove 20$ from the player's balance # replace '$' by whatever currency you use",
-        "add 200 to the player's account # or omit the currency altogether"
-      ],
-      "events": null,
-      "requirements": [
-        "Vault",
-        "an economy plugin that supports Vault"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "money",
-        "name": "Money"
-      }
-    },
-    {
       "id": "ExprInventoryInfo",
       "name": "Inventory Holder/Viewers/Rows/Slots",
       "since": [
@@ -20090,6 +20092,33 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprUnixTicks",
+      "name": "Unix Timestamp",
+      "since": [
+        "2.2-dev31"
+      ],
+      "deprecated": false,
+      "description": [
+        "Converts given date to Unix timestamp. This is roughly how many seconds have elapsed since 1 January 1970."
+      ],
+      "patterns": [
+        "[the] unix timestamp of %dates%",
+        "%dates%'[s] unix timestamp"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "unix timestamp of now"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -20206,34 +20235,6 @@
       }
     },
     {
-      "id": "ExprFallDistance",
-      "name": "Fall Distance",
-      "since": [
-        "2.5"
-      ],
-      "deprecated": false,
-      "description": [
-        "The distance an entity has fallen for."
-      ],
-      "patterns": [
-        "[the] fall[en] (distance|height) of %entities%",
-        "%entities%'[s] fall[en] (distance|height)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set all entities' fall distance to 10",
-        "on damage:\n\tsend \"%victim's fall distance%\" to victim\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprAnvilText",
       "name": "Anvil Text Input",
       "since": [
@@ -20258,35 +20259,6 @@
       "returns": {
         "id": "string",
         "name": "Text"
-      }
-    },
-    {
-      "id": "ExprSpeed",
-      "name": "Speed",
-      "since": [
-        "unknown (before 2.1)"
-      ],
-      "deprecated": false,
-      "description": [
-        "A player's walking or flying speed. Both can be changed, but values must be between -1 and 1 (excessive values will be changed to -1 or 1 respectively). Negative values reverse directions.",
-        "Please note that changing a player's speed will change their FOV just like potions do."
-      ],
-      "patterns": [
-        "[the] (walk[ing]|fl(y[ing]|ight))[( |-)]speed of %players%",
-        "%players%'[s] (walk[ing]|fl(y[ing]|ight))[( |-)]speed"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set the player's walk speed to 1",
-        "increase the argument's fly speed by 0.1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
       }
     },
     {
@@ -20317,33 +20289,60 @@
       }
     },
     {
-      "id": "ExprLootTable",
-      "name": "Loot Table",
+      "id": "ExprFallDistance",
+      "name": "Fall Distance",
       "since": [
-        "2.10"
+        "2.5"
       ],
       "deprecated": false,
       "description": [
-        "Returns the loot table of an entity or block.",
-        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
-        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
+        "The distance an entity has fallen for."
       ],
       "patterns": [
-        "[the] loot[ ]table[s] of %entities/blocks%",
-        "%entities/blocks%'[s] loot[ ]table[s]"
+        "[the] fall[en] (distance|height) of %entities%",
+        "%entities%'[s] fall[en] (distance|height)"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
-        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
+        "set all entities' fall distance to 10",
+        "on damage:\n\tsend \"%victim's fall distance%\" to victim\n"
       ],
       "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
+      "id": "ExprSpeed",
+      "name": "Speed",
+      "since": [
+        "unknown (before 2.1)"
+      ],
+      "deprecated": false,
+      "description": [
+        "A player's walking or flying speed. Both can be changed, but values must be between -1 and 1 (excessive values will be changed to -1 or 1 respectively). Negative values reverse directions.",
+        "Please note that changing a player's speed will change their FOV just like potions do."
+      ],
+      "patterns": [
+        "[the] (walk[ing]|fl(y[ing]|ight))[( |-)]speed of %players%",
+        "%players%'[s] (walk[ing]|fl(y[ing]|ight))[( |-)]speed"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set the player's walk speed to 1",
+        "increase the argument's fly speed by 0.1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
       }
     },
     {
@@ -20378,33 +20377,6 @@
       }
     },
     {
-      "id": "ExprSaturation",
-      "name": "Saturation",
-      "since": [
-        "2.2-Fixes-v10, 2.2-dev35 (fully modifiable), 2.6.2 (syntax pattern changed)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The saturation of a player. If used in a player event, it can be omitted and will default to event-player."
-      ],
-      "patterns": [
-        "[the] saturation of %players%",
-        "%players%'[s] saturation"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set saturation of player to 20"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
       "id": "ExprDirectEntity",
       "name": "Damage Source - Direct Entity",
       "since": [
@@ -20434,33 +20406,6 @@
       "returns": {
         "id": "entity",
         "name": "Entity"
-      }
-    },
-    {
-      "id": "ExprParticleCount",
-      "name": "Particle Count",
-      "since": [
-        "2.14"
-      ],
-      "deprecated": false,
-      "description": [
-        "Sets how many particles to draw.\nParticle count has an influence on how the 'offset' and 'extra' values of a particle apply.\nOffsets are treated as distributions if particle count is greater than 0.\nOffsets are treated as velocity or some other special behavior if particle count is 0.\n\nThis means that setting the particle count may change how your particle behaves. Be careful!\n\nMore detailed information on particle behavior can be found at <a href=\"https://docs.papermc.io/paper/dev/particles/#count-argument-behavior\">Paper's particle documentation</a>.\n"
-      ],
-      "patterns": [
-        "[the] particle count of %particle effects%",
-        "%particle effects%'[s] particle count"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "draw 7 blue dust particles at player"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
       }
     },
     {
@@ -20690,6 +20635,60 @@
       }
     },
     {
+      "id": "ExprSaturation",
+      "name": "Saturation",
+      "since": [
+        "2.2-Fixes-v10, 2.2-dev35 (fully modifiable), 2.6.2 (syntax pattern changed)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The saturation of a player. If used in a player event, it can be omitted and will default to event-player."
+      ],
+      "patterns": [
+        "[the] saturation of %players%",
+        "%players%'[s] saturation"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set saturation of player to 20"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
+      "id": "ExprParticleCount",
+      "name": "Particle Count",
+      "since": [
+        "2.14"
+      ],
+      "deprecated": false,
+      "description": [
+        "Sets how many particles to draw.\nParticle count has an influence on how the 'offset' and 'extra' values of a particle apply.\nOffsets are treated as distributions if particle count is greater than 0.\nOffsets are treated as velocity or some other special behavior if particle count is 0.\n\nThis means that setting the particle count may change how your particle behaves. Be careful!\n\nMore detailed information on particle behavior can be found at <a href=\"https://docs.papermc.io/paper/dev/particles/#count-argument-behavior\">Paper's particle documentation</a>.\n"
+      ],
+      "patterns": [
+        "[the] particle count of %particle effects%",
+        "%particle effects%'[s] particle count"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "draw 7 blue dust particles at player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "number",
+        "name": "Number"
+      }
+    },
+    {
       "id": "ExprEyeLocation",
       "name": "Head location",
       "since": [
@@ -20828,6 +20827,36 @@
       }
     },
     {
+      "id": "ExprLootTable",
+      "name": "Loot Table",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loot table of an entity or block.",
+        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
+        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[ ]table[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "loottable",
+        "name": "Loot Table"
+      }
+    },
+    {
       "id": "ExprCurrentInputKeys",
       "name": "Player Input Keys",
       "since": [
@@ -20949,6 +20978,35 @@
       }
     },
     {
+      "id": "ExprVillagerType",
+      "name": "Villager Type",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the type of a villager/zombie villager. This usually represents the biome the villager is from."
+      ],
+      "patterns": [
+        "[the] villager type of %living entities%",
+        "%living entities%'[s] villager type"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_type} to villager type of {_villager}",
+        "villager type of {_villager} = plains",
+        "set villager type of event-entity to plains"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "villagertype",
+        "name": "Villager Type"
+      }
+    },
+    {
       "id": "ExprBeaconTier",
       "name": "Beacon Tier",
       "since": [
@@ -20973,37 +21031,6 @@
       "returns": {
         "id": "number",
         "name": "Number"
-      }
-    },
-    {
-      "id": "ExprDamageType",
-      "name": "Damage Source - Damage Type",
-      "since": [
-        "2.12"
-      ],
-      "deprecated": false,
-      "description": [
-        "The type of damage of a damage source.",
-        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
-      ],
-      "patterns": [
-        "[the] damage type [of %damage sources%]",
-        "%damage sources%'[s] damage type"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
-        "on death:\n\tset {_type} to the damage type of event-damage source\n"
-      ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.20.4+"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "damagetype",
-        "name": "Damage Type"
       }
     },
     {
@@ -21699,33 +21726,6 @@
         "set text opacity of all text displays to 255 # fully opaque",
         "set text opacity of all text displays to 128 # semi-transparent",
         "set text opacity of all text displays to 4 # fully transparent"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "number",
-        "name": "Number"
-      }
-    },
-    {
-      "id": "ExprLastDamage",
-      "name": "Last Damage",
-      "since": [
-        "2.5.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "The last damage that was done to an entity. Note that changing it doesn't deal more/less damage."
-      ],
-      "patterns": [
-        "[the] last damage of %living entities%",
-        "%living entities%'[s] last damage"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set last damage of event-entity to 2"
       ],
       "events": null,
       "requirements": null,
@@ -22681,6 +22681,34 @@
       }
     },
     {
+      "id": "ExprXOf",
+      "name": "X of Item/Entity Type",
+      "since": [
+        "1.2"
+      ],
+      "deprecated": false,
+      "description": [
+        "An expression for using an item or entity type with a different amount."
+      ],
+      "patterns": [
+        "%number% of %item stacks/item types/entity types/particle effects%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "give level of player of iron pickaxes to the player"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "amount"
+      ],
+      "returns": {
+        "id": "object",
+        "name": "Object"
+      }
+    },
+    {
       "id": "ExprArithmetic",
       "name": "Arithmetic",
       "since": [
@@ -22722,34 +22750,6 @@
       "events": null,
       "requirements": null,
       "keywords": null,
-      "returns": {
-        "id": "object",
-        "name": "Object"
-      }
-    },
-    {
-      "id": "ExprXOf",
-      "name": "X of Item/Entity Type",
-      "since": [
-        "1.2"
-      ],
-      "deprecated": false,
-      "description": [
-        "An expression for using an item or entity type with a different amount."
-      ],
-      "patterns": [
-        "%number% of %item stacks/item types/entity types/particle effects%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "give level of player of iron pickaxes to the player"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": [
-        "amount"
-      ],
       "returns": {
         "id": "object",
         "name": "Object"
@@ -23390,12 +23390,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23505,12 +23505,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -23640,12 +23640,12 @@
           "name": "item stacks"
         },
         {
-          "id": "itemstack",
-          "name": "past item stack"
-        },
-        {
           "id": "player",
           "name": "player"
+        },
+        {
+          "id": "itemstack",
+          "name": "past item stack"
         },
         {
           "id": "slot",
@@ -23725,12 +23725,12 @@
           "name": "block"
         },
         {
-          "id": "block",
-          "name": "future block"
-        },
-        {
           "id": "inventory",
           "name": "future inventory"
+        },
+        {
+          "id": "block",
+          "name": "future block"
         },
         {
           "id": "inventory",
@@ -23814,12 +23814,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24011,12 +24011,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24211,12 +24211,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24359,12 +24359,12 @@
           "name": "world"
         },
         {
-          "id": "lootcontext",
-          "name": "loot context"
-        },
-        {
           "id": "loottable",
           "name": "loot table"
+        },
+        {
+          "id": "lootcontext",
+          "name": "loot context"
         },
         {
           "id": "entity",
@@ -24393,12 +24393,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24539,12 +24539,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -24697,12 +24697,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -25239,12 +25239,12 @@
           "name": "player"
         },
         {
-          "id": "projectile",
-          "name": "projectile"
-        },
-        {
           "id": "fishingstate",
           "name": "fishing state"
+        },
+        {
+          "id": "projectile",
+          "name": "projectile"
         },
         {
           "id": "entity",
@@ -25357,12 +25357,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -25517,12 +25517,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -25859,12 +25859,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -26186,12 +26186,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -26518,12 +26518,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -26595,12 +26595,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -26679,12 +26679,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27033,12 +27033,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27200,12 +27200,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27431,12 +27431,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27468,12 +27468,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27502,12 +27502,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27542,50 +27542,16 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
         },
         {
-          "id": "world",
-          "name": "world"
-        }
-      ],
-      "keywords": null
-    },
-    {
-      "id": "region_enterleave",
-      "name": "On Region Enter/Leave",
-      "cancellable": true,
-      "since": [
-        "2.1"
-      ],
-      "patterns": [
-        "(enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %regions%)",
-        "region (enter[ing]|leav(e|ing)|exit[ing])"
-      ],
-      "description": [
-        "Called when a player enters or leaves a <a href='#region'>region</a>.",
-        "This event requires a supported regions plugin to be installed."
-      ],
-      "requirements": [
-        "Supported regions plugin"
-      ],
-      "examples": [
-        "on region exit:",
-        "\tmessage \"Leaving %region%.\""
-      ],
-      "eventValues": [
-        {
-          "id": "player",
-          "name": "player"
+          "id": "location",
+          "name": "location"
         },
         {
-          "id": "region",
-          "name": "region"
+          "id": "world",
+          "name": "world"
         }
       ],
       "keywords": null
@@ -27638,12 +27604,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -27766,12 +27732,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28097,12 +28063,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28191,12 +28157,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28416,12 +28382,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28456,12 +28422,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagecause",
-          "name": "damage cause"
-        },
-        {
           "id": "damagesource",
           "name": "damage source"
+        },
+        {
+          "id": "damagecause",
+          "name": "damage cause"
         },
         {
           "id": "location",
@@ -28641,12 +28607,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28691,12 +28657,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -28816,6 +28782,40 @@
       "keywords": null
     },
     {
+      "id": "region_enterleave",
+      "name": "On Region Enter/Leave",
+      "cancellable": true,
+      "since": [
+        "2.1"
+      ],
+      "patterns": [
+        "(enter[ing]|leav(e|ing)|exit[ing]) [of] ([a] region|[[the] region] %regions%)",
+        "region (enter[ing]|leav(e|ing)|exit[ing])"
+      ],
+      "description": [
+        "Called when a player enters or leaves a <a href='#region'>region</a>.",
+        "This event requires a supported regions plugin to be installed."
+      ],
+      "requirements": [
+        "Supported regions plugin"
+      ],
+      "examples": [
+        "on region exit:",
+        "\tmessage \"Leaving %region%.\""
+      ],
+      "eventValues": [
+        {
+          "id": "player",
+          "name": "player"
+        },
+        {
+          "id": "region",
+          "name": "region"
+        }
+      ],
+      "keywords": null
+    },
+    {
       "id": "burn",
       "name": "On Burn",
       "cancellable": true,
@@ -28836,12 +28836,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -29165,12 +29165,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -29381,12 +29381,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -29481,12 +29481,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -29710,12 +29710,12 @@
       ],
       "eventValues": [
         {
-          "id": "location",
-          "name": "location"
-        },
-        {
           "id": "block",
           "name": "block"
+        },
+        {
+          "id": "location",
+          "name": "location"
         },
         {
           "id": "world",
@@ -29853,12 +29853,12 @@
       ],
       "eventValues": [
         {
-          "id": "damagesource",
-          "name": "damage source"
-        },
-        {
           "id": "damagecause",
           "name": "damage cause"
+        },
+        {
+          "id": "damagesource",
+          "name": "damage source"
         },
         {
           "id": "location",
