@@ -5,7 +5,7 @@
   },
   "source": {
     "name": "Skript",
-    "version": "2.15.2-nightly-53e24a8"
+    "version": "2.15.2-nightly-a0e644d"
   },
   "conditions": [
     {
@@ -12226,6 +12226,32 @@
       }
     },
     {
+      "id": "ExprLootTableFromString",
+      "name": "Loot Table from Key",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loot table from a namespaced key."
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] %texts%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "loottable",
+        "name": "Loot Table"
+      }
+    },
+    {
       "id": "ExprIndices",
       "name": "Indices of List",
       "since": [
@@ -12289,32 +12315,6 @@
       "returns": {
         "id": "block",
         "name": "Block"
-      }
-    },
-    {
-      "id": "ExprLootTableFromString",
-      "name": "Loot Table from Key",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loot table from a namespaced key."
-      ],
-      "patterns": [
-        "[the] loot[ ]table[s] %texts%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
       }
     },
     {
@@ -15037,36 +15037,6 @@
       "returns": {
         "id": "inventory",
         "name": "Inventory"
-      }
-    },
-    {
-      "id": "ExprLootTable",
-      "name": "Loot Table",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loot table of an entity or block.",
-        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
-        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
-      ],
-      "patterns": [
-        "[the] loot[ ]table[s] of %entities/blocks%",
-        "%entities/blocks%'[s] loot[ ]table[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
-        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
       }
     },
     {
@@ -21880,6 +21850,36 @@
       }
     },
     {
+      "id": "ExprLootTable",
+      "name": "Loot Table",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loot table of an entity or block.",
+        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
+        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[ ]table[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "loottable",
+        "name": "Loot Table"
+      }
+    },
+    {
       "id": "ExprColorOf",
       "name": "Color of",
       "since": [
@@ -23240,12 +23240,12 @@
           "name": "world"
         },
         {
-          "id": "loottable",
-          "name": "loot table"
-        },
-        {
           "id": "lootcontext",
           "name": "loot context"
+        },
+        {
+          "id": "loottable",
+          "name": "loot table"
         },
         {
           "id": "entity",
