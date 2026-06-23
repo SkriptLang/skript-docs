@@ -5,7 +5,7 @@
   },
   "source": {
     "name": "Skript",
-    "version": "2.15.3-nightly-2d177bb"
+    "version": "2.15.3-nightly-b6db366"
   },
   "conditions": [
     {
@@ -7950,37 +7950,6 @@
   ],
   "expressions": [
     {
-      "id": "ExprDeathMessage",
-      "name": "Death Message",
-      "since": [
-        "2.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message sent to all online players when a player dies."
-      ],
-      "patterns": [
-        "[the] death( |-)message"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on death of player:\n\tset the death message to \"%player% died!\"\n"
-      ],
-      "events": [
-        {
-          "id": "death",
-          "name": "On Death"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "LitIntMinValue",
       "name": "Minimum Integer Value",
       "since": [
@@ -8139,6 +8108,97 @@
       "returns": {
         "id": "string",
         "name": "Text"
+      }
+    },
+    {
+      "id": "ExprChatFormat",
+      "name": "Chat Format",
+      "since": [
+        "2.2-dev31"
+      ],
+      "deprecated": false,
+      "description": [
+        "Can be used to modify the chat format.",
+        "The sender of a message is represented by [player] or [sender].",
+        "The message is represented by [message] or [msg]."
+      ],
+      "patterns": [
+        "[the] (message|chat) format[ting]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set the chat format to \"<yellow>[player]<light gray>: <green>[message]\""
+      ],
+      "events": [
+        {
+          "id": "chat",
+          "name": "On Chat"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
+      "id": "ExprJoinMessage",
+      "name": "Join Message",
+      "since": [
+        "1.4.9"
+      ],
+      "deprecated": false,
+      "description": [
+        "The message sent to all online players when a player joins the server."
+      ],
+      "patterns": [
+        "[the] (join|log[ ]in)( |-)message"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on first join:\n\tset the join message to \"Welcome %player% to our awesome server!\"\n",
+        "on join:\n\tplayer has played before\n\tset the join message to \"Welcome back, %player%!\"\n"
+      ],
+      "events": [
+        {
+          "id": "join",
+          "name": "On Join"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
+      "id": "ExprRandomUUID",
+      "name": "Random UUID",
+      "since": [
+        "2.5.1, 2.11 (return UUIDs)"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns a random UUID."
+      ],
+      "patterns": [
+        "[a] random uuid"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_uuid} to random uuid"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "uuid",
+        "name": "UUID"
       }
     },
     {
@@ -8356,24 +8416,53 @@
       }
     },
     {
-      "id": "ExprChatFormat",
-      "name": "Chat Format",
+      "id": "ExprKickMessage",
+      "name": "Kick Message",
       "since": [
-        "2.2-dev31"
+        "2.0 beta 9"
       ],
       "deprecated": false,
       "description": [
-        "Can be used to modify the chat format.",
-        "The sender of a message is represented by [player] or [sender].",
-        "The message is represented by [message] or [msg]."
+        "The message sent to all online players when a player is kicked from server."
       ],
       "patterns": [
-        "[the] (message|chat) format[ting]"
+        "[the] kick( |-)message"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set the chat format to \"<yellow>[player]<light gray>: <green>[message]\""
+        "on kick:\n\tset the kick message to \"%player% was booted from the server! They won't be missed...\"\n"
+      ],
+      "events": [
+        {
+          "id": "kick",
+          "name": "On Kick"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
+      "id": "ExprChatMessage",
+      "name": "Chat Message",
+      "since": [
+        "1.4.6, 2.15 (support for reset)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The chat message in a chat event."
+      ],
+      "patterns": [
+        "[the] [chat( |-)]message"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on chat:\n\tplayer has permission \"admin\"\n\tset the message to \"<light red>%message%\"\n"
       ],
       "events": [
         {
@@ -8489,38 +8578,6 @@
       }
     },
     {
-      "id": "ExprJoinMessage",
-      "name": "Join Message",
-      "since": [
-        "1.4.9"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message sent to all online players when a player joins the server."
-      ],
-      "patterns": [
-        "[the] (join|log[ ]in)( |-)message"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on first join:\n\tset the join message to \"Welcome %player% to our awesome server!\"\n",
-        "on join:\n\tplayer has played before\n\tset the join message to \"Welcome back, %player%!\"\n"
-      ],
-      "events": [
-        {
-          "id": "join",
-          "name": "On Join"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "ExprProtocolVersion",
       "name": "Protocol Version",
       "since": [
@@ -8584,6 +8641,32 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprLoot",
+      "name": "Loot",
+      "since": [
+        "2.7"
+      ],
+      "deprecated": false,
+      "description": [
+        "The loot that will be generated in a 'loot generate' event."
+      ],
+      "patterns": [
+        "[the] loot"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on loot generate:\n\tchance of 10%\n\tadd 64 diamonds to loot\n\tsend \"You hit the jackpot!!\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
       }
     },
     {
@@ -8727,58 +8810,27 @@
       }
     },
     {
-      "id": "ExprKickMessage",
-      "name": "Kick Message",
+      "id": "ExprQuitMessage",
+      "name": "Quit Message",
       "since": [
-        "2.0 beta 9"
+        "1.4.9"
       ],
       "deprecated": false,
       "description": [
-        "The message sent to all online players when a player is kicked from server."
+        "The message sent to all online players when a player quits the server."
       ],
       "patterns": [
-        "[the] kick( |-)message"
+        "[the] (quit|leave|log[ ]out)( |-)message"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on kick:\n\tset the kick message to \"%player% was booted from the server! They won't be missed...\"\n"
+        "on quit:\n\tif {vanish::%player's uuid%} is set:\n\t\tclear the quit message\n\telse:\n\t\tset the quit message to \"%player% left this server... they will be missed!\"\n"
       ],
       "events": [
         {
-          "id": "kick",
-          "name": "On Kick"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
-      "id": "ExprChatMessage",
-      "name": "Chat Message",
-      "since": [
-        "1.4.6, 2.15 (support for reset)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The chat message in a chat event."
-      ],
-      "patterns": [
-        "[the] [chat( |-)]message"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on chat:\n\tplayer has permission \"admin\"\n\tset the message to \"<light red>%message%\"\n"
-      ],
-      "events": [
-        {
-          "id": "chat",
-          "name": "On Chat"
+          "id": "quit",
+          "name": "On Quit"
         }
       ],
       "requirements": null,
@@ -8817,6 +8869,37 @@
       "returns": {
         "id": "block",
         "name": "Block"
+      }
+    },
+    {
+      "id": "ExprReadiedArrow",
+      "name": "Readied Arrow/Bow",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The bow or arrow in a <a href='#ready_arrow'>Ready Arrow event</a>."
+      ],
+      "patterns": [
+        "[the] (readied|selected|drawn) (arrow|bow)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on player ready arrow:\n\tselected bow's name is \"Spectral Bow\"\n\tif selected arrow is not a spectral arrow:\n\t\tcancel event\n"
+      ],
+      "events": [
+        {
+          "id": "ready_arrow",
+          "name": "On Ready Arrow"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
       }
     },
     {
@@ -8898,37 +8981,6 @@
       "returns": {
         "id": "location",
         "name": "Location"
-      }
-    },
-    {
-      "id": "ExprQuitMessage",
-      "name": "Quit Message",
-      "since": [
-        "1.4.9"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message sent to all online players when a player quits the server."
-      ],
-      "patterns": [
-        "[the] (quit|leave|log[ ]out)( |-)message"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on quit:\n\tif {vanish::%player's uuid%} is set:\n\t\tclear the quit message\n\telse:\n\t\tset the quit message to \"%player% left this server... they will be missed!\"\n"
-      ],
-      "events": [
-        {
-          "id": "quit",
-          "name": "On Quit"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
       }
     },
     {
@@ -9020,6 +9072,41 @@
       }
     },
     {
+      "id": "ExprMOTD",
+      "name": "Message of the Day",
+      "since": [
+        "2.3"
+      ],
+      "deprecated": false,
+      "description": [
+        "The message of the day in the server list.",
+        "This can be changed in a <a href='#server_list_ping'>server list ping</a> event only.",
+        "Use 'default MOTD' to obtain the default MOTD set through the server configuration. This cannot be changed."
+      ],
+      "patterns": [
+        "[the] [default|shown|displayed] (MOTD|message of [the] day)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on server ling ping:\n\tset the motd to \"<red>Join our server today!\"\n"
+      ],
+      "events": [
+        {
+          "id": "server_list_ping",
+          "name": "On Server List Ping"
+        }
+      ],
+      "requirements": null,
+      "keywords": [
+        "MOTD"
+      ],
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
       "id": "ExprPickedItem",
       "name": "Picked Item/Block/Entity",
       "since": [
@@ -9051,32 +9138,6 @@
       "returns": {
         "id": "object",
         "name": "Object"
-      }
-    },
-    {
-      "id": "ExprLoot",
-      "name": "Loot",
-      "since": [
-        "2.7"
-      ],
-      "deprecated": false,
-      "description": [
-        "The loot that will be generated in a 'loot generate' event."
-      ],
-      "patterns": [
-        "[the] loot"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on loot generate:\n\tchance of 10%\n\tadd 64 diamonds to loot\n\tsend \"You hit the jackpot!!\"\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
       }
     },
     {
@@ -9218,6 +9279,37 @@
       }
     },
     {
+      "id": "ExprBrewingResults",
+      "name": "Brewing Results",
+      "since": [
+        "2.13"
+      ],
+      "deprecated": false,
+      "description": [
+        "The resulting items in an 'on brew complete' event."
+      ],
+      "patterns": [
+        "[the] brewing results"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on brew complete:\n\tset {_results::*} to the brewing results\n"
+      ],
+      "events": [
+        {
+          "id": "brewing_complete",
+          "name": "On Brewing Complete"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
+      }
+    },
+    {
       "id": "ExprDrops",
       "name": "Drops",
       "since": [
@@ -9319,37 +9411,6 @@
       }
     },
     {
-      "id": "ExprReadiedArrow",
-      "name": "Readied Arrow/Bow",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The bow or arrow in a <a href='#ready_arrow'>Ready Arrow event</a>."
-      ],
-      "patterns": [
-        "[the] (readied|selected|drawn) (arrow|bow)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on player ready arrow:\n\tselected bow's name is \"Spectral Bow\"\n\tif selected arrow is not a spectral arrow:\n\t\tcancel event\n"
-      ],
-      "events": [
-        {
-          "id": "ready_arrow",
-          "name": "On Ready Arrow"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
       "id": "ExprBreedingFamily",
       "name": "Breeding Family",
       "since": [
@@ -9376,41 +9437,6 @@
       "returns": {
         "id": "livingentity",
         "name": "Living Entity"
-      }
-    },
-    {
-      "id": "ExprMOTD",
-      "name": "Message of the Day",
-      "since": [
-        "2.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message of the day in the server list.",
-        "This can be changed in a <a href='#server_list_ping'>server list ping</a> event only.",
-        "Use 'default MOTD' to obtain the default MOTD set through the server configuration. This cannot be changed."
-      ],
-      "patterns": [
-        "[the] [default|shown|displayed] (MOTD|message of [the] day)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on server ling ping:\n\tset the motd to \"<red>Join our server today!\"\n"
-      ],
-      "events": [
-        {
-          "id": "server_list_ping",
-          "name": "On Server List Ping"
-        }
-      ],
-      "requirements": null,
-      "keywords": [
-        "MOTD"
-      ],
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
       }
     },
     {
@@ -9591,29 +9617,30 @@
       }
     },
     {
-      "id": "ExprWorlds",
-      "name": "Worlds",
+      "id": "ExprConsumedItem",
+      "name": "Consumed Item",
       "since": [
-        "1.0"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
-        "All worlds of the server, useful for looping."
+        "Represents the item consumed within an entity shoot bow and item consume event."
       ],
       "patterns": [
-        "[(all [[of] the]|the)] worlds"
+        "[the] consumed item"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "loop all worlds:\n\tbroadcast \"You're in %loop-world%\" to loop-world\n"
+        "on player or skeleton shoot projectile:\n\tif the consumed item is an arrow:\n\t\tcancel event\n\t\tsend \"You're now allowed to shoot your arrows.\" to shooter\n",
+        "on player consume:\n\tif the consumed item is cooked porkchop:\n\t\tsend \"Well aren't you just a little piggy wiggly!\" to player\n\tif player has scoreboard tag \"vegetarian\":\n\t\tset the consumed item to a carrot\n"
       ],
       "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "world",
-        "name": "World"
+        "id": "itemstack",
+        "name": "Item"
       }
     },
     {
@@ -9759,6 +9786,37 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprBroadcastMessage",
+      "name": "Broadcast Message",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The message broadcasted in a broadcast event."
+      ],
+      "patterns": [
+        "[the] broadcast(-|[ed] )message"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on broadcast:\n\tset broadcast message to \"<light green>[BROADCAST] %broadcast message%\"\n"
+      ],
+      "events": [
+        {
+          "id": "broadcast",
+          "name": "On Broadcast"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
       }
     },
     {
@@ -9981,37 +10039,6 @@
       }
     },
     {
-      "id": "ExprBrewingResults",
-      "name": "Brewing Results",
-      "since": [
-        "2.13"
-      ],
-      "deprecated": false,
-      "description": [
-        "The resulting items in an 'on brew complete' event."
-      ],
-      "patterns": [
-        "[the] brewing results"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on brew complete:\n\tset {_results::*} to the brewing results\n"
-      ],
-      "events": [
-        {
-          "id": "brewing_complete",
-          "name": "On Brewing Complete"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
       "id": "LitConsole",
       "name": "Console",
       "since": [
@@ -10146,37 +10173,6 @@
       }
     },
     {
-      "id": "ExprBroadcastMessage",
-      "name": "Broadcast Message",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message broadcasted in a broadcast event."
-      ],
-      "patterns": [
-        "[the] broadcast(-|[ed] )message"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on broadcast:\n\tset broadcast message to \"<light green>[BROADCAST] %broadcast message%\"\n"
-      ],
-      "events": [
-        {
-          "id": "broadcast",
-          "name": "On Broadcast"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "ExprTransformReason",
       "name": "Transform Reason",
       "since": [
@@ -10231,37 +10227,6 @@
       }
     },
     {
-      "id": "ExprAppliedEffect",
-      "name": "Applied Beacon Effect",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The type of effect applied by a beacon."
-      ],
-      "patterns": [
-        "[the] applied [beacon] effect"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on beacon effect:\n\tif the applied effect is primary beacon effect:\n\t\tbroadcast \"Is Primary\"\n\telse if applied effect = secondary effect:\n\t\tbroadcast \"Is Secondary\"\n"
-      ],
-      "events": [
-        {
-          "id": "beacon_effect",
-          "name": "On Beacon Effect"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "potioneffecttype",
-        "name": "Potion Effect Type"
-      }
-    },
-    {
       "id": "ExprChatRecipients",
       "name": "Chat Recipients",
       "since": [
@@ -10290,6 +10255,37 @@
       "returns": {
         "id": "audience",
         "name": "Audience"
+      }
+    },
+    {
+      "id": "ExprOnScreenKickMessage",
+      "name": "On-Screen Kick Message",
+      "since": [
+        "2.12"
+      ],
+      "deprecated": false,
+      "description": [
+        "The kick message that is displayed on a player's screen when they are kicked."
+      ],
+      "patterns": [
+        "[the] on-screen kick message"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on kick:\n\tset the on-screen kick message to \"You've been booted!\"\n"
+      ],
+      "events": [
+        {
+          "id": "kick",
+          "name": "On Kick"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
       }
     },
     {
@@ -10322,56 +10318,34 @@
       }
     },
     {
-      "id": "ExprConsumedItem",
-      "name": "Consumed Item",
+      "id": "ExprAppliedEffect",
+      "name": "Applied Beacon Effect",
       "since": [
-        "2.11"
+        "2.10"
       ],
       "deprecated": false,
       "description": [
-        "Represents the item consumed within an entity shoot bow and item consume event."
+        "The type of effect applied by a beacon."
       ],
       "patterns": [
-        "[the] consumed item"
+        "[the] applied [beacon] effect"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on player or skeleton shoot projectile:\n\tif the consumed item is an arrow:\n\t\tcancel event\n\t\tsend \"You're now allowed to shoot your arrows.\" to shooter\n",
-        "on player consume:\n\tif the consumed item is cooked porkchop:\n\t\tsend \"Well aren't you just a little piggy wiggly!\" to player\n\tif player has scoreboard tag \"vegetarian\":\n\t\tset the consumed item to a carrot\n"
+        "on beacon effect:\n\tif the applied effect is primary beacon effect:\n\t\tbroadcast \"Is Primary\"\n\telse if applied effect = secondary effect:\n\t\tbroadcast \"Is Secondary\"\n"
       ],
-      "events": null,
+      "events": [
+        {
+          "id": "beacon_effect",
+          "name": "On Beacon Effect"
+        }
+      ],
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
-      "id": "ExprRandomUUID",
-      "name": "Random UUID",
-      "since": [
-        "2.5.1, 2.11 (return UUIDs)"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns a random UUID."
-      ],
-      "patterns": [
-        "[a] random uuid"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_uuid} to random uuid"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "uuid",
-        "name": "UUID"
+        "id": "potioneffecttype",
+        "name": "Potion Effect Type"
       }
     },
     {
@@ -10439,27 +10413,53 @@
       }
     },
     {
-      "id": "ExprOnScreenKickMessage",
-      "name": "On-Screen Kick Message",
+      "id": "ExprWorlds",
+      "name": "Worlds",
       "since": [
-        "2.12"
+        "1.0"
       ],
       "deprecated": false,
       "description": [
-        "The kick message that is displayed on a player's screen when they are kicked."
+        "All worlds of the server, useful for looping."
       ],
       "patterns": [
-        "[the] on-screen kick message"
+        "[(all [[of] the]|the)] worlds"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on kick:\n\tset the on-screen kick message to \"You've been booted!\"\n"
+        "loop all worlds:\n\tbroadcast \"You're in %loop-world%\" to loop-world\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "world",
+        "name": "World"
+      }
+    },
+    {
+      "id": "ExprDeathMessage",
+      "name": "Death Message",
+      "since": [
+        "2.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The message sent to all online players when a player dies."
+      ],
+      "patterns": [
+        "[the] death( |-)message"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on death of player:\n\tset the death message to \"%player% died!\"\n"
       ],
       "events": [
         {
-          "id": "kick",
-          "name": "On Kick"
+          "id": "death",
+          "name": "On Death"
         }
       ],
       "requirements": null,
@@ -10928,33 +10928,6 @@
       }
     },
     {
-      "id": "ExprWorldFromName",
-      "name": "World from Name",
-      "since": [
-        "2.6.1"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the world from a string."
-      ],
-      "patterns": [
-        "[the] world [(named|with name)] %text%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "world named {game::world-name}",
-        "the world \"world\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "world",
-        "name": "World"
-      }
-    },
-    {
       "id": "ExprScript",
       "name": "Script",
       "since": [
@@ -11110,6 +11083,33 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprWorldFromName",
+      "name": "World from Name",
+      "since": [
+        "2.6.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the world from a string."
+      ],
+      "patterns": [
+        "[the] world [(named|with name)] %text%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "world named {game::world-name}",
+        "the world \"world\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "world",
+        "name": "World"
       }
     },
     {
@@ -11567,6 +11567,32 @@
       }
     },
     {
+      "id": "ExprItem",
+      "name": "Item",
+      "since": [
+        "unknown (before 2.1)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The item involved in an event, e.g. in a drop, dispense, pickup or craft event."
+      ],
+      "patterns": [
+        "[the] item"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on dispense:\n\titem is a clock\n\tset the time to 6:00\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
+      }
+    },
+    {
       "id": "ExprRespawnReason",
       "name": "Respawn Reason",
       "since": [
@@ -11703,24 +11729,30 @@
       }
     },
     {
-      "id": "ExprItem",
-      "name": "Item",
+      "id": "ExprArmorChangeItem",
+      "name": "Armor Change Item",
       "since": [
-        "unknown (before 2.1)"
+        "2.11"
       ],
       "deprecated": false,
       "description": [
-        "The item involved in an event, e.g. in a drop, dispense, pickup or craft event."
+        "Get the unequipped or equipped armor item from a 'armor change' event."
       ],
       "patterns": [
-        "[the] item"
+        "[the] (old|unequipped) armo[u]r item",
+        "[the] (new|equipped) armo[u]r item"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on dispense:\n\titem is a clock\n\tset the time to 6:00\n"
+        "on armor change\n\tbroadcast the old armor item\n"
       ],
-      "events": null,
+      "events": [
+        {
+          "id": "armor_change",
+          "name": "On Armor Change"
+        }
+      ],
       "requirements": null,
       "keywords": null,
       "returns": {
@@ -11816,38 +11848,6 @@
       "returns": {
         "id": "lootcontext",
         "name": "Loot Context"
-      }
-    },
-    {
-      "id": "ExprArmorChangeItem",
-      "name": "Armor Change Item",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "Get the unequipped or equipped armor item from a 'armor change' event."
-      ],
-      "patterns": [
-        "[the] (old|unequipped) armo[u]r item",
-        "[the] (new|equipped) armo[u]r item"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on armor change\n\tbroadcast the old armor item\n"
-      ],
-      "events": [
-        {
-          "id": "armor_change",
-          "name": "On Armor Change"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
       }
     },
     {
@@ -12623,6 +12623,32 @@
       }
     },
     {
+      "id": "ExprLootTableFromString",
+      "name": "Loot Table from Key",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the loot table from a namespaced key."
+      ],
+      "patterns": [
+        "[the] loot[ ]table[s] %texts%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "loottable",
+        "name": "Loot Table"
+      }
+    },
+    {
       "id": "ExprItemCompCopy",
       "name": "Item Component - Copy",
       "since": [
@@ -12649,32 +12675,6 @@
       "returns": {
         "id": "itemcomponent",
         "name": "Item Component"
-      }
-    },
-    {
-      "id": "ExprLootTableFromString",
-      "name": "Loot Table from Key",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loot table from a namespaced key."
-      ],
-      "patterns": [
-        "[the] loot[ ]table[s] %texts%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_table} to loot table \"minecraft:chests/simple_dungeon\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
       }
     },
     {
@@ -13427,6 +13427,34 @@
       }
     },
     {
+      "id": "ExprLootItems",
+      "name": "Loot of Loot Table",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the items of a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin."
+      ],
+      "patterns": [
+        "[the] loot of %loot tables% [(with|using) [[loot] context] %loot context%]",
+        "%loot tables%'[s] loot [(with|using) [[loot] context] %loot context%]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_items::*} to loot of the loot table \"minecraft:chests/simple_dungeon\" with loot context {_context}\n# this will set {_items::*} to the items that would be dropped from the simple dungeon loot table with the given loot context\n",
+        "give player loot of entity's loot table with loot context {_context}\n# this will give the player the items that the entity would drop with the given loot context\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
+      }
+    },
+    {
       "id": "ExprParticleWithSpeed",
       "name": "Particle with Speed/Extra Value",
       "since": [
@@ -13795,34 +13823,6 @@
       }
     },
     {
-      "id": "ExprLootItems",
-      "name": "Loot of Loot Table",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the items of a loot table using a loot context. Not specifying a loot context will use a loot context with a location at the world's origin."
-      ],
-      "patterns": [
-        "[the] loot of %loot tables% [(with|using) [[loot] context] %loot context%]",
-        "%loot tables%'[s] loot [(with|using) [[loot] context] %loot context%]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_items::*} to loot of the loot table \"minecraft:chests/simple_dungeon\" with loot context {_context}\n# this will set {_items::*} to the items that would be dropped from the simple dungeon loot table with the given loot context\n",
-        "give player loot of entity's loot table with loot context {_context}\n# this will give the player the items that the entity would drop with the given loot context\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
       "id": "ExprRandom",
       "name": "Random",
       "since": [
@@ -14115,6 +14115,35 @@
       }
     },
     {
+      "id": "ExprFireworkEffect",
+      "name": "Firework Effect",
+      "since": [
+        "2.4"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
+      ],
+      "patterns": [
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
+        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "launch flickering trailing burst firework colored blue and green at player",
+        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
+        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "fireworkeffect",
+        "name": "Firework Effect"
+      }
+    },
+    {
       "id": "ExprRandomCharacter",
       "name": "Random Character",
       "since": [
@@ -14171,35 +14200,6 @@
       "returns": {
         "id": "string",
         "name": "Text"
-      }
-    },
-    {
-      "id": "ExprFireworkEffect",
-      "name": "Firework Effect",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents a 'firework effect' which can be used in the <a href='#EffFireworkLaunch'>launch firework</a> effect."
-      ],
-      "patterns": [
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors%",
-        "[(flickering|trailing|flickering trailing|trailing flickering)] %firework type% [firework [effect]] colo[u]red %colors% fad(e|ing) [to] %colors%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "launch flickering trailing burst firework colored blue and green at player",
-        "launch trailing flickering star colored purple, yellow, blue, green and red fading to pink at target entity",
-        "launch ball large colored red, purple and white fading to light green and black at player's location with duration 1"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "fireworkeffect",
-        "name": "Firework Effect"
       }
     },
     {
@@ -14456,6 +14456,35 @@
       }
     },
     {
+      "id": "ExprChunk",
+      "name": "Chunk",
+      "since": [
+        "2.0, 2.8.0 (loaded chunks)"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the <a href='#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world."
+      ],
+      "patterns": [
+        "[(all [[of] the]|the)] chunk[s] (of|%directions%) %locations%",
+        "%locations%'[s] chunk[s]",
+        "[(all [[of] the]|the)] loaded chunks (of|in) %worlds%"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "add the chunk at the player to {protected chunks::*}",
+        "set {_chunks::*} to the loaded chunks of the player's world"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "chunk",
+        "name": "Chunk"
+      }
+    },
+    {
       "id": "ExprBlocks",
       "name": "Blocks",
       "since": [
@@ -14490,35 +14519,6 @@
       "returns": {
         "id": "block",
         "name": "Block"
-      }
-    },
-    {
-      "id": "ExprChunk",
-      "name": "Chunk",
-      "since": [
-        "2.0, 2.8.0 (loaded chunks)"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the <a href='#chunk'>chunk</a> of a block, location or entity is in, or a list of the loaded chunks of a world."
-      ],
-      "patterns": [
-        "[(all [[of] the]|the)] chunk[s] (of|%directions%) %locations%",
-        "%locations%'[s] chunk[s]",
-        "[(all [[of] the]|the)] loaded chunks (of|in) %worlds%"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "add the chunk at the player to {protected chunks::*}",
-        "set {_chunks::*} to the loaded chunks of the player's world"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "chunk",
-        "name": "Chunk"
       }
     },
     {
@@ -15083,33 +15083,6 @@
       }
     },
     {
-      "id": "ExprBookAuthor",
-      "name": "Book Author",
-      "since": [
-        "2.2-dev31"
-      ],
-      "deprecated": false,
-      "description": [
-        "The author of a book."
-      ],
-      "patterns": [
-        "[the] [book] (author|writer|publisher) of %item types%",
-        "%item types%'[s] [book] (author|writer|publisher)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on book sign:\n\tbroadcast \"A new book has been created by %author of event-item%\"\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "ExprPotionAmplifier",
       "name": "Potion Effect - Amplifier",
       "since": [
@@ -15197,60 +15170,6 @@
       }
     },
     {
-      "id": "ExprItemOwner",
-      "name": "Dropped Item Owner",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "The uuid of the owner of the dropped item.\nSetting the owner of a dropped item means only that entity or player can pick it up.\nDropping an item does not automatically make the entity or player the owner.\n"
-      ],
-      "patterns": [
-        "[the] uuid of [the] [dropped] item owner [of %itementities%]",
-        "[the] [dropped] item owner's uuid [of %itementities%]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "\tset the uuid of the dropped item owner of last dropped item to player\n\tif the uuid of the dropped item owner of last dropped item is uuid of player:\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "uuid",
-        "name": "UUID"
-      }
-    },
-    {
-      "id": "ExprExactItem",
-      "name": "Exact Item",
-      "since": [
-        "2.12"
-      ],
-      "deprecated": false,
-      "description": [
-        "Get an exact item representation of a block, carrying over any data. For example, using this expression on a chest block with items stored inside will return a chest item with the exact same items in its inventory as the chest block."
-      ],
-      "patterns": [
-        "[the] exact item[s] of %blocks%",
-        "%blocks%'[s] exact item[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_item} to exact item of block at location(0, 0, 0)"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
       "id": "ExprEquippableComponent",
       "name": "Equippable Component",
       "since": [
@@ -15279,38 +15198,6 @@
       "returns": {
         "id": "equippablecomponent",
         "name": "Equippable Components"
-      }
-    },
-    {
-      "id": "ExprPlayerListHeaderFooter",
-      "name": "Player List Header and Footer",
-      "since": [
-        "2.4"
-      ],
-      "deprecated": false,
-      "description": [
-        "The message above and below the player list in the tab menu."
-      ],
-      "patterns": [
-        "[the] (player|tab)[ ]list (header|footer) [text|message] of %players%",
-        "%players%'[s] (player|tab)[ ]list (header|footer) [text|message]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set all players' tab list header to \"Welcome to the Server!\"",
-        "send \"%the player's tab list header%\" to player",
-        "reset all players' tab list header"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": [
-        "tablist",
-        "tab list"
-      ],
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
       }
     },
     {
@@ -15704,34 +15591,6 @@
       "returns": {
         "id": "number",
         "name": "Number"
-      }
-    },
-    {
-      "id": "ExprItemThrower",
-      "name": "Dropped Item Thrower",
-      "since": [
-        "2.11"
-      ],
-      "deprecated": false,
-      "description": [
-        "The uuid of the entity or player that threw/dropped the dropped item."
-      ],
-      "patterns": [
-        "[the] uuid of [the] [dropped] item thrower [of %itementities%]",
-        "[the] [dropped] item thrower's uuid [of %itementities%]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set the uuid of the dropped item thrower of {_dropped item} to player\nif the uuid of the dropped item thrower of {_dropped item} is uuid of player:\n",
-        "clear the item thrower of {_dropped item}"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "uuid",
-        "name": "UUID"
       }
     },
     {
@@ -16162,37 +16021,6 @@
       "returns": {
         "id": "string",
         "name": "Text"
-      }
-    },
-    {
-      "id": "ExprBrushableItem",
-      "name": "Buried Item",
-      "since": [
-        "2.12"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the item that is uncovered when dusting.",
-        "The only blocks that can currently be \"dusted\" are Suspicious Gravel and Suspicious Sand."
-      ],
-      "patterns": [
-        "[the] (brushable|buried) item of %blocks%",
-        "%blocks%'[s] (brushable|buried) item"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "send target block's brushable item",
-        "set {_gravel}'s brushable item to emerald"
-      ],
-      "events": null,
-      "requirements": [
-        "Minecraft 1.20+"
-      ],
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
       }
     },
     {
@@ -17086,6 +16914,36 @@
       }
     },
     {
+      "id": "ExprVillagerProfession",
+      "name": "Villager Profession",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the profession of a villager/zombie villager."
+      ],
+      "patterns": [
+        "[the] villager profession of %living entities%",
+        "%living entities%'[s] villager profession"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_p} to villager profession of event-entity",
+        "villager profession of event-entity = nitwit profession",
+        "set villager profession of {_villager} to librarian profession",
+        "delete villager profession of event-entity"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "villagerprofession",
+        "name": "Villager Profession"
+      }
+    },
+    {
       "id": "ExprWardenAngryAt",
       "name": "Warden Most Angered At",
       "since": [
@@ -17177,6 +17035,61 @@
       }
     },
     {
+      "id": "ExprItemOwner",
+      "name": "Dropped Item Owner",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The uuid of the owner of the dropped item.\nSetting the owner of a dropped item means only that entity or player can pick it up.\nDropping an item does not automatically make the entity or player the owner.\n"
+      ],
+      "patterns": [
+        "[the] uuid of [the] [dropped] item owner [of %itementities%]",
+        "[the] [dropped] item owner's uuid [of %itementities%]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "\tset the uuid of the dropped item owner of last dropped item to player\n\tif the uuid of the dropped item owner of last dropped item is uuid of player:\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "uuid",
+        "name": "UUID"
+      }
+    },
+    {
+      "id": "ExprTextOf",
+      "name": "Text Of",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the <a href='#string'>text/string</a> of <a href='#display'>displays</a>.",
+        "Note that currently you can only use Skript chat codes when running Paper."
+      ],
+      "patterns": [
+        "[the] text[s] of %displays%",
+        "%displays%'[s] text[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set text of the last spawned text display to \"example\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
       "id": "ExprTemperature",
       "name": "Temperature",
       "since": [
@@ -17228,36 +17141,6 @@
       "returns": {
         "id": "entity",
         "name": "Entity"
-      }
-    },
-    {
-      "id": "ExprVillagerProfession",
-      "name": "Villager Profession",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the profession of a villager/zombie villager."
-      ],
-      "patterns": [
-        "[the] villager profession of %living entities%",
-        "%living entities%'[s] villager profession"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_p} to villager profession of event-entity",
-        "villager profession of event-entity = nitwit profession",
-        "set villager profession of {_villager} to librarian profession",
-        "delete villager profession of event-entity"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "villagerprofession",
-        "name": "Villager Profession"
       }
     },
     {
@@ -17460,6 +17343,34 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprItemThrower",
+      "name": "Dropped Item Thrower",
+      "since": [
+        "2.11"
+      ],
+      "deprecated": false,
+      "description": [
+        "The uuid of the entity or player that threw/dropped the dropped item."
+      ],
+      "patterns": [
+        "[the] uuid of [the] [dropped] item thrower [of %itementities%]",
+        "[the] [dropped] item thrower's uuid [of %itementities%]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set the uuid of the dropped item thrower of {_dropped item} to player\nif the uuid of the dropped item thrower of {_dropped item} is uuid of player:\n",
+        "clear the item thrower of {_dropped item}"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "uuid",
+        "name": "UUID"
       }
     },
     {
@@ -17850,34 +17761,6 @@
       }
     },
     {
-      "id": "ExprTextOf",
-      "name": "Text Of",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns or changes the <a href='#string'>text/string</a> of <a href='#display'>displays</a>.",
-        "Note that currently you can only use Skript chat codes when running Paper."
-      ],
-      "patterns": [
-        "[the] text[s] of %displays%",
-        "%displays%'[s] text[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set text of the last spawned text display to \"example\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "ExprLastAttacker",
       "name": "Last Attacker",
       "since": [
@@ -18241,6 +18124,33 @@
       }
     },
     {
+      "id": "ExprBookTitle",
+      "name": "Book Title",
+      "since": [
+        "2.2-dev31"
+      ],
+      "deprecated": false,
+      "description": [
+        "The title of a book."
+      ],
+      "patterns": [
+        "[the] book (name|title) of %item types%",
+        "%item types%'[s] book (name|title)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on book sign:\n\tmessage \"You finished your book titled %title of event-item%\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
       "id": "ExprColorOf",
       "name": "Color of",
       "since": [
@@ -18294,6 +18204,36 @@
       "returns": {
         "id": "boolean",
         "name": "Boolean"
+      }
+    },
+    {
+      "id": "ExprPlayerListName",
+      "name": "Player List Name",
+      "since": [
+        "Before 2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "The name of a player in the player list in the tab menu."
+      ],
+      "patterns": [
+        "[the] (player|tab)[ ]list name[s] of %players%",
+        "%players%'[s] (player|tab)[ ]list name[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on join:\n\tplayer has permission \"name.red\"\n\tset the player's tab list name to \"<red>%player's name%\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "tablist",
+        "tab list"
+      ],
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
       }
     },
     {
@@ -18473,6 +18413,62 @@
       }
     },
     {
+      "id": "ExprActiveItem",
+      "name": "Active Item",
+      "since": [
+        "2.8.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the item the entities are currently using (ie: the food they're eating, the bow they're drawing back, etc.). This cannot be changed. If an entity is not using any item, this will return null."
+      ],
+      "patterns": [
+        "[the] (raised|active) (tool|item|weapon) of %living entities%",
+        "%living entities%'[s] (raised|active) (tool|item|weapon)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on damage of player:\n\tif victim's active tool is a bow:\n\t\tinterrupt player's active item use\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
+      }
+    },
+    {
+      "id": "ExprVillagerType",
+      "name": "Villager Type",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the type of a villager/zombie villager. This usually represents the biome the villager is from."
+      ],
+      "patterns": [
+        "[the] villager type of %living entities%",
+        "%living entities%'[s] villager type"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_type} to villager type of {_villager}",
+        "villager type of {_villager} = plains",
+        "set villager type of event-entity to plains"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "villagertype",
+        "name": "Villager Type"
+      }
+    },
+    {
       "id": "ExprSpectatorTarget",
       "name": "Spectator Target",
       "since": [
@@ -18530,35 +18526,6 @@
       }
     },
     {
-      "id": "ExprDamageType",
-      "name": "Damage Source - Damage Type",
-      "since": [
-        "2.12"
-      ],
-      "deprecated": false,
-      "description": [
-        "The type of damage of a damage source.",
-        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
-      ],
-      "patterns": [
-        "[the] damage type [of %damage sources%]",
-        "%damage sources%'[s] damage type"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
-        "on death:\n\tset {_type} to the damage type of event-damage source\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "damagetype",
-        "name": "Damage Type"
-      }
-    },
-    {
       "id": "ExprPortalCooldown",
       "name": "Portal Cooldown",
       "since": [
@@ -18612,36 +18579,6 @@
       "returns": {
         "id": "number",
         "name": "Number"
-      }
-    },
-    {
-      "id": "ExprWorld",
-      "name": "World",
-      "since": [
-        "1.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "The world the event occurred in."
-      ],
-      "patterns": [
-        "[the] world [of %locations/entities/chunk%]",
-        "%locations/entities/chunk%'[s] world"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "world is \"world_nether\"",
-        "teleport the player to the world's spawn",
-        "set the weather in the player's world to rain",
-        "set {_world} to world of event-chunk"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "world",
-        "name": "World"
       }
     },
     {
@@ -18806,34 +18743,6 @@
       }
     },
     {
-      "id": "ExprUUID",
-      "name": "UUID",
-      "since": [
-        "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)"
-      ],
-      "deprecated": false,
-      "description": [
-        "The UUID of a player, entity or world."
-      ],
-      "patterns": [
-        "[the] uuid[s] of %offline players/worlds/entities%",
-        "%offline players/worlds/entities%'[s] uuid[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "# prevents people from joining the server if they use the name of a player\n# who has played on this server at least once since this script has been added\non login:\n\tif {uuid::%name of player%} exists:\n\t\t{uuid::%name of player%} is not uuid of player\n\t\tkick player due to \"Someone with your name has played on this server before\"\n\telse:\n\t\tset {uuid::%name of player%} to uuid of player\n",
-        "command /what-is-my-uuid:\n\ttrigger:\n\t\tset {_uuid} to uuid of player\n\t\tsend \"Your UUID is '%string within {_uuid}%'\"\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "uuid",
-        "name": "UUID"
-      }
-    },
-    {
       "id": "ExprBlockData",
       "name": "Block Data",
       "since": [
@@ -18961,33 +18870,6 @@
       }
     },
     {
-      "id": "ExprBookTitle",
-      "name": "Book Title",
-      "since": [
-        "2.2-dev31"
-      ],
-      "deprecated": false,
-      "description": [
-        "The title of a book."
-      ],
-      "patterns": [
-        "[the] book (name|title) of %item types%",
-        "%item types%'[s] book (name|title)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on book sign:\n\tmessage \"You finished your book titled %title of event-item%\"\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
-      }
-    },
-    {
       "id": "ExprEquipCompSlot",
       "name": "Equippable Component - Equipment Slot",
       "since": [
@@ -19104,33 +18986,32 @@
       }
     },
     {
-      "id": "ExprPlayerListName",
-      "name": "Player List Name",
+      "id": "ExprDamageType",
+      "name": "Damage Source - Damage Type",
       "since": [
-        "Before 2.1"
+        "2.12"
       ],
       "deprecated": false,
       "description": [
-        "The name of a player in the player list in the tab menu."
+        "The type of damage of a damage source.",
+        "Attributes of a damage source cannot be changed once created, only while within the 'custom damage source' section."
       ],
       "patterns": [
-        "[the] (player|tab)[ ]list name[s] of %players%",
-        "%players%'[s] (player|tab)[ ]list name[s]"
+        "[the] damage type [of %damage sources%]",
+        "%damage sources%'[s] damage type"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "on join:\n\tplayer has permission \"name.red\"\n\tset the player's tab list name to \"<red>%player's name%\"\n"
+        "set {_source} to a custom damage source:\n\tset the damage type to magic\n\tset the causing entity to {_player}\n\tset the direct entity to {_arrow}\n\tset the damage location to location(0, 0, 10)\ndamage all players by 5 using {_source}\n",
+        "on death:\n\tset {_type} to the damage type of event-damage source\n"
       ],
       "events": null,
       "requirements": null,
-      "keywords": [
-        "tablist",
-        "tab list"
-      ],
+      "keywords": null,
       "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
+        "id": "damagetype",
+        "name": "Damage Type"
       }
     },
     {
@@ -19187,35 +19068,6 @@
       "returns": {
         "id": "timespan",
         "name": "Timespan"
-      }
-    },
-    {
-      "id": "ExprVillagerType",
-      "name": "Villager Type",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Represents the type of a villager/zombie villager. This usually represents the biome the villager is from."
-      ],
-      "patterns": [
-        "[the] villager type of %living entities%",
-        "%living entities%'[s] villager type"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set {_type} to villager type of {_villager}",
-        "villager type of {_villager} = plains",
-        "set villager type of event-entity to plains"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "villagertype",
-        "name": "Villager Type"
       }
     },
     {
@@ -20008,76 +19860,6 @@
       }
     },
     {
-      "id": "ExprBeaconEffects",
-      "name": "Beacon Effects",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "The active effects of a beacon.",
-        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
-        "The secondary effect can only be set when the beacon is at max tier.",
-        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
-      ],
-      "patterns": [
-        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
-        "%blocks%'[s] (primary|secondary) [beacon] effect"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
-      ],
-      "events": [
-        {
-          "id": "beacon_effect",
-          "name": "On Beacon Effect"
-        },
-        {
-          "id": "beacon_toggle",
-          "name": "On Beacon Toggle"
-        },
-        {
-          "id": "beacon_change_effect",
-          "name": "On Beacon Change Effect"
-        }
-      ],
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "potioneffecttype",
-        "name": "Potion Effect Type"
-      }
-    },
-    {
-      "id": "ExprActiveItem",
-      "name": "Active Item",
-      "since": [
-        "2.8.0"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the item the entities are currently using (ie: the food they're eating, the bow they're drawing back, etc.). This cannot be changed. If an entity is not using any item, this will return null."
-      ],
-      "patterns": [
-        "[the] (raised|active) (tool|item|weapon) of %living entities%",
-        "%living entities%'[s] (raised|active) (tool|item|weapon)"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on damage of player:\n\tif victim's active tool is a bow:\n\t\tinterrupt player's active item use\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "itemstack",
-        "name": "Item"
-      }
-    },
-    {
       "id": "ExprCursorSlot",
       "name": "Cursor Slot",
       "since": [
@@ -20364,6 +20146,49 @@
       }
     },
     {
+      "id": "ExprBeaconEffects",
+      "name": "Beacon Effects",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "The active effects of a beacon.",
+        "The secondary effect can be set to anything, but the icon in the GUI will not display correctly.",
+        "The secondary effect can only be set when the beacon is at max tier.",
+        "The primary and secondary effect can not be the same, primary will always retain the potion type and secondary will be cleared."
+      ],
+      "patterns": [
+        "[the] (primary|secondary) [beacon] effect [of %blocks%]",
+        "%blocks%'[s] (primary|secondary) [beacon] effect"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set primary beacon effect of {_block} to haste\nset secondary effect of {_block} to resistance\n"
+      ],
+      "events": [
+        {
+          "id": "beacon_effect",
+          "name": "On Beacon Effect"
+        },
+        {
+          "id": "beacon_toggle",
+          "name": "On Beacon Toggle"
+        },
+        {
+          "id": "beacon_change_effect",
+          "name": "On Beacon Change Effect"
+        }
+      ],
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "potioneffecttype",
+        "name": "Potion Effect Type"
+      }
+    },
+    {
       "id": "ExprItemWithTooltip",
       "name": "Item with Tooltip",
       "since": [
@@ -20565,6 +20390,34 @@
       }
     },
     {
+      "id": "ExprUUID",
+      "name": "UUID",
+      "since": [
+        "2.1.2, 2.2 (offline players' uuids), 2.2-dev24 (other entities' uuids)"
+      ],
+      "deprecated": false,
+      "description": [
+        "The UUID of a player, entity or world."
+      ],
+      "patterns": [
+        "[the] uuid[s] of %offline players/worlds/entities%",
+        "%offline players/worlds/entities%'[s] uuid[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "# prevents people from joining the server if they use the name of a player\n# who has played on this server at least once since this script has been added\non login:\n\tif {uuid::%name of player%} exists:\n\t\t{uuid::%name of player%} is not uuid of player\n\t\tkick player due to \"Someone with your name has played on this server before\"\n\telse:\n\t\tset {uuid::%name of player%} to uuid of player\n",
+        "command /what-is-my-uuid:\n\ttrigger:\n\t\tset {_uuid} to uuid of player\n\t\tsend \"Your UUID is '%string within {_uuid}%'\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "uuid",
+        "name": "UUID"
+      }
+    },
+    {
       "id": "ExprTextDisplayLineWidth",
       "name": "Text Display Line Width",
       "since": [
@@ -20589,6 +20442,34 @@
       "returns": {
         "id": "number",
         "name": "Number"
+      }
+    },
+    {
+      "id": "ExprDisplayTransformationRotation",
+      "name": "Display Transformation Rotation",
+      "since": [
+        "2.10"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
+        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+      ],
+      "patterns": [
+        "[the] (left|right) [transformation] rotation [of %displays%]",
+        "%displays%'[s] (left|right) [transformation] rotation"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "quaternion",
+        "name": "Quaternion"
       }
     },
     {
@@ -20646,6 +20527,36 @@
       "returns": {
         "id": "boolean",
         "name": "Boolean"
+      }
+    },
+    {
+      "id": "ExprWorld",
+      "name": "World",
+      "since": [
+        "1.0"
+      ],
+      "deprecated": false,
+      "description": [
+        "The world the event occurred in."
+      ],
+      "patterns": [
+        "[the] world [of %locations/entities/chunk%]",
+        "%locations/entities/chunk%'[s] world"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "world is \"world_nether\"",
+        "teleport the player to the world's spawn",
+        "set the weather in the player's world to rain",
+        "set {_world} to world of event-chunk"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "world",
+        "name": "World"
       }
     },
     {
@@ -20734,6 +20645,33 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprExactItem",
+      "name": "Exact Item",
+      "since": [
+        "2.12"
+      ],
+      "deprecated": false,
+      "description": [
+        "Get an exact item representation of a block, carrying over any data. For example, using this expression on a chest block with items stored inside will return a chest item with the exact same items in its inventory as the chest block."
+      ],
+      "patterns": [
+        "[the] exact item[s] of %blocks%",
+        "%blocks%'[s] exact item[s]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set {_item} to exact item of block at location(0, 0, 0)"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
       }
     },
     {
@@ -21402,31 +21340,33 @@
       }
     },
     {
-      "id": "ExprDisplayTransformationRotation",
-      "name": "Display Transformation Rotation",
+      "id": "ExprLootTable",
+      "name": "Loot Table",
       "since": [
         "2.10"
       ],
       "deprecated": false,
       "description": [
-        "Returns or changes the transformation rotation of <a href='#display'>displays</a>.",
-        "The left rotation is applied first, with the right rotation then being applied based on the rotated axis."
+        "Returns the loot table of an entity or block.",
+        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
+        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
       ],
       "patterns": [
-        "[the] (left|right) [transformation] rotation [of %displays%]",
-        "%displays%'[s] (left|right) [transformation] rotation"
+        "[the] loot[ ]table[s] of %entities/blocks%",
+        "%entities/blocks%'[s] loot[ ]table[s]"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set left transformation rotation of last spawned block display to quaternion(1, 0, 0, 0) # reset block display"
+        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
+        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
       ],
       "events": null,
       "requirements": null,
       "keywords": null,
       "returns": {
-        "id": "quaternion",
-        "name": "Quaternion"
+        "id": "loottable",
+        "name": "Loot Table"
       }
     },
     {
@@ -21714,6 +21654,33 @@
       }
     },
     {
+      "id": "ExprBookAuthor",
+      "name": "Book Author",
+      "since": [
+        "2.2-dev31"
+      ],
+      "deprecated": false,
+      "description": [
+        "The author of a book."
+      ],
+      "patterns": [
+        "[the] [book] (author|writer|publisher) of %item types%",
+        "%item types%'[s] [book] (author|writer|publisher)"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "on book sign:\n\tbroadcast \"A new book has been created by %author of event-item%\"\n"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
+      }
+    },
+    {
       "id": "ExprPlayerChatCompletions",
       "name": "Player Chat Completions",
       "since": [
@@ -21883,36 +21850,6 @@
       }
     },
     {
-      "id": "ExprLootTable",
-      "name": "Loot Table",
-      "since": [
-        "2.10"
-      ],
-      "deprecated": false,
-      "description": [
-        "Returns the loot table of an entity or block.",
-        "Setting the loot table of a block will update the block state, and once opened will generate loot of the specified loot table. Please note that doing so may cause warnings in the console due to over-filling the chest.",
-        "Please note that resetting/deleting the loot table of an ENTITY will reset the entity's loot table to its default."
-      ],
-      "patterns": [
-        "[the] loot[ ]table[s] of %entities/blocks%",
-        "%entities/blocks%'[s] loot[ ]table[s]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "set loot table of event-entity to \"minecraft:entities/ghast\"\n# this will set the loot table of the entity to a ghast's loot table, thus dropping ghast tears and gunpowder\n",
-        "set loot table of event-block to \"minecraft:chests/simple_dungeon\""
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "loottable",
-        "name": "Loot Table"
-      }
-    },
-    {
       "id": "ExprNoDamageTime",
       "name": "No Damage Time",
       "since": [
@@ -21938,6 +21875,38 @@
       "returns": {
         "id": "timespan",
         "name": "Timespan"
+      }
+    },
+    {
+      "id": "ExprPlayerListHeaderFooter",
+      "name": "Player List Header and Footer",
+      "since": [
+        "2.4"
+      ],
+      "deprecated": false,
+      "description": [
+        "The message above and below the player list in the tab menu."
+      ],
+      "patterns": [
+        "[the] (player|tab)[ ]list (header|footer) [text|message] of %players%",
+        "%players%'[s] (player|tab)[ ]list (header|footer) [text|message]"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set all players' tab list header to \"Welcome to the Server!\"",
+        "send \"%the player's tab list header%\" to player",
+        "reset all players' tab list header"
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": [
+        "tablist",
+        "tab list"
+      ],
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
       }
     },
     {
@@ -22053,6 +22022,37 @@
       }
     },
     {
+      "id": "ExprBrushableItem",
+      "name": "Buried Item",
+      "since": [
+        "2.12"
+      ],
+      "deprecated": false,
+      "description": [
+        "Represents the item that is uncovered when dusting.",
+        "The only blocks that can currently be \"dusted\" are Suspicious Gravel and Suspicious Sand."
+      ],
+      "patterns": [
+        "[the] (brushable|buried) item of %blocks%",
+        "%blocks%'[s] (brushable|buried) item"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "send target block's brushable item",
+        "set {_gravel}'s brushable item to emerald"
+      ],
+      "events": null,
+      "requirements": [
+        "Minecraft 1.20+"
+      ],
+      "keywords": null,
+      "returns": {
+        "id": "itemstack",
+        "name": "Item"
+      }
+    },
+    {
       "id": "PropExprAmount",
       "name": "Amount",
       "since": [
@@ -22112,27 +22112,23 @@
       }
     },
     {
-      "id": "ExprLore",
-      "name": "Lore",
+      "id": "ExprSignText",
+      "name": "Sign Text",
       "since": [
-        "2.1"
+        "1.3"
       ],
       "deprecated": false,
       "description": [
-        "Returns the lore of an item."
+        "A line of text on a sign. Can be changed, but note that there is a 16 character limit per line."
       ],
       "patterns": [
-        "[the] lore of %item type%",
-        "%item type%'[s] lore",
-        "[the] line %number% of [the] lore of %item type%",
-        "[the] line %number% of %item type%'[s] lore",
-        "[the] %number%(st|nd|rd|th) line of [the] lore of %item type%",
-        "[the] %number%(st|nd|rd|th) line of %item type%'[s] lore"
+        "line %integer% [of %block%]",
+        "[the] (1st|first|2nd|second|3rd|third|4th|fourth) line [of %block%]"
       ],
       "property": null,
       "propertyTypes": null,
       "examples": [
-        "set the 1st line of the item's lore to \"<orange>Excalibur 2.0\""
+        "on right click:\n\tclicked block is tagged as \"minecraft:all_signs\"\n\tif line 2 of the clicked block is \"[Heal]\":\n\t\theal the player\n"
       ],
       "events": null,
       "requirements": null,
@@ -22172,33 +22168,6 @@
       "returns": {
         "id": "node",
         "name": "Node"
-      }
-    },
-    {
-      "id": "ExprSignText",
-      "name": "Sign Text",
-      "since": [
-        "1.3"
-      ],
-      "deprecated": false,
-      "description": [
-        "A line of text on a sign. Can be changed, but note that there is a 16 character limit per line."
-      ],
-      "patterns": [
-        "line %integer% [of %block%]",
-        "[the] (1st|first|2nd|second|3rd|third|4th|fourth) line [of %block%]"
-      ],
-      "property": null,
-      "propertyTypes": null,
-      "examples": [
-        "on right click:\n\tclicked block is tagged as \"minecraft:all_signs\"\n\tif line 2 of the clicked block is \"[Heal]\":\n\t\theal the player\n"
-      ],
-      "events": null,
-      "requirements": null,
-      "keywords": null,
-      "returns": {
-        "id": "textcomponent",
-        "name": "Text Component"
       }
     },
     {
@@ -22564,6 +22533,37 @@
       "returns": {
         "id": "object",
         "name": "Object"
+      }
+    },
+    {
+      "id": "ExprLore",
+      "name": "Lore",
+      "since": [
+        "2.1"
+      ],
+      "deprecated": false,
+      "description": [
+        "Returns the lore of an item."
+      ],
+      "patterns": [
+        "[the] lore of %item type%",
+        "%item type%'[s] lore",
+        "[the] line %number% of [the] lore of %item type%",
+        "[the] line %number% of %item type%'[s] lore",
+        "[the] %number%(st|nd|rd|th) line of [the] lore of %item type%",
+        "[the] %number%(st|nd|rd|th) line of %item type%'[s] lore"
+      ],
+      "property": null,
+      "propertyTypes": null,
+      "examples": [
+        "set the 1st line of the item's lore to \"<orange>Excalibur 2.0\""
+      ],
+      "events": null,
+      "requirements": null,
+      "keywords": null,
+      "returns": {
+        "id": "textcomponent",
+        "name": "Text Component"
       }
     },
     {
@@ -29198,12 +29198,12 @@
           "name": "world"
         },
         {
-          "id": "player",
-          "name": "player"
-        },
-        {
           "id": "itemstack",
           "name": "past item stack"
+        },
+        {
+          "id": "player",
+          "name": "player"
         },
         {
           "id": "itemstack",
