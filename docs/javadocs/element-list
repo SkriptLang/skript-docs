@@ -23,6 +23,7 @@ ch.njol.skript.log
 ch.njol.skript.patterns
 ch.njol.skript.registrations
 ch.njol.skript.registrations.experiments
+ch.njol.skript.skcommand
 ch.njol.skript.timings
 ch.njol.skript.update
 ch.njol.skript.util
@@ -41,6 +42,8 @@ org.skriptlang.skript.bukkit.block.furnace
 org.skriptlang.skript.bukkit.block.furnace.elements.events
 org.skriptlang.skript.bukkit.block.furnace.elements.expressions
 org.skriptlang.skript.bukkit.block.sign
+org.skriptlang.skript.bukkit.block.sign.elements.conditions
+org.skriptlang.skript.bukkit.block.sign.elements.effects
 org.skriptlang.skript.bukkit.block.sign.elements.expressions
 org.skriptlang.skript.bukkit.bossbar
 org.skriptlang.skript.bukkit.bossbar.elements.conditions
@@ -56,6 +59,14 @@ org.skriptlang.skript.bukkit.brewing.elements.conditions
 org.skriptlang.skript.bukkit.brewing.elements.effects
 org.skriptlang.skript.bukkit.brewing.elements.events
 org.skriptlang.skript.bukkit.brewing.elements.expressions
+org.skriptlang.skript.bukkit.command
+org.skriptlang.skript.bukkit.command.custom
+org.skriptlang.skript.bukkit.command.elements.conditions
+org.skriptlang.skript.bukkit.command.elements.effects
+org.skriptlang.skript.bukkit.command.elements.events
+org.skriptlang.skript.bukkit.command.elements.expressions
+org.skriptlang.skript.bukkit.command.elements.structures
+org.skriptlang.skript.bukkit.command.elements.structures.util
 org.skriptlang.skript.bukkit.damagesource
 org.skriptlang.skript.bukkit.damagesource.elements.conditions
 org.skriptlang.skript.bukkit.damagesource.elements.expressions
@@ -65,6 +76,7 @@ org.skriptlang.skript.bukkit.enchantments.elements.effects
 org.skriptlang.skript.bukkit.enchantments.elements.expressions
 org.skriptlang.skript.bukkit.enchantments.types
 org.skriptlang.skript.bukkit.entity
+org.skriptlang.skript.bukkit.entity.data
 org.skriptlang.skript.bukkit.entity.displays
 org.skriptlang.skript.bukkit.entity.displays.elements.expressions
 org.skriptlang.skript.bukkit.entity.displays.item.elements.expressions
@@ -73,11 +85,11 @@ org.skriptlang.skript.bukkit.entity.displays.text.elements.effects
 org.skriptlang.skript.bukkit.entity.displays.text.elements.expressions
 org.skriptlang.skript.bukkit.entity.elements.effects
 org.skriptlang.skript.bukkit.entity.elements.expressions
-org.skriptlang.skript.bukkit.entity.entitydata
 org.skriptlang.skript.bukkit.entity.interactions
 org.skriptlang.skript.bukkit.entity.interactions.elements.conditions
 org.skriptlang.skript.bukkit.entity.interactions.elements.effects
 org.skriptlang.skript.bukkit.entity.interactions.elements.expressions
+org.skriptlang.skript.bukkit.entity.nautilus
 org.skriptlang.skript.bukkit.entity.player
 org.skriptlang.skript.bukkit.entity.player.elements.effects
 org.skriptlang.skript.bukkit.entity.player.elements.events
@@ -142,6 +154,7 @@ org.skriptlang.skript.bukkit.worldborder.elements
 org.skriptlang.skript.bukkit.worldborder.elements.effects
 org.skriptlang.skript.bukkit.worldborder.elements.expressions
 org.skriptlang.skript.common
+org.skriptlang.skript.common.elements.effects
 org.skriptlang.skript.common.elements.expressions
 org.skriptlang.skript.common.function
 org.skriptlang.skript.common.properties
