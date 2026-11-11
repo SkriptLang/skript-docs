@@ -207,6 +207,10 @@ function checkVersionFilter() {
   }
 }
 
+function normalizeTitleSearchText(value) {
+  return value.replaceAll(/[-\/&()]/gi, " ").replaceAll(/( ){2,}/gi, " ").trim();
+}
+
 function searchNow(value = "") {
   if (value !== "") // Update searchBar value
     searchBar.value = value;
@@ -249,6 +253,7 @@ function searchNow(value = "") {
 
   searchValue = searchValue.replaceAll(/( ){2,}/gi, " ") // Filter duplicate spaces
   searchValue = searchValue.replaceAll(/[^a-zA-Z0-9 #_-]/gi, ""); // Filter none alphabet and digits to avoid regex errors (#_-) used for hash/id searching
+  let titleSearchValue = normalizeTitleSearchText(searchValue);
 
   allElements.forEach((e) => {
     let patterns = document.querySelectorAll(`#${e.id} .item-details .skript-code-block`);
@@ -256,6 +261,8 @@ function searchNow(value = "") {
       let pattern = patterns[i];
       let regex = new RegExp(searchValue, "gi")
       let name = document.querySelectorAll(`#${e.id} .item-title h1`)[0].textContent // Syntax Name
+      let titleRegex = new RegExp(titleSearchValue, "gi")
+      let normalizedName = normalizeTitleSearchText(name)
       let desc = document.querySelectorAll(`#${e.id} .item-description`)[0].textContent // Syntax Desc
       let keywords = e.getAttribute("data-keywords")
       let id = e.id // Syntax ID
@@ -305,7 +312,7 @@ function searchNow(value = "") {
       if (filterNewFound && versionFound && filterTypeFound)
         filtersFound = true
 
-      if ((regex.test(pattern.textContent.replaceAll("[ ]", " ")) || regex.test(name) ||
+      if ((regex.test(pattern.textContent.replaceAll("[ ]", " ")) || titleRegex.test(normalizedName) ||
            regex.test(desc) || regex.test(keywords) || "#" + id.toLowerCase() == searchValue.toLowerCase() || searchValue == "") && filtersFound) { // Replacing '[ ]' will improve some searching cases such as 'off[ ]hand'
         pass = true
         break; // Performance
